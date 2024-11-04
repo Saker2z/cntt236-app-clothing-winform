@@ -1,0 +1,200 @@
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.Properties.Resources.resources
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\GUI.exe.config
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\GUI.exe
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\GUI.pdb
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.BonusSkins.v19.2.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Data.v19.2.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Printing.v19.2.Core.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Sparkline.v19.2.Core.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Utils.v19.2.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraBars.v19.2.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraEditors.v19.2.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Pdf.v19.2.Core.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Data.v19.2.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Utils.v19.2.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Sparkline.v19.2.Core.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraBars.v19.2.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraEditors.v19.2.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Printing.v19.2.Core.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Pdf.v19.2.Core.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.Data.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Data.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Data.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Data.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.Utils.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Utils.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Utils.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Utils.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.Sparkline.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Sparkline.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Sparkline.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Sparkline.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.XtraBars.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.XtraBars.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.XtraBars.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.XtraBars.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.XtraEditors.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.XtraEditors.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.XtraEditors.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.XtraEditors.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.Printing.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Printing.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Printing.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Printing.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.Pdf.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Pdf.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Pdf.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Pdf.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.frmMain.resources
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.UC_thuonghieu.resources
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.exe.licenses
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.csproj.CopyComplete
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.exe
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.pdb
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraGrid.v19.2.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraLayout.v19.2.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraPrinting.v19.2.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.RichEdit.v19.2.Core.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraTreeList.v19.2.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Office.v19.2.Core.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Images.v19.2.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraGrid.v19.2.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraLayout.v19.2.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraPrinting.v19.2.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.RichEdit.v19.2.Core.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraTreeList.v19.2.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Office.v19.2.Core.xml
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.XtraGrid.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.XtraGrid.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.XtraGrid.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.XtraGrid.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.XtraLayout.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.XtraLayout.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.XtraLayout.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.XtraLayout.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.XtraPrinting.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.XtraPrinting.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.XtraPrinting.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.XtraPrinting.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.RichEdit.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.RichEdit.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.RichEdit.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.RichEdit.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.XtraTreeList.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.XtraTreeList.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.XtraTreeList.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.XtraTreeList.v19.2.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.Office.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Office.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.UC_TaiKhoan.resources
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.frmDangNhap.resources
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.UC_NhapHangTheoNCC.resources
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.frmNhapHang.resources
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.UC_NhapHangTheoSanPham.resources
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DTO.dll
+E:\Cac mon hoc\Github\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DTO.pdb
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\GUI.exe.config
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\GUI.exe
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\GUI.pdb
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.BonusSkins.v19.2.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Data.v19.2.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Printing.v19.2.Core.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Sparkline.v19.2.Core.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Utils.v19.2.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraBars.v19.2.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraEditors.v19.2.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraGrid.v19.2.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraLayout.v19.2.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraPrinting.v19.2.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DTO.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Pdf.v19.2.Core.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.RichEdit.v19.2.Core.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraTreeList.v19.2.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Office.v19.2.Core.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Images.v19.2.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DTO.pdb
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Data.v19.2.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Utils.v19.2.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Sparkline.v19.2.Core.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraBars.v19.2.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraEditors.v19.2.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Printing.v19.2.Core.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraGrid.v19.2.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraLayout.v19.2.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraPrinting.v19.2.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Pdf.v19.2.Core.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.RichEdit.v19.2.Core.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.XtraTreeList.v19.2.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\DevExpress.Office.v19.2.Core.xml
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.Data.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Data.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Data.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Data.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.Utils.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Utils.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Utils.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Utils.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.Sparkline.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Sparkline.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Sparkline.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Sparkline.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.XtraBars.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.XtraEditors.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.XtraEditors.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.XtraEditors.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.XtraEditors.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.Printing.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Printing.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Printing.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Printing.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.XtraGrid.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.XtraGrid.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.XtraGrid.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.XtraGrid.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.XtraLayout.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.XtraLayout.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.XtraLayout.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.XtraLayout.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.XtraPrinting.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.XtraPrinting.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.XtraPrinting.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.XtraPrinting.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.Pdf.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Pdf.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Pdf.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Pdf.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.RichEdit.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.RichEdit.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.RichEdit.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.RichEdit.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.XtraTreeList.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.XtraTreeList.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.XtraTreeList.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.XtraTreeList.v19.2.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\de\DevExpress.Office.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Office.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.frmDangNhap.resources
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.frmMain.resources
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.frmNhapHang.resources
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.UC_NhapHangTheoNCC.resources
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.UC_NhapHangTheoSanPham.resources
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.UC_TaiKhoan.resources
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.UC_thuonghieu.resources
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.exe.licenses
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.exe
+C:\Users\HP\Desktop\CNPMNC\02\03\web-app-clothing-stores-net-winform\ql_shop_fashion\GUI\obj\Debug\GUI.pdb

@@ -1,0 +1,248 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1BF1FE5F-F9AE-4130-A85B-DF04E8E1019F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v19.2" />
+    <Reference Include="DevExpress.Data.v19.2" />
+    <Reference Include="DevExpress.Utils.v19.2" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2" />
+    <Reference Include="DevExpress.Printing.v19.2.Core" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapHang.Designer.cs">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UC_NhapHangTheoNCC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_NhapHangTheoNCC.Designer.cs">
+      <DependentUpon>UC_NhapHangTheoNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_NhapHangTheoSanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_NhapHangTheoSanPham.Designer.cs">
+      <DependentUpon>UC_NhapHangTheoSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TaiKhoan.Designer.cs">
+      <DependentUpon>UC_TaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_thuonghieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_thuonghieu.Designer.cs">
+      <DependentUpon>UC_thuonghieu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapHang.resx">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_NhapHangTheoNCC.resx">
+      <DependentUpon>UC_NhapHangTheoNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_NhapHangTheoSanPham.resx">
+      <DependentUpon>UC_NhapHangTheoSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TaiKhoan.resx">
+      <DependentUpon>UC_TaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_thuonghieu.resx">
+      <DependentUpon>UC_thuonghieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\DataSources\DTO.chi_tiet_hoa_dons.datasource" />
+    <None Include="Properties\DataSources\DTO.chi_tiet_nhap_hangs.datasource" />
+    <None Include="Properties\DataSources\DTO.danh_gia_san_phams.datasource" />
+    <None Include="Properties\DataSources\DTO.hinh_anh_san_phams.datasource" />
+    <None Include="Properties\DataSources\DTO.hoa_dons.datasource" />
+    <None Include="Properties\DataSources\DTO.key_stores.datasource" />
+    <None Include="Properties\DataSources\DTO.khach_hangs.datasource" />
+    <None Include="Properties\DataSources\DTO.khuyen_mais.datasource" />
+    <None Include="Properties\DataSources\DTO.kich_thuocs.datasource" />
+    <None Include="Properties\DataSources\DTO.loai_san_phams.datasource" />
+    <None Include="Properties\DataSources\DTO.man_hinhs.datasource" />
+    <None Include="Properties\DataSources\DTO.mau_sacs.datasource" />
+    <None Include="Properties\DataSources\DTO.nhan_viens.datasource" />
+    <None Include="Properties\DataSources\DTO.nhap_hangs.datasource" />
+    <None Include="Properties\DataSources\DTO.nha_cung_caps.datasource" />
+    <None Include="Properties\DataSources\DTO.nha_cung_cap_san_phams.datasource" />
+    <None Include="Properties\DataSources\DTO.nhom_loais.datasource" />
+    <None Include="Properties\DataSources\DTO.nhom_quyens.datasource" />
+    <None Include="Properties\DataSources\DTO.nhom_quyen_quyens.datasource" />
+    <None Include="Properties\DataSources\DTO.oauth_providers.datasource" />
+    <None Include="Properties\DataSources\DTO.phan_quyens.datasource" />
+    <None Include="Properties\DataSources\DTO.phuong_thuc_thanh_toans.datasource" />
+    <None Include="Properties\DataSources\DTO.quyen_truy_caps.datasource" />
+    <None Include="Properties\DataSources\DTO.refresh_key_useds.datasource" />
+    <None Include="Properties\DataSources\DTO.san_phams.datasource" />
+    <None Include="Properties\DataSources\DTO.tai_khoans.datasource" />
+    <None Include="Properties\DataSources\DTO.thong_tin_san_phams.datasource" />
+    <None Include="Properties\DataSources\DTO.thuoc_tinh_san_phams.datasource" />
+    <None Include="Properties\DataSources\DTO.thuong_hieus.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_mhc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_mhc1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{5e35687d-34f3-43ca-9b57-4d5035963398}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tre_em.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thuong_hieu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ao_phong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ao_polo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ao_so_mi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ao_hoodie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ao_suit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ao_khoac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ao_mang_to.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quan_kaki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quan_denim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\matkhau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background_dn.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
