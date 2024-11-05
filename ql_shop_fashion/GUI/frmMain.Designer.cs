@@ -91,6 +91,8 @@ namespace GUI
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.banhang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.baocaothongke = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -124,7 +126,9 @@ namespace GUI
             this.danhmuc.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.sanpham,
             this.hoadon,
-            this.nhaphang});
+            this.nhaphang,
+            this.banhang,
+            this.baocaothongke});
             this.danhmuc.Expanded = true;
             this.danhmuc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("danhmuc.ImageOptions.Image")));
             this.danhmuc.Name = "danhmuc";
@@ -137,6 +141,7 @@ namespace GUI
             this.sanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sanpham.ImageOptions.Image")));
             this.sanpham.Name = "sanpham";
             this.sanpham.Text = "Sản Phẩm";
+            this.sanpham.Click += new System.EventHandler(this.sanpham_Click);
             // 
             // danhmucsanpham
             // 
@@ -145,7 +150,6 @@ namespace GUI
             this.nu,
             this.treem,
             this.thuong_hieu});
-            this.danhmucsanpham.Expanded = true;
             this.danhmucsanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("danhmucsanpham.ImageOptions.Image")));
             this.danhmucsanpham.Name = "danhmucsanpham";
             this.danhmucsanpham.Text = "Danh Mục Sản Phẩm";
@@ -437,7 +441,6 @@ namespace GUI
             this.nhaphang.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.theonhacungcap,
             this.theosanpham});
-            this.nhaphang.Expanded = true;
             this.nhaphang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("nhaphang.ImageOptions.Image")));
             this.nhaphang.Name = "nhaphang";
             this.nhaphang.Text = "Nhập Hàng";
@@ -566,6 +569,19 @@ namespace GUI
             this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement5.Text = "Phụ Kiện";
             // 
+            // banhang
+            // 
+            this.banhang.Name = "banhang";
+            this.banhang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.banhang.Text = "Bán Hàng";
+            // 
+            // baocaothongke
+            // 
+            this.baocaothongke.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("baocaothongke.ImageOptions.Image")));
+            this.baocaothongke.Name = "baocaothongke";
+            this.baocaothongke.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.baocaothongke.Text = "Báo Cáo - Thống Kê";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -649,5 +665,7 @@ namespace GUI
         private DevExpress.XtraBars.Navigation.AccordionControlElement theonhacungcap;
         private DevExpress.XtraBars.Navigation.AccordionControlElement theosanpham;
         private System.Windows.Forms.Panel pn_main;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement banhang;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement baocaothongke;
     }
 }

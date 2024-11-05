@@ -130,5 +130,10 @@ namespace GUI
             panel_chinh.Controls.Add(nhapHangTheoSanPham);
             nhapHangTheoSanPham.BringToFront();
         }
+
+        private void sanpham_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

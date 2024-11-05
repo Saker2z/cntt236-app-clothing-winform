@@ -112,5 +112,32 @@ namespace GUI
                 return;
             }
         }
+
+
+        private void them_Click(object sender, EventArgs e)
+        {
+            PhieuNhap phieuNhap = new PhieuNhap();
+            phieuNhap.Show();
+        }
+
+        private void duyet_Click(object sender, EventArgs e)
+        {
+            frmDuyetSanPham duyetSanPham = new frmDuyetSanPham();
+            duyetSanPham.Show();
+        }
+
+        private void thoat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

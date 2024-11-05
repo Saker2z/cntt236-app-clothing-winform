@@ -78,6 +78,12 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDuyetSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDuyetSanPham.Designer.cs">
+      <DependentUpon>frmDuyetSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDuyetSanPham.resx">
+      <DependentUpon>frmDuyetSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -250,6 +259,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background_dn.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thoat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inphieu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duyet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\themphieu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suaphieu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xoaphieu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadphieu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

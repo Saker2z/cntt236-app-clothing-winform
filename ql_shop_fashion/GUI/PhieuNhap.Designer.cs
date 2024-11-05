@@ -83,11 +83,11 @@ namespace GUI
             // 
             // dgv_sp
             // 
-            this.dgv_sp.Location = new System.Drawing.Point(-8, 309);
+            this.dgv_sp.Location = new System.Drawing.Point(0, 321);
             this.dgv_sp.MainView = this.gridView;
             this.dgv_sp.MenuManager = this.ribbonControl;
             this.dgv_sp.Name = "dgv_sp";
-            this.dgv_sp.Size = new System.Drawing.Size(893, 258);
+            this.dgv_sp.Size = new System.Drawing.Size(885, 246);
             this.dgv_sp.TabIndex = 2;
             this.dgv_sp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -113,7 +113,7 @@ namespace GUI
             this.bbiDelete,
             this.bbiRefresh});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 20;
+            this.ribbonControl.MaxItemId = 21;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -139,28 +139,28 @@ namespace GUI
             // 
             // bbiNew
             // 
-            this.bbiNew.Caption = "New";
+            this.bbiNew.Caption = "Thêm";
             this.bbiNew.Id = 16;
             this.bbiNew.ImageOptions.ImageUri.Uri = "New";
             this.bbiNew.Name = "bbiNew";
             // 
             // bbiEdit
             // 
-            this.bbiEdit.Caption = "Edit";
+            this.bbiEdit.Caption = "Sửa";
             this.bbiEdit.Id = 17;
             this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit";
             this.bbiEdit.Name = "bbiEdit";
             // 
             // bbiDelete
             // 
-            this.bbiDelete.Caption = "Delete";
+            this.bbiDelete.Caption = "Xóa";
             this.bbiDelete.Id = 18;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
             // 
             // bbiRefresh
             // 
-            this.bbiRefresh.Caption = "Refresh";
+            this.bbiRefresh.Caption = "Load";
             this.bbiRefresh.Id = 19;
             this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
             this.bbiRefresh.Name = "bbiRefresh";
@@ -437,6 +437,7 @@ namespace GUI
             this.Controls.Add(this.ribbonControl);
             this.Name = "PhieuNhap";
             this.Ribbon = this.ribbonControl;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
