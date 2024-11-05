@@ -48,6 +48,11 @@ namespace GUI
             this.inphieu = new System.Windows.Forms.ToolStripButton();
             this.duyet = new System.Windows.Forms.ToolStripButton();
             this.menuchucnang = new System.Windows.Forms.ToolStrip();
+            this.chon = new System.Windows.Forms.ToolStripDropDownButton();
+            this.them = new System.Windows.Forms.ToolStripMenuItem();
+            this.sua = new System.Windows.Forms.ToolStripMenuItem();
+            this.xoa = new System.Windows.Forms.ToolStripMenuItem();
+            this.load = new System.Windows.Forms.ToolStripMenuItem();
             this.lb_manhaphang = new DevExpress.XtraEditors.LabelControl();
             this.cbb_trangthai = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbb_manhacungcap = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -57,11 +62,6 @@ namespace GUI
             this.txt_manhanvien = new DevExpress.XtraEditors.TextEdit();
             this.txt_manhaphang = new DevExpress.XtraEditors.TextEdit();
             this.panel_chinh = new System.Windows.Forms.Panel();
-            this.chon = new System.Windows.Forms.ToolStripDropDownButton();
-            this.them = new System.Windows.Forms.ToolStripMenuItem();
-            this.sua = new System.Windows.Forms.ToolStripMenuItem();
-            this.xoa = new System.Windows.Forms.ToolStripMenuItem();
-            this.load = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sanpham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_sanpham.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tenncc.Properties)).BeginInit();
@@ -230,6 +230,7 @@ namespace GUI
             this.duyet.Name = "duyet";
             this.duyet.Size = new System.Drawing.Size(61, 22);
             this.duyet.Text = "Duyệt";
+            this.duyet.Click += new System.EventHandler(this.duyet_Click);
             // 
             // menuchucnang
             // 
@@ -243,6 +244,48 @@ namespace GUI
             this.menuchucnang.Size = new System.Drawing.Size(1098, 25);
             this.menuchucnang.TabIndex = 23;
             this.menuchucnang.Text = "MenuChucNang";
+            // 
+            // chon
+            // 
+            this.chon.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.them,
+            this.sua,
+            this.xoa,
+            this.load});
+            this.chon.Image = global::GUI.Properties.Resources.chon;
+            this.chon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.chon.Name = "chon";
+            this.chon.Size = new System.Drawing.Size(67, 22);
+            this.chon.Text = "Chọn";
+            // 
+            // them
+            // 
+            this.them.Image = global::GUI.Properties.Resources.themphieu;
+            this.them.Name = "them";
+            this.them.Size = new System.Drawing.Size(180, 22);
+            this.them.Text = "Thêm";
+            this.them.Click += new System.EventHandler(this.them_Click);
+            // 
+            // sua
+            // 
+            this.sua.Image = global::GUI.Properties.Resources.suaphieu;
+            this.sua.Name = "sua";
+            this.sua.Size = new System.Drawing.Size(108, 22);
+            this.sua.Text = "Sửa";
+            // 
+            // xoa
+            // 
+            this.xoa.Image = global::GUI.Properties.Resources.xoaphieu;
+            this.xoa.Name = "xoa";
+            this.xoa.Size = new System.Drawing.Size(108, 22);
+            this.xoa.Text = "Xóa";
+            // 
+            // load
+            // 
+            this.load.Image = global::GUI.Properties.Resources.loadphieu;
+            this.load.Name = "load";
+            this.load.Size = new System.Drawing.Size(108, 22);
+            this.load.Text = "Load";
             // 
             // lb_manhaphang
             // 
@@ -335,47 +378,6 @@ namespace GUI
             this.panel_chinh.Name = "panel_chinh";
             this.panel_chinh.Size = new System.Drawing.Size(1098, 642);
             this.panel_chinh.TabIndex = 1;
-            // 
-            // chon
-            // 
-            this.chon.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.them,
-            this.sua,
-            this.xoa,
-            this.load});
-            this.chon.Image = global::GUI.Properties.Resources.chon;
-            this.chon.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.chon.Name = "chon";
-            this.chon.Size = new System.Drawing.Size(67, 22);
-            this.chon.Text = "Chọn";
-            // 
-            // them
-            // 
-            this.them.Image = global::GUI.Properties.Resources.themphieu;
-            this.them.Name = "them";
-            this.them.Size = new System.Drawing.Size(180, 22);
-            this.them.Text = "Thêm";
-            // 
-            // sua
-            // 
-            this.sua.Image = global::GUI.Properties.Resources.suaphieu;
-            this.sua.Name = "sua";
-            this.sua.Size = new System.Drawing.Size(180, 22);
-            this.sua.Text = "Sửa";
-            // 
-            // xoa
-            // 
-            this.xoa.Image = global::GUI.Properties.Resources.xoaphieu;
-            this.xoa.Name = "xoa";
-            this.xoa.Size = new System.Drawing.Size(180, 22);
-            this.xoa.Text = "Xóa";
-            // 
-            // load
-            // 
-            this.load.Image = global::GUI.Properties.Resources.loadphieu;
-            this.load.Name = "load";
-            this.load.Size = new System.Drawing.Size(180, 22);
-            this.load.Text = "Load";
             // 
             // frmNhapHang
             // 

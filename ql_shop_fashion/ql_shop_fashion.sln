@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.35325.158
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ql_shop_fashion", "ql_shop_fashion\ql_shop_fashion.csproj", "{03ACD0C0-79B4-4752-B830-7BE03993BD44}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{04D33CCB-0D79-4EBD-BF0A-A4F211881A1A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{5E35687D-34F3-43CA-9B57-4D5035963398}"
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{03ACD0C0-79B4-4752-B830-7BE03993BD44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{03ACD0C0-79B4-4752-B830-7BE03993BD44}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{03ACD0C0-79B4-4752-B830-7BE03993BD44}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{03ACD0C0-79B4-4752-B830-7BE03993BD44}.Release|Any CPU.Build.0 = Release|Any CPU
 		{04D33CCB-0D79-4EBD-BF0A-A4F211881A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{04D33CCB-0D79-4EBD-BF0A-A4F211881A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04D33CCB-0D79-4EBD-BF0A-A4F211881A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU

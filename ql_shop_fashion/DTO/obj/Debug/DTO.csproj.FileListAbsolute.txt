@@ -22,3 +22,9 @@ E:\Cac mon hoc\Github\backup1\cntt236-app-clothing-winform\ql_shop_fashion\DTO\o
 E:\Cac mon hoc\Github\backup1\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 E:\Cac mon hoc\Github\backup1\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.dll
 E:\Cac mon hoc\Github\backup1\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.pdb
+E:\Cac mon hoc\Github\backup2\cntt236-app-clothing-winform\ql_shop_fashion\DTO\bin\Debug\DTO.dll.config
+E:\Cac mon hoc\Github\backup2\cntt236-app-clothing-winform\ql_shop_fashion\DTO\bin\Debug\DTO.dll
+E:\Cac mon hoc\Github\backup2\cntt236-app-clothing-winform\ql_shop_fashion\DTO\bin\Debug\DTO.pdb
+E:\Cac mon hoc\Github\backup2\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+E:\Cac mon hoc\Github\backup2\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.dll
+E:\Cac mon hoc\Github\backup2\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.pdb

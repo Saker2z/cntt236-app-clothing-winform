@@ -112,5 +112,17 @@ namespace GUI
                 return;
             }
         }
+
+        private void duyet_Click(object sender, EventArgs e)
+        {
+            frmDuyetSanPham duyetSanPham = new frmDuyetSanPham();
+            duyetSanPham.Show();
+        }
+
+        private void them_Click(object sender, EventArgs e)
+        {
+            PhieuNhap phieuNhap = new PhieuNhap();
+            phieuNhap.Show();
+        }
     }
 }
