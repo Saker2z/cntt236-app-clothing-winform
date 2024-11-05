@@ -24,5 +24,16 @@ namespace DAL
             var ds = from i in data.san_phams  select i.ten_san_pham;
             return ds.ToList();
         }
+        public string get_name_by_id(int id)
+        {
+            // Lấy tên sản phẩm dựa trên mã sản phẩm
+            var ds = from i in data.san_phams
+                     where i.ma_san_pham == id
+                     select i.ten_san_pham;
+
+            // Trả về tên sản phẩm đầu tiên hoặc null nếu không tìm thấy
+            return ds.FirstOrDefault();
+        }
+
     }
 }

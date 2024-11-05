@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DTO;
 
 namespace BLL
 {
@@ -21,6 +22,10 @@ namespace BLL
         public IQueryable<dynamic> get_nhap_hang_by_id(int id)
         {
             return data.get_nhap_hang_by_id(id);
+        }
+        public bool nhap_hang_add(nhap_hang s, List<chi_tiet_nhap_hang> a)
+        {
+            return data.nhap_hang_add(s,a);
         }
     }
 }

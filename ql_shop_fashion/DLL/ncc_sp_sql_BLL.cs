@@ -26,5 +26,6 @@ namespace BLL
         {
             return sp.get_list_name_ncc_id_sp(id);
         }
+      
     }
 }

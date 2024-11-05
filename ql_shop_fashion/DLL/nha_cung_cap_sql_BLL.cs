@@ -22,6 +22,10 @@ namespace BLL
         {
             return ncc.get_id_ncc(name);
         }
-        
+        public string get_name_by_id(int id)
+        {
+            return ncc.get_name_by_id(id);
+        }
+
     }
 }

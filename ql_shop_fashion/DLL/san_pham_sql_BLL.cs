@@ -22,6 +22,12 @@ namespace BLL
         {
             return sp_.get_all_sp_name();
         }
-        
+        public string get_name_by_id(int id)
+        {
+            return sp_.get_name_by_id(id);
+        }
+
+
+
     }
 }

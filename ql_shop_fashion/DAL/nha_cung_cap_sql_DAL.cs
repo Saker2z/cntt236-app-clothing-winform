@@ -28,5 +28,13 @@ namespace DAL
 
             return ds.FirstOrDefault();
         }
+        public string get_name_by_id(int id)
+        {
+            var ds = from i in ncc.nha_cung_caps
+                     where i.ma_nha_cung_cap == id
+                     select i.ten_nha_cung_cap;
+
+            return ds.FirstOrDefault();
+        }
     }
 }

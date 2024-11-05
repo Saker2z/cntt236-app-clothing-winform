@@ -155,7 +155,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="chi_tiet_nhap_sql_DAL.cs" />
-    <Compile Include="context.cs" />
     <Compile Include="nhap_hang_sql_DAL.cs" />
     <Compile Include="nha_cung_cap_sp_sql_DAL.cs" />
     <Compile Include="nha_cung_cap_sql_DAL.cs" />
@@ -165,7 +164,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="san_pham_DAL.cs" />
     <Compile Include="san_pham_sql_DAL.cs" />
   </ItemGroup>
   <ItemGroup>

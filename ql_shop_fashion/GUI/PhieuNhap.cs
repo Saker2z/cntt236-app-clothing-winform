@@ -16,6 +16,7 @@ using DevExpress.XtraEditors.Repository; // Để sử dụng RepositoryItemComb
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Controls;
 using BLL;
+using DTO;
 
 // Namespace cho GridView
 
@@ -28,6 +29,9 @@ namespace GUI
         private chi_tiet_nhap_sql_BLL ct_sp_bll;
         private san_pham_sql_BLL sp_bll;
         private ncc_sp_sql_BLL nccsp_bll;
+        private nhap_hang_sql_BLL nhap_bll;
+        bool check = false;
+
         public PhieuNhap()
         {
             InitializeComponent();
@@ -39,19 +43,406 @@ namespace GUI
             cbb_tensp.TextChanged += Cbb_tensp_TextChanged;
             cbb_tensp.SelectedIndexChanged += Cbb_tensp_SelectedIndexChanged;
             cbb_ncc.SelectedIndexChanged += Cbb_ncc_SelectedIndexChanged;
-            
+            cbb_sl.SelectedIndexChanged += Cbb_sl_SelectedIndexChanged;
+            bt_them.Click += Bt_them_Click;
+            bt_xoa.ItemClick += Bt_xoa_ItemClick;
+            dgv_sp_add.CellClick += Dgv_sp_add_CellClick1;
+            bt_sua.ItemClick += Bt_sua_ItemClick;
+            bt_add_all.ItemClick += Bt_add_all_ItemClick;
 
+        }
+        List<DataTable> GroupProductsBySupplier()
+        {
+            // Khởi tạo danh sách để lưu các DataTable
+            List<DataTable> productTables = new List<DataTable>();
+
+            // Lấy danh sách các nhà cung cấp duy nhất từ DataGridView
+            var uniqueSuppliers = dgv_sp_add.Rows
+                .Cast<DataGridViewRow>()
+                .Select(row => new
+                {
+                    MaNhaCungCap = Convert.ToInt32(row.Cells["ma_nha_cung_cap"].Value)
+                  
+        })
+                .Distinct()
+                .ToList();
+
+            // Lặp qua từng nhà cung cấp
+            foreach (var supplier in uniqueSuppliers)
+            {
+                // Tạo một DataTable mới cho nhà cung cấp này
+                DataTable dt = new DataTable();
+                dt.TableName = supplier.MaNhaCungCap.ToString(); // Đặt tên cho DataTable
+
+                // Thêm các cột vào DataTable
+                dt.Columns.Add("ma_nha_cung_cap", typeof(int));
+                dt.Columns.Add("ma_san_pham", typeof(int));
+                dt.Columns.Add("so_luong", typeof(int));
+                dt.Columns.Add("gia_nhap", typeof(decimal));
+
+                // Lọc các sản phẩm theo nhà cung cấp
+                var products = dgv_sp_add.Rows
+                    .Cast<DataGridViewRow>()
+                    .Where(row => Convert.ToInt32(row.Cells["ma_nha_cung_cap"].Value) == supplier.MaNhaCungCap);
+
+                // Thêm các dòng vào DataTable
+                foreach (var product in products)
+                {
+                    dt.Rows.Add(
+                        supplier.MaNhaCungCap, // Thêm ma_nha_cung_cap
+                        Convert.ToInt32(product.Cells["ma_san_pham"].Value),
+                        Convert.ToInt32(product.Cells["so_luong"].Value),
+                        Convert.ToDecimal(product.Cells["gia_nhap"].Value)
+                    );
+                }
+
+                // Thêm DataTable vào danh sách
+                productTables.Add(dt);
+            }
+
+            return productTables;
+        }
+        void them_phieu()
+        {
+            List<DataTable> productTables = GroupProductsBySupplier();
+            nhap_hang_sql_BLL nhap_bll = new nhap_hang_sql_BLL();
+            int count = 1;
+
+            // Duyệt qua từng DataTable
+            foreach (DataTable dt in productTables)
+            {
+                
+                // Tạo đối tượng nhap_hang
+                nhap_hang nhap = new nhap_hang();
+                List<chi_tiet_nhap_hang> ct = new List<chi_tiet_nhap_hang>();
+
+                // Duyệt qua từng hàng trong DataTable
+                foreach (DataRow row in dt.Rows)
+                {
+                    chi_tiet_nhap_hang a = new chi_tiet_nhap_hang
+                    {
+                        ma_san_pham = Convert.ToInt32(row["ma_san_pham"]),
+                        so_luong = Convert.ToInt32(row["so_luong"]),
+                        gia_nhap = Convert.ToDecimal(row["gia_nhap"]),
+                        
+                    };
+                    
+                 
+                    ct.Add(a);
+                }
+
+                // Lấy mã nhà cung cấp từ tên của DataTable
+                int mancc = int.Parse(dt.TableName);
+                
+                if (mancc == 0)
+                {
+                    return;
+                }
+                nhap.ma_nhan_vien = 1; // Giả sử đây là mã nhân viên
+                nhap.ma_nha_cung_cap = mancc;
+                nhap.ngay_nhap = date_ngaynhap.Value;
+                nhap.ghi_chu = txt_ghichu.Text;
+                nhap.trang_thai = txt_tt.Text;
+
+                // Thực hiện thêm phiếu nhập hàng
+                if (nhap_bll.nhap_hang_add(nhap, ct))
+                {
+                    MessageBox.Show("Tạo thành công đơn " + count + " !!!");
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi đơn thứ " + count + " !!!");
+                    return;
+                }
+
+                count++;
+            }
+        }
+
+
+
+        private void Bt_add_all_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            them_phieu();
+        }
+
+        private bool FindAndUpdateRow(int maSanPham, int maNhaCungCap, int newQuantity, decimal newGiaNhap)
+        {
+            bool found = false; // Biến đánh dấu có tìm thấy dòng hay không
+
+            // Lặp qua từng dòng trong DataGridView
+            foreach (DataGridViewRow row in dgv_sp_add.Rows)
+            {
+                // Lấy giá trị từ các ô trong dòng
+                int rowMaSanPham = Convert.ToInt32(row.Cells["ma_san_pham"].Value);
+                int rowMaNhaCungCap = Convert.ToInt32(row.Cells["ma_nha_cung_cap"].Value);
+
+                // Kiểm tra xem có trùng khớp với ma_san_pham và ma_nha_cung_cap không
+                if (rowMaSanPham == maSanPham && rowMaNhaCungCap == maNhaCungCap)
+                {
+                    // Nếu tìm thấy, cập nhật giá trị trong dòng
+                    row.Cells["so_luong"].Value = newQuantity; // Cập nhật số lượng
+                    row.Cells["gia_nhap"].Value = newGiaNhap; // Cập nhật giá nhập
+
+                    found = true; // Đánh dấu là đã tìm thấy
+                    break; // Thoát khỏi vòng lặp
+                }
+            }
+
+            // Trả về giá trị của biến found
+            return found;
+        }
+
+
+        private void Bt_sua_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (check)
+            {
+               if( check_in_put() == false)
+                {
+                    MessageBox.Show("Dữ liệu không hợp lệ!!!", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }    
+                sp_bll = new san_pham_sql_BLL();
+                ncc_bll = new nha_cung_cap_sql_BLL();
+
+                // Lấy mã sản phẩm và mã nhà cung cấp từ các ComboBox
+                int ma = sp_bll.get_id_sp_by_name(cbb_tensp.SelectedItem.ToString());
+                int mancc = ncc_bll.get_id_ncc(cbb_ncc.SelectedItem.ToString()); // Sửa lại để lấy mã nhà cung cấp
+
+                int sl = int.Parse(cbb_sl.SelectedItem.ToString());
+
+                decimal gp;
+                // Kiểm tra xem giá nhập có hợp lệ hay không
+                if (!decimal.TryParse(txt_gianhap.Text, out gp))
+                {
+                    MessageBox.Show("Giá nhập không hợp lệ. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Gọi hàm FindAndUpdateRow để cập nhật thông tin
+                if (FindAndUpdateRow(ma, mancc, sl, gp))
+                {
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    check = false;
+                    UpdateDataGridView();
+                    clear_all();
+                    capNhatTongTien();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dòng cần cập nhật.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dòng cần sửa", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Nếu check là false, thoát khỏi hàm
+            }
+        }
+
+
+        private void Dgv_sp_add_CellClick1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Đảm bảo rằng RowIndex là hợp lệ
+            {
+                check = true;
+                clear_all(); // Gọi hàm để xóa các trường trước đó
+                sp_bll = new san_pham_sql_BLL();
+                ncc_bll = new nha_cung_cap_sql_BLL();
+
+                // Lấy dòng được chọn
+                DataGridViewRow selectedRow = dgv_sp_add.Rows[e.RowIndex];
+
+                // Kiểm tra giá trị của các ô để tránh lỗi
+                if (selectedRow.Cells["ma_nha_cung_cap"].Value != null &&
+                    selectedRow.Cells["ma_san_pham"].Value != null &&
+                    selectedRow.Cells["so_luong"].Value != null &&
+                    selectedRow.Cells["gia_nhap"].Value != null)
+                {
+                    // Lấy giá trị từ các ô
+                    int maNhaCungCap = Convert.ToInt32(selectedRow.Cells["ma_nha_cung_cap"].Value);
+                    int maSanPham = Convert.ToInt32(selectedRow.Cells["ma_san_pham"].Value);
+                    int soLuong = Convert.ToInt32(selectedRow.Cells["so_luong"].Value);
+                    decimal giaNhap = Convert.ToDecimal(selectedRow.Cells["gia_nhap"].Value);
+
+                    // Cập nhật giao diện với các giá trị đã lấy
+                    cbb_tensp.SelectedItem = sp_bll.get_name_by_id(maSanPham); // Lấy tên sản phẩm từ id
+                    cbb_ncc.SelectedItem = ncc_bll.get_name_by_id(maNhaCungCap); // Lấy tên nhà cung cấp từ id
+                    cbb_sl.SelectedItem = soLuong; // Chuyển đổi số lượng sang chuỗi
+                    txt_gianhap.Text = giaNhap.ToString("F2"); // Định dạng giá nhập với 2 chữ số thập phân
+                }
+                else
+                {
+                    // Thông báo cho người dùng nếu có dữ liệu không hợp lệ
+                    MessageBox.Show("Dữ liệu không hợp lệ. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        void clear_all()
+        {
+            cbb_tensp.SelectedIndex = -1;
+            cbb_ncc.SelectedIndex = -1;
+            cbb_sl.SelectedIndex = 0;
+            txt_gianhap.Text = "0";
+
+        }
+
+        private void Dgv_sp_add_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Bt_xoa_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            RemoveSelectedRowFromDataGridView();
+        }
+
+        private void Bt_them_Click(object sender, EventArgs e)
+        {
+            
+            them_dgv();
+        }
+        void UpdateDataGridView()
+        {
+            // Có thể thêm logic tại đây nếu cần làm mới dữ liệu hoặc thực hiện các cập nhật khác.
+            // Ví dụ: tự động cuộn đến dòng cuối cùng vừa thêm, hoặc làm mới dữ liệu từ nguồn khác nếu cần.
+
+            // Tự động cuộn đến dòng cuối cùng vừa thêm
+            if (dgv_sp_add.Rows.Count > 0)
+            {
+                dgv_sp_add.FirstDisplayedScrollingRowIndex = dgv_sp_add.Rows.Count - 1;
+            }
+        }
+        bool IsDuplicateEntry(int id, int idsp)
+        {
+            foreach (DataGridViewRow row in dgv_sp_add.Rows)
+            {
+                // Kiểm tra nếu dòng không phải là dòng mới
+                if (row.Cells["ma_nha_cung_cap"].Value != null && row.Cells["ma_san_pham"].Value != null)
+                {
+                    int existingId = Convert.ToInt32(row.Cells["ma_nha_cung_cap"].Value);
+                    int existingIdsp = Convert.ToInt32(row.Cells["ma_san_pham"].Value);
+
+                    // Kiểm tra nếu id và idsp trùng
+                    if (existingId == id && existingIdsp == idsp)
+                    {
+                        return true; // Có trùng
+                    }
+                }
+            }
+            return false; // Không có trùng
+        }
+        void them_dgv()
+        {
+            // Khởi tạo các BLL
+            ncc_bll = new nha_cung_cap_sql_BLL();
+            sp_bll = new san_pham_sql_BLL();
+            if (check_in_put() == false)
+            {
+                return;
+            }
+            // Lấy ID nhà cung cấp
+            int id = ncc_bll.get_id_ncc(cbb_ncc.SelectedItem.ToString());
+
+            // Lấy ID sản phẩm
+            int idsp = sp_bll.get_id_sp_by_name(cbb_tensp.SelectedItem.ToString());
+               
+            if (IsDuplicateEntry(id, idsp)!=true)
+
+            {
+
+
+                // Kiểm tra nếu cbb_ncc và cbb_tensp có giá trị hợp lệ
+                if (id != 0 && idsp != 0)
+                {
+                    // Thêm dòng vào DataGridView
+                    dgv_sp_add.Rows.Add(id, idsp, int.Parse(cbb_sl.SelectedItem.ToString()), txt_gianhap.Text);
+                    UpdateDataGridView();
+                    capNhatTongTien();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn nhà cung cấp và sản phẩm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mã sản phẩm và mã nhà cung cấp trùng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+        void RemoveSelectedRowFromDataGridView()
+        {
+            // Kiểm tra xem có dòng nào được chọn không
+            if (dgv_sp_add.SelectedRows.Count > 0)
+            {
+                // Hiển thị hộp thoại xác nhận
+                var result = MessageBox.Show("Bạn có chắc chắn muốn xóa dòng đã chọn không?",
+                                               "Xác nhận xóa",
+                                               MessageBoxButtons.YesNo,
+                                               MessageBoxIcon.Question);
+
+                // Nếu người dùng chọn Yes, thực hiện xóa
+                if (result == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow selectedRow in dgv_sp_add.SelectedRows)
+                    {
+                        // Kiểm tra xem dòng có phải là dòng mới (dòng không lưu)
+                        if (!selectedRow.IsNewRow)
+                        {
+                            MessageBox.Show("Xóa thành công.", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dgv_sp_add.Rows.Remove(selectedRow);
+                            UpdateDataGridView();
+                            capNhatTongTien();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+
+        private void Cbb_sl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tinh_gia();
+        }
+        bool check_in_put()
+        {
+            if(cbb_tensp.SelectedIndex ==  -1 )
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm cần nhập hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }    
+            if(cbb_ncc.SelectedIndex == -1)
+            {
+                MessageBox.Show("Nhà cung cấp không được để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }  
+            if(cbb_sl.SelectedIndex == 0 || cbb_sl.SelectedIndex == -1 || int.Parse(cbb_sl.SelectedItem.ToString()) <0 )
+            {
+                MessageBox.Show("Vui lòng chọn giá trị > 0.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
         }
 
         private void Cbb_ncc_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cbb_sl.SelectedIndex = 0;
             if(cbb_ncc.SelectedIndex==-1)
             {
                 if (cbb_tensp.SelectedIndex != -1)
                 {
                     sp_bll = new san_pham_sql_BLL();
                     load_cbb_ncc(sp_bll.get_id_sp_by_name(cbb_tensp.SelectedItem.ToString()));
-                    
+                    tinh_gia();
                 }
                 txt_dg.Text = "0";
                 return;
@@ -60,12 +451,33 @@ namespace GUI
           
               
         }
+        void dgv_sp()
+        {
+            dgv_sp_add.Columns.Clear();
+
+            // Thêm các cột mới
+            dgv_sp_add.Columns.Add("ma_nha_cung_cap", "Mã nhà cung cấp");
+            dgv_sp_add.Columns.Add("ma_san_pham", "Mã sản phẩm");
+            dgv_sp_add.Columns.Add("so_luong", "Số lượng");
+            dgv_sp_add.Columns.Add("gia_nhap", "Giá nhập");
+
+            // Thiết lập chế độ tự động cho các cột
+            int columnWidth = dgv_sp_add.Width / dgv_sp_add.Columns.Count; // Chiều rộng bằng nhau
+            foreach (DataGridViewColumn column in dgv_sp_add.Columns)
+            {
+                column.Width = columnWidth;
+            }
+            dgv_sp_add.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Chọn cả dòng
+            dgv_sp_add.MultiSelect = false;
+            dgv_sp_add.ReadOnly = true;
+        }
 
         private void Cbb_tensp_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbb_ncc.Properties.Items.Clear();
             cbb_ncc.SelectedIndex = -1;
             txt_dg.Text = "0";
+            cbb_sl.SelectedIndex = 0;
             try
             {
                 if (cbb_tensp.SelectedItem != null)
@@ -73,17 +485,20 @@ namespace GUI
                    
                     sp_bll = new san_pham_sql_BLL();
                     int? id = sp_bll.get_id_sp_by_name(cbb_tensp.SelectedItem.ToString());
-                   
+
                     if (id.HasValue)
                     {
-                        
+
                         load_dgv_sp_ss(id.Value);
-                      
+
                         load_cbb_ncc(id.Value);
-                    }else
+                        tinh_gia();
+                    }
+                    else
                     {
-                        
-                    }    
+
+                    }
+
                     
                 }
                 else
@@ -92,6 +507,7 @@ namespace GUI
                     txt_dg.Text = "";
                     cbb_ncc.Properties.Items.Clear();
                     cbb_ncc.SelectedIndex = -1;
+                    cbb_sl.SelectedIndex = 0;
                     return;
                 }
             }
@@ -144,6 +560,7 @@ namespace GUI
             dgv_gia.DataSource = null;
             dgv_gia.DataSource = nccsp_bll.get_nccsp_by_id_sp(id);
         }
+  
         private void Cbb_tensp_TextChanged(object sender, EventArgs e)
         {
             var comboBox = sender as ComboBoxEdit;
@@ -192,6 +609,74 @@ namespace GUI
             // Hiển thị popup với các mục đã lọc
             comboBox.ShowPopup();
         }
+        void tinh_gia()
+        {
+            // Kiểm tra xem người dùng đã chọn nhà cung cấp và số lượng hay chưa
+            if (cbb_ncc.SelectedIndex != -1 && cbb_sl.SelectedIndex != -1)
+            {
+                // Khai báo biến để lưu trữ giá trị
+                double price;
+                int quantity;
+
+                // Kiểm tra và chuyển đổi giá trị từ txt_dg
+                // Sử dụng Trim() để loại bỏ khoảng trắng không cần thiết
+                string priceText = txt_dg.Text.Trim();
+                string quantityText = cbb_sl.SelectedItem.ToString().Trim();
+
+                // Chuyển đổi giá trị và xử lý lỗi
+                if (double.TryParse(priceText, out price) && int.TryParse(quantityText, out quantity))
+                {
+                    // Tính giá nhập và gán vào txt_gianhap
+                    double totalPrice = price * quantity;
+
+                    // Định dạng giá nhập để loại bỏ số 0 không cần thiết
+                    txt_gianhap.Text = totalPrice.ToString("0.##"); // Định dạng với tối đa 2 chữ số thập phân
+                }
+                else
+                {
+                    // Nếu giá trị không hợp lệ, gán giá trị mặc định cho txt_gianhap
+                    txt_gianhap.Text = "0"; // Gán giá trị 0 nếu không hợp lệ
+                    MessageBox.Show("Giá và số lượng phải là số hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                // Nếu không có lựa chọn nào, gán giá trị mặc định cho txt_gianhap
+                txt_gianhap.Text = "0"; // Gán giá trị 0 nếu không có lựa chọn
+            }
+
+            // Loại bỏ số .00 từ txt_dg nếu không cần thiết
+            if (decimal.TryParse(txt_dg.Text, out decimal currentPrice))
+            {
+                txt_dg.Text = currentPrice.ToString("0.##"); // Hiển thị giá mà không có phần thập phân nếu nó bằng 0
+            }
+        }
+
+
+
+
+        void capNhatTongTien()
+        {
+            decimal tongTien = 0; // Biến để lưu tổng tiền
+
+            // Lặp qua từng dòng trong DataGridView
+            foreach (DataGridViewRow row in dgv_sp_add.Rows)
+            {
+                // Kiểm tra xem dòng có giá trị không (tránh dòng trống)
+                if (row.Cells["gia_nhap"].Value != null)
+                {
+                    // Lấy giá trị từ cột gia_nhap và cộng dồn vào tongTien
+                    decimal giaNhap;
+                    if (decimal.TryParse(row.Cells["gia_nhap"].Value.ToString(), out giaNhap))
+                    {
+                        tongTien += giaNhap;
+                    }
+                }
+            }
+
+            // Gán tổng tiền vào label
+            lb_thanhtien.Text = "Tổng tiền: " + tongTien.ToString(); // Định dạng với 2 chữ số thập phân
+        }
 
 
         void setDeflau()
@@ -215,7 +700,7 @@ namespace GUI
                 cbb_sl.Properties.Items.Add(i);
             }
             cbb_sl.SelectedIndex = 0;
-
+            cbb_sl.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
         }
 
      
@@ -225,7 +710,9 @@ namespace GUI
         {
             load_cbb_sp();
             setDeflau();
-           // LoadDataGridView(dgv_sp);
+            // LoadDataGridView(dgv_sp);
+            dgv_sp();
+            capNhatTongTien();
         }
 
       

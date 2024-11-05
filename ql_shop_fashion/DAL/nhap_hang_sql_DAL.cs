@@ -52,6 +52,38 @@ namespace DAL
                            };
             return nhapHang;
         }
+        public bool nhap_hang_add(nhap_hang newNhapHang, List<chi_tiet_nhap_hang> chiTietNhapHangs)
+        {
+            try
+            {
+                // Thêm bản ghi nhập hàng
+                data.nhap_hangs.InsertOnSubmit(newNhapHang);
+                data.SubmitChanges(); // Lưu bản ghi nhập hàng vào cơ sở dữ liệu
+
+                // Thêm chi tiết nhập hàng
+                if (chiTietNhapHangs != null && chiTietNhapHangs.Count > 0)
+                {
+                    foreach (var chiTiet in chiTietNhapHangs)
+                    {
+                        // Gán mã nhập hàng cho chi tiết
+                        chiTiet.ma_nhap_hang = newNhapHang.ma_nhap_hang;
+
+                        data.chi_tiet_nhap_hangs.InsertOnSubmit(chiTiet);
+                    }
+                }
+
+                data.SubmitChanges(); // Lưu chi tiết nhập hàng vào cơ sở dữ liệu
+                return true; // Trả về true nếu thành công
+            }
+            catch (Exception ex)
+            {
+                // Ném lại ngoại lệ đã xảy ra
+                throw new Exception("Có lỗi xảy ra khi thêm phiếu nhập hàng.", ex);
+                return false;
+            }
+        }
+
+
 
 
     }
