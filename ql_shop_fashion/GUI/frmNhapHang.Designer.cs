@@ -32,16 +32,16 @@ namespace GUI
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapHang));
             this.menuchucnang = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.them = new DevExpress.XtraBars.BarButtonItem();
             this.sua = new DevExpress.XtraBars.BarButtonItem();
             this.xoa = new DevExpress.XtraBars.BarButtonItem();
             this.thoat = new DevExpress.XtraBars.BarButtonItem();
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.txt_manhaphang = new DevExpress.XtraEditors.TextEdit();
             this.txt_manhanvien = new DevExpress.XtraEditors.TextEdit();
             this.txt_ghichu = new DevExpress.XtraEditors.TextEdit();
@@ -50,21 +50,21 @@ namespace GUI
             this.cbb_manhacungcap = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbb_trangthai = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panel_chinh = new System.Windows.Forms.Panel();
-            this.ngaynhap = new DevExpress.XtraEditors.DateEdit();
-            this.lb_manhaphang = new DevExpress.XtraEditors.LabelControl();
-            this.lb_manhanvien = new DevExpress.XtraEditors.LabelControl();
-            this.lb_ngaynhap = new DevExpress.XtraEditors.LabelControl();
-            this.lb_manhacungcap = new DevExpress.XtraEditors.LabelControl();
-            this.lb_ghichu = new DevExpress.XtraEditors.LabelControl();
-            this.lb_tongsoluong = new DevExpress.XtraEditors.LabelControl();
-            this.lb_tongtien = new DevExpress.XtraEditors.LabelControl();
-            this.lb_trangthai = new DevExpress.XtraEditors.LabelControl();
-            this.dgv_ncc = new System.Windows.Forms.DataGridView();
-            this.timkiemncc = new DevExpress.XtraEditors.LabelControl();
-            this.txt_tenncc = new DevExpress.XtraEditors.TextEdit();
+            this.dgv_sanpham = new System.Windows.Forms.DataGridView();
             this.timkiemsanpham = new DevExpress.XtraEditors.LabelControl();
             this.txt_sanpham = new DevExpress.XtraEditors.TextEdit();
-            this.dgv_sanpham = new System.Windows.Forms.DataGridView();
+            this.timkiemncc = new DevExpress.XtraEditors.LabelControl();
+            this.txt_tenncc = new DevExpress.XtraEditors.TextEdit();
+            this.dgv_nh = new System.Windows.Forms.DataGridView();
+            this.lb_trangthai = new DevExpress.XtraEditors.LabelControl();
+            this.lb_tongtien = new DevExpress.XtraEditors.LabelControl();
+            this.lb_tongsoluong = new DevExpress.XtraEditors.LabelControl();
+            this.lb_ghichu = new DevExpress.XtraEditors.LabelControl();
+            this.lb_manhacungcap = new DevExpress.XtraEditors.LabelControl();
+            this.lb_ngaynhap = new DevExpress.XtraEditors.LabelControl();
+            this.lb_manhanvien = new DevExpress.XtraEditors.LabelControl();
+            this.lb_manhaphang = new DevExpress.XtraEditors.LabelControl();
+            this.ngaynhap = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.menuchucnang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_manhaphang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_manhanvien.Properties)).BeginInit();
@@ -74,12 +74,12 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.cbb_manhacungcap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_trangthai.Properties)).BeginInit();
             this.panel_chinh.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sanpham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_sanpham.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_tenncc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_nh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaynhap.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaynhap.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ncc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_tenncc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_sanpham.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_sanpham)).BeginInit();
             this.SuspendLayout();
             // 
             // menuchucnang
@@ -99,6 +99,64 @@ namespace GUI
             this.thoat});
             this.menuchucnang.MaxItemId = 4;
             this.menuchucnang.StatusBar = this.bar3;
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Tools";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.them, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.sua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.xoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.thoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar1.Text = "Tools";
+            // 
+            // them
+            // 
+            this.them.Caption = "Thêm";
+            this.them.Id = 0;
+            this.them.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("them.ImageOptions.Image")));
+            this.them.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("them.ImageOptions.LargeImage")));
+            this.them.Name = "them";
+            // 
+            // sua
+            // 
+            this.sua.Caption = "Sửa";
+            this.sua.Id = 1;
+            this.sua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sua.ImageOptions.Image")));
+            this.sua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("sua.ImageOptions.LargeImage")));
+            this.sua.Name = "sua";
+            // 
+            // xoa
+            // 
+            this.xoa.Caption = "Xóa";
+            this.xoa.Id = 2;
+            this.xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xoa.ImageOptions.Image")));
+            this.xoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("xoa.ImageOptions.LargeImage")));
+            this.xoa.Name = "xoa";
+            // 
+            // thoat
+            // 
+            this.thoat.Caption = "Thoát";
+            this.thoat.Id = 3;
+            this.thoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("thoat.ImageOptions.Image")));
+            this.thoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("thoat.ImageOptions.LargeImage")));
+            this.thoat.Name = "thoat";
+            this.thoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.thoat_ItemClick);
+            // 
+            // bar3
+            // 
+            this.bar3.BarName = "Status bar";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Status bar";
             // 
             // barDockControlTop
             // 
@@ -131,62 +189,6 @@ namespace GUI
             this.barDockControlRight.Location = new System.Drawing.Point(1098, 24);
             this.barDockControlRight.Manager = this.menuchucnang;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 598);
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.them, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.sua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.xoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.thoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
-            this.bar1.Text = "Tools";
-            // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            // 
-            // them
-            // 
-            this.them.Caption = "Thêm";
-            this.them.Id = 0;
-            this.them.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.them.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.them.Name = "them";
-            // 
-            // sua
-            // 
-            this.sua.Caption = "Sửa";
-            this.sua.Id = 1;
-            this.sua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.sua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.sua.Name = "sua";
-            // 
-            // xoa
-            // 
-            this.xoa.Caption = "Xóa";
-            this.xoa.Id = 2;
-            this.xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.xoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.xoa.Name = "xoa";
-            // 
-            // thoat
-            // 
-            this.thoat.Caption = "Thoát";
-            this.thoat.Id = 3;
-            this.thoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.thoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.thoat.Name = "thoat";
-            this.thoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.thoat_ItemClick);
             // 
             // txt_manhaphang
             // 
@@ -256,7 +258,7 @@ namespace GUI
             this.panel_chinh.Controls.Add(this.txt_sanpham);
             this.panel_chinh.Controls.Add(this.timkiemncc);
             this.panel_chinh.Controls.Add(this.txt_tenncc);
-            this.panel_chinh.Controls.Add(this.dgv_ncc);
+            this.panel_chinh.Controls.Add(this.dgv_nh);
             this.panel_chinh.Controls.Add(this.lb_trangthai);
             this.panel_chinh.Controls.Add(this.lb_tongtien);
             this.panel_chinh.Controls.Add(this.lb_tongsoluong);
@@ -279,90 +281,30 @@ namespace GUI
             this.panel_chinh.Size = new System.Drawing.Size(1098, 598);
             this.panel_chinh.TabIndex = 0;
             // 
-            // ngaynhap
+            // dgv_sanpham
             // 
-            this.ngaynhap.EditValue = null;
-            this.ngaynhap.Location = new System.Drawing.Point(147, 109);
-            this.ngaynhap.MenuManager = this.menuchucnang;
-            this.ngaynhap.Name = "ngaynhap";
-            this.ngaynhap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ngaynhap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ngaynhap.Size = new System.Drawing.Size(384, 20);
-            this.ngaynhap.TabIndex = 8;
+            this.dgv_sanpham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_sanpham.Location = new System.Drawing.Point(741, 254);
+            this.dgv_sanpham.Name = "dgv_sanpham";
+            this.dgv_sanpham.Size = new System.Drawing.Size(336, 284);
+            this.dgv_sanpham.TabIndex = 22;
             // 
-            // lb_manhaphang
+            // timkiemsanpham
             // 
-            this.lb_manhaphang.Location = new System.Drawing.Point(21, 19);
-            this.lb_manhaphang.Name = "lb_manhaphang";
-            this.lb_manhaphang.Size = new System.Drawing.Size(68, 13);
-            this.lb_manhaphang.TabIndex = 9;
-            this.lb_manhaphang.Text = "Mã nhập hàng";
+            this.timkiemsanpham.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.timkiemsanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("timkiemsanpham.ImageOptions.Image")));
+            this.timkiemsanpham.Location = new System.Drawing.Point(1054, 208);
+            this.timkiemsanpham.Name = "timkiemsanpham";
+            this.timkiemsanpham.Size = new System.Drawing.Size(23, 20);
+            this.timkiemsanpham.TabIndex = 21;
             // 
-            // lb_manhanvien
+            // txt_sanpham
             // 
-            this.lb_manhanvien.Location = new System.Drawing.Point(21, 66);
-            this.lb_manhanvien.Name = "lb_manhanvien";
-            this.lb_manhanvien.Size = new System.Drawing.Size(64, 13);
-            this.lb_manhanvien.TabIndex = 10;
-            this.lb_manhanvien.Text = "Mã nhân viên";
-            // 
-            // lb_ngaynhap
-            // 
-            this.lb_ngaynhap.Location = new System.Drawing.Point(21, 112);
-            this.lb_ngaynhap.Name = "lb_ngaynhap";
-            this.lb_ngaynhap.Size = new System.Drawing.Size(52, 13);
-            this.lb_ngaynhap.TabIndex = 11;
-            this.lb_ngaynhap.Text = "Ngày nhập";
-            // 
-            // lb_manhacungcap
-            // 
-            this.lb_manhacungcap.Location = new System.Drawing.Point(21, 162);
-            this.lb_manhacungcap.Name = "lb_manhacungcap";
-            this.lb_manhacungcap.Size = new System.Drawing.Size(81, 13);
-            this.lb_manhacungcap.TabIndex = 12;
-            this.lb_manhacungcap.Text = "Mã nhà cung cấp";
-            // 
-            // lb_ghichu
-            // 
-            this.lb_ghichu.Location = new System.Drawing.Point(567, 19);
-            this.lb_ghichu.Name = "lb_ghichu";
-            this.lb_ghichu.Size = new System.Drawing.Size(35, 13);
-            this.lb_ghichu.TabIndex = 13;
-            this.lb_ghichu.Text = "Ghi chú";
-            // 
-            // lb_tongsoluong
-            // 
-            this.lb_tongsoluong.Location = new System.Drawing.Point(567, 66);
-            this.lb_tongsoluong.Name = "lb_tongsoluong";
-            this.lb_tongsoluong.Size = new System.Drawing.Size(68, 13);
-            this.lb_tongsoluong.TabIndex = 14;
-            this.lb_tongsoluong.Text = "Tổng số lượng";
-            // 
-            // lb_tongtien
-            // 
-            this.lb_tongtien.Location = new System.Drawing.Point(567, 112);
-            this.lb_tongtien.Name = "lb_tongtien";
-            this.lb_tongtien.Size = new System.Drawing.Size(62, 13);
-            this.lb_tongtien.TabIndex = 15;
-            this.lb_tongtien.Text = "Tổng giá tiền";
-            // 
-            // lb_trangthai
-            // 
-            this.lb_trangthai.Location = new System.Drawing.Point(567, 162);
-            this.lb_trangthai.Name = "lb_trangthai";
-            this.lb_trangthai.Size = new System.Drawing.Size(49, 13);
-            this.lb_trangthai.TabIndex = 16;
-            this.lb_trangthai.Text = "Trạng thái";
-            // 
-            // dgv_ncc
-            // 
-            this.dgv_ncc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ncc.Location = new System.Drawing.Point(21, 254);
-            this.dgv_ncc.Name = "dgv_ncc";
-            this.dgv_ncc.Size = new System.Drawing.Size(510, 284);
-            this.dgv_ncc.TabIndex = 17;
+            this.txt_sanpham.Location = new System.Drawing.Point(567, 209);
+            this.txt_sanpham.MenuManager = this.menuchucnang;
+            this.txt_sanpham.Name = "txt_sanpham";
+            this.txt_sanpham.Size = new System.Drawing.Size(481, 20);
+            this.txt_sanpham.TabIndex = 20;
             // 
             // timkiemncc
             // 
@@ -381,30 +323,90 @@ namespace GUI
             this.txt_tenncc.Size = new System.Drawing.Size(481, 20);
             this.txt_tenncc.TabIndex = 18;
             // 
-            // timkiemsanpham
+            // dgv_nh
             // 
-            this.timkiemsanpham.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.timkiemsanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("labelControl9.ImageOptions.Image")));
-            this.timkiemsanpham.Location = new System.Drawing.Point(1054, 208);
-            this.timkiemsanpham.Name = "timkiemsanpham";
-            this.timkiemsanpham.Size = new System.Drawing.Size(23, 20);
-            this.timkiemsanpham.TabIndex = 21;
+            this.dgv_nh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_nh.Location = new System.Drawing.Point(21, 254);
+            this.dgv_nh.Name = "dgv_nh";
+            this.dgv_nh.Size = new System.Drawing.Size(662, 284);
+            this.dgv_nh.TabIndex = 17;
             // 
-            // txt_sanpham
+            // lb_trangthai
             // 
-            this.txt_sanpham.Location = new System.Drawing.Point(567, 209);
-            this.txt_sanpham.MenuManager = this.menuchucnang;
-            this.txt_sanpham.Name = "txt_sanpham";
-            this.txt_sanpham.Size = new System.Drawing.Size(481, 20);
-            this.txt_sanpham.TabIndex = 20;
+            this.lb_trangthai.Location = new System.Drawing.Point(567, 162);
+            this.lb_trangthai.Name = "lb_trangthai";
+            this.lb_trangthai.Size = new System.Drawing.Size(49, 13);
+            this.lb_trangthai.TabIndex = 16;
+            this.lb_trangthai.Text = "Trạng thái";
             // 
-            // dgv_sanpham
+            // lb_tongtien
             // 
-            this.dgv_sanpham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_sanpham.Location = new System.Drawing.Point(567, 254);
-            this.dgv_sanpham.Name = "dgv_sanpham";
-            this.dgv_sanpham.Size = new System.Drawing.Size(510, 284);
-            this.dgv_sanpham.TabIndex = 22;
+            this.lb_tongtien.Location = new System.Drawing.Point(567, 112);
+            this.lb_tongtien.Name = "lb_tongtien";
+            this.lb_tongtien.Size = new System.Drawing.Size(62, 13);
+            this.lb_tongtien.TabIndex = 15;
+            this.lb_tongtien.Text = "Tổng giá tiền";
+            // 
+            // lb_tongsoluong
+            // 
+            this.lb_tongsoluong.Location = new System.Drawing.Point(567, 66);
+            this.lb_tongsoluong.Name = "lb_tongsoluong";
+            this.lb_tongsoluong.Size = new System.Drawing.Size(68, 13);
+            this.lb_tongsoluong.TabIndex = 14;
+            this.lb_tongsoluong.Text = "Tổng số lượng";
+            // 
+            // lb_ghichu
+            // 
+            this.lb_ghichu.Location = new System.Drawing.Point(567, 19);
+            this.lb_ghichu.Name = "lb_ghichu";
+            this.lb_ghichu.Size = new System.Drawing.Size(35, 13);
+            this.lb_ghichu.TabIndex = 13;
+            this.lb_ghichu.Text = "Ghi chú";
+            // 
+            // lb_manhacungcap
+            // 
+            this.lb_manhacungcap.Location = new System.Drawing.Point(21, 162);
+            this.lb_manhacungcap.Name = "lb_manhacungcap";
+            this.lb_manhacungcap.Size = new System.Drawing.Size(81, 13);
+            this.lb_manhacungcap.TabIndex = 12;
+            this.lb_manhacungcap.Text = "Mã nhà cung cấp";
+            // 
+            // lb_ngaynhap
+            // 
+            this.lb_ngaynhap.Location = new System.Drawing.Point(21, 112);
+            this.lb_ngaynhap.Name = "lb_ngaynhap";
+            this.lb_ngaynhap.Size = new System.Drawing.Size(52, 13);
+            this.lb_ngaynhap.TabIndex = 11;
+            this.lb_ngaynhap.Text = "Ngày nhập";
+            // 
+            // lb_manhanvien
+            // 
+            this.lb_manhanvien.Location = new System.Drawing.Point(21, 66);
+            this.lb_manhanvien.Name = "lb_manhanvien";
+            this.lb_manhanvien.Size = new System.Drawing.Size(68, 13);
+            this.lb_manhanvien.TabIndex = 10;
+            this.lb_manhanvien.Text = "Tên nhân viên";
+            // 
+            // lb_manhaphang
+            // 
+            this.lb_manhaphang.Location = new System.Drawing.Point(21, 19);
+            this.lb_manhaphang.Name = "lb_manhaphang";
+            this.lb_manhaphang.Size = new System.Drawing.Size(68, 13);
+            this.lb_manhaphang.TabIndex = 9;
+            this.lb_manhaphang.Text = "Mã nhập hàng";
+            // 
+            // ngaynhap
+            // 
+            this.ngaynhap.EditValue = null;
+            this.ngaynhap.Location = new System.Drawing.Point(147, 109);
+            this.ngaynhap.MenuManager = this.menuchucnang;
+            this.ngaynhap.Name = "ngaynhap";
+            this.ngaynhap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ngaynhap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ngaynhap.Size = new System.Drawing.Size(384, 20);
+            this.ngaynhap.TabIndex = 8;
             // 
             // frmNhapHang
             // 
@@ -429,12 +431,12 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.cbb_trangthai.Properties)).EndInit();
             this.panel_chinh.ResumeLayout(false);
             this.panel_chinh.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sanpham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_sanpham.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_tenncc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_nh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaynhap.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaynhap.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ncc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_tenncc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_sanpham.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_sanpham)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,7 +471,7 @@ namespace GUI
         private DevExpress.XtraEditors.LabelControl lb_manhanvien;
         private DevExpress.XtraEditors.LabelControl lb_manhaphang;
         private DevExpress.XtraEditors.DateEdit ngaynhap;
-        private System.Windows.Forms.DataGridView dgv_ncc;
+        private System.Windows.Forms.DataGridView dgv_nh;
         private DevExpress.XtraEditors.LabelControl timkiemsanpham;
         private DevExpress.XtraEditors.TextEdit txt_sanpham;
         private DevExpress.XtraEditors.LabelControl timkiemncc;
