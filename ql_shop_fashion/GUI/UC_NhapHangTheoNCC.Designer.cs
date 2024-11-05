@@ -90,8 +90,8 @@ namespace GUI
             // 
             this.themncc.Caption = "Thêm";
             this.themncc.Id = 0;
-            this.themncc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("them.ImageOptions.Image")));
-            this.themncc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("them.ImageOptions.LargeImage")));
+            this.themncc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("themncc.ImageOptions.Image")));
+            this.themncc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("themncc.ImageOptions.LargeImage")));
             this.themncc.Name = "themncc";
             this.themncc.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
             // 
@@ -99,25 +99,25 @@ namespace GUI
             // 
             this.suancc.Caption = "Sửa";
             this.suancc.Id = 1;
-            this.suancc.ImageOptions.DisabledImage = ((System.Drawing.Image)(resources.GetObject("sua.ImageOptions.DisabledImage")));
-            this.suancc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sua.ImageOptions.Image")));
-            this.suancc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("sua.ImageOptions.LargeImage")));
+            this.suancc.ImageOptions.DisabledImage = ((System.Drawing.Image)(resources.GetObject("suancc.ImageOptions.DisabledImage")));
+            this.suancc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("suancc.ImageOptions.Image")));
+            this.suancc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("suancc.ImageOptions.LargeImage")));
             this.suancc.Name = "suancc";
             // 
             // xoancc
             // 
             this.xoancc.Caption = "Xóa";
             this.xoancc.Id = 2;
-            this.xoancc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xoa.ImageOptions.Image")));
-            this.xoancc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("xoa.ImageOptions.LargeImage")));
+            this.xoancc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xoancc.ImageOptions.Image")));
+            this.xoancc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("xoancc.ImageOptions.LargeImage")));
             this.xoancc.Name = "xoancc";
             // 
             // nhaphangncc
             // 
             this.nhaphangncc.Caption = "Nhập Hàng";
             this.nhaphangncc.Id = 4;
-            this.nhaphangncc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("nhaphang.ImageOptions.Image")));
-            this.nhaphangncc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("nhaphang.ImageOptions.LargeImage")));
+            this.nhaphangncc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("nhaphangncc.ImageOptions.Image")));
+            this.nhaphangncc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("nhaphangncc.ImageOptions.LargeImage")));
             this.nhaphangncc.Name = "nhaphangncc";
             this.nhaphangncc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.nhaphang_ItemClick);
             // 
@@ -127,7 +127,7 @@ namespace GUI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.menuchucnang;
-            this.barDockControlTop.Size = new System.Drawing.Size(835, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(840, 24);
             // 
             // barDockControlBottom
             // 
@@ -135,7 +135,7 @@ namespace GUI
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 614);
             this.barDockControlBottom.Manager = this.menuchucnang;
-            this.barDockControlBottom.Size = new System.Drawing.Size(835, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(840, 0);
             // 
             // barDockControlLeft
             // 
@@ -149,7 +149,7 @@ namespace GUI
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(835, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(840, 24);
             this.barDockControlRight.Manager = this.menuchucnang;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 590);
             // 
@@ -161,49 +161,62 @@ namespace GUI
             // 
             // txt_tenncc
             // 
-            this.txt_tenncc.Location = new System.Drawing.Point(3, 30);
+            this.txt_tenncc.Location = new System.Drawing.Point(3, 3);
             this.txt_tenncc.MenuManager = this.menuchucnang;
             this.txt_tenncc.Name = "txt_tenncc";
-            this.txt_tenncc.Size = new System.Drawing.Size(381, 20);
+            this.txt_tenncc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tenncc.Properties.Appearance.Options.UseFont = true;
+            this.txt_tenncc.Size = new System.Drawing.Size(410, 22);
             this.txt_tenncc.TabIndex = 4;
             // 
             // timkiemncc
             // 
+            this.timkiemncc.Appearance.BackColor = System.Drawing.Color.White;
+            this.timkiemncc.Appearance.Options.UseBackColor = true;
             this.timkiemncc.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.timkiemncc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.timkiemncc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.timkiemncc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("timkiemncc.ImageOptions.Image")));
-            this.timkiemncc.Location = new System.Drawing.Point(390, 6);
+            this.timkiemncc.Location = new System.Drawing.Point(390, 4);
             this.timkiemncc.Name = "timkiemncc";
             this.timkiemncc.Size = new System.Drawing.Size(23, 20);
             this.timkiemncc.TabIndex = 5;
             // 
             // timkiemsanphamcuancc
             // 
+            this.timkiemsanphamcuancc.Appearance.BackColor = System.Drawing.Color.White;
+            this.timkiemsanphamcuancc.Appearance.Options.UseBackColor = true;
             this.timkiemsanphamcuancc.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.timkiemsanphamcuancc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.timkiemsanphamcuancc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.timkiemsanphamcuancc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("timkiemsanphamcuancc.ImageOptions.Image")));
-            this.timkiemsanphamcuancc.Location = new System.Drawing.Point(809, 6);
+            this.timkiemsanphamcuancc.Location = new System.Drawing.Point(809, 3);
             this.timkiemsanphamcuancc.Name = "timkiemsanphamcuancc";
             this.timkiemsanphamcuancc.Size = new System.Drawing.Size(23, 20);
             this.timkiemsanphamcuancc.TabIndex = 9;
             // 
             // txt_timkiemsanphamcuancc
             // 
-            this.txt_timkiemsanphamcuancc.Location = new System.Drawing.Point(422, 6);
+            this.txt_timkiemsanphamcuancc.Location = new System.Drawing.Point(422, 2);
             this.txt_timkiemsanphamcuancc.MenuManager = this.menuchucnang;
             this.txt_timkiemsanphamcuancc.Name = "txt_timkiemsanphamcuancc";
-            this.txt_timkiemsanphamcuancc.Size = new System.Drawing.Size(381, 20);
+            this.txt_timkiemsanphamcuancc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_timkiemsanphamcuancc.Properties.Appearance.Options.UseFont = true;
+            this.txt_timkiemsanphamcuancc.Size = new System.Drawing.Size(410, 22);
             this.txt_timkiemsanphamcuancc.TabIndex = 8;
             // 
             // panel_chinh
             // 
+            this.panel_chinh.Controls.Add(this.timkiemsanphamcuancc);
+            this.panel_chinh.Controls.Add(this.timkiemncc);
+            this.panel_chinh.Controls.Add(this.txt_tenncc);
             this.panel_chinh.Controls.Add(this.dgv_ncc);
             this.panel_chinh.Controls.Add(this.dgv_sanphamcuancc);
-            this.panel_chinh.Controls.Add(this.timkiemsanphamcuancc);
             this.panel_chinh.Controls.Add(this.txt_timkiemsanphamcuancc);
-            this.panel_chinh.Controls.Add(this.timkiemncc);
             this.panel_chinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_chinh.Location = new System.Drawing.Point(0, 24);
             this.panel_chinh.Name = "panel_chinh";
-            this.panel_chinh.Size = new System.Drawing.Size(835, 590);
+            this.panel_chinh.Size = new System.Drawing.Size(840, 590);
             this.panel_chinh.TabIndex = 10;
             // 
             // dgv_ncc
@@ -226,14 +239,13 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txt_tenncc);
             this.Controls.Add(this.panel_chinh);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "UC_NhapHangTheoNCC";
-            this.Size = new System.Drawing.Size(835, 614);
+            this.Size = new System.Drawing.Size(840, 614);
             ((System.ComponentModel.ISupportInitialize)(this.menuchucnang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tenncc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_timkiemsanphamcuancc.Properties)).EndInit();
