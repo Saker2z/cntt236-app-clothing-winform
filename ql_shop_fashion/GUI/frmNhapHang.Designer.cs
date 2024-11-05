@@ -262,7 +262,7 @@ namespace GUI
             // 
             this.them.Image = global::GUI.Properties.Resources.themphieu;
             this.them.Name = "them";
-            this.them.Size = new System.Drawing.Size(180, 22);
+            this.them.Size = new System.Drawing.Size(108, 22);
             this.them.Text = "Thêm";
             this.them.Click += new System.EventHandler(this.them_Click);
             // 
