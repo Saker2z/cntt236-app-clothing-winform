@@ -9,15 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
-using DLL;
+using BLL;
 
 namespace GUI
 {
     public partial class frmNhapHang : DevExpress.XtraEditors.XtraForm
     {
-        private nhap_hang_sql_DLL nhap_dll;
-        private nha_cung_cap_sql_DLL ncc_dll;
-        private chi_tiet_nhap_sql_DLL ct_nhap_DLL;
+        private nhap_hang_sql_BLL nhap_bll;
+        private nha_cung_cap_sql_BLL ncc_bll;
+        private chi_tiet_nhap_sql_BLL ct_nhap_bll;
         public frmNhapHang()
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace GUI
                 DataGridViewRow row = dgv_nh.Rows[e.RowIndex];
                 int id = int.Parse(row.Cells["ma_nhap_hang"].Value.ToString());
                
-                var hang = nhap_dll.get_nhap_hang_by_id(id).FirstOrDefault();
+                var hang = nhap_bll.get_nhap_hang_by_id(id).FirstOrDefault();
 
                 if (hang != null)
                 {
@@ -70,16 +70,16 @@ namespace GUI
         }
         void load_cbb_ncc()
         {
-            ncc_dll = new nha_cung_cap_sql_DLL();
-            List<string> ncc = ncc_dll.get_ncc_list_name ();
+            ncc_bll = new nha_cung_cap_sql_BLL();
+            List<string> ncc = ncc_bll.get_ncc_list_name ();
             cbb_manhacungcap.Properties.Items.Clear();
             cbb_manhacungcap.Properties.Items.AddRange(ncc);
         }
         void load_dgv_sp(int id)
         {
-            ct_nhap_DLL = new chi_tiet_nhap_sql_DLL();
+            ct_nhap_bll = new chi_tiet_nhap_sql_BLL();
             dgv_sanpham.DataSource = null;
-            dgv_sanpham.DataSource = ct_nhap_DLL.get_sp_by_phieu_nhap(id);
+            dgv_sanpham.DataSource = ct_nhap_bll.get_sp_by_phieu_nhap(id);
         }
 
         private void FrmNhapHang_Load(object sender, EventArgs e)
@@ -90,8 +90,8 @@ namespace GUI
 
         void loaddgv_nhap_hang()
         {
-            nhap_dll = new nhap_hang_sql_DLL();
-            dgv_nh.DataSource = nhap_dll.get_all_nhap_hang();
+            nhap_bll = new nhap_hang_sql_BLL();
+            dgv_nh.DataSource = nhap_bll.get_all_nhap_hang();
         }
 
         private void textEdit1_EditValueChanged(object sender, EventArgs e)

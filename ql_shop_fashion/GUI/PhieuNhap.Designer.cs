@@ -29,8 +29,6 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv_sp = new DevExpress.XtraGrid.GridControl();
-            this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -38,9 +36,16 @@ namespace GUI
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.cbb_ncc = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txt_tennv = new DevExpress.XtraEditors.TextEdit();
@@ -50,7 +55,6 @@ namespace GUI
             this.txt_tongsl = new DevExpress.XtraEditors.TextEdit();
             this.lb_thanhtien = new DevExpress.XtraEditors.LabelControl();
             this.cbb_tensp = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.txt_sl = new DevExpress.XtraEditors.TextEdit();
             this.txt_gianhap = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -66,8 +70,12 @@ namespace GUI
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.bt_them = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_sp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.dgv_sp = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dgv_gia = new System.Windows.Forms.DataGridView();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.cbb_sl = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_ncc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tennv.Properties)).BeginInit();
@@ -75,30 +83,14 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.txt_tt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tongsl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_tensp.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_sl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_gianhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_dg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_gia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_sl.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgv_sp
-            // 
-            this.dgv_sp.Location = new System.Drawing.Point(-8, 309);
-            this.dgv_sp.MainView = this.gridView;
-            this.dgv_sp.MenuManager = this.ribbonControl;
-            this.dgv_sp.Name = "dgv_sp";
-            this.dgv_sp.Size = new System.Drawing.Size(893, 258);
-            this.dgv_sp.TabIndex = 2;
-            this.dgv_sp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView});
-            // 
-            // gridView
-            // 
-            this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridView.GridControl = this.dgv_sp;
-            this.gridView.Name = "gridView";
-            this.gridView.OptionsBehavior.Editable = false;
-            this.gridView.OptionsBehavior.ReadOnly = true;
             // 
             // ribbonControl
             // 
@@ -111,15 +103,20 @@ namespace GUI
             this.bbiNew,
             this.bbiEdit,
             this.bbiDelete,
-            this.bbiRefresh});
+            this.bbiRefresh,
+            this.barButtonItem2,
+            this.barButtonItem3});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 20;
+            this.ribbonControl.MaxItemId = 22;
             this.ribbonControl.Name = "ribbonControl";
+            this.ribbonControl.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
+            this.ribbonPageCategory1});
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
+            this.ribbonPage1,
+            this.ribbonPage3});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(885, 158);
+            this.ribbonControl.Size = new System.Drawing.Size(1127, 158);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -129,7 +126,6 @@ namespace GUI
             this.bbiPrintPreview.Id = 14;
             this.bbiPrintPreview.ImageOptions.ImageUri.Uri = "Preview";
             this.bbiPrintPreview.Name = "bbiPrintPreview";
-            this.bbiPrintPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrintPreview_ItemClick);
             // 
             // bsiRecordsCount
             // 
@@ -165,11 +161,42 @@ namespace GUI
             this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
             this.bbiRefresh.Name = "bbiRefresh";
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 20;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 21;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // ribbonPageCategory1
+            // 
+            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
+            this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage2});
+            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3});
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "ribbonPage2";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup5});
             this.ribbonPage1.MergeOrder = 0;
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Home";
@@ -185,26 +212,35 @@ namespace GUI
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Tasks";
             // 
-            // ribbonPageGroup2
+            // ribbonPageGroup5
             // 
-            this.ribbonPageGroup2.AllowTextClipping = false;
-            this.ribbonPageGroup2.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup2.ItemLinks.Add(this.bbiPrintPreview);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Print and Export";
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
+            // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup4});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "ribbonPage3";
+            // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 600);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 657);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(885, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1127, 24);
             // 
             // cbb_ncc
             // 
             this.cbb_ncc.EditValue = "";
-            this.cbb_ncc.Location = new System.Drawing.Point(125, 190);
+            this.cbb_ncc.Location = new System.Drawing.Point(407, 164);
             this.cbb_ncc.MenuManager = this.ribbonControl;
             this.cbb_ncc.Name = "cbb_ncc";
             this.cbb_ncc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -257,7 +293,7 @@ namespace GUI
             // 
             this.lb_thanhtien.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_thanhtien.Appearance.Options.UseFont = true;
-            this.lb_thanhtien.Location = new System.Drawing.Point(690, 573);
+            this.lb_thanhtien.Location = new System.Drawing.Point(961, 630);
             this.lb_thanhtien.Name = "lb_thanhtien";
             this.lb_thanhtien.Size = new System.Drawing.Size(80, 21);
             this.lb_thanhtien.TabIndex = 10;
@@ -265,7 +301,7 @@ namespace GUI
             // 
             // cbb_tensp
             // 
-            this.cbb_tensp.Location = new System.Drawing.Point(467, 173);
+            this.cbb_tensp.Location = new System.Drawing.Point(125, 190);
             this.cbb_tensp.MenuManager = this.ribbonControl;
             this.cbb_tensp.Name = "cbb_tensp";
             this.cbb_tensp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -273,17 +309,9 @@ namespace GUI
             this.cbb_tensp.Size = new System.Drawing.Size(163, 20);
             this.cbb_tensp.TabIndex = 11;
             // 
-            // txt_sl
-            // 
-            this.txt_sl.Location = new System.Drawing.Point(467, 254);
-            this.txt_sl.MenuManager = this.ribbonControl;
-            this.txt_sl.Name = "txt_sl";
-            this.txt_sl.Size = new System.Drawing.Size(163, 20);
-            this.txt_sl.TabIndex = 12;
-            // 
             // txt_gianhap
             // 
-            this.txt_gianhap.Location = new System.Drawing.Point(467, 283);
+            this.txt_gianhap.Location = new System.Drawing.Point(389, 278);
             this.txt_gianhap.MenuManager = this.ribbonControl;
             this.txt_gianhap.Name = "txt_gianhap";
             this.txt_gianhap.Size = new System.Drawing.Size(163, 20);
@@ -306,7 +334,7 @@ namespace GUI
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(27, 193);
+            this.labelControl4.Location = new System.Drawing.Point(309, 171);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(92, 13);
             this.labelControl4.TabIndex = 16;
@@ -346,7 +374,7 @@ namespace GUI
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(386, 176);
+            this.labelControl9.Location = new System.Drawing.Point(45, 193);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(67, 13);
             this.labelControl9.TabIndex = 21;
@@ -354,7 +382,7 @@ namespace GUI
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(411, 257);
+            this.labelControl10.Location = new System.Drawing.Point(333, 252);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(42, 13);
             this.labelControl10.TabIndex = 22;
@@ -362,7 +390,7 @@ namespace GUI
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(411, 290);
+            this.labelControl11.Location = new System.Drawing.Point(333, 285);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(42, 13);
             this.labelControl11.TabIndex = 23;
@@ -370,7 +398,7 @@ namespace GUI
             // 
             // txt_dg
             // 
-            this.txt_dg.Location = new System.Drawing.Point(467, 213);
+            this.txt_dg.Location = new System.Drawing.Point(389, 208);
             this.txt_dg.MenuManager = this.ribbonControl;
             this.txt_dg.Name = "txt_dg";
             this.txt_dg.Size = new System.Drawing.Size(163, 20);
@@ -378,7 +406,7 @@ namespace GUI
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(411, 216);
+            this.labelControl12.Location = new System.Drawing.Point(333, 211);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(37, 13);
             this.labelControl12.TabIndex = 25;
@@ -396,18 +424,70 @@ namespace GUI
             // 
             // bt_them
             // 
-            this.bt_them.Location = new System.Drawing.Point(690, 216);
+            this.bt_them.Location = new System.Drawing.Point(499, 304);
             this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(92, 48);
+            this.bt_them.Size = new System.Drawing.Size(53, 38);
             this.bt_them.TabIndex = 29;
             this.bt_them.Text = "Thêm";
             this.bt_them.UseVisualStyleBackColor = true;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Delete";
+            this.barButtonItem1.Id = 18;
+            this.barButtonItem1.ImageOptions.ImageUri.Uri = "Delete";
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // dgv_sp
+            // 
+            this.dgv_sp.Location = new System.Drawing.Point(62, 382);
+            this.dgv_sp.MainView = this.gridView3;
+            this.dgv_sp.MenuManager = this.ribbonControl;
+            this.dgv_sp.Name = "dgv_sp";
+            this.dgv_sp.Size = new System.Drawing.Size(1023, 242);
+            this.dgv_sp.TabIndex = 42;
+            this.dgv_sp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.GridControl = this.dgv_sp;
+            this.gridView3.Name = "gridView3";
+            // 
+            // dgv_gia
+            // 
+            this.dgv_gia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_gia.Location = new System.Drawing.Point(624, 164);
+            this.dgv_gia.Name = "dgv_gia";
+            this.dgv_gia.Size = new System.Drawing.Size(417, 175);
+            this.dgv_gia.TabIndex = 46;
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.AllowTextClipping = false;
+            this.ribbonPageGroup2.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonPageGroup2.ItemLinks.Add(this.bbiPrintPreview);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Print and Export";
+            // 
+            // cbb_sl
+            // 
+            this.cbb_sl.Location = new System.Drawing.Point(389, 252);
+            this.cbb_sl.MenuManager = this.ribbonControl;
+            this.cbb_sl.Name = "cbb_sl";
+            this.cbb_sl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbb_sl.Size = new System.Drawing.Size(163, 20);
+            this.cbb_sl.TabIndex = 49;
             // 
             // PhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 624);
+            this.ClientSize = new System.Drawing.Size(1127, 681);
+            this.Controls.Add(this.cbb_sl);
+            this.Controls.Add(this.dgv_gia);
+            this.Controls.Add(this.dgv_sp);
             this.Controls.Add(this.bt_them);
             this.Controls.Add(this.buttonEdit1);
             this.Controls.Add(this.labelControl12);
@@ -423,7 +503,6 @@ namespace GUI
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txt_gianhap);
-            this.Controls.Add(this.txt_sl);
             this.Controls.Add(this.cbb_tensp);
             this.Controls.Add(this.lb_thanhtien);
             this.Controls.Add(this.txt_tongsl);
@@ -433,13 +512,10 @@ namespace GUI
             this.Controls.Add(this.txt_tennv);
             this.Controls.Add(this.cbb_ncc);
             this.Controls.Add(this.ribbonStatusBar);
-            this.Controls.Add(this.dgv_sp);
             this.Controls.Add(this.ribbonControl);
             this.Name = "PhieuNhap";
             this.Ribbon = this.ribbonControl;
             this.StatusBar = this.ribbonStatusBar;
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_sp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_ncc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tennv.Properties)).EndInit();
@@ -447,23 +523,23 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.txt_tt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tongsl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_tensp.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_sl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_gianhap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_dg.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_gia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_sl.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DevExpress.XtraGrid.GridControl dgv_sp;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem bbiNew;
@@ -478,7 +554,6 @@ namespace GUI
         private DevExpress.XtraEditors.TextEdit txt_tongsl;
         private DevExpress.XtraEditors.LabelControl lb_thanhtien;
         private DevExpress.XtraEditors.ComboBoxEdit cbb_tensp;
-        private DevExpress.XtraEditors.TextEdit txt_sl;
         private DevExpress.XtraEditors.TextEdit txt_gianhap;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -494,5 +569,19 @@ namespace GUI
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.ButtonEdit buttonEdit1;
         private System.Windows.Forms.Button bt_them;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraGrid.GridControl dgv_sp;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private System.Windows.Forms.DataGridView dgv_gia;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraEditors.ComboBoxEdit cbb_sl;
     }
 }
