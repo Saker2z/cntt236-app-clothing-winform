@@ -130,5 +130,16 @@ namespace GUI
             panel_chinh.Controls.Add(nhapHangTheoSanPham);
             nhapHangTheoSanPham.BringToFront();
         }
+
+        public void ShowScreens(List<int> screenIds)
+        {
+            foreach (var item in accordionControl1.Elements)
+            {
+                if (item.Tag is int screenId)
+                {
+                    item.Visible = screenIds.Contains(screenId);
+                }
+            }
+        }
     }
 }

@@ -32,5 +32,16 @@ namespace DTO.Properties {
                 return ((string)(this["QL_SHOP_02ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-4GMS5N8;Initial Catalog=QL_SHOP_FASHION;Integrated Security=T" +
+            "rue")]
+        public string QL_SHOP_FASHIONConnectionString {
+            get {
+                return ((string)(this["QL_SHOP_FASHIONConnectionString"]));
+            }
+        }
     }
 }
