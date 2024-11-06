@@ -31,6 +31,24 @@ namespace DAL
 
             return dssp.ToList(); 
         }
-       
+        public List<chi_tiet_nhap_hang> get_ct_list_by_id(int id)
+        {
+            var dssp = (from i in data.chi_tiet_nhap_hangs
+                        where i.ma_nhap_hang == id
+                        select i).AsEnumerable()  // Chuyển đổi thành Enumerable để không gặp vấn đề về Entity
+                        .Select(x => new chi_tiet_nhap_hang
+                        {
+                            ma_nhap_hang = x.ma_nhap_hang,
+                            ma_san_pham = x.ma_san_pham,
+                            so_luong = x.so_luong,
+                            gia_nhap = x.gia_nhap
+                        }).ToList();
+
+            return dssp; // Trả về List<chi_tiet_nhap_hang>
+        }
+
+
+
+
     }
 }

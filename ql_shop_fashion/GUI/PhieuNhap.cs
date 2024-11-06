@@ -10,13 +10,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using DevExpress.XtraGrid.Views.Grid; // Để sử dụng GridView
 using DevExpress.XtraEditors.Repository; // Để sử dụng RepositoryItemComboBox
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Controls;
 using BLL;
 using DTO;
+using DevExpress.XtraReports.UI;
 
 // Namespace cho GridView
 
@@ -30,8 +30,11 @@ namespace GUI
         private san_pham_sql_BLL sp_bll;
         private ncc_sp_sql_BLL nccsp_bll;
         private nhap_hang_sql_BLL nhap_bll;
+        public List<string> SupplierTotals { get; set; }
         bool check = false;
-
+        private Timer holdTimer;
+        private bool isHolding = false;
+        private Form popup;
         public PhieuNhap()
         {
             InitializeComponent();
@@ -49,8 +52,108 @@ namespace GUI
             dgv_sp_add.CellClick += Dgv_sp_add_CellClick1;
             bt_sua.ItemClick += Bt_sua_ItemClick;
             bt_add_all.ItemClick += Bt_add_all_ItemClick;
+           
+          
+            holdTimer = new Timer();
+            holdTimer.Interval = 1000;
+          
+        
+            lb_thanhtien.MouseEnter += Lb_thanhtien_MouseEnter; lb_thanhtien.MouseLeave += Lb_thanhtien_MouseLeave;
 
         }
+
+        private void Lb_thanhtien_MouseLeave(object sender, EventArgs e)
+        {
+            popup?.Close();
+        }
+
+        private void Lb_thanhtien_MouseEnter(object sender, EventArgs e)
+        {
+            ShowSupplierTotalsDialog(dgv_sp_add);
+        }
+
+    
+
+    
+
+       
+
+
+
+        public void ShowSupplierTotalsDialog(DataGridView dgv)
+        {
+            // Tính toán tổng giá nhập theo nhà cung cấp
+            Dictionary<int, decimal> supplierTotals = CalculateSupplierTotals(dgv);
+
+            // Tạo danh sách string để hiển thị theo định dạng yêu cầu
+            List<string> supplierTotalsText = supplierTotals
+                .Select(item => $"Hóa đơn nhà cung cấp {item.Key}: {item.Value} VND")
+                .ToList();
+
+            // Tạo form nhỏ để hiển thị thông tin
+            popup = new Form
+            {
+                StartPosition = FormStartPosition.CenterScreen, // Đặt vị trí chính giữa màn hình
+                Size = new Size(300, 150), // Kích thước form
+                FormBorderStyle = FormBorderStyle.None, // Không có viền form
+                BackColor = Color.Orange, // Màu nền cam để nổi bật
+                Opacity = 0.95, // Mờ đi một chút
+                ShowInTaskbar = false, // Không hiển thị trên taskbar
+                TopMost = true // Đảm bảo form ở trên cùng
+            };
+
+            // Label để hiển thị thông tin tổng tiền nhà cung cấp
+            Label lblInfo = new Label
+            {
+                Text = string.Join(Environment.NewLine, supplierTotalsText),
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleCenter,
+                ForeColor = Color.Black, // Màu chữ đen để dễ đọc trên nền cam
+                Padding = new Padding(10) // Thêm padding cho label
+            };
+            popup.Controls.Add(lblInfo);
+
+            // Hiển thị form
+            popup.Show();
+        }
+
+
+
+
+
+
+        public Dictionary<int, decimal> CalculateSupplierTotals(DataGridView dgv)
+        {
+            // Dictionary để lưu tổng giá nhập của từng nhà cung cấp
+            Dictionary<int, decimal> supplierTotals = new Dictionary<int, decimal>();
+
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                // Kiểm tra hàng có giá trị không
+                if (row.Cells["ma_nha_cung_cap"].Value != null && row.Cells["gia_nhap"].Value != null)
+                {
+                    // Lấy mã nhà cung cấp
+                    int maNhaCungCap = Convert.ToInt32(row.Cells["ma_nha_cung_cap"].Value);
+
+                    // Lấy giá nhập
+                    decimal giaNhap = Convert.ToDecimal(row.Cells["gia_nhap"].Value);
+
+                    // Cộng dồn giá nhập cho từng nhà cung cấp
+                    if (supplierTotals.ContainsKey(maNhaCungCap))
+                    {
+                        supplierTotals[maNhaCungCap] += giaNhap;
+                    }
+                    else
+                    {
+                        supplierTotals[maNhaCungCap] = giaNhap;
+                    }
+                }
+            }
+
+            return supplierTotals;
+        }
+
+
         List<DataTable> GroupProductsBySupplier()
         {
             // Khởi tạo danh sách để lưu các DataTable
@@ -141,8 +244,14 @@ namespace GUI
                 nhap.ma_nhan_vien = 1; // Giả sử đây là mã nhân viên
                 nhap.ma_nha_cung_cap = mancc;
                 nhap.ngay_nhap = date_ngaynhap.Value;
-                nhap.ghi_chu = txt_ghichu.Text;
-                nhap.trang_thai = txt_tt.Text;
+               
+                nhap.trang_thai = "Chưa xử lí";
+                string ghiChu = Microsoft.VisualBasic.Interaction.InputBox("Vui lòng nhập ghi chú đơn thứ"+count.ToString()+": ", "Nhập Ghi Chú", "Không có");
+
+                // Lưu lại ghi chú vào `txt_ghichu`
+                nhap.ghi_chu = ghiChu;
+
+                
 
                 // Thực hiện thêm phiếu nhập hàng
                 if (nhap_bll.nhap_hang_add(nhap, ct))
@@ -152,20 +261,19 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Lỗi đơn thứ " + count + " !!!");
+                    clear_all();
                     return;
                 }
 
                 count++;
             }
+            clear_all();
+            
         }
-
-
-
         private void Bt_add_all_ItemClick(object sender, ItemClickEventArgs e)
         {
             them_phieu();
         }
-
         private bool FindAndUpdateRow(int maSanPham, int maNhaCungCap, int newQuantity, decimal newGiaNhap)
         {
             bool found = false; // Biến đánh dấu có tìm thấy dòng hay không
@@ -192,8 +300,6 @@ namespace GUI
             // Trả về giá trị của biến found
             return found;
         }
-
-
         private void Bt_sua_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (check)
@@ -241,8 +347,6 @@ namespace GUI
                 return; // Nếu check là false, thoát khỏi hàm
             }
         }
-
-
         private void Dgv_sp_add_CellClick1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Đảm bảo rằng RowIndex là hợp lệ
@@ -280,26 +384,24 @@ namespace GUI
                 }
             }
         }
-
         void clear_all()
         {
             cbb_tensp.SelectedIndex = -1;
             cbb_ncc.SelectedIndex = -1;
             cbb_sl.SelectedIndex = 0;
             txt_gianhap.Text = "0";
+            dgv_sp_add.DataSource = null;
+
 
         }
-
         private void Dgv_sp_add_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             throw new NotImplementedException();
         }
-
         private void Bt_xoa_ItemClick(object sender, ItemClickEventArgs e)
         {
             RemoveSelectedRowFromDataGridView();
         }
-
         private void Bt_them_Click(object sender, EventArgs e)
         {
             
@@ -406,9 +508,6 @@ namespace GUI
                 MessageBox.Show("Vui lòng chọn một dòng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-
-
         private void Cbb_sl_SelectedIndexChanged(object sender, EventArgs e)
         {
             tinh_gia();
@@ -432,7 +531,6 @@ namespace GUI
             }
             return true;
         }
-
         private void Cbb_ncc_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbb_sl.SelectedIndex = 0;
@@ -471,7 +569,6 @@ namespace GUI
             dgv_sp_add.MultiSelect = false;
             dgv_sp_add.ReadOnly = true;
         }
-
         private void Cbb_tensp_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbb_ncc.Properties.Items.Clear();
@@ -553,14 +650,12 @@ namespace GUI
             cbb_tensp.Properties.Items.Clear();
             cbb_tensp.Properties.Items.AddRange(ctsp);
         }
-
         void load_dgv_sp_ss(int id)
         {
             nccsp_bll = new ncc_sp_sql_BLL();
             dgv_gia.DataSource = null;
             dgv_gia.DataSource = nccsp_bll.get_nccsp_by_id_sp(id);
         }
-  
         private void Cbb_tensp_TextChanged(object sender, EventArgs e)
         {
             var comboBox = sender as ComboBoxEdit;
@@ -579,7 +674,6 @@ namespace GUI
 
             comboBox.ShowPopup();
         }
-
         private void Cbb_ncc_TextChanged(object sender, EventArgs e)
         {
             var comboBox = sender as ComboBoxEdit;
@@ -651,10 +745,6 @@ namespace GUI
                 txt_dg.Text = currentPrice.ToString("0.##"); // Hiển thị giá mà không có phần thập phân nếu nó bằng 0
             }
         }
-
-
-
-
         void capNhatTongTien()
         {
             decimal tongTien = 0; // Biến để lưu tổng tiền
@@ -677,17 +767,15 @@ namespace GUI
             // Gán tổng tiền vào label
             lb_thanhtien.Text = "Tổng tiền: " + tongTien.ToString(); // Định dạng với 2 chữ số thập phân
         }
-
-
         void setDeflau()
         {
-            txt_tt.Text = "Chưa xử lý";
-            txt_tt.Enabled = false;
+           
+           
             date_ngaynhap.Value = DateTime.Now;
             date_ngaynhap.Enabled = false;
-            txt_ghichu.Text = "Không có";
-            txt_tongsl.Text = "0";
-            txt_tongsl.Enabled = false;
+           
+           
+        
             txt_tennv.Text = "Võ Danh Dự";
             txt_tennv.Enabled = false;
             lb_thanhtien.Text = lb_thanhtien.Text + " 0";
@@ -702,10 +790,6 @@ namespace GUI
             cbb_sl.SelectedIndex = 0;
             cbb_sl.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
         }
-
-     
-      
-
         private void PhieuNhap_Load(object sender, EventArgs e)
         {
             load_cbb_sp();
@@ -714,8 +798,6 @@ namespace GUI
             dgv_sp();
             capNhatTongTien();
         }
-
-      
         void load_cbb_ncc(int id)
         {
             nccsp_bll = new ncc_sp_sql_BLL();
@@ -723,9 +805,12 @@ namespace GUI
             cbb_ncc.Properties.Items.Clear();
             cbb_ncc.Properties.Items.AddRange(ncc);
         }
-    
 
-
-
+        private void bbiNew_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            nhaphang_rp report = new nhaphang_rp();
+            ReportPrintTool printTool = new ReportPrintTool(report);
+            printTool.ShowPreviewDialog();
+        }
     }
 }

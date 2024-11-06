@@ -165,6 +165,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="san_pham_sql_DAL.cs" />
+    <Compile Include="thuoc_tinh_sp_sql_DAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

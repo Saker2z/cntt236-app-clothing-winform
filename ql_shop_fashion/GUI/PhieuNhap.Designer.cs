@@ -39,6 +39,7 @@ namespace GUI
             this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_add_all = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -51,9 +52,6 @@ namespace GUI
             this.cbb_ncc = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txt_tennv = new DevExpress.XtraEditors.TextEdit();
             this.date_ngaynhap = new System.Windows.Forms.DateTimePicker();
-            this.txt_ghichu = new DevExpress.XtraEditors.TextEdit();
-            this.txt_tt = new DevExpress.XtraEditors.TextEdit();
-            this.txt_tongsl = new DevExpress.XtraEditors.TextEdit();
             this.lb_thanhtien = new DevExpress.XtraEditors.LabelControl();
             this.cbb_tensp = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txt_gianhap = new DevExpress.XtraEditors.TextEdit();
@@ -61,9 +59,6 @@ namespace GUI
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -76,13 +71,9 @@ namespace GUI
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.cbb_sl = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dgv_sp_add = new System.Windows.Forms.DataGridView();
-            this.bt_add_all = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_ncc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tennv.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_ghichu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_tt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_tongsl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_tensp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_gianhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_dg.Properties)).BeginInit();
@@ -117,7 +108,7 @@ namespace GUI
             this.ribbonPage3});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1127, 158);
+            this.ribbonControl.Size = new System.Drawing.Size(1096, 158);
             this.ribbonControl.StatusBar = this.ribbonStatusBar;
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -140,6 +131,7 @@ namespace GUI
             this.bbiNew.Id = 16;
             this.bbiNew.ImageOptions.ImageUri.Uri = "New";
             this.bbiNew.Name = "bbiNew";
+            this.bbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiNew_ItemClick);
             // 
             // bt_sua
             // 
@@ -173,6 +165,14 @@ namespace GUI
             this.barButtonItem3.Caption = "barButtonItem3";
             this.barButtonItem3.Id = 21;
             this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // bt_add_all
+            // 
+            this.bt_add_all.Caption = "Tạo phiếu";
+            this.bt_add_all.Id = 22;
+            this.bt_add_all.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_add_all.ImageOptions.Image")));
+            this.bt_add_all.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_add_all.ImageOptions.LargeImage")));
+            this.bt_add_all.Name = "bt_add_all";
             // 
             // ribbonPageCategory1
             // 
@@ -237,7 +237,7 @@ namespace GUI
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 657);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1127, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1096, 24);
             // 
             // cbb_ncc
             // 
@@ -266,36 +266,11 @@ namespace GUI
             this.date_ngaynhap.Size = new System.Drawing.Size(163, 21);
             this.date_ngaynhap.TabIndex = 6;
             // 
-            // txt_ghichu
-            // 
-            this.txt_ghichu.Location = new System.Drawing.Point(125, 243);
-            this.txt_ghichu.MenuManager = this.ribbonControl;
-            this.txt_ghichu.Name = "txt_ghichu";
-            this.txt_ghichu.Size = new System.Drawing.Size(163, 20);
-            this.txt_ghichu.TabIndex = 7;
-            // 
-            // txt_tt
-            // 
-            this.txt_tt.EditValue = "";
-            this.txt_tt.Location = new System.Drawing.Point(125, 269);
-            this.txt_tt.MenuManager = this.ribbonControl;
-            this.txt_tt.Name = "txt_tt";
-            this.txt_tt.Size = new System.Drawing.Size(163, 20);
-            this.txt_tt.TabIndex = 8;
-            // 
-            // txt_tongsl
-            // 
-            this.txt_tongsl.Location = new System.Drawing.Point(125, 295);
-            this.txt_tongsl.MenuManager = this.ribbonControl;
-            this.txt_tongsl.Name = "txt_tongsl";
-            this.txt_tongsl.Size = new System.Drawing.Size(163, 20);
-            this.txt_tongsl.TabIndex = 9;
-            // 
             // lb_thanhtien
             // 
             this.lb_thanhtien.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_thanhtien.Appearance.Options.UseFont = true;
-            this.lb_thanhtien.Location = new System.Drawing.Point(929, 630);
+            this.lb_thanhtien.Location = new System.Drawing.Point(913, 630);
             this.lb_thanhtien.Name = "lb_thanhtien";
             this.lb_thanhtien.Size = new System.Drawing.Size(80, 21);
             this.lb_thanhtien.TabIndex = 10;
@@ -349,30 +324,6 @@ namespace GUI
             this.labelControl5.Size = new System.Drawing.Size(52, 13);
             this.labelControl5.TabIndex = 17;
             this.labelControl5.Text = "Ngày nhập";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(44, 246);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(35, 13);
-            this.labelControl6.TabIndex = 18;
-            this.labelControl6.Text = "Ghi chú";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(44, 272);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(49, 13);
-            this.labelControl7.TabIndex = 19;
-            this.labelControl7.Text = "Trạng thái";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(44, 298);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(68, 13);
-            this.labelControl8.TabIndex = 20;
-            this.labelControl8.Text = "Tổng số lượng";
             // 
             // labelControl9
             // 
@@ -443,7 +394,7 @@ namespace GUI
             // dgv_gia
             // 
             this.dgv_gia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_gia.Location = new System.Drawing.Point(592, 164);
+            this.dgv_gia.Location = new System.Drawing.Point(576, 164);
             this.dgv_gia.Name = "dgv_gia";
             this.dgv_gia.Size = new System.Drawing.Size(417, 175);
             this.dgv_gia.TabIndex = 46;
@@ -469,24 +420,16 @@ namespace GUI
             // dgv_sp_add
             // 
             this.dgv_sp_add.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_sp_add.Location = new System.Drawing.Point(125, 345);
+            this.dgv_sp_add.Location = new System.Drawing.Point(95, 345);
             this.dgv_sp_add.Name = "dgv_sp_add";
-            this.dgv_sp_add.Size = new System.Drawing.Size(784, 290);
+            this.dgv_sp_add.Size = new System.Drawing.Size(798, 290);
             this.dgv_sp_add.TabIndex = 52;
-            // 
-            // bt_add_all
-            // 
-            this.bt_add_all.Caption = "Tạo phiếu";
-            this.bt_add_all.Id = 22;
-            this.bt_add_all.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.bt_add_all.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.bt_add_all.Name = "bt_add_all";
             // 
             // PhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 681);
+            this.ClientSize = new System.Drawing.Size(1096, 681);
             this.Controls.Add(this.dgv_sp_add);
             this.Controls.Add(this.cbb_sl);
             this.Controls.Add(this.dgv_gia);
@@ -497,9 +440,6 @@ namespace GUI
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.labelControl9);
-            this.Controls.Add(this.labelControl8);
-            this.Controls.Add(this.labelControl7);
-            this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
@@ -507,9 +447,6 @@ namespace GUI
             this.Controls.Add(this.txt_gianhap);
             this.Controls.Add(this.cbb_tensp);
             this.Controls.Add(this.lb_thanhtien);
-            this.Controls.Add(this.txt_tongsl);
-            this.Controls.Add(this.txt_tt);
-            this.Controls.Add(this.txt_ghichu);
             this.Controls.Add(this.date_ngaynhap);
             this.Controls.Add(this.txt_tennv);
             this.Controls.Add(this.cbb_ncc);
@@ -521,9 +458,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_ncc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tennv.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_ghichu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_tt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_tongsl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_tensp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_gianhap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_dg.Properties)).EndInit();
@@ -550,9 +484,6 @@ namespace GUI
         private DevExpress.XtraEditors.ComboBoxEdit cbb_ncc;
         private DevExpress.XtraEditors.TextEdit txt_tennv;
         private System.Windows.Forms.DateTimePicker date_ngaynhap;
-        private DevExpress.XtraEditors.TextEdit txt_ghichu;
-        private DevExpress.XtraEditors.TextEdit txt_tt;
-        private DevExpress.XtraEditors.TextEdit txt_tongsl;
         private DevExpress.XtraEditors.LabelControl lb_thanhtien;
         private DevExpress.XtraEditors.ComboBoxEdit cbb_tensp;
         private DevExpress.XtraEditors.TextEdit txt_gianhap;
@@ -560,9 +491,6 @@ namespace GUI
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl11;
