@@ -14,7 +14,7 @@ namespace BLL
         {
             sp = new nha_cung_cap_sp_sql_DAL();
         }
-        public IQueryable get_nccsp_by_id_sp(int id)
+        public IQueryable<dynamic> get_nccsp_by_id_sp(int id)
         {
             return sp.get_nccsp_by_id_sp(id);
         }

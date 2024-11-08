@@ -36,7 +36,7 @@ namespace GUI
             this.bbiNew = new DevExpress.XtraBars.BarButtonItem();
             this.bt_sua = new DevExpress.XtraBars.BarButtonItem();
             this.bt_xoa = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_load = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.bt_add_all = new DevExpress.XtraBars.BarButtonItem();
@@ -94,7 +94,7 @@ namespace GUI
             this.bbiNew,
             this.bt_sua,
             this.bt_xoa,
-            this.bbiRefresh,
+            this.bt_load,
             this.barButtonItem2,
             this.barButtonItem3,
             this.bt_add_all});
@@ -147,12 +147,13 @@ namespace GUI
             this.bt_xoa.ImageOptions.ImageUri.Uri = "Delete";
             this.bt_xoa.Name = "bt_xoa";
             // 
-            // bbiRefresh
+            // bt_load
             // 
-            this.bbiRefresh.Caption = "Refresh";
-            this.bbiRefresh.Id = 19;
-            this.bbiRefresh.ImageOptions.ImageUri.Uri = "Refresh";
-            this.bbiRefresh.Name = "bbiRefresh";
+            this.bt_load.AllowDrawArrow = false;
+            this.bt_load.Caption = "Refresh";
+            this.bt_load.Id = 19;
+            this.bt_load.ImageOptions.ImageUri.Uri = "Refresh";
+            this.bt_load.Name = "bt_load";
             // 
             // barButtonItem2
             // 
@@ -209,7 +210,7 @@ namespace GUI
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiNew);
             this.ribbonPageGroup1.ItemLinks.Add(this.bt_sua);
             this.ribbonPageGroup1.ItemLinks.Add(this.bt_xoa);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiRefresh);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bt_load);
             this.ribbonPageGroup1.ItemLinks.Add(this.bt_add_all);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Tasks";
@@ -396,7 +397,7 @@ namespace GUI
             this.dgv_gia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_gia.Location = new System.Drawing.Point(576, 164);
             this.dgv_gia.Name = "dgv_gia";
-            this.dgv_gia.Size = new System.Drawing.Size(417, 175);
+            this.dgv_gia.Size = new System.Drawing.Size(496, 175);
             this.dgv_gia.TabIndex = 46;
             // 
             // ribbonPageGroup2
@@ -480,7 +481,7 @@ namespace GUI
         private DevExpress.XtraBars.BarButtonItem bbiNew;
         private DevExpress.XtraBars.BarButtonItem bt_sua;
         private DevExpress.XtraBars.BarButtonItem bt_xoa;
-        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
+        private DevExpress.XtraBars.BarButtonItem bt_load;
         private DevExpress.XtraEditors.ComboBoxEdit cbb_ncc;
         private DevExpress.XtraEditors.TextEdit txt_tennv;
         private System.Windows.Forms.DateTimePicker date_ngaynhap;

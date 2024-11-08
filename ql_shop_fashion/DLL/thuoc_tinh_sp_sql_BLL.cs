@@ -23,5 +23,9 @@ namespace BLL
         {
             return sp.get_all_ttsp_by_id(id);
         }
+        public bool updated_tt_sp(List<thuoc_tinh_san_pham> ttsp)
+        {
+            return sp.updated_tt_sp(ttsp);
+        }
     }
 }

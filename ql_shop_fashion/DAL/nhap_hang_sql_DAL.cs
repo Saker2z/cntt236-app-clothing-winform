@@ -82,6 +82,39 @@ namespace DAL
                 return false;
             }
         }
+        public bool update_tt_ht(int id)
+        {
+            // Tìm đối tượng cần cập nhật trong bảng nhap_hangs
+            var item = data.nhap_hangs.SingleOrDefault(i => i.ma_nhap_hang == id);
+
+            // Kiểm tra nếu đối tượng không null (tìm thấy sản phẩm cần cập nhật)
+            if (item != null)
+            {
+                // Cập nhật trạng thái sản phẩm thành "Đã duyệt"
+                item.trang_thai = "Hoàn thành";
+
+                try
+                {
+                    // Lưu thay đổi vào cơ sở dữ liệu
+                    data.SubmitChanges();
+
+                    // Trả về true nếu cập nhật thành công
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý lỗi nếu có (ví dụ: lỗi khi lưu vào cơ sở dữ liệu)
+                    Console.WriteLine($"Lỗi khi cập nhật trạng thái: {ex.Message}");
+
+                    // Trả về false nếu có lỗi
+                    return false;
+                }
+            }
+
+            // Nếu không tìm thấy đối tượng với id tương ứng, trả về false
+            return false;
+        }
+
 
 
 

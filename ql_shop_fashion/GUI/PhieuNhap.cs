@@ -52,6 +52,7 @@ namespace GUI
             dgv_sp_add.CellClick += Dgv_sp_add_CellClick1;
             bt_sua.ItemClick += Bt_sua_ItemClick;
             bt_add_all.ItemClick += Bt_add_all_ItemClick;
+            bt_load.ItemClick += Bt_load_ItemClick;
            
           
             holdTimer = new Timer();
@@ -60,6 +61,11 @@ namespace GUI
         
             lb_thanhtien.MouseEnter += Lb_thanhtien_MouseEnter; lb_thanhtien.MouseLeave += Lb_thanhtien_MouseLeave;
 
+        }
+
+        private void Bt_load_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            clear_all();
         }
 
         private void Lb_thanhtien_MouseLeave(object sender, EventArgs e)
@@ -87,7 +93,7 @@ namespace GUI
 
             // Tạo danh sách string để hiển thị theo định dạng yêu cầu
             List<string> supplierTotalsText = supplierTotals
-                .Select(item => $"Hóa đơn nhà cung cấp {item.Key}: {item.Value} VND")
+                .Select(item => $"Tổng tiền của hóa đơn nhà cung cấp {item.Key}: {item.Value} VND")
                 .ToList();
 
             // Tạo form nhỏ để hiển thị thông tin
@@ -208,13 +214,13 @@ namespace GUI
         void them_phieu()
         {
             List<DataTable> productTables = GroupProductsBySupplier();
-            nhap_hang_sql_BLL nhap_bll = new nhap_hang_sql_BLL();
-            int count = 1;
+            nhap_bll = new nhap_hang_sql_BLL();
+            int count = 0;
+         
 
             // Duyệt qua từng DataTable
             foreach (DataTable dt in productTables)
             {
-                
                 // Tạo đối tượng nhap_hang
                 nhap_hang nhap = new nhap_hang();
                 List<chi_tiet_nhap_hang> ct = new List<chi_tiet_nhap_hang>();
@@ -222,36 +228,49 @@ namespace GUI
                 // Duyệt qua từng hàng trong DataTable
                 foreach (DataRow row in dt.Rows)
                 {
+                 
                     chi_tiet_nhap_hang a = new chi_tiet_nhap_hang
                     {
                         ma_san_pham = Convert.ToInt32(row["ma_san_pham"]),
                         so_luong = Convert.ToInt32(row["so_luong"]),
                         gia_nhap = Convert.ToDecimal(row["gia_nhap"]),
-                        
                     };
-                    
-                 
                     ct.Add(a);
                 }
 
                 // Lấy mã nhà cung cấp từ tên của DataTable
                 int mancc = int.Parse(dt.TableName);
-                
+                if (mancc == 0 && count == 0)
+                {
+                    MessageBox.Show("Không có sản phẩm nào để thêm.");
+                    return;
+                } 
+                if(count == 0)
+                {
+                    count = 1;
+                }    
                 if (mancc == 0)
                 {
+                    clear_all();
                     return;
                 }
                 nhap.ma_nhan_vien = 1; // Giả sử đây là mã nhân viên
                 nhap.ma_nha_cung_cap = mancc;
                 nhap.ngay_nhap = date_ngaynhap.Value;
-               
                 nhap.trang_thai = "Chưa xử lí";
-                string ghiChu = Microsoft.VisualBasic.Interaction.InputBox("Vui lòng nhập ghi chú đơn thứ"+count.ToString()+": ", "Nhập Ghi Chú", "Không có");
+
+                // Hiển thị hộp thoại InputBox để nhập ghi chú
+                string ghiChu = Microsoft.VisualBasic.Interaction.InputBox("Ghi chú đơn thứ " + count.ToString() + " của nhà cung cấp " + mancc.ToString() + " : ", "Nhập Ghi Chú", "Không có");
+
+                // Nếu người dùng đóng hộp thoại (chuỗi ghi chú trống), bỏ qua việc tạo đơn hàng này
+                if (string.IsNullOrWhiteSpace(ghiChu))
+                {
+                    MessageBox.Show("Người dùng đã tắt giao diện.");
+                    continue;
+                }
 
                 // Lưu lại ghi chú vào `txt_ghichu`
                 nhap.ghi_chu = ghiChu;
-
-                
 
                 // Thực hiện thêm phiếu nhập hàng
                 if (nhap_bll.nhap_hang_add(nhap, ct))
@@ -261,15 +280,15 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Lỗi đơn thứ " + count + " !!!");
-                    clear_all();
+                   
                     return;
                 }
 
                 count++;
             }
-            clear_all();
-            
+           
         }
+
         private void Bt_add_all_ItemClick(object sender, ItemClickEventArgs e)
         {
             them_phieu();
@@ -390,7 +409,13 @@ namespace GUI
             cbb_ncc.SelectedIndex = -1;
             cbb_sl.SelectedIndex = 0;
             txt_gianhap.Text = "0";
-            dgv_sp_add.DataSource = null;
+          
+            dgv_gia.Rows.Clear(); // Xóa tất cả các dòng trong DataGridView nếu có
+            dgv_gia.Refresh();
+          
+            dgv_sp_add.Rows.Clear(); // Xóa tất cả các dòng trong DataGridView nếu có
+            dgv_sp_add.Refresh();
+            lb_thanhtien.Text = "Thành tiền: 0";
 
 
         }
@@ -557,7 +582,7 @@ namespace GUI
             dgv_sp_add.Columns.Add("ma_nha_cung_cap", "Mã nhà cung cấp");
             dgv_sp_add.Columns.Add("ma_san_pham", "Mã sản phẩm");
             dgv_sp_add.Columns.Add("so_luong", "Số lượng");
-            dgv_sp_add.Columns.Add("gia_nhap", "Giá nhập");
+            dgv_sp_add.Columns.Add("gia_nhap", "Tổng giá");
 
             // Thiết lập chế độ tự động cho các cột
             int columnWidth = dgv_sp_add.Width / dgv_sp_add.Columns.Count; // Chiều rộng bằng nhau
@@ -613,8 +638,23 @@ namespace GUI
                 return;
             }
         }
+      
+        void load_cbb_sp()
+        {
+            sp_bll = new san_pham_sql_BLL();
+            List<string> ctsp = sp_bll.get_sp_all_name();
+            cbb_tensp.Properties.Items.Clear();
+            cbb_tensp.Properties.Items.AddRange(ctsp);
+        }
+        void load_dgv_sp_ss(int id)
+        {
+
+
+            InitializeColumns(id);
+        }
         void load_gia()
         {
+            
 
             // Kiểm tra nếu không có dòng nào trong DataGridView thì thoát hàm
             if (dgv_gia.Rows.Count == 0)
@@ -643,18 +683,35 @@ namespace GUI
             }
 
         }
-        void load_cbb_sp()
+
+        private void InitializeColumns( int id)
         {
-            sp_bll = new san_pham_sql_BLL();
-            List<string> ctsp = sp_bll.get_sp_all_name();
-            cbb_tensp.Properties.Items.Clear();
-            cbb_tensp.Properties.Items.AddRange(ctsp);
-        }
-        void load_dgv_sp_ss(int id)
-        {
+          
             nccsp_bll = new ncc_sp_sql_BLL();
-            dgv_gia.DataSource = null;
             dgv_gia.DataSource = nccsp_bll.get_nccsp_by_id_sp(id);
+
+            // Đặt tên tiêu đề cho các cột hiện có hoặc đã tạo
+            dgv_gia.Columns["ten_nha_cung_cap"].HeaderText = "Tên Nhà Cung Cấp";
+            dgv_gia.Columns["ten_san_pham"].HeaderText = "Tên Sản Phẩm";
+            dgv_gia.Columns["gia_cung_cap"].HeaderText = "Giá Cung Cấp";
+
+            // Căn chỉnh các cột
+            dgv_gia.Columns["ten_nha_cung_cap"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_gia.Columns["ten_san_pham"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_gia.Columns["gia_cung_cap"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            // Căn chỉnh tiêu đề các cột
+            dgv_gia.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Đặt chiều rộng cột cho hợp lý
+            dgv_gia.Columns["ten_nha_cung_cap"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgv_gia.Columns["ten_san_pham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgv_gia.Columns["gia_cung_cap"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            // Đảm bảo chiều rộng cố định cho các cột
+            dgv_gia.Columns["ten_nha_cung_cap"].Width = 200;
+            dgv_gia.Columns["ten_san_pham"].Width = 200;
+            dgv_gia.Columns["gia_cung_cap"].Width = 150;
         }
         private void Cbb_tensp_TextChanged(object sender, EventArgs e)
         {
@@ -789,14 +846,23 @@ namespace GUI
             }
             cbb_sl.SelectedIndex = 0;
             cbb_sl.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            // Đặt màu nền và viền cho DataGridView
+            dgv_gia.BackgroundColor = Color.White;
+                      // Màu viền giữa các ô
+
+            dgv_sp_add.BackgroundColor = Color.White;
+          
+           
+
         }
         private void PhieuNhap_Load(object sender, EventArgs e)
         {
             load_cbb_sp();
             setDeflau();
-            // LoadDataGridView(dgv_sp);
+            load_gia();
             dgv_sp();
             capNhatTongTien();
+            InitializeColumns(0);
         }
         void load_cbb_ncc(int id)
         {
