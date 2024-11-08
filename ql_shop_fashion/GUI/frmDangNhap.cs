@@ -74,27 +74,33 @@ namespace GUI
             string mk = nhapmk.Text;
             int userRoleId;
 
+            // Kiểm tra tài khoản hợp lệ
             if (IsLoginValid(tk, mk, out userRoleId)) // Kiểm tra tài khoản hợp lệ
             {
                 MessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                 frmMain main = new frmMain();
 
-                // Lấy danh sách màn hình mà người dùng có quyền truy cập
+                // Lấy danh sách các màn hình người dùng có quyền truy cập
                 var accessibleScreens = dataContext.phan_quyens
                     .Where(p => p.id_nhom_quyen == userRoleId && p.co_quyen == true)
                     .Select(p => p.id_man_hinh)
                     .ToList();
 
-                // Đảm bảo admin có quyền xem tất cả các màn hình
+                // Kiểm tra nếu người dùng là Admin (giả sử userRoleId = 1 là Admin)
                 if (userRoleId == 1) // Admin
                 {
-                    accessibleScreens = dataContext.man_hinhs.Select(m => m.id_man_hinh).ToList(); // Admin có quyền xem tất cả màn hình
+                    // Admin có quyền xem tất cả các màn hình
+                    accessibleScreens = dataContext.man_hinhs.Select(m => m.id_man_hinh).ToList();
                 }
 
-                main.ShowScreens(accessibleScreens); // Gọi phương thức để hiển thị các màn hình được phép
+                // Gọi phương thức để hiển thị các màn hình được phép
+                main.ShowScreens(accessibleScreens);
+
+                // Ẩn form đăng nhập
                 this.Hide();
 
+                // Đảm bảo đóng form đăng nhập khi form chính (frmMain) đóng
                 main.FormClosed += (s, args) => this.Close();
                 main.Show();
             }
@@ -103,9 +109,6 @@ namespace GUI
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
 
 
 

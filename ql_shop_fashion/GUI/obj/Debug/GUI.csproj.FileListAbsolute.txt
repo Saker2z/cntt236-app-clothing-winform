@@ -1495,3 +1495,5 @@ E:\Cac mon hoc\Github\backup5\cntt236-app-clothing-winform\ql_shop_fashion\GUI\o
 E:\Cac mon hoc\Github\backup5\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.csproj.CopyComplete
 E:\Cac mon hoc\Github\backup5\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.exe
 E:\Cac mon hoc\Github\backup5\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.pdb
+E:\Cac mon hoc\Github\backup5\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.UC_NhaCungCap.resources
+E:\Cac mon hoc\Github\backup5\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.UC_SanPham.resources

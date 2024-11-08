@@ -91,6 +91,7 @@ namespace GUI
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.nhacungcap = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -116,6 +117,7 @@ namespace GUI
             this.manhinhchinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("manhinhchinh.ImageOptions.Image")));
             this.manhinhchinh.Name = "manhinhchinh";
             this.manhinhchinh.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.manhinhchinh.Tag = 1;
             this.manhinhchinh.Text = "Màn Hình Chính";
             this.manhinhchinh.Click += new System.EventHandler(this.manhinhchinh_Click);
             // 
@@ -124,10 +126,12 @@ namespace GUI
             this.danhmuc.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.sanpham,
             this.hoadon,
-            this.nhaphang});
+            this.nhaphang,
+            this.nhacungcap});
             this.danhmuc.Expanded = true;
             this.danhmuc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("danhmuc.ImageOptions.Image")));
             this.danhmuc.Name = "danhmuc";
+            this.danhmuc.Tag = 2;
             this.danhmuc.Text = "Danh Mục";
             // 
             // sanpham
@@ -136,6 +140,7 @@ namespace GUI
             this.danhmucsanpham});
             this.sanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sanpham.ImageOptions.Image")));
             this.sanpham.Name = "sanpham";
+            this.sanpham.Tag = 3;
             this.sanpham.Text = "Sản Phẩm";
             // 
             // danhmucsanpham
@@ -145,7 +150,6 @@ namespace GUI
             this.nu,
             this.treem,
             this.thuong_hieu});
-            this.danhmucsanpham.Expanded = true;
             this.danhmucsanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("danhmucsanpham.ImageOptions.Image")));
             this.danhmucsanpham.Name = "danhmucsanpham";
             this.danhmucsanpham.Text = "Danh Mục Sản Phẩm";
@@ -430,6 +434,7 @@ namespace GUI
             this.hoadon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("hoadon.ImageOptions.Image")));
             this.hoadon.Name = "hoadon";
             this.hoadon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.hoadon.Tag = 4;
             this.hoadon.Text = "Hóa Đơn";
             // 
             // nhaphang
@@ -440,6 +445,7 @@ namespace GUI
             this.nhaphang.Expanded = true;
             this.nhaphang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("nhaphang.ImageOptions.Image")));
             this.nhaphang.Name = "nhaphang";
+            this.nhaphang.Tag = 5;
             this.nhaphang.Text = "Nhập Hàng";
             // 
             // theonhacungcap
@@ -447,6 +453,7 @@ namespace GUI
             this.theonhacungcap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("theonhacungcap.ImageOptions.Image")));
             this.theonhacungcap.Name = "theonhacungcap";
             this.theonhacungcap.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.theonhacungcap.Tag = 6;
             this.theonhacungcap.Text = "Theo Nhà Cung Cấp";
             this.theonhacungcap.Click += new System.EventHandler(this.theonhacungcap_Click);
             // 
@@ -455,6 +462,7 @@ namespace GUI
             this.theosanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("theosanpham.ImageOptions.Image")));
             this.theosanpham.Name = "theosanpham";
             this.theosanpham.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.theosanpham.Tag = 7;
             this.theosanpham.Text = "Theo Sản Phẩm";
             this.theosanpham.Click += new System.EventHandler(this.theosanpham_Click);
             // 
@@ -468,6 +476,7 @@ namespace GUI
             this.hethongquanly.Expanded = true;
             this.hethongquanly.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("hethongquanly.ImageOptions.Image")));
             this.hethongquanly.Name = "hethongquanly";
+            this.hethongquanly.Tag = 9;
             this.hethongquanly.Text = "Hệ Thống Quản Lý";
             // 
             // nhanvien
@@ -475,6 +484,7 @@ namespace GUI
             this.nhanvien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("nhanvien.ImageOptions.Image")));
             this.nhanvien.Name = "nhanvien";
             this.nhanvien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.nhanvien.Tag = 10;
             this.nhanvien.Text = "Nhân Viên";
             // 
             // khachhang
@@ -482,6 +492,7 @@ namespace GUI
             this.khachhang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("khachhang.ImageOptions.Image")));
             this.khachhang.Name = "khachhang";
             this.khachhang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.khachhang.Tag = 11;
             this.khachhang.Text = "Khách Hàng";
             // 
             // taikhoan
@@ -489,6 +500,7 @@ namespace GUI
             this.taikhoan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("taikhoan.ImageOptions.Image")));
             this.taikhoan.Name = "taikhoan";
             this.taikhoan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.taikhoan.Tag = 12;
             this.taikhoan.Text = "Tài Khoản";
             this.taikhoan.Click += new System.EventHandler(this.taikhoan_Click);
             // 
@@ -497,6 +509,7 @@ namespace GUI
             this.dangxuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("dangxuat.ImageOptions.Image")));
             this.dangxuat.Name = "dangxuat";
             this.dangxuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.dangxuat.Tag = 13;
             this.dangxuat.Text = "Đăng Xuất";
             this.dangxuat.Click += new System.EventHandler(this.thoat_Click);
             // 
@@ -565,6 +578,14 @@ namespace GUI
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement5.Text = "Phụ Kiện";
+            // 
+            // nhacungcap
+            // 
+            this.nhacungcap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("nhacungcap.ImageOptions.Image")));
+            this.nhacungcap.Name = "nhacungcap";
+            this.nhacungcap.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.nhacungcap.Tag = 8;
+            this.nhacungcap.Text = "Nhà Cung Cấp";
             // 
             // frmMain
             // 
@@ -649,5 +670,6 @@ namespace GUI
         private DevExpress.XtraBars.Navigation.AccordionControlElement theonhacungcap;
         private DevExpress.XtraBars.Navigation.AccordionControlElement theosanpham;
         private System.Windows.Forms.Panel pn_main;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement nhacungcap;
     }
 }
