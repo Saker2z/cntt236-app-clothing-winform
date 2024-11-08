@@ -14,7 +14,7 @@ namespace DAL
         {
             data = new QL_SHOP_DATADataContext();
         }
-       public IQueryable get_nccsp_by_id_sp(int id)
+       public IQueryable<dynamic> get_nccsp_by_id_sp(int id)
         {
             var ds = from i in data.nha_cung_cap_san_phams join k in data.nha_cung_caps on i.ma_nha_cung_cap equals k.ma_nha_cung_cap join ii in data.san_phams on i.ma_san_pham equals ii.ma_san_pham where i.ma_san_pham == id select new { k.ten_nha_cung_cap,ii.ten_san_pham,i.gia_cung_cap};
             return ds;

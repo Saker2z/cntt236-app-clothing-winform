@@ -225,3 +225,16 @@ E:\Cac mon hoc\Github\backup4\cntt236-app-clothing-winform\ql_shop_fashion\DLL\o
 E:\Cac mon hoc\Github\backup4\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CopyComplete
 E:\Cac mon hoc\Github\backup4\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.dll
 E:\Cac mon hoc\Github\backup4\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.pdb
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BLL.dll
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BLL.pdb
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.dll
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.dll
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.pdb
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.dll.config
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.pdb
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.dll.config
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.dll
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.pdb
+C:\Users\HP\Desktop\CNPMNC\06\cntt236-app-clothing-winform\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.AssemblyReference.cache

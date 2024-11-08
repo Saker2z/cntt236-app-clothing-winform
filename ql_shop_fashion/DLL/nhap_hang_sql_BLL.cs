@@ -27,5 +27,10 @@ namespace BLL
         {
             return data.nhap_hang_add(s,a);
         }
+        public bool update_tt_ht(int id)
+
+        {
+            return data.update_tt_ht(id);
+        }
     }
 }

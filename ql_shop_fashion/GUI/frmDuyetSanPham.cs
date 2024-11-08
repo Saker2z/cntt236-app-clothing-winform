@@ -15,22 +15,245 @@ namespace GUI
     {
         private thuoc_tinh_sp_sql_BLL ttsp_bll;
         private chi_tiet_nhap_sql_BLL ctnhap_bll;
-        private List<product> productList; // Sử dụng List<Product> thay vì List<dynamic>
+        private nhap_hang_sql_BLL nhap_bll;
+        public event EventHandler FormClosedEvent;
+        private List<thuoc_tinh_san_pham> ttsp;
+        private int iddonduyet;
+        
 
-        public frmDuyetSanPham()
+        public frmDuyetSanPham(int id)
         {
             InitializeComponent();
+            this.iddonduyet = id;
             ttsp_bll = new thuoc_tinh_sp_sql_BLL();
             this.Load += FrmDuyetSanPham_Load;
             // Lấy dữ liệu từ database và chuyển thành List<Product> để dễ xử lý
 
             ctnhap_bll = new chi_tiet_nhap_sql_BLL();
             dgv_dsnhap.Click += Dgv_dsnhap_Click;
+            bt_duyet.Click += Bt_duyet_Click;
+            GridView gridView1 = gdv_duyet_sp.MainView as GridView;
+            bt_ht.Click += Bt_ht_Click;
+            // Gắn sự kiện CellValueChanged cho gridView của gridControl1
+            gridView1.CellValueChanged += GridView1_CellValueChanged;
+            this.FormClosed += FrmDuyetSanPham_FormClosed;
+
+        }
+
+        private void FrmDuyetSanPham_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormClosedEvent?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void Bt_ht_Click(object sender, EventArgs e)
+        {
+            if(CheckTrangThaiAllApproved())
+            {
+                nhap_bll = new nhap_hang_sql_BLL();
+                if(nhap_bll.update_tt_ht(iddonduyet))
+                {
+                    MessageBox.Show("Đã cập nhật dữ liệu.", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }   
+                
+            }    
+            else
+            {
+                MessageBox.Show("Có đơn chưa hoàn thành.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }    
+        }
+        bool CheckTrangThaiAllApproved()
+        {
+            GridView gridView = dgv_dsnhap.MainView as GridView;
+            // Lặp qua tất cả các dòng trong GridView
+            for (int i = 0; i < gridView.RowCount; i++)
+            {
+                // Lấy giá trị của cột "trang_thai" cho dòng hiện tại
+                var trangThai = gridView.GetRowCellValue(i, "trang_thai");
+
+                // Nếu giá trị không phải là "Đã duyệt", trả về false
+                if (trangThai == null || trangThai.ToString() != "Đã duyệt")
+                {
+                    return false;
+                }
+            }
+
+            // Nếu tất cả các giá trị là "Đã duyệt", trả về true
+            return true;
+        }
+
+        int kiemTra()
+        {
+            GridView gridView1 = dgv_dsnhap.MainView as GridView;
+            GridView gridView2 = gdv_duyet_sp.MainView as GridView;
+
+            // Kiểm tra nếu GridView không hợp lệ
+            if (gridView1 == null || gridView2 == null)
+            {
+                return 0; // Trả về 0 nếu không có GridView hợp lệ
+            }
+            else
+            {
+                int dongChon = gridView1.FocusedRowHandle;
+
+                // Kiểm tra nếu không có dòng được chọn trong gridView1
+                if (dongChon < 0)
+                {
+                    return 0; // Không có dòng được chọn
+                }
+
+                // Lấy số lượng từ GridView thứ 2 (gdv_duyet_sp)
+                int sl_gdv = Convert.ToInt32(gridView1.GetRowCellValue(dongChon, "so_luong"));
+                int totalSoLuong = 0;
+                string tt = Convert.ToString(gridView1.GetRowCellValue(dongChon, "trang_thai"));
+                if(tt.Equals("Đã duyệt"))
+                {
+                    return 3;
+                }    
+
+                // Duyệt qua tất cả các dòng trong GridView thứ 2
+                for (int i = 0; i < gridView2.RowCount; i++)
+                {
+                    // Lấy giá trị của cột 'so_luong_ton' ở dòng thứ i
+                    var soLuong = gridView2.GetRowCellValue(i, "so_luong_ton");
+
+                    // Kiểm tra nếu giá trị hợp lệ và tính tổng
+                    if (soLuong != null && int.TryParse(soLuong.ToString(), out int result))
+                    {
+                        totalSoLuong += result; // Cộng dồn số lượng
+                    }
+                }
+                if (totalSoLuong == 0)
+                {
+                    return 0;
+                }
+                // Kiểm tra và trả về kết quả dựa trên so sánh giữa sl_gdv và totalSoLuong
+                if (sl_gdv == totalSoLuong)
+                {
+                    return 1; // Trả về 1 nếu số lượng bằng
+                }
+                else if (sl_gdv < totalSoLuong)
+                {
+                    return 2; // Trả về 2 nếu sl_gdv lớn hơn totalSoLuong
+                }
+                else
+                {
+                    return -1; // Trả về -1 nếu sl_gdv nhỏ hơn totalSoLuong
+                }
+            }
+        }
+
+        private void GridView1_CellValueChanged(object sender, CellValueChangedEventArgs e)
+        {
+
+        }
+
+
+
+
+
+        List<thuoc_tinh_san_pham> load_ds_ttsp()
+        {
+            List<thuoc_tinh_san_pham> list = new List<thuoc_tinh_san_pham>();
+
+            GridView gridView = gdv_duyet_sp.MainView as GridView;
+            if (gridView == null)
+                return list;
+
+            for (int i = 0; i < gridView.RowCount; i++)
+            {
+                // Lấy giá trị của cột ma_thuoc_tinh
+                var maThuocTinhValue = gridView.GetRowCellValue(i, "ma_thuoc_tinh");
+                // Lấy giá trị của cột so_luong_ton
+                var soLuongTonValue = gridView.GetRowCellValue(i, "so_luong_ton");
+
+                if (maThuocTinhValue != null && soLuongTonValue != null)
+                {
+                    // Tạo một đối tượng mới và thêm vào list
+                    list.Add(new thuoc_tinh_san_pham
+                    {
+                        ma_thuoc_tinh = Convert.ToInt32(maThuocTinhValue),
+                        so_luong_ton = Convert.ToInt32(soLuongTonValue)
+                    });
+                }
+            }
+
+            return list;
+        }
+        void update_duyet()
+        {
+            // Lấy đối tượng GridView
+            GridView gridView = dgv_dsnhap.MainView as GridView;
+
+            if (gridView == null) return;
+
+            // Lấy dòng đang chọn
+            int dongChon = gridView.FocusedRowHandle;
+
+            // Kiểm tra nếu dòng được chọn hợp lệ
+            if (dongChon >= 0)
+            {
+                // Cập nhật giá trị của cột Trang_thai thành "Đã duyệt"
+                gridView.SetRowCellValue(dongChon, "trang_thai", "Đã duyệt");
+
+                // Làm mới dữ liệu trên GridView
+                gridView.RefreshRow(dongChon);
+                gridView.RefreshData();
+            }
+        }
+
+        private void Bt_duyet_Click(object sender, EventArgs e)
+        {
+            int check = kiemTra();
+            if(check == 3)
+            {
+                MessageBox.Show("Sản phẩm đã duyệt.", "Có lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }    
+            if (check == 1)
+            {
+                ttsp_bll = new thuoc_tinh_sp_sql_BLL();
+                ttsp = load_ds_ttsp();
+                if (ttsp_bll.updated_tt_sp(ttsp))
+                {
+                    MessageBox.Show("Duyệt thành công!!!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    update_duyet();
+                    load_gdv_duyet_sp(0);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Duyệt thất bại!!!", "Có lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            else if (check == -1)
+            {
+                MessageBox.Show("Số lượng nhập chưa đủ.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (check == 2)
+            {
+                MessageBox.Show("Số lượng vượt quá số lượng có.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Lỗi đầu vào.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
         }
 
         private void Dgv_dsnhap_Click(object sender, EventArgs e)
         {
-            
+
             GridView gridView = dgv_dsnhap.MainView as GridView;
 
             if (gridView != null)
@@ -43,25 +266,31 @@ namespace GUI
                 {
                     // Lấy giá trị cột 'ma_san_pham' từ dòng đã click
                     var maSanPham = gridView.GetRowCellValue(focusedRowHandle, "ma_san_pham");
-                   
+                    var tt = gridView.GetRowCellValue(focusedRowHandle, "trang_thai");
+                    if(tt.Equals("Đã duyệt"))
+                    {
+                        MessageBox.Show("Sản phẩm đã duyệt rồi.");
+                        return;
+                    }    
                     if (maSanPham != null)
                     {
                         // Chuyển đổi maSanPham sang kiểu dữ liệu cần thiết và gọi phương thức xử lý tiếp theo
                         load_gdv_duyet_sp(int.Parse(maSanPham.ToString()));
                     }
+
                 }
             }
         }
 
-       
+
 
         // Xử lý sự kiện MouseClick
-       
+
 
         private void FrmDuyetSanPham_Load(object sender, EventArgs e)
         {
             load_gdv_duyet_sp(0);
-            load_dgv_sp(dgv_dsnhap, ctnhap_bll.get_ct_list_by_id(35));
+            load_dgv_sp(dgv_dsnhap, ctnhap_bll.get_ct_list_by_id(iddonduyet));
         }
 
         void load_gdv_duyet_sp(int id)
@@ -69,22 +298,43 @@ namespace GUI
             var products = ttsp_bll.get_all_ttsp_by_id(id).ToList();
             SetupGridControl(gdv_duyet_sp, products);
         }
+        int soluonggoc(int ma, List<chi_tiet_nhap_hang> products)
+        {
+            // Sử dụng LINQ để tìm sản phẩm có mã `ma`
+            var product = products.FirstOrDefault(p => p.ma_san_pham == ma);
+
+            // Nếu tìm thấy sản phẩm, trả về số lượng; nếu không, trả về 0 hoặc giá trị mặc định
+            return product != null ? product.so_luong : 0;
+        }
+
         void load_dgv_sp(GridControl gridControl, List<chi_tiet_nhap_hang> products)
         {
             GridView gridView = gridControl.MainView as GridView;
             if (gridView == null)
                 return;
+        
+
+           
+
             gridControl.DataSource = products;
             gridView.OptionsBehavior.Editable = false;
             gridView.Columns["ma_nhap_hang"].Caption = "Mã Nhập Hàng";
             gridView.Columns["ma_san_pham"].Caption = "Mã Sản phẩm";
-            gridView.Columns["so_luong"].Caption = "Số Lượng";
-            gridView.Columns["gia_nhap"].Caption = "Giá Nhập";
+            gridView.Columns["so_luong"].Caption = "Tổng Số Lượng";
+            gridView.Columns["gia_nhap"].Caption = "Tổng Giá Nhập";
+            gridView.Columns["trang_thai"].Caption = "Trạng Thái";
+            var columnTrangThai = gridView.Columns["trang_thai"];
+            if (columnTrangThai != null)
+            {
+                columnTrangThai.VisibleIndex = gridView.Columns.Count - 1; // Đặt cột "trang_thai" là cột cuối cùng
+            }
+
             gridView.Columns["created_at"].Visible = false;
             gridView.Columns["updated_at"].Visible = false;
             gridView.Columns["nhap_hang"].Visible = false;
             gridView.Columns["san_pham"].Visible = false;
-
+        
+            gridView.RefreshData();
         }
         private void SetupGridControl(GridControl gridControl, List<product> products)
         {
@@ -104,7 +354,7 @@ namespace GUI
             gridView.Columns["ten_san_pham"].Caption = "Tên Sản Phẩm";
             gridView.Columns["ten_kich_thuoc"].Caption = "Tên Kích Thước";
             gridView.Columns["ten_mau_sac"].Caption = "Tên Màu Sắc";
-            gridView.Columns["so_luong_ton"].Caption = "Số Lượng Tồn";
+            gridView.Columns["so_luong_ton"].Caption = "Số Lượng Duyệt";
 
             // Căn chỉnh các cột tiêu đề và dữ liệu
             gridView.Columns["ma_thuoc_tinh"].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -149,32 +399,6 @@ namespace GUI
             }
         }
 
-        // Lắng nghe sự kiện khi giá trị cột thay đổi
-        private void frmDuyetSanPham_Load(object sender, EventArgs e)
-        {
-            // Lắng nghe sự kiện CellValueChanged
-            GridView gridView = gdv_duyet_sp.MainView as GridView;
-            if (gridView != null)
-            {
-                gridView.CellValueChanged += GridView_CellValueChanged;
-            }
-        }
-
-        private void GridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            // Kiểm tra nếu cột thay đổi là "so_luong_ton"
-            if (e.Column.FieldName == "so_luong_ton")
-            {
-                var newSoLuongTon = e.Value;
-                var rowIndex = e.RowHandle;
-
-                // Cập nhật giá trị trong productList
-                productList[rowIndex].so_luong_ton = (int)newSoLuongTon;
-
-                // Cập nhật vào cơ sở dữ liệu hoặc xử lý dữ liệu khác ở đây
-                Console.WriteLine($"Giá trị mới của Số Lượng Tồn: {newSoLuongTon}");
-            }
-        }
     }
 
  

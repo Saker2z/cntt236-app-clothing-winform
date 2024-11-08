@@ -23,11 +23,46 @@ namespace GUI
             InitializeComponent();
             this.Load += FrmNhapHang_Load;
             dgv_nh.CellClick += Dgv_nh_CellClick;
-           
-            
+            duyet.Click += Duyet_Click;           
         }
 
-       
+        private void Duyet_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra nếu có ít nhất 1 dòng được chọn
+            if (dgv_nh.SelectedRows.Count > 0)
+            {
+                // Kiểm tra trạng thái "Chưa xử lí"
+                if ((dgv_nh.SelectedRows[0].Cells["trang_thai"].Value.ToString()).Equals("Chưa xử lí") ||
+                    (string.IsNullOrEmpty(txt_manhaphang.Text) && cbb_trangthai.SelectedItem.ToString().Equals("Chưa xử lí")))
+                {
+                    int maNhapHang = dgv_nh.SelectedRows[0].Cells["ma_nhap_hang"].Value != null
+                        ? int.Parse(dgv_nh.SelectedRows[0].Cells["ma_nhap_hang"].Value.ToString())
+                        : int.Parse(txt_manhaphang.Text);
+                  
+                    frmDuyetSanPham duyet = new frmDuyetSanPham(maNhapHang);
+                    duyet.FormClosedEvent += Duyet_FormClosedEvent;
+                    duyet.ShowDialog();
+                }
+                // Kiểm tra trạng thái "Hoàn thành"
+                else if ((dgv_nh.SelectedRows[0].Cells["trang_thai"].Value.ToString()).Equals("Hoàn thành") ||
+                         (string.IsNullOrEmpty(txt_manhaphang.Text) && cbb_trangthai.SelectedItem.ToString().Equals("Hoàn thành")))
+                {
+                    MessageBox.Show("Không thể duyệt đơn đã hoàn thành!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+            }
+            else
+            {
+                // Thông báo nếu không có đơn hàng được chọn
+                MessageBox.Show("Vui lòng chọn đơn cần duyệt", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void Duyet_FormClosedEvent(object sender, EventArgs e)
+        {
+            loaddgv_nhap_hang();
+        }
 
         private void Dgv_nh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -80,6 +115,7 @@ namespace GUI
             ct_nhap_bll = new chi_tiet_nhap_sql_BLL();
             dgv_sanpham.DataSource = null;
             dgv_sanpham.DataSource = ct_nhap_bll.get_sp_by_phieu_nhap(id);
+          
         }
 
         private void FrmNhapHang_Load(object sender, EventArgs e)
@@ -91,7 +127,9 @@ namespace GUI
         void loaddgv_nhap_hang()
         {
             nhap_bll = new nhap_hang_sql_BLL();
+
             dgv_nh.DataSource = nhap_bll.get_all_nhap_hang();
+            dgv_nh.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void textEdit1_EditValueChanged(object sender, EventArgs e)
@@ -113,11 +151,7 @@ namespace GUI
             }
         }
 
-        private void duyet_Click(object sender, EventArgs e)
-        {
-            frmDuyetSanPham duyetSanPham = new frmDuyetSanPham();
-            duyetSanPham.Show();
-        }
+   
 
         private void them_Click(object sender, EventArgs e)
         {

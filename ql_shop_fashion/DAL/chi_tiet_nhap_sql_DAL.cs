@@ -41,7 +41,8 @@ namespace DAL
                             ma_nhap_hang = x.ma_nhap_hang,
                             ma_san_pham = x.ma_san_pham,
                             so_luong = x.so_luong,
-                            gia_nhap = x.gia_nhap
+                            gia_nhap = x.gia_nhap,
+                            trang_thai = "Chưa duyệt"
                         }).ToList();
 
             return dssp; // Trả về List<chi_tiet_nhap_hang>

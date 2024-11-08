@@ -230,7 +230,7 @@ namespace GUI
             this.duyet.Name = "duyet";
             this.duyet.Size = new System.Drawing.Size(61, 22);
             this.duyet.Text = "Duyệt";
-            this.duyet.Click += new System.EventHandler(this.duyet_Click);
+          
             // 
             // menuchucnang
             // 

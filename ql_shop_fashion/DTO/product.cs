@@ -12,6 +12,7 @@ namespace DTO
         public string ten_san_pham { get; set; }
         public string ten_kich_thuoc { get; set; }
         public string ten_mau_sac { get; set; }
-        public int? so_luong_ton { get; set; }  // Thuộc tính để lưu trữ số lượng tồn
+        public int? so_luong_ton { get; set; }
+  
     }
 }
