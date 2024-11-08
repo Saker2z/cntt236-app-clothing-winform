@@ -1,5 +1,4 @@
 ﻿using DevExpress.XtraBars;
-using DevExpress.XtraBars.Navigation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using DTO;
 
 namespace GUI
 {
@@ -19,46 +17,13 @@ namespace GUI
         UC_NhapHangTheoSanPham nhapHangTheoSanPham;
         UC_thuonghieu thuonghieu;
         UC_TaiKhoan taiKhoan;
-        UC_NhaCungCap nhaCungCap;
-        UC_SanPham sanPham;
-        QL_SHOP_DATADataContext dataContext;
 
         public frmMain()
         {
             InitializeComponent();
             pn_main.Dock = DockStyle.Fill;
             this.Load += FrmMain_Load;
-            nhacungcap.Click += Nhacungcap_Click;
-            sanpham.Click += SanPham_Click;
-            dataContext = new QL_SHOP_DATADataContext();
         }
-
-        private void SanPham_Click(object sender, EventArgs e)
-        {
-            panel_chinh.Controls.Clear();
-
-            if (sanPham == null)
-            {
-                sanPham = new UC_SanPham();
-                sanPham.Dock = DockStyle.Fill;
-            }
-            panel_chinh.Controls.Add(sanPham);
-            sanPham.BringToFront();
-        }
-
-        private void Nhacungcap_Click(object sender, EventArgs e)
-        {
-            panel_chinh.Controls.Clear();
-
-            if (nhaCungCap == null)
-            {
-                nhaCungCap = new UC_NhaCungCap();
-                nhaCungCap.Dock = DockStyle.Fill;
-            }
-            panel_chinh.Controls.Add(nhaCungCap);
-            nhaCungCap.BringToFront();
-        }
-
         private void LoadGifToPanel(string filePath)
         {
             if (File.Exists(filePath)) // Kiểm tra xem file có tồn tại không
@@ -104,11 +69,7 @@ namespace GUI
 
             if (result == DialogResult.Yes)
             {
-                frmDangNhap main = new frmDangNhap();
-                this.Hide();
-                main.Show();
-                main.FormClosed += (s, args) => this.Close();
-
+                Application.Exit();
             }
             else
             {
@@ -170,44 +131,15 @@ namespace GUI
             nhapHangTheoSanPham.BringToFront();
         }
 
-        public void ShowScreens(List<int> accessibleScreens)
+        public void ShowScreens(List<int> screenIds)
         {
-            // Gọi phương thức đệ quy để xử lý hiển thị quyền truy cập cho tất cả các phần tử
-            SetElementVisibility(accordionControl1.Elements, accessibleScreens);
-        }
-
-        // Phương thức đệ quy để duyệt qua các AccordionControlElement và các phần tử con
-        private void SetElementVisibility(AccordionControlElementCollection elements, List<int> accessibleScreens)
-        {
-            foreach (AccordionControlElement element in elements)
+            foreach (var item in accordionControl1.Elements)
             {
-                if (element != null && element.Tag != null)
+                if (item.Tag is int screenId)
                 {
-                    // Lấy id_man_hinh từ Tag của AccordionControlElement
-                    int elementId = Convert.ToInt32(element.Tag);
-
-                    // Kiểm tra quyền truy cập
-                    element.Visible = accessibleScreens.Contains(elementId);
-                }
-                else
-                {
-                    // Nếu không có Tag hoặc là null, ẩn phần tử
-                    element.Visible = false;
-                }
-
-                // Kiểm tra nếu phần tử có các phần tử con (sub-elements)
-                if (element.Elements.Count > 0)
-                {
-                    // Đệ quy gọi lại phương thức SetElementVisibility cho các phần tử con
-                    SetElementVisibility(element.Elements, accessibleScreens);
+                    item.Visible = screenIds.Contains(screenId);
                 }
             }
         }
-
-
-
-
-
-
     }
 }

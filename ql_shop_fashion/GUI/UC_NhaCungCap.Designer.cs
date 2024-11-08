@@ -34,7 +34,7 @@ namespace GUI
             this.PageNhaCungCap = new DevExpress.XtraTab.XtraTabPage();
             this.datagridview_ncc = new System.Windows.Forms.Panel();
             this.dgv_nhacungcap = new System.Windows.Forms.DataGridView();
-            this.thongtinnhacungcap = new System.Windows.Forms.Panel();
+            this.thongtinncc = new System.Windows.Forms.Panel();
             this.btn_loadncc = new DevExpress.XtraEditors.SimpleButton();
             this.btn_xoancc = new DevExpress.XtraEditors.SimpleButton();
             this.btn_suancc = new DevExpress.XtraEditors.SimpleButton();
@@ -51,7 +51,7 @@ namespace GUI
             this.datagridview_nccsp = new System.Windows.Forms.Panel();
             this.dgv_sp = new System.Windows.Forms.DataGridView();
             this.dgv_ncc = new System.Windows.Forms.DataGridView();
-            this.thongtinnhacungcapsanpham = new System.Windows.Forms.Panel();
+            this.thongtinnccsp = new System.Windows.Forms.Panel();
             this.txt_masanpham = new DevExpress.XtraEditors.TextEdit();
             this.txt_giacungcap = new DevExpress.XtraEditors.TextEdit();
             this.txt_manhacungcapsanpham = new DevExpress.XtraEditors.TextEdit();
@@ -67,7 +67,7 @@ namespace GUI
             this.PageNhaCungCap.SuspendLayout();
             this.datagridview_ncc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhacungcap)).BeginInit();
-            this.thongtinnhacungcap.SuspendLayout();
+            this.thongtinncc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_sdt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_diachi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tennhacungcap.Properties)).BeginInit();
@@ -76,7 +76,7 @@ namespace GUI
             this.datagridview_nccsp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ncc)).BeginInit();
-            this.thongtinnhacungcapsanpham.SuspendLayout();
+            this.thongtinnccsp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_masanpham.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_giacungcap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_manhacungcapsanpham.Properties)).BeginInit();
@@ -108,7 +108,7 @@ namespace GUI
             // PageNhaCungCap
             // 
             this.PageNhaCungCap.Controls.Add(this.datagridview_ncc);
-            this.PageNhaCungCap.Controls.Add(this.thongtinnhacungcap);
+            this.PageNhaCungCap.Controls.Add(this.thongtinncc);
             this.PageNhaCungCap.Name = "PageNhaCungCap";
             this.PageNhaCungCap.Size = new System.Drawing.Size(819, 535);
             this.PageNhaCungCap.Text = "Nhà Cung Cấp";
@@ -131,25 +131,25 @@ namespace GUI
             this.dgv_nhacungcap.Size = new System.Drawing.Size(819, 317);
             this.dgv_nhacungcap.TabIndex = 0;
             // 
-            // thongtinnhacungcap
+            // thongtinncc
             // 
-            this.thongtinnhacungcap.Controls.Add(this.btn_loadncc);
-            this.thongtinnhacungcap.Controls.Add(this.btn_xoancc);
-            this.thongtinnhacungcap.Controls.Add(this.btn_suancc);
-            this.thongtinnhacungcap.Controls.Add(this.btn_themncc);
-            this.thongtinnhacungcap.Controls.Add(this.txt_sdt);
-            this.thongtinnhacungcap.Controls.Add(this.txt_diachi);
-            this.thongtinnhacungcap.Controls.Add(this.txt_tennhacungcap);
-            this.thongtinnhacungcap.Controls.Add(this.txt_manhacungcap);
-            this.thongtinnhacungcap.Controls.Add(this.lb_sodienthoai);
-            this.thongtinnhacungcap.Controls.Add(this.lb_diachi);
-            this.thongtinnhacungcap.Controls.Add(this.lb_tennhacungcap);
-            this.thongtinnhacungcap.Controls.Add(this.lb_manhacungcap);
-            this.thongtinnhacungcap.Dock = System.Windows.Forms.DockStyle.Top;
-            this.thongtinnhacungcap.Location = new System.Drawing.Point(0, 0);
-            this.thongtinnhacungcap.Name = "thongtinnhacungcap";
-            this.thongtinnhacungcap.Size = new System.Drawing.Size(819, 218);
-            this.thongtinnhacungcap.TabIndex = 1;
+            this.thongtinncc.Controls.Add(this.btn_loadncc);
+            this.thongtinncc.Controls.Add(this.btn_xoancc);
+            this.thongtinncc.Controls.Add(this.btn_suancc);
+            this.thongtinncc.Controls.Add(this.btn_themncc);
+            this.thongtinncc.Controls.Add(this.txt_sdt);
+            this.thongtinncc.Controls.Add(this.txt_diachi);
+            this.thongtinncc.Controls.Add(this.txt_tennhacungcap);
+            this.thongtinncc.Controls.Add(this.txt_manhacungcap);
+            this.thongtinncc.Controls.Add(this.lb_sodienthoai);
+            this.thongtinncc.Controls.Add(this.lb_diachi);
+            this.thongtinncc.Controls.Add(this.lb_tennhacungcap);
+            this.thongtinncc.Controls.Add(this.lb_manhacungcap);
+            this.thongtinncc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.thongtinncc.Location = new System.Drawing.Point(0, 0);
+            this.thongtinncc.Name = "thongtinncc";
+            this.thongtinncc.Size = new System.Drawing.Size(819, 218);
+            this.thongtinncc.TabIndex = 1;
             // 
             // btn_loadncc
             // 
@@ -246,7 +246,7 @@ namespace GUI
             // PageNhaCungCapSanPham
             // 
             this.PageNhaCungCapSanPham.Controls.Add(this.datagridview_nccsp);
-            this.PageNhaCungCapSanPham.Controls.Add(this.thongtinnhacungcapsanpham);
+            this.PageNhaCungCapSanPham.Controls.Add(this.thongtinnccsp);
             this.PageNhaCungCapSanPham.Name = "PageNhaCungCapSanPham";
             this.PageNhaCungCapSanPham.Size = new System.Drawing.Size(819, 535);
             this.PageNhaCungCapSanPham.Text = "Nhà Cung Cấp Sản Phẩm";
@@ -279,19 +279,19 @@ namespace GUI
             this.dgv_ncc.Size = new System.Drawing.Size(392, 411);
             this.dgv_ncc.TabIndex = 0;
             // 
-            // thongtinnhacungcapsanpham
+            // thongtinnccsp
             // 
-            this.thongtinnhacungcapsanpham.Controls.Add(this.txt_masanpham);
-            this.thongtinnhacungcapsanpham.Controls.Add(this.txt_giacungcap);
-            this.thongtinnhacungcapsanpham.Controls.Add(this.txt_manhacungcapsanpham);
-            this.thongtinnhacungcapsanpham.Controls.Add(this.lb_masanpham);
-            this.thongtinnhacungcapsanpham.Controls.Add(this.lb_giacungcap);
-            this.thongtinnhacungcapsanpham.Controls.Add(this.lb_manhacungcapsanpham);
-            this.thongtinnhacungcapsanpham.Dock = System.Windows.Forms.DockStyle.Top;
-            this.thongtinnhacungcapsanpham.Location = new System.Drawing.Point(0, 0);
-            this.thongtinnhacungcapsanpham.Name = "thongtinnhacungcapsanpham";
-            this.thongtinnhacungcapsanpham.Size = new System.Drawing.Size(819, 124);
-            this.thongtinnhacungcapsanpham.TabIndex = 2;
+            this.thongtinnccsp.Controls.Add(this.txt_masanpham);
+            this.thongtinnccsp.Controls.Add(this.txt_giacungcap);
+            this.thongtinnccsp.Controls.Add(this.txt_manhacungcapsanpham);
+            this.thongtinnccsp.Controls.Add(this.lb_masanpham);
+            this.thongtinnccsp.Controls.Add(this.lb_giacungcap);
+            this.thongtinnccsp.Controls.Add(this.lb_manhacungcapsanpham);
+            this.thongtinnccsp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.thongtinnccsp.Location = new System.Drawing.Point(0, 0);
+            this.thongtinnccsp.Name = "thongtinnccsp";
+            this.thongtinnccsp.Size = new System.Drawing.Size(819, 124);
+            this.thongtinnccsp.TabIndex = 2;
             // 
             // txt_masanpham
             // 
@@ -371,8 +371,8 @@ namespace GUI
             this.PageNhaCungCap.ResumeLayout(false);
             this.datagridview_ncc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhacungcap)).EndInit();
-            this.thongtinnhacungcap.ResumeLayout(false);
-            this.thongtinnhacungcap.PerformLayout();
+            this.thongtinncc.ResumeLayout(false);
+            this.thongtinncc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_sdt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_diachi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tennhacungcap.Properties)).EndInit();
@@ -381,8 +381,8 @@ namespace GUI
             this.datagridview_nccsp.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ncc)).EndInit();
-            this.thongtinnhacungcapsanpham.ResumeLayout(false);
-            this.thongtinnhacungcapsanpham.PerformLayout();
+            this.thongtinnccsp.ResumeLayout(false);
+            this.thongtinnccsp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_masanpham.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_giacungcap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_manhacungcapsanpham.Properties)).EndInit();
@@ -401,7 +401,7 @@ namespace GUI
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private System.Windows.Forms.Panel datagridview_ncc;
-        private System.Windows.Forms.Panel thongtinnhacungcap;
+        private System.Windows.Forms.Panel thongtinncc;
         private System.Windows.Forms.DataGridView dgv_nhacungcap;
         private DevExpress.XtraEditors.TextEdit txt_sdt;
         private DevExpress.XtraEditors.TextEdit txt_diachi;
@@ -415,7 +415,7 @@ namespace GUI
         private DevExpress.XtraEditors.SimpleButton btn_xoancc;
         private DevExpress.XtraEditors.SimpleButton btn_suancc;
         private DevExpress.XtraEditors.SimpleButton btn_themncc;
-        private System.Windows.Forms.Panel thongtinnhacungcapsanpham;
+        private System.Windows.Forms.Panel thongtinnccsp;
         private DevExpress.XtraEditors.TextEdit txt_masanpham;
         private DevExpress.XtraEditors.TextEdit txt_giacungcap;
         private DevExpress.XtraEditors.TextEdit txt_manhacungcapsanpham;
