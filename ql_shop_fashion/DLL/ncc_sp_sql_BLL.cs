@@ -35,6 +35,10 @@ namespace BLL
         {
             return sp.SaveProducts(productList);
         }
+        public bool UpdateGiaNhap(int maNhaCungCap, int maSanPham, decimal giaNhapMoi)
+        {
+            return sp.UpdateGiaNhap(maNhaCungCap, maSanPham, giaNhapMoi);
+        }
 
     }
 }

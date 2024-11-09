@@ -102,6 +102,36 @@ namespace DAL
                 }
             }
         }
+        public bool UpdateGiaNhap(int maNhaCungCap, int maSanPham, decimal giaNhapMoi)
+        {
+            try
+            {
+                // Tìm sản phẩm theo ma_nha_cung_cap và ma_san_pham
+                var sanPham = data.nha_cung_cap_san_phams
+                    .FirstOrDefault(p => p.ma_nha_cung_cap == maNhaCungCap && p.ma_san_pham == maSanPham);
+
+                if (sanPham != null)
+                {
+                    // Nếu sản phẩm tồn tại, cập nhật gia_nhap
+                    sanPham.gia_cung_cap = giaNhapMoi;
+                    data.SubmitChanges(); // Lưu thay đổi vào cơ sở dữ liệu
+                    return true;
+                }
+                else
+                {
+                    // Nếu không tìm thấy sản phẩm
+                    Console.WriteLine("Không tìm thấy sản phẩm với mã nhà cung cấp và mã sản phẩm đã cho.");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu có lỗi
+                Console.WriteLine("Lỗi trong quá trình cập nhật giá nhập: " + ex.Message);
+                return false;
+            }
+        }
+
 
 
     }

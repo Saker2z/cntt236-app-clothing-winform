@@ -63,77 +63,88 @@ namespace GUI
             // 
             // gct_dsncc
             // 
-            this.gct_dsncc.Location = new System.Drawing.Point(0, 3);
+            this.gct_dsncc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gct_dsncc.Location = new System.Drawing.Point(0, 2);
             this.gct_dsncc.MainView = this.gridView1;
+            this.gct_dsncc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gct_dsncc.Name = "gct_dsncc";
-            this.gct_dsncc.Size = new System.Drawing.Size(402, 771);
+            this.gct_dsncc.Size = new System.Drawing.Size(345, 626);
             this.gct_dsncc.TabIndex = 0;
             this.gct_dsncc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.DetailHeight = 284;
             this.gridView1.GridControl = this.gct_dsncc;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // ma_ncc
             // 
-            this.ma_ncc.Location = new System.Drawing.Point(515, 20);
+            this.ma_ncc.Location = new System.Drawing.Point(441, 16);
+            this.ma_ncc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ma_ncc.Name = "ma_ncc";
-            this.ma_ncc.Size = new System.Drawing.Size(338, 22);
+            this.ma_ncc.Size = new System.Drawing.Size(290, 20);
             this.ma_ncc.TabIndex = 1;
             // 
             // ten_ncc
             // 
-            this.ten_ncc.Location = new System.Drawing.Point(521, 61);
+            this.ten_ncc.Location = new System.Drawing.Point(447, 50);
+            this.ten_ncc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ten_ncc.Name = "ten_ncc";
-            this.ten_ncc.Size = new System.Drawing.Size(338, 22);
+            this.ten_ncc.Size = new System.Drawing.Size(290, 20);
             this.ten_ncc.TabIndex = 2;
             // 
             // dc
             // 
-            this.dc.Location = new System.Drawing.Point(515, 99);
+            this.dc.Location = new System.Drawing.Point(441, 80);
+            this.dc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dc.Name = "dc";
-            this.dc.Size = new System.Drawing.Size(338, 22);
+            this.dc.Size = new System.Drawing.Size(290, 20);
             this.dc.TabIndex = 3;
             // 
             // dt
             // 
-            this.dt.Location = new System.Drawing.Point(515, 137);
+            this.dt.Location = new System.Drawing.Point(441, 111);
+            this.dt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dt.Name = "dt";
-            this.dt.Size = new System.Drawing.Size(338, 22);
+            this.dt.Size = new System.Drawing.Size(290, 20);
             this.dt.TabIndex = 5;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(404, 23);
+            this.labelControl1.Location = new System.Drawing.Point(346, 19);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(105, 17);
+            this.labelControl1.Size = new System.Drawing.Size(81, 13);
             this.labelControl1.TabIndex = 6;
             this.labelControl1.Text = "Mã nhà cung cấp";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(404, 64);
+            this.labelControl2.Location = new System.Drawing.Point(346, 52);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(111, 17);
+            this.labelControl2.Size = new System.Drawing.Size(85, 13);
             this.labelControl2.TabIndex = 7;
             this.labelControl2.Text = "Tên nhà cung cấp";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(422, 104);
+            this.labelControl3.Location = new System.Drawing.Point(362, 84);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(40, 17);
+            this.labelControl3.Size = new System.Drawing.Size(32, 13);
             this.labelControl3.TabIndex = 8;
             this.labelControl3.Text = "Địa chỉ";
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(422, 140);
+            this.labelControl4.Location = new System.Drawing.Point(362, 114);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(79, 17);
+            this.labelControl4.Size = new System.Drawing.Size(62, 13);
             this.labelControl4.TabIndex = 9;
             this.labelControl4.Text = "Số điện thoại";
             // 
@@ -141,9 +152,10 @@ namespace GUI
             // 
             this.panel1.Controls.Add(this.toolStrip2);
             this.panel1.Controls.Add(this.toolStrip1);
-            this.panel1.Location = new System.Drawing.Point(404, 216);
+            this.panel1.Location = new System.Drawing.Point(346, 176);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(809, 46);
+            this.panel1.Size = new System.Drawing.Size(693, 37);
             this.panel1.TabIndex = 10;
             // 
             // toolStrip2
@@ -151,7 +163,7 @@ namespace GUI
             this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip2.Location = new System.Drawing.Point(0, 27);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(809, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(693, 25);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -164,7 +176,7 @@ namespace GUI
             this.bt_luu});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(809, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(693, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -173,7 +185,7 @@ namespace GUI
             this.bt_them.Image = global::GUI.Properties.Resources.themphieu;
             this.bt_them.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(70, 24);
+            this.bt_them.Size = new System.Drawing.Size(61, 24);
             this.bt_them.Text = "Thêm";
             // 
             // bt_sua
@@ -181,7 +193,7 @@ namespace GUI
             this.bt_sua.Image = global::GUI.Properties.Resources.suaphieu;
             this.bt_sua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bt_sua.Name = "bt_sua";
-            this.bt_sua.Size = new System.Drawing.Size(58, 24);
+            this.bt_sua.Size = new System.Drawing.Size(50, 24);
             this.bt_sua.Text = "Sửa";
             // 
             // bt_luu
@@ -189,37 +201,41 @@ namespace GUI
             this.bt_luu.Image = global::GUI.Properties.Resources.loadphieu;
             this.bt_luu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bt_luu.Name = "bt_luu";
-            this.bt_luu.Size = new System.Drawing.Size(57, 24);
+            this.bt_luu.Size = new System.Drawing.Size(51, 24);
             this.bt_luu.Text = "Lưu";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.gct_spncc);
-            this.panel2.Location = new System.Drawing.Point(404, 246);
+            this.panel2.Location = new System.Drawing.Point(346, 200);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(786, 576);
+            this.panel2.Size = new System.Drawing.Size(674, 468);
             this.panel2.TabIndex = 11;
             // 
             // gct_spncc
             // 
             this.gct_spncc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gct_spncc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gct_spncc.Location = new System.Drawing.Point(0, 0);
             this.gct_spncc.MainView = this.gridView2;
+            this.gct_spncc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gct_spncc.Name = "gct_spncc";
-            this.gct_spncc.Size = new System.Drawing.Size(786, 576);
+            this.gct_spncc.Size = new System.Drawing.Size(674, 468);
             this.gct_spncc.TabIndex = 0;
             this.gct_spncc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
             // 
+            this.gridView2.DetailHeight = 284;
             this.gridView2.GridControl = this.gct_spncc;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // NCC_NCCSP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -232,8 +248,9 @@ namespace GUI
             this.Controls.Add(this.ten_ncc);
             this.Controls.Add(this.ma_ncc);
             this.Controls.Add(this.gct_dsncc);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NCC_NCCSP";
-            this.Size = new System.Drawing.Size(1190, 822);
+            this.Size = new System.Drawing.Size(1126, 722);
             ((System.ComponentModel.ISupportInitialize)(this.gct_dsncc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ma_ncc.Properties)).EndInit();

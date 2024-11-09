@@ -22,6 +22,7 @@ namespace GUI
         private ncc_sp_sql_BLL ncc_sp_bll;
         public san_pham_sql_BLL sp_bll;
         private int idncc = 0;
+        int checkpoin = 0;
         public NCC_NCCSP()
         {
             InitializeComponent();
@@ -34,13 +35,30 @@ namespace GUI
 
         private void Bt_luu_Click(object sender, EventArgs e)
         {
-            SaveAllDataToDatabase();
+            if (checkpoin == 1)
+            {
+                SaveAllDataToDatabase();
+              
+                return;
+            }
+            else if (checkpoin == 2)
+            {
+                SaveUpdatedGiaCungCap();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Lỗi sự kiện vui lòng chọn thêm hoặc sửa", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+         
         }
 
         private void Bt_them_Click(object sender, EventArgs e)
         {
             sp_bll = new san_pham_sql_BLL();
             AddEmptyRowToGrid(sp_bll.get_all_sp());
+            checkpoin = 1;
         }
 
         private void GridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -68,7 +86,9 @@ namespace GUI
 
         private void Bt_sua_Click(object sender, EventArgs e)
         {
+
             EnableEditGiaCungCapForSelectedRow();
+            checkpoin = 2;
         }
         public void EnableEditGiaCungCapForSelectedRow()
         {
@@ -85,29 +105,86 @@ namespace GUI
                 return;
             }
 
-            // Bắt đầu cập nhật dữ liệu để tránh việc GridView cố gắng render trong khi thay đổi
-            gridView.BeginDataUpdate();
-            try
-            {
-                // Khóa tất cả các cột trừ cột "gia_cung_cap"
-                foreach (DevExpress.XtraGrid.Columns.GridColumn column in gridView.Columns)
-                {
-                    column.OptionsColumn.AllowEdit = column.FieldName == "gia_cung_cap";
-                }
+            // Bật chế độ cho phép chỉnh sửa toàn bộ GridView
+            gridView.OptionsBehavior.Editable = true;
 
-                // Đặt focus vào cột "gia_cung_cap" trong dòng hiện đang chọn và mở chế độ chỉnh sửa
-                gridView.FocusedRowHandle = selectedRowHandle;
-                gridView.FocusedColumn = gridView.Columns["gia_cung_cap"];
-                gridView.ShowEditor();
-            }
-            finally
+            // Đặt AllowEdit cho tất cả các cột là false trừ "gia_cung_cap"
+            foreach (DevExpress.XtraGrid.Columns.GridColumn column in gridView.Columns)
             {
-                // Kết thúc cập nhật dữ liệu
-                gridView.EndDataUpdate();
+                column.OptionsColumn.AllowEdit = column.FieldName == "gia_cung_cap";
+            }
+
+            // Đặt focus vào cột "gia_cung_cap" trong dòng hiện đang chọn và mở chế độ chỉnh sửa
+            gridView.FocusedRowHandle = selectedRowHandle;
+            gridView.FocusedColumn = gridView.Columns["gia_cung_cap"];
+            gridView.ShowEditor();
+        }
+
+
+
+        public void SaveUpdatedGiaCungCap()
+        {
+            // Lấy GridView từ GridControl
+            GridView gridView = gct_spncc.MainView as GridView;
+            if (gridView == null)
+                return;
+
+            // Kiểm tra nếu có dòng nào đang được chọn
+            int selectedRowHandle = gridView.FocusedRowHandle;
+            if (selectedRowHandle < 0)
+            {
+                MessageBox.Show("Vui lòng chọn dòng để lưu chỉnh sửa.");
+                return;
+            }
+
+            // Đảm bảo cập nhật giá trị đã chỉnh sửa từ ô vào GridView
+            gridView.CloseEditor();
+            gridView.UpdateCurrentRow();
+
+            // Lấy giá trị của dòng hiện tại từ GridView
+            int maNhaCungCap = Convert.ToInt32(gridView.GetRowCellValue(selectedRowHandle, "ma_nha_cung_cap") ?? 0);
+            int maSanPham = Convert.ToInt32(gridView.GetRowCellValue(selectedRowHandle, "ma_san_pham") ?? 0);
+            decimal giaCungCap = Convert.ToDecimal(gridView.GetRowCellValue(selectedRowHandle, "gia_cung_cap") ?? 0);
+
+            // Gọi hàm UpdateGiaNhap để lưu thay đổi vào cơ sở dữ liệu
+            ncc_sp_bll = new ncc_sp_sql_BLL();
+            bool result = ncc_sp_bll.UpdateGiaNhap(maNhaCungCap, maSanPham, giaCungCap);
+
+            // Kiểm tra kết quả và hiển thị thông báo cho người dùng
+            if (result)
+            {
+                MessageBox.Show("Cập nhật giá cung cấp thành công.", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Cập nhật lại trạng thái
+                checkpoin = 0;
+
+                // Tải lại dữ liệu vào DataGridView để hiển thị thông tin mới
+                load_dgv_nccsp(idncc);
+
+
+                // Xuất thông tin chi tiết của dòng đã cập nhật: ma_nha_cung_cap, ma_san_pham, gia_cung_cap
+                string message = $"Chi tiết dòng đã cập nhật:\n" +
+                                 $"- Mã nhà cung cấp: {maNhaCungCap}\n" +
+                                 $"- Mã sản phẩm: {maSanPham}\n" +
+                                 $"- Giá cung cấp mới: {giaCungCap}";
+
+                MessageBox.Show(message, "Thông tin cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Đặt trạng thái GridView về ban đầu (không cho phép chỉnh sửa)
+                gridView.OptionsBehavior.Editable = false;
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi xảy ra khi cập nhật giá cung cấp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
+
+
+
+
+         
 
 
 
@@ -156,68 +233,52 @@ namespace GUI
         }
         void load_dgv_nccsp(int id)
         {
+            // Khởi tạo đối tượng BLL nếu chưa có
             ncc_sp_bll = new ncc_sp_sql_BLL();
-            GridView gridView = gct_spncc.MainView as GridView;
-            if (gridView == null)
-                return;
+
+            // Xóa dữ liệu và cấu hình hiện tại của `GridControl` trước khi tải mới
+            gct_spncc.DataSource = null; // Xóa dữ liệu cũ nếu có
+            GridView gridView = new GridView(gct_spncc); // Tạo mới `GridView`
+            gct_spncc.MainView = gridView; // Gán `GridView` mới cho `GridControl`
 
             // Gán dữ liệu cho GridControl
             gct_spncc.DataSource = ncc_sp_bll.get_sp_nccsp_by_id(id);
 
-
             // Đặt các tùy chọn không cho phép chỉnh sửa dữ liệu trong GridView
             gridView.OptionsBehavior.Editable = false;
 
-            // Thiết lập tiêu đề, độ rộng, và thứ tự hiển thị cho các cột
-            var maSPColumn = gridView.Columns.ColumnByFieldName("ma_san_pham");
-            if (maSPColumn != null)
-            {
-                maSPColumn.Caption = "Mã Sản Phẩm";
-                maSPColumn.Width = 100;
-                maSPColumn.VisibleIndex = 0; // Đặt thứ tự hiển thị là đầu tiên
-            }
+            // Thiết lập cột và cấu hình hiển thị
+            gridView.Columns.Clear(); // Xóa các cột cũ để tránh xung đột
 
-            var tenSPColumn = gridView.Columns.ColumnByFieldName("ten_san_pham");
-            if (tenSPColumn != null)
-            {
-                tenSPColumn.Caption = "Tên Sản Phẩm";
-                tenSPColumn.Width = 200;
-                tenSPColumn.VisibleIndex = 1; // Đặt thứ tự hiển thị là thứ hai
-            }
+            // Thêm cột "ma_san_pham"
+            var maSPColumn = gridView.Columns.AddVisible("ma_san_pham", "Mã Sản Phẩm");
+            maSPColumn.Width = 100;
+            maSPColumn.VisibleIndex = 0;
 
-            var giaCungCapColumn = gridView.Columns.ColumnByFieldName("gia_cung_cap");
-            if (giaCungCapColumn != null)
-            {
-                giaCungCapColumn.Caption = "Giá Cung Cấp";
-                giaCungCapColumn.Width = 150;
-                giaCungCapColumn.VisibleIndex = 2; // Đặt thứ tự hiển thị là thứ ba
-            }
+            // Thêm cột "ten_san_pham"
+            var tenSPColumn = gridView.Columns.AddVisible("ten_san_pham", "Tên Sản Phẩm");
+            tenSPColumn.Width = 200;
+            tenSPColumn.VisibleIndex = 1;
 
-            // Ẩn các cột không cần thiết sau khi kiểm tra null
-            var createdAtColumn = gridView.Columns.ColumnByFieldName("created_at");
-            if (createdAtColumn != null)
-                createdAtColumn.Visible = false;
+            // Thêm cột "gia_cung_cap"
+            var giaCungCapColumn = gridView.Columns.AddVisible("gia_cung_cap", "Giá Cung Cấp");
+            giaCungCapColumn.Width = 150;
+            giaCungCapColumn.VisibleIndex = 2;
 
-            var maNCCColumn = gridView.Columns.ColumnByFieldName("ma_nha_cung_cap");
-            if (maNCCColumn != null)
-                maNCCColumn.Visible = false;
-
-            var updatedAtColumn = gridView.Columns.ColumnByFieldName("updated_at");
-            if (updatedAtColumn != null)
-                updatedAtColumn.Visible = false;
-            var ncc = gridView.Columns.ColumnByFieldName("nha_cung_cap");
-            if (ncc != null)
-                ncc.Visible = false;
-            var sp = gridView.Columns.ColumnByFieldName("san_pham");
-            if (sp != null)
-                sp.Visible = false;
+            // Ẩn các cột không cần thiết
+            gridView.Columns.AddField("created_at").Visible = false;
+            gridView.Columns.AddField("ma_nha_cung_cap").Visible = false;
+            gridView.Columns.AddField("updated_at").Visible = false;
+            gridView.Columns.AddField("nha_cung_cap").Visible = false;
+            gridView.Columns.AddField("san_pham").Visible = false;
 
             // Tự động điều chỉnh chiều rộng của tất cả các cột dựa trên nội dung của chúng
             gridView.BestFitColumns();
 
-            // Cập nhật lại giao diện
+            // Làm mới lại `GridView` để cập nhật giao diện
             gridView.RefreshData();
         }
+
         public void AddEmptyRowToGrid(List<san_pham_custom> sanPhamList)
         {
             // Lấy GridView từ GridControl
@@ -362,11 +423,15 @@ namespace GUI
             // Hiển thị thông báo kết quả
             if (result)
             {
-                MessageBox.Show("Lưu dữ liệu thành công!");
+                MessageBox.Show("Lưu dữ liệu thành công!","Chúc mừng",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                load_dgv_nccsp(idncc);
+                checkpoin = 0;
+                return;
             }
             else
             {
                 MessageBox.Show("Có lỗi xảy ra trong quá trình lưu dữ liệu.");
+                return;
             }
         }
 
