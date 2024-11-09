@@ -108,14 +108,10 @@ namespace GUI
         private void theonhacungcap_Click(object sender, EventArgs e)
         {
             panel_chinh.Controls.Clear();
-
-            if (nhapHangTheoNCC == null)
-            {
-                nhapHangTheoNCC = new UC_NhapHangTheoNCC();
-                nhapHangTheoNCC.Dock = DockStyle.Fill;
-            }
-            panel_chinh.Controls.Add(nhapHangTheoNCC);
-            nhapHangTheoNCC.BringToFront();
+            NCC_NCCSP ncc = new NCC_NCCSP();
+           
+            panel_chinh.Controls.Add(ncc);
+            ncc.BringToFront();
         }
 
         private void theosanpham_Click(object sender, EventArgs e)

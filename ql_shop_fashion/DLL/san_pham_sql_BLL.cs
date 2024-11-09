@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DTO;
 
 namespace BLL
 {
@@ -25,6 +26,10 @@ namespace BLL
         public string get_name_by_id(int id)
         {
             return sp_.get_name_by_id(id);
+        }
+        public List<san_pham_custom> get_all_sp()
+        {
+            return sp_.get_all_sp();
         }
 
 

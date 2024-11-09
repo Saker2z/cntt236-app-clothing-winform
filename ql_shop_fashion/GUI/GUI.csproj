@@ -116,6 +116,12 @@
     <Compile Include="frmNhapHang.Designer.cs">
       <DependentUpon>frmNhapHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="NCC_NCCSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NCC_NCCSP.Designer.cs">
+      <DependentUpon>NCC_NCCSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="nhaphang_rp.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -128,6 +134,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UC_NhaCungCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_NhaCungCap.Designer.cs">
+      <DependentUpon>UC_NhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_NhapHangTheoNCC.cs">
       <SubType>UserControl</SubType>
@@ -171,6 +183,9 @@
     <EmbeddedResource Include="frmNhapHang.resx">
       <DependentUpon>frmNhapHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NCC_NCCSP.resx">
+      <DependentUpon>NCC_NCCSP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="nhaphang_rp.resx">
       <DependentUpon>nhaphang_rp.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +197,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_NhaCungCap.resx">
+      <DependentUpon>UC_NhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_NhapHangTheoNCC.resx">
       <DependentUpon>UC_NhapHangTheoNCC.cs</DependentUpon>

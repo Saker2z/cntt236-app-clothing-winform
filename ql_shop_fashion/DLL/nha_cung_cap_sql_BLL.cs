@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DTO;
 
 namespace BLL
 {
@@ -25,6 +26,10 @@ namespace BLL
         public string get_name_by_id(int id)
         {
             return ncc.get_name_by_id(id);
+        }
+        public List<nha_cung_cap> get_all_ncc()
+        {
+            return ncc.get_all_ncc();
         }
 
     }

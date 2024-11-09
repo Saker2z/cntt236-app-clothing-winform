@@ -34,6 +34,18 @@ namespace DAL
             // Trả về tên sản phẩm đầu tiên hoặc null nếu không tìm thấy
             return ds.FirstOrDefault();
         }
+        public List<san_pham_custom> get_all_sp()
+        {
+            var ds = from i in data.san_phams
+                     select new san_pham_custom
+                     {
+                         ma_san_pham = i.ma_san_pham,
+                         ten_san_pham = i.ten_san_pham,
+                         gia_binh_quan = i.gia_binh_quan
+                     };
+            return ds.ToList();
+        }
+
 
     }
 }

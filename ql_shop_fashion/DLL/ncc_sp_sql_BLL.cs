@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DTO;
 
 namespace BLL
 {
@@ -26,6 +27,14 @@ namespace BLL
         {
             return sp.get_list_name_ncc_id_sp(id);
         }
-      
+        public List<nha_cung_cap_san_pham> get_sp_nccsp_by_id(int id)
+        {
+            return sp.get_sp_nccsp_by_id(id);
+        }
+        public bool SaveProducts(List<nha_cung_cap_san_pham> productList)
+        {
+            return sp.SaveProducts(productList);
+        }
+
     }
 }
