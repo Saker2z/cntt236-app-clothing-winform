@@ -39,6 +39,10 @@ namespace BLL
         {
             return sp.UpdateGiaNhap(maNhaCungCap, maSanPham, giaNhapMoi);
         }
+        public bool DeleteNccSpById(int maNhaCungCap, int maSanPham)
+        {
+            return sp.DeleteNccSpById(maNhaCungCap, maSanPham);
+        }    
 
     }
 }

@@ -2154,3 +2154,4 @@ C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\GUI\o
 C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.pdb
 C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.NCC_NCCSP.resources
 C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.UC_NhaCungCap.resources
+C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.them_ncc.resources

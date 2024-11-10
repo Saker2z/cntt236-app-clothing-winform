@@ -45,9 +45,14 @@ namespace GUI
             this.bt_them = new System.Windows.Forms.ToolStripButton();
             this.bt_sua = new System.Windows.Forms.ToolStripButton();
             this.bt_luu = new System.Windows.Forms.ToolStripButton();
+            this.bt_xoa = new System.Windows.Forms.ToolStripButton();
+            this.bt_load = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gct_spncc = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.them = new System.Windows.Forms.Button();
+            this.sua = new System.Windows.Forms.Button();
+            this.xoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gct_dsncc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ma_ncc.Properties)).BeginInit();
@@ -90,7 +95,7 @@ namespace GUI
             // 
             // ten_ncc
             // 
-            this.ten_ncc.Location = new System.Drawing.Point(447, 50);
+            this.ten_ncc.Location = new System.Drawing.Point(441, 50);
             this.ten_ncc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ten_ncc.Name = "ten_ncc";
             this.ten_ncc.Size = new System.Drawing.Size(290, 20);
@@ -173,7 +178,9 @@ namespace GUI
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bt_them,
             this.bt_sua,
-            this.bt_luu});
+            this.bt_luu,
+            this.bt_xoa,
+            this.bt_load});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(693, 27);
@@ -204,6 +211,23 @@ namespace GUI
             this.bt_luu.Size = new System.Drawing.Size(51, 24);
             this.bt_luu.Text = "Lưu";
             // 
+            // bt_xoa
+            // 
+            this.bt_xoa.Image = global::GUI.Properties.Resources.xoaphieu;
+            this.bt_xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bt_xoa.Name = "bt_xoa";
+            this.bt_xoa.Size = new System.Drawing.Size(51, 24);
+            this.bt_xoa.Text = "Xóa";
+            // 
+            // bt_load
+            // 
+            this.bt_load.Image = global::GUI.Properties.Resources.loadphieu;
+            this.bt_load.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bt_load.Name = "bt_load";
+            this.bt_load.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bt_load.Size = new System.Drawing.Size(78, 24);
+            this.bt_load.Text = "Làm mới";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.gct_spncc);
@@ -233,10 +257,40 @@ namespace GUI
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // them
+            // 
+            this.them.Location = new System.Drawing.Point(843, 19);
+            this.them.Name = "them";
+            this.them.Size = new System.Drawing.Size(75, 23);
+            this.them.TabIndex = 13;
+            this.them.Text = "Thêm";
+            this.them.UseVisualStyleBackColor = true;
+            // 
+            // sua
+            // 
+            this.sua.Location = new System.Drawing.Point(843, 53);
+            this.sua.Name = "sua";
+            this.sua.Size = new System.Drawing.Size(75, 23);
+            this.sua.TabIndex = 14;
+            this.sua.Text = "Sửa";
+            this.sua.UseVisualStyleBackColor = true;
+            // 
+            // xoa
+            // 
+            this.xoa.Location = new System.Drawing.Point(843, 84);
+            this.xoa.Name = "xoa";
+            this.xoa.Size = new System.Drawing.Size(75, 23);
+            this.xoa.TabIndex = 15;
+            this.xoa.Text = "Xóa";
+            this.xoa.UseVisualStyleBackColor = true;
+            // 
             // NCC_NCCSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.xoa);
+            this.Controls.Add(this.sua);
+            this.Controls.Add(this.them);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelControl4);
@@ -290,5 +344,10 @@ namespace GUI
         private DevExpress.XtraGrid.GridControl gct_spncc;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.ToolStripButton bt_luu;
+        private System.Windows.Forms.ToolStripButton bt_xoa;
+        private System.Windows.Forms.ToolStripButton bt_load;
+        private System.Windows.Forms.Button them;
+        private System.Windows.Forms.Button sua;
+        private System.Windows.Forms.Button xoa;
     }
 }

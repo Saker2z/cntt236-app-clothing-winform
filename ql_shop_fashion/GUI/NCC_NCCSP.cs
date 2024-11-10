@@ -13,6 +13,7 @@ using BLL;
 using DTO;
 using DevExpress.DataProcessing;
 using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid;
 
 namespace GUI
 {
@@ -29,8 +30,229 @@ namespace GUI
             this.Load += NCC_NCCSP_Load;
             GridView gridView = gct_dsncc.MainView as GridView;
             gridView.FocusedRowChanged += GridView_FocusedRowChanged;
+            gridView.Click += GridView_Click;
             bt_them.Click += Bt_them_Click;
             bt_luu.Click += Bt_luu_Click;
+            bt_xoa.Click += Bt_xoa_Click;
+            bt_load.Click += Bt_load_Click;
+            them.Click += Them_Click;
+            sua.Click += Sua_Click;
+            xoa.Click += Xoa_Click;
+        }
+
+        private void Xoa_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(ma_ncc.Text) || !int.TryParse(ma_ncc.Text, out int maNcc))
+            {
+                MessageBox.Show("Vui lòng nhập mã nhà cung cấp hợp lệ để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Xác nhận trước khi xóa
+            var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa nhà cung cấp này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (confirmResult == DialogResult.No)
+            {
+                return; // Hủy thao tác xóa nếu người dùng chọn "No"
+            }
+
+            // Khởi tạo đối tượng BLL
+            ncc_bll = new nha_cung_cap_sql_BLL();
+
+            // Thực hiện xóa nhà cung cấp
+            bool result = ncc_bll.DeleteNcc(maNcc);
+
+            if (result)
+            {
+                MessageBox.Show("Xóa nhà cung cấp thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Làm mới danh sách nhà cung cấp hoặc cập nhật giao diện sau khi xóa
+                load_gct(); // Gọi phương thức load_gct để làm mới dữ liệu nhà cung cấp
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi xảy ra khi xóa nhà cung cấp.", "Lỗi tồn tại bảng khác", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Sua_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra dữ liệu đầu vào
+            if (!ValidateInput())
+            {
+                return; // Dừng lại nếu dữ liệu không hợp lệ
+            }
+
+            // Tạo đối tượng BLL và đối tượng nha_cung_cap
+            ncc_bll = new nha_cung_cap_sql_BLL();
+            nha_cung_cap updatedNcc = new nha_cung_cap
+            {
+                ma_nha_cung_cap = int.Parse(ma_ncc.Text),
+                ten_nha_cung_cap = ten_ncc.Text,
+                dia_chi = dc.Text,
+                dien_thoai = dt.Text
+            };
+
+            // Thực hiện cập nhật nhà cung cấp
+            bool result = ncc_bll.UpdateNcc(updatedNcc);
+
+            if (result)
+            {
+                MessageBox.Show("Cập nhật nhà cung cấp thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clear_data();
+                load_gct();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi xảy ra khi cập nhật nhà cung cấp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private bool ValidateInput()
+        {
+            // Kiểm tra trường Mã Nhà Cung Cấp
+            if (string.IsNullOrWhiteSpace(ma_ncc.Text))
+            {
+                MessageBox.Show("Vui lòng nhập mã nhà cung cấp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ma_ncc.Focus();
+                return false;
+            }
+
+            // Kiểm tra xem mã nhà cung cấp có hợp lệ (phải là số nguyên)
+            if (!int.TryParse(ma_ncc.Text, out int maNcc))
+            {
+                MessageBox.Show("Mã nhà cung cấp không hợp lệ. Vui lòng nhập số nguyên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ma_ncc.Focus();
+                return false;
+            }
+
+            // Kiểm tra trường Tên Nhà Cung Cấp
+            if (string.IsNullOrWhiteSpace(ten_ncc.Text))
+            {
+                MessageBox.Show("Vui lòng nhập tên nhà cung cấp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ten_ncc.Focus();
+                return false;
+            }
+
+            // Kiểm tra trường Địa Chỉ
+            if (string.IsNullOrWhiteSpace(dc.Text))
+            {
+                MessageBox.Show("Vui lòng nhập địa chỉ nhà cung cấp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dc.Focus();
+                return false;
+            }
+
+            // Kiểm tra trường Số Điện Thoại
+            if (string.IsNullOrWhiteSpace(dt.Text))
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại nhà cung cấp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dt.Focus();
+                return false;
+            }
+
+            // Kiểm tra định dạng số điện thoại (giả sử chỉ cho phép 10 chữ số)
+            if (!System.Text.RegularExpressions.Regex.IsMatch(dt.Text, @"^\d{10}$"))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ. Vui lòng nhập 10 chữ số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dt.Focus();
+                return false;
+            }
+
+            // Nếu tất cả các kiểm tra đều hợp lệ
+            return true;
+        }
+
+
+       
+
+
+        private void Them_Click(object sender, EventArgs e)
+        {
+            them_ncc them = new them_ncc();
+            them.SupplierAdded += Them_SupplierAdded;
+            them.ShowDialog();
+        }
+
+        private void Them_SupplierAdded(object sender, EventArgs e)
+        {
+            load_gct();
+        }
+
+        private void GridView_Click(object sender, EventArgs e)
+        {
+            GridView gridView = sender as GridView;
+            if (gridView != null)
+            {
+                // Lấy dữ liệu của dòng hiện tại
+                var maNhaCungCap = gridView.GetFocusedRowCellValue("ma_nha_cung_cap")?.ToString();
+                var tenNhaCungCap = gridView.GetFocusedRowCellValue("ten_nha_cung_cap")?.ToString();
+                var diaChi = gridView.GetFocusedRowCellValue("dia_chi")?.ToString();
+                var dienThoai = gridView.GetFocusedRowCellValue("dien_thoai")?.ToString();
+
+                // Gán dữ liệu vào các TextBox
+                ma_ncc.Text = maNhaCungCap;
+                ten_ncc.Text = tenNhaCungCap;
+                dc.Text = diaChi;
+                dt.Text = dienThoai;
+                idncc = int.Parse(maNhaCungCap);
+                load_dgv_nccsp(idncc);
+                bt_sua.Click += Bt_sua_Click;
+
+            }
+        }
+
+        private void Bt_load_Click(object sender, EventArgs e)
+        {
+            load_dgv_nccsp(idncc);
+        }
+
+        private void Bt_xoa_Click(object sender, EventArgs e)
+        {
+            GridView gridView = gct_spncc.MainView as GridView;
+            if (gridView == null)
+                return;
+
+            // Kiểm tra xem có dòng nào được chọn không
+            int selectedRowHandle = gridView.FocusedRowHandle;
+            if (selectedRowHandle < 0)
+            {
+                MessageBox.Show("Vui lòng chọn dòng để xóa.");
+                return;
+            }
+
+            // Lấy giá trị của các cột "ma_nha_cung_cap" và "ma_san_pham" từ dòng được chọn
+            int maNhaCungCap = Convert.ToInt32(gridView.GetRowCellValue(selectedRowHandle, "ma_nha_cung_cap"));
+            int maSanPham = Convert.ToInt32(gridView.GetRowCellValue(selectedRowHandle, "ma_san_pham"));
+
+            // Hiển thị xác nhận trước khi xóa
+            var confirmResult = MessageBox.Show(
+                "Bạn có chắc chắn muốn xóa dòng đã chọn?\nThông tin:\n" +
+                $"- Mã nhà cung cấp: {maNhaCungCap}\n" +
+                $"- Mã sản phẩm: {maSanPham}",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                // Gọi phương thức xóa từ lớp DAL
+                ncc_sp_bll  = new ncc_sp_sql_BLL();
+                bool deleteSuccess = ncc_sp_bll.DeleteNccSpById(maNhaCungCap, maSanPham);
+
+                if (deleteSuccess)
+                {
+                    MessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Xóa dòng khỏi GridView và làm mới lại dữ liệu hiển thị
+                    gridView.DeleteRow(selectedRowHandle);
+                    gct_spncc.RefreshDataSource();
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra khi xóa dữ liệu.", "Lỗi tồn tải ở bảng khác", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void Bt_luu_Click(object sender, EventArgs e)
@@ -63,25 +285,25 @@ namespace GUI
 
         private void GridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            GridView gridView = sender as GridView;
-            if (gridView != null)
-            {
-                // Lấy dữ liệu của dòng hiện tại
-                var maNhaCungCap = gridView.GetFocusedRowCellValue("ma_nha_cung_cap")?.ToString();
-                var tenNhaCungCap = gridView.GetFocusedRowCellValue("ten_nha_cung_cap")?.ToString();
-                var diaChi = gridView.GetFocusedRowCellValue("dia_chi")?.ToString();
-                var dienThoai = gridView.GetFocusedRowCellValue("dien_thoai")?.ToString();
+            //GridView gridView = sender as GridView;
+            //if (gridView != null)
+            //{
+            //    // Lấy dữ liệu của dòng hiện tại
+            //    var maNhaCungCap = gridView.GetFocusedRowCellValue("ma_nha_cung_cap")?.ToString();
+            //    var tenNhaCungCap = gridView.GetFocusedRowCellValue("ten_nha_cung_cap")?.ToString();
+            //    var diaChi = gridView.GetFocusedRowCellValue("dia_chi")?.ToString();
+            //    var dienThoai = gridView.GetFocusedRowCellValue("dien_thoai")?.ToString();
 
-                // Gán dữ liệu vào các TextBox
-                ma_ncc.Text = maNhaCungCap;
-                ten_ncc.Text = tenNhaCungCap;
-                dc.Text = diaChi;
-                dt.Text = dienThoai;
-                idncc = int.Parse(maNhaCungCap);
-                load_dgv_nccsp(idncc);
-                bt_sua.Click += Bt_sua_Click;
+            //    // Gán dữ liệu vào các TextBox
+            //    ma_ncc.Text = maNhaCungCap;
+            //    ten_ncc.Text = tenNhaCungCap;
+            //    dc.Text = diaChi;
+            //    dt.Text = dienThoai;
+            //    idncc = int.Parse(maNhaCungCap);
+            //    load_dgv_nccsp(idncc);
+            //    bt_sua.Click += Bt_sua_Click;
 
-            }
+            //}
         }
 
         private void Bt_sua_Click(object sender, EventArgs e)
@@ -104,6 +326,16 @@ namespace GUI
                 MessageBox.Show("Vui lòng chọn dòng để chỉnh sửa.");
                 return;
             }
+
+            // Tạo RepositoryItemTextEdit cho cột `gia_cung_cap` để chỉ cho phép nhập số
+            RepositoryItemTextEdit repositoryGiaCungCap = new RepositoryItemTextEdit();
+            repositoryGiaCungCap.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            repositoryGiaCungCap.Mask.EditMask = "n0"; // Định dạng số nguyên, không có chữ số thập phân
+            repositoryGiaCungCap.Mask.UseMaskAsDisplayFormat = true;
+
+            // Đăng ký RepositoryItem vào GridControl để sử dụng cho cột `gia_cung_cap`
+            gct_spncc.RepositoryItems.Add(repositoryGiaCungCap);
+            gridView.Columns["gia_cung_cap"].ColumnEdit = repositoryGiaCungCap; // Gán RepositoryItem cho cột `gia_cung_cap`
 
             // Bật chế độ cho phép chỉnh sửa toàn bộ GridView
             gridView.OptionsBehavior.Editable = true;
@@ -163,12 +395,7 @@ namespace GUI
 
 
                 // Xuất thông tin chi tiết của dòng đã cập nhật: ma_nha_cung_cap, ma_san_pham, gia_cung_cap
-                string message = $"Chi tiết dòng đã cập nhật:\n" +
-                                 $"- Mã nhà cung cấp: {maNhaCungCap}\n" +
-                                 $"- Mã sản phẩm: {maSanPham}\n" +
-                                 $"- Giá cung cấp mới: {giaCungCap}";
-
-                MessageBox.Show(message, "Thông tin cập nhật", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             
 
                 // Đặt trạng thái GridView về ban đầu (không cho phép chỉnh sửa)
                 gridView.OptionsBehavior.Editable = false;
@@ -192,6 +419,7 @@ namespace GUI
         {
             load_gct();
             clear_data();
+            
         }
         void clear_data()
         {
@@ -203,34 +431,53 @@ namespace GUI
 
         void load_gct()
         {
-
+            // Lấy GridView từ GridControl
             GridView gridView = gct_dsncc.MainView as GridView;
             if (gridView == null)
                 return;
 
-
+            // Khởi tạo đối tượng BLL và gán dữ liệu vào GridControl
             ncc_bll = new nha_cung_cap_sql_BLL();
-
-
             gct_dsncc.DataSource = ncc_bll.get_all_ncc();
+
+            // Thiết lập các thuộc tính hiển thị cho GridView
             gridView.OptionsBehavior.Editable = false;
             gridView.Columns["ma_nha_cung_cap"].Caption = "Mã Nhà Cung Cấp";
             gridView.Columns["ten_nha_cung_cap"].Caption = "Tên Nhà Cung Cấp";
 
-
-
+            // Ẩn các cột không cần thiết
             gridView.Columns["dia_chi"].Visible = false;
             gridView.Columns["dien_thoai"].Visible = false;
             gridView.Columns["created_at"].Visible = false;
             gridView.Columns["updated_at"].Visible = false;
-            gridView.Columns["ma_nha_cung_cap"].Width = 150; // Đặt chiều rộng tùy ý cho cột "Mã Nhà Cung Cấp"
+
+            // Thiết lập độ rộng của các cột
+            gridView.Columns["ma_nha_cung_cap"].Width = 150;
             gridView.Columns["ten_nha_cung_cap"].Width = 200;
+
+            // Tắt chế độ Master-Detail nếu không cần thiết và làm mới dữ liệu
             gridView.OptionsDetail.EnableMasterViewMode = false;
             gridView.ClearGrouping();
-
-
             gridView.RefreshData();
+
+            // Tắt hiển thị dòng và ô được lấy nét (dòng được chọn)
+            gridView.OptionsSelection.EnableAppearanceFocusedRow = false;
+            gridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+
+            // Đặt `FocusedRowHandle` về `InvalidRowHandle` và xóa mọi lựa chọn
+            gridView.FocusedRowHandle = GridControl.InvalidRowHandle;
+            gridView.ClearSelection();
+
+            // Sử dụng `BeginInvoke` để đảm bảo không có dòng nào được chọn sau khi dữ liệu đã tải
+            gridView.GridControl.BeginInvoke(new Action(() =>
+            {
+                gridView.FocusedRowHandle = GridControl.InvalidRowHandle;
+                gridView.ClearSelection();
+            }));
+            load_dgv_nccsp(0);
         }
+
+
         void load_dgv_nccsp(int id)
         {
             // Khởi tạo đối tượng BLL nếu chưa có
@@ -298,20 +545,29 @@ namespace GUI
 
             // Thiết lập cột hiển thị cả mã và tên sản phẩm trong danh sách ComboBox
             repositoryComboBoxMaSP.PopulateColumns();
-            repositoryComboBoxMaSP.Columns["ma_san_pham"].Visible = true; // Hiển thị mã sản phẩm trong danh sách
-            repositoryComboBoxMaSP.Columns["ten_san_pham"].Visible = true; // Hiển thị tên sản phẩm trong danh sách
+            repositoryComboBoxMaSP.Columns["ma_san_pham"].Visible = true;
+            repositoryComboBoxMaSP.Columns["ten_san_pham"].Visible = true;
             repositoryComboBoxMaSP.Columns["ma_san_pham"].Caption = "Mã Sản Phẩm";
             repositoryComboBoxMaSP.Columns["ten_san_pham"].Caption = "Tên Sản Phẩm";
             repositoryComboBoxMaSP.Columns["gia_binh_quan"].Caption = "Giá Bình Quân";
             repositoryComboBoxMaSP.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
 
             // Kích hoạt tìm kiếm theo nhiều cột và tự động hoàn tất
-            repositoryComboBoxMaSP.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoFilter; // Kích hoạt tính năng tìm kiếm tự động
-            repositoryComboBoxMaSP.AutoSearchColumnIndex = 1; // Mặc định tìm kiếm theo `ten_san_pham` (chỉ số cột bắt đầu từ 0)
-            repositoryComboBoxMaSP.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard; // Cho phép nhập liệu vào ô tìm kiếm
+            repositoryComboBoxMaSP.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoFilter;
+            repositoryComboBoxMaSP.AutoSearchColumnIndex = 1;
+            repositoryComboBoxMaSP.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
 
             // Đăng ký RepositoryItem vào GridControl
             gct_spncc.RepositoryItems.Add(repositoryComboBoxMaSP);
+
+            // Tạo RepositoryItemTextEdit cho cột `gia_cung_cap` để chỉ cho phép nhập số
+            RepositoryItemTextEdit repositoryGiaCungCap = new RepositoryItemTextEdit();
+            repositoryGiaCungCap.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            repositoryGiaCungCap.Mask.EditMask = "n0"; // Định dạng số nguyên, không có chữ số thập phân
+            repositoryGiaCungCap.Mask.UseMaskAsDisplayFormat = true;
+
+            // Đăng ký RepositoryItem cho GridControl
+            gct_spncc.RepositoryItems.Add(repositoryGiaCungCap);
 
             // Kiểm tra nếu `DataSource` là một danh sách (`List` hoặc `BindingList`)
             var dataSource = gct_spncc.DataSource as IList<nha_cung_cap_san_pham>;
@@ -335,27 +591,27 @@ namespace GUI
                     {
                         e.RepositoryItem = repositoryComboBoxMaSP;
                     }
+                    else if (e.RowHandle == newRowHandle && e.Column.FieldName == "gia_cung_cap")
+                    {
+                        e.RepositoryItem = repositoryGiaCungCap;
+                    }
                 };
 
                 // Xử lý sự kiện EditValueChanged để gán mã sản phẩm khi chọn trong ComboBox
                 repositoryComboBoxMaSP.EditValueChanged += (sender, e) =>
                 {
-                    // Lấy giá trị mã sản phẩm từ ComboBox
                     var edit = sender as LookUpEdit;
                     if (edit != null && gridView.FocusedRowHandle == newRowHandle)
                     {
-                        var selectedMaSanPham = edit.EditValue; // Lấy mã sản phẩm được chọn
+                        var selectedMaSanPham = edit.EditValue;
 
                         // Gán mã sản phẩm vào cột "ma_san_pham" trong dòng mới
                         gridView.SetRowCellValue(newRowHandle, "ma_san_pham", selectedMaSanPham);
 
-                        // Gán các thông tin khác dựa trên mã sản phẩm được chọn
                         var selectedProduct = sanPhamList.FirstOrDefault(p => p.ma_san_pham.Equals(selectedMaSanPham));
                         if (selectedProduct != null)
                         {
-                            // Cập nhật các cột khác nếu cần
                             gridView.SetRowCellValue(newRowHandle, "ten_san_pham", selectedProduct.ten_san_pham);
-                          
                         }
                     }
                 };
@@ -368,6 +624,7 @@ namespace GUI
                 MessageBox.Show("DataSource của GridControl không phải là List hoặc BindingList.");
             }
         }
+
         public void SaveAllDataToDatabase()
         {
             // Lấy GridView từ GridControl
@@ -405,16 +662,7 @@ namespace GUI
                 }
             }
 
-            // Kiểm tra dữ liệu trong productList
-            StringBuilder debugInfo = new StringBuilder();
-            debugInfo.AppendLine("Danh sách dữ liệu truyền vào hàm SaveProducts:");
-            foreach (var product in productList)
-            {
-                debugInfo.AppendLine($"ma_san_pham: {product.ma_san_pham}, ten_san_pham: {product.ten_san_pham}, gia_cung_cap: {product.gia_cung_cap}, ma_nha_cung_cap: {product.ma_nha_cung_cap}");
-            }
-
-            // Hiển thị thông tin danh sách sản phẩm trong một MessageBox để kiểm tra
-            MessageBox.Show(debugInfo.ToString(), "Thông tin dữ liệu trước khi lưu");
+       
 
             // Tạo instance của BLL và gọi hàm lưu
             ncc_sp_bll = new ncc_sp_sql_BLL();
@@ -435,19 +683,6 @@ namespace GUI
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
     }
 }

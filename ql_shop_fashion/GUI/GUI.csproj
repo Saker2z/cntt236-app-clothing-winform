@@ -135,6 +135,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="them_ncc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="them_ncc.Designer.cs">
+      <DependentUpon>them_ncc.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_NhaCungCap.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,6 +158,12 @@
     </Compile>
     <Compile Include="UC_NhapHangTheoSanPham.Designer.cs">
       <DependentUpon>UC_NhapHangTheoSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_SanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_SanPham.Designer.cs">
+      <DependentUpon>UC_SanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_TaiKhoan.cs">
       <SubType>UserControl</SubType>
@@ -198,6 +210,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="them_ncc.resx">
+      <DependentUpon>them_ncc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_NhaCungCap.resx">
       <DependentUpon>UC_NhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_NhapHangTheoSanPham.resx">
       <DependentUpon>UC_NhapHangTheoSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_SanPham.resx">
+      <DependentUpon>UC_SanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_TaiKhoan.resx">
       <DependentUpon>UC_TaiKhoan.cs</DependentUpon>

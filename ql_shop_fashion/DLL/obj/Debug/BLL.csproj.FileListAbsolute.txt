@@ -276,3 +276,4 @@ C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\DLL\o
 C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.dll
 C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.pdb
+C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.AssemblyReference.cache

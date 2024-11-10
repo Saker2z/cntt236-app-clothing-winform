@@ -31,6 +31,17 @@ namespace BLL
         {
             return ncc.get_all_ncc();
         }
-
+        public bool AddNewNcc(nha_cung_cap nccs)
+        {
+            return ncc.AddNewNcc(nccs.ten_nha_cung_cap, nccs.dia_chi, nccs.dien_thoai);
+        }
+        public bool UpdateNcc(nha_cung_cap updatedNcc)
+        {
+            return ncc.UpdateNcc(updatedNcc);
+        }
+        public bool DeleteNcc(int maNcc)
+        {
+            return ncc.DeleteNcc(maNcc);
+        }
     }
 }

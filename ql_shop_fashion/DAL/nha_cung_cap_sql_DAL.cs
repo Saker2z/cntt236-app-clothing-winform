@@ -61,6 +61,93 @@ namespace DAL
             return result;
         }
 
+        public bool AddNewNcc(string tenNhaCungCap, string diaChi, string dienThoai)
+        {
+            try
+            {
+                // Tạo đối tượng nha_cung_cap mới
+                nha_cung_cap newNcc = new nha_cung_cap
+                {
+                    ten_nha_cung_cap = tenNhaCungCap,
+                    dia_chi = diaChi,
+                    dien_thoai = dienThoai
+                };
+
+                // Thêm đối tượng vào bảng nha_cung_caps
+                ncc.nha_cung_caps.InsertOnSubmit(newNcc);
+
+                // Lưu thay đổi vào cơ sở dữ liệu
+                ncc.SubmitChanges();
+
+                return true; // Trả về true nếu thêm thành công
+            }
+            catch (Exception ex)
+            {
+                // Ghi lại lỗi nếu có
+                Console.WriteLine("Lỗi khi thêm nhà cung cấp: " + ex.Message);
+                return false; // Trả về false nếu có lỗi
+            }
+        }
+        public bool UpdateNcc(nha_cung_cap updatedNcc)
+        {
+            try
+            {
+                // Tìm nhà cung cấp theo ma_nha_cung_cap
+                var existingNcc = ncc.nha_cung_caps.FirstOrDefault(x => x.ma_nha_cung_cap == updatedNcc.ma_nha_cung_cap);
+
+                if (existingNcc == null)
+                {
+                    // Nếu không tìm thấy nhà cung cấp, trả về false
+                    Console.WriteLine("Nhà cung cấp không tồn tại.");
+                    return false;
+                }
+
+                // Cập nhật thông tin nhà cung cấp
+                existingNcc.ten_nha_cung_cap = updatedNcc.ten_nha_cung_cap;
+                existingNcc.dia_chi = updatedNcc.dia_chi;
+                existingNcc.dien_thoai = updatedNcc.dien_thoai;
+
+                // Lưu thay đổi vào cơ sở dữ liệu
+                ncc.SubmitChanges();
+
+                return true; // Trả về true nếu sửa thành công
+            }
+            catch (Exception ex)
+            {
+                // Ghi log lỗi nếu có lỗi xảy ra
+                Console.WriteLine("Lỗi khi cập nhật nhà cung cấp: " + ex.Message);
+                return false; // Trả về false nếu có lỗi
+            }
+        }
+        public bool DeleteNcc(int maNcc)
+        {
+            try
+            {
+                // Tìm nhà cung cấp theo ma_nha_cung_cap
+                var nccToDelete = ncc.nha_cung_caps.FirstOrDefault(x => x.ma_nha_cung_cap == maNcc);
+
+                if (nccToDelete == null)
+                {
+                    // Nếu không tìm thấy nhà cung cấp, trả về false
+                    Console.WriteLine("Nhà cung cấp không tồn tại.");
+                    return false;
+                }
+
+                // Xóa nhà cung cấp khỏi cơ sở dữ liệu
+                ncc.nha_cung_caps.DeleteOnSubmit(nccToDelete);
+
+                // Lưu thay đổi vào cơ sở dữ liệu
+                ncc.SubmitChanges();
+
+                return true; // Trả về true nếu xóa thành công
+            }
+            catch (Exception ex)
+            {
+                // Ghi log lỗi nếu có lỗi xảy ra
+                Console.WriteLine("Lỗi khi xóa nhà cung cấp: " + ex.Message);
+                return false; // Trả về false nếu có lỗi
+            }
+        }
 
 
     }
