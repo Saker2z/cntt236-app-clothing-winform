@@ -32,7 +32,10 @@ namespace BLL
             return sp_.get_all_sp();
         }
 
-
+        public List<san_pham> GetAllSanPham()
+        {
+            return sp_.GetAllSanPham();
+        }
 
     }
 }

@@ -77,7 +77,7 @@ namespace GUI
             this.label1.ForeColor = System.Drawing.Color.Tomato;
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 18);
+            this.label1.Size = new System.Drawing.Size(118, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Shop Fashion";
             // 
@@ -157,7 +157,7 @@ namespace GUI
             this.matkhau.ForeColor = System.Drawing.Color.Black;
             this.matkhau.Location = new System.Drawing.Point(46, 136);
             this.matkhau.Name = "matkhau";
-            this.matkhau.Size = new System.Drawing.Size(72, 20);
+            this.matkhau.Size = new System.Drawing.Size(93, 25);
             this.matkhau.TabIndex = 6;
             this.matkhau.Text = "Mật Khẩu";
             // 
@@ -168,7 +168,7 @@ namespace GUI
             this.nhapmk.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nhapmk.Properties.Appearance.Options.UseFont = true;
             this.nhapmk.Properties.PasswordChar = '*';
-            this.nhapmk.Size = new System.Drawing.Size(274, 22);
+            this.nhapmk.Size = new System.Drawing.Size(274, 26);
             this.nhapmk.TabIndex = 5;
             // 
             // taikhoan
@@ -178,9 +178,10 @@ namespace GUI
             this.taikhoan.ForeColor = System.Drawing.Color.Black;
             this.taikhoan.Location = new System.Drawing.Point(45, 60);
             this.taikhoan.Name = "taikhoan";
-            this.taikhoan.Size = new System.Drawing.Size(73, 20);
+            this.taikhoan.Size = new System.Drawing.Size(94, 25);
             this.taikhoan.TabIndex = 4;
             this.taikhoan.Text = "Tài Khoản";
+            this.taikhoan.Click += new System.EventHandler(this.taikhoan_Click);
             // 
             // nhaptk
             // 
@@ -188,7 +189,7 @@ namespace GUI
             this.nhaptk.Name = "nhaptk";
             this.nhaptk.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nhaptk.Properties.Appearance.Options.UseFont = true;
-            this.nhaptk.Size = new System.Drawing.Size(274, 22);
+            this.nhaptk.Size = new System.Drawing.Size(274, 26);
             this.nhaptk.TabIndex = 3;
             // 
             // taotk
@@ -198,7 +199,7 @@ namespace GUI
             this.taotk.LinkColor = System.Drawing.Color.Black;
             this.taotk.Location = new System.Drawing.Point(120, 286);
             this.taotk.Name = "taotk";
-            this.taotk.Size = new System.Drawing.Size(87, 17);
+            this.taotk.Size = new System.Drawing.Size(114, 23);
             this.taotk.TabIndex = 1;
             this.taotk.TabStop = true;
             this.taotk.Text = "Tạo tài khoản";
@@ -210,7 +211,7 @@ namespace GUI
             this.welcome.ForeColor = System.Drawing.Color.Black;
             this.welcome.Location = new System.Drawing.Point(104, 9);
             this.welcome.Name = "welcome";
-            this.welcome.Size = new System.Drawing.Size(103, 30);
+            this.welcome.Size = new System.Drawing.Size(136, 37);
             this.welcome.TabIndex = 0;
             this.welcome.Text = "Welcome";
             // 
@@ -273,7 +274,7 @@ namespace GUI
             // frmDangNhap
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));

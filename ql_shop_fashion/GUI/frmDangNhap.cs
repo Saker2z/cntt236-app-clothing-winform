@@ -10,12 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
+using BLL;
 
 namespace GUI
 {
     public partial class frmDangNhap : DevExpress.XtraEditors.XtraForm
     {
         QL_SHOP_DATADataContext dataContext;
+        private tai_khoan_sql_BLL tk_bll;
         public frmDangNhap()
         {
             InitializeComponent();
@@ -74,61 +76,60 @@ namespace GUI
             string mk = nhapmk.Text;
             int userRoleId;
 
-            if (IsLoginValid(tk, mk, out userRoleId)) // Kiểm tra tài khoản hợp lệ
+            tk_bll = new tai_khoan_sql_BLL();
+            
+            // Kiểm tra tài khoản hợp lệ
+            if (tk_bll.CheckLogin(tk, mk, out userRoleId))
             {
                 MessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-                frmMain main = new frmMain();
-
-                // Lấy danh sách màn hình mà người dùng có quyền truy cập
-                var accessibleScreens = dataContext.phan_quyens
-                    .Where(p => p.id_nhom_quyen == userRoleId && p.co_quyen == true)
-                    .Select(p => p.id_man_hinh)
-                    .ToList();
-
-                // Đảm bảo admin có quyền xem tất cả các màn hình
-                if (userRoleId == 1) // Admin
-                {
-                    accessibleScreens = dataContext.man_hinhs.Select(m => m.id_man_hinh).ToList(); // Admin có quyền xem tất cả màn hình
-                }
-
-                main.ShowScreens(accessibleScreens); // Gọi phương thức để hiển thị các màn hình được phép
+                int id_nv = tk_bll.get_id_nv_by_tk(tk);
+                // Hiển thị các màn hình mà người dùng có quyền truy cập
+                CheckAccessAndDisplayScreens(userRoleId);
+                Properties.Settings.Default.id_user_login = id_nv;
+                Properties.Settings.Default.Save();
+                // Ẩn form đăng nhập
                 this.Hide();
-
-                main.FormClosed += (s, args) => this.Close();
-                main.Show();
             }
             else
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-
-
-
-        private bool IsLoginValid(string tk, string mk, out int userRoleId)
+        private void CheckAccessAndDisplayScreens(int userRoleId)
         {
-            // Tìm tài khoản theo tên đăng nhập và mật khẩu
-            var user = dataContext.tai_khoans
-                .FirstOrDefault(u => u.ten_dang_nhap == tk && u.mat_khau_hash == mk); // Thực tế nên hash mật khẩu
+            // Khởi tạo BLL để lấy danh sách các màn hình mà người dùng có quyền truy cập
+            var tk_bll = new tai_khoan_sql_BLL();
 
-            if (user != null && user.hoat_dong == true)
-            {
-                // Lấy id_nhom_quyen từ bảng tai_khoan_nhom_quyen
-                var userGroup = dataContext.tai_khoan_nhom_quyens
-                    .FirstOrDefault(ug => ug.id_tai_khoan == user.id); // Thay id bằng cột id của tài khoản
+            // Lấy danh sách các màn hình được phép truy cập
+            // Tạo biến tạm cho tên quyền
+            string tempRoleName;
 
-                userRoleId = userGroup?.id_nhom_quyen ?? 0; // Gán id_nhom_quyen hoặc 0 nếu không tìm thấy
-                return true;
-            }
+            // Gọi phương thức và gán kết quả vào biến tạm
+            var accessibleScreens = tk_bll.GetAccessibleScreens(userRoleId, out tempRoleName);
 
-            userRoleId = 0; // Gán 0 nếu không tìm thấy tài khoản
-            return false; // Trả về false nếu không hợp lệ
+            // Gán giá trị từ biến tạm vào thuộc tính name_role
+            Properties.Settings.Default.name_role = tempRoleName;
+
+            // Lưu lại thay đổi trong settings nếu cần
+            Properties.Settings.Default.Save();
+
+
+            // Xuất ra danh sách ID màn hình cho phép truy cập
+            string screenIds = string.Join(", ", accessibleScreens);
+            MessageBox.Show($"ID các màn hình mà người dùng có quyền truy cập: {screenIds}", "Danh sách màn hình", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Tạo và hiển thị form chính với các màn hình được phép
+            frmMain main = new frmMain();
+            main.ShowScreens(accessibleScreens);
+
+            // Xử lý sự kiện đóng form chính để đóng toàn bộ ứng dụng
+            main.FormClosed += (s, args) => this.Close();
+            main.Show();
         }
 
+        private void taikhoan_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

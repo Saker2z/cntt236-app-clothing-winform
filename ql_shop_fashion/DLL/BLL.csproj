@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="DAL">
       <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
     </Reference>
@@ -39,6 +43,14 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,7 +61,10 @@
   <ItemGroup>
     <Compile Include="chi_tiet_nhap_sql_BLL.cs" />
     <Compile Include="ncc_sp_sql_BLL.cs" />
+    <Compile Include="nhan_vien_sql_BLL.cs" />
     <Compile Include="nhap_hang_sql_BLL.cs" />
+    <Compile Include="nhom_quyen_sql_BLL.cs" />
+    <Compile Include="tai_khoan_sql_BLL.cs" />
     <Compile Include="thuoc_tinh_sp_sql_BLL.cs" />
     <Compile Include="nha_cung_cap_sql_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

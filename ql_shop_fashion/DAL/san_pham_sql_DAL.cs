@@ -45,6 +45,22 @@ namespace DAL
                      };
             return ds.ToList();
         }
+        public List<san_pham> GetAllSanPham()
+        {
+            try
+            {
+                // Query to get all products from the san_phams table
+                List<san_pham> productList = data.san_phams.ToList();
+                return productList;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception and return an empty list if there is an error
+                Console.WriteLine("Error retrieving product list: " + ex.Message);
+                return new List<san_pham>(); // Return an empty list if an error occurs
+            }
+        }
+
 
 
     }
