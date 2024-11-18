@@ -35,6 +35,10 @@ namespace GUI
             this.ten_ncc = new DevExpress.XtraEditors.TextEdit();
             this.dc = new DevExpress.XtraEditors.TextEdit();
             this.dt = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -43,17 +47,12 @@ namespace GUI
             this.bt_luu = new System.Windows.Forms.ToolStripButton();
             this.bt_xoa = new System.Windows.Forms.ToolStripButton();
             this.bt_load = new System.Windows.Forms.ToolStripButton();
-            this.pnl_spncc = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.gct_spncc = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.them = new System.Windows.Forms.Button();
             this.sua = new System.Windows.Forms.Button();
             this.xoa = new System.Windows.Forms.Button();
-            this.gb_thongtinnhacungcap = new System.Windows.Forms.GroupBox();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gct_dsncc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ma_ncc.Properties)).BeginInit();
@@ -62,10 +61,9 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.dt.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.pnl_spncc.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gct_spncc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            this.gb_thongtinnhacungcap.SuspendLayout();
             this.SuspendLayout();
             // 
             // gct_dsncc
@@ -75,7 +73,7 @@ namespace GUI
             this.gct_dsncc.MainView = this.gridView1;
             this.gct_dsncc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gct_dsncc.Name = "gct_dsncc";
-            this.gct_dsncc.Size = new System.Drawing.Size(345, 699);
+            this.gct_dsncc.Size = new System.Drawing.Size(345, 626);
             this.gct_dsncc.TabIndex = 0;
             this.gct_dsncc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -89,35 +87,71 @@ namespace GUI
             // 
             // ma_ncc
             // 
-            this.ma_ncc.Location = new System.Drawing.Point(162, 26);
+            this.ma_ncc.Location = new System.Drawing.Point(441, 16);
             this.ma_ncc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ma_ncc.Name = "ma_ncc";
-            this.ma_ncc.Size = new System.Drawing.Size(341, 20);
+            this.ma_ncc.Size = new System.Drawing.Size(290, 20);
             this.ma_ncc.TabIndex = 1;
             // 
             // ten_ncc
             // 
-            this.ten_ncc.Location = new System.Drawing.Point(162, 63);
+            this.ten_ncc.Location = new System.Drawing.Point(441, 50);
             this.ten_ncc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ten_ncc.Name = "ten_ncc";
-            this.ten_ncc.Size = new System.Drawing.Size(341, 20);
+            this.ten_ncc.Size = new System.Drawing.Size(290, 20);
             this.ten_ncc.TabIndex = 2;
             // 
             // dc
             // 
-            this.dc.Location = new System.Drawing.Point(162, 98);
+            this.dc.Location = new System.Drawing.Point(441, 80);
             this.dc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dc.Name = "dc";
-            this.dc.Size = new System.Drawing.Size(341, 20);
+            this.dc.Size = new System.Drawing.Size(290, 20);
             this.dc.TabIndex = 3;
             // 
             // dt
             // 
-            this.dt.Location = new System.Drawing.Point(162, 132);
+            this.dt.Location = new System.Drawing.Point(441, 111);
             this.dt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dt.Name = "dt";
-            this.dt.Size = new System.Drawing.Size(341, 20);
+            this.dt.Size = new System.Drawing.Size(290, 20);
             this.dt.TabIndex = 5;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(346, 19);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(81, 13);
+            this.labelControl1.TabIndex = 6;
+            this.labelControl1.Text = "Mã nhà cung cấp";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(346, 52);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(85, 13);
+            this.labelControl2.TabIndex = 7;
+            this.labelControl2.Text = "Tên nhà cung cấp";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(362, 84);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(32, 13);
+            this.labelControl3.TabIndex = 8;
+            this.labelControl3.Text = "Địa chỉ";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(362, 114);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(62, 13);
+            this.labelControl4.TabIndex = 9;
+            this.labelControl4.Text = "Số điện thoại";
             // 
             // panel1
             // 
@@ -158,7 +192,7 @@ namespace GUI
             this.bt_them.Image = global::GUI.Properties.Resources.themphieu;
             this.bt_them.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(64, 24);
+            this.bt_them.Size = new System.Drawing.Size(61, 24);
             this.bt_them.Text = "Thêm";
             // 
             // bt_sua
@@ -166,7 +200,7 @@ namespace GUI
             this.bt_sua.Image = global::GUI.Properties.Resources.suaphieu;
             this.bt_sua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bt_sua.Name = "bt_sua";
-            this.bt_sua.Size = new System.Drawing.Size(54, 24);
+            this.bt_sua.Size = new System.Drawing.Size(50, 24);
             this.bt_sua.Text = "Sửa";
             // 
             // bt_luu
@@ -174,7 +208,7 @@ namespace GUI
             this.bt_luu.Image = global::GUI.Properties.Resources.loadphieu;
             this.bt_luu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bt_luu.Name = "bt_luu";
-            this.bt_luu.Size = new System.Drawing.Size(53, 24);
+            this.bt_luu.Size = new System.Drawing.Size(51, 24);
             this.bt_luu.Text = "Lưu";
             // 
             // bt_xoa
@@ -182,7 +216,7 @@ namespace GUI
             this.bt_xoa.Image = global::GUI.Properties.Resources.xoaphieu;
             this.bt_xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bt_xoa.Name = "bt_xoa";
-            this.bt_xoa.Size = new System.Drawing.Size(55, 24);
+            this.bt_xoa.Size = new System.Drawing.Size(51, 24);
             this.bt_xoa.Text = "Xóa";
             // 
             // bt_load
@@ -191,17 +225,17 @@ namespace GUI
             this.bt_load.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bt_load.Name = "bt_load";
             this.bt_load.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bt_load.Size = new System.Drawing.Size(82, 24);
+            this.bt_load.Size = new System.Drawing.Size(78, 24);
             this.bt_load.Text = "Làm mới";
             // 
-            // pnl_spncc
+            // panel2
             // 
-            this.pnl_spncc.Controls.Add(this.gct_spncc);
-            this.pnl_spncc.Location = new System.Drawing.Point(346, 200);
-            this.pnl_spncc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnl_spncc.Name = "pnl_spncc";
-            this.pnl_spncc.Size = new System.Drawing.Size(693, 501);
-            this.pnl_spncc.TabIndex = 11;
+            this.panel2.Controls.Add(this.gct_spncc);
+            this.panel2.Location = new System.Drawing.Point(346, 200);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(674, 468);
+            this.panel2.TabIndex = 11;
             // 
             // gct_spncc
             // 
@@ -211,7 +245,7 @@ namespace GUI
             this.gct_spncc.MainView = this.gridView2;
             this.gct_spncc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gct_spncc.Name = "gct_spncc";
-            this.gct_spncc.Size = new System.Drawing.Size(693, 501);
+            this.gct_spncc.Size = new System.Drawing.Size(674, 468);
             this.gct_spncc.TabIndex = 0;
             this.gct_spncc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -225,111 +259,52 @@ namespace GUI
             // 
             // them
             // 
-            this.them.BackColor = System.Drawing.Color.White;
-            this.them.Location = new System.Drawing.Point(562, 28);
+            this.them.Location = new System.Drawing.Point(843, 19);
             this.them.Name = "them";
-            this.them.Size = new System.Drawing.Size(111, 30);
+            this.them.Size = new System.Drawing.Size(75, 23);
             this.them.TabIndex = 13;
             this.them.Text = "Thêm";
-            this.them.UseVisualStyleBackColor = false;
+            this.them.UseVisualStyleBackColor = true;
             // 
             // sua
             // 
-            this.sua.BackColor = System.Drawing.Color.White;
-            this.sua.Location = new System.Drawing.Point(562, 75);
+            this.sua.Location = new System.Drawing.Point(843, 53);
             this.sua.Name = "sua";
-            this.sua.Size = new System.Drawing.Size(111, 30);
+            this.sua.Size = new System.Drawing.Size(75, 23);
             this.sua.TabIndex = 14;
             this.sua.Text = "Sửa";
-            this.sua.UseVisualStyleBackColor = false;
+            this.sua.UseVisualStyleBackColor = true;
             // 
             // xoa
             // 
-            this.xoa.BackColor = System.Drawing.Color.White;
-            this.xoa.Location = new System.Drawing.Point(562, 122);
+            this.xoa.Location = new System.Drawing.Point(843, 84);
             this.xoa.Name = "xoa";
-            this.xoa.Size = new System.Drawing.Size(111, 30);
+            this.xoa.Size = new System.Drawing.Size(75, 23);
             this.xoa.TabIndex = 15;
             this.xoa.Text = "Xóa";
-            this.xoa.UseVisualStyleBackColor = false;
-            // 
-            // gb_thongtinnhacungcap
-            // 
-            this.gb_thongtinnhacungcap.BackColor = System.Drawing.Color.White;
-            this.gb_thongtinnhacungcap.Controls.Add(this.sua);
-            this.gb_thongtinnhacungcap.Controls.Add(this.xoa);
-            this.gb_thongtinnhacungcap.Controls.Add(this.labelControl5);
-            this.gb_thongtinnhacungcap.Controls.Add(this.labelControl6);
-            this.gb_thongtinnhacungcap.Controls.Add(this.them);
-            this.gb_thongtinnhacungcap.Controls.Add(this.labelControl7);
-            this.gb_thongtinnhacungcap.Controls.Add(this.labelControl8);
-            this.gb_thongtinnhacungcap.Controls.Add(this.ma_ncc);
-            this.gb_thongtinnhacungcap.Controls.Add(this.ten_ncc);
-            this.gb_thongtinnhacungcap.Controls.Add(this.dc);
-            this.gb_thongtinnhacungcap.Controls.Add(this.dt);
-            this.gb_thongtinnhacungcap.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_thongtinnhacungcap.Location = new System.Drawing.Point(346, 3);
-            this.gb_thongtinnhacungcap.Name = "gb_thongtinnhacungcap";
-            this.gb_thongtinnhacungcap.Size = new System.Drawing.Size(693, 171);
-            this.gb_thongtinnhacungcap.TabIndex = 13;
-            this.gb_thongtinnhacungcap.TabStop = false;
-            this.gb_thongtinnhacungcap.Text = "Thông tin nhà cung cấp";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(26, 100);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(69, 15);
-            this.labelControl5.TabIndex = 9;
-            this.labelControl5.Text = "Số điện thoại";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(26, 134);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(36, 15);
-            this.labelControl6.TabIndex = 8;
-            this.labelControl6.Text = "Địa chỉ";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(26, 65);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(93, 15);
-            this.labelControl7.TabIndex = 7;
-            this.labelControl7.Text = "Tên nhà cung cấp";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(26, 28);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(92, 15);
-            this.labelControl8.TabIndex = 6;
-            this.labelControl8.Text = "Mã nhà cung cấp";
+            this.xoa.UseVisualStyleBackColor = true;
             // 
             // NCC_NCCSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gb_thongtinnhacungcap);
-            this.Controls.Add(this.pnl_spncc);
+            this.Controls.Add(this.xoa);
+            this.Controls.Add(this.sua);
+            this.Controls.Add(this.them);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.dt);
+            this.Controls.Add(this.dc);
+            this.Controls.Add(this.ten_ncc);
+            this.Controls.Add(this.ma_ncc);
             this.Controls.Add(this.gct_dsncc);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NCC_NCCSP";
-            this.Size = new System.Drawing.Size(1046, 703);
+            this.Size = new System.Drawing.Size(1126, 722);
             ((System.ComponentModel.ISupportInitialize)(this.gct_dsncc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ma_ncc.Properties)).EndInit();
@@ -340,12 +315,11 @@ namespace GUI
             this.panel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.pnl_spncc.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gct_spncc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            this.gb_thongtinnhacungcap.ResumeLayout(false);
-            this.gb_thongtinnhacungcap.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -357,12 +331,16 @@ namespace GUI
         private DevExpress.XtraEditors.TextEdit ten_ncc;
         private DevExpress.XtraEditors.TextEdit dc;
         private DevExpress.XtraEditors.TextEdit dt;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton bt_them;
         private System.Windows.Forms.ToolStripButton bt_sua;
-        private System.Windows.Forms.Panel pnl_spncc;
+        private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraGrid.GridControl gct_spncc;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.ToolStripButton bt_luu;
@@ -371,10 +349,5 @@ namespace GUI
         private System.Windows.Forms.Button them;
         private System.Windows.Forms.Button sua;
         private System.Windows.Forms.Button xoa;
-        private System.Windows.Forms.GroupBox gb_thongtinnhacungcap;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
     }
 }

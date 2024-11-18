@@ -55,7 +55,15 @@ namespace GUI
             this.lb_thanhtien = new DevExpress.XtraEditors.LabelControl();
             this.cbb_tensp = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txt_gianhap = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.txt_dg = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.bt_them = new System.Windows.Forms.Button();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -63,14 +71,6 @@ namespace GUI
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.cbb_sl = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dgv_sp_add = new System.Windows.Forms.DataGridView();
-            this.gb_ttpn = new System.Windows.Forms.GroupBox();
-            this.lb_tennhanvien = new DevExpress.XtraEditors.LabelControl();
-            this.lb_dongia = new DevExpress.XtraEditors.LabelControl();
-            this.lb_gianhap = new DevExpress.XtraEditors.LabelControl();
-            this.lb_soluong = new DevExpress.XtraEditors.LabelControl();
-            this.lb_ngaynhap = new DevExpress.XtraEditors.LabelControl();
-            this.lb_tennhacungcap = new DevExpress.XtraEditors.LabelControl();
-            this.lb_tensanpham = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_ncc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tennv.Properties)).BeginInit();
@@ -81,7 +81,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgv_gia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_sl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sp_add)).BeginInit();
-            this.gb_ttpn.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -128,7 +127,7 @@ namespace GUI
             // 
             // bbiNew
             // 
-            this.bbiNew.Caption = "Thêm";
+            this.bbiNew.Caption = "New";
             this.bbiNew.Id = 16;
             this.bbiNew.ImageOptions.ImageUri.Uri = "New";
             this.bbiNew.Name = "bbiNew";
@@ -136,14 +135,14 @@ namespace GUI
             // 
             // bt_sua
             // 
-            this.bt_sua.Caption = "Sửa";
+            this.bt_sua.Caption = "Edit";
             this.bt_sua.Id = 17;
             this.bt_sua.ImageOptions.ImageUri.Uri = "Edit";
             this.bt_sua.Name = "bt_sua";
             // 
             // bt_xoa
             // 
-            this.bt_xoa.Caption = "Xóa";
+            this.bt_xoa.Caption = "Delete";
             this.bt_xoa.Id = 18;
             this.bt_xoa.ImageOptions.ImageUri.Uri = "Delete";
             this.bt_xoa.Name = "bt_xoa";
@@ -151,7 +150,7 @@ namespace GUI
             // bt_load
             // 
             this.bt_load.AllowDrawArrow = false;
-            this.bt_load.Caption = "Load";
+            this.bt_load.Caption = "Refresh";
             this.bt_load.Id = 19;
             this.bt_load.ImageOptions.ImageUri.Uri = "Refresh";
             this.bt_load.Name = "bt_load";
@@ -244,7 +243,7 @@ namespace GUI
             // cbb_ncc
             // 
             this.cbb_ncc.EditValue = "";
-            this.cbb_ncc.Location = new System.Drawing.Point(387, 31);
+            this.cbb_ncc.Location = new System.Drawing.Point(407, 164);
             this.cbb_ncc.MenuManager = this.ribbonControl;
             this.cbb_ncc.Name = "cbb_ncc";
             this.cbb_ncc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -255,7 +254,7 @@ namespace GUI
             // txt_tennv
             // 
             this.txt_tennv.EditValue = "";
-            this.txt_tennv.Location = new System.Drawing.Point(98, 31);
+            this.txt_tennv.Location = new System.Drawing.Point(125, 164);
             this.txt_tennv.MenuManager = this.ribbonControl;
             this.txt_tennv.Name = "txt_tennv";
             this.txt_tennv.Size = new System.Drawing.Size(163, 20);
@@ -263,7 +262,7 @@ namespace GUI
             // 
             // date_ngaynhap
             // 
-            this.date_ngaynhap.Location = new System.Drawing.Point(98, 112);
+            this.date_ngaynhap.Location = new System.Drawing.Point(125, 216);
             this.date_ngaynhap.Name = "date_ngaynhap";
             this.date_ngaynhap.Size = new System.Drawing.Size(163, 21);
             this.date_ngaynhap.TabIndex = 6;
@@ -280,7 +279,7 @@ namespace GUI
             // 
             // cbb_tensp
             // 
-            this.cbb_tensp.Location = new System.Drawing.Point(98, 72);
+            this.cbb_tensp.Location = new System.Drawing.Point(125, 190);
             this.cbb_tensp.MenuManager = this.ribbonControl;
             this.cbb_tensp.Name = "cbb_tensp";
             this.cbb_tensp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -290,19 +289,82 @@ namespace GUI
             // 
             // txt_gianhap
             // 
-            this.txt_gianhap.Location = new System.Drawing.Point(98, 160);
+            this.txt_gianhap.Location = new System.Drawing.Point(407, 247);
             this.txt_gianhap.MenuManager = this.ribbonControl;
             this.txt_gianhap.Name = "txt_gianhap";
-            this.txt_gianhap.Size = new System.Drawing.Size(452, 20);
+            this.txt_gianhap.Size = new System.Drawing.Size(163, 20);
             this.txt_gianhap.TabIndex = 13;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(375, 216);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(0, 13);
+            this.labelControl2.TabIndex = 14;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(44, 167);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(75, 13);
+            this.labelControl3.TabIndex = 15;
+            this.labelControl3.Text = "Tên nhân viên :";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(309, 171);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(92, 13);
+            this.labelControl4.TabIndex = 16;
+            this.labelControl4.Text = "Tên nhà cung cấp :";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(44, 222);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(52, 13);
+            this.labelControl5.TabIndex = 17;
+            this.labelControl5.Text = "Ngày nhập";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(45, 193);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(67, 13);
+            this.labelControl9.TabIndex = 21;
+            this.labelControl9.Text = "Tên sản phẩm";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(328, 226);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(42, 13);
+            this.labelControl10.TabIndex = 22;
+            this.labelControl10.Text = "Số lượng";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(328, 250);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(42, 13);
+            this.labelControl11.TabIndex = 23;
+            this.labelControl11.Text = "Giá nhập";
             // 
             // txt_dg
             // 
-            this.txt_dg.Location = new System.Drawing.Point(387, 72);
+            this.txt_dg.Location = new System.Drawing.Point(407, 190);
             this.txt_dg.MenuManager = this.ribbonControl;
             this.txt_dg.Name = "txt_dg";
             this.txt_dg.Size = new System.Drawing.Size(163, 20);
             this.txt_dg.TabIndex = 24;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Location = new System.Drawing.Point(333, 197);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(37, 13);
+            this.labelControl12.TabIndex = 25;
+            this.labelControl12.Text = "Đơn giá";
             // 
             // buttonEdit1
             // 
@@ -316,9 +378,9 @@ namespace GUI
             // 
             // bt_them
             // 
-            this.bt_them.Location = new System.Drawing.Point(913, 361);
+            this.bt_them.Location = new System.Drawing.Point(441, 301);
             this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(159, 38);
+            this.bt_them.Size = new System.Drawing.Size(53, 38);
             this.bt_them.TabIndex = 29;
             this.bt_them.Text = "Thêm";
             this.bt_them.UseVisualStyleBackColor = true;
@@ -335,7 +397,7 @@ namespace GUI
             this.dgv_gia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_gia.Location = new System.Drawing.Point(576, 164);
             this.dgv_gia.Name = "dgv_gia";
-            this.dgv_gia.Size = new System.Drawing.Size(496, 190);
+            this.dgv_gia.Size = new System.Drawing.Size(496, 175);
             this.dgv_gia.TabIndex = 46;
             // 
             // ribbonPageGroup2
@@ -348,7 +410,7 @@ namespace GUI
             // 
             // cbb_sl
             // 
-            this.cbb_sl.Location = new System.Drawing.Point(387, 115);
+            this.cbb_sl.Location = new System.Drawing.Point(407, 219);
             this.cbb_sl.MenuManager = this.ribbonControl;
             this.cbb_sl.Name = "cbb_sl";
             this.cbb_sl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -359,102 +421,36 @@ namespace GUI
             // dgv_sp_add
             // 
             this.dgv_sp_add.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_sp_add.Location = new System.Drawing.Point(12, 361);
+            this.dgv_sp_add.Location = new System.Drawing.Point(95, 345);
             this.dgv_sp_add.Name = "dgv_sp_add";
-            this.dgv_sp_add.Size = new System.Drawing.Size(895, 290);
+            this.dgv_sp_add.Size = new System.Drawing.Size(798, 290);
             this.dgv_sp_add.TabIndex = 52;
-            // 
-            // gb_ttpn
-            // 
-            this.gb_ttpn.BackColor = System.Drawing.Color.White;
-            this.gb_ttpn.Controls.Add(this.lb_tennhanvien);
-            this.gb_ttpn.Controls.Add(this.lb_dongia);
-            this.gb_ttpn.Controls.Add(this.cbb_sl);
-            this.gb_ttpn.Controls.Add(this.lb_gianhap);
-            this.gb_ttpn.Controls.Add(this.lb_soluong);
-            this.gb_ttpn.Controls.Add(this.lb_ngaynhap);
-            this.gb_ttpn.Controls.Add(this.lb_tennhacungcap);
-            this.gb_ttpn.Controls.Add(this.lb_tensanpham);
-            this.gb_ttpn.Controls.Add(this.txt_dg);
-            this.gb_ttpn.Controls.Add(this.txt_tennv);
-            this.gb_ttpn.Controls.Add(this.cbb_tensp);
-            this.gb_ttpn.Controls.Add(this.date_ngaynhap);
-            this.gb_ttpn.Controls.Add(this.cbb_ncc);
-            this.gb_ttpn.Controls.Add(this.txt_gianhap);
-            this.gb_ttpn.Location = new System.Drawing.Point(12, 164);
-            this.gb_ttpn.Name = "gb_ttpn";
-            this.gb_ttpn.Size = new System.Drawing.Size(558, 190);
-            this.gb_ttpn.TabIndex = 56;
-            this.gb_ttpn.TabStop = false;
-            this.gb_ttpn.Text = "Thông tin phiếu nhập";
-            // 
-            // lb_tennhanvien
-            // 
-            this.lb_tennhanvien.Location = new System.Drawing.Point(17, 34);
-            this.lb_tennhanvien.Name = "lb_tennhanvien";
-            this.lb_tennhanvien.Size = new System.Drawing.Size(68, 13);
-            this.lb_tennhanvien.TabIndex = 15;
-            this.lb_tennhanvien.Text = "Tên nhân viên";
-            // 
-            // lb_dongia
-            // 
-            this.lb_dongia.Location = new System.Drawing.Point(278, 75);
-            this.lb_dongia.Name = "lb_dongia";
-            this.lb_dongia.Size = new System.Drawing.Size(37, 13);
-            this.lb_dongia.TabIndex = 25;
-            this.lb_dongia.Text = "Đơn giá";
-            // 
-            // lb_gianhap
-            // 
-            this.lb_gianhap.Location = new System.Drawing.Point(17, 163);
-            this.lb_gianhap.Name = "lb_gianhap";
-            this.lb_gianhap.Size = new System.Drawing.Size(42, 13);
-            this.lb_gianhap.TabIndex = 23;
-            this.lb_gianhap.Text = "Giá nhập";
-            // 
-            // lb_soluong
-            // 
-            this.lb_soluong.Location = new System.Drawing.Point(278, 118);
-            this.lb_soluong.Name = "lb_soluong";
-            this.lb_soluong.Size = new System.Drawing.Size(42, 13);
-            this.lb_soluong.TabIndex = 22;
-            this.lb_soluong.Text = "Số lượng";
-            // 
-            // lb_ngaynhap
-            // 
-            this.lb_ngaynhap.Location = new System.Drawing.Point(17, 118);
-            this.lb_ngaynhap.Name = "lb_ngaynhap";
-            this.lb_ngaynhap.Size = new System.Drawing.Size(52, 13);
-            this.lb_ngaynhap.TabIndex = 17;
-            this.lb_ngaynhap.Text = "Ngày nhập";
-            // 
-            // lb_tennhacungcap
-            // 
-            this.lb_tennhacungcap.Location = new System.Drawing.Point(278, 34);
-            this.lb_tennhacungcap.Name = "lb_tennhacungcap";
-            this.lb_tennhacungcap.Size = new System.Drawing.Size(85, 13);
-            this.lb_tennhacungcap.TabIndex = 16;
-            this.lb_tennhacungcap.Text = "Tên nhà cung cấp";
-            // 
-            // lb_tensanpham
-            // 
-            this.lb_tensanpham.Location = new System.Drawing.Point(18, 75);
-            this.lb_tensanpham.Name = "lb_tensanpham";
-            this.lb_tensanpham.Size = new System.Drawing.Size(67, 13);
-            this.lb_tensanpham.TabIndex = 21;
-            this.lb_tensanpham.Text = "Tên sản phẩm";
             // 
             // PhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1096, 681);
-            this.Controls.Add(this.gb_ttpn);
             this.Controls.Add(this.dgv_sp_add);
+            this.Controls.Add(this.cbb_sl);
             this.Controls.Add(this.dgv_gia);
             this.Controls.Add(this.bt_them);
             this.Controls.Add(this.buttonEdit1);
+            this.Controls.Add(this.labelControl12);
+            this.Controls.Add(this.txt_dg);
+            this.Controls.Add(this.labelControl11);
+            this.Controls.Add(this.labelControl10);
+            this.Controls.Add(this.labelControl9);
+            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.txt_gianhap);
+            this.Controls.Add(this.cbb_tensp);
             this.Controls.Add(this.lb_thanhtien);
+            this.Controls.Add(this.date_ngaynhap);
+            this.Controls.Add(this.txt_tennv);
+            this.Controls.Add(this.cbb_ncc);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
             this.Name = "PhieuNhap";
@@ -470,8 +466,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgv_gia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_sl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sp_add)).EndInit();
-            this.gb_ttpn.ResumeLayout(false);
-            this.gb_ttpn.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -494,7 +488,15 @@ namespace GUI
         private DevExpress.XtraEditors.LabelControl lb_thanhtien;
         private DevExpress.XtraEditors.ComboBoxEdit cbb_tensp;
         private DevExpress.XtraEditors.TextEdit txt_gianhap;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.TextEdit txt_dg;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.ButtonEdit buttonEdit1;
         private System.Windows.Forms.Button bt_them;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
@@ -511,13 +513,5 @@ namespace GUI
         private DevExpress.XtraEditors.ComboBoxEdit cbb_sl;
         private System.Windows.Forms.DataGridView dgv_sp_add;
         private DevExpress.XtraBars.BarButtonItem bt_add_all;
-        private System.Windows.Forms.GroupBox gb_ttpn;
-        private DevExpress.XtraEditors.LabelControl lb_tennhanvien;
-        private DevExpress.XtraEditors.LabelControl lb_dongia;
-        private DevExpress.XtraEditors.LabelControl lb_gianhap;
-        private DevExpress.XtraEditors.LabelControl lb_soluong;
-        private DevExpress.XtraEditors.LabelControl lb_ngaynhap;
-        private DevExpress.XtraEditors.LabelControl lb_tennhacungcap;
-        private DevExpress.XtraEditors.LabelControl lb_tensanpham;
     }
 }
