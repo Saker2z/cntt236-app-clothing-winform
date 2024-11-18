@@ -185,5 +185,10 @@ namespace GUI
                 }
             }
         }
+
+        private void sanpham_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

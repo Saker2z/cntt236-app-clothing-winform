@@ -31,24 +31,59 @@ namespace GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.ac_thongtin = new DevExpress.XtraBars.Navigation.AccordionControl();
-            this.ace_manhinhchinh = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_danhmuc = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_sanpham = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_banhang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_quanlynhaphang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_hoadon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_kiemduyetsanpham = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_nhacungcap = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_baocaothongke = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_hethongquanly = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_nhanvien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_khachhang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_taikhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_thongtincanhan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_dangxuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
+            this.manhinhchinh = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.danhmuc = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.sanpham = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.danhmucsanpham = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.nam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aonam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aopolonam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aophongnam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aosominam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aohoodienam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aokhoacnam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aosuitnam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aomangtonam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.quannam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.quankakinam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.quandenimnam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.quanthunnam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.giaydepnam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.giaydanam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.giaythethaonam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.depsandalnam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.depxongonnam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.phukiennam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.munonnam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.tatnam = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.nu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.aovaynu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.giaydepnu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.quanchanvaynu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.tuixachvinu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.tuixachnu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.vinu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.treem = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.thuong_hieu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ysl = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.dior = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.channel = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.burberry = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.dw = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.nike = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.adidas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.hoadon = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.nhaphang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.theonhacungcap = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.theosanpham = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.hethongquanly = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.nhanvien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.khachhang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.taikhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.dangxuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
-            this.fluent_QuanLyForm = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
+            this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.panel_chinh = new System.Windows.Forms.Panel();
             this.pn_main = new System.Windows.Forms.Panel();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -56,177 +91,432 @@ namespace GUI
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            ((System.ComponentModel.ISupportInitialize)(this.ac_thongtin)).BeginInit();
+            this.banhang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.baocaothongke = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fluent_QuanLyForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             this.panel_chinh.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ac_thongtin
+            // accordionControl1
             // 
-            this.ac_thongtin.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ac_thongtin.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.ace_manhinhchinh,
-            this.ace_danhmuc,
-            this.ace_hethongquanly});
-            this.ac_thongtin.Location = new System.Drawing.Point(0, 31);
-            this.ac_thongtin.Name = "ac_thongtin";
-            this.ac_thongtin.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.ac_thongtin.Size = new System.Drawing.Size(254, 711);
-            this.ac_thongtin.TabIndex = 1;
-            this.ac_thongtin.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
+            this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.manhinhchinh,
+            this.danhmuc,
+            this.hethongquanly});
+            this.accordionControl1.Location = new System.Drawing.Point(0, 31);
+            this.accordionControl1.Name = "accordionControl1";
+            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
+            this.accordionControl1.Size = new System.Drawing.Size(254, 592);
+            this.accordionControl1.TabIndex = 1;
+            this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
-            // ace_manhinhchinh
+            // manhinhchinh
             // 
-            this.ace_manhinhchinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_manhinhchinh.ImageOptions.Image")));
-            this.ace_manhinhchinh.Name = "ace_manhinhchinh";
-            this.ace_manhinhchinh.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_manhinhchinh.Tag = 1;
-            this.ace_manhinhchinh.Text = "Màn Hình Chính";
+            this.manhinhchinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("manhinhchinh.ImageOptions.Image")));
+            this.manhinhchinh.Name = "manhinhchinh";
+            this.manhinhchinh.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.manhinhchinh.Text = "Màn Hình Chính";
+            this.manhinhchinh.Click += new System.EventHandler(this.manhinhchinh_Click);
             // 
-            // ace_danhmuc
+            // danhmuc
             // 
-            this.ace_danhmuc.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.ace_sanpham,
-            this.ace_banhang,
-            this.ace_quanlynhaphang,
-            this.ace_nhacungcap,
-            this.ace_baocaothongke});
-            this.ace_danhmuc.Expanded = true;
-            this.ace_danhmuc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_danhmuc.ImageOptions.Image")));
-            this.ace_danhmuc.Name = "ace_danhmuc";
-            this.ace_danhmuc.Tag = 2;
-            this.ace_danhmuc.Text = "Danh Mục";
+            this.danhmuc.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.sanpham,
+            this.hoadon,
+            this.nhaphang,
+            this.banhang,
+            this.baocaothongke});
+            this.danhmuc.Expanded = true;
+            this.danhmuc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("danhmuc.ImageOptions.Image")));
+            this.danhmuc.Name = "danhmuc";
+            this.danhmuc.Text = "Danh Mục";
             // 
-            // ace_sanpham
+            // sanpham
             // 
-            this.ace_sanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_sanpham.ImageOptions.Image")));
-            this.ace_sanpham.Name = "ace_sanpham";
-            this.ace_sanpham.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_sanpham.Tag = 3;
-            this.ace_sanpham.Text = "Sản Phẩm";
+            this.sanpham.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.danhmucsanpham});
+            this.sanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sanpham.ImageOptions.Image")));
+            this.sanpham.Name = "sanpham";
+            this.sanpham.Text = "Sản Phẩm";
+            this.sanpham.Click += new System.EventHandler(this.sanpham_Click);
             // 
-            // ace_banhang
+            // danhmucsanpham
             // 
-            this.ace_banhang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_banhang.ImageOptions.Image")));
-            this.ace_banhang.Name = "ace_banhang";
-            this.ace_banhang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_banhang.Tag = 4;
-            this.ace_banhang.Text = "Bán Hàng";
+            this.danhmucsanpham.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.nam,
+            this.nu,
+            this.treem,
+            this.thuong_hieu});
+            this.danhmucsanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("danhmucsanpham.ImageOptions.Image")));
+            this.danhmucsanpham.Name = "danhmucsanpham";
+            this.danhmucsanpham.Text = "Danh Mục Sản Phẩm";
             // 
-            // ace_quanlynhaphang
+            // nam
             // 
-            this.ace_quanlynhaphang.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.ace_hoadon,
-            this.ace_kiemduyetsanpham});
-            this.ace_quanlynhaphang.Expanded = true;
-            this.ace_quanlynhaphang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_quanlynhaphang.ImageOptions.Image")));
-            this.ace_quanlynhaphang.Name = "ace_quanlynhaphang";
-            this.ace_quanlynhaphang.Tag = 5;
-            this.ace_quanlynhaphang.Text = "Nhập Hàng";
+            this.nam.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.aonam,
+            this.aokhoacnam,
+            this.quannam,
+            this.giaydepnam,
+            this.phukiennam});
+            this.nam.Expanded = true;
+            this.nam.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("nam.ImageOptions.Image")));
+            this.nam.Name = "nam";
+            this.nam.Text = "Nam";
+            this.nam.Click += new System.EventHandler(this.nam_Click);
             // 
-            // ace_hoadon
+            // aonam
             // 
-            this.ace_hoadon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_hoadon.ImageOptions.Image")));
-            this.ace_hoadon.Name = "ace_hoadon";
-            this.ace_hoadon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_hoadon.Tag = 6;
-            this.ace_hoadon.Text = "Hóa Đơn";
+            this.aonam.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.aopolonam,
+            this.aophongnam,
+            this.aosominam,
+            this.aohoodienam});
+            this.aonam.ImageOptions.Image = global::GUI.Properties.Resources.ao;
+            this.aonam.Name = "aonam";
+            this.aonam.Text = "Áo";
             // 
-            // ace_kiemduyetsanpham
+            // aopolonam
             // 
-            this.ace_kiemduyetsanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_kiemduyetsanpham.ImageOptions.Image")));
-            this.ace_kiemduyetsanpham.Name = "ace_kiemduyetsanpham";
-            this.ace_kiemduyetsanpham.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_kiemduyetsanpham.Tag = 7;
-            this.ace_kiemduyetsanpham.Text = "Kiểm Duyệt Sản Phẩm";
+            this.aopolonam.ImageOptions.Image = global::GUI.Properties.Resources.ao_polo;
+            this.aopolonam.Name = "aopolonam";
+            this.aopolonam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aopolonam.Text = "Áo Polo Nam";
+            this.aopolonam.Click += new System.EventHandler(this.aothun_Click);
             // 
-            // ace_nhacungcap
+            // aophongnam
             // 
-            this.ace_nhacungcap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_nhacungcap.ImageOptions.Image")));
-            this.ace_nhacungcap.Name = "ace_nhacungcap";
-            this.ace_nhacungcap.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_nhacungcap.Tag = 8;
-            this.ace_nhacungcap.Text = "Nhà Cung Cấp";
+            this.aophongnam.ImageOptions.Image = global::GUI.Properties.Resources.ao_phong;
+            this.aophongnam.Name = "aophongnam";
+            this.aophongnam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aophongnam.Text = "Áo Phông Nam";
             // 
-            // ace_baocaothongke
+            // aosominam
             // 
-            this.ace_baocaothongke.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_baocaothongke.ImageOptions.Image")));
-            this.ace_baocaothongke.Name = "ace_baocaothongke";
-            this.ace_baocaothongke.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_baocaothongke.Tag = 9;
-            this.ace_baocaothongke.Text = "Báo Cáo - Thống Kê";
+            this.aosominam.ImageOptions.Image = global::GUI.Properties.Resources.ao_so_mi;
+            this.aosominam.Name = "aosominam";
+            this.aosominam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aosominam.Text = "Áo Sơmi Nam";
             // 
-            // ace_hethongquanly
+            // aohoodienam
             // 
-            this.ace_hethongquanly.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.ace_nhanvien,
-            this.ace_khachhang,
-            this.ace_taikhoan,
-            this.ace_thongtincanhan,
-            this.ace_dangxuat});
-            this.ace_hethongquanly.Expanded = true;
-            this.ace_hethongquanly.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_hethongquanly.ImageOptions.Image")));
-            this.ace_hethongquanly.Name = "ace_hethongquanly";
-            this.ace_hethongquanly.Tag = 10;
-            this.ace_hethongquanly.Text = "Hệ Thống Quản Lý";
+            this.aohoodienam.ImageOptions.Image = global::GUI.Properties.Resources.ao_hoodie;
+            this.aohoodienam.Name = "aohoodienam";
+            this.aohoodienam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aohoodienam.Text = "Áo Hoodie Nam";
             // 
-            // ace_nhanvien
+            // aokhoacnam
             // 
-            this.ace_nhanvien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_nhanvien.ImageOptions.Image")));
-            this.ace_nhanvien.Name = "ace_nhanvien";
-            this.ace_nhanvien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_nhanvien.Tag = 11;
-            this.ace_nhanvien.Text = "Nhân Viên";
+            this.aokhoacnam.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.aosuitnam,
+            this.aomangtonam});
+            this.aokhoacnam.Expanded = true;
+            this.aokhoacnam.ImageOptions.Image = global::GUI.Properties.Resources.ao_khoac;
+            this.aokhoacnam.Name = "aokhoacnam";
+            this.aokhoacnam.Text = "Áo Khoác";
             // 
-            // ace_khachhang
+            // aosuitnam
             // 
-            this.ace_khachhang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_khachhang.ImageOptions.Image")));
-            this.ace_khachhang.Name = "ace_khachhang";
-            this.ace_khachhang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_khachhang.Tag = 12;
-            this.ace_khachhang.Text = "Khách Hàng";
+            this.aosuitnam.ImageOptions.Image = global::GUI.Properties.Resources.ao_suit;
+            this.aosuitnam.Name = "aosuitnam";
+            this.aosuitnam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aosuitnam.Text = "Áo Suit";
             // 
-            // ace_taikhoan
+            // aomangtonam
             // 
-            this.ace_taikhoan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_taikhoan.ImageOptions.Image")));
-            this.ace_taikhoan.Name = "ace_taikhoan";
-            this.ace_taikhoan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_taikhoan.Tag = 13;
-            this.ace_taikhoan.Text = "Tài Khoản";
-            this.ace_taikhoan.Click += new System.EventHandler(this.taikhoan_Click);
+            this.aomangtonam.ImageOptions.Image = global::GUI.Properties.Resources.ao_mang_to;
+            this.aomangtonam.Name = "aomangtonam";
+            this.aomangtonam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aomangtonam.Text = "Áo Măng tô";
             // 
-            // ace_thongtincanhan
+            // quannam
             // 
-            this.ace_thongtincanhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_thongtincanhan.ImageOptions.Image")));
-            this.ace_thongtincanhan.Name = "ace_thongtincanhan";
-            this.ace_thongtincanhan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_thongtincanhan.Tag = 14;
-            this.ace_thongtincanhan.Text = "Thông Tin Cá Nhân";
+            this.quannam.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.quankakinam,
+            this.quandenimnam,
+            this.quanthunnam});
+            this.quannam.Expanded = true;
+            this.quannam.ImageOptions.Image = global::GUI.Properties.Resources.quan;
+            this.quannam.Name = "quannam";
+            this.quannam.Text = "Quần";
             // 
-            // ace_dangxuat
+            // quankakinam
             // 
-            this.ace_dangxuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_dangxuat.ImageOptions.Image")));
-            this.ace_dangxuat.Name = "ace_dangxuat";
-            this.ace_dangxuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_dangxuat.Tag = 15;
-            this.ace_dangxuat.Text = "Đăng Xuất";
-            this.ace_dangxuat.Click += new System.EventHandler(this.thoat_Click);
+            this.quankakinam.ImageOptions.Image = global::GUI.Properties.Resources.quan_kaki;
+            this.quankakinam.Name = "quankakinam";
+            this.quankakinam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.quankakinam.Text = "Quần Kaki";
+            // 
+            // quandenimnam
+            // 
+            this.quandenimnam.ImageOptions.Image = global::GUI.Properties.Resources.quan_denim;
+            this.quandenimnam.Name = "quandenimnam";
+            this.quandenimnam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.quandenimnam.Text = "Quần Denim";
+            // 
+            // quanthunnam
+            // 
+            this.quanthunnam.Name = "quanthunnam";
+            this.quanthunnam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.quanthunnam.Text = "Quần Thun";
+            // 
+            // giaydepnam
+            // 
+            this.giaydepnam.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.giaydanam,
+            this.giaythethaonam,
+            this.depsandalnam,
+            this.depxongonnam});
+            this.giaydepnam.Name = "giaydepnam";
+            this.giaydepnam.Text = "Giày, Dép";
+            // 
+            // giaydanam
+            // 
+            this.giaydanam.Name = "giaydanam";
+            this.giaydanam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.giaydanam.Text = "Giày Da";
+            // 
+            // giaythethaonam
+            // 
+            this.giaythethaonam.Name = "giaythethaonam";
+            this.giaythethaonam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.giaythethaonam.Text = "Giày Thể Thao";
+            // 
+            // depsandalnam
+            // 
+            this.depsandalnam.Name = "depsandalnam";
+            this.depsandalnam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.depsandalnam.Text = "Dép Sandal";
+            // 
+            // depxongonnam
+            // 
+            this.depxongonnam.Name = "depxongonnam";
+            this.depxongonnam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.depxongonnam.Text = "Dép, Xỏ ngón";
+            // 
+            // phukiennam
+            // 
+            this.phukiennam.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.munonnam,
+            this.tatnam});
+            this.phukiennam.Name = "phukiennam";
+            this.phukiennam.Text = "Phụ Kiện";
+            // 
+            // munonnam
+            // 
+            this.munonnam.Name = "munonnam";
+            this.munonnam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.munonnam.Text = "Mũ, Nón";
+            // 
+            // tatnam
+            // 
+            this.tatnam.Name = "tatnam";
+            this.tatnam.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.tatnam.Text = "Tất";
+            // 
+            // nu
+            // 
+            this.nu.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.aovaynu,
+            this.giaydepnu,
+            this.quanchanvaynu,
+            this.tuixachvinu});
+            this.nu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("nu.ImageOptions.Image")));
+            this.nu.Name = "nu";
+            this.nu.Text = "Nữ";
+            // 
+            // aovaynu
+            // 
+            this.aovaynu.Name = "aovaynu";
+            this.aovaynu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.aovaynu.Text = "Áo, Váy";
+            // 
+            // giaydepnu
+            // 
+            this.giaydepnu.Name = "giaydepnu";
+            this.giaydepnu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.giaydepnu.Text = "Giày, Dép";
+            // 
+            // quanchanvaynu
+            // 
+            this.quanchanvaynu.Name = "quanchanvaynu";
+            this.quanchanvaynu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.quanchanvaynu.Text = "Quần, Chân Váy";
+            // 
+            // tuixachvinu
+            // 
+            this.tuixachvinu.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.tuixachnu,
+            this.vinu});
+            this.tuixachvinu.Expanded = true;
+            this.tuixachvinu.Name = "tuixachvinu";
+            this.tuixachvinu.Text = "Túi Xách, Ví";
+            // 
+            // tuixachnu
+            // 
+            this.tuixachnu.Name = "tuixachnu";
+            this.tuixachnu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.tuixachnu.Text = "Túi xách";
+            // 
+            // vinu
+            // 
+            this.vinu.Name = "vinu";
+            this.vinu.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.vinu.Text = "Ví";
+            // 
+            // treem
+            // 
+            this.treem.ImageOptions.Image = global::GUI.Properties.Resources.tre_em;
+            this.treem.Name = "treem";
+            this.treem.Text = "Trẻ Em";
+            // 
+            // thuong_hieu
+            // 
+            this.thuong_hieu.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.ysl,
+            this.dior,
+            this.channel,
+            this.burberry,
+            this.dw,
+            this.nike,
+            this.adidas});
+            this.thuong_hieu.ImageOptions.Image = global::GUI.Properties.Resources.thuong_hieu;
+            this.thuong_hieu.Name = "thuong_hieu";
+            this.thuong_hieu.Text = "Thương Hiệu";
+            // 
+            // ysl
+            // 
+            this.ysl.Name = "ysl";
+            this.ysl.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ysl.Text = "YSL";
+            // 
+            // dior
+            // 
+            this.dior.Name = "dior";
+            this.dior.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.dior.Text = "Dior";
+            // 
+            // channel
+            // 
+            this.channel.Name = "channel";
+            this.channel.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.channel.Text = "Channel";
+            // 
+            // burberry
+            // 
+            this.burberry.Name = "burberry";
+            this.burberry.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.burberry.Text = "Burberry";
+            // 
+            // dw
+            // 
+            this.dw.Name = "dw";
+            this.dw.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.dw.Text = "DW";
+            // 
+            // nike
+            // 
+            this.nike.Name = "nike";
+            this.nike.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.nike.Text = "Nike";
+            // 
+            // adidas
+            // 
+            this.adidas.Name = "adidas";
+            this.adidas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.adidas.Text = "Adidas";
+            // 
+            // hoadon
+            // 
+            this.hoadon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("hoadon.ImageOptions.Image")));
+            this.hoadon.Name = "hoadon";
+            this.hoadon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.hoadon.Text = "Hóa Đơn";
+            // 
+            // nhaphang
+            // 
+            this.nhaphang.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.theonhacungcap,
+            this.theosanpham});
+            this.nhaphang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("nhaphang.ImageOptions.Image")));
+            this.nhaphang.Name = "nhaphang";
+            this.nhaphang.Text = "Nhập Hàng";
+            // 
+            // theonhacungcap
+            // 
+            this.theonhacungcap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("theonhacungcap.ImageOptions.Image")));
+            this.theonhacungcap.Name = "theonhacungcap";
+            this.theonhacungcap.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.theonhacungcap.Text = "Theo Nhà Cung Cấp";
+            this.theonhacungcap.Click += new System.EventHandler(this.theonhacungcap_Click);
+            // 
+            // theosanpham
+            // 
+            this.theosanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("theosanpham.ImageOptions.Image")));
+            this.theosanpham.Name = "theosanpham";
+            this.theosanpham.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.theosanpham.Text = "Theo Sản Phẩm";
+            this.theosanpham.Click += new System.EventHandler(this.theosanpham_Click);
+            // 
+            // hethongquanly
+            // 
+            this.hethongquanly.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.nhanvien,
+            this.khachhang,
+            this.taikhoan,
+            this.dangxuat});
+            this.hethongquanly.Expanded = true;
+            this.hethongquanly.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("hethongquanly.ImageOptions.Image")));
+            this.hethongquanly.Name = "hethongquanly";
+            this.hethongquanly.Text = "Hệ Thống Quản Lý";
+            // 
+            // nhanvien
+            // 
+            this.nhanvien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("nhanvien.ImageOptions.Image")));
+            this.nhanvien.Name = "nhanvien";
+            this.nhanvien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.nhanvien.Text = "Nhân Viên";
+            // 
+            // khachhang
+            // 
+            this.khachhang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("khachhang.ImageOptions.Image")));
+            this.khachhang.Name = "khachhang";
+            this.khachhang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.khachhang.Text = "Khách Hàng";
+            // 
+            // taikhoan
+            // 
+            this.taikhoan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("taikhoan.ImageOptions.Image")));
+            this.taikhoan.Name = "taikhoan";
+            this.taikhoan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.taikhoan.Text = "Tài Khoản";
+            this.taikhoan.Click += new System.EventHandler(this.taikhoan_Click);
+            // 
+            // dangxuat
+            // 
+            this.dangxuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("dangxuat.ImageOptions.Image")));
+            this.dangxuat.Name = "dangxuat";
+            this.dangxuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.dangxuat.Text = "Đăng Xuất";
+            this.dangxuat.Click += new System.EventHandler(this.thoat_Click);
             // 
             // fluentDesignFormControl1
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
-            this.fluentDesignFormControl1.Manager = this.fluent_QuanLyForm;
+            this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1628, 31);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1095, 31);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
-            // fluent_QuanLyForm
+            // fluentFormDefaultManager1
             // 
-            this.fluent_QuanLyForm.DockingEnabled = false;
-            this.fluent_QuanLyForm.Form = this;
+            this.fluentFormDefaultManager1.DockingEnabled = false;
+            this.fluentFormDefaultManager1.Form = this;
             // 
             // panel_chinh
             // 
@@ -236,15 +526,15 @@ namespace GUI
             this.panel_chinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_chinh.Location = new System.Drawing.Point(254, 31);
             this.panel_chinh.Name = "panel_chinh";
-            this.panel_chinh.Size = new System.Drawing.Size(1374, 711);
+            this.panel_chinh.Size = new System.Drawing.Size(841, 592);
             this.panel_chinh.TabIndex = 3;
             // 
             // pn_main
             // 
             this.pn_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pn_main.Location = new System.Drawing.Point(154, 62);
+            this.pn_main.Location = new System.Drawing.Point(69, 87);
             this.pn_main.Name = "pn_main";
-            this.pn_main.Size = new System.Drawing.Size(1106, 582);
+            this.pn_main.Size = new System.Drawing.Size(699, 420);
             this.pn_main.TabIndex = 0;
             // 
             // accordionControlElement1
@@ -279,52 +569,103 @@ namespace GUI
             this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement5.Text = "Phụ Kiện";
             // 
+            // banhang
+            // 
+            this.banhang.Name = "banhang";
+            this.banhang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.banhang.Text = "Bán Hàng";
+            // 
+            // baocaothongke
+            // 
+            this.baocaothongke.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("baocaothongke.ImageOptions.Image")));
+            this.baocaothongke.Name = "baocaothongke";
+            this.baocaothongke.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.baocaothongke.Text = "Báo Cáo - Thống Kê";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1628, 742);
+            this.ClientSize = new System.Drawing.Size(1095, 623);
             this.Controls.Add(this.panel_chinh);
-            this.Controls.Add(this.ac_thongtin);
+            this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.Name = "frmMain";
-            this.NavigationControl = this.ac_thongtin;
+            this.NavigationControl = this.accordionControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
-            ((System.ComponentModel.ISupportInitialize)(this.ac_thongtin)).EndInit();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fluent_QuanLyForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
             this.panel_chinh.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DevExpress.XtraBars.Navigation.AccordionControl ac_thongtin;
+        private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_danhmuc;
-        private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluent_QuanLyForm;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_hethongquanly;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_nhanvien;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_khachhang;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_dangxuat;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement danhmuc;
+        private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluentFormDefaultManager1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement sanpham;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement hethongquanly;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement nhanvien;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement khachhang;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement dangxuat;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aonam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aopolonam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aophongnam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement hoadon;
         private System.Windows.Forms.Panel panel_chinh;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_taikhoan;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement taikhoan;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement danhmucsanpham;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement nam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement nu;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement treem;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement thuong_hieu;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_manhinhchinh;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_quanlynhaphang;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_hoadon;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_kiemduyetsanpham;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement quannam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement phukiennam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aosominam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aohoodienam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aokhoacnam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aosuitnam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aomangtonam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement quankakinam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement quandenimnam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement quanthunnam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement giaydepnam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement giaydanam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement giaythethaonam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement depsandalnam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement depxongonnam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement munonnam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement tatnam;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement aovaynu;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement giaydepnu;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement quanchanvaynu;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement tuixachvinu;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement tuixachnu;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement vinu;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement ysl;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement dior;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement channel;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement burberry;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement dw;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement nike;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement adidas;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement manhinhchinh;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement nhaphang;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement theonhacungcap;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement theosanpham;
         private System.Windows.Forms.Panel pn_main;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_banhang;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_nhacungcap;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_thongtincanhan;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_sanpham;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ace_baocaothongke;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement banhang;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement baocaothongke;
     }
 }

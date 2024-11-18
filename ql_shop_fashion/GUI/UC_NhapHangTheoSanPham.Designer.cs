@@ -154,7 +154,7 @@ namespace GUI
             this.txt_tenncc.Name = "txt_tenncc";
             this.txt_tenncc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tenncc.Properties.Appearance.Options.UseFont = true;
-            this.txt_tenncc.Size = new System.Drawing.Size(410, 22);
+            this.txt_tenncc.Size = new System.Drawing.Size(413, 22);
             this.txt_tenncc.TabIndex = 10;
             // 
             // timkiemsanphamcuancc
@@ -187,7 +187,7 @@ namespace GUI
             this.timkiemncc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.timkiemncc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.timkiemncc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("timkiemncc.ImageOptions.Image")));
-            this.timkiemncc.Location = new System.Drawing.Point(390, 28);
+            this.timkiemncc.Location = new System.Drawing.Point(393, 28);
             this.timkiemncc.Name = "timkiemncc";
             this.timkiemncc.Size = new System.Drawing.Size(23, 20);
             this.timkiemncc.TabIndex = 11;

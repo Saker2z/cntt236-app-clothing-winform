@@ -29,188 +29,322 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.lct_dsspcd = new DevExpress.XtraLayout.LayoutControl();
-            this.gdv_duyet_sp = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.dgv_dsnhap = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bt_duyet = new DevExpress.XtraEditors.CheckButton();
-            this.bt_ht = new DevExpress.XtraEditors.CheckButton();
-            ((System.ComponentModel.ISupportInitialize)(this.lct_dsspcd)).BeginInit();
-            this.lct_dsspcd.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gdv_duyet_sp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
-            this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_dsnhap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // lct_dsspcd
+            // dataGridView1
             // 
-            this.lct_dsspcd.BackColor = System.Drawing.Color.White;
-            this.lct_dsspcd.Controls.Add(this.gdv_duyet_sp);
-            this.lct_dsspcd.Location = new System.Drawing.Point(484, 36);
-            this.lct_dsspcd.Name = "lct_dsspcd";
-            this.lct_dsspcd.Root = this.Root;
-            this.lct_dsspcd.Size = new System.Drawing.Size(483, 651);
-            this.lct_dsspcd.TabIndex = 53;
-            this.lct_dsspcd.Text = "layoutControl1";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(483, 338);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(433, 305);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // gdv_duyet_sp
+            // dataGridView2
             // 
-            this.gdv_duyet_sp.Location = new System.Drawing.Point(12, 28);
-            this.gdv_duyet_sp.MainView = this.gridView1;
-            this.gdv_duyet_sp.Name = "gdv_duyet_sp";
-            this.gdv_duyet_sp.Size = new System.Drawing.Size(459, 611);
-            this.gdv_duyet_sp.TabIndex = 4;
-            this.gdv_duyet_sp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 338);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(443, 305);
+            this.dataGridView2.TabIndex = 1;
             // 
-            // gridView1
+            // ribbonControl1
             // 
-            this.gridView1.GridControl = this.gdv_duyet_sp;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.ribbonControl1.SearchEditItem});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 1;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage1});
+            this.ribbonControl1.Size = new System.Drawing.Size(928, 150);
             // 
-            // Root
+            // ribbonPage1
             // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(483, 651);
-            this.Root.TextVisible = false;
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "ribbonPage1";
             // 
-            // layoutControlItem1
+            // ribbonPageGroup1
             // 
-            this.layoutControlItem1.Control = this.gdv_duyet_sp;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(463, 631);
-            this.layoutControlItem1.Text = "Danh sách sản phẩm cần duyệt";
-            this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(150, 13);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
-            // layoutControl2
+            // labelControl1
             // 
-            this.layoutControl2.BackColor = System.Drawing.Color.White;
-            this.layoutControl2.Controls.Add(this.dgv_dsnhap);
-            this.layoutControl2.Location = new System.Drawing.Point(-3, 7);
-            this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(538, 362, 650, 400);
-            this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(493, 680);
-            this.layoutControl2.TabIndex = 54;
-            this.layoutControl2.Text = "lct_dsdsp";
+            this.labelControl1.Location = new System.Drawing.Point(12, 166);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(63, 13);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "labelControl1";
             // 
-            // dgv_dsnhap
+            // labelControl2
             // 
-            this.dgv_dsnhap.Location = new System.Drawing.Point(12, 28);
-            this.dgv_dsnhap.MainView = this.gridView2;
-            this.dgv_dsnhap.Name = "dgv_dsnhap";
-            this.dgv_dsnhap.Size = new System.Drawing.Size(469, 640);
-            this.dgv_dsnhap.TabIndex = 4;
-            this.dgv_dsnhap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.labelControl2.Location = new System.Drawing.Point(12, 198);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(63, 13);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "labelControl2";
             // 
-            // gridView2
+            // labelControl3
             // 
-            this.gridView2.GridControl = this.dgv_dsnhap;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.labelControl3.Location = new System.Drawing.Point(12, 233);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(63, 13);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "labelControl3";
             // 
-            // layoutControlGroup1
+            // labelControl4
             // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2});
-            this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(493, 680);
-            this.layoutControlGroup1.TextVisible = false;
+            this.labelControl4.Location = new System.Drawing.Point(12, 269);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(63, 13);
+            this.labelControl4.TabIndex = 5;
+            this.labelControl4.Text = "labelControl4";
             // 
-            // layoutControlItem2
+            // labelControl5
             // 
-            this.layoutControlItem2.Control = this.dgv_dsnhap;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem2.Name = "layoutControlItem1";
-            this.layoutControlItem2.Size = new System.Drawing.Size(473, 660);
-            this.layoutControlItem2.Text = "Danh sách đơn sản phẩm";
-            this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(120, 13);
+            this.labelControl5.Location = new System.Drawing.Point(12, 300);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(63, 13);
+            this.labelControl5.TabIndex = 6;
+            this.labelControl5.Text = "labelControl5";
             // 
-            // bt_duyet
+            // labelControl6
             // 
-            this.bt_duyet.Appearance.BackColor = System.Drawing.Color.White;
-            this.bt_duyet.Appearance.Options.UseBackColor = true;
-            this.bt_duyet.Location = new System.Drawing.Point(736, 12);
-            this.bt_duyet.Name = "bt_duyet";
-            this.bt_duyet.Size = new System.Drawing.Size(219, 22);
-            this.bt_duyet.TabIndex = 57;
-            this.bt_duyet.Text = "Duyệt";
+            this.labelControl6.Location = new System.Drawing.Point(483, 166);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(63, 13);
+            this.labelControl6.TabIndex = 7;
+            this.labelControl6.Text = "labelControl6";
             // 
-            // bt_ht
+            // labelControl7
             // 
-            this.bt_ht.Appearance.BackColor = System.Drawing.Color.White;
-            this.bt_ht.Appearance.Options.UseBackColor = true;
-            this.bt_ht.Location = new System.Drawing.Point(496, 12);
-            this.bt_ht.Name = "bt_ht";
-            this.bt_ht.Size = new System.Drawing.Size(227, 22);
-            this.bt_ht.TabIndex = 60;
-            this.bt_ht.Text = "Hoàn thành đơn";
+            this.labelControl7.Location = new System.Drawing.Point(483, 198);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(63, 13);
+            this.labelControl7.TabIndex = 8;
+            this.labelControl7.Text = "labelControl7";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(483, 233);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(63, 13);
+            this.labelControl8.TabIndex = 9;
+            this.labelControl8.Text = "labelControl8";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(483, 269);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(63, 13);
+            this.labelControl9.TabIndex = 10;
+            this.labelControl9.Text = "labelControl9";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(483, 300);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(69, 13);
+            this.labelControl10.TabIndex = 11;
+            this.labelControl10.Text = "labelControl10";
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(118, 163);
+            this.textEdit1.MenuManager = this.ribbonControl1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(337, 20);
+            this.textEdit1.TabIndex = 12;
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Location = new System.Drawing.Point(118, 195);
+            this.textEdit2.MenuManager = this.ribbonControl1;
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Size = new System.Drawing.Size(337, 20);
+            this.textEdit2.TabIndex = 13;
+            // 
+            // textEdit3
+            // 
+            this.textEdit3.Location = new System.Drawing.Point(118, 230);
+            this.textEdit3.MenuManager = this.ribbonControl1;
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Size = new System.Drawing.Size(337, 20);
+            this.textEdit3.TabIndex = 14;
+            // 
+            // textEdit4
+            // 
+            this.textEdit4.Location = new System.Drawing.Point(118, 266);
+            this.textEdit4.MenuManager = this.ribbonControl1;
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Size = new System.Drawing.Size(337, 20);
+            this.textEdit4.TabIndex = 15;
+            // 
+            // textEdit5
+            // 
+            this.textEdit5.Location = new System.Drawing.Point(118, 297);
+            this.textEdit5.MenuManager = this.ribbonControl1;
+            this.textEdit5.Name = "textEdit5";
+            this.textEdit5.Size = new System.Drawing.Size(337, 20);
+            this.textEdit5.TabIndex = 16;
+            // 
+            // textEdit6
+            // 
+            this.textEdit6.Location = new System.Drawing.Point(579, 163);
+            this.textEdit6.MenuManager = this.ribbonControl1;
+            this.textEdit6.Name = "textEdit6";
+            this.textEdit6.Size = new System.Drawing.Size(337, 20);
+            this.textEdit6.TabIndex = 17;
+            // 
+            // textEdit7
+            // 
+            this.textEdit7.Location = new System.Drawing.Point(579, 195);
+            this.textEdit7.MenuManager = this.ribbonControl1;
+            this.textEdit7.Name = "textEdit7";
+            this.textEdit7.Size = new System.Drawing.Size(337, 20);
+            this.textEdit7.TabIndex = 18;
+            // 
+            // textEdit8
+            // 
+            this.textEdit8.Location = new System.Drawing.Point(579, 230);
+            this.textEdit8.MenuManager = this.ribbonControl1;
+            this.textEdit8.Name = "textEdit8";
+            this.textEdit8.Size = new System.Drawing.Size(337, 20);
+            this.textEdit8.TabIndex = 19;
+            // 
+            // textEdit9
+            // 
+            this.textEdit9.Location = new System.Drawing.Point(579, 266);
+            this.textEdit9.MenuManager = this.ribbonControl1;
+            this.textEdit9.Name = "textEdit9";
+            this.textEdit9.Size = new System.Drawing.Size(337, 20);
+            this.textEdit9.TabIndex = 20;
+            // 
+            // textEdit10
+            // 
+            this.textEdit10.Location = new System.Drawing.Point(579, 297);
+            this.textEdit10.MenuManager = this.ribbonControl1;
+            this.textEdit10.Name = "textEdit10";
+            this.textEdit10.Size = new System.Drawing.Size(337, 20);
+            this.textEdit10.TabIndex = 21;
             // 
             // frmDuyetSanPham
             // 
-            this.Appearance.BackColor = System.Drawing.Color.White;
-            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 684);
-            this.Controls.Add(this.bt_duyet);
-            this.Controls.Add(this.layoutControl2);
-            this.Controls.Add(this.bt_ht);
-            this.Controls.Add(this.lct_dsspcd);
+            this.ClientSize = new System.Drawing.Size(928, 655);
+            this.Controls.Add(this.textEdit10);
+            this.Controls.Add(this.textEdit9);
+            this.Controls.Add(this.textEdit8);
+            this.Controls.Add(this.textEdit7);
+            this.Controls.Add(this.textEdit6);
+            this.Controls.Add(this.textEdit5);
+            this.Controls.Add(this.textEdit4);
+            this.Controls.Add(this.textEdit3);
+            this.Controls.Add(this.textEdit2);
+            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.labelControl10);
+            this.Controls.Add(this.labelControl9);
+            this.Controls.Add(this.labelControl8);
+            this.Controls.Add(this.labelControl7);
+            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.ribbonControl1);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "frmDuyetSanPham";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDuyetSanPham";
-            ((System.ComponentModel.ISupportInitialize)(this.lct_dsspcd)).EndInit();
-            this.lct_dsspcd.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gdv_duyet_sp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
-            this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_dsnhap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private DevExpress.XtraLayout.LayoutControl lct_dsspcd;
-        private DevExpress.XtraGrid.GridControl gdv_duyet_sp;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControl layoutControl2;
-        private DevExpress.XtraGrid.GridControl dgv_dsnhap;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.CheckButton bt_duyet;
-        private DevExpress.XtraEditors.CheckButton bt_ht;
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.TextEdit textEdit7;
+        private DevExpress.XtraEditors.TextEdit textEdit8;
+        private DevExpress.XtraEditors.TextEdit textEdit9;
+        private DevExpress.XtraEditors.TextEdit textEdit10;
     }
 }

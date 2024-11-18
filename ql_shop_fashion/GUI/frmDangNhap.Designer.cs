@@ -109,7 +109,7 @@ namespace GUI
             this.panel2.Controls.Add(this.nhaptk);
             this.panel2.Controls.Add(this.taotk);
             this.panel2.Controls.Add(this.welcome);
-            this.panel2.Location = new System.Drawing.Point(498, 126);
+            this.panel2.Location = new System.Drawing.Point(512, 126);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(355, 337);
             this.panel2.TabIndex = 1;
