@@ -19,10 +19,50 @@ namespace GUI
         public them_ncc()
         {
             InitializeComponent();
-            btthem.Click += Btthem_Click;
-            btthoat.Click += Btthoat_Click;
+            btthem.ItemClick += Btthem_ItemClick;
+            btthoat.ItemClick += Btthoat_ItemClick;
             this.FormClosed += Them_ncc_FormClosed;
             
+        }
+
+        private void Btthoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btthem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // Kiểm tra dữ liệu đầu vào
+            if (!ValidateInput())
+            {
+                return; // Nếu dữ liệu không hợp lệ, dừng lại
+            }
+
+            // Tạo đối tượng nha_cung_cap và gán giá trị từ các trường nhập liệu
+            ncc_bll = new nha_cung_cap_sql_BLL();
+            nha_cung_cap a = new nha_cung_cap
+            {
+                ten_nha_cung_cap = ten_ncc.Text,
+                dia_chi = dc.Text,
+                dien_thoai = dt.Text
+            };
+
+            // Thực hiện thêm nhà cung cấp
+            if (themncc(a, ncc_bll))
+            {
+                MessageBox.Show("Thêm nhà cung cấp thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Cập nhật lại danh sách nhà cung cấp
+
+                // Xóa các ô nhập liệu sau khi thêm thành công
+                ten_ncc.Text = "";
+                dc.Text = "";
+                dt.Text = "";
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi xảy ra khi thêm nhà cung cấp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Them_ncc_FormClosed(object sender, FormClosedEventArgs e)
@@ -30,10 +70,6 @@ namespace GUI
             SupplierAdded?.Invoke(this, EventArgs.Empty);
         }
 
-        private void Btthoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private bool ValidateInput()
         {
@@ -71,41 +107,6 @@ namespace GUI
 
             // Nếu tất cả các kiểm tra đều hợp lệ
             return true;
-        }
-
-        private void Btthem_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra dữ liệu đầu vào
-            if (!ValidateInput())
-            {
-                return; // Nếu dữ liệu không hợp lệ, dừng lại
-            }
-
-            // Tạo đối tượng nha_cung_cap và gán giá trị từ các trường nhập liệu
-            ncc_bll = new nha_cung_cap_sql_BLL();
-            nha_cung_cap a = new nha_cung_cap
-            {
-                ten_nha_cung_cap = ten_ncc.Text,
-                dia_chi = dc.Text,
-                dien_thoai = dt.Text
-            };
-
-            // Thực hiện thêm nhà cung cấp
-            if (themncc(a, ncc_bll))
-            {
-                MessageBox.Show("Thêm nhà cung cấp thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Cập nhật lại danh sách nhà cung cấp
-
-                // Xóa các ô nhập liệu sau khi thêm thành công
-                ten_ncc.Text = "";
-                dc.Text = "";
-                dt.Text = "";
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi xảy ra khi thêm nhà cung cấp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         bool themncc(nha_cung_cap ncc, nha_cung_cap_sql_BLL nc)

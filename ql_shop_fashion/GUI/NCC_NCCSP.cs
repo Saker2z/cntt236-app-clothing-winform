@@ -279,7 +279,7 @@ namespace GUI
         private void Bt_them_Click(object sender, EventArgs e)
         {
             sp_bll = new san_pham_sql_BLL();
-            AddEmptyRowToGrid(sp_bll.get_all_sp());
+            AddEmptyRowToGrid(sp_bll.get_all_sp_custom());
             checkpoin = 1;
         }
 

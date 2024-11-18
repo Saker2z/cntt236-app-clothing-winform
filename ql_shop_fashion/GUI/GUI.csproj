@@ -104,6 +104,12 @@
     <Compile Include="frmDuyetSanPham.Designer.cs">
       <DependentUpon>frmDuyetSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLoaiSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaiSP.Designer.cs">
+      <DependentUpon>frmLoaiSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,12 @@
     </Compile>
     <Compile Include="frmNhapHang.Designer.cs">
       <DependentUpon>frmNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemSPVaoThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemSPVaoThongTin.Designer.cs">
+      <DependentUpon>frmThemSPVaoThongTin.cs</DependentUpon>
     </Compile>
     <Compile Include="NCC_NCCSP.cs">
       <SubType>UserControl</SubType>
@@ -189,11 +201,17 @@
     <EmbeddedResource Include="frmDuyetSanPham.resx">
       <DependentUpon>frmDuyetSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLoaiSP.resx">
+      <DependentUpon>frmLoaiSP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhapHang.resx">
       <DependentUpon>frmNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemSPVaoThongTin.resx">
+      <DependentUpon>frmThemSPVaoThongTin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NCC_NCCSP.resx">
       <DependentUpon>NCC_NCCSP.cs</DependentUpon>
@@ -349,6 +367,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\xoaphieu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qlnhaphang.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

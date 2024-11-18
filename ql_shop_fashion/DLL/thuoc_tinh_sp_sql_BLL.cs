@@ -19,10 +19,12 @@ namespace BLL
            
 
         }
-        public IQueryable<product> get_all_ttsp_by_id(int id)
+
+        public List<product> get_all_ttsp_by_id(int masanpham)
         {
-            return sp.get_all_ttsp_by_id(id);
+            return sp.get_all_ttsp_by_id(masanpham);
         }
+
         public bool updated_tt_sp(List<thuoc_tinh_san_pham> ttsp)
         {
             return sp.updated_tt_sp(ttsp);

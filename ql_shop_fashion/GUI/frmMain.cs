@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars;
+using DevExpress.XtraBars.Navigation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,15 +16,35 @@ namespace GUI
     {
         UC_NhapHangTheoNCC nhapHangTheoNCC;
         UC_NhapHangTheoSanPham nhapHangTheoSanPham;
-        UC_thuonghieu thuonghieu;
         UC_TaiKhoan taiKhoan;
+        UC_SanPham sanPham;
+        NCC_NCCSP nCC_NCCSP;
 
         public frmMain()
         {
             InitializeComponent();
             pn_main.Dock = DockStyle.Fill;
+            ace_sanpham.Click += Ace_sanpham_Click;
+            ace_manhinhchinh.Click += Manhinhchinh_Click;
+            ace_hoadon.Click += Theonhacungcap_Click;
+            ace_kiemduyetsanpham.Click += Theosanpham_Click;
+            ace_nhacungcap.Click += Nhacungcap_Click;
             this.Load += FrmMain_Load;
         }
+
+        private void Ace_sanpham_Click(object sender, EventArgs e)
+        {
+            panel_chinh.Controls.Clear();
+
+            if (sanPham == null)
+            {
+                sanPham = new UC_SanPham();
+                sanPham.Dock = DockStyle.Fill;
+            }
+            panel_chinh.Controls.Add(sanPham);
+            sanPham.BringToFront();
+        }
+
         private void LoadGifToPanel(string filePath)
         {
             if (File.Exists(filePath)) // Kiểm tra xem file có tồn tại không
@@ -50,18 +71,54 @@ namespace GUI
             LoadGifToPanel(@"..\..\Resources\background_mhc.jpg");
         }
 
-        private void aothun_Click(object sender, EventArgs e)
+
+
+        private void Nhacungcap_Click(object sender, EventArgs e)
         {
             panel_chinh.Controls.Clear();
 
-            if (thuonghieu == null)
+            if (nCC_NCCSP == null)
             {
-                thuonghieu = new UC_thuonghieu();
-                thuonghieu.Dock = DockStyle.Fill;
+                nCC_NCCSP = new NCC_NCCSP();
+                nCC_NCCSP.Dock = DockStyle.Fill;
             }
-            panel_chinh.Controls.Add(thuonghieu);
-            thuonghieu.BringToFront();
+            panel_chinh.Controls.Add(nCC_NCCSP);
+            nCC_NCCSP.BringToFront();
         }
+
+        private void Manhinhchinh_Click(object sender, EventArgs e)
+        {
+            panel_chinh.Controls.Clear();
+            panel_chinh.Controls.Add(pn_main);
+        }
+
+        private void Theosanpham_Click(object sender, EventArgs e)
+        {
+            panel_chinh.Controls.Clear();
+
+            if (nhapHangTheoSanPham == null)
+            {
+                nhapHangTheoSanPham = new UC_NhapHangTheoSanPham();
+                nhapHangTheoSanPham.Dock = DockStyle.Fill;
+            }
+            panel_chinh.Controls.Add(nhapHangTheoSanPham);
+            nhapHangTheoSanPham.BringToFront();
+        }
+
+        private void Theonhacungcap_Click(object sender, EventArgs e)
+        {
+            panel_chinh.Controls.Clear();
+
+            if (nhapHangTheoNCC == null)
+            {
+                nhapHangTheoNCC = new UC_NhapHangTheoNCC();
+                nhapHangTheoNCC.Dock = DockStyle.Fill;
+            }
+            panel_chinh.Controls.Add(nhapHangTheoNCC);
+            nhapHangTheoNCC.BringToFront();
+        }
+
+
 
         private void thoat_Click(object sender, EventArgs e)
         {
@@ -69,12 +126,15 @@ namespace GUI
 
             if (result == DialogResult.Yes)
             {
-                Application.Exit();
+                frmDangNhap main = new frmDangNhap();
+                this.Hide();
+                main.Show();
+                main.FormClosed += (s, args) => this.Close();
             }
             else
             {
                 return;
-            }       
+            }
         }
 
         private void taikhoan_Click(object sender, EventArgs e)
@@ -90,50 +150,38 @@ namespace GUI
             taiKhoan.BringToFront();
         }
 
-        private void nam_Click(object sender, EventArgs e)
-        {
 
+
+        public void ShowScreens(List<int> accessibleScreens)
+        {
+            // Gọi phương thức đệ quy để xử lý hiển thị quyền truy cập cho tất cả các phần tử
+            SetElementVisibility(ac_thongtin.Elements, accessibleScreens);
         }
 
-        private void manhinhchinh_Click(object sender, EventArgs e)
+        // Phương thức đệ quy để duyệt qua các AccordionControlElement và các phần tử con
+        private void SetElementVisibility(AccordionControlElementCollection elements, List<int> accessibleScreens)
         {
-
-            panel_chinh.Controls.Clear();
-            panel_chinh.Controls.Add(pn_main);
-           // pn_main.Dock = DockStyle.Fill;
-
-
-        }
-
-        private void theonhacungcap_Click(object sender, EventArgs e)
-        {
-            panel_chinh.Controls.Clear();
-            NCC_NCCSP ncc = new NCC_NCCSP();
-           
-            panel_chinh.Controls.Add(ncc);
-            ncc.BringToFront();
-        }
-
-        private void theosanpham_Click(object sender, EventArgs e)
-        {
-            panel_chinh.Controls.Clear();
-
-            if (nhapHangTheoSanPham == null)
+            foreach (AccordionControlElement element in elements)
             {
-                nhapHangTheoSanPham = new UC_NhapHangTheoSanPham();
-                nhapHangTheoSanPham.Dock = DockStyle.Fill;
-            }
-            panel_chinh.Controls.Add(nhapHangTheoSanPham);
-            nhapHangTheoSanPham.BringToFront();
-        }
-
-        public void ShowScreens(List<int> screenIds)
-        {
-            foreach (var item in accordionControl1.Elements)
-            {
-                if (item.Tag is int screenId)
+                if (element != null && element.Tag != null)
                 {
-                    item.Visible = screenIds.Contains(screenId);
+                    // Lấy id_man_hinh từ Tag của AccordionControlElement
+                    int elementId = Convert.ToInt32(element.Tag);
+
+                    // Kiểm tra quyền truy cập
+                    element.Visible = accessibleScreens.Contains(elementId);
+                }
+                else
+                {
+                    // Nếu không có Tag hoặc là null, ẩn phần tử
+                    element.Visible = false;
+                }
+
+                // Kiểm tra nếu phần tử có các phần tử con (sub-elements)
+                if (element.Elements.Count > 0)
+                {
+                    // Đệ quy gọi lại phương thức SetElementVisibility cho các phần tử con
+                    SetElementVisibility(element.Elements, accessibleScreens);
                 }
             }
         }
