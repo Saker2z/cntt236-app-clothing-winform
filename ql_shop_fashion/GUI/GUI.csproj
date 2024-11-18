@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="BLL">
       <HintPath>..\DLL\bin\Debug\BLL.dll</HintPath>
     </Reference>
@@ -66,8 +70,7 @@
     <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DTO">
       <HintPath>..\DLL\bin\Debug\DTO.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
@@ -78,6 +81,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -92,6 +103,18 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="add_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_NV.Designer.cs">
+      <DependentUpon>add_NV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang.Designer.cs">
+      <DependentUpon>BanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +170,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\tem_gia.cs" />
     <Compile Include="them_ncc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +183,12 @@
     <Compile Include="UC_NhaCungCap.Designer.cs">
       <DependentUpon>UC_NhaCungCap.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_NhanVien.Designer.cs">
+      <DependentUpon>UC_NhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_NhapHangTheoNCC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -170,6 +200,12 @@
     </Compile>
     <Compile Include="UC_NhapHangTheoSanPham.Designer.cs">
       <DependentUpon>UC_NhapHangTheoSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Quyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Quyen.Designer.cs">
+      <DependentUpon>UC_Quyen.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_SanPham.cs">
       <SubType>UserControl</SubType>
@@ -195,6 +231,18 @@
     <Compile Include="PhieuNhap.Designer.cs">
       <DependentUpon>PhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="WaitForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm3.Designer.cs">
+      <DependentUpon>WaitForm3.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="add_NV.resx">
+      <DependentUpon>add_NV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang.resx">
+      <DependentUpon>BanHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,11 +282,17 @@
     <EmbeddedResource Include="UC_NhaCungCap.resx">
       <DependentUpon>UC_NhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_NhanVien.resx">
+      <DependentUpon>UC_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_NhapHangTheoNCC.resx">
       <DependentUpon>UC_NhapHangTheoNCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_NhapHangTheoSanPham.resx">
       <DependentUpon>UC_NhapHangTheoSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Quyen.resx">
+      <DependentUpon>UC_Quyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_SanPham.resx">
       <DependentUpon>UC_SanPham.cs</DependentUpon>

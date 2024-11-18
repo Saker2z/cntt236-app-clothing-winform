@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next">
+      <HintPath>..\..\..\..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
@@ -108,7 +111,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
@@ -127,14 +131,17 @@
     </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
@@ -154,14 +161,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="chi_tiet_hoa_don_DAL.cs" />
     <Compile Include="chi_tiet_nhap_sql_DAL.cs" />
-    <Compile Include="hinh_anh_sp_sql_DAL.cs" />
-    <Compile Include="loai_sanpham_sql_DAL.cs" />
-    <Compile Include="mau_sac_sql_DAL.cs" />
+    <Compile Include="hoa_don_DAL.cs" />
+    <Compile Include="khach_hang_sql_DAL.cs" />
+    <Compile Include="khuyen_mai_sql_DAL.cs" />
+    <Compile Include="nhan_vien_sql_DAL.cs" />
     <Compile Include="nhap_hang_sql_DAL.cs" />
     <Compile Include="nha_cung_cap_sp_sql_DAL.cs" />
     <Compile Include="nha_cung_cap_sql_DAL.cs" />
-    <Compile Include="nhom_loai_sql_DAL.cs" />
+    <Compile Include="nhom_quyen_sql_DAL.cs" />
+    <Compile Include="passwordHelper.cs" />
+    <Compile Include="phuong_thuc_thanh_toan_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -169,10 +180,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="san_pham_sql_DAL.cs" />
-    <Compile Include="size_sql_DAL.cs" />
-    <Compile Include="thong_tin_sp_sql_DAL.cs" />
+    <Compile Include="tai_khoan_sql_DAL.cs" />
     <Compile Include="thuoc_tinh_sp_sql_DAL.cs" />
-    <Compile Include="thuong_hieu_sql_DAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

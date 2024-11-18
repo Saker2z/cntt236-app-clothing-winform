@@ -23,14 +23,27 @@ namespace GUI.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-4GMS5N8;Initial Catalog=QL_SHOP_FASHION;Integrated Security=T" +
-            "rue")]
-        public string QL_SHOP_FASHIONConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int id_user_login {
             get {
-                return ((string)(this["QL_SHOP_FASHIONConnectionString"]));
+                return ((int)(this["id_user_login"]));
+            }
+            set {
+                this["id_user_login"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string name_role {
+            get {
+                return ((string)(this["name_role"]));
+            }
+            set {
+                this["name_role"] = value;
             }
         }
     }

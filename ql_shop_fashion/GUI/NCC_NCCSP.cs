@@ -64,7 +64,7 @@ namespace GUI
             if (result)
             {
                 MessageBox.Show("Xóa nhà cung cấp thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                clear_data();
                 // Làm mới danh sách nhà cung cấp hoặc cập nhật giao diện sau khi xóa
                 load_gct(); // Gọi phương thức load_gct để làm mới dữ liệu nhà cung cấp
             }

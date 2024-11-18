@@ -19,137 +19,38 @@ namespace GUI
         UC_TaiKhoan taiKhoan;
         UC_SanPham sanPham;
         NCC_NCCSP nCC_NCCSP;
+        UC_NhanVien uc_nv;
 
         public frmMain()
         {
             InitializeComponent();
-            pn_main.Dock = DockStyle.Fill;
-            ace_sanpham.Click += Ace_sanpham_Click;
-            ace_manhinhchinh.Click += Manhinhchinh_Click;
-            ace_hoadon.Click += Theonhacungcap_Click;
-            ace_kiemduyetsanpham.Click += Theosanpham_Click;
-            ace_nhacungcap.Click += Nhacungcap_Click;
-            this.Load += FrmMain_Load;
+            ace_nhanvien.Click += Ace_nhanvien_Click;
+            ace_taikhoan.Click += Ace_taikhoan_Click;
+
         }
 
-        private void Ace_sanpham_Click(object sender, EventArgs e)
+        private void Ace_taikhoan_Click(object sender, EventArgs e)
         {
-            panel_chinh.Controls.Clear();
+            pn_main.Controls.Clear();
 
-            if (sanPham == null)
-            {
-                sanPham = new UC_SanPham();
-                sanPham.Dock = DockStyle.Fill;
-            }
-            panel_chinh.Controls.Add(sanPham);
-            sanPham.BringToFront();
+            // Tạo instance của UC_NhanVien và thêm vào pn_main
+            taiKhoan = new UC_TaiKhoan(Properties.Settings.Default.name_role);
+            taiKhoan.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+
+            pn_main.Controls.Add(taiKhoan); // Thêm UC_NhanVien vào panel pn_main
         }
 
-        private void LoadGifToPanel(string filePath)
+        private void Ace_nhanvien_Click(object sender, EventArgs e)
         {
-            if (File.Exists(filePath)) // Kiểm tra xem file có tồn tại không
-            {
-                try
-                {
-                    // Tải hình ảnh từ file và gán cho BackgroundImage của panel
-                    pn_main.BackgroundImage = Image.FromFile(filePath);
-                    pn_main.BackgroundImageLayout = ImageLayout.Stretch; // Để ảnh lấp đầy Panel
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Lỗi khi tải ảnh: {ex.Message}");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Không tìm thấy file GIF!");
-            }
+            // Kiểm tra và xóa các control hiện có trên panel (nếu muốn thay thế hoàn toàn)
+            pn_main.Controls.Clear();
+
+            // Tạo instance của UC_NhanVien và thêm vào pn_main
+            uc_nv = new UC_NhanVien(Properties.Settings.Default.name_role);
+            uc_nv.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+
+            pn_main.Controls.Add(uc_nv); // Thêm UC_NhanVien vào panel pn_main
         }
-
-        private void FrmMain_Load(object sender, EventArgs e)
-        {
-            LoadGifToPanel(@"..\..\Resources\background_mhc.jpg");
-        }
-
-
-
-        private void Nhacungcap_Click(object sender, EventArgs e)
-        {
-            panel_chinh.Controls.Clear();
-
-            if (nCC_NCCSP == null)
-            {
-                nCC_NCCSP = new NCC_NCCSP();
-                nCC_NCCSP.Dock = DockStyle.Fill;
-            }
-            panel_chinh.Controls.Add(nCC_NCCSP);
-            nCC_NCCSP.BringToFront();
-        }
-
-        private void Manhinhchinh_Click(object sender, EventArgs e)
-        {
-            panel_chinh.Controls.Clear();
-            panel_chinh.Controls.Add(pn_main);
-        }
-
-        private void Theosanpham_Click(object sender, EventArgs e)
-        {
-            panel_chinh.Controls.Clear();
-
-            if (nhapHangTheoSanPham == null)
-            {
-                nhapHangTheoSanPham = new UC_NhapHangTheoSanPham();
-                nhapHangTheoSanPham.Dock = DockStyle.Fill;
-            }
-            panel_chinh.Controls.Add(nhapHangTheoSanPham);
-            nhapHangTheoSanPham.BringToFront();
-        }
-
-        private void Theonhacungcap_Click(object sender, EventArgs e)
-        {
-            panel_chinh.Controls.Clear();
-
-            if (nhapHangTheoNCC == null)
-            {
-                nhapHangTheoNCC = new UC_NhapHangTheoNCC();
-                nhapHangTheoNCC.Dock = DockStyle.Fill;
-            }
-            panel_chinh.Controls.Add(nhapHangTheoNCC);
-            nhapHangTheoNCC.BringToFront();
-        }
-
-
-
-        private void thoat_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                frmDangNhap main = new frmDangNhap();
-                this.Hide();
-                main.Show();
-                main.FormClosed += (s, args) => this.Close();
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        private void taikhoan_Click(object sender, EventArgs e)
-        {
-            panel_chinh.Controls.Clear();
-
-            if (taiKhoan == null)
-            {
-                taiKhoan = new UC_TaiKhoan();
-                taiKhoan.Dock = DockStyle.Fill;
-            }
-            panel_chinh.Controls.Add(taiKhoan);
-            taiKhoan.BringToFront();
-        }
-
 
 
         public void ShowScreens(List<int> accessibleScreens)
@@ -185,5 +86,7 @@ namespace GUI
                 }
             }
         }
+
+     
     }
 }

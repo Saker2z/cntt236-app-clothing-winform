@@ -29,5 +29,44 @@ namespace BLL
         {
             return sp.updated_tt_sp(ttsp);
         }
+
+
+        /// </summary>
+        /// <param name="tenSP"></param>
+        /// <returns></returns>
+        public IQueryable getKichThuocBangTenSanPham(string tenSP)
+        {
+            return sp.getKichThuocBangTenSanPham(tenSP);
+        }
+
+        public IQueryable getMausacBangTenSanPham(int maSP)
+        {
+            return sp.getMausacBangTenSanPham(maSP);
+        }
+
+        public IQueryable getMauSacTheoKichThuoc(string maKichThuoc, string maTT)
+        {
+            return sp.getMauSacTheoKichThuoc(maKichThuoc, maTT);
+        }
+
+        public int getSoLuongTon_MaThuocTinh(string maTT)
+        {
+            return sp.getSoLuongTon_MaThuocTinh(maTT);
+        }
+
+        public CTHD get_tt_SanPham_CTHD(string ma)
+        {
+            return sp.get_tt_SanPham_CTHD(ma);
+        }
+
+        public List<tem_gia> Get_SP_INGIA()
+        {
+            return sp.Get_SP_INGIA();
+        }
+        public IQueryable get_all_tt_SanPham()
+        {
+            return sp.get_all_tt_SanPham();
+        }
+
+        }
     }
-}
