@@ -852,4 +852,3 @@ C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\DAL\o
 C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.dll
 C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.pdb
-C:\Users\HP\Desktop\CNPMNC\12\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache

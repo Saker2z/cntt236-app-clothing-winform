@@ -25,7 +25,19 @@ namespace GUI
         {
             InitializeComponent();
             ace_nhanvien.Click += Ace_nhanvien_Click;
+            ace_taikhoan.Click += Ace_taikhoan_Click;
 
+        }
+
+        private void Ace_taikhoan_Click(object sender, EventArgs e)
+        {
+            pn_main.Controls.Clear();
+
+            // Tạo instance của UC_NhanVien và thêm vào pn_main
+            taiKhoan = new UC_TaiKhoan(Properties.Settings.Default.name_role);
+            taiKhoan.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+
+            pn_main.Controls.Add(taiKhoan); // Thêm UC_NhanVien vào panel pn_main
         }
 
         private void Ace_nhanvien_Click(object sender, EventArgs e)
@@ -34,7 +46,7 @@ namespace GUI
             pn_main.Controls.Clear();
 
             // Tạo instance của UC_NhanVien và thêm vào pn_main
-            uc_nv = new UC_NhanVien();
+            uc_nv = new UC_NhanVien(Properties.Settings.Default.name_role);
             uc_nv.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
 
             pn_main.Controls.Add(uc_nv); // Thêm UC_NhanVien vào panel pn_main

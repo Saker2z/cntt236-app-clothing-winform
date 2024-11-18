@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using DevExpress.XtraEditors;
+
 namespace GUI
 {
     public partial class add_NV : Form
@@ -16,6 +14,10 @@ namespace GUI
         private string role;
         private nhom_quyen_sql_BLL quyen_bll;
         private nhan_vien_sql_BLL nv_bll;
+
+        // Sự kiện để thông báo khi nhân viên được thêm
+        public event EventHandler NhanVienAdded;
+
         public add_NV(string name_role)
         {
             InitializeComponent();
@@ -51,13 +53,18 @@ namespace GUI
                 // Kiểm tra kết quả thêm và hiển thị thông báo
                 if (isAdded)
                 {
-                    MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Làm sạch các trường hoặc cập nhật lại giao diện nếu cần
+                    XtraMessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Phát sự kiện thông báo thành công
+                    NhanVienAdded?.Invoke(this, EventArgs.Empty);
+
+                    
                     ClearFields();
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm nhân viên thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Thêm nhân viên thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -78,13 +85,12 @@ namespace GUI
             ngay_vl.Value = DateTime.Now;
         }
 
-
         private bool KiemTraDuLieuDauVao()
         {
             // Kiểm tra tên họ không để trống
             if (string.IsNullOrWhiteSpace(txt_hoten.Text))
             {
-                MessageBox.Show("Vui lòng nhập họ tên.");
+                XtraMessageBox.Show("Vui lòng nhập họ tên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_hoten.Focus();
                 return false;
             }
@@ -92,7 +98,7 @@ namespace GUI
             // Kiểm tra chức vụ đã được chọn
             if (cbb_cv.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn chức vụ.");
+                XtraMessageBox.Show("Vui lòng chọn chức vụ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cbb_cv.Focus();
                 return false;
             }
@@ -100,7 +106,7 @@ namespace GUI
             // Kiểm tra số điện thoại không để trống và chỉ chứa số
             if (string.IsNullOrWhiteSpace(txt_sdt.Text) || !txt_sdt.Text.All(char.IsDigit))
             {
-                MessageBox.Show("Vui lòng nhập số điện thoại hợp lệ (chỉ chứa số).");
+                XtraMessageBox.Show("Vui lòng nhập số điện thoại hợp lệ (chỉ chứa số).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_sdt.Focus();
                 return false;
             }
@@ -108,7 +114,7 @@ namespace GUI
             // Kiểm tra địa chỉ không để trống
             if (string.IsNullOrWhiteSpace(txt_dc.Text))
             {
-                MessageBox.Show("Vui lòng nhập địa chỉ.");
+                XtraMessageBox.Show("Vui lòng nhập địa chỉ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_dc.Focus();
                 return false;
             }
@@ -116,7 +122,7 @@ namespace GUI
             // Kiểm tra ngày vào làm đã được chọn
             if (ngay_vl.Value == null || ngay_vl.Value.Date > DateTime.Now)
             {
-                MessageBox.Show("Vui lòng chọn ngày vào làm hợp lệ.");
+                XtraMessageBox.Show("Vui lòng chọn ngày vào làm hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ngay_vl.Focus();
                 return false;
             }
@@ -124,7 +130,7 @@ namespace GUI
             // Kiểm tra quyền đã được chọn
             if (cbb_quyen.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn quyền.");
+                XtraMessageBox.Show("Vui lòng chọn quyền.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cbb_quyen.Focus();
                 return false;
             }
@@ -133,12 +139,12 @@ namespace GUI
             return true;
         }
 
-
         private void Add_NV_Load(object sender, EventArgs e)
         {
             load_cbb(role);
             load_cbb_quyen(role);
         }
+
         void load_cbb_quyen(string namerole)
         {
             quyen_bll = new nhom_quyen_sql_BLL();
@@ -146,6 +152,7 @@ namespace GUI
             cbb_quyen.DataSource = quyen_bll.load_ccb(namerole);
             cbb_quyen.SelectedIndex = -1;
         }
+
         void load_cbb(string name)
         {
             // Đặt DropDownStyle để chỉ cho phép chọn từ danh sách
@@ -164,7 +171,6 @@ namespace GUI
                 cbb_cv.Items.Add("Nhân viên");
                 cbb_cv.SelectedIndex = 0; // Mặc định chọn "Nhân viên"
             }
-
         }
     }
 }

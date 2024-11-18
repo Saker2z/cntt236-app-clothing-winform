@@ -19,5 +19,17 @@ namespace BLL
         {
             return nv_dal.add_nv_tk_user(a, tenNhomQuyen);
         }
+        public List<nhan_vien> GetNhanVienTheoQuyen(string quyen)
+        {
+            return nv_dal.GetNhanVienTheoQuyen(quyen);
+        }
+        public bool UpdateNhanVien(nhan_vien updatedNhanVien)
+        {
+            return nv_dal.UpdateNhanVien(updatedNhanVien);
+        }
+        public bool DeleteNhanVien(int maNhanVien)
+        {
+            return nv_dal.DeleteNhanVien(maNhanVien);
+        }
     }
 }

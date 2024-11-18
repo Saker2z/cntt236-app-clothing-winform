@@ -82,7 +82,144 @@ namespace DAL
 
             return id;
         }
+        public tai_khoan GetTaiKhoanByMaNhanVien(int id)
+        {
+            // Tìm tài khoản dựa vào mã nhân viên
+            var taiKhoan = (from tk in data.tai_khoans where tk.id == id
+                            
+                            select tk).FirstOrDefault();
+
+            return taiKhoan; // Trả về đối tượng tài khoản nếu tìm thấy, ngược lại trả về null
+        }
+
+        public bool ChangePassword(string userId, string newPassword)
+        {
+            try
+            {
+                // Tìm tài khoản theo ID
+                var user = data.tai_khoans.FirstOrDefault(u => u.ten_dang_nhap == userId);
+
+                // Kiểm tra nếu tài khoản tồn tại
+                if (user == null)
+                {
+                    throw new Exception("Tài khoản không tồn tại.");
+                }
+
+                // Hash mật khẩu mới
+                string hashedNewPassword = BCrypt.Net.BCrypt.HashPassword(newPassword);
+
+                // Cập nhật mật khẩu trong cơ sở dữ liệu
+                user.mat_khau_hash = hashedNewPassword;
+
+                // Lưu thay đổi
+                data.SubmitChanges();
+
+                return true; // Đổi mật khẩu thành công
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi đổi mật khẩu: {ex.Message}");
+                return false; // Đổi mật khẩu thất bại
+            }
+        }
+        public List<tai_khoan> GetTaiKhoanByRole(string role)
+        {
+            try
+            {
+                if (role == "Admin")
+                {
+                    // Trả về toàn bộ tài khoản nếu role là Admin
+                    return data.tai_khoans.ToList();
+                }
+                else
+                {
+                    // Trả về tài khoản có nhóm quyền không phải "Admin" hoặc "Quản Lí"
+                    var excludedRoles = new List<string> { "Admin", "Quản Lí" };
+
+                    return (from tk in data.tai_khoans
+                            join tknq in data.tai_khoan_nhom_quyens on tk.id equals tknq.id_tai_khoan
+                            join nq in data.nhom_quyens on tknq.id_nhom_quyen equals nq.id_nhom_quyen
+                            where !excludedRoles.Contains(nq.ten_nhom) // Lọc quyền không phải "Admin" hoặc "Quản Lí"
+                            select tk).Distinct().ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi lấy danh sách tài khoản: {ex.Message}");
+                return new List<tai_khoan>(); // Trả về danh sách rỗng nếu lỗi
+            }
+        }
+
+
+        public string GetRoleNameByAccountId(int accountId)
+        {
+            try
+            {
+                // Tìm quyền dựa vào id tài khoản
+                var roleName = (from tk in data.tai_khoans
+                                join tknq in data.tai_khoan_nhom_quyens on tk.id equals tknq.id_tai_khoan
+                                join nq in data.nhom_quyens on tknq.id_nhom_quyen equals nq.id_nhom_quyen
+                                where tk.id == accountId
+                                select nq.ten_nhom).FirstOrDefault();
+
+                // Trả về tên quyền, nếu không tìm thấy trả về chuỗi rỗng
+                return roleName ?? string.Empty;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi lấy tên quyền: {ex.Message}");
+                return string.Empty;
+            }
+        }
+        public bool UpdateRole(int accountId, string roleName)
+        {
+            try
+            {
+                // Tìm tài khoản theo ID
+                var account = data.tai_khoans.FirstOrDefault(tk => tk.id == accountId);
+                if (account == null)
+                {
+                    throw new Exception("Tài khoản không tồn tại.");
+                }
+
+                // Tìm nhóm quyền theo tên quyền
+                var role = data.nhom_quyens.FirstOrDefault(nq => nq.ten_nhom == roleName);
+                if (role == null)
+                {
+                    throw new Exception("Tên quyền không hợp lệ.");
+                }
+
+                // Tìm bản ghi liên kết giữa tài khoản và nhóm quyền
+                var accountRole = data.tai_khoan_nhom_quyens.FirstOrDefault(ar => ar.id_tai_khoan == accountId);
+                if (accountRole != null)
+                {
+                    // Cập nhật nhóm quyền mới
+                    accountRole.id_nhom_quyen = role.id_nhom_quyen;
+                }
+                else
+                {
+                    // Nếu chưa có nhóm quyền, thêm mới
+                    data.tai_khoan_nhom_quyens.InsertOnSubmit(new tai_khoan_nhom_quyen
+                    {
+                        id_tai_khoan = accountId,
+                        id_nhom_quyen = role.id_nhom_quyen,
+                        create_at = DateTime.Now
+                    });
+                }
+
+                // Lưu thay đổi
+                data.SubmitChanges();
+
+                return true; // Cập nhật thành công
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi cập nhật quyền: {ex.Message}");
+                return false; // Cập nhật thất bại
+            }
+        }
 
 
     }
+
 }
