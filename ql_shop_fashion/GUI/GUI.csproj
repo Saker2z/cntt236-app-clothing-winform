@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\..\..\..\deve\Debug\Debug\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\..\..\deve\Debug\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\..\..\deve\Debug\Debug\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BCrypt.Net-Next.dll</HintPath>
@@ -101,6 +110,12 @@
     <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="zxing">
+      <HintPath>..\..\..\..\deve\Debug\Debug\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation">
+      <HintPath>..\..\..\..\deve\Debug\Debug\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="add_NV.cs">
@@ -115,6 +130,12 @@
     <Compile Include="BanHang.Designer.cs">
       <DependentUpon>BanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoiTraHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiTraHang.Designer.cs">
+      <DependentUpon>DoiTraHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +148,12 @@
     <Compile Include="frmDuyetSanPham.Designer.cs">
       <DependentUpon>frmDuyetSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInGia.Designer.cs">
+      <DependentUpon>frmInGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +165,24 @@
     </Compile>
     <Compile Include="frmNhapHang.Designer.cs">
       <DependentUpon>frmNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HoaDon.Designer.cs">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonDoiTra.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HoaDonDoiTra.Designer.cs">
+      <DependentUpon>HoaDonDoiTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InBarcode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InBarcode.Designer.cs">
+      <DependentUpon>InBarcode.cs</DependentUpon>
     </Compile>
     <Compile Include="NCC_NCCSP.cs">
       <SubType>UserControl</SubType>
@@ -159,11 +204,29 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\tem_gia.cs" />
+    <Compile Include="QuetMa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuetMa.Designer.cs">
+      <DependentUpon>QuetMa.cs</DependentUpon>
+    </Compile>
     <Compile Include="them_ncc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="them_ncc.Designer.cs">
       <DependentUpon>them_ncc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_KhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_KhachHang.Designer.cs">
+      <DependentUpon>UC_KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_KhuyenMai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_KhuyenMai.Designer.cs">
+      <DependentUpon>UC_KhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_NhaCungCap.cs">
       <SubType>UserControl</SubType>
@@ -188,6 +251,12 @@
     </Compile>
     <Compile Include="UC_NhapHangTheoSanPham.Designer.cs">
       <DependentUpon>UC_NhapHangTheoSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QLDonHangOnline.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QLDonHangOnline.Designer.cs">
+      <DependentUpon>UC_QLDonHangOnline.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Quyen.cs">
       <SubType>UserControl</SubType>
@@ -231,17 +300,32 @@
     <EmbeddedResource Include="BanHang.resx">
       <DependentUpon>BanHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DoiTraHang.resx">
+      <DependentUpon>DoiTraHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDuyetSanPham.resx">
       <DependentUpon>frmDuyetSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInGia.resx">
+      <DependentUpon>frmInGia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhapHang.resx">
       <DependentUpon>frmNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoaDon.resx">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoaDonDoiTra.resx">
+      <DependentUpon>HoaDonDoiTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InBarcode.resx">
+      <DependentUpon>InBarcode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NCC_NCCSP.resx">
       <DependentUpon>NCC_NCCSP.cs</DependentUpon>

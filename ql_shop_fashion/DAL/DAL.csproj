@@ -162,8 +162,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="chi_tiet_hoa_don_DAL.cs" />
+    <Compile Include="chi_tiet_hoa_don_doi_tra_DAL.cs" />
     <Compile Include="chi_tiet_nhap_sql_DAL.cs" />
     <Compile Include="hoa_don_DAL.cs" />
+    <Compile Include="hoa_don_doi_tra_DAL.cs" />
     <Compile Include="khach_hang_sql_DAL.cs" />
     <Compile Include="khuyen_mai_sql_DAL.cs" />
     <Compile Include="nhan_vien_sql_DAL.cs" />

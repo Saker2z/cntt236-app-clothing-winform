@@ -60,8 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="chi_tiet_hoa_don_BLL.cs" />
+    <Compile Include="chi_tiet_hoa_don_doi_tra_BLL.cs" />
     <Compile Include="chi_tiet_nhap_sql_BLL.cs" />
     <Compile Include="hoa_don_BLL.cs" />
+    <Compile Include="hoa_don_doi_tra_BLL.cs" />
     <Compile Include="khach_hang_sql_BLL.cs" />
     <Compile Include="khuyen_mai_sql_BLL.cs" />
     <Compile Include="ncc_sp_sql_BLL.cs" />

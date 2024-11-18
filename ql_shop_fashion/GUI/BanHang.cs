@@ -261,24 +261,24 @@ namespace GUI
         }
         public void ShowReport(int ma)
         {
-            //HoaDon report = new HoaDon();
+            HoaDon report = new HoaDon();
 
-            //// Thiết lập giá trị cho parameter
-            //report.Parameters["ma_hoa_don"].Value = ma;
+            // Thiết lập giá trị cho parameter
+            report.Parameters["ma_hoa_don"].Value = ma;
 
-            //report.RequestParameters = false;
+            report.RequestParameters = false;
 
-            //// Hiển thị report
-            //ReportPrintTool printTool = new ReportPrintTool(report);
-            //// Chỉ hiển thị trang đầu tiên
-            //report.CreateDocument();
+            // Hiển thị report
+            ReportPrintTool printTool = new ReportPrintTool(report);
+            // Chỉ hiển thị trang đầu tiên
+            report.CreateDocument();
 
-            //for (int i = report.Pages.Count - 1; i > 0; i--)
-            //{
-            //    report.Pages.RemoveAt(i);
-            //}
+            for (int i = report.Pages.Count - 1; i > 0; i--)
+            {
+                report.Pages.RemoveAt(i);
+            }
 
-            //printTool.ShowPreview();
+            printTool.ShowPreview();
 
         }
 
@@ -571,10 +571,10 @@ namespace GUI
 
         private void BtnQuetMa_Click(object sender, EventArgs e)
         {
-            //QuetMa quetMaForm = new QuetMa();
-            //quetMaForm.Show();
-            //quetMaForm.Focus();
-            //quetMaForm.NumberSubmitted += QuetMaForm_NumberSubmitted;
+            QuetMa quetMaForm = new QuetMa();
+            quetMaForm.Show();
+            quetMaForm.Focus();
+            quetMaForm.NumberSubmitted += QuetMaForm_NumberSubmitted;
         }
 
         private void DgvChiTietHD_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

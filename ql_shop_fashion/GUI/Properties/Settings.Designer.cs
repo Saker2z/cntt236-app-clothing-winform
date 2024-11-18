@@ -46,5 +46,16 @@ namespace GUI.Properties {
                 this["name_role"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-UELF38N\\THANHTRUC;Initial Catalog=QL_SHOP_FASHION;User ID=sa;" +
+            "Password=123")]
+        public string QL_SHOP_FASHIONConnectionString {
+            get {
+                return ((string)(this["QL_SHOP_FASHIONConnectionString"]));
+            }
+        }
     }
 }
