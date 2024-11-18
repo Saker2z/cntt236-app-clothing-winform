@@ -59,11 +59,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="chi_tiet_hoa_don_BLL.cs" />
     <Compile Include="chi_tiet_nhap_sql_BLL.cs" />
+    <Compile Include="hoa_don_BLL.cs" />
+    <Compile Include="khach_hang_sql_BLL.cs" />
+    <Compile Include="khuyen_mai_sql_BLL.cs" />
     <Compile Include="ncc_sp_sql_BLL.cs" />
     <Compile Include="nhan_vien_sql_BLL.cs" />
     <Compile Include="nhap_hang_sql_BLL.cs" />
     <Compile Include="nhom_quyen_sql_BLL.cs" />
+    <Compile Include="phuong_thuc_thanh_toan_BLL.cs" />
     <Compile Include="tai_khoan_sql_BLL.cs" />
     <Compile Include="thuoc_tinh_sp_sql_BLL.cs" />
     <Compile Include="nha_cung_cap_sql_BLL.cs" />

@@ -70,8 +70,7 @@
     <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DTO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="DTO">
       <HintPath>..\DLL\bin\Debug\DTO.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
@@ -109,6 +108,12 @@
     </Compile>
     <Compile Include="add_NV.Designer.cs">
       <DependentUpon>add_NV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang.Designer.cs">
+      <DependentUpon>BanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -153,6 +158,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\tem_gia.cs" />
     <Compile Include="them_ncc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,8 +219,17 @@
     <Compile Include="PhieuNhap.Designer.cs">
       <DependentUpon>PhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="WaitForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm3.Designer.cs">
+      <DependentUpon>WaitForm3.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="add_NV.resx">
       <DependentUpon>add_NV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang.resx">
+      <DependentUpon>BanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>

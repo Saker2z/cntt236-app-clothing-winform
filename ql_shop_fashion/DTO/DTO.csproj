@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoaDon.cs" />
     <Compile Include="chi_tiet_hoa_don_nhap.cs" />
+    <Compile Include="CTHD.cs" />
     <Compile Include="nha_cung_cap_san_pham.cs" />
     <Compile Include="product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +59,7 @@
       <DependentUpon>QL_SHOP_DATA.dbml</DependentUpon>
     </Compile>
     <Compile Include="san_pham_custom.cs" />
+    <Compile Include="tem_gia.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -69,12 +72,14 @@
       <LastGenOutput>QL_SHOP_DATA.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="QL_SHOP_DATA.dbml.layout">
-      <DependentUpon>QL_SHOP_DATA.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QL_SHOP_DATA.dbml.layout">
+      <DependentUpon>QL_SHOP_DATA.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
