@@ -925,7 +925,6 @@ C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DAL\b
 C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
 C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.Properties.Resources.resources
 C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
 C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache

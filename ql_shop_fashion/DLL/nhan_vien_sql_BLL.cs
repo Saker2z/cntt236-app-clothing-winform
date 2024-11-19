@@ -31,5 +31,9 @@ namespace BLL
         {
             return nv_dal.DeleteNhanVien(maNhanVien);
         }
+        public string get_name_nv_by_id(int id)
+        {
+            return nv_dal.get_name_nv_by_id(id);
+        }
     }
 }

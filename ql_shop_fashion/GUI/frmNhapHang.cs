@@ -18,9 +18,11 @@ namespace GUI
         private nhap_hang_sql_BLL nhap_bll;
         private nha_cung_cap_sql_BLL ncc_bll;
         private chi_tiet_nhap_sql_BLL ct_nhap_bll;
-        public frmNhapHang()
+        int id_nv;
+        public frmNhapHang(int id)
         {
             InitializeComponent();
+            id_nv = id;
             this.Load += FrmNhapHang_Load;
             dgv_nh.CellClick += Dgv_nh_CellClick;
             duyet.Click += Duyet_Click;           
@@ -114,23 +116,82 @@ namespace GUI
         {
             ct_nhap_bll = new chi_tiet_nhap_sql_BLL();
             dgv_sanpham.DataSource = null;
-            dgv_sanpham.DataSource = ct_nhap_bll.get_sp_by_phieu_nhap(id);
-          
+
+            if (id > 0) // Chỉ tải dữ liệu nếu ID hợp lệ
+            {
+                dgv_sanpham.DataSource = ct_nhap_bll.get_sp_by_phieu_nhap(id);
+            }
+            else // Nếu không, chỉ hiển thị cột rỗng
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("ten_san_pham", typeof(string));
+                dt.Columns.Add("so_luong", typeof(int));
+                dt.Columns.Add("gia_nhap", typeof(decimal));
+                dgv_sanpham.DataSource = dt;
+            }
+
+            // Đặt tên cho các cột
+            dgv_sanpham.Columns["ten_san_pham"].HeaderText = "Sản Phẩm";
+            dgv_sanpham.Columns["so_luong"].HeaderText = "Số Lượng";
+            dgv_sanpham.Columns["gia_nhap"].HeaderText = "Giá";
+
+            // Điều chỉnh độ rộng cột
+            dgv_sanpham.Columns["ten_san_pham"].Width = 150; // Đặt độ rộng cho cột Sản Phẩm
+            dgv_sanpham.Columns["so_luong"].Width = 80;      // Đặt độ rộng cho cột Số Lượng
+            dgv_sanpham.Columns["gia_nhap"].Width = 100;     // Đặt độ rộng cho cột Giá
+
+            // Căn giữa tiêu đề và dữ liệu cột
+            dgv_sanpham.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_sanpham.Columns["so_luong"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_sanpham.Columns["gia_nhap"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgv_sanpham.BackgroundColor = Color.White;
+            dgv_sanpham.DefaultCellStyle.BackColor = Color.White;
+            dgv_sanpham.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+            dgv_sanpham.GridColor = Color.LightGray;
         }
+
+
 
         private void FrmNhapHang_Load(object sender, EventArgs e)
         {
             loaddgv_nhap_hang();
             load_cbb_ncc();
+            load_dgv_sp(0);
         }
 
         void loaddgv_nhap_hang()
         {
             nhap_bll = new nhap_hang_sql_BLL();
 
-            dgv_nh.DataSource = nhap_bll.get_all_nhap_hang();
+            var data = nhap_bll.get_all_nhap_hang();
+            if (data != null ) // Nếu có dữ liệu
+            {
+                dgv_nh.DataSource = data;
+            }
+            else // Nếu không có dữ liệu, hiển thị bảng rỗng với cột
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("ma_nhap_hang", typeof(int));
+                dt.Columns.Add("ngay_nhap", typeof(DateTime));
+                dt.Columns.Add("tong_gia_tien", typeof(decimal));
+                dt.Columns.Add("ghi_chu", typeof(string));
+                dt.Columns.Add("trang_thai", typeof(string));
+                dt.Columns.Add("tong_so_luong", typeof(int));
+                dgv_nh.DataSource = dt;
+            }
+
             dgv_nh.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Đặt tên cho các cột
+            dgv_nh.Columns["ma_nhap_hang"].HeaderText = "Mã Nhập Hàng";
+            dgv_nh.Columns["ngay_nhap"].HeaderText = "Ngày Nhập";
+            dgv_nh.Columns["tong_gia_tien"].HeaderText = "Tổng Giá Tiền";
+            dgv_nh.Columns["ghi_chu"].HeaderText = "Ghi Chú";
+            dgv_nh.Columns["trang_thai"].HeaderText = "Trạng Thái";
+            dgv_nh.Columns["tong_so_luong"].HeaderText = "Tổng Số Lượng";
         }
+
+
 
         private void textEdit1_EditValueChanged(object sender, EventArgs e)
         {
@@ -155,7 +216,7 @@ namespace GUI
 
         private void them_Click(object sender, EventArgs e)
         {
-            PhieuNhap phieuNhap = new PhieuNhap();
+            PhieuNhap phieuNhap = new PhieuNhap(id_nv);
             phieuNhap.Show();
         }
     }

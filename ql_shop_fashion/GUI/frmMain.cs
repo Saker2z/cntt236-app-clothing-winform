@@ -21,6 +21,8 @@ namespace GUI
         NCC_NCCSP nCC_NCCSP;
         UC_NhanVien uc_nv;
         UC_Quyen quyen;
+        NCC_NCCSP ncc_sp;
+        frmNhapHang nhapHang;
 
         public frmMain()
         {
@@ -28,7 +30,31 @@ namespace GUI
             ace_nhanvien.Click += Ace_nhanvien_Click;
             ace_taikhoan.Click += Ace_taikhoan_Click;
             ace_thongtincanhan.Click += Ace_thongtincanhan_Click;
+            ace_nhacungcap.Click += Ace_nhacungcap_Click;
+            ace_hoadon.Click += Ace_hoadon_Click;
 
+        }
+
+        private void Ace_hoadon_Click(object sender, EventArgs e)
+        {
+            pn_main.Controls.Clear();
+
+            // Tạo instance của UC_NhanVien và thêm vào pn_main
+            nhapHang = new frmNhapHang(Properties.Settings.Default.id_user_login);
+            nhapHang.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+            nhapHang.Show();
+            // Thêm UC_NhanVien vào panel pn_main
+        }
+
+        private void Ace_nhacungcap_Click(object sender, EventArgs e)
+        {
+            pn_main.Controls.Clear();
+
+            // Tạo instance của UC_NhanVien và thêm vào pn_main
+            ncc_sp = new NCC_NCCSP();
+            ncc_sp.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+
+            pn_main.Controls.Add(ncc_sp); // Thêm UC_NhanVien vào panel pn_main
         }
 
         private void Ace_thongtincanhan_Click(object sender, EventArgs e)

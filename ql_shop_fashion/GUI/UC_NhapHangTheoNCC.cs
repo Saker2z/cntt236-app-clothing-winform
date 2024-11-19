@@ -21,8 +21,7 @@ namespace GUI
 
         private void nhaphang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmNhapHang frmNhapHang = new frmNhapHang();
-            frmNhapHang.Show();
+          
         }
     }
 }

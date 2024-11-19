@@ -165,6 +165,16 @@ namespace DAL
                 return false;
             }
         }
+        public string get_name_nv_by_id(int id)
+        {
+            // Sử dụng LINQ để tìm nhân viên có mã nhân viên khớp
+            var name = data.nhan_viens
+                           .Where(i => i.ma_nhan_vien == id) // Lọc theo mã nhân viên
+                           .Select(i => i.ten_nhan_vien) // Chọn tên nhân viên
+                           .FirstOrDefault(); // Lấy giá trị đầu tiên hoặc null nếu không tìm thấy
+
+            return name; // Trả về tên nhân viên hoặc null
+        }
 
 
 

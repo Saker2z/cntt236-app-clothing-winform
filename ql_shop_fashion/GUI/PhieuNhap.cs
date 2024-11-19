@@ -35,11 +35,12 @@ namespace GUI
         private Timer holdTimer;
         private bool isHolding = false;
         private Form popup;
-        public PhieuNhap()
+        int id_nv;
+        public PhieuNhap(int idnv)
         {
             InitializeComponent();
 
-           
+            id_nv = idnv;  
             this.Load += PhieuNhap_Load;
     
             cbb_ncc.TextChanged += Cbb_ncc_TextChanged;
@@ -211,7 +212,7 @@ namespace GUI
 
             return productTables;
         }
-        void them_phieu()
+        void them_phieu(int id)
         {
             List<DataTable> productTables = GroupProductsBySupplier();
             nhap_bll = new nhap_hang_sql_BLL();
@@ -254,7 +255,7 @@ namespace GUI
                     clear_all();
                     return;
                 }
-                nhap.ma_nhan_vien = 1; // Giả sử đây là mã nhân viên
+                nhap.ma_nhan_vien = id; // Giả sử đây là mã nhân viên
                 nhap.ma_nha_cung_cap = mancc;
                 nhap.ngay_nhap = date_ngaynhap.Value;
                 nhap.trang_thai = "Chưa xử lí";
@@ -291,7 +292,7 @@ namespace GUI
 
         private void Bt_add_all_ItemClick(object sender, ItemClickEventArgs e)
         {
-            them_phieu();
+            them_phieu(id_nv);
         }
         private bool FindAndUpdateRow(int maSanPham, int maNhaCungCap, int newQuantity, decimal newGiaNhap)
         {
@@ -826,14 +827,15 @@ namespace GUI
         }
         void setDeflau()
         {
-           
-           
+
+            nhan_vien_sql_BLL nv = new nhan_vien_sql_BLL();
+            
             date_ngaynhap.Value = DateTime.Now;
             date_ngaynhap.Enabled = false;
-           
-           
-        
-            txt_tennv.Text = "Võ Danh Dự";
+
+
+
+            txt_tennv.Text = nv.get_name_nv_by_id(id_nv);
             txt_tennv.Enabled = false;
             lb_thanhtien.Text = lb_thanhtien.Text + " 0";
             cbb_sl.Properties.Items.Clear();

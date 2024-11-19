@@ -47,26 +47,25 @@ namespace GUI
 
         private void Bt_ht_Click(object sender, EventArgs e)
         {
-            if(CheckTrangThaiAllApproved())
+            if (CheckTrangThaiAllApproved())
             {
                 nhap_bll = new nhap_hang_sql_BLL();
-                if(nhap_bll.update_tt_ht(iddonduyet))
+                if (nhap_bll.update_tt_ht(iddonduyet))
                 {
-                    MessageBox.Show("Đã cập nhật dữ liệu.", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Đã cập nhật dữ liệu.", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi xảy ra.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Có lỗi xảy ra.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                }   
-                
-            }    
+                }
+            }
             else
             {
-                MessageBox.Show("Có đơn chưa hoàn thành.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Có đơn chưa hoàn thành.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }    
+            }
         }
         bool CheckTrangThaiAllApproved()
         {
@@ -211,83 +210,74 @@ namespace GUI
         private void Bt_duyet_Click(object sender, EventArgs e)
         {
             int check = kiemTra();
-            if(check == 3)
+            if (check == 3)
             {
-                MessageBox.Show("Sản phẩm đã duyệt.", "Có lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Sản phẩm đã duyệt.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }    
+            }
             if (check == 1)
             {
                 ttsp_bll = new thuoc_tinh_sp_sql_BLL();
                 ttsp = load_ds_ttsp();
                 if (ttsp_bll.updated_tt_sp(ttsp))
                 {
-                    MessageBox.Show("Duyệt thành công!!!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Duyệt thành công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     update_duyet();
                     load_gdv_duyet_sp(0);
                     return;
                 }
                 else
                 {
-                    MessageBox.Show("Duyệt thất bại!!!", "Có lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Duyệt thất bại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
             else if (check == -1)
             {
-                MessageBox.Show("Số lượng nhập chưa đủ.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng nhập chưa đủ.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else if (check == 2)
             {
-                MessageBox.Show("Số lượng vượt quá số lượng có.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Số lượng vượt quá số lượng có.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
             {
-                MessageBox.Show("Lỗi đầu vào.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lỗi đầu vào.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
         }
 
         private void Dgv_dsnhap_Click(object sender, EventArgs e)
         {
-
             GridView gridView = dgv_dsnhap.MainView as GridView;
-
             if (gridView != null)
             {
-                // Lấy thông tin dòng đã click (dòng được chọn)
                 int focusedRowHandle = gridView.FocusedRowHandle;
-
-                // Kiểm tra nếu dòng không phải là -1 (dòng không hợp lệ)
                 if (focusedRowHandle >= 0)
                 {
-                    // Lấy giá trị cột 'ma_san_pham' từ dòng đã click
                     var maSanPham = gridView.GetRowCellValue(focusedRowHandle, "ma_san_pham");
                     var tt = gridView.GetRowCellValue(focusedRowHandle, "trang_thai");
-                    if(tt.Equals("Đã duyệt"))
+                    if (tt.Equals("Đã duyệt"))
                     {
-                        MessageBox.Show("Sản phẩm đã duyệt rồi.");
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Sản phẩm đã duyệt rồi.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
-                    }    
+                    }
                     if (maSanPham != null)
                     {
-                        // Chuyển đổi maSanPham sang kiểu dữ liệu cần thiết và gọi phương thức xử lý tiếp theo
                         load_gdv_duyet_sp(int.Parse(maSanPham.ToString()));
                     }
-
                 }
             }
         }
 
 
 
-        // Xử lý sự kiện MouseClick
+            // Xử lý sự kiện MouseClick
 
 
-        private void FrmDuyetSanPham_Load(object sender, EventArgs e)
+            private void FrmDuyetSanPham_Load(object sender, EventArgs e)
         {
             load_gdv_duyet_sp(0);
             load_dgv_sp(dgv_dsnhap, ctnhap_bll.get_ct_list_by_id(iddonduyet));

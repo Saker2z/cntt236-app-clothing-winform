@@ -81,7 +81,7 @@ namespace GUI
             // Kiểm tra tài khoản hợp lệ
             if (tk_bll.CheckLogin(tk, mk, out userRoleId))
             {
-                MessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 int id_nv = tk_bll.get_id_nv_by_tk(tk);
                 // Hiển thị các màn hình mà người dùng có quyền truy cập
                 CheckAccessAndDisplayScreens(userRoleId);
@@ -92,7 +92,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void CheckAccessAndDisplayScreens(int userRoleId)
@@ -115,8 +115,7 @@ namespace GUI
 
 
             // Xuất ra danh sách ID màn hình cho phép truy cập
-            string screenIds = string.Join(", ", accessibleScreens);
-            MessageBox.Show($"ID các màn hình mà người dùng có quyền truy cập: {screenIds}", "Danh sách màn hình", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
 
             // Tạo và hiển thị form chính với các màn hình được phép
             frmMain main = new frmMain();

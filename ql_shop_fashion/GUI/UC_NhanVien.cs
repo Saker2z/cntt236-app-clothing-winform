@@ -44,15 +44,15 @@ namespace GUI
                     {
                         DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn nhân viên để xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
-                    }
+                }
 
                     // Lấy ID nhân viên từ dòng được chọn
                     var maNhanVien = gridView.GetFocusedRowCellValue("ma_nhan_vien");
                     if (maNhanVien == null || !int.TryParse(maNhanVien.ToString(), out int idNhanVien))
                     {
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Không thể lấy thông tin nhân viên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Không thể lấy thông tin nhân viên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                     // Xác nhận trước khi xóa
                     var confirmResult = DevExpress.XtraEditors.XtraMessageBox.Show(
