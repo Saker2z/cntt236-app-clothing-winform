@@ -181,6 +181,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="quyen_man_hinh_sql.cs" />
     <Compile Include="san_pham_sql_DAL.cs" />
     <Compile Include="tai_khoan_sql_DAL.cs" />
     <Compile Include="thuoc_tinh_sp_sql_DAL.cs" />

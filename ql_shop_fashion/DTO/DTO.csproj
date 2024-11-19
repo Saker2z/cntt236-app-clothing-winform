@@ -45,6 +45,7 @@
     <Compile Include="ChiTietHoaDon.cs" />
     <Compile Include="chi_tiet_hoa_don_nhap.cs" />
     <Compile Include="CTHD.cs" />
+    <Compile Include="man_hinh_quyen.cs" />
     <Compile Include="nha_cung_cap_san_pham.cs" />
     <Compile Include="product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

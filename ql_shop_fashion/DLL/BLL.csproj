@@ -69,6 +69,7 @@
     <Compile Include="ncc_sp_sql_BLL.cs" />
     <Compile Include="nhan_vien_sql_BLL.cs" />
     <Compile Include="nhap_hang_sql_BLL.cs" />
+    <Compile Include="nhom_quyen_man_hinh_sql_BLL.cs" />
     <Compile Include="nhom_quyen_sql_BLL.cs" />
     <Compile Include="phuong_thuc_thanh_toan_BLL.cs" />
     <Compile Include="tai_khoan_sql_BLL.cs" />

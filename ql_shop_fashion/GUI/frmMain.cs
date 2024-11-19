@@ -20,13 +20,26 @@ namespace GUI
         UC_SanPham sanPham;
         NCC_NCCSP nCC_NCCSP;
         UC_NhanVien uc_nv;
+        UC_Quyen quyen;
 
         public frmMain()
         {
             InitializeComponent();
             ace_nhanvien.Click += Ace_nhanvien_Click;
             ace_taikhoan.Click += Ace_taikhoan_Click;
+            ace_thongtincanhan.Click += Ace_thongtincanhan_Click;
 
+        }
+
+        private void Ace_thongtincanhan_Click(object sender, EventArgs e)
+        {
+            pn_main.Controls.Clear();
+
+            // Tạo instance của UC_NhanVien và thêm vào pn_main
+            quyen = new UC_Quyen();
+            quyen.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+
+            pn_main.Controls.Add(quyen); // Thêm UC_NhanVien vào panel pn_main
         }
 
         private void Ace_taikhoan_Click(object sender, EventArgs e)

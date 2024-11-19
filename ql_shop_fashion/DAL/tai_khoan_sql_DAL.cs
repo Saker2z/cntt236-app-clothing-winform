@@ -21,7 +21,7 @@ namespace DAL
         {
             // Tìm tài khoản theo tên đăng nhập
             var user = data.tai_khoans.FirstOrDefault(u => u.ten_dang_nhap == tk);
-            
+
             // Kiểm tra nếu tài khoản tồn tại và đang hoạt động
             if (user != null && user.hoat_dong == true)
             {
@@ -85,8 +85,9 @@ namespace DAL
         public tai_khoan GetTaiKhoanByMaNhanVien(int id)
         {
             // Tìm tài khoản dựa vào mã nhân viên
-            var taiKhoan = (from tk in data.tai_khoans where tk.id == id
-                            
+            var taiKhoan = (from tk in data.tai_khoans
+                            where tk.id == id
+
                             select tk).FirstOrDefault();
 
             return taiKhoan; // Trả về đối tượng tài khoản nếu tìm thấy, ngược lại trả về null
