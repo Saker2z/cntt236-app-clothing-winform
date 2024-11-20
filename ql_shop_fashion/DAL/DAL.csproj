@@ -164,14 +164,18 @@
     <Compile Include="chi_tiet_hoa_don_DAL.cs" />
     <Compile Include="chi_tiet_hoa_don_doi_tra_DAL.cs" />
     <Compile Include="chi_tiet_nhap_sql_DAL.cs" />
+    <Compile Include="hinh_anh_sp_sql_DAL.cs" />
     <Compile Include="hoa_don_DAL.cs" />
     <Compile Include="hoa_don_doi_tra_DAL.cs" />
     <Compile Include="khach_hang_sql_DAL.cs" />
     <Compile Include="khuyen_mai_sql_DAL.cs" />
+    <Compile Include="loai_sanpham_sql_DAL.cs" />
+    <Compile Include="mau_sac_sql_DAL.cs" />
     <Compile Include="nhan_vien_sql_DAL.cs" />
     <Compile Include="nhap_hang_sql_DAL.cs" />
     <Compile Include="nha_cung_cap_sp_sql_DAL.cs" />
     <Compile Include="nha_cung_cap_sql_DAL.cs" />
+    <Compile Include="nhom_loai_sql_DAL.cs" />
     <Compile Include="nhom_quyen_sql_DAL.cs" />
     <Compile Include="passwordHelper.cs" />
     <Compile Include="phuong_thuc_thanh_toan_DAL.cs" />
@@ -183,8 +187,12 @@
     </Compile>
     <Compile Include="quyen_man_hinh_sql.cs" />
     <Compile Include="san_pham_sql_DAL.cs" />
+    <Compile Include="size_sql_DAL.cs" />
     <Compile Include="tai_khoan_sql_DAL.cs" />
+    <Compile Include="thong_ke_sql_DAL.cs" />
+    <Compile Include="thong_tin_sp_sql_DAL.cs" />
     <Compile Include="thuoc_tinh_sp_sql_DAL.cs" />
+    <Compile Include="thuong_hieu_sql_DAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

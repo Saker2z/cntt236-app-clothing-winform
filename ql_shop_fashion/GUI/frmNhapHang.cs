@@ -25,7 +25,14 @@ namespace GUI
             id_nv = id;
             this.Load += FrmNhapHang_Load;
             dgv_nh.CellClick += Dgv_nh_CellClick;
-            duyet.Click += Duyet_Click;           
+            duyet.Click += Duyet_Click;
+            them.Click += Them_Click;
+        }
+
+        private void Them_Click(object sender, EventArgs e)
+        {
+            PhieuNhap phieuNhap = new PhieuNhap(id_nv);
+            phieuNhap.Show();
         }
 
         private void Duyet_Click(object sender, EventArgs e)
@@ -214,10 +221,6 @@ namespace GUI
 
    
 
-        private void them_Click(object sender, EventArgs e)
-        {
-            PhieuNhap phieuNhap = new PhieuNhap(id_nv);
-            phieuNhap.Show();
-        }
+       
     }
 }

@@ -48,14 +48,16 @@ namespace GUI
             cbb_tensp.SelectedIndexChanged += Cbb_tensp_SelectedIndexChanged;
             cbb_ncc.SelectedIndexChanged += Cbb_ncc_SelectedIndexChanged;
             cbb_sl.SelectedIndexChanged += Cbb_sl_SelectedIndexChanged;
-            bt_them.Click += Bt_them_Click;
-            bt_xoa.ItemClick += Bt_xoa_ItemClick;
-            dgv_sp_add.CellClick += Dgv_sp_add_CellClick1;
+
+            bt_them.ItemClick += Bt_them_ItemClick;
+            bt_xoa.ItemClick += Bt_xoa_ItemClick;            
             bt_sua.ItemClick += Bt_sua_ItemClick;
+
+            dgv_sp_add.CellClick += Dgv_sp_add_CellClick1;
             bt_add_all.ItemClick += Bt_add_all_ItemClick;
             bt_load.ItemClick += Bt_load_ItemClick;
+
            
-          
             holdTimer = new Timer();
             holdTimer.Interval = 1000;
           
@@ -63,6 +65,8 @@ namespace GUI
             lb_thanhtien.MouseEnter += Lb_thanhtien_MouseEnter; lb_thanhtien.MouseLeave += Lb_thanhtien_MouseLeave;
 
         }
+
+
 
         private void Bt_load_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -290,6 +294,7 @@ namespace GUI
            
         }
 
+
         private void Bt_add_all_ItemClick(object sender, ItemClickEventArgs e)
         {
             them_phieu(id_nv);
@@ -428,11 +433,11 @@ namespace GUI
         {
             RemoveSelectedRowFromDataGridView();
         }
-        private void Bt_them_Click(object sender, EventArgs e)
+        private void Bt_them_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
             them_dgv();
         }
+
         void UpdateDataGridView()
         {
             // Có thể thêm logic tại đây nếu cần làm mới dữ liệu hoặc thực hiện các cập nhật khác.
@@ -876,9 +881,7 @@ namespace GUI
 
         private void bbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {
-            nhaphang_rp report = new nhaphang_rp();
-            ReportPrintTool printTool = new ReportPrintTool(report);
-            printTool.ShowPreviewDialog();
+           
         }
     }
 }

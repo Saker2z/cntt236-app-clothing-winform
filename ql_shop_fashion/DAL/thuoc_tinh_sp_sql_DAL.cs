@@ -132,7 +132,7 @@ namespace DAL
                 bc.TenSP = item.ten_san_pham;
                 bc.TenKT = item.ten_kich_thuoc;
                 bc.TenMau = item.ten_mau_sac;
-                bc.GiaBan = item.gia_ban;
+                bc.GiaBan = (decimal)item.gia_ban;
                 bc.GiaGiam = (decimal)item.GiaGiam;
                 bc.So_tem = 0;
                 intem.Add(bc);
@@ -220,12 +220,28 @@ namespace DAL
 
             if (ttsp != null)
             {
-                return new CTHD(ttsp.ma_thuoc_tinh, ttsp.ten_san_pham, ttsp.gia_ban, ttsp.GiaGiam);
+                return new CTHD(ttsp.ma_thuoc_tinh, ttsp.ten_san_pham, (decimal)ttsp.gia_ban, ttsp.GiaGiam);
             }
             else
             {
                 return null; // Or handle the case where no matching product is found
             }
+        }
+
+
+	public List<product> get_all_ttsp_by_id_DTO(int mathuoctinh)
+        {
+            var ds = (from ttsp in qldata.thuoc_tinh_san_phams
+                                   where ttsp.ma_thuoc_tinh == mathuoctinh
+                                   select new product
+                                   {
+                                       ma_thuoc_tinh = ttsp.ma_thuoc_tinh,
+                                       ma_san_pham = (int)ttsp.ma_san_pham,
+                                       ma_kich_thuoc = (int)ttsp.ma_kich_thuoc,
+                                       ma_mau_sac = (int)ttsp.ma_mau_sac,
+                                       so_luong_ton = ttsp.so_luong_ton
+                                   }).ToList();
+            return ds;
         }
        
     }

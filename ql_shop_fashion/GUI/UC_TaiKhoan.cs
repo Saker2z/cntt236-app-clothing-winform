@@ -27,11 +27,11 @@ namespace GUI
             this.Load += UC_TaiKhoan_Load;
             GridView gridView = gct_tk.MainView as GridView;
             gridView.FocusedRowChanged += GridView_FocusedRowChanged;
-            bt_rs_pass.Click += Bt_rs_pass_Click;
-            bt_save.Click += Bt_save_Click;
+            bt_rs_pass.ItemClick += Bt_rs_pass_ItemClick;
+            bt_save.ItemClick += Bt_save_ItemClick;
         }
 
-        private void Bt_save_Click(object sender, EventArgs e)
+        private void Bt_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {
@@ -112,8 +112,7 @@ namespace GUI
             }
         }
 
-
-        private void Bt_rs_pass_Click(object sender, EventArgs e)
+        private void Bt_rs_pass_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             // Hiển thị hộp thoại xác nhận
             var result = DevExpress.XtraEditors.XtraMessageBox.Show(
@@ -138,14 +137,14 @@ namespace GUI
                         load_dgv(role);
                         ResetForm();
 
-                            // Hiển thị thông báo thành công
-                            DevExpress.XtraEditors.XtraMessageBox.Show(
-                                "Mật khẩu đã được khởi tạo lại thành công!",
-                                "Thông báo",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information
-                            );
-                        
+                        // Hiển thị thông báo thành công
+                        DevExpress.XtraEditors.XtraMessageBox.Show(
+                            "Mật khẩu đã được khởi tạo lại thành công!",
+                            "Thông báo",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+
                     }
                     else
                     {
@@ -168,6 +167,8 @@ namespace GUI
                 }
             }
         }
+
+
 
         private void GridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {

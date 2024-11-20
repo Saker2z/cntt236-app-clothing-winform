@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using DevExpress.XtraBars;
 
 namespace GUI
 {
@@ -23,13 +24,15 @@ namespace GUI
                 gridViewNhomQuyen.RowClick += GridViewNhomQuyen_RowClick;
             }
 
-            bt_save.Click += Bt_save_Click;
-            bt_them.Click += Bt_them_Click;
-            bt_update.Click += Bt_update_Click;
-            bt_xoa.Click += Bt_xoa_Click;
+
+
+            bt_save.ItemClick += Bt_save_ItemClick;
+            bt_them.ItemClick += Bt_them_ItemClick;
+            bt_update.ItemClick += Bt_update_ItemClick;
+            bt_update.ItemClick += Bt_update_ItemClick1;
         }
 
-        private void Bt_xoa_Click(object sender, EventArgs e)
+        private void Bt_update_ItemClick1(object sender, ItemClickEventArgs e)
         {
             // Lấy GridView từ GridControl
             var gridView = gct_nhom_quyen.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
@@ -112,32 +115,7 @@ namespace GUI
             }
         }
 
-        private void UncheckAllRows()
-        {
-            // Lấy GridView từ GridControl
-            var gridView = quyen.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
-            if (gridView == null)
-            {
-                MessageBox.Show("Không thể lấy dữ liệu từ bảng quyền.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Lặp qua từng dòng trong GridView
-            for (int i = 0; i < gridView.RowCount; i++)
-            {
-                // Đặt giá trị cột "CoQuyen" về false
-                gridView.SetRowCellValue(i, "CoQuyen", false);
-
-                // Đồng bộ giá trị ngược lại của "KhongQuyen"
-                gridView.SetRowCellValue(i, "KhongQuyen", true);
-            }
-
-            // Hiển thị thông báo sau khi hoàn tất
-            MessageBox.Show("Đã bỏ tích tất cả các dòng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-
-        private void Bt_update_Click(object sender, EventArgs e)
+        private void Bt_update_ItemClick(object sender, ItemClickEventArgs e)
         {
             // Lấy GridView từ GridControl
             var gridView = gct_nhom_quyen.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
@@ -237,9 +215,50 @@ namespace GUI
             };
         }
 
+        // Nút Lưu: Lưu thay đổi quyền vào cơ sở dữ liệu
+        private void Bt_save_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var gridViewNhomQuyen = gct_nhom_quyen.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
+            if (gridViewNhomQuyen == null)
+            {
+                MessageBox.Show("Không thể lấy dữ liệu từ bảng nhóm quyền.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            // Lấy ID Nhóm Quyền từ dòng được chọn
+            int idNhomQuyen = (int)gridViewNhomQuyen.GetFocusedRowCellValue("id_nhom_quyen");
 
-        private void Bt_them_Click(object sender, EventArgs e)
+            var gridView = quyen.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
+            if (gridView == null)
+            {
+                MessageBox.Show("Không thể lấy dữ liệu từ bảng quyền.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Lấy danh sách quyền đã chỉnh sửa từ GridView
+            var danhSachQuyenDaSua = new List<man_hinh_quyen>();
+            for (int i = 0; i < gridView.RowCount; i++)
+            {
+                var manHinhQuyen = gridView.GetRow(i) as man_hinh_quyen;
+                if (manHinhQuyen != null)
+                {
+                    danhSachQuyenDaSua.Add(manHinhQuyen);
+                }
+            }
+
+            // Cập nhật cơ sở dữ liệu
+            try
+            {
+                quyen_bll.UpdateDanhSachManHinhTheoNhomQuyen(idNhomQuyen, danhSachQuyenDaSua);
+                MessageBox.Show("Lưu thay đổi thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra khi lưu thay đổi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Bt_them_ItemClick(object sender, ItemClickEventArgs e)
         {
             // Hiển thị hộp thoại nhập tên nhóm quyền
             DevExpress.XtraEditors.XtraInputBoxArgs argsTen = new DevExpress.XtraEditors.XtraInputBoxArgs
@@ -294,26 +313,9 @@ namespace GUI
             }
         }
 
-
-        private void UC_Quyen_Load(object sender, EventArgs e)
+        private void UncheckAllRows()
         {
-            load_ds_quyen();
-           
-        }
-
-        // Nút Lưu: Lưu thay đổi quyền vào cơ sở dữ liệu
-        private void Bt_save_Click(object sender, EventArgs e)
-        {
-            var gridViewNhomQuyen = gct_nhom_quyen.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
-            if (gridViewNhomQuyen == null)
-            {
-                MessageBox.Show("Không thể lấy dữ liệu từ bảng nhóm quyền.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Lấy ID Nhóm Quyền từ dòng được chọn
-            int idNhomQuyen = (int)gridViewNhomQuyen.GetFocusedRowCellValue("id_nhom_quyen");
-
+            // Lấy GridView từ GridControl
             var gridView = quyen.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
             if (gridView == null)
             {
@@ -321,28 +323,32 @@ namespace GUI
                 return;
             }
 
-            // Lấy danh sách quyền đã chỉnh sửa từ GridView
-            var danhSachQuyenDaSua = new List<man_hinh_quyen>();
+            // Lặp qua từng dòng trong GridView
             for (int i = 0; i < gridView.RowCount; i++)
             {
-                var manHinhQuyen = gridView.GetRow(i) as man_hinh_quyen;
-                if (manHinhQuyen != null)
-                {
-                    danhSachQuyenDaSua.Add(manHinhQuyen);
-                }
+                // Đặt giá trị cột "CoQuyen" về false
+                gridView.SetRowCellValue(i, "CoQuyen", false);
+
+                // Đồng bộ giá trị ngược lại của "KhongQuyen"
+                gridView.SetRowCellValue(i, "KhongQuyen", true);
             }
 
-            // Cập nhật cơ sở dữ liệu
-            try
-            {
-                quyen_bll.UpdateDanhSachManHinhTheoNhomQuyen(idNhomQuyen, danhSachQuyenDaSua);
-                MessageBox.Show("Lưu thay đổi thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Có lỗi xảy ra khi lưu thay đổi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // Hiển thị thông báo sau khi hoàn tất
+            MessageBox.Show("Đã bỏ tích tất cả các dòng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+
+
+
+
+        private void UC_Quyen_Load(object sender, EventArgs e)
+        {
+            load_ds_quyen();
+           
+        }
+
+
+
 
         // Xử lý sự kiện chọn nhóm quyền
         private void GridViewNhomQuyen_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)

@@ -65,6 +65,11 @@ namespace BLL
         {
             return sp.get_all_tt_SanPham();
         }
+	
+	public List<product> get_all_ttsp_by_id_DTO(int masanpham)
+        {
+            return sp.get_all_ttsp_by_id_DTO(masanpham);
+        }
 
         }
     }

@@ -21,78 +21,76 @@ namespace GUI
         string rolee;
         public UC_NhanVien(string role)
         {
-            InitializeComponent();
-            bt_them.Click += Bt_them_Click;
+            InitializeComponent();           
             rolee = role;
             this.Load += UC_NhanVien_Load;
             GridView gridView = gct_nv.MainView as GridView;
             gridView.FocusedRowChanged += GridView_FocusedRowChanged;
+
+            bt_them.ItemClick += Bt_them_ItemClick;
             bt_rs_pass.Click += Bt_rs_pass_Click;
-            bt_save.Click += Bt_save_Click;
-            bt_xoa.Click += Bt_xoa_Click;
+            bt_save.ItemClick += Bt_save_ItemClick;
+            bt_xoa.ItemClick += Bt_xoa_ItemClick;
         }
 
-        private void Bt_xoa_Click(object sender, EventArgs e)
+        private void Bt_xoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
-                try
-                {
-                    // Lấy GridView từ MainView
-                    var gridView = gct_nv.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
+            try
+            {
+                // Lấy GridView từ MainView
+                var gridView = gct_nv.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
 
-                    if (gridView == null || gridView.FocusedRowHandle < 0)
-                    {
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn nhân viên để xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                if (gridView == null || gridView.FocusedRowHandle < 0)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn nhân viên để xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
-                    // Lấy ID nhân viên từ dòng được chọn
-                    var maNhanVien = gridView.GetFocusedRowCellValue("ma_nhan_vien");
-                    if (maNhanVien == null || !int.TryParse(maNhanVien.ToString(), out int idNhanVien))
-                    {
+                // Lấy ID nhân viên từ dòng được chọn
+                var maNhanVien = gridView.GetFocusedRowCellValue("ma_nhan_vien");
+                if (maNhanVien == null || !int.TryParse(maNhanVien.ToString(), out int idNhanVien))
+                {
                     DevExpress.XtraEditors.XtraMessageBox.Show("Không thể lấy thông tin nhân viên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                    // Xác nhận trước khi xóa
-                    var confirmResult = DevExpress.XtraEditors.XtraMessageBox.Show(
-                        "Bạn có chắc chắn muốn xóa nhân viên này không?",
-                        "Xác nhận xóa",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question
-                    );
+                // Xác nhận trước khi xóa
+                var confirmResult = DevExpress.XtraEditors.XtraMessageBox.Show(
+                    "Bạn có chắc chắn muốn xóa nhân viên này không?",
+                    "Xác nhận xóa",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
 
-                    if (confirmResult == DialogResult.Yes)
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Gọi hàm xóa từ BLL
+                    nv_bll = new nhan_vien_sql_BLL();
+                    bool isDeleted = nv_bll.DeleteNhanVien(idNhanVien);
+
+                    if (isDeleted)
                     {
-                        // Gọi hàm xóa từ BLL
-                        nv_bll = new nhan_vien_sql_BLL();
-                        bool isDeleted = nv_bll.DeleteNhanVien(idNhanVien);
+                        // Thông báo thành công
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Xóa nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        if (isDeleted)
-                        {
-                            // Thông báo thành công
-                            DevExpress.XtraEditors.XtraMessageBox.Show("Xóa nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // Làm mới lại GridControl
-                            LoadGridControl(rolee);
-                        }
-                        else
-                        {
-                            // Thông báo lỗi
-                            DevExpress.XtraEditors.XtraMessageBox.Show("Xóa nhân viên thất bại. Vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        // Làm mới lại GridControl
+                        LoadGridControl(rolee);
+                    }
+                    else
+                    {
+                        // Thông báo lỗi
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Xóa nhân viên thất bại. Vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception ex)
-                {
-                    // Xử lý lỗi
-                    DevExpress.XtraEditors.XtraMessageBox.Show($"Đã xảy ra lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            
-
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi
+                DevExpress.XtraEditors.XtraMessageBox.Show($"Đã xảy ra lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void Bt_save_Click(object sender, EventArgs e)
+        private void Bt_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {
@@ -154,6 +152,15 @@ namespace GUI
                     MessageBoxIcon.Error
                 );
             }
+        }
+
+        private void Bt_them_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            add_NV them_nv = new add_NV(Properties.Settings.Default.name_role);
+            them_nv.StartPosition = FormStartPosition.CenterScreen;
+            them_nv.Show();
+
+            them_nv.NhanVienAdded += Them_nv_NhanVienAdded;
         }
 
         private bool KiemTraDuLieu()
@@ -323,15 +330,6 @@ namespace GUI
         {
             load_admin_qli(rolee);
             ResetForm();
-        }
-
-        private void Bt_them_Click(object sender, EventArgs e)
-        {
-            add_NV them_nv = new add_NV(Properties.Settings.Default.name_role);
-            them_nv.StartPosition = FormStartPosition.CenterScreen;
-            them_nv.Show();
-            
-            them_nv.NhanVienAdded += Them_nv_NhanVienAdded;
         }
 
         private void Them_nv_NhanVienAdded(object sender, EventArgs e)

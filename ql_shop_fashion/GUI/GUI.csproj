@@ -159,6 +159,12 @@
     <Compile Include="frmInGia.Designer.cs">
       <DependentUpon>frmInGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLoaiSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaiSP.Designer.cs">
+      <DependentUpon>frmLoaiSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,12 @@
     </Compile>
     <Compile Include="frmNhapHang.Designer.cs">
       <DependentUpon>frmNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemSPVaoThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemSPVaoThongTin.Designer.cs">
+      <DependentUpon>frmThemSPVaoThongTin.cs</DependentUpon>
     </Compile>
     <Compile Include="HoaDon.cs">
       <SubType>Component</SubType>
@@ -195,12 +207,6 @@
     <Compile Include="NCC_NCCSP.Designer.cs">
       <DependentUpon>NCC_NCCSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="nhaphang_rp.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="nhaphang_rp.Designer.cs">
-      <DependentUpon>nhaphang_rp.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -220,6 +226,12 @@
     </Compile>
     <Compile Include="them_ncc.Designer.cs">
       <DependentUpon>them_ncc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_BaoCao_ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_BaoCao_ThongKe.Designer.cs">
+      <DependentUpon>UC_BaoCao_ThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_KhachHang.cs">
       <SubType>UserControl</SubType>
@@ -334,9 +346,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NCC_NCCSP.resx">
       <DependentUpon>NCC_NCCSP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="nhaphang_rp.resx">
-      <DependentUpon>nhaphang_rp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhieuNhap.resx">
       <DependentUpon>PhieuNhap.cs</DependentUpon>

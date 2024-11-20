@@ -72,3 +72,4 @@ C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DTO\b
 C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.dll
 C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.pdb
+C:\Users\HP\Desktop\CNPMNC\13\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
