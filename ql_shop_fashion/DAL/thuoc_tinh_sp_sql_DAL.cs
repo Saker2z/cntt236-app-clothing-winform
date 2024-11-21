@@ -229,20 +229,120 @@ namespace DAL
         }
 
 
-	public List<product> get_all_ttsp_by_id_DTO(int mathuoctinh)
+        public List<thuoc_tinh_DTO> get_all_ttsp_by_id_DTO(int masanpham)
         {
             var ds = (from ttsp in qldata.thuoc_tinh_san_phams
-                                   where ttsp.ma_thuoc_tinh == mathuoctinh
-                                   select new product
-                                   {
-                                       ma_thuoc_tinh = ttsp.ma_thuoc_tinh,
-                                       ma_san_pham = (int)ttsp.ma_san_pham,
-                                       ma_kich_thuoc = (int)ttsp.ma_kich_thuoc,
-                                       ma_mau_sac = (int)ttsp.ma_mau_sac,
-                                       so_luong_ton = ttsp.so_luong_ton
-                                   }).ToList();
+                      join ms in qldata.mau_sacs on ttsp.ma_mau_sac equals ms.ma_mau_sac
+                      join kt in qldata.kich_thuocs on ttsp.ma_kich_thuoc equals kt.ma_kich_thuoc
+                      where ttsp.ma_san_pham == masanpham
+                      select new thuoc_tinh_DTO
+                      {
+                          ma_thuoc_tinh = ttsp.ma_thuoc_tinh,
+                          ma_san_pham = (int)ttsp.ma_san_pham,
+                          ten_kich_thuoc = kt.ten_kich_thuoc,                      
+                          ten_mau_sac = ms.ten_mau_sac,
+                          so_luong_ton = ttsp.so_luong_ton,
+                          gia_ban = (decimal)ttsp.gia_ban
+                      }).ToList();
             return ds;
         }
-       
+
+        public List<thuoc_tinh_DTO> GetAllProducts()
+        {
+            var products = (from p in qldata.thuoc_tinh_san_phams
+                            select new thuoc_tinh_DTO
+                            {
+                                ma_thuoc_tinh = p.ma_thuoc_tinh,
+                                ma_san_pham = p.ma_san_pham ?? 0,
+                                ma_kich_thuoc = p.ma_kich_thuoc ?? 0,
+                                ma_mau_sac = p.ma_mau_sac ?? 0,
+                                so_luong_ton = p.so_luong_ton ?? 0,
+                                gia_ban = p.gia_ban ?? 0
+                            }).ToList();
+            return products;
+        }
+
+        public bool addThuocTinhSanPham(thuoc_tinh_DTO tt)
+        {
+            try
+            {
+                // Tạo đối tượng thực thể từ DTO
+                var newRecord = new thuoc_tinh_san_pham
+                {
+                    ma_san_pham = tt.ma_san_pham,
+                    ma_kich_thuoc = tt.ma_kich_thuoc,
+                    ma_mau_sac = tt.ma_mau_sac,
+                    so_luong_ton = tt.so_luong_ton,
+                    gia_ban = tt.gia_ban
+                };
+
+                // Thêm đối tượng vào cơ sở dữ liệu
+                qldata.thuoc_tinh_san_phams.InsertOnSubmit(newRecord);
+                qldata.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi nếu cần
+                Console.WriteLine($"Lỗi: {ex.Message}");
+                return false;
+            }
+        }
+
+
+
+        public bool updateThuocTinhSanPham(thuoc_tinh_DTO tt)
+        {
+            try
+            {
+                using (var qldata = new QL_SHOP_DATADataContext())
+                {
+                    var record = qldata.thuoc_tinh_san_phams.FirstOrDefault(x => x.ma_thuoc_tinh == tt.ma_thuoc_tinh);
+                    if (record != null)
+                    {
+                        record.ma_kich_thuoc = tt.ma_kich_thuoc;
+                        record.ma_mau_sac = tt.ma_mau_sac;
+                        record.so_luong_ton = tt.so_luong_ton;
+                        record.gia_ban = tt.gia_ban;
+
+                        qldata.SubmitChanges();
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi cập nhật thuộc tính sản phẩm: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool deleteThuocTinhSanPham(int maThuocTinh)
+        {
+            try
+            {
+                using (var qldata = new QL_SHOP_DATADataContext())
+                {
+                    var record = qldata.thuoc_tinh_san_phams.FirstOrDefault(x => x.ma_thuoc_tinh == maThuocTinh);
+                    if (record != null)
+                    {
+                        qldata.thuoc_tinh_san_phams.DeleteOnSubmit(record);
+                        qldata.SubmitChanges();
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi xóa thuộc tính sản phẩm: {ex.Message}");
+                return false;
+            }
+        }
+
+
+
+
     }
 }

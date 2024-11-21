@@ -70,6 +70,8 @@
     <Compile Include="san_pham_DTO.cs" />
     <Compile Include="tem_gia.cs" />
     <Compile Include="thong_tin_sanpham_DTO.cs" />
+    <Compile Include="thuoc_tinh_DTO.cs" />
+    <Compile Include="thuoc_tinh_san_pham_DTO.cs" />
     <Compile Include="thuong_hieu_DTO.cs" />
   </ItemGroup>
   <ItemGroup>

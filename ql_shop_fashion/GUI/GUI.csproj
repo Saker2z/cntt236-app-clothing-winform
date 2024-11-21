@@ -335,6 +335,9 @@
     <EmbeddedResource Include="frmNhapHang.resx">
       <DependentUpon>frmNhapHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmThemSPVaoThongTin.resx">
+      <DependentUpon>frmThemSPVaoThongTin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>

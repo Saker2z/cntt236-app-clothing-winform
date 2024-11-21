@@ -160,36 +160,6 @@ namespace DAL
             }
         }
 
-        public bool UpdateSP(san_pham updatedSP)
-        {
-            try
-            {
-                var sp = data.san_phams.SingleOrDefault(k => k.ma_san_pham == updatedSP.ma_san_pham);
-                if (sp != null)
-                {
-                    sp.ten_san_pham = updatedSP.ten_san_pham;
-                    sp.ma_loai = updatedSP.ma_loai;
-                    sp.ma_thuong_hieu = updatedSP.ma_thuong_hieu;
-                    sp.thumbnail_image = updatedSP.thumbnail_image;
-                    sp.giam_gia = updatedSP.giam_gia;
-                    sp.so_luong_kich_thuoc = updatedSP.so_luong_kich_thuoc;
-                    sp.so_luong_mau_sac = updatedSP.so_luong_mau_sac;
-                    sp.so_luong = updatedSP.so_luong;
-                    sp.slug = updatedSP.slug;
-                    sp.mo_ta = updatedSP.mo_ta;
-                    sp.gia_binh_quan = updatedSP.gia_binh_quan;
-                    sp.hinh_thuc_ban = updatedSP.hinh_thuc_ban;
-                    data.SubmitChanges();
-                    return true;
-                }
-                return false;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
 
         public bool DeleteSPById(int masp)
         {

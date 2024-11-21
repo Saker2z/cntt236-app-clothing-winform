@@ -19,12 +19,16 @@ namespace GUI
     public partial class frmThemSPVaoThongTin : DevExpress.XtraEditors.XtraForm
     {
         private san_pham_sql_BLL sp_bll;
-        private thong_tin_sp_sql_BLL thong_tin_bll;
+        private thuoc_tinh_sp_sql_BLL thuoc_tinh_bll;
+        private size_sql_BLL size_bll;
+        private mau_sac_sql_BLL mau_sac_bll;
         public frmThemSPVaoThongTin()
         {
             InitializeComponent();
             this.Load += FrmThemSPVaoThongTin_Load;
-            thong_tin_bll = new thong_tin_sp_sql_BLL();
+            thuoc_tinh_bll = new thuoc_tinh_sp_sql_BLL();
+            mau_sac_bll = new mau_sac_sql_BLL();
+            size_bll = new size_sql_BLL();
             sp_bll = new san_pham_sql_BLL();
 
             btn_themspvaott.Click += Btn_themspvaott_Click;
@@ -63,78 +67,78 @@ namespace GUI
 
         private void FrmThemSPVaoThongTin_Load(object sender, EventArgs e)
         {
-            loadThongTinSP();
-            loadMaThongTinLenCombobox();
+            loadThuocTinhSP();
+            loadSizeVaMSLenComboBox();
             loadMaSanPhamLenCombobox();
         }
 
 
-        private void loadThongTinSP()
+        private void loadThuocTinhSP()
         {
             try
             {
-                // Khởi tạo lớp BLL và lấy dữ liệu sản phẩm
-                thong_tin_bll = new thong_tin_sp_sql_BLL();
-                var allRecords = thong_tin_bll.get_all_ttsp();
+                var bll = new thuoc_tinh_sp_sql_BLL();
+                var productList = bll.GetAllProducts();
 
-                // Gắn dữ liệu vào GridControl
-                gct_ttsp.DataSource = allRecords;
+                // Gắn dữ liệu vào GridControl hoặc DataGridView
+                gct_ttsp.DataSource = productList;
 
-                // Cấu hình GridView
+                // Cấu hình GridView để ẩn các cột không mong muốn
                 GridView gridView = gct_ttsp.MainView as GridView;
                 if (gridView != null)
                 {
                     gridView.OptionsBehavior.Editable = false;
 
-                    // Đặt tên hiển thị cho các cột
-                    gridView.Columns["ma_thong_tin_san_pham"].Caption = "Mã Thông Tin Sản Phẩm";
-                    gridView.Columns["ma_san_pham"].Caption = "Mã Sản Phẩm";
-                    gridView.Columns["key_attribute"].Caption = "Thuộc Tính";
-                    gridView.Columns["value_attribute"].Caption = "Thông Tin Của Thuộc Tính";
-
-                    // Tự động điều chỉnh kích thước các cột
-                    gridView.BestFitColumns();
-
-                    // Đảm bảo các cột không thể chỉnh sửa
-                    foreach (DevExpress.XtraGrid.Columns.GridColumn column in gridView.Columns)
-                    {
-                        column.OptionsColumn.AllowEdit = false;
-                        column.OptionsColumn.AllowFocus = false;
-                    }
+                    gridView.Columns["ten_kich_thuoc"].Visible = false; // Ẩn cột tên kích thước
+                    gridView.Columns["ten_mau_sac"].Visible = false; // Ẩn cột tên màu sắc
                 }
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show($"Lỗi khi tải thông tin sản phẩm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Lỗi khi load dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
 
 
-        private void loadMaThongTinLenCombobox()
+
+        private void loadSizeVaMSLenComboBox()
         {
             try
             {
-                List<thong_tin_sanpham_DTO> List = thong_tin_bll.get_all_ttsp();
+                // Khởi tạo BLL
+                var sizeBll = new size_sql_BLL();
+                var mausacBll = new mau_sac_sql_BLL();
 
-                // Xóa các item cũ
-                cbb_mathongtin.Properties.Items.Clear();
-
-                // Thêm dữ liệu vào ComboBoxEdit thủ công
-                foreach (var nhomLoai in List)
+                // Load danh sách kích thước
+                var kichThuocList = sizeBll.get_all_size();
+                cbb_makichthuoc.Properties.Items.Clear();
+                foreach (var item in kichThuocList)
                 {
-                    cbb_mathongtin.Properties.Items.Add(nhomLoai.ma_thong_tin_san_pham);
+                    cbb_makichthuoc.Properties.Items.Add(item.ma_kich_thuoc);
                 }
 
-                // Không chọn mục nào mặc định
-                cbb_mathongtin.EditValue = null;
+                if (cbb_makichthuoc.Properties.Items.Count > 0)
+                    cbb_makichthuoc.SelectedIndex = 0;
+
+                // Load danh sách màu sắc
+                var mauSacList = mausacBll.get_all_mau_sac();
+                cbb_mamausac.Properties.Items.Clear();
+                foreach (var item in mauSacList)
+                {
+                    cbb_mamausac.Properties.Items.Add(item.ma_mau_sac);
+                }
+
+                if (cbb_mamausac.Properties.Items.Count > 0)
+                    cbb_mamausac.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show($"Lỗi: {ex.Message}");
+                MessageBox.Show($"Lỗi khi load dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void loadMaSanPhamLenCombobox()
         {
@@ -166,12 +170,20 @@ namespace GUI
             if (gridView != null && gridView.FocusedRowHandle >= 0)
             {
                 // Get the selected "ma_san_pham" and "ma_thong_tin_san_pham"
+                string maTTSanPham = Convert.ToString(gridView.GetFocusedRowCellValue("ma_thuoc_tinh"));
                 int maSanPham = Convert.ToInt32(gridView.GetFocusedRowCellValue("ma_san_pham"));
-                int maThongTin = Convert.ToInt32(gridView.GetFocusedRowCellValue("ma_thong_tin_san_pham"));
+                int maSize = Convert.ToInt32(gridView.GetFocusedRowCellValue("ma_kich_thuoc"));
+                int maMauSac = Convert.ToInt32(gridView.GetFocusedRowCellValue("ma_mau_sac"));
+                string soluongton = Convert.ToString(gridView.GetFocusedRowCellValue("so_luong_ton"));
+                string giaban = Convert.ToString(gridView.GetFocusedRowCellValue("gia_ban"));
 
                 // Set the combo box values based on the selected row
+                txt_mathuoctinh.Text = maTTSanPham;
                 cbb_masanpham.EditValue = maSanPham;
-                cbb_mathongtin.EditValue = maThongTin;
+                cbb_makichthuoc.EditValue = maSize;
+                cbb_mamausac.EditValue = maMauSac;
+                txt_soluongton.Text = soluongton;
+                txt_giaban.Text = giaban;
             }
         }
 
@@ -179,8 +191,12 @@ namespace GUI
 
         private void clear()
         {
+            txt_mathuoctinh.Text = null;
             cbb_masanpham.EditValue = null;
-            cbb_mathongtin.EditValue = null;
+            cbb_makichthuoc.EditValue = null;
+            cbb_mamausac.EditValue = null;
+            txt_soluongton.Text = null;
+            txt_giaban.Text = null;
         }
 
         private bool kiemTra()
@@ -195,10 +211,25 @@ namespace GUI
             }
 
             // Kiểm tra ComboBox Mã Thương Hiệu
-            if (cbb_mathongtin.SelectedItem == null)
+            if (cbb_makichthuoc.SelectedItem == null)
             {
-                XtraMessageBox.Show("Vui lòng chọn mã thông tin sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbb_mathongtin.Focus();
+                XtraMessageBox.Show("Vui lòng chọn mã kích thước.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbb_makichthuoc.Focus();
+                return false;
+            }
+
+            // Kiểm tra ComboBox Mã Thương Hiệu
+            if (cbb_makichthuoc.SelectedItem == null)
+            {
+                XtraMessageBox.Show("Vui lòng chọn mã màu sắc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbb_mamausac.Focus();
+                return false;
+            }
+            // Kiểm tra ComboBox Mã Thương Hiệu
+            if (txt_soluongton.Text == null)
+            {
+                XtraMessageBox.Show("Vui lòng điền số lượng tồn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbb_makichthuoc.Focus();
                 return false;
             }
 
@@ -209,6 +240,7 @@ namespace GUI
 
         private void themSPVaoTT()
         {
+            // Kiểm tra dữ liệu đầu vào
             if (!kiemTra())
             {
                 return;
@@ -216,144 +248,156 @@ namespace GUI
 
             try
             {
-                // Validate input
-                if (int.TryParse(cbb_masanpham.EditValue?.ToString(), out int newMaSanPham) &&
-                    int.TryParse(cbb_mathongtin.EditValue?.ToString(), out int selectedMaThongTin))
+                // Tạo BLL
+                var bll = new thuoc_tinh_sp_sql_BLL();
+
+                // Tạo đối tượng DTO từ dữ liệu nhập
+                var newThuocTinh = new thuoc_tinh_DTO
                 {
-                    // Retrieve the existing record for the selected ma_thong_tin_san_pham
-                    var existingInfo = thong_tin_bll.getThongTinSanPhamByMaTT(selectedMaThongTin);
+                    ma_san_pham = Convert.ToInt32(cbb_masanpham.EditValue), // Lấy mã sản phẩm từ ComboBox
+                    ma_kich_thuoc = Convert.ToInt32(cbb_makichthuoc.EditValue), // Lấy mã kích thước từ ComboBox
+                    ma_mau_sac = Convert.ToInt32(cbb_mamausac.EditValue), // Lấy mã màu sắc từ ComboBox
+                    so_luong_ton = Convert.ToInt32(txt_soluongton.Text) // Chuyển đổi số lượng tồn từ TextBox
+                };
 
-                    if (existingInfo != null)
-                    {
-                        // Automatically increment the ma_thong_tin_san_pham for the new record
-                        int newMaThongTin = thong_tin_bll.getNextMaThongTin();
+                // Gọi BLL để thêm thuộc tính sản phẩm
+                if (bll.addThuocTinhSanPham(newThuocTinh))
+                {
+                    // Thêm thành công
+                    MessageBox.Show("Thêm thuộc tính sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        // Create a new record using the retrieved information
-                        thong_tin_sanpham_DTO newInfo = new thong_tin_sanpham_DTO
-                        {
-                            ma_thong_tin_san_pham = newMaThongTin,
-                            ma_san_pham = newMaSanPham,
-                            key_attribute = existingInfo.key_attribute,
-                            value_attribute = existingInfo.value_attribute
-                        };
+                    // Tải lại dữ liệu thuộc tính sản phẩm
+                    loadThuocTinhSP();
 
-                        // Add the new record to the database
-                        if (thong_tin_bll.addThongTinSanPham(newInfo))
-                        {
-                            MessageBox.Show("Thêm thông tin sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            loadThongTinSP();
-                            clear();
-                        }
-                        else
-                        {
-                            XtraMessageBox.Show("Thêm thông tin sản phẩm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show("Không tìm thấy thông tin sản phẩm với mã thông tin được chọn.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    // Xóa các trường nhập
+                    clear();
                 }
                 else
                 {
-                    XtraMessageBox.Show("Dữ liệu không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Thêm thất bại
+                    MessageBox.Show("Thêm thuộc tính sản phẩm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            catch (FormatException ex)
+            {
+                // Lỗi định dạng dữ liệu
+                MessageBox.Show("Dữ liệu nhập vào không hợp lệ! Vui lòng kiểm tra lại.\nChi tiết lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Lỗi chung
+                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+
+        private thong_tin_sanpham_DTO ConvertToThongTinSanPhamDTO(thuoc_tinh_DTO tt)
+        {
+            return new thong_tin_sanpham_DTO
+            {
+                ma_thong_tin_san_pham = tt.ma_thuoc_tinh,
+                ma_san_pham = tt.ma_san_pham,
+                key_attribute = tt.ma_kich_thuoc.ToString(),
+                value_attribute = tt.ma_mau_sac.ToString()
+            };
+        }
 
 
         private void suaSPTrongTT()
         {
             try
             {
-                if (int.TryParse(cbb_masanpham.EditValue?.ToString(), out int maSanPham) &&
-                    int.TryParse(cbb_mathongtin.EditValue?.ToString(), out int maThongTin))
+                // Kiểm tra và lấy giá trị từ các điều khiển
+                if (!string.IsNullOrWhiteSpace(txt_mathuoctinh.Text) &&
+                    int.TryParse(txt_mathuoctinh.Text, out int maThuocTinh) &&
+                    int.TryParse(cbb_masanpham.EditValue?.ToString(), out int maSanPham) &&
+                    int.TryParse(cbb_makichthuoc.EditValue?.ToString(), out int maKichThuoc) &&
+                    int.TryParse(cbb_mamausac.EditValue?.ToString(), out int maMauSac) &&
+                    int.TryParse(txt_soluongton.Text, out int soLuongTon) &&
+                    decimal.TryParse(txt_giaban.Text, out decimal giaBan))
                 {
-                    // Get the corresponding key_attribute from the mapping
-                    if (!attributeMapping.TryGetValue(maThongTin, out string keyAttribute))
+                    // Tạo đối tượng thuoc_tinh_DTO
+                    var updatedInfo = new thuoc_tinh_DTO
                     {
-                        XtraMessageBox.Show("Mã thông tin không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    thong_tin_sanpham_DTO updatedInfo = new thong_tin_sanpham_DTO
-                    {
-                        ma_thong_tin_san_pham = maThongTin,
+                        ma_thuoc_tinh = maThuocTinh,
                         ma_san_pham = maSanPham,
-                        key_attribute = keyAttribute,
-                        value_attribute = "Giá trị đã chỉnh sửa" // Default or user-input value
+                        ma_kich_thuoc = maKichThuoc,
+                        ma_mau_sac = maMauSac,
+                        so_luong_ton = soLuongTon,
+                        gia_ban = giaBan
                     };
 
-                    if (thong_tin_bll.updateThongTinSanPham(updatedInfo))
+                    // Gọi BLL để thực hiện cập nhật
+                    if (thuoc_tinh_bll.updateThuocTinhSanPham(updatedInfo))
                     {
-                        XtraMessageBox.Show("Cập nhật thông tin sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        loadThongTinSP();
+                        XtraMessageBox.Show("Cập nhật thuộc tính sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Tải lại danh sách thuộc tính
+                        loadThuocTinhSP();
                         clear();
                     }
                     else
                     {
-                        XtraMessageBox.Show("Cập nhật thông tin sản phẩm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show("Cập nhật thuộc tính sản phẩm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    XtraMessageBox.Show("Vui lòng chọn thông tin hợp lệ để sửa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin hợp lệ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show($"Lỗi khi cập nhật: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
+
+
 
 
         private void xoaSPKhoiTT()
         {
             try
             {
-                if (int.TryParse(cbb_mathongtin.EditValue?.ToString(), out int maThongTin))
+                // Kiểm tra giá trị từ TextBox
+                if (!string.IsNullOrWhiteSpace(txt_mathuoctinh.Text) &&
+                    int.TryParse(txt_mathuoctinh.Text, out int maThuocTinh))
                 {
-                    if (thong_tin_bll.deleteThongTinSanPham(maThongTin))
+                    // Gọi BLL để thực hiện xóa
+                    if (thuoc_tinh_bll.deleteThuocTinhSanPham(maThuocTinh))
                     {
                         XtraMessageBox.Show("Xóa thông tin sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        loadThongTinSP();
+
+                        // Tải lại danh sách thuộc tính
+                        loadThuocTinhSP();
                         clear();
                     }
                     else
                     {
-                        XtraMessageBox.Show("Xóa thông tin sản phẩm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show("Xóa thông tin sản phẩm thất bại! Không tìm thấy thuộc tính sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    XtraMessageBox.Show("Vui lòng chọn thông tin hợp lệ để xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("Vui lòng nhập mã thuộc tính hợp lệ để xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show($"Lỗi khi xóa: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        
 
 
-        private Dictionary<int, string> attributeMapping = new Dictionary<int, string>
-        {
-            { 1, "Kích thước" },
-            { 2, "Màu sắc" },
-            { 3, "Chất liệu" },
-            { 4, "Phong cách" },
-            { 5, "Hướng dẫn bảo quản" },
-            { 6, "Đối tượng sử dụng" },
-            { 7, "Xuất xứ" },
-            { 8, "Thời gian bảo hành" }
-        };
+
+
+
+
+
 
     }
 }

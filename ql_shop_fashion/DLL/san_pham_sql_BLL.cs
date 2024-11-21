@@ -76,11 +76,6 @@ namespace BLL
             return sp_.AddSP(newLoaiSP);
         }
 
-        public bool UpdateSP(san_pham updatedSP)
-        {
-            return sp_.UpdateSP(updatedSP);
-        }
-
         public bool DeleteSPById(int masp)
         {
             return sp_.DeleteSPById(masp);

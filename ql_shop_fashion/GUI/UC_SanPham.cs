@@ -10,6 +10,7 @@ using System.Linq;
 using System.Drawing;
 using System.Data;
 using System.IO;
+using System.Text;
 
 namespace GUI
 {
@@ -85,7 +86,6 @@ namespace GUI
             btn_thongtinloaisp.Click += Btn_thongtinloaisp_Click;
 
             btn_themsp.Click += Btn_themsp_Click;
-            btn_suasp.Click += Btn_suasp_Click;
             btn_xoasp.Click += Btn_xoasp_Click;
             btn_luusp.Click += Btn_luusp_Click;
             btn_loadsp.Click += Btn_loadsp_Click;
@@ -94,9 +94,15 @@ namespace GUI
             gct_sp.MouseMove += Gct_sp_MouseMove;
             gct_sp.MouseLeave += Gct_sp_MouseLeave;
 
-            btn_themspvaothongtin.Click += Btn_themspvaothongtin_Click;
+            btn_themspvaothuoctinh.Click += Btn_themspvaothuoctinh_Click;
 
             btn_mochonanhsp.Click += Btn_mochonanhsp_Click;
+        }
+
+        private void Btn_themspvaothuoctinh_Click(object sender, EventArgs e)
+        {
+            frmThemSPVaoThongTin sp = new frmThemSPVaoThongTin();
+            sp.ShowDialog();
         }
 
         private void Btn_luusp_Click(object sender, EventArgs e)
@@ -175,20 +181,19 @@ namespace GUI
             }
         }
 
-
-        private void Btn_themspvaothongtin_Click(object sender, EventArgs e)
-        {
-            frmThemSPVaoThongTin sp = new frmThemSPVaoThongTin();
-            sp.ShowDialog();
-        }
-
-        private void Gct_sp_MouseLeave(object sender, EventArgs e)
+        private void HidePopup()
         {
             if (popup != null && popup.Visible)
             {
                 popup.Hide();
             }
         }
+
+        private void Gct_sp_MouseLeave(object sender, EventArgs e)
+        {
+            HidePopup();
+        }
+   
 
         private void Gct_sp_MouseMove(object sender, MouseEventArgs e)
         {
@@ -204,22 +209,23 @@ namespace GUI
                 var maSP = (int)view.GetRowCellValue(hitInfo.RowHandle, "ma_san_pham");
 
                 // Gọi phương thức lấy thông tin chi tiết sản phẩm từ BLL
-                var thongTinSanPhamList = thuoc_tinh_bll.get_all_ttsp_by_id(maSP);
+                var thongTinSanPhamList = thong_tin_bll.get_all_ttsp()
+                    .Where(tt => tt.ma_san_pham == maSP)
+                    .ToList();
 
-                // Sử dụng HashSet để đảm bảo không lặp mã thông tin
-                HashSet<int> uniqueMaThongTin = new HashSet<int>();
+                // Kiểm tra nếu không có thông tin chi tiết
+                if (!thongTinSanPhamList.Any())
+                {
+                    HidePopup();
+                    return;
+                }
 
                 // Chuẩn bị nội dung để hiển thị
-                string infoContent = $"Mã sản phẩm: {maSP}\n";
+                StringBuilder infoContent = new StringBuilder();
+                infoContent.AppendLine($"Mã sản phẩm: {maSP}");
                 foreach (var item in thongTinSanPhamList)
                 {
-                    if (uniqueMaThongTin.Add(item.ma_san_pham)) // Chỉ thêm khi mã thông tin là duy nhất
-                    {
-                        infoContent += $"Mã thuộc tính: {item.ma_thuoc_tinh}\n";
-                        infoContent += $"Mã kích thước: {item.ma_kich_thuoc}\n";
-                        infoContent += $"Mã màu sắc: {item.ma_mau_sac}\n";
-                        infoContent += $"Số lượng tồn: {item.so_luong_ton}\n";
-                    }
+                    infoContent.AppendLine($"{item.key_attribute}: {item.value_attribute}");
                 }
 
                 // Tạo và hiển thị form popup nếu chưa tồn tại
@@ -227,11 +233,11 @@ namespace GUI
                 {
                     popup = new Form
                     {
-                        StartPosition = FormStartPosition.CenterScreen,
-                        Size = new Size(200, 200),
+                        StartPosition = FormStartPosition.Manual,
+                        Size = new Size(300, 150),
                         FormBorderStyle = FormBorderStyle.None,
-                        BackColor = Color.Orange,
-                        Opacity = 0.95,
+                        BackColor = Color.LightYellow,
+                        Opacity = 0.9,
                         ShowInTaskbar = false,
                         TopMost = true
                     };
@@ -240,16 +246,21 @@ namespace GUI
                     Label lblInfo = new Label
                     {
                         Dock = DockStyle.Fill,
-                        TextAlign = ContentAlignment.MiddleCenter,
+                        TextAlign = ContentAlignment.TopLeft,
                         ForeColor = Color.Black,
-                        Padding = new Padding(10)
+                        Padding = new Padding(10),
+                        AutoSize = true
                     };
                     popup.Controls.Add(lblInfo);
                 }
 
                 // Cập nhật nội dung chi tiết sản phẩm
                 var lbl = popup.Controls[0] as Label;
-                lbl.Text = infoContent;
+                lbl.Text = infoContent.ToString();
+
+                // Đặt vị trí hiển thị popup gần con trỏ chuột
+                var mousePosition = Control.MousePosition;
+                popup.Location = new Point(mousePosition.X + 10, mousePosition.Y + 10);
 
                 // Hiển thị form nếu chưa hiển thị
                 if (!popup.Visible)
@@ -258,10 +269,7 @@ namespace GUI
             else
             {
                 // Ẩn popup nếu không di chuột trên hàng
-                if (popup != null && popup.Visible)
-                {
-                    popup.Hide();
-                }
+                HidePopup();
             }
         }
 
@@ -275,11 +283,6 @@ namespace GUI
         private void Btn_xoasp_Click(object sender, EventArgs e)
         {
             xoaSP();
-        }
-
-        private void Btn_suasp_Click(object sender, EventArgs e)
-        {
-            suaSP();
         }
 
         private void Btn_themsp_Click(object sender, EventArgs e)
@@ -392,7 +395,7 @@ namespace GUI
         private void Gv_sp_Click(object sender, EventArgs e)
         {
             loadSPLenControls();
-            loadThongTinSP();
+            loadThuocTinhSP();
         }
 
         private void Gv_thuonghieu_Click(object sender, EventArgs e)
@@ -423,42 +426,62 @@ namespace GUI
 
 
 
-        private void loadThongTinSP()
+        private void loadThuocTinhSP()
         {
-            // Kiểm tra nếu giá trị trong txt_masanpham là hợp lệ và chuyển đổi được
-            if (int.TryParse(txt_masanpham.Text, out int masanpham))
+            try
             {
-                // Lấy thông tin sản phẩm từ BLL
-                var thongTinSanPhamTable = thong_tin_bll.getThongTinSanPhamTableByMaSP(masanpham);
-
-                // Gắn dữ liệu vào GridControl
-                gct_ttsp.DataSource = thongTinSanPhamTable;
-
-                // Cấu hình lại GridView
-                GridView gridViewDetails = gct_ttsp.MainView as GridView;
-                if (gridViewDetails != null)
+                // Kiểm tra nếu giá trị trong txt_masanpham là hợp lệ và chuyển đổi được
+                if (int.TryParse(txt_masanpham.Text, out int masanpham))
                 {
-                    gridViewDetails.OptionsBehavior.Editable = false;
+                    // Lấy thông tin sản phẩm từ BLL
+                    var thongTinSanPhamTable = thuoc_tinh_bll.get_all_ttsp_by_id_DTO(masanpham); // Sửa phương thức gọi
 
-                    // Tự động điều chỉnh kích thước cột
-                    gridViewDetails.BestFitColumns();
+                    if (thongTinSanPhamTable.Count > 0) // Nếu có dữ liệu
+                    {
+                        // Gắn dữ liệu vào GridControl
+                        gct_ttsp.DataSource = thongTinSanPhamTable;
 
-                    // Cấu hình cột để hiển thị thông tin rõ ràng hơn
-                    gridViewDetails.Columns["ma_san_pham"].Caption = "Mã Sản Phẩm";
-                    gridViewDetails.Columns["ma_thong_tin_san_pham"].Caption = "Mã Thông Tin Sản Phẩm";
-                    gridViewDetails.Columns["key_attribute"].Caption = "Thuộc Tính";
-                    gridViewDetails.Columns["value_attribute"].Caption = "Thông Tin Của Thuộc Tính";
+                        // Cấu hình lại GridView
+                        GridView gridViewDetails = gct_ttsp.MainView as GridView;
+                        if (gridViewDetails != null)
+                        {
+                            gridViewDetails.OptionsBehavior.Editable = false;
 
+                            // Tự động điều chỉnh kích thước cột
+                            gridViewDetails.BestFitColumns();
 
-                    // Bật tự động tăng chiều cao hàng (nếu cần cho nội dung dài)
-                    gridViewDetails.OptionsView.RowAutoHeight = true;
+                            // Cấu hình cột để hiển thị thông tin rõ ràng hơn
+                            gridViewDetails.Columns["ma_thuoc_tinh"].Caption = "Mã Thuộc Tính";
+                            gridViewDetails.Columns["ma_san_pham"].Caption = "Mã Sản Phẩm";
+                            gridViewDetails.Columns["ten_kich_thuoc"].Caption = "Tên Kích Thước";
+                            gridViewDetails.Columns["ten_mau_sac"].Caption = "Tên Màu Sắc";
+                            gridViewDetails.Columns["so_luong_ton"].Caption = "Số Lượng Tồn";
+                            gridViewDetails.Columns["gia_ban"].Caption = "Giá Bán";
+
+                            gridViewDetails.Columns["ma_kich_thuoc"].Visible = false; // Ẩn cột tên kích thước
+                            gridViewDetails.Columns["ma_mau_sac"].Visible = false; // Ẩn cột tên màu sắc
+
+                            // Bật tự động tăng chiều cao hàng (nếu cần cho nội dung dài)
+                            gridViewDetails.OptionsView.RowAutoHeight = true;
+                        }
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Không tìm thấy thuộc tính sản phẩm cho mã sản phẩm này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        gct_ttsp.DataSource = null; // Xóa dữ liệu cũ nếu không tìm thấy
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Mã sản phẩm không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                XtraMessageBox.Show("Mã sản phẩm không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                XtraMessageBox.Show($"Lỗi: {ex.Message}", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 
@@ -1123,63 +1146,6 @@ namespace GUI
         }
       
 
-
-        public void suaSP()
-        {
-            try
-            {
-                // Validate and parse the product ID
-                if (!int.TryParse(txt_masanpham.Text, out int maSanPham) || maSanPham <= 0)
-                {
-                    MessageBox.Show("Mã sản phẩm không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                // Parse and validate other numeric fields
-                int maLoai = cbb_maloai.EditValue != null ? Convert.ToInt32(cbb_maloai.EditValue) : 0;
-                int maThuongHieu = cbb_mathuonghieu.EditValue != null ? Convert.ToInt32(cbb_mathuonghieu.EditValue) : 0;
-                decimal giamGia = decimal.TryParse(txt_giamgia.Text, out var tempGiamGia) ? tempGiamGia : 0;
-                int soLuongKichThuoc = int.TryParse(txt_soluongkichthuoc.Text, out var tempSLKT) ? tempSLKT : 0;
-                int soLuongMauSac = int.TryParse(txt_soluongmausac.Text, out var tempSLMS) ? tempSLMS : 0;
-                int soLuong = int.TryParse(txt_soluong.Text, out var tempSoLuong) ? tempSoLuong : 0;
-                decimal giaBinhQuan = decimal.TryParse(txt_giabinhquan.Text, out var tempGiaBQ) ? tempGiaBQ : 0;
-
-                // Create an updated product object
-                var updatedSP = new san_pham
-                {
-                    ma_san_pham = maSanPham,
-                    ten_san_pham = txt_tensanpham.Text,
-                    ma_loai = maLoai,
-                    ma_thuong_hieu = maThuongHieu,
-                    giam_gia = giamGia,
-                    so_luong_kich_thuoc = soLuongKichThuoc,
-                    so_luong_mau_sac = soLuongMauSac,
-                    so_luong = soLuong,
-                    slug = txt_slug.Text,
-                    mo_ta = txt_mota.Text,
-                    gia_binh_quan = giaBinhQuan,
-                    hinh_thuc_ban = cbb_hinhthucban.EditValue != null ? Convert.ToInt32(cbb_hinhthucban.EditValue) : 0
-                };
-
-                // Call the BLL to update the product
-                bool isUpdated = sp_bll.UpdateSP(updatedSP);
-
-                if (isUpdated)
-                {
-                    XtraMessageBox.Show("Sửa sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearsp();
-                    loadSP();
-                }
-                else
-                {
-                    XtraMessageBox.Show("Sửa sản phẩm thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
 
         public void xoaSP()
@@ -1898,183 +1864,11 @@ namespace GUI
 
 
 
-
-
         private void ShowWarning(string message)
         {
             XtraMessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-
-
-        //public void editForSelectedRow()
-        //{
-        //    // Lấy GridView từ GridControl
-        //    GridView gridView = gct_size.MainView as GridView;
-        //    if (gridView == null)
-        //        return;
-
-        //    // Kiểm tra nếu có dòng nào đang được chọn
-        //    int selectedRowHandle = gridView.FocusedRowHandle;
-        //    if (selectedRowHandle < 0)
-        //    {
-        //        MessageBox.Show("Vui lòng chọn dòng để chỉnh sửa.");
-        //        return;
-        //    }
-
-        //    if (gridView != null)
-        //    {                
-        //        // Thiết lập tên hiển thị cho các cột
-        //        gridView.Columns["ma_kich_thuoc"].Caption = "Mã Kích Thước";
-        //        gridView.Columns["ten_kich_thuoc"].Caption = "Tên Kích Thước";
-        //        gridView.Columns["phu_phi_size"].Caption = "Phụ Phí Size";
-
-        //        gridView.OptionsBehavior.Editable = true;
-
-        //        // Khóa cột "Mã Kích Thước" để không thể chỉnh sửa
-        //        gridView.Columns["ma_kich_thuoc"].OptionsColumn.AllowEdit = false;
-
-        //        // Cho phép chỉnh sửa các cột "Tên Kích Thước" và "Phụ Phí Size"
-        //        gridView.Columns["ten_kich_thuoc"].OptionsColumn.AllowEdit = true;
-        //        gridView.Columns["phu_phi_size"].OptionsColumn.AllowEdit = true;
-
-        //        // Tự động điều chỉnh độ rộng các cột dựa trên nội dung
-        //        gridView.BestFitColumns();
-        //    }
-
-        //}
-
-
-
-        //public void AddEmptyRowToGrid(List<san_pham_custom> sanPhamList)
-        //{
-        //    GridView gridView = gct_sp.MainView as GridView;
-        //    if (gridView == null) return;
-
-        //    RepositoryItemLookUpEdit repositoryComboBoxMaSP = new RepositoryItemLookUpEdit
-        //    {
-        //        DataSource = sanPhamList,
-        //        DisplayMember = "ma_san_pham",
-        //        ValueMember = "ma_san_pham",
-        //        NullText = "Chọn sản phẩm"
-        //    };
-
-        //    repositoryComboBoxMaSP.PopulateColumns();
-        //    repositoryComboBoxMaSP.Columns["ma_san_pham"].Caption = "Mã Sản Phẩm";
-        //    repositoryComboBoxMaSP.Columns["ten_san_pham"].Caption = "Tên Sản Phẩm";
-
-        //    gct_sp.RepositoryItems.Add(repositoryComboBoxMaSP);
-
-        //    var dataSource = gct_sp.DataSource as IList<san_pham>;
-        //    if (dataSource != null)
-        //    {
-        //        san_pham newRow = new san_pham();
-        //        dataSource.Add(newRow);
-
-        //        gct_sp.RefreshDataSource();
-
-        //        int newRowHandle = gridView.GetRowHandle(dataSource.Count - 1);
-        //        gridView.FocusedRowHandle = newRowHandle;
-
-        //        gridView.CustomRowCellEdit += (sender, e) =>
-        //        {
-        //            if (e.RowHandle == newRowHandle && e.Column.FieldName == "ma_san_pham")
-        //            {
-        //                e.RepositoryItem = repositoryComboBoxMaSP;
-        //            }
-        //        };
-
-        //        gridView.OptionsBehavior.Editable = true;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("DataSource của GridControl không phải là List hoặc BindingList.");
-        //    }
-        //}
-
-
-        //public void SaveAllDataToDatabase()
-        //{
-        //    GridView gridView = gct_sp.MainView as GridView;
-        //    if (gridView == null)
-        //        return;
-
-        //    gridView.CloseEditor();
-        //    gridView.UpdateCurrentRow();
-
-        //    List<san_pham> productList = new List<san_pham>();
-
-        //    for (int i = 0; i < gridView.DataRowCount; i++)
-        //    {
-        //        if (int.TryParse(gridView.GetRowCellValue(i, "ma_san_pham")?.ToString(), out int maSanPham) &&
-        //            decimal.TryParse(gridView.GetRowCellValue(i, "gia_binh_quan")?.ToString(), out decimal giaBinhQuan))
-        //        {
-        //            productList.Add(new san_pham
-        //            {
-        //                ma_san_pham = maSanPham,
-        //                ten_san_pham = gridView.GetRowCellValue(i, "ten_san_pham")?.ToString(),
-        //                gia_binh_quan = giaBinhQuan
-        //            });
-        //        }
-        //    }
-
-        //    bool result = sp_bll.SaveProducts(productList);
-
-        //    if (result)
-        //    {
-        //        MessageBox.Show("Lưu dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        loadSP();
-        //        checkpoin = 0;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Có lỗi xảy ra trong quá trình lưu dữ liệu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
-
-
-        //public void SaveProduct()
-        //{
-        //    try
-        //    {
-        //        san_pham_sql_BLL sanPhamBLL = new san_pham_sql_BLL();
-        //        List<san_pham> productList = new List<san_pham>();
-
-        //        // Tạo đối tượng sản phẩm từ thông tin trên form
-        //        san_pham product = new san_pham
-        //        {
-        //            ma_san_pham = int.Parse(txt_masanpham.Text), // Mã sản phẩm
-        //            ten_san_pham = txt_tensanpham.Text, // Tên sản phẩm
-        //            ma_loai = int.Parse(cbb_maloai.EditValue?.ToString() ?? "0"), // Mã loại sản phẩm
-        //            ma_thuong_hieu = int.Parse(cbb_mathuonghieu.EditValue?.ToString() ?? "0"), // Mã thương hiệu
-        //            giam_gia = decimal.Parse(txt_giamgia.Text), // Giảm giá
-        //            so_luong_kich_thuoc = int.Parse(txt_soluongkichthuoc.Text), // Số lượng kích thước
-        //            so_luong_mau_sac = int.Parse(txt_soluongmausac.Text), // Số lượng màu sắc
-        //            so_luong = int.Parse(txt_soluong.Text), // Tổng số lượng
-        //            slug = txt_slug.Text, // Slug URL
-        //            mo_ta = txt_mota.Text, // Mô tả sản phẩm
-        //            gia_binh_quan = decimal.Parse(txt_giabinhquan.Text), // Giá bình quân
-        //            hinh_thuc_ban = int.Parse(cbb_hinhthucban.EditValue?.ToString() ?? "0") // Hình thức bán
-        //        };
-
-        //        productList.Add(product);
-
-        //        // Gọi phương thức lưu sản phẩm
-        //        if (sanPhamBLL.SaveProducts(productList))
-        //        {
-        //            MessageBox.Show("Lưu sản phẩm thành công");
-        //            loadSP(); // Reload danh sách sản phẩm sau khi lưu
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Lưu sản phẩm thất bại");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi khi lưu sản phẩm: " + ex.Message);
-        //    }
-        //}
 
 
 

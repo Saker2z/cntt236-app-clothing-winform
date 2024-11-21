@@ -38,19 +38,19 @@ namespace GUI
             this.gct_sp = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gb_ctsp = new System.Windows.Forms.GroupBox();
+            this.gb_dsthuoctinh = new System.Windows.Forms.GroupBox();
+            this.gct_ttsp = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txt_thumbnail_image = new DevExpress.XtraEditors.TextEdit();
             this.lb_thumbnail_image = new DevExpress.XtraEditors.LabelControl();
             this.btn_luusp = new DevExpress.XtraEditors.SimpleButton();
             this.pb_anhsp = new System.Windows.Forms.PictureBox();
             this.btn_mochonanhsp = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_themspvaothongtin = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_themspvaothuoctinh = new DevExpress.XtraEditors.SimpleButton();
             this.cbb_hinhthucban = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbb_mathuonghieu = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.gct_ttsp = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btn_loadsp = new DevExpress.XtraEditors.SimpleButton();
             this.btn_xoasp = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_suasp = new DevExpress.XtraEditors.SimpleButton();
             this.btn_themsp = new DevExpress.XtraEditors.SimpleButton();
             this.cbb_maloai = new DevExpress.XtraEditors.ComboBoxEdit();
             this.lb_hinhthucban = new DevExpress.XtraEditors.LabelControl();
@@ -136,7 +136,6 @@ namespace GUI
             this.lb_manhomloai = new DevExpress.XtraEditors.LabelControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gb_dsthuoctinh = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl_sanpham_size_mausac_thuonghieu)).BeginInit();
             this.layoutControl_sanpham_size_mausac_thuonghieu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sanpham_size_mausac_thuonghieu)).BeginInit();
@@ -148,12 +147,13 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.gct_sp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.gb_ctsp.SuspendLayout();
+            this.gb_dsthuoctinh.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gct_ttsp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_thumbnail_image.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_anhsp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_hinhthucban.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_mathuonghieu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gct_ttsp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_maloai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_giabinhquan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_mota.Properties)).BeginInit();
@@ -197,7 +197,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.txt_manhomloai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            this.gb_dsthuoctinh.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl_sanpham_size_mausac_thuonghieu
@@ -288,12 +287,11 @@ namespace GUI
             this.gb_ctsp.Controls.Add(this.btn_luusp);
             this.gb_ctsp.Controls.Add(this.pb_anhsp);
             this.gb_ctsp.Controls.Add(this.btn_mochonanhsp);
-            this.gb_ctsp.Controls.Add(this.btn_themspvaothongtin);
+            this.gb_ctsp.Controls.Add(this.btn_themspvaothuoctinh);
             this.gb_ctsp.Controls.Add(this.cbb_hinhthucban);
             this.gb_ctsp.Controls.Add(this.cbb_mathuonghieu);
             this.gb_ctsp.Controls.Add(this.btn_loadsp);
             this.gb_ctsp.Controls.Add(this.btn_xoasp);
-            this.gb_ctsp.Controls.Add(this.btn_suasp);
             this.gb_ctsp.Controls.Add(this.btn_themsp);
             this.gb_ctsp.Controls.Add(this.cbb_maloai);
             this.gb_ctsp.Controls.Add(this.lb_hinhthucban);
@@ -325,78 +323,16 @@ namespace GUI
             this.gb_ctsp.TabStop = false;
             this.gb_ctsp.Text = "Thông tin chi tiết sản phẩm";
             // 
-            // txt_thumbnail_image
+            // gb_dsthuoctinh
             // 
-            this.txt_thumbnail_image.Location = new System.Drawing.Point(296, 263);
-            this.txt_thumbnail_image.Name = "txt_thumbnail_image";
-            this.txt_thumbnail_image.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.txt_thumbnail_image.Properties.Appearance.Options.UseFont = true;
-            this.txt_thumbnail_image.Size = new System.Drawing.Size(140, 22);
-            this.txt_thumbnail_image.TabIndex = 47;
-            // 
-            // lb_thumbnail_image
-            // 
-            this.lb_thumbnail_image.Location = new System.Drawing.Point(177, 268);
-            this.lb_thumbnail_image.Name = "lb_thumbnail_image";
-            this.lb_thumbnail_image.Size = new System.Drawing.Size(84, 13);
-            this.lb_thumbnail_image.TabIndex = 46;
-            this.lb_thumbnail_image.Text = "Thumbnail_Image";
-            // 
-            // btn_luusp
-            // 
-            this.btn_luusp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_luusp.Location = new System.Drawing.Point(754, 209);
-            this.btn_luusp.Name = "btn_luusp";
-            this.btn_luusp.Size = new System.Drawing.Size(166, 40);
-            this.btn_luusp.TabIndex = 45;
-            this.btn_luusp.Text = "Lưu Sản Phẩm";
-            // 
-            // pb_anhsp
-            // 
-            this.pb_anhsp.Location = new System.Drawing.Point(24, 35);
-            this.pb_anhsp.Name = "pb_anhsp";
-            this.pb_anhsp.Size = new System.Drawing.Size(125, 305);
-            this.pb_anhsp.TabIndex = 44;
-            this.pb_anhsp.TabStop = false;
-            // 
-            // btn_mochonanhsp
-            // 
-            this.btn_mochonanhsp.Location = new System.Drawing.Point(45, 364);
-            this.btn_mochonanhsp.Name = "btn_mochonanhsp";
-            this.btn_mochonanhsp.Size = new System.Drawing.Size(82, 28);
-            this.btn_mochonanhsp.TabIndex = 43;
-            this.btn_mochonanhsp.Text = "Mở";
-            // 
-            // btn_themspvaothongtin
-            // 
-            this.btn_themspvaothongtin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_themspvaothongtin.Location = new System.Drawing.Point(754, 352);
-            this.btn_themspvaothongtin.Name = "btn_themspvaothongtin";
-            this.btn_themspvaothongtin.Size = new System.Drawing.Size(166, 40);
-            this.btn_themspvaothongtin.TabIndex = 41;
-            this.btn_themspvaothongtin.Text = "Thêm Sản Phẩm Vào Thông Tin";
-            // 
-            // cbb_hinhthucban
-            // 
-            this.cbb_hinhthucban.Location = new System.Drawing.Point(295, 370);
-            this.cbb_hinhthucban.Name = "cbb_hinhthucban";
-            this.cbb_hinhthucban.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.cbb_hinhthucban.Properties.Appearance.Options.UseFont = true;
-            this.cbb_hinhthucban.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_hinhthucban.Size = new System.Drawing.Size(444, 22);
-            this.cbb_hinhthucban.TabIndex = 40;
-            // 
-            // cbb_mathuonghieu
-            // 
-            this.cbb_mathuonghieu.Location = new System.Drawing.Point(295, 204);
-            this.cbb_mathuonghieu.Name = "cbb_mathuonghieu";
-            this.cbb_mathuonghieu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.cbb_mathuonghieu.Properties.Appearance.Options.UseFont = true;
-            this.cbb_mathuonghieu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_mathuonghieu.Size = new System.Drawing.Size(140, 22);
-            this.cbb_mathuonghieu.TabIndex = 38;
+            this.gb_dsthuoctinh.Controls.Add(this.gct_ttsp);
+            this.gb_dsthuoctinh.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gb_dsthuoctinh.Location = new System.Drawing.Point(3, 417);
+            this.gb_dsthuoctinh.Name = "gb_dsthuoctinh";
+            this.gb_dsthuoctinh.Size = new System.Drawing.Size(934, 271);
+            this.gb_dsthuoctinh.TabIndex = 49;
+            this.gb_dsthuoctinh.TabStop = false;
+            this.gb_dsthuoctinh.Text = "Danh sách thuộc tính";
             // 
             // gct_ttsp
             // 
@@ -415,45 +351,109 @@ namespace GUI
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // txt_thumbnail_image
+            // 
+            this.txt_thumbnail_image.Location = new System.Drawing.Point(327, 263);
+            this.txt_thumbnail_image.Name = "txt_thumbnail_image";
+            this.txt_thumbnail_image.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.txt_thumbnail_image.Properties.Appearance.Options.UseFont = true;
+            this.txt_thumbnail_image.Size = new System.Drawing.Size(140, 22);
+            this.txt_thumbnail_image.TabIndex = 47;
+            // 
+            // lb_thumbnail_image
+            // 
+            this.lb_thumbnail_image.Location = new System.Drawing.Point(222, 270);
+            this.lb_thumbnail_image.Name = "lb_thumbnail_image";
+            this.lb_thumbnail_image.Size = new System.Drawing.Size(84, 13);
+            this.lb_thumbnail_image.TabIndex = 46;
+            this.lb_thumbnail_image.Text = "Thumbnail_Image";
+            // 
+            // btn_luusp
+            // 
+            this.btn_luusp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_luusp.Location = new System.Drawing.Point(764, 178);
+            this.btn_luusp.Name = "btn_luusp";
+            this.btn_luusp.Size = new System.Drawing.Size(160, 45);
+            this.btn_luusp.TabIndex = 45;
+            this.btn_luusp.Text = "Lưu Sản Phẩm";
+            // 
+            // pb_anhsp
+            // 
+            this.pb_anhsp.Location = new System.Drawing.Point(24, 35);
+            this.pb_anhsp.Name = "pb_anhsp";
+            this.pb_anhsp.Size = new System.Drawing.Size(158, 313);
+            this.pb_anhsp.TabIndex = 44;
+            this.pb_anhsp.TabStop = false;
+            // 
+            // btn_mochonanhsp
+            // 
+            this.btn_mochonanhsp.Location = new System.Drawing.Point(45, 364);
+            this.btn_mochonanhsp.Name = "btn_mochonanhsp";
+            this.btn_mochonanhsp.Size = new System.Drawing.Size(108, 28);
+            this.btn_mochonanhsp.TabIndex = 43;
+            this.btn_mochonanhsp.Text = "Mở";
+            // 
+            // btn_themspvaothuoctinh
+            // 
+            this.btn_themspvaothuoctinh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_themspvaothuoctinh.Location = new System.Drawing.Point(764, 347);
+            this.btn_themspvaothuoctinh.Name = "btn_themspvaothuoctinh";
+            this.btn_themspvaothuoctinh.Size = new System.Drawing.Size(160, 45);
+            this.btn_themspvaothuoctinh.TabIndex = 41;
+            this.btn_themspvaothuoctinh.Text = "Thêm Sản Phẩm Vào Thuộc Tính";
+            // 
+            // cbb_hinhthucban
+            // 
+            this.cbb_hinhthucban.Location = new System.Drawing.Point(326, 370);
+            this.cbb_hinhthucban.Name = "cbb_hinhthucban";
+            this.cbb_hinhthucban.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbb_hinhthucban.Properties.Appearance.Options.UseFont = true;
+            this.cbb_hinhthucban.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbb_hinhthucban.Size = new System.Drawing.Size(413, 22);
+            this.cbb_hinhthucban.TabIndex = 40;
+            // 
+            // cbb_mathuonghieu
+            // 
+            this.cbb_mathuonghieu.Location = new System.Drawing.Point(326, 204);
+            this.cbb_mathuonghieu.Name = "cbb_mathuonghieu";
+            this.cbb_mathuonghieu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.cbb_mathuonghieu.Properties.Appearance.Options.UseFont = true;
+            this.cbb_mathuonghieu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbb_mathuonghieu.Size = new System.Drawing.Size(140, 22);
+            this.cbb_mathuonghieu.TabIndex = 38;
+            // 
             // btn_loadsp
             // 
             this.btn_loadsp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_loadsp.Location = new System.Drawing.Point(754, 278);
+            this.btn_loadsp.Location = new System.Drawing.Point(764, 263);
             this.btn_loadsp.Name = "btn_loadsp";
-            this.btn_loadsp.Size = new System.Drawing.Size(166, 40);
+            this.btn_loadsp.Size = new System.Drawing.Size(160, 45);
             this.btn_loadsp.TabIndex = 11;
             this.btn_loadsp.Text = "Load Sản Phẩm";
             // 
             // btn_xoasp
             // 
             this.btn_xoasp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_xoasp.Location = new System.Drawing.Point(754, 148);
+            this.btn_xoasp.Location = new System.Drawing.Point(764, 97);
             this.btn_xoasp.Name = "btn_xoasp";
-            this.btn_xoasp.Size = new System.Drawing.Size(166, 40);
+            this.btn_xoasp.Size = new System.Drawing.Size(160, 45);
             this.btn_xoasp.TabIndex = 10;
             this.btn_xoasp.Text = "Xóa Sản Phẩm";
-            // 
-            // btn_suasp
-            // 
-            this.btn_suasp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_suasp.Location = new System.Drawing.Point(754, 87);
-            this.btn_suasp.Name = "btn_suasp";
-            this.btn_suasp.Size = new System.Drawing.Size(166, 40);
-            this.btn_suasp.TabIndex = 9;
-            this.btn_suasp.Text = "Sửa Sản Phẩm";
             // 
             // btn_themsp
             // 
             this.btn_themsp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_themsp.Location = new System.Drawing.Point(754, 24);
+            this.btn_themsp.Location = new System.Drawing.Point(764, 21);
             this.btn_themsp.Name = "btn_themsp";
-            this.btn_themsp.Size = new System.Drawing.Size(166, 40);
+            this.btn_themsp.Size = new System.Drawing.Size(160, 45);
             this.btn_themsp.TabIndex = 8;
             this.btn_themsp.Text = "Thêm Sản Phẩm";
             // 
             // cbb_maloai
             // 
-            this.cbb_maloai.Location = new System.Drawing.Point(296, 143);
+            this.cbb_maloai.Location = new System.Drawing.Point(327, 143);
             this.cbb_maloai.Name = "cbb_maloai";
             this.cbb_maloai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.cbb_maloai.Properties.Appearance.Options.UseFont = true;
@@ -464,7 +464,7 @@ namespace GUI
             // 
             // lb_hinhthucban
             // 
-            this.lb_hinhthucban.Location = new System.Drawing.Point(177, 375);
+            this.lb_hinhthucban.Location = new System.Drawing.Point(222, 377);
             this.lb_hinhthucban.Name = "lb_hinhthucban";
             this.lb_hinhthucban.Size = new System.Drawing.Size(69, 13);
             this.lb_hinhthucban.TabIndex = 28;
@@ -472,25 +472,25 @@ namespace GUI
             // 
             // txt_giabinhquan
             // 
-            this.txt_giabinhquan.Location = new System.Drawing.Point(599, 318);
+            this.txt_giabinhquan.Location = new System.Drawing.Point(615, 318);
             this.txt_giabinhquan.Name = "txt_giabinhquan";
             this.txt_giabinhquan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txt_giabinhquan.Properties.Appearance.Options.UseFont = true;
-            this.txt_giabinhquan.Size = new System.Drawing.Size(140, 22);
+            this.txt_giabinhquan.Size = new System.Drawing.Size(124, 22);
             this.txt_giabinhquan.TabIndex = 27;
             // 
             // txt_mota
             // 
-            this.txt_mota.Location = new System.Drawing.Point(600, 263);
+            this.txt_mota.Location = new System.Drawing.Point(616, 263);
             this.txt_mota.Name = "txt_mota";
             this.txt_mota.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txt_mota.Properties.Appearance.Options.UseFont = true;
-            this.txt_mota.Size = new System.Drawing.Size(140, 22);
+            this.txt_mota.Size = new System.Drawing.Size(124, 22);
             this.txt_mota.TabIndex = 26;
             // 
             // txt_giamgia
             // 
-            this.txt_giamgia.Location = new System.Drawing.Point(296, 318);
+            this.txt_giamgia.Location = new System.Drawing.Point(327, 318);
             this.txt_giamgia.Name = "txt_giamgia";
             this.txt_giamgia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txt_giamgia.Properties.Appearance.Options.UseFont = true;
@@ -499,7 +499,7 @@ namespace GUI
             // 
             // lb_giabinhquan
             // 
-            this.lb_giabinhquan.Location = new System.Drawing.Point(465, 321);
+            this.lb_giabinhquan.Location = new System.Drawing.Point(493, 323);
             this.lb_giabinhquan.Name = "lb_giabinhquan";
             this.lb_giabinhquan.Size = new System.Drawing.Size(67, 13);
             this.lb_giabinhquan.TabIndex = 23;
@@ -507,7 +507,7 @@ namespace GUI
             // 
             // lb_mota
             // 
-            this.lb_mota.Location = new System.Drawing.Point(466, 266);
+            this.lb_mota.Location = new System.Drawing.Point(494, 268);
             this.lb_mota.Name = "lb_mota";
             this.lb_mota.Size = new System.Drawing.Size(29, 13);
             this.lb_mota.TabIndex = 22;
@@ -515,7 +515,7 @@ namespace GUI
             // 
             // lb_giamgia
             // 
-            this.lb_giamgia.Location = new System.Drawing.Point(177, 323);
+            this.lb_giamgia.Location = new System.Drawing.Point(222, 325);
             this.lb_giamgia.Name = "lb_giamgia";
             this.lb_giamgia.Size = new System.Drawing.Size(41, 13);
             this.lb_giamgia.TabIndex = 21;
@@ -523,25 +523,25 @@ namespace GUI
             // 
             // txt_slug
             // 
-            this.txt_slug.Location = new System.Drawing.Point(599, 204);
+            this.txt_slug.Location = new System.Drawing.Point(616, 204);
             this.txt_slug.Name = "txt_slug";
             this.txt_slug.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txt_slug.Properties.Appearance.Options.UseFont = true;
-            this.txt_slug.Size = new System.Drawing.Size(140, 22);
+            this.txt_slug.Size = new System.Drawing.Size(123, 22);
             this.txt_slug.TabIndex = 19;
             // 
             // txt_soluong
             // 
-            this.txt_soluong.Location = new System.Drawing.Point(600, 143);
+            this.txt_soluong.Location = new System.Drawing.Point(616, 143);
             this.txt_soluong.Name = "txt_soluong";
             this.txt_soluong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txt_soluong.Properties.Appearance.Options.UseFont = true;
-            this.txt_soluong.Size = new System.Drawing.Size(140, 22);
+            this.txt_soluong.Size = new System.Drawing.Size(124, 22);
             this.txt_soluong.TabIndex = 18;
             // 
             // lb_slug
             // 
-            this.lb_slug.Location = new System.Drawing.Point(465, 207);
+            this.lb_slug.Location = new System.Drawing.Point(493, 209);
             this.lb_slug.Name = "lb_slug";
             this.lb_slug.Size = new System.Drawing.Size(20, 13);
             this.lb_slug.TabIndex = 15;
@@ -549,7 +549,7 @@ namespace GUI
             // 
             // lb_soluong
             // 
-            this.lb_soluong.Location = new System.Drawing.Point(466, 146);
+            this.lb_soluong.Location = new System.Drawing.Point(494, 148);
             this.lb_soluong.Name = "lb_soluong";
             this.lb_soluong.Size = new System.Drawing.Size(45, 13);
             this.lb_soluong.TabIndex = 14;
@@ -557,7 +557,7 @@ namespace GUI
             // 
             // lb_mathuonghieu
             // 
-            this.lb_mathuonghieu.Location = new System.Drawing.Point(177, 209);
+            this.lb_mathuonghieu.Location = new System.Drawing.Point(222, 211);
             this.lb_mathuonghieu.Name = "lb_mathuonghieu";
             this.lb_mathuonghieu.Size = new System.Drawing.Size(78, 13);
             this.lb_mathuonghieu.TabIndex = 13;
@@ -565,7 +565,7 @@ namespace GUI
             // 
             // lb_maloai
             // 
-            this.lb_maloai.Location = new System.Drawing.Point(178, 148);
+            this.lb_maloai.Location = new System.Drawing.Point(223, 150);
             this.lb_maloai.Name = "lb_maloai";
             this.lb_maloai.Size = new System.Drawing.Size(36, 13);
             this.lb_maloai.TabIndex = 12;
@@ -573,25 +573,25 @@ namespace GUI
             // 
             // txt_soluongmausac
             // 
-            this.txt_soluongmausac.Location = new System.Drawing.Point(600, 84);
+            this.txt_soluongmausac.Location = new System.Drawing.Point(616, 84);
             this.txt_soluongmausac.Name = "txt_soluongmausac";
             this.txt_soluongmausac.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txt_soluongmausac.Properties.Appearance.Options.UseFont = true;
-            this.txt_soluongmausac.Size = new System.Drawing.Size(140, 22);
+            this.txt_soluongmausac.Size = new System.Drawing.Size(124, 22);
             this.txt_soluongmausac.TabIndex = 7;
             // 
             // txt_soluongkichthuoc
             // 
-            this.txt_soluongkichthuoc.Location = new System.Drawing.Point(599, 32);
+            this.txt_soluongkichthuoc.Location = new System.Drawing.Point(616, 32);
             this.txt_soluongkichthuoc.Name = "txt_soluongkichthuoc";
             this.txt_soluongkichthuoc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txt_soluongkichthuoc.Properties.Appearance.Options.UseFont = true;
-            this.txt_soluongkichthuoc.Size = new System.Drawing.Size(140, 22);
+            this.txt_soluongkichthuoc.Size = new System.Drawing.Size(123, 22);
             this.txt_soluongkichthuoc.TabIndex = 6;
             // 
             // txt_tensanpham
             // 
-            this.txt_tensanpham.Location = new System.Drawing.Point(296, 84);
+            this.txt_tensanpham.Location = new System.Drawing.Point(327, 84);
             this.txt_tensanpham.Name = "txt_tensanpham";
             this.txt_tensanpham.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.txt_tensanpham.Properties.Appearance.Options.UseFont = true;
@@ -600,7 +600,7 @@ namespace GUI
             // 
             // txt_masanpham
             // 
-            this.txt_masanpham.Location = new System.Drawing.Point(295, 32);
+            this.txt_masanpham.Location = new System.Drawing.Point(326, 32);
             this.txt_masanpham.Name = "txt_masanpham";
             this.txt_masanpham.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_masanpham.Properties.Appearance.Options.UseFont = true;
@@ -609,7 +609,7 @@ namespace GUI
             // 
             // lb_soluongmausac
             // 
-            this.lb_soluongmausac.Location = new System.Drawing.Point(466, 87);
+            this.lb_soluongmausac.Location = new System.Drawing.Point(494, 89);
             this.lb_soluongmausac.Name = "lb_soluongmausac";
             this.lb_soluongmausac.Size = new System.Drawing.Size(88, 13);
             this.lb_soluongmausac.TabIndex = 3;
@@ -617,7 +617,7 @@ namespace GUI
             // 
             // lb_soluongkichthuoc
             // 
-            this.lb_soluongkichthuoc.Location = new System.Drawing.Point(465, 35);
+            this.lb_soluongkichthuoc.Location = new System.Drawing.Point(493, 37);
             this.lb_soluongkichthuoc.Name = "lb_soluongkichthuoc";
             this.lb_soluongkichthuoc.Size = new System.Drawing.Size(100, 13);
             this.lb_soluongkichthuoc.TabIndex = 2;
@@ -625,7 +625,7 @@ namespace GUI
             // 
             // lb_tensanpham
             // 
-            this.lb_tensanpham.Location = new System.Drawing.Point(178, 89);
+            this.lb_tensanpham.Location = new System.Drawing.Point(223, 91);
             this.lb_tensanpham.Name = "lb_tensanpham";
             this.lb_tensanpham.Size = new System.Drawing.Size(68, 13);
             this.lb_tensanpham.TabIndex = 1;
@@ -633,7 +633,7 @@ namespace GUI
             // 
             // lb_masanpham
             // 
-            this.lb_masanpham.Location = new System.Drawing.Point(177, 35);
+            this.lb_masanpham.Location = new System.Drawing.Point(222, 37);
             this.lb_masanpham.Name = "lb_masanpham";
             this.lb_masanpham.Size = new System.Drawing.Size(64, 13);
             this.lb_masanpham.TabIndex = 0;
@@ -1195,17 +1195,6 @@ namespace GUI
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // gb_dsthuoctinh
-            // 
-            this.gb_dsthuoctinh.Controls.Add(this.gct_ttsp);
-            this.gb_dsthuoctinh.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gb_dsthuoctinh.Location = new System.Drawing.Point(3, 417);
-            this.gb_dsthuoctinh.Name = "gb_dsthuoctinh";
-            this.gb_dsthuoctinh.Size = new System.Drawing.Size(934, 271);
-            this.gb_dsthuoctinh.TabIndex = 49;
-            this.gb_dsthuoctinh.TabStop = false;
-            this.gb_dsthuoctinh.Text = "Danh sách thuộc tính";
-            // 
             // UC_SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1225,12 +1214,13 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.gb_ctsp.ResumeLayout(false);
             this.gb_ctsp.PerformLayout();
+            this.gb_dsthuoctinh.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gct_ttsp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_thumbnail_image.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_anhsp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_hinhthucban.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_mathuonghieu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gct_ttsp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_maloai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_giabinhquan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_mota.Properties)).EndInit();
@@ -1278,7 +1268,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.txt_manhomloai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            this.gb_dsthuoctinh.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1325,7 +1314,6 @@ namespace GUI
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton btn_loadsp;
         private DevExpress.XtraEditors.SimpleButton btn_xoasp;
-        private DevExpress.XtraEditors.SimpleButton btn_suasp;
         private DevExpress.XtraEditors.SimpleButton btn_themsp;
         private DevExpress.XtraEditors.ComboBoxEdit cbb_maloai;
         private DevExpress.XtraEditors.LabelControl lb_hinhthucban;
@@ -1386,7 +1374,7 @@ namespace GUI
         private DevExpress.XtraEditors.LabelControl lb_tennhomloai;
         private DevExpress.XtraEditors.LabelControl lb_manhomloai;
         private DevExpress.XtraEditors.SimpleButton btn_thongtinloaisp;
-        private DevExpress.XtraEditors.SimpleButton btn_themspvaothongtin;
+        private DevExpress.XtraEditors.SimpleButton btn_themspvaothuoctinh;
         private System.Windows.Forms.PictureBox pb_anhsp;
         private DevExpress.XtraEditors.SimpleButton btn_mochonanhsp;
         private DevExpress.XtraEditors.SimpleButton btn_luusp;

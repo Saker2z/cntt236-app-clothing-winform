@@ -66,10 +66,32 @@ namespace BLL
             return sp.get_all_tt_SanPham();
         }
 	
-	public List<product> get_all_ttsp_by_id_DTO(int masanpham)
+	    public List<thuoc_tinh_DTO> get_all_ttsp_by_id_DTO(int masanpham)
         {
             return sp.get_all_ttsp_by_id_DTO(masanpham);
         }
 
+        public List<thuoc_tinh_DTO> GetAllProducts()
+        {
+            return sp.GetAllProducts();
         }
+
+        public bool addThuocTinhSanPham(thuoc_tinh_DTO tt)
+        {
+            return sp.addThuocTinhSanPham(tt);
+        }
+
+        public bool updateThuocTinhSanPham(thuoc_tinh_DTO tt)
+        {
+            return sp.updateThuocTinhSanPham(tt); // Gọi tầng DAL
+        }
+
+
+        public bool deleteThuocTinhSanPham(int maThuocTinh)
+        {
+            return sp.deleteThuocTinhSanPham(maThuocTinh); // Gọi tầng DAL
+        }
+
+
     }
+}
