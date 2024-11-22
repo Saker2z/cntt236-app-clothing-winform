@@ -8,7 +8,7 @@
     <Setting Name="name_role" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="QL_SHOP_FASHIONConnectionString" Type="(Connection string)" Scope="Application">
+    <Setting Name="QL_SHOP_FASHIONConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;ConnectionString&gt;Data Source=DESKTOP-UELF38N\THANHTRUC;Initial Catalog=QL_SHOP_FASHION;User ID=sa;Password=123&lt;/ConnectionString&gt;

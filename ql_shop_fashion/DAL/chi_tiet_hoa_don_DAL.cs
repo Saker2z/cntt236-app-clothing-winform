@@ -27,7 +27,8 @@ namespace DAL
                     ma_hoa_don=maHD,
                     ma_thuoc_tinh=maSP,
                     gia=giaBan,
-                    so_luong=soLuongMua
+                    so_luong=soLuongMua,
+                    trang_thai="bình thường"
                    
                 };
 

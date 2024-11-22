@@ -1006,3 +1006,151 @@ E:\Cac mon hoc\Github\backup16\cntt236-app-clothing-winform\ql_shop_fashion\DAL\
 E:\Cac mon hoc\Github\backup16\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.dll
 E:\Cac mon hoc\Github\backup16\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.pdb
 E:\Cac mon hoc\Github\backup16\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.Properties.Resources.resources
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\DAL.dll.config
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\DAL.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\DAL.pdb
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\BouncyCastle.Crypto.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\DTO.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Google.Protobuf.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\K4os.Compression.LZ4.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\K4os.Hash.xxHash.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.EntityFrameworkCore.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Configuration.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Options.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\MySql.Data.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\MySql.Data.EntityFrameworkCore.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Renci.SshNet.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Buffers.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Collections.Immutable.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.ComponentModel.Annotations.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Memory.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Numerics.Vectors.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Ubiety.Dns.Core.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Zstandard.Net.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\DTO.pdb
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\DTO.dll.config
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Google.Protobuf.pdb
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Google.Protobuf.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\K4os.Compression.LZ4.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\K4os.Hash.xxHash.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.EntityFrameworkCore.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Configuration.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Options.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\MySql.Data.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\MySql.Data.EntityFrameworkCore.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Renci.SshNet.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Collections.Immutable.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.pdb
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.Properties.Resources.resources
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.pdb
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\DAL.dll.config
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\DAL.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\DAL.pdb
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\DTO.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Configuration.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\MySql.Data.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\MySql.Data.EntityFrameworkCore.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Renci.SshNet.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Buffers.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Collections.Immutable.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Memory.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Zstandard.Net.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\DTO.pdb
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\DTO.dll.config
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.EntityFrameworkCore.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Configuration.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\MySql.Data.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\MySql.Data.EntityFrameworkCore.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\Renci.SshNet.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Collections.Immutable.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DAL\obj\Debug\DAL.csproj.CopyComplete

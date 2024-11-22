@@ -40,9 +40,9 @@ namespace GUI
         {
             InitializeComponent();
 
-            id_nv = idnv;  
+            id_nv = idnv;
             this.Load += PhieuNhap_Load;
-    
+
             cbb_ncc.TextChanged += Cbb_ncc_TextChanged;
             cbb_tensp.TextChanged += Cbb_tensp_TextChanged;
             cbb_tensp.SelectedIndexChanged += Cbb_tensp_SelectedIndexChanged;
@@ -50,18 +50,18 @@ namespace GUI
             cbb_sl.SelectedIndexChanged += Cbb_sl_SelectedIndexChanged;
 
             bt_them.ItemClick += Bt_them_ItemClick;
-            bt_xoa.ItemClick += Bt_xoa_ItemClick;            
+            bt_xoa.ItemClick += Bt_xoa_ItemClick;
             bt_sua.ItemClick += Bt_sua_ItemClick;
 
             dgv_sp_add.CellClick += Dgv_sp_add_CellClick1;
             bt_add_all.ItemClick += Bt_add_all_ItemClick;
             bt_load.ItemClick += Bt_load_ItemClick;
 
-           
+
             holdTimer = new Timer();
             holdTimer.Interval = 1000;
-          
-        
+
+
             lb_thanhtien.MouseEnter += Lb_thanhtien_MouseEnter; lb_thanhtien.MouseLeave += Lb_thanhtien_MouseLeave;
 
         }
@@ -83,11 +83,11 @@ namespace GUI
             ShowSupplierTotalsDialog(dgv_sp_add);
         }
 
-    
 
-    
 
-       
+
+
+
 
 
 
@@ -176,8 +176,8 @@ namespace GUI
                 .Select(row => new
                 {
                     MaNhaCungCap = Convert.ToInt32(row.Cells["ma_nha_cung_cap"].Value)
-                  
-        })
+
+                })
                 .Distinct()
                 .ToList();
 
@@ -221,7 +221,7 @@ namespace GUI
             List<DataTable> productTables = GroupProductsBySupplier();
             nhap_bll = new nhap_hang_sql_BLL();
             int count = 0;
-         
+
 
             // Duyệt qua từng DataTable
             foreach (DataTable dt in productTables)
@@ -233,7 +233,7 @@ namespace GUI
                 // Duyệt qua từng hàng trong DataTable
                 foreach (DataRow row in dt.Rows)
                 {
-                 
+
                     chi_tiet_nhap_hang a = new chi_tiet_nhap_hang
                     {
                         ma_san_pham = Convert.ToInt32(row["ma_san_pham"]),
@@ -249,11 +249,11 @@ namespace GUI
                 {
                     MessageBox.Show("Không có sản phẩm nào để thêm.");
                     return;
-                } 
-                if(count == 0)
+                }
+                if (count == 0)
                 {
                     count = 1;
-                }    
+                }
                 if (mancc == 0)
                 {
                     clear_all();
@@ -285,13 +285,13 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Lỗi đơn thứ " + count + " !!!");
-                   
+
                     return;
                 }
 
                 count++;
             }
-           
+
         }
 
 
@@ -329,11 +329,11 @@ namespace GUI
         {
             if (check)
             {
-               if( check_in_put() == false)
+                if (check_in_put() == false)
                 {
                     MessageBox.Show("Dữ liệu không hợp lệ!!!", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                }    
+                }
                 sp_bll = new san_pham_sql_BLL();
                 ncc_bll = new nha_cung_cap_sql_BLL();
 
@@ -415,10 +415,10 @@ namespace GUI
             cbb_ncc.SelectedIndex = -1;
             cbb_sl.SelectedIndex = 0;
             txt_gianhap.Text = "0";
-          
+
             dgv_gia.Rows.Clear(); // Xóa tất cả các dòng trong DataGridView nếu có
             dgv_gia.Refresh();
-          
+
             dgv_sp_add.Rows.Clear(); // Xóa tất cả các dòng trong DataGridView nếu có
             dgv_sp_add.Refresh();
             lb_thanhtien.Text = "Thành tiền: 0";
@@ -482,8 +482,8 @@ namespace GUI
 
             // Lấy ID sản phẩm
             int idsp = sp_bll.get_id_sp_by_name(cbb_tensp.SelectedItem.ToString());
-               
-            if (IsDuplicateEntry(id, idsp)!=true)
+
+            if (IsDuplicateEntry(id, idsp) != true)
 
             {
 
@@ -545,17 +545,17 @@ namespace GUI
         }
         bool check_in_put()
         {
-            if(cbb_tensp.SelectedIndex ==  -1 )
+            if (cbb_tensp.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn sản phẩm cần nhập hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
-            }    
-            if(cbb_ncc.SelectedIndex == -1)
+            }
+            if (cbb_ncc.SelectedIndex == -1)
             {
                 MessageBox.Show("Nhà cung cấp không được để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
-            }  
-            if(cbb_sl.SelectedIndex == 0 || cbb_sl.SelectedIndex == -1 || int.Parse(cbb_sl.SelectedItem.ToString()) <0 )
+            }
+            if (cbb_sl.SelectedIndex == 0 || cbb_sl.SelectedIndex == -1 || int.Parse(cbb_sl.SelectedItem.ToString()) < 0)
             {
                 MessageBox.Show("Vui lòng chọn giá trị > 0.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -565,7 +565,7 @@ namespace GUI
         private void Cbb_ncc_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbb_sl.SelectedIndex = 0;
-            if(cbb_ncc.SelectedIndex==-1)
+            if (cbb_ncc.SelectedIndex == -1)
             {
                 if (cbb_tensp.SelectedIndex != -1)
                 {
@@ -575,10 +575,10 @@ namespace GUI
                 }
                 txt_dg.Text = "0";
                 return;
-            }    
+            }
             load_gia();
-          
-              
+
+
         }
         void dgv_sp()
         {
@@ -610,7 +610,7 @@ namespace GUI
             {
                 if (cbb_tensp.SelectedItem != null)
                 {
-                   
+
                     sp_bll = new san_pham_sql_BLL();
                     int? id = sp_bll.get_id_sp_by_name(cbb_tensp.SelectedItem.ToString());
 
@@ -627,11 +627,11 @@ namespace GUI
 
                     }
 
-                    
+
                 }
                 else
                 {
-                   
+
                     txt_dg.Text = "";
                     cbb_ncc.Properties.Items.Clear();
                     cbb_ncc.SelectedIndex = -1;
@@ -639,12 +639,12 @@ namespace GUI
                     return;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return;
             }
         }
-      
+
         void load_cbb_sp()
         {
             sp_bll = new san_pham_sql_BLL();
@@ -660,7 +660,7 @@ namespace GUI
         }
         void load_gia()
         {
-            
+
 
             // Kiểm tra nếu không có dòng nào trong DataGridView thì thoát hàm
             if (dgv_gia.Rows.Count == 0)
@@ -690,9 +690,9 @@ namespace GUI
 
         }
 
-        private void InitializeColumns( int id)
+        private void InitializeColumns(int id)
         {
-          
+
             nccsp_bll = new ncc_sp_sql_BLL();
             dgv_gia.DataSource = nccsp_bll.get_nccsp_by_id_sp(id);
 
@@ -834,7 +834,7 @@ namespace GUI
         {
 
             nhan_vien_sql_BLL nv = new nhan_vien_sql_BLL();
-            
+
             date_ngaynhap.Value = DateTime.Now;
             date_ngaynhap.Enabled = false;
 
@@ -855,11 +855,11 @@ namespace GUI
             cbb_sl.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // Đặt màu nền và viền cho DataGridView
             dgv_gia.BackgroundColor = Color.White;
-                      // Màu viền giữa các ô
+            // Màu viền giữa các ô
 
             dgv_sp_add.BackgroundColor = Color.White;
-          
-           
+
+
 
         }
         private void PhieuNhap_Load(object sender, EventArgs e)
@@ -881,7 +881,7 @@ namespace GUI
 
         private void bbiNew_ItemClick(object sender, ItemClickEventArgs e)
         {
-           
+
         }
     }
 }

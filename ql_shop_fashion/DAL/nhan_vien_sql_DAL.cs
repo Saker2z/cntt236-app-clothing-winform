@@ -26,8 +26,8 @@ namespace DAL
                 int maNhanVien = a.ma_nhan_vien;
 
                 // 2. Tạo tên đăng nhập và mật khẩu tự động cho nhân viên
-                string tenDangNhap = $"user"+a.ma_nhan_vien;
-               
+                string tenDangNhap = $"user" + a.ma_nhan_vien;
+
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(tenDangNhap);
 
                 // 3. Tạo tài khoản cho nhân viên trong bảng tai_khoan
@@ -42,7 +42,7 @@ namespace DAL
                 data.SubmitChanges();
 
                 // Lấy ID của tài khoản vừa thêm
-                int idTaiKhoan = taiKhoan.id;
+                int idTaiKhoan = taiKhoan.tai_khoan_id;
 
                 // 4. Gán tài khoản với nhân viên
                 a.tai_khoan_id = idTaiKhoan;
@@ -60,7 +60,7 @@ namespace DAL
                 // 6. Gán quyền cho tài khoản trong bảng tai_khoan_nhom_quyen
                 var taiKhoanNhomQuyen = new tai_khoan_nhom_quyen
                 {
-                    id_tai_khoan = idTaiKhoan,
+                    tai_khoan_id = idTaiKhoan,
                     id_nhom_quyen = idNhomQuyen,
                     create_at = DateTime.Now
                 };
@@ -141,11 +141,11 @@ namespace DAL
                 }
 
                 // Lấy tài khoản liên kết với nhân viên (nếu có)
-                var taiKhoan = data.tai_khoans.FirstOrDefault(tk => tk.id == nhanVien.tai_khoan_id);
+                var taiKhoan = data.tai_khoans.FirstOrDefault(tk => tk.tai_khoan_id == nhanVien.tai_khoan_id);
                 if (taiKhoan != null)
                 {
                     // Xóa tất cả nhóm quyền liên quan đến tài khoản
-                    var taiKhoanNhomQuyens = data.tai_khoan_nhom_quyens.Where(tknq => tknq.id_tai_khoan == taiKhoan.id).ToList();
+                    var taiKhoanNhomQuyens = data.tai_khoan_nhom_quyens.Where(tknq => tknq.tai_khoan_id == taiKhoan.tai_khoan_id).ToList();
                     data.tai_khoan_nhom_quyens.DeleteAllOnSubmit(taiKhoanNhomQuyens);
 
                     // Xóa tài khoản
@@ -174,6 +174,26 @@ namespace DAL
                            .FirstOrDefault(); // Lấy giá trị đầu tiên hoặc null nếu không tìm thấy
 
             return name; // Trả về tên nhân viên hoặc null
+        }
+        public nhan_vien GetNhanVienByMaNV(int maNhanVien)
+        {
+            try
+            {
+                // Sử dụng LINQ để tìm nhân viên theo mã nhân viên
+                var nhanVien = data.nhan_viens.FirstOrDefault(nv => nv.ma_nhan_vien == maNhanVien);
+
+                if (nhanVien == null)
+                {
+                    throw new Exception($"Không tìm thấy nhân viên với mã: {maNhanVien}");
+                }
+
+                return nhanVien; // Trả về nhân viên tìm được
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi lấy thông tin nhân viên: {ex.Message}");
+                return null; // Trả về null nếu xảy ra lỗi
+            }
         }
 
 

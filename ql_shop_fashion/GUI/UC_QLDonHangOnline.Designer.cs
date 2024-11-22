@@ -29,8 +29,8 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QLDonHangOnline));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtMaHoaDon = new System.Windows.Forms.MaskedTextBox();
             this.btnDuyetDon = new DevExpress.XtraEditors.SimpleButton();
             this.txtTenKH = new System.Windows.Forms.MaskedTextBox();
             this.gcCTHDOn = new DevExpress.XtraGrid.GridControl();
@@ -52,12 +52,11 @@ namespace GUI
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtMaHoaDon = new System.Windows.Forms.MaskedTextBox();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcCTHDOn)).BeginInit();
@@ -72,11 +71,11 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -96,14 +95,20 @@ namespace GUI
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txtMaHoaDon
+            // 
+            this.txtMaHoaDon.Location = new System.Drawing.Point(734, 50);
+            this.txtMaHoaDon.Name = "txtMaHoaDon";
+            this.txtMaHoaDon.Size = new System.Drawing.Size(485, 59);
+            this.txtMaHoaDon.TabIndex = 69;
+            // 
             // btnDuyetDon
             // 
             this.btnDuyetDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDuyetDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDuyetDon.ImageOptions.Image")));
-            this.btnDuyetDon.Location = new System.Drawing.Point(635, 104);
+            this.btnDuyetDon.Location = new System.Drawing.Point(635, 113);
             this.btnDuyetDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDuyetDon.Name = "btnDuyetDon";
-            this.btnDuyetDon.Size = new System.Drawing.Size(584, 36);
+            this.btnDuyetDon.Size = new System.Drawing.Size(584, 27);
             this.btnDuyetDon.StyleController = this.layoutControl1;
             this.btnDuyetDon.TabIndex = 68;
             this.btnDuyetDon.Text = "Duyệt đơn";
@@ -288,11 +293,20 @@ namespace GUI
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnDuyetDon;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 54);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 63);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(588, 40);
+            this.layoutControlItem7.Size = new System.Drawing.Size(588, 31);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.txtMaHoaDon;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(588, 63);
+            this.layoutControlItem8.Text = "Mã hóa đơn";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(96, 16);
             // 
             // layoutControlGroup3
             // 
@@ -330,22 +344,6 @@ namespace GUI
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // txtMaHoaDon
-            // 
-            this.txtMaHoaDon.Location = new System.Drawing.Point(734, 50);
-            this.txtMaHoaDon.Name = "txtMaHoaDon";
-            this.txtMaHoaDon.Size = new System.Drawing.Size(485, 50);
-            this.txtMaHoaDon.TabIndex = 69;
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.txtMaHoaDon;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(588, 54);
-            this.layoutControlItem8.Text = "Mã hóa đơn";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(96, 16);
-            // 
             // UC_QLDonHangOnline
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -367,11 +365,11 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }

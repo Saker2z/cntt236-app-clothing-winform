@@ -19,7 +19,7 @@ namespace GUI
         public event EventHandler FormClosedEvent;
         private List<thuoc_tinh_san_pham> ttsp;
         private int iddonduyet;
-        
+
 
         public frmDuyetSanPham(int id)
         {
@@ -111,10 +111,10 @@ namespace GUI
                 int sl_gdv = Convert.ToInt32(gridView1.GetRowCellValue(dongChon, "so_luong"));
                 int totalSoLuong = 0;
                 string tt = Convert.ToString(gridView1.GetRowCellValue(dongChon, "trang_thai"));
-                if(tt.Equals("Đã duyệt"))
+                if (tt.Equals("Đã duyệt"))
                 {
                     return 3;
-                }    
+                }
 
                 // Duyệt qua tất cả các dòng trong GridView thứ 2
                 for (int i = 0; i < gridView2.RowCount; i++)
@@ -274,10 +274,10 @@ namespace GUI
 
 
 
-            // Xử lý sự kiện MouseClick
+        // Xử lý sự kiện MouseClick
 
 
-            private void FrmDuyetSanPham_Load(object sender, EventArgs e)
+        private void FrmDuyetSanPham_Load(object sender, EventArgs e)
         {
             load_gdv_duyet_sp(0);
             load_dgv_sp(dgv_dsnhap, ctnhap_bll.get_ct_list_by_id(iddonduyet));
@@ -302,9 +302,9 @@ namespace GUI
             GridView gridView = gridControl.MainView as GridView;
             if (gridView == null)
                 return;
-        
 
-           
+
+
 
             gridControl.DataSource = products;
             gridView.OptionsBehavior.Editable = false;
@@ -323,7 +323,8 @@ namespace GUI
             gridView.Columns["updated_at"].Visible = false;
             gridView.Columns["nhap_hang"].Visible = false;
             gridView.Columns["san_pham"].Visible = false;
-        
+            gridView.Columns["san_pham1"].Visible = false;
+            gridView.Columns["nhap_hang1"].Visible = false;
             gridView.RefreshData();
         }
         private void SetupGridControl(GridControl gridControl, List<product> products)
@@ -367,6 +368,9 @@ namespace GUI
             gridView.Columns["ten_kich_thuoc"].Width = 50; // Chiều rộng cột Tên Kích Thước
             gridView.Columns["ten_mau_sac"].Width = 50;    // Chiều rộng cột Tên Màu Sắc
             gridView.Columns["so_luong_ton"].Width = 70;   // Chiều rộng cột Số Lượng Tồn
+            gridView.Columns["ma_mau_sac"].Visible = false;
+            gridView.Columns["ma_kich_thuoc"].Visible = false;
+            gridView.Columns["ma_san_pham"].Visible = false;
             SetupSpinEditForColumn(gridView);
 
         }
@@ -391,6 +395,6 @@ namespace GUI
 
     }
 
- 
-   
+
+
 }

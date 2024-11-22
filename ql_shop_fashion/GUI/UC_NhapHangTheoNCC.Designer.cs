@@ -127,31 +127,35 @@ namespace GUI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.menuchucnang;
-            this.barDockControlTop.Size = new System.Drawing.Size(840, 24);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(980, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 614);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 756);
             this.barDockControlBottom.Manager = this.menuchucnang;
-            this.barDockControlBottom.Size = new System.Drawing.Size(840, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(980, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.menuchucnang;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 590);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 726);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(840, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(980, 30);
             this.barDockControlRight.Manager = this.menuchucnang;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 590);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 726);
             // 
             // barButtonItem4
             // 
@@ -161,12 +165,13 @@ namespace GUI
             // 
             // txt_tenncc
             // 
-            this.txt_tenncc.Location = new System.Drawing.Point(3, 3);
+            this.txt_tenncc.Location = new System.Drawing.Point(3, 4);
+            this.txt_tenncc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_tenncc.MenuManager = this.menuchucnang;
             this.txt_tenncc.Name = "txt_tenncc";
             this.txt_tenncc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tenncc.Properties.Appearance.Options.UseFont = true;
-            this.txt_tenncc.Size = new System.Drawing.Size(410, 22);
+            this.txt_tenncc.Size = new System.Drawing.Size(478, 26);
             this.txt_tenncc.TabIndex = 4;
             // 
             // timkiemncc
@@ -177,9 +182,10 @@ namespace GUI
             this.timkiemncc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.timkiemncc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.timkiemncc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("timkiemncc.ImageOptions.Image")));
-            this.timkiemncc.Location = new System.Drawing.Point(390, 4);
+            this.timkiemncc.Location = new System.Drawing.Point(455, 5);
+            this.timkiemncc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.timkiemncc.Name = "timkiemncc";
-            this.timkiemncc.Size = new System.Drawing.Size(23, 20);
+            this.timkiemncc.Size = new System.Drawing.Size(27, 25);
             this.timkiemncc.TabIndex = 5;
             // 
             // timkiemsanphamcuancc
@@ -190,19 +196,21 @@ namespace GUI
             this.timkiemsanphamcuancc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.timkiemsanphamcuancc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.timkiemsanphamcuancc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("timkiemsanphamcuancc.ImageOptions.Image")));
-            this.timkiemsanphamcuancc.Location = new System.Drawing.Point(809, 3);
+            this.timkiemsanphamcuancc.Location = new System.Drawing.Point(944, 4);
+            this.timkiemsanphamcuancc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.timkiemsanphamcuancc.Name = "timkiemsanphamcuancc";
-            this.timkiemsanphamcuancc.Size = new System.Drawing.Size(23, 20);
+            this.timkiemsanphamcuancc.Size = new System.Drawing.Size(27, 25);
             this.timkiemsanphamcuancc.TabIndex = 9;
             // 
             // txt_timkiemsanphamcuancc
             // 
-            this.txt_timkiemsanphamcuancc.Location = new System.Drawing.Point(422, 2);
+            this.txt_timkiemsanphamcuancc.Location = new System.Drawing.Point(492, 2);
+            this.txt_timkiemsanphamcuancc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_timkiemsanphamcuancc.MenuManager = this.menuchucnang;
             this.txt_timkiemsanphamcuancc.Name = "txt_timkiemsanphamcuancc";
             this.txt_timkiemsanphamcuancc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_timkiemsanphamcuancc.Properties.Appearance.Options.UseFont = true;
-            this.txt_timkiemsanphamcuancc.Size = new System.Drawing.Size(410, 22);
+            this.txt_timkiemsanphamcuancc.Size = new System.Drawing.Size(478, 26);
             this.txt_timkiemsanphamcuancc.TabIndex = 8;
             // 
             // panel_chinh
@@ -214,38 +222,44 @@ namespace GUI
             this.panel_chinh.Controls.Add(this.dgv_sanphamcuancc);
             this.panel_chinh.Controls.Add(this.txt_timkiemsanphamcuancc);
             this.panel_chinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_chinh.Location = new System.Drawing.Point(0, 24);
+            this.panel_chinh.Location = new System.Drawing.Point(0, 30);
+            this.panel_chinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_chinh.Name = "panel_chinh";
-            this.panel_chinh.Size = new System.Drawing.Size(840, 590);
+            this.panel_chinh.Size = new System.Drawing.Size(980, 726);
             this.panel_chinh.TabIndex = 10;
             // 
             // dgv_ncc
             // 
             this.dgv_ncc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ncc.Location = new System.Drawing.Point(3, 32);
+            this.dgv_ncc.Location = new System.Drawing.Point(3, 39);
+            this.dgv_ncc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgv_ncc.Name = "dgv_ncc";
-            this.dgv_ncc.Size = new System.Drawing.Size(410, 555);
+            this.dgv_ncc.RowHeadersWidth = 51;
+            this.dgv_ncc.Size = new System.Drawing.Size(478, 683);
             this.dgv_ncc.TabIndex = 11;
             // 
             // dgv_sanphamcuancc
             // 
             this.dgv_sanphamcuancc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_sanphamcuancc.Location = new System.Drawing.Point(422, 32);
+            this.dgv_sanphamcuancc.Location = new System.Drawing.Point(492, 39);
+            this.dgv_sanphamcuancc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgv_sanphamcuancc.Name = "dgv_sanphamcuancc";
-            this.dgv_sanphamcuancc.Size = new System.Drawing.Size(410, 555);
+            this.dgv_sanphamcuancc.RowHeadersWidth = 51;
+            this.dgv_sanphamcuancc.Size = new System.Drawing.Size(478, 683);
             this.dgv_sanphamcuancc.TabIndex = 10;
             // 
             // UC_NhapHangTheoNCC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel_chinh);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_NhapHangTheoNCC";
-            this.Size = new System.Drawing.Size(840, 614);
+            this.Size = new System.Drawing.Size(980, 756);
             ((System.ComponentModel.ISupportInitialize)(this.menuchucnang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tenncc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_timkiemsanphamcuancc.Properties)).EndInit();

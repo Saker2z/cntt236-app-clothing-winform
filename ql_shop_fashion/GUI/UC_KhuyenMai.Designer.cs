@@ -29,8 +29,8 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_KhuyenMai));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnLoad = new DevExpress.XtraEditors.SimpleButton();
             this.txtGiaTri = new DevExpress.XtraEditors.TextEdit();
             this.dgvKhuyenMai = new DevExpress.XtraGrid.GridControl();
             this.dgvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -84,7 +84,6 @@ namespace GUI
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem34 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnLoad = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -157,6 +156,17 @@ namespace GUI
             this.layoutControl1.Size = new System.Drawing.Size(1000, 717);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoad.Location = new System.Drawing.Point(487, 180);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(134, 27);
+            this.btnLoad.StyleController = this.layoutControl1;
+            this.btnLoad.TabIndex = 69;
+            this.btnLoad.Text = "Load";
             // 
             // txtGiaTri
             // 
@@ -297,11 +307,10 @@ namespace GUI
             // btnThoat
             // 
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(487, 266);
+            this.btnThoat.Location = new System.Drawing.Point(487, 245);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(134, 36);
+            this.btnThoat.Size = new System.Drawing.Size(134, 27);
             this.btnThoat.StyleController = this.layoutControl1;
             this.btnThoat.TabIndex = 66;
             this.btnThoat.Text = "Thoát";
@@ -309,11 +318,10 @@ namespace GUI
             // btnSua
             // 
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
-            this.btnSua.Location = new System.Drawing.Point(487, 136);
+            this.btnSua.Location = new System.Drawing.Point(487, 121);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(134, 36);
+            this.btnSua.Size = new System.Drawing.Size(134, 27);
             this.btnSua.StyleController = this.layoutControl1;
             this.btnSua.TabIndex = 65;
             this.btnSua.Text = "Sửa";
@@ -321,11 +329,10 @@ namespace GUI
             // btnXoa
             // 
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(487, 74);
+            this.btnXoa.Location = new System.Drawing.Point(487, 66);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(134, 36);
+            this.btnXoa.Size = new System.Drawing.Size(134, 27);
             this.btnXoa.StyleController = this.layoutControl1;
             this.btnXoa.TabIndex = 64;
             this.btnXoa.Text = "Xoá";
@@ -333,11 +340,10 @@ namespace GUI
             // btnThem
             // 
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.Location = new System.Drawing.Point(487, 12);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(134, 36);
+            this.btnThem.Size = new System.Drawing.Size(134, 27);
             this.btnThem.StyleController = this.layoutControl1;
             this.btnThem.TabIndex = 63;
             this.btnThem.Text = "Thêm";
@@ -593,9 +599,9 @@ namespace GUI
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(475, 294);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(475, 264);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(138, 31);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(138, 61);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem11
@@ -603,34 +609,34 @@ namespace GUI
             this.layoutControlItem11.Control = this.btnThem;
             this.layoutControlItem11.Location = new System.Drawing.Point(475, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(138, 40);
+            this.layoutControlItem11.Size = new System.Drawing.Size(138, 31);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.btnXoa;
-            this.layoutControlItem12.Location = new System.Drawing.Point(475, 62);
+            this.layoutControlItem12.Location = new System.Drawing.Point(475, 54);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(138, 40);
+            this.layoutControlItem12.Size = new System.Drawing.Size(138, 31);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.btnSua;
-            this.layoutControlItem13.Location = new System.Drawing.Point(475, 124);
+            this.layoutControlItem13.Location = new System.Drawing.Point(475, 109);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(138, 40);
+            this.layoutControlItem13.Size = new System.Drawing.Size(138, 31);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.btnThoat;
-            this.layoutControlItem14.Location = new System.Drawing.Point(475, 254);
+            this.layoutControlItem14.Location = new System.Drawing.Point(475, 233);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(138, 40);
+            this.layoutControlItem14.Size = new System.Drawing.Size(138, 31);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
@@ -662,25 +668,25 @@ namespace GUI
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(475, 40);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(475, 31);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(138, 22);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(138, 23);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(475, 102);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(475, 85);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(138, 22);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(138, 24);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(475, 228);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(475, 199);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(138, 26);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(138, 34);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem15
@@ -714,33 +720,21 @@ namespace GUI
             this.layoutControlItem16.Text = "Code";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(147, 16);
             // 
-            // btnLoad
-            // 
-            this.btnLoad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnLoad.Location = new System.Drawing.Point(487, 200);
-            this.btnLoad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(134, 36);
-            this.btnLoad.StyleController = this.layoutControl1;
-            this.btnLoad.TabIndex = 69;
-            this.btnLoad.Text = "Load";
-            // 
             // layoutControlItem17
             // 
             this.layoutControlItem17.Control = this.btnLoad;
-            this.layoutControlItem17.Location = new System.Drawing.Point(475, 188);
+            this.layoutControlItem17.Location = new System.Drawing.Point(475, 168);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(138, 40);
+            this.layoutControlItem17.Size = new System.Drawing.Size(138, 31);
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem17.TextVisible = false;
             // 
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(475, 164);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(475, 140);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(138, 24);
+            this.emptySpaceItem8.Size = new System.Drawing.Size(138, 28);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
             // UC_KhuyenMai

@@ -58,11 +58,11 @@ namespace GUI
             // 
             // nhacungcap
             // 
-            this.nhacungcap.Location = new System.Drawing.Point(14, 14);
+            this.nhacungcap.Location = new System.Drawing.Point(12, 12);
             this.nhacungcap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nhacungcap.Name = "nhacungcap";
             this.nhacungcap.SelectedTabPage = this.PageNhaCungCap;
-            this.nhacungcap.Size = new System.Drawing.Size(958, 691);
+            this.nhacungcap.Size = new System.Drawing.Size(962, 695);
             this.nhacungcap.TabIndex = 4;
             this.nhacungcap.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.PageNhaCungCap,
@@ -72,7 +72,7 @@ namespace GUI
             // 
             this.PageNhaCungCap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PageNhaCungCap.Name = "PageNhaCungCap";
-            this.PageNhaCungCap.Size = new System.Drawing.Size(956, 660);
+            this.PageNhaCungCap.Size = new System.Drawing.Size(960, 664);
             this.PageNhaCungCap.Text = "Nhà Cung Cấp";
             // 
             // PageNhaCungCapSanPham
@@ -80,7 +80,7 @@ namespace GUI
             this.PageNhaCungCapSanPham.Controls.Add(this.datagridview_nccsp);
             this.PageNhaCungCapSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PageNhaCungCapSanPham.Name = "PageNhaCungCapSanPham";
-            this.PageNhaCungCapSanPham.Size = new System.Drawing.Size(956, 660);
+            this.PageNhaCungCapSanPham.Size = new System.Drawing.Size(960, 664);
             this.PageNhaCungCapSanPham.Text = "Nhà Cung Cấp Sản Phẩm";
             // 
             // datagridview_nccsp
@@ -89,7 +89,7 @@ namespace GUI
             this.datagridview_nccsp.Location = new System.Drawing.Point(0, 0);
             this.datagridview_nccsp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.datagridview_nccsp.Name = "datagridview_nccsp";
-            this.datagridview_nccsp.Size = new System.Drawing.Size(956, 660);
+            this.datagridview_nccsp.Size = new System.Drawing.Size(960, 664);
             this.datagridview_nccsp.TabIndex = 3;
             // 
             // Root
@@ -107,7 +107,7 @@ namespace GUI
             this.layoutControlItem1.Control = this.nhacungcap;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(962, 695);
+            this.layoutControlItem1.Size = new System.Drawing.Size(966, 699);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 

@@ -283,8 +283,9 @@ namespace GUI
             // 
             // sqlDataSource2
             // 
-            this.sqlDataSource2.ConnectionName = "GUI.Properties.Settings.QL_SHOP_FASHIONConnectionString";
+            this.sqlDataSource2.ConnectionName = "GUI.Properties.Settings.QL_SHOP_FASHIONConnectionString1";
             this.sqlDataSource2.Name = "sqlDataSource2";
+            customSqlQuery1.MetaSerializable = "<Meta X=\"1117\" Y=\"20\" Width=\"213\" Height=\"551\" />";
             customSqlQuery1.Name = "hoa_don";
             customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
             columnExpression1.ColumnName = "ma_hoa_don";

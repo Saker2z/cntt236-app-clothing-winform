@@ -49,8 +49,10 @@ namespace GUI
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnXoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.x)).BeginInit();
@@ -167,9 +169,9 @@ namespace GUI
             // 
             // btnIn
             // 
-            this.btnIn.Location = new System.Drawing.Point(23, 2);
+            this.btnIn.Location = new System.Drawing.Point(23, -1);
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(86, 36);
+            this.btnIn.Size = new System.Drawing.Size(125, 30);
             this.btnIn.TabIndex = 72;
             this.btnIn.Text = "In giá";
             this.btnIn.UseVisualStyleBackColor = true;
@@ -206,7 +208,8 @@ namespace GUI
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn5,
-            this.gridColumn7});
+            this.gridColumn7,
+            this.gridColumn6});
             this.dgvDS2.DetailHeight = 546;
             this.dgvDS2.GridControl = this.dgvSanPhamThem;
             this.dgvDS2.Name = "dgvDS2";
@@ -274,6 +277,16 @@ namespace GUI
             this.gridColumn7.VisibleIndex = 0;
             this.gridColumn7.Width = 94;
             // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Số tem";
+            this.gridColumn6.FieldName = "So_tem";
+            this.gridColumn6.MinWidth = 25;
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 6;
+            this.gridColumn6.Width = 94;
+            // 
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
@@ -287,17 +300,27 @@ namespace GUI
             this.gridView2.GridControl = this.dgvSanPhamThem;
             this.gridView2.Name = "gridView2";
             // 
-            // frmTesttt
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(450, 50);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(115, 36);
+            this.btnXoa.TabIndex = 76;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            // 
+            // frmInGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1510, 643);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.dgvSanPhamThem);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnIn);
             this.Controls.Add(this.dgvSanPham);
-            this.Name = "frmTesttt";
-            this.Text = "frmTesttt";
+            this.Name = "frmInGia";
+            this.Text = "In giá sản phẩm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.x)).EndInit();
@@ -334,5 +357,7 @@ namespace GUI
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

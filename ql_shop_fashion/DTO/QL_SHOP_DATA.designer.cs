@@ -42,12 +42,12 @@ namespace DTO
     partial void Insertchi_tiet_nhap_hang(chi_tiet_nhap_hang instance);
     partial void Updatechi_tiet_nhap_hang(chi_tiet_nhap_hang instance);
     partial void Deletechi_tiet_nhap_hang(chi_tiet_nhap_hang instance);
-    partial void Insertdanh_gia_san_pham(danh_gia_san_pham instance);
-    partial void Updatedanh_gia_san_pham(danh_gia_san_pham instance);
-    partial void Deletedanh_gia_san_pham(danh_gia_san_pham instance);
     partial void Insertgio_hang(gio_hang instance);
     partial void Updategio_hang(gio_hang instance);
     partial void Deletegio_hang(gio_hang instance);
+    partial void Insertdanh_gia_san_pham(danh_gia_san_pham instance);
+    partial void Updatedanh_gia_san_pham(danh_gia_san_pham instance);
+    partial void Deletedanh_gia_san_pham(danh_gia_san_pham instance);
     partial void Inserthinh_anh_san_pham(hinh_anh_san_pham instance);
     partial void Updatehinh_anh_san_pham(hinh_anh_san_pham instance);
     partial void Deletehinh_anh_san_pham(hinh_anh_san_pham instance);
@@ -129,7 +129,7 @@ namespace DTO
     #endregion
 		
 		public QL_SHOP_DATADataContext() : 
-				base(global::DTO.Properties.Settings.Default.QL_SHOP_FASHIONConnectionString, mappingSource)
+				base(global::DTO.Properties.Settings.Default.QL_SHOP_FASHIONConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -190,19 +190,19 @@ namespace DTO
 			}
 		}
 		
-		public System.Data.Linq.Table<danh_gia_san_pham> danh_gia_san_phams
-		{
-			get
-			{
-				return this.GetTable<danh_gia_san_pham>();
-			}
-		}
-		
 		public System.Data.Linq.Table<gio_hang> gio_hangs
 		{
 			get
 			{
 				return this.GetTable<gio_hang>();
+			}
+		}
+		
+		public System.Data.Linq.Table<danh_gia_san_pham> danh_gia_san_phams
+		{
+			get
+			{
+				return this.GetTable<danh_gia_san_pham>();
 			}
 		}
 		
@@ -1887,6 +1887,274 @@ namespace DTO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.gio_hang")]
+	public partial class gio_hang : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ma_gio_hang;
+		
+		private int _ma_khach_hang;
+		
+		private System.Nullable<System.DateTime> _created_at;
+		
+		private System.Nullable<System.DateTime> _updated_at;
+		
+		private EntitySet<chi_tiet_gio_hang> _chi_tiet_gio_hangs;
+		
+		private EntitySet<chi_tiet_gio_hang> _chi_tiet_gio_hangs1;
+		
+		private EntityRef<khach_hang> _khach_hang;
+		
+		private EntityRef<khach_hang> _khach_hang1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onma_gio_hangChanging(int value);
+    partial void Onma_gio_hangChanged();
+    partial void Onma_khach_hangChanging(int value);
+    partial void Onma_khach_hangChanged();
+    partial void Oncreated_atChanging(System.Nullable<System.DateTime> value);
+    partial void Oncreated_atChanged();
+    partial void Onupdated_atChanging(System.Nullable<System.DateTime> value);
+    partial void Onupdated_atChanged();
+    #endregion
+		
+		public gio_hang()
+		{
+			this._chi_tiet_gio_hangs = new EntitySet<chi_tiet_gio_hang>(new Action<chi_tiet_gio_hang>(this.attach_chi_tiet_gio_hangs), new Action<chi_tiet_gio_hang>(this.detach_chi_tiet_gio_hangs));
+			this._chi_tiet_gio_hangs1 = new EntitySet<chi_tiet_gio_hang>(new Action<chi_tiet_gio_hang>(this.attach_chi_tiet_gio_hangs1), new Action<chi_tiet_gio_hang>(this.detach_chi_tiet_gio_hangs1));
+			this._khach_hang = default(EntityRef<khach_hang>);
+			this._khach_hang1 = default(EntityRef<khach_hang>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_gio_hang", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ma_gio_hang
+		{
+			get
+			{
+				return this._ma_gio_hang;
+			}
+			set
+			{
+				if ((this._ma_gio_hang != value))
+				{
+					this.Onma_gio_hangChanging(value);
+					this.SendPropertyChanging();
+					this._ma_gio_hang = value;
+					this.SendPropertyChanged("ma_gio_hang");
+					this.Onma_gio_hangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_khach_hang", DbType="Int NOT NULL")]
+		public int ma_khach_hang
+		{
+			get
+			{
+				return this._ma_khach_hang;
+			}
+			set
+			{
+				if ((this._ma_khach_hang != value))
+				{
+					if ((this._khach_hang.HasLoadedOrAssignedValue || this._khach_hang1.HasLoadedOrAssignedValue))
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onma_khach_hangChanging(value);
+					this.SendPropertyChanging();
+					this._ma_khach_hang = value;
+					this.SendPropertyChanged("ma_khach_hang");
+					this.Onma_khach_hangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_at", DbType="DateTime")]
+		public System.Nullable<System.DateTime> created_at
+		{
+			get
+			{
+				return this._created_at;
+			}
+			set
+			{
+				if ((this._created_at != value))
+				{
+					this.Oncreated_atChanging(value);
+					this.SendPropertyChanging();
+					this._created_at = value;
+					this.SendPropertyChanged("created_at");
+					this.Oncreated_atChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_updated_at", DbType="DateTime")]
+		public System.Nullable<System.DateTime> updated_at
+		{
+			get
+			{
+				return this._updated_at;
+			}
+			set
+			{
+				if ((this._updated_at != value))
+				{
+					this.Onupdated_atChanging(value);
+					this.SendPropertyChanging();
+					this._updated_at = value;
+					this.SendPropertyChanged("updated_at");
+					this.Onupdated_atChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="gio_hang_chi_tiet_gio_hang", Storage="_chi_tiet_gio_hangs", ThisKey="ma_gio_hang", OtherKey="ma_gio_hang")]
+		public EntitySet<chi_tiet_gio_hang> chi_tiet_gio_hangs
+		{
+			get
+			{
+				return this._chi_tiet_gio_hangs;
+			}
+			set
+			{
+				this._chi_tiet_gio_hangs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="gio_hang_chi_tiet_gio_hang1", Storage="_chi_tiet_gio_hangs1", ThisKey="ma_gio_hang", OtherKey="ma_gio_hang")]
+		public EntitySet<chi_tiet_gio_hang> chi_tiet_gio_hangs1
+		{
+			get
+			{
+				return this._chi_tiet_gio_hangs1;
+			}
+			set
+			{
+				this._chi_tiet_gio_hangs1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khach_hang_gio_hang", Storage="_khach_hang", ThisKey="ma_khach_hang", OtherKey="ma_khach_hang", IsForeignKey=true)]
+		public khach_hang khach_hang
+		{
+			get
+			{
+				return this._khach_hang.Entity;
+			}
+			set
+			{
+				khach_hang previousValue = this._khach_hang.Entity;
+				if (((previousValue != value) 
+							|| (this._khach_hang.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._khach_hang.Entity = null;
+						previousValue.gio_hangs.Remove(this);
+					}
+					this._khach_hang.Entity = value;
+					if ((value != null))
+					{
+						value.gio_hangs.Add(this);
+						this._ma_khach_hang = value.ma_khach_hang;
+					}
+					else
+					{
+						this._ma_khach_hang = default(int);
+					}
+					this.SendPropertyChanged("khach_hang");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khach_hang_gio_hang1", Storage="_khach_hang1", ThisKey="ma_khach_hang", OtherKey="ma_khach_hang", IsForeignKey=true)]
+		public khach_hang khach_hang1
+		{
+			get
+			{
+				return this._khach_hang1.Entity;
+			}
+			set
+			{
+				khach_hang previousValue = this._khach_hang1.Entity;
+				if (((previousValue != value) 
+							|| (this._khach_hang1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._khach_hang1.Entity = null;
+						previousValue.gio_hangs1.Remove(this);
+					}
+					this._khach_hang1.Entity = value;
+					if ((value != null))
+					{
+						value.gio_hangs1.Add(this);
+						this._ma_khach_hang = value.ma_khach_hang;
+					}
+					else
+					{
+						this._ma_khach_hang = default(int);
+					}
+					this.SendPropertyChanged("khach_hang1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_chi_tiet_gio_hangs(chi_tiet_gio_hang entity)
+		{
+			this.SendPropertyChanging();
+			entity.gio_hang = this;
+		}
+		
+		private void detach_chi_tiet_gio_hangs(chi_tiet_gio_hang entity)
+		{
+			this.SendPropertyChanging();
+			entity.gio_hang = null;
+		}
+		
+		private void attach_chi_tiet_gio_hangs1(chi_tiet_gio_hang entity)
+		{
+			this.SendPropertyChanging();
+			entity.gio_hang1 = this;
+		}
+		
+		private void detach_chi_tiet_gio_hangs1(chi_tiet_gio_hang entity)
+		{
+			this.SendPropertyChanging();
+			entity.gio_hang1 = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.danh_gia_san_pham")]
 	public partial class danh_gia_san_pham : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2160,7 +2428,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_danh_gia_san_pham", Storage="_tai_khoan", ThisKey="tai_khoan_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_danh_gia_san_pham", Storage="_tai_khoan", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id", IsForeignKey=true)]
 		public tai_khoan tai_khoan
 		{
 			get
@@ -2183,7 +2451,7 @@ namespace DTO
 					if ((value != null))
 					{
 						value.danh_gia_san_phams.Add(this);
-						this._tai_khoan_id = value.id;
+						this._tai_khoan_id = value.tai_khoan_id;
 					}
 					else
 					{
@@ -2194,7 +2462,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_danh_gia_san_pham1", Storage="_tai_khoan1", ThisKey="tai_khoan_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_danh_gia_san_pham1", Storage="_tai_khoan1", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id", IsForeignKey=true)]
 		public tai_khoan tai_khoan1
 		{
 			get
@@ -2217,7 +2485,7 @@ namespace DTO
 					if ((value != null))
 					{
 						value.danh_gia_san_phams1.Add(this);
-						this._tai_khoan_id = value.id;
+						this._tai_khoan_id = value.tai_khoan_id;
 					}
 					else
 					{
@@ -2246,274 +2514,6 @@ namespace DTO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.gio_hang")]
-	public partial class gio_hang : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ma_gio_hang;
-		
-		private int _ma_khach_hang;
-		
-		private System.Nullable<System.DateTime> _created_at;
-		
-		private System.Nullable<System.DateTime> _updated_at;
-		
-		private EntitySet<chi_tiet_gio_hang> _chi_tiet_gio_hangs;
-		
-		private EntitySet<chi_tiet_gio_hang> _chi_tiet_gio_hangs1;
-		
-		private EntityRef<khach_hang> _khach_hang;
-		
-		private EntityRef<khach_hang> _khach_hang1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onma_gio_hangChanging(int value);
-    partial void Onma_gio_hangChanged();
-    partial void Onma_khach_hangChanging(int value);
-    partial void Onma_khach_hangChanged();
-    partial void Oncreated_atChanging(System.Nullable<System.DateTime> value);
-    partial void Oncreated_atChanged();
-    partial void Onupdated_atChanging(System.Nullable<System.DateTime> value);
-    partial void Onupdated_atChanged();
-    #endregion
-		
-		public gio_hang()
-		{
-			this._chi_tiet_gio_hangs = new EntitySet<chi_tiet_gio_hang>(new Action<chi_tiet_gio_hang>(this.attach_chi_tiet_gio_hangs), new Action<chi_tiet_gio_hang>(this.detach_chi_tiet_gio_hangs));
-			this._chi_tiet_gio_hangs1 = new EntitySet<chi_tiet_gio_hang>(new Action<chi_tiet_gio_hang>(this.attach_chi_tiet_gio_hangs1), new Action<chi_tiet_gio_hang>(this.detach_chi_tiet_gio_hangs1));
-			this._khach_hang = default(EntityRef<khach_hang>);
-			this._khach_hang1 = default(EntityRef<khach_hang>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_gio_hang", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ma_gio_hang
-		{
-			get
-			{
-				return this._ma_gio_hang;
-			}
-			set
-			{
-				if ((this._ma_gio_hang != value))
-				{
-					this.Onma_gio_hangChanging(value);
-					this.SendPropertyChanging();
-					this._ma_gio_hang = value;
-					this.SendPropertyChanged("ma_gio_hang");
-					this.Onma_gio_hangChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_khach_hang", DbType="Int NOT NULL")]
-		public int ma_khach_hang
-		{
-			get
-			{
-				return this._ma_khach_hang;
-			}
-			set
-			{
-				if ((this._ma_khach_hang != value))
-				{
-					if ((this._khach_hang.HasLoadedOrAssignedValue || this._khach_hang1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onma_khach_hangChanging(value);
-					this.SendPropertyChanging();
-					this._ma_khach_hang = value;
-					this.SendPropertyChanged("ma_khach_hang");
-					this.Onma_khach_hangChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_at", DbType="DateTime")]
-		public System.Nullable<System.DateTime> created_at
-		{
-			get
-			{
-				return this._created_at;
-			}
-			set
-			{
-				if ((this._created_at != value))
-				{
-					this.Oncreated_atChanging(value);
-					this.SendPropertyChanging();
-					this._created_at = value;
-					this.SendPropertyChanged("created_at");
-					this.Oncreated_atChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_updated_at", DbType="DateTime")]
-		public System.Nullable<System.DateTime> updated_at
-		{
-			get
-			{
-				return this._updated_at;
-			}
-			set
-			{
-				if ((this._updated_at != value))
-				{
-					this.Onupdated_atChanging(value);
-					this.SendPropertyChanging();
-					this._updated_at = value;
-					this.SendPropertyChanged("updated_at");
-					this.Onupdated_atChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="gio_hang_chi_tiet_gio_hang", Storage="_chi_tiet_gio_hangs", ThisKey="ma_gio_hang", OtherKey="ma_gio_hang")]
-		public EntitySet<chi_tiet_gio_hang> chi_tiet_gio_hangs
-		{
-			get
-			{
-				return this._chi_tiet_gio_hangs;
-			}
-			set
-			{
-				this._chi_tiet_gio_hangs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="gio_hang_chi_tiet_gio_hang1", Storage="_chi_tiet_gio_hangs1", ThisKey="ma_gio_hang", OtherKey="ma_gio_hang")]
-		public EntitySet<chi_tiet_gio_hang> chi_tiet_gio_hangs1
-		{
-			get
-			{
-				return this._chi_tiet_gio_hangs1;
-			}
-			set
-			{
-				this._chi_tiet_gio_hangs1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khach_hang_gio_hang", Storage="_khach_hang", ThisKey="ma_khach_hang", OtherKey="ma_khach_hang", IsForeignKey=true)]
-		public khach_hang khach_hang
-		{
-			get
-			{
-				return this._khach_hang.Entity;
-			}
-			set
-			{
-				khach_hang previousValue = this._khach_hang.Entity;
-				if (((previousValue != value) 
-							|| (this._khach_hang.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._khach_hang.Entity = null;
-						previousValue.gio_hangs.Remove(this);
-					}
-					this._khach_hang.Entity = value;
-					if ((value != null))
-					{
-						value.gio_hangs.Add(this);
-						this._ma_khach_hang = value.ma_khach_hang;
-					}
-					else
-					{
-						this._ma_khach_hang = default(int);
-					}
-					this.SendPropertyChanged("khach_hang");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="khach_hang_gio_hang1", Storage="_khach_hang1", ThisKey="ma_khach_hang", OtherKey="ma_khach_hang", IsForeignKey=true)]
-		public khach_hang khach_hang1
-		{
-			get
-			{
-				return this._khach_hang1.Entity;
-			}
-			set
-			{
-				khach_hang previousValue = this._khach_hang1.Entity;
-				if (((previousValue != value) 
-							|| (this._khach_hang1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._khach_hang1.Entity = null;
-						previousValue.gio_hangs1.Remove(this);
-					}
-					this._khach_hang1.Entity = value;
-					if ((value != null))
-					{
-						value.gio_hangs1.Add(this);
-						this._ma_khach_hang = value.ma_khach_hang;
-					}
-					else
-					{
-						this._ma_khach_hang = default(int);
-					}
-					this.SendPropertyChanged("khach_hang1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_chi_tiet_gio_hangs(chi_tiet_gio_hang entity)
-		{
-			this.SendPropertyChanging();
-			entity.gio_hang = this;
-		}
-		
-		private void detach_chi_tiet_gio_hangs(chi_tiet_gio_hang entity)
-		{
-			this.SendPropertyChanging();
-			entity.gio_hang = null;
-		}
-		
-		private void attach_chi_tiet_gio_hangs1(chi_tiet_gio_hang entity)
-		{
-			this.SendPropertyChanging();
-			entity.gio_hang1 = this;
-		}
-		
-		private void detach_chi_tiet_gio_hangs1(chi_tiet_gio_hang entity)
-		{
-			this.SendPropertyChanging();
-			entity.gio_hang1 = null;
 		}
 	}
 	
@@ -4560,7 +4560,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_key_store", Storage="_tai_khoan", ThisKey="tai_khoan_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_key_store", Storage="_tai_khoan", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id", IsForeignKey=true)]
 		public tai_khoan tai_khoan
 		{
 			get
@@ -4583,7 +4583,7 @@ namespace DTO
 					if ((value != null))
 					{
 						value.key_stores.Add(this);
-						this._tai_khoan_id = value.id;
+						this._tai_khoan_id = value.tai_khoan_id;
 					}
 					else
 					{
@@ -4594,7 +4594,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_key_store1", Storage="_tai_khoan1", ThisKey="tai_khoan_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_key_store1", Storage="_tai_khoan1", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id", IsForeignKey=true)]
 		public tai_khoan tai_khoan1
 		{
 			get
@@ -4617,7 +4617,7 @@ namespace DTO
 					if ((value != null))
 					{
 						value.key_stores1.Add(this);
-						this._tai_khoan_id = value.id;
+						this._tai_khoan_id = value.tai_khoan_id;
 					}
 					else
 					{
@@ -4980,7 +4980,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_khach_hang", Storage="_tai_khoan", ThisKey="tai_khoan_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_khach_hang", Storage="_tai_khoan", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id", IsForeignKey=true)]
 		public tai_khoan tai_khoan
 		{
 			get
@@ -5003,7 +5003,7 @@ namespace DTO
 					if ((value != null))
 					{
 						value.khach_hangs.Add(this);
-						this._tai_khoan_id = value.id;
+						this._tai_khoan_id = value.tai_khoan_id;
 					}
 					else
 					{
@@ -5014,7 +5014,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_khach_hang1", Storage="_tai_khoan1", ThisKey="tai_khoan_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_khach_hang1", Storage="_tai_khoan1", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id", IsForeignKey=true)]
 		public tai_khoan tai_khoan1
 		{
 			get
@@ -5037,7 +5037,7 @@ namespace DTO
 					if ((value != null))
 					{
 						value.khach_hangs1.Add(this);
-						this._tai_khoan_id = value.id;
+						this._tai_khoan_id = value.tai_khoan_id;
 					}
 					else
 					{
@@ -7562,7 +7562,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_nhan_vien", Storage="_tai_khoan", ThisKey="tai_khoan_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_nhan_vien", Storage="_tai_khoan", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id", IsForeignKey=true)]
 		public tai_khoan tai_khoan
 		{
 			get
@@ -7585,7 +7585,7 @@ namespace DTO
 					if ((value != null))
 					{
 						value.nhan_viens.Add(this);
-						this._tai_khoan_id = value.id;
+						this._tai_khoan_id = value.tai_khoan_id;
 					}
 					else
 					{
@@ -7596,7 +7596,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_nhan_vien1", Storage="_tai_khoan1", ThisKey="tai_khoan_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_nhan_vien1", Storage="_tai_khoan1", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id", IsForeignKey=true)]
 		public tai_khoan tai_khoan1
 		{
 			get
@@ -7619,7 +7619,7 @@ namespace DTO
 					if ((value != null))
 					{
 						value.nhan_viens1.Add(this);
-						this._tai_khoan_id = value.id;
+						this._tai_khoan_id = value.tai_khoan_id;
 					}
 					else
 					{
@@ -8940,7 +8940,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_oauth_provider", Storage="_tai_khoan", ThisKey="tai_khoan_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_oauth_provider", Storage="_tai_khoan", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id", IsForeignKey=true)]
 		public tai_khoan tai_khoan
 		{
 			get
@@ -8963,7 +8963,7 @@ namespace DTO
 					if ((value != null))
 					{
 						value.oauth_providers.Add(this);
-						this._tai_khoan_id = value.id;
+						this._tai_khoan_id = value.tai_khoan_id;
 					}
 					else
 					{
@@ -8974,7 +8974,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_oauth_provider1", Storage="_tai_khoan1", ThisKey="tai_khoan_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_oauth_provider1", Storage="_tai_khoan1", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id", IsForeignKey=true)]
 		public tai_khoan tai_khoan1
 		{
 			get
@@ -8997,7 +8997,7 @@ namespace DTO
 					if ((value != null))
 					{
 						value.oauth_providers1.Add(this);
-						this._tai_khoan_id = value.id;
+						this._tai_khoan_id = value.tai_khoan_id;
 					}
 					else
 					{
@@ -10821,7 +10821,7 @@ namespace DTO
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id;
+		private int _tai_khoan_id;
 		
 		private string _ten_dang_nhap;
 		
@@ -10831,9 +10831,9 @@ namespace DTO
 		
 		private System.Nullable<bool> _is_oauth;
 		
-		private System.Nullable<System.DateTime> _create_at;
+		private System.Nullable<System.DateTime> _created_at;
 		
-		private System.Nullable<System.DateTime> _update_at;
+		private System.Nullable<System.DateTime> _updated_at;
 		
 		private EntitySet<danh_gia_san_pham> _danh_gia_san_phams;
 		
@@ -10863,8 +10863,8 @@ namespace DTO
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
+    partial void Ontai_khoan_idChanging(int value);
+    partial void Ontai_khoan_idChanged();
     partial void Onten_dang_nhapChanging(string value);
     partial void Onten_dang_nhapChanged();
     partial void Onmat_khau_hashChanging(string value);
@@ -10873,10 +10873,10 @@ namespace DTO
     partial void Onhoat_dongChanged();
     partial void Onis_oauthChanging(System.Nullable<bool> value);
     partial void Onis_oauthChanged();
-    partial void Oncreate_atChanging(System.Nullable<System.DateTime> value);
-    partial void Oncreate_atChanged();
-    partial void Onupdate_atChanging(System.Nullable<System.DateTime> value);
-    partial void Onupdate_atChanged();
+    partial void Oncreated_atChanging(System.Nullable<System.DateTime> value);
+    partial void Oncreated_atChanged();
+    partial void Onupdated_atChanging(System.Nullable<System.DateTime> value);
+    partial void Onupdated_atChanged();
     #endregion
 		
 		public tai_khoan()
@@ -10896,22 +10896,22 @@ namespace DTO
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tai_khoan_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int tai_khoan_id
 		{
 			get
 			{
-				return this._id;
+				return this._tai_khoan_id;
 			}
 			set
 			{
-				if ((this._id != value))
+				if ((this._tai_khoan_id != value))
 				{
-					this.OnidChanging(value);
+					this.Ontai_khoan_idChanging(value);
 					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
+					this._tai_khoan_id = value;
+					this.SendPropertyChanged("tai_khoan_id");
+					this.Ontai_khoan_idChanged();
 				}
 			}
 		}
@@ -10996,47 +10996,47 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_create_at", DbType="DateTime")]
-		public System.Nullable<System.DateTime> create_at
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_at", DbType="DateTime")]
+		public System.Nullable<System.DateTime> created_at
 		{
 			get
 			{
-				return this._create_at;
+				return this._created_at;
 			}
 			set
 			{
-				if ((this._create_at != value))
+				if ((this._created_at != value))
 				{
-					this.Oncreate_atChanging(value);
+					this.Oncreated_atChanging(value);
 					this.SendPropertyChanging();
-					this._create_at = value;
-					this.SendPropertyChanged("create_at");
-					this.Oncreate_atChanged();
+					this._created_at = value;
+					this.SendPropertyChanged("created_at");
+					this.Oncreated_atChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_update_at", DbType="DateTime")]
-		public System.Nullable<System.DateTime> update_at
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_updated_at", DbType="DateTime")]
+		public System.Nullable<System.DateTime> updated_at
 		{
 			get
 			{
-				return this._update_at;
+				return this._updated_at;
 			}
 			set
 			{
-				if ((this._update_at != value))
+				if ((this._updated_at != value))
 				{
-					this.Onupdate_atChanging(value);
+					this.Onupdated_atChanging(value);
 					this.SendPropertyChanging();
-					this._update_at = value;
-					this.SendPropertyChanged("update_at");
-					this.Onupdate_atChanged();
+					this._updated_at = value;
+					this.SendPropertyChanged("updated_at");
+					this.Onupdated_atChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_danh_gia_san_pham", Storage="_danh_gia_san_phams", ThisKey="id", OtherKey="tai_khoan_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_danh_gia_san_pham", Storage="_danh_gia_san_phams", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id")]
 		public EntitySet<danh_gia_san_pham> danh_gia_san_phams
 		{
 			get
@@ -11049,7 +11049,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_danh_gia_san_pham1", Storage="_danh_gia_san_phams1", ThisKey="id", OtherKey="tai_khoan_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_danh_gia_san_pham1", Storage="_danh_gia_san_phams1", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id")]
 		public EntitySet<danh_gia_san_pham> danh_gia_san_phams1
 		{
 			get
@@ -11062,7 +11062,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_key_store", Storage="_key_stores", ThisKey="id", OtherKey="tai_khoan_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_key_store", Storage="_key_stores", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id")]
 		public EntitySet<key_store> key_stores
 		{
 			get
@@ -11075,7 +11075,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_key_store1", Storage="_key_stores1", ThisKey="id", OtherKey="tai_khoan_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_key_store1", Storage="_key_stores1", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id")]
 		public EntitySet<key_store> key_stores1
 		{
 			get
@@ -11088,7 +11088,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_khach_hang", Storage="_khach_hangs", ThisKey="id", OtherKey="tai_khoan_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_khach_hang", Storage="_khach_hangs", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id")]
 		public EntitySet<khach_hang> khach_hangs
 		{
 			get
@@ -11101,7 +11101,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_khach_hang1", Storage="_khach_hangs1", ThisKey="id", OtherKey="tai_khoan_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_khach_hang1", Storage="_khach_hangs1", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id")]
 		public EntitySet<khach_hang> khach_hangs1
 		{
 			get
@@ -11114,7 +11114,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_nhan_vien", Storage="_nhan_viens", ThisKey="id", OtherKey="tai_khoan_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_nhan_vien", Storage="_nhan_viens", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id")]
 		public EntitySet<nhan_vien> nhan_viens
 		{
 			get
@@ -11127,7 +11127,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_nhan_vien1", Storage="_nhan_viens1", ThisKey="id", OtherKey="tai_khoan_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_nhan_vien1", Storage="_nhan_viens1", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id")]
 		public EntitySet<nhan_vien> nhan_viens1
 		{
 			get
@@ -11140,7 +11140,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_oauth_provider", Storage="_oauth_providers", ThisKey="id", OtherKey="tai_khoan_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_oauth_provider", Storage="_oauth_providers", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id")]
 		public EntitySet<oauth_provider> oauth_providers
 		{
 			get
@@ -11153,7 +11153,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_oauth_provider1", Storage="_oauth_providers1", ThisKey="id", OtherKey="tai_khoan_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_oauth_provider1", Storage="_oauth_providers1", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id")]
 		public EntitySet<oauth_provider> oauth_providers1
 		{
 			get
@@ -11166,7 +11166,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_tai_khoan_nhom_quyen", Storage="_tai_khoan_nhom_quyens", ThisKey="id", OtherKey="id_tai_khoan")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_tai_khoan_nhom_quyen", Storage="_tai_khoan_nhom_quyens", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id")]
 		public EntitySet<tai_khoan_nhom_quyen> tai_khoan_nhom_quyens
 		{
 			get
@@ -11179,7 +11179,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_tai_khoan_nhom_quyen1", Storage="_tai_khoan_nhom_quyens1", ThisKey="id", OtherKey="id_tai_khoan")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_tai_khoan_nhom_quyen1", Storage="_tai_khoan_nhom_quyens1", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id")]
 		public EntitySet<tai_khoan_nhom_quyen> tai_khoan_nhom_quyens1
 		{
 			get
@@ -11363,7 +11363,7 @@ namespace DTO
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id_tai_khoan;
+		private int _tai_khoan_id;
 		
 		private int _id_nhom_quyen;
 		
@@ -11383,8 +11383,8 @@ namespace DTO
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onid_tai_khoanChanging(int value);
-    partial void Onid_tai_khoanChanged();
+    partial void Ontai_khoan_idChanging(int value);
+    partial void Ontai_khoan_idChanged();
     partial void Onid_nhom_quyenChanging(int value);
     partial void Onid_nhom_quyenChanged();
     partial void Oncreate_atChanging(System.Nullable<System.DateTime> value);
@@ -11402,26 +11402,26 @@ namespace DTO
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tai_khoan", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int id_tai_khoan
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tai_khoan_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int tai_khoan_id
 		{
 			get
 			{
-				return this._id_tai_khoan;
+				return this._tai_khoan_id;
 			}
 			set
 			{
-				if ((this._id_tai_khoan != value))
+				if ((this._tai_khoan_id != value))
 				{
 					if ((this._tai_khoan.HasLoadedOrAssignedValue || this._tai_khoan1.HasLoadedOrAssignedValue))
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.Onid_tai_khoanChanging(value);
+					this.Ontai_khoan_idChanging(value);
 					this.SendPropertyChanging();
-					this._id_tai_khoan = value;
-					this.SendPropertyChanged("id_tai_khoan");
-					this.Onid_tai_khoanChanged();
+					this._tai_khoan_id = value;
+					this.SendPropertyChanged("tai_khoan_id");
+					this.Ontai_khoan_idChanged();
 				}
 			}
 		}
@@ -11558,7 +11558,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_tai_khoan_nhom_quyen", Storage="_tai_khoan", ThisKey="id_tai_khoan", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_tai_khoan_nhom_quyen", Storage="_tai_khoan", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id", IsForeignKey=true)]
 		public tai_khoan tai_khoan
 		{
 			get
@@ -11581,18 +11581,18 @@ namespace DTO
 					if ((value != null))
 					{
 						value.tai_khoan_nhom_quyens.Add(this);
-						this._id_tai_khoan = value.id;
+						this._tai_khoan_id = value.tai_khoan_id;
 					}
 					else
 					{
-						this._id_tai_khoan = default(int);
+						this._tai_khoan_id = default(int);
 					}
 					this.SendPropertyChanged("tai_khoan");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_tai_khoan_nhom_quyen1", Storage="_tai_khoan1", ThisKey="id_tai_khoan", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tai_khoan_tai_khoan_nhom_quyen1", Storage="_tai_khoan1", ThisKey="tai_khoan_id", OtherKey="tai_khoan_id", IsForeignKey=true)]
 		public tai_khoan tai_khoan1
 		{
 			get
@@ -11615,11 +11615,11 @@ namespace DTO
 					if ((value != null))
 					{
 						value.tai_khoan_nhom_quyens1.Add(this);
-						this._id_tai_khoan = value.id;
+						this._tai_khoan_id = value.tai_khoan_id;
 					}
 					else
 					{
-						this._id_tai_khoan = default(int);
+						this._tai_khoan_id = default(int);
 					}
 					this.SendPropertyChanged("tai_khoan1");
 				}

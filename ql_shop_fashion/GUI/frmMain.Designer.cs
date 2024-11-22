@@ -45,6 +45,7 @@ namespace GUI
             this.ace_nhanvien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_khachhang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_taikhoan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.ace_quyen = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_thongtincanhan = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_dangxuat = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
@@ -56,7 +57,6 @@ namespace GUI
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ace_quyen = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.ac_thongtin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluent_QuanLyForm)).BeginInit();
@@ -70,10 +70,11 @@ namespace GUI
             this.ace_manhinhchinh,
             this.ace_danhmuc,
             this.ace_hethongquanly});
-            this.ac_thongtin.Location = new System.Drawing.Point(0, 31);
+            this.ac_thongtin.Location = new System.Drawing.Point(0, 39);
+            this.ac_thongtin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ac_thongtin.Name = "ac_thongtin";
             this.ac_thongtin.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.ac_thongtin.Size = new System.Drawing.Size(254, 711);
+            this.ac_thongtin.Size = new System.Drawing.Size(296, 874);
             this.ac_thongtin.TabIndex = 1;
             this.ac_thongtin.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -197,6 +198,14 @@ namespace GUI
             this.ace_taikhoan.Tag = 13;
             this.ace_taikhoan.Text = "Tài Khoản";
             // 
+            // ace_quyen
+            // 
+            this.ace_quyen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_quyen.ImageOptions.Image")));
+            this.ace_quyen.Name = "ace_quyen";
+            this.ace_quyen.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.ace_quyen.Tag = 14;
+            this.ace_quyen.Text = "Quyền";
+            // 
             // ace_thongtincanhan
             // 
             this.ace_thongtincanhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_thongtincanhan.ImageOptions.Image")));
@@ -218,8 +227,9 @@ namespace GUI
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluent_QuanLyForm;
+            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1628, 31);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1899, 39);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
@@ -234,17 +244,19 @@ namespace GUI
             this.panel_chinh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_chinh.Controls.Add(this.pn_main);
             this.panel_chinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_chinh.Location = new System.Drawing.Point(254, 31);
+            this.panel_chinh.Location = new System.Drawing.Point(296, 39);
+            this.panel_chinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_chinh.Name = "panel_chinh";
-            this.panel_chinh.Size = new System.Drawing.Size(1374, 711);
+            this.panel_chinh.Size = new System.Drawing.Size(1603, 874);
             this.panel_chinh.TabIndex = 3;
             // 
             // pn_main
             // 
             this.pn_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pn_main.Location = new System.Drawing.Point(154, 62);
+            this.pn_main.Location = new System.Drawing.Point(180, 76);
+            this.pn_main.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pn_main.Name = "pn_main";
-            this.pn_main.Size = new System.Drawing.Size(1106, 582);
+            this.pn_main.Size = new System.Drawing.Size(1290, 716);
             this.pn_main.TabIndex = 0;
             // 
             // accordionControlElement1
@@ -279,23 +291,16 @@ namespace GUI
             this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement5.Text = "Phụ Kiện";
             // 
-            // ace_quyen
-            // 
-            this.ace_quyen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_quyen.ImageOptions.Image")));
-            this.ace_quyen.Name = "ace_quyen";
-            this.ace_quyen.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_quyen.Tag = 14;
-            this.ace_quyen.Text = "Quyền";
-            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1628, 742);
+            this.ClientSize = new System.Drawing.Size(1899, 913);
             this.Controls.Add(this.panel_chinh);
             this.Controls.Add(this.ac_thongtin);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.NavigationControl = this.ac_thongtin;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -317,7 +322,7 @@ namespace GUI
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_nhanvien;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_khachhang;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_dangxuat;
-        private System.Windows.Forms.Panel panel_chinh;
+        public System.Windows.Forms.Panel panel_chinh;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_taikhoan;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;

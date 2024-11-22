@@ -55,53 +55,53 @@ namespace GUI
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(27, 129);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl4.Location = new System.Drawing.Point(36, 159);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(62, 13);
+            this.labelControl4.Size = new System.Drawing.Size(79, 17);
             this.labelControl4.TabIndex = 15;
             this.labelControl4.Text = "Số điện thoại";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(27, 79);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl3.Location = new System.Drawing.Point(36, 97);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(32, 13);
+            this.labelControl3.Size = new System.Drawing.Size(40, 17);
             this.labelControl3.TabIndex = 14;
             this.labelControl3.Text = "Địa chỉ";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(27, 34);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl2.Location = new System.Drawing.Point(36, 42);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(85, 13);
+            this.labelControl2.Size = new System.Drawing.Size(111, 17);
             this.labelControl2.TabIndex = 13;
             this.labelControl2.Text = "Tên nhà cung cấp";
             // 
             // dt
             // 
-            this.dt.Location = new System.Drawing.Point(148, 123);
-            this.dt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dt.Location = new System.Drawing.Point(197, 151);
+            this.dt.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dt.Name = "dt";
-            this.dt.Size = new System.Drawing.Size(228, 20);
+            this.dt.Size = new System.Drawing.Size(304, 22);
             this.dt.TabIndex = 12;
             // 
             // dc
             // 
-            this.dc.Location = new System.Drawing.Point(148, 76);
-            this.dc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dc.Location = new System.Drawing.Point(197, 94);
+            this.dc.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dc.Name = "dc";
-            this.dc.Size = new System.Drawing.Size(228, 20);
+            this.dc.Size = new System.Drawing.Size(304, 22);
             this.dc.TabIndex = 11;
             // 
             // ten_ncc
             // 
-            this.ten_ncc.Location = new System.Drawing.Point(148, 31);
-            this.ten_ncc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ten_ncc.Location = new System.Drawing.Point(197, 38);
+            this.ten_ncc.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ten_ncc.Name = "ten_ncc";
-            this.ten_ncc.Size = new System.Drawing.Size(228, 20);
+            this.ten_ncc.Size = new System.Drawing.Size(304, 22);
             this.ten_ncc.TabIndex = 10;
             // 
             // pnl_themncc
@@ -114,9 +114,10 @@ namespace GUI
             this.pnl_themncc.Controls.Add(this.labelControl3);
             this.pnl_themncc.Controls.Add(this.dt);
             this.pnl_themncc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_themncc.Location = new System.Drawing.Point(0, 24);
+            this.pnl_themncc.Location = new System.Drawing.Point(0, 30);
+            this.pnl_themncc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_themncc.Name = "pnl_themncc";
-            this.pnl_themncc.Size = new System.Drawing.Size(427, 186);
+            this.pnl_themncc.Size = new System.Drawing.Size(569, 228);
             this.pnl_themncc.TabIndex = 18;
             // 
             // barManager1
@@ -166,42 +167,47 @@ namespace GUI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(427, 24);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(569, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 210);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 258);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(427, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(569, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 186);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 228);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(427, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(569, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 186);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 228);
             // 
             // them_ncc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 210);
+            this.ClientSize = new System.Drawing.Size(569, 258);
             this.Controls.Add(this.pnl_themncc);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "them_ncc";
             this.Text = "them_ncc";
             ((System.ComponentModel.ISupportInitialize)(this.dt.Properties)).EndInit();

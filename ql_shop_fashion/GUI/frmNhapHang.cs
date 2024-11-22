@@ -27,6 +27,27 @@ namespace GUI
             dgv_nh.CellClick += Dgv_nh_CellClick;
             duyet.Click += Duyet_Click;
             them.Click += Them_Click;
+            load.Click += Load_Click;
+
+        }
+        void clear()
+        {
+            txt_ghichu.Text = "";
+            txt_manhanvien.Text = "";
+            txt_manhaphang.Text = "";
+            cbb_manhacungcap.SelectedIndex = -1;
+            cbb_trangthai.SelectedIndex = -1;
+
+            txt_tenncc.Text = "";
+            txt_tonggiatien.Text = "";
+            txt_tongsoluong.Text = "";
+        }
+        private void Load_Click(object sender, EventArgs e)
+        {
+            loaddgv_nhap_hang();
+            load_cbb_ncc();
+            load_dgv_sp(0);
+            clear();
         }
 
         private void Them_Click(object sender, EventArgs e)
@@ -47,10 +68,10 @@ namespace GUI
                     int maNhapHang = dgv_nh.SelectedRows[0].Cells["ma_nhap_hang"].Value != null
                         ? int.Parse(dgv_nh.SelectedRows[0].Cells["ma_nhap_hang"].Value.ToString())
                         : int.Parse(txt_manhaphang.Text);
-                  
+
                     frmDuyetSanPham duyet = new frmDuyetSanPham(maNhapHang);
                     duyet.FormClosedEvent += Duyet_FormClosedEvent;
-                    duyet.ShowDialog();
+                    duyet.Show();
                 }
                 // Kiểm tra trạng thái "Hoàn thành"
                 else if ((dgv_nh.SelectedRows[0].Cells["trang_thai"].Value.ToString()).Equals("Hoàn thành") ||
@@ -81,7 +102,7 @@ namespace GUI
                 // Lấy hàng được chọn
                 DataGridViewRow row = dgv_nh.Rows[e.RowIndex];
                 int id = int.Parse(row.Cells["ma_nhap_hang"].Value.ToString());
-               
+
                 var hang = nhap_bll.get_nhap_hang_by_id(id).FirstOrDefault();
 
                 if (hang != null)
@@ -108,14 +129,14 @@ namespace GUI
                     txt_manhanvien.Text = tenNhanVien?.ToString();
                     txt_ghichu.Text = ghichu?.ToString();
                     cbb_trangthai.Text = tt?.ToString();
-                    txt_tongsoluong.Text=tongsoluong?.ToString();
+                    txt_tongsoluong.Text = tongsoluong?.ToString();
                 }
             }
         }
         void load_cbb_ncc()
         {
             ncc_bll = new nha_cung_cap_sql_BLL();
-            List<string> ncc = ncc_bll.get_ncc_list_name ();
+            List<string> ncc = ncc_bll.get_ncc_list_name();
             cbb_manhacungcap.Properties.Items.Clear();
             cbb_manhacungcap.Properties.Items.AddRange(ncc);
         }
@@ -171,7 +192,7 @@ namespace GUI
             nhap_bll = new nhap_hang_sql_BLL();
 
             var data = nhap_bll.get_all_nhap_hang();
-            if (data != null ) // Nếu có dữ liệu
+            if (data != null) // Nếu có dữ liệu
             {
                 dgv_nh.DataSource = data;
             }
@@ -219,8 +240,8 @@ namespace GUI
             }
         }
 
-   
 
-       
+
+
     }
 }

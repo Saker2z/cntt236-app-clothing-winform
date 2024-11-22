@@ -191,7 +191,7 @@ namespace GUI
                 var hoatDongValue = gridView.GetFocusedRowCellValue("hoat_dong");
                 int id = 0;
                 check_hd.Checked = hoatDongValue != null && bool.TryParse(hoatDongValue.ToString(), out bool hoatDong) && hoatDong;
-                var idValue = gridView.GetFocusedRowCellValue("id");
+                var idValue = gridView.GetFocusedRowCellValue("tai_khoan_id");
 
                 if (idValue != null && int.TryParse(idValue.ToString(), out id))
                 {
@@ -199,7 +199,7 @@ namespace GUI
                     cbb_quyen.SelectedItem = tk_bll.GetRoleNameByAccountId(id);
                 }
                 // Gán giá trị vào ComboBox quyền
-              
+
             }
             catch (Exception ex)
             {
@@ -256,14 +256,14 @@ namespace GUI
                     gridView.OptionsDetail.EnableMasterViewMode = false;
 
                     // Tùy chỉnh tiêu đề cột (nếu cần)
-                    gridView.Columns["id"].Caption = "ID";
+                    gridView.Columns["tai_khoan_id"].Caption = "ID";
                     gridView.Columns["ten_dang_nhap"].Caption = "Tên Đăng Nhập";
                     gridView.Columns["hoat_dong"].Caption = "Hoạt Động";
 
                     // Ẩn các cột không cần thiết
                     gridView.Columns["is_oauth"].Visible = false;
-                    gridView.Columns["create_at"].Visible = false;
-                    gridView.Columns["update_at"].Visible = false;
+                    gridView.Columns["created_at"].Visible = false;
+                    gridView.Columns["updated_at"].Visible = false;
                     gridView.OptionsBehavior.Editable = false;
 
                     // Căn chỉnh cột

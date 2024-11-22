@@ -122,7 +122,8 @@ namespace DAL
                     tong_so_luong_mua = 0,
                     tien_giam = 0,
                     tong_gia_tri = 0,
-                    ngay_lap=date
+                hinh_thuc_ban = false,
+                ngay_lap =date
                 };
 
                

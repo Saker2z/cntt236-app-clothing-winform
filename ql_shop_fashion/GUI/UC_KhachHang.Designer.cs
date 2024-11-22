@@ -30,10 +30,8 @@ namespace GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_KhachHang));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnLoad = new DevExpress.XtraEditors.SimpleButton();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
@@ -69,7 +67,6 @@ namespace GUI
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -104,7 +101,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
@@ -117,7 +113,6 @@ namespace GUI
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.btnLoad);
-            this.layoutControl1.Controls.Add(this.btnThoat);
             this.layoutControl1.Controls.Add(this.btnSua);
             this.layoutControl1.Controls.Add(this.btnXoa);
             this.layoutControl1.Controls.Add(this.btnThem);
@@ -141,35 +136,21 @@ namespace GUI
             // btnLoad
             // 
             this.btnLoad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLoad.ImageOptions.Image")));
-            this.btnLoad.Location = new System.Drawing.Point(638, 162);
+            this.btnLoad.Location = new System.Drawing.Point(638, 135);
             this.btnLoad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(189, 36);
+            this.btnLoad.Size = new System.Drawing.Size(189, 27);
             this.btnLoad.StyleController = this.layoutControl1;
             this.btnLoad.TabIndex = 78;
             this.btnLoad.Text = "Load";
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(638, 212);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(189, 36);
-            this.btnThoat.StyleController = this.layoutControl1;
-            this.btnThoat.TabIndex = 77;
-            this.btnThoat.Text = "Thoát";
-            // 
             // btnSua
             // 
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
-            this.btnSua.Location = new System.Drawing.Point(638, 112);
+            this.btnSua.Location = new System.Drawing.Point(638, 94);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(189, 36);
+            this.btnSua.Size = new System.Drawing.Size(189, 27);
             this.btnSua.StyleController = this.layoutControl1;
             this.btnSua.TabIndex = 76;
             this.btnSua.Text = "Sửa";
@@ -177,11 +158,10 @@ namespace GUI
             // btnXoa
             // 
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(638, 62);
+            this.btnXoa.Location = new System.Drawing.Point(638, 53);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(189, 36);
+            this.btnXoa.Size = new System.Drawing.Size(189, 27);
             this.btnXoa.StyleController = this.layoutControl1;
             this.btnXoa.TabIndex = 75;
             this.btnXoa.Text = "Xoá";
@@ -189,11 +169,10 @@ namespace GUI
             // btnThem
             // 
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.Location = new System.Drawing.Point(638, 12);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(189, 36);
+            this.btnThem.Size = new System.Drawing.Size(189, 27);
             this.btnThem.StyleController = this.layoutControl1;
             this.btnThem.TabIndex = 74;
             this.btnThem.Text = "Thêm";
@@ -381,7 +360,6 @@ namespace GUI
             this.layoutControlItem9,
             this.layoutControlItem8,
             this.layoutControlItem7,
-            this.layoutControlItem6,
             this.emptySpaceItem7,
             this.emptySpaceItem3,
             this.emptySpaceItem8,
@@ -468,9 +446,9 @@ namespace GUI
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 250);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 182);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(819, 10);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(819, 78);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem11
@@ -478,7 +456,7 @@ namespace GUI
             this.layoutControlItem11.Control = this.txtTaiKhoan;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 156);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(564, 94);
+            this.layoutControlItem11.Size = new System.Drawing.Size(564, 26);
             this.layoutControlItem11.Text = "Tài khoản";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(91, 17);
             // 
@@ -493,9 +471,9 @@ namespace GUI
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(626, 240);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(626, 164);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(193, 10);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(193, 18);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem9
@@ -503,49 +481,40 @@ namespace GUI
             this.layoutControlItem9.Control = this.btnThem;
             this.layoutControlItem9.Location = new System.Drawing.Point(626, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(193, 40);
+            this.layoutControlItem9.Size = new System.Drawing.Size(193, 31);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnXoa;
-            this.layoutControlItem8.Location = new System.Drawing.Point(626, 50);
+            this.layoutControlItem8.Location = new System.Drawing.Point(626, 41);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(193, 40);
+            this.layoutControlItem8.Size = new System.Drawing.Size(193, 31);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnSua;
-            this.layoutControlItem7.Location = new System.Drawing.Point(626, 100);
+            this.layoutControlItem7.Location = new System.Drawing.Point(626, 82);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(193, 40);
+            this.layoutControlItem7.Size = new System.Drawing.Size(193, 31);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.btnThoat;
-            this.layoutControlItem6.Location = new System.Drawing.Point(626, 200);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(193, 40);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
             // 
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
             this.emptySpaceItem7.Location = new System.Drawing.Point(564, 0);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(62, 250);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(62, 182);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(626, 140);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(626, 113);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(193, 10);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -553,7 +522,7 @@ namespace GUI
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(626, 90);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(626, 72);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
             this.emptySpaceItem8.Size = new System.Drawing.Size(193, 10);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -561,7 +530,7 @@ namespace GUI
             // emptySpaceItem9
             // 
             this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(626, 40);
+            this.emptySpaceItem9.Location = new System.Drawing.Point(626, 31);
             this.emptySpaceItem9.Name = "emptySpaceItem9";
             this.emptySpaceItem9.Size = new System.Drawing.Size(193, 10);
             this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
@@ -569,16 +538,16 @@ namespace GUI
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.btnLoad;
-            this.layoutControlItem12.Location = new System.Drawing.Point(626, 150);
+            this.layoutControlItem12.Location = new System.Drawing.Point(626, 123);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(193, 40);
+            this.layoutControlItem12.Size = new System.Drawing.Size(193, 31);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(626, 190);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(626, 154);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(193, 10);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -621,7 +590,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
@@ -651,7 +619,6 @@ namespace GUI
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.TextEdit txtTaiKhoan;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private DevExpress.XtraEditors.SimpleButton btnThoat;
         private DevExpress.XtraEditors.SimpleButton btnSua;
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton btnThem;
@@ -670,7 +637,6 @@ namespace GUI
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;

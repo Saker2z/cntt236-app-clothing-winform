@@ -34,7 +34,7 @@ namespace DAL
                 {
                     // Lấy id_nhom_quyen từ bảng tai_khoan_nhom_quyen
                     var userGroup = data.tai_khoan_nhom_quyens
-                        .FirstOrDefault(ug => ug.id_tai_khoan == user.id);
+                        .FirstOrDefault(ug => ug.tai_khoan_id == user.tai_khoan_id);
 
                     // Gán id_nhom_quyen cho userRoleId hoặc 0 nếu không tìm thấy
                     userRoleId = userGroup?.id_nhom_quyen ?? 0;
@@ -76,7 +76,7 @@ namespace DAL
         public int get_id_nv_by_tk(string nametk)
         {
             var id = (from i in data.tai_khoans
-                      join k in data.nhan_viens on i.id equals k.tai_khoan_id
+                      join k in data.nhan_viens on i.tai_khoan_id equals k.tai_khoan_id
                       where i.ten_dang_nhap == nametk
                       select k.ma_nhan_vien).FirstOrDefault();
 
@@ -86,7 +86,7 @@ namespace DAL
         {
             // Tìm tài khoản dựa vào mã nhân viên
             var taiKhoan = (from tk in data.tai_khoans
-                            where tk.id == id
+                            where tk.tai_khoan_id == id
 
                             select tk).FirstOrDefault();
 
@@ -138,7 +138,7 @@ namespace DAL
                     var excludedRoles = new List<string> { "Admin", "Quản Lí" };
 
                     return (from tk in data.tai_khoans
-                            join tknq in data.tai_khoan_nhom_quyens on tk.id equals tknq.id_tai_khoan
+                            join tknq in data.tai_khoan_nhom_quyens on tk.tai_khoan_id equals tknq.tai_khoan_id
                             join nq in data.nhom_quyens on tknq.id_nhom_quyen equals nq.id_nhom_quyen
                             where !excludedRoles.Contains(nq.ten_nhom) // Lọc quyền không phải "Admin" hoặc "Quản Lí"
                             select tk).Distinct().ToList();
@@ -158,9 +158,9 @@ namespace DAL
             {
                 // Tìm quyền dựa vào id tài khoản
                 var roleName = (from tk in data.tai_khoans
-                                join tknq in data.tai_khoan_nhom_quyens on tk.id equals tknq.id_tai_khoan
+                                join tknq in data.tai_khoan_nhom_quyens on tk.tai_khoan_id equals tknq.tai_khoan_id
                                 join nq in data.nhom_quyens on tknq.id_nhom_quyen equals nq.id_nhom_quyen
-                                where tk.id == accountId
+                                where tk.tai_khoan_id == accountId
                                 select nq.ten_nhom).FirstOrDefault();
 
                 // Trả về tên quyền, nếu không tìm thấy trả về chuỗi rỗng
@@ -177,7 +177,7 @@ namespace DAL
             try
             {
                 // Tìm tài khoản theo ID
-                var account = data.tai_khoans.FirstOrDefault(tk => tk.id == accountId);
+                var account = data.tai_khoans.FirstOrDefault(tk => tk.tai_khoan_id == accountId);
                 if (account == null)
                 {
                     throw new Exception("Tài khoản không tồn tại.");
@@ -191,7 +191,7 @@ namespace DAL
                 }
 
                 // Tìm bản ghi liên kết giữa tài khoản và nhóm quyền
-                var accountRole = data.tai_khoan_nhom_quyens.FirstOrDefault(ar => ar.id_tai_khoan == accountId);
+                var accountRole = data.tai_khoan_nhom_quyens.FirstOrDefault(ar => ar.tai_khoan_id == accountId);
                 if (accountRole != null)
                 {
                     // Cập nhật nhóm quyền mới
@@ -202,7 +202,7 @@ namespace DAL
                     // Nếu chưa có nhóm quyền, thêm mới
                     data.tai_khoan_nhom_quyens.InsertOnSubmit(new tai_khoan_nhom_quyen
                     {
-                        id_tai_khoan = accountId,
+                        tai_khoan_id = accountId,
                         id_nhom_quyen = role.id_nhom_quyen,
                         create_at = DateTime.Now
                     });

@@ -26,7 +26,7 @@ namespace GUI
             btnThem.Click += BtnThem_Click;
             btnSua.Click += BtnSua_Click;
             btnXoa.Click += BtnXoa_Click;
-            btnThoat.Click += BtnThoat_Click;
+          
             btnLoad.Click += BtnLoad_Click;
             txtSDT.KeyPress += TxtSDT_KeyPress;
             txtSDT.Leave += TxtSDT_Leave;
@@ -188,10 +188,12 @@ namespace GUI
 
             khach_hang kh = new khach_hang
             {
-               ten_khach_hang=txtTenKH.Text,
-               dia_chi=txtDiaChi.Text,
-               dien_thoai=txtSDT.Text,
-                tai_khoan_id = maTK
+                ten_khach_hang = txtTenKH.Text,
+                dia_chi = txtDiaChi.Text,
+                dien_thoai = txtSDT.Text,
+                tai_khoan_id = maTK,
+                diem_thuong = 0,
+                diem_da_doi = 0,
 
         };
             return kh;

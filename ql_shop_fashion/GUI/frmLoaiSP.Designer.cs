@@ -63,8 +63,9 @@ namespace GUI
             this.pnl_LoaiSP.Controls.Add(this.thongtinnhomloai);
             this.pnl_LoaiSP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_LoaiSP.Location = new System.Drawing.Point(0, 0);
+            this.pnl_LoaiSP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_LoaiSP.Name = "pnl_LoaiSP";
-            this.pnl_LoaiSP.Size = new System.Drawing.Size(706, 602);
+            this.pnl_LoaiSP.Size = new System.Drawing.Size(824, 741);
             this.pnl_LoaiSP.TabIndex = 0;
             // 
             // gb_loaisp
@@ -72,9 +73,11 @@ namespace GUI
             this.gb_loaisp.BackColor = System.Drawing.Color.White;
             this.gb_loaisp.Controls.Add(this.gct_loaisp);
             this.gb_loaisp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gb_loaisp.Location = new System.Drawing.Point(0, 283);
+            this.gb_loaisp.Location = new System.Drawing.Point(0, 348);
+            this.gb_loaisp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gb_loaisp.Name = "gb_loaisp";
-            this.gb_loaisp.Size = new System.Drawing.Size(706, 319);
+            this.gb_loaisp.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gb_loaisp.Size = new System.Drawing.Size(824, 393);
             this.gb_loaisp.TabIndex = 42;
             this.gb_loaisp.TabStop = false;
             this.gb_loaisp.Text = "Danh sách loại sản phẩm";
@@ -82,16 +85,19 @@ namespace GUI
             // gct_loaisp
             // 
             this.gct_loaisp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gct_loaisp.Location = new System.Drawing.Point(3, 17);
+            this.gct_loaisp.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gct_loaisp.Location = new System.Drawing.Point(3, 20);
             this.gct_loaisp.MainView = this.gridView2;
+            this.gct_loaisp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gct_loaisp.Name = "gct_loaisp";
-            this.gct_loaisp.Size = new System.Drawing.Size(700, 299);
+            this.gct_loaisp.Size = new System.Drawing.Size(818, 369);
             this.gct_loaisp.TabIndex = 39;
             this.gct_loaisp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
             // 
+            this.gridView2.DetailHeight = 431;
             this.gridView2.GridControl = this.gct_loaisp;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
@@ -113,114 +119,128 @@ namespace GUI
             this.thongtinnhomloai.Controls.Add(this.lb_maloai);
             this.thongtinnhomloai.Dock = System.Windows.Forms.DockStyle.Top;
             this.thongtinnhomloai.Location = new System.Drawing.Point(0, 0);
+            this.thongtinnhomloai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.thongtinnhomloai.Name = "thongtinnhomloai";
-            this.thongtinnhomloai.Size = new System.Drawing.Size(706, 283);
+            this.thongtinnhomloai.Size = new System.Drawing.Size(824, 348);
             this.thongtinnhomloai.TabIndex = 5;
             // 
             // cbb_tennhomloai
             // 
-            this.cbb_tennhomloai.Location = new System.Drawing.Point(145, 158);
+            this.cbb_tennhomloai.Location = new System.Drawing.Point(169, 194);
+            this.cbb_tennhomloai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbb_tennhomloai.Name = "cbb_tennhomloai";
             this.cbb_tennhomloai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_tennhomloai.Size = new System.Drawing.Size(338, 20);
+            this.cbb_tennhomloai.Size = new System.Drawing.Size(394, 22);
             this.cbb_tennhomloai.TabIndex = 47;
             // 
             // lb_tennhomloai
             // 
-            this.lb_tennhomloai.Location = new System.Drawing.Point(22, 161);
+            this.lb_tennhomloai.Location = new System.Drawing.Point(26, 198);
+            this.lb_tennhomloai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_tennhomloai.Name = "lb_tennhomloai";
-            this.lb_tennhomloai.Size = new System.Drawing.Size(70, 13);
+            this.lb_tennhomloai.Size = new System.Drawing.Size(92, 17);
             this.lb_tennhomloai.TabIndex = 46;
             this.lb_tennhomloai.Text = "Tên Nhóm Loại";
             // 
             // btn_loadloaisp
             // 
             this.btn_loadloaisp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_loadloaisp.Location = new System.Drawing.Point(535, 206);
+            this.btn_loadloaisp.Location = new System.Drawing.Point(624, 254);
+            this.btn_loadloaisp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_loadloaisp.Name = "btn_loadloaisp";
-            this.btn_loadloaisp.Size = new System.Drawing.Size(118, 35);
+            this.btn_loadloaisp.Size = new System.Drawing.Size(138, 43);
             this.btn_loadloaisp.TabIndex = 45;
             this.btn_loadloaisp.Text = "Load Loại Sản Phẩm";
             // 
             // btn_xoaloaisp
             // 
             this.btn_xoaloaisp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_xoaloaisp.Location = new System.Drawing.Point(535, 143);
+            this.btn_xoaloaisp.Location = new System.Drawing.Point(624, 176);
+            this.btn_xoaloaisp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_xoaloaisp.Name = "btn_xoaloaisp";
-            this.btn_xoaloaisp.Size = new System.Drawing.Size(118, 35);
+            this.btn_xoaloaisp.Size = new System.Drawing.Size(138, 43);
             this.btn_xoaloaisp.TabIndex = 44;
             this.btn_xoaloaisp.Text = "Xóa Loại Sản Phẩm";
             // 
             // btn_sualoaisp
             // 
             this.btn_sualoaisp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_sualoaisp.Location = new System.Drawing.Point(535, 80);
+            this.btn_sualoaisp.Location = new System.Drawing.Point(624, 98);
+            this.btn_sualoaisp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_sualoaisp.Name = "btn_sualoaisp";
-            this.btn_sualoaisp.Size = new System.Drawing.Size(118, 35);
+            this.btn_sualoaisp.Size = new System.Drawing.Size(138, 43);
             this.btn_sualoaisp.TabIndex = 43;
             this.btn_sualoaisp.Text = "Sửa Loại Sản Phẩm";
             // 
             // btn_themloaisp
             // 
             this.btn_themloaisp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_themloaisp.Location = new System.Drawing.Point(535, 17);
+            this.btn_themloaisp.Location = new System.Drawing.Point(624, 21);
+            this.btn_themloaisp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_themloaisp.Name = "btn_themloaisp";
-            this.btn_themloaisp.Size = new System.Drawing.Size(118, 35);
+            this.btn_themloaisp.Size = new System.Drawing.Size(138, 43);
             this.btn_themloaisp.TabIndex = 42;
             this.btn_themloaisp.Text = "Thêm Loại Sản Phẩm";
             // 
             // txt_chitiet
             // 
-            this.txt_chitiet.Location = new System.Drawing.Point(145, 221);
+            this.txt_chitiet.Location = new System.Drawing.Point(169, 272);
+            this.txt_chitiet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_chitiet.Name = "txt_chitiet";
-            this.txt_chitiet.Size = new System.Drawing.Size(338, 20);
+            this.txt_chitiet.Size = new System.Drawing.Size(394, 22);
             this.txt_chitiet.TabIndex = 7;
             // 
             // lb_chitiet
             // 
-            this.lb_chitiet.Location = new System.Drawing.Point(22, 224);
+            this.lb_chitiet.Location = new System.Drawing.Point(26, 276);
+            this.lb_chitiet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_chitiet.Name = "lb_chitiet";
-            this.lb_chitiet.Size = new System.Drawing.Size(36, 13);
+            this.lb_chitiet.Size = new System.Drawing.Size(45, 17);
             this.lb_chitiet.TabIndex = 6;
             this.lb_chitiet.Text = "Chi Tiết";
             // 
             // txt_tenloai
             // 
-            this.txt_tenloai.Location = new System.Drawing.Point(145, 95);
+            this.txt_tenloai.Location = new System.Drawing.Point(169, 117);
+            this.txt_tenloai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_tenloai.Name = "txt_tenloai";
-            this.txt_tenloai.Size = new System.Drawing.Size(338, 20);
+            this.txt_tenloai.Size = new System.Drawing.Size(394, 22);
             this.txt_tenloai.TabIndex = 5;
             // 
             // txt_maloai
             // 
-            this.txt_maloai.Location = new System.Drawing.Point(145, 25);
+            this.txt_maloai.Location = new System.Drawing.Point(169, 31);
+            this.txt_maloai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_maloai.Name = "txt_maloai";
-            this.txt_maloai.Size = new System.Drawing.Size(338, 20);
+            this.txt_maloai.Size = new System.Drawing.Size(394, 22);
             this.txt_maloai.TabIndex = 4;
             // 
             // lb_tenloai
             // 
-            this.lb_tenloai.Location = new System.Drawing.Point(22, 98);
+            this.lb_tenloai.Location = new System.Drawing.Point(26, 121);
+            this.lb_tenloai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_tenloai.Name = "lb_tenloai";
-            this.lb_tenloai.Size = new System.Drawing.Size(40, 13);
+            this.lb_tenloai.Size = new System.Drawing.Size(51, 17);
             this.lb_tenloai.TabIndex = 1;
             this.lb_tenloai.Text = "Tên Loại";
             // 
             // lb_maloai
             // 
-            this.lb_maloai.Location = new System.Drawing.Point(22, 28);
+            this.lb_maloai.Location = new System.Drawing.Point(26, 34);
+            this.lb_maloai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_maloai.Name = "lb_maloai";
-            this.lb_maloai.Size = new System.Drawing.Size(36, 13);
+            this.lb_maloai.Size = new System.Drawing.Size(45, 17);
             this.lb_maloai.TabIndex = 0;
             this.lb_maloai.Text = "Mã Loại";
             // 
             // frmLoaiSP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 602);
+            this.ClientSize = new System.Drawing.Size(824, 741);
             this.Controls.Add(this.pnl_LoaiSP);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmLoaiSP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLoaiSP";

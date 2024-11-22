@@ -344,7 +344,7 @@ namespace GUI
         private void UC_Quyen_Load(object sender, EventArgs e)
         {
             load_ds_quyen();
-           
+
         }
 
 
@@ -384,7 +384,7 @@ namespace GUI
         }
 
         // Load danh sách màn hình
-    
+
 
         // Load danh sách quyền theo nhóm quyền
         private void load_quyen(int idNhomQuyen)

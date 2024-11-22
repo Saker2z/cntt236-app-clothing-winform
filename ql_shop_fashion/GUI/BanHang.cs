@@ -34,20 +34,22 @@ namespace GUI
         phuong_thuc_thanh_toan_BLL pttt = new phuong_thuc_thanh_toan_BLL();
         hoa_don_BLL hd_BLL = new hoa_don_BLL();
         chi_tiet_hoa_don_BLL cthd_BLL = new chi_tiet_hoa_don_BLL();
+        nhan_vien_sql_BLL nv = new nhan_vien_sql_BLL();
         private string data;
 
         public string Data { get => data; set => data = value; }
         private string maSP;
-        public BanHang()
+        int id_nv;
+        public BanHang(int idnv)
         {
             InitializeComponent();
 
-
+            id_nv = idnv;
 
             this.StartPosition = FormStartPosition.CenterScreen;
 
             this.Load += BanHang_Load;
-
+            txtNhanVien.Text= nv.get_name_nv_by_id(id_nv);
             dgvDS.FocusedRowChanged += DgvDS_FocusedRowChanged;
             cbokich_thuoc.EditValueChanged += Cbokich_thuoc_EditValueChanged;
             btnThem.Click += BtnThem_Click;
@@ -65,7 +67,76 @@ namespace GUI
             ckbPhieuGG.CheckedChanged += CkbPhieuGG_CheckedChanged;
             ckbDoiDiem.CheckedChanged += CkbDoiDiem_CheckedChanged;
             txtTienDoiDiem.EditValueChanged += TxtTienDoiDiem_EditValueChanged;
+            btnDoiTraHang.Click += BtnDoiTraHang_Click;
+            txtDiem.TextChanged += TxtDiem_TextChanged;
+            txtKhachThanhToan.KeyPress += TxtKhachThanhToan_KeyPress;
+            btnThemKH.Click += BtnThemKH_Click;
+            btnInTemGia.Click += BtnInTemGia_Click;
         }
+
+        private void BtnInTemGia_Click(object sender, EventArgs e)
+        {
+            frmInGia inGia = new frmInGia();
+           
+            inGia.Show();
+        }
+
+        private void BtnThemKH_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem frmMain đã tồn tại hay chưa
+            frmMain mainForm = Application.OpenForms.OfType<frmMain>().FirstOrDefault();
+
+            if (mainForm == null)
+            {
+                // Nếu chưa có form chính, tạo mới
+                mainForm = new frmMain();
+                mainForm.Show();
+            }
+            else
+            {
+                // Nếu đã có, kích hoạt và đưa lên foreground
+                mainForm.BringToFront();
+            }
+
+            // Gán UserControl UC_KhachHang vào panel chính của frmMain
+            var khachHangUC = new UC_KhachHang();
+            khachHangUC.Dock = DockStyle.Fill; // Để UC lấp đầy panel
+            mainForm.panel_chinh.Controls.Clear(); // Xóa các control cũ trong panel
+            mainForm.panel_chinh.Controls.Add(khachHangUC); // Thêm UserControl vào panel
+
+        }
+
+        private void TxtKhachThanhToan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                
+                e.Handled = true;
+            }
+        }
+
+        private void TxtDiem_TextChanged(object sender, EventArgs e)
+        {
+            if(ckbDoiDiem.Checked)
+            {
+                txtTienDoiDiem.Text = txtDiem.Text;
+            }    
+            else
+            {
+                txtTienDoiDiem.Text = "0";
+            }    
+            
+        }
+
+        private void BtnDoiTraHang_Click(object sender, EventArgs e)
+        {
+           
+            // Tạo instance của UC_NhanVien và thêm vào pn_main
+            DoiTraHang doiTraHang = new DoiTraHang(Properties.Settings.Default.id_user_login);
+            //nhapHang.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+            doiTraHang.Show();
+        }
+
         //public static BanHang GetInstance(string maSP)
         //{
         //    if (_instance == null || _instance.IsDisposed)
@@ -240,6 +311,7 @@ namespace GUI
             else
             {
                 cboKhachHang.Properties.DataSource = null;
+                ckbDoiDiem.Checked = false;
                 txtDiem.Text = null;
             }
         }
@@ -414,7 +486,7 @@ namespace GUI
         private int themHoaDon()
         {
 
-            int maNV = 1;
+            int maNV = id_nv;
             //int maKH = int.Parse(cboKhachHang.EditValue.ToString());
             int? maKH = null;
             if (int.TryParse(cboKhachHang.EditValue?.ToString(), out int tempMaKH))
@@ -1043,7 +1115,10 @@ namespace GUI
             ckbPhieuGG.Checked = false;
             txtTienDoiDiem.Text = null;
             ckbKHThanThiet.Checked = false;
-
+            txtNhanVien.ReadOnly = true;
+            cbokich_thuoc.Enabled = false;
+            cboMauSac.Enabled = false;
+            txtTienDoiDiem.ReadOnly = true;
         }
 
         private void BanHang_Load_1(object sender, EventArgs e)

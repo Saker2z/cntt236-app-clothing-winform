@@ -35,5 +35,9 @@ namespace BLL
         {
             return nv_dal.get_name_nv_by_id(id);
         }
+        public nhan_vien GetNhanVienByMaNV(int maNhanVien)
+        {
+            return nv_dal.GetNhanVienByMaNV(maNhanVien);
+        }
     }
 }

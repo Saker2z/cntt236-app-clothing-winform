@@ -30,20 +30,20 @@ namespace GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoiTraHang));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtGiaGiam1 = new DevExpress.XtraEditors.TextEdit();
             this.txtGiaBan1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtNhanVien = new DevExpress.XtraEditors.TextEdit();
             this.btnQuetMaTimHD = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl5 = new DevExpress.XtraLayout.LayoutControl();
@@ -136,6 +136,8 @@ namespace GUI
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem16 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -163,13 +165,11 @@ namespace GUI
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem16 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaGiam1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).BeginInit();
@@ -240,6 +240,8 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
@@ -257,15 +259,13 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.txtGiaGiam1);
             this.layoutControl1.Controls.Add(this.txtGiaBan1);
-            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.txtNhanVien);
             this.layoutControl1.Controls.Add(this.btnQuetMaTimHD);
             this.layoutControl1.Controls.Add(this.groupControl3);
             this.layoutControl1.Controls.Add(this.dgvChiTietHoaDon);
@@ -293,33 +293,33 @@ namespace GUI
             // txtGiaGiam1
             // 
             this.txtGiaGiam1.EditValue = "";
-            this.txtGiaGiam1.Location = new System.Drawing.Point(526, 119);
+            this.txtGiaGiam1.Location = new System.Drawing.Point(543, 119);
             this.txtGiaGiam1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGiaGiam1.Name = "txtGiaGiam1";
-            this.txtGiaGiam1.Size = new System.Drawing.Size(199, 22);
+            this.txtGiaGiam1.Size = new System.Drawing.Size(182, 22);
             this.txtGiaGiam1.StyleController = this.layoutControl1;
             this.txtGiaGiam1.TabIndex = 77;
             // 
             // txtGiaBan1
             // 
             this.txtGiaBan1.EditValue = "";
-            this.txtGiaBan1.Location = new System.Drawing.Point(133, 119);
+            this.txtGiaBan1.Location = new System.Drawing.Point(150, 119);
             this.txtGiaBan1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGiaBan1.Name = "txtGiaBan1";
-            this.txtGiaBan1.Size = new System.Drawing.Size(268, 22);
+            this.txtGiaBan1.Size = new System.Drawing.Size(251, 22);
             this.txtGiaBan1.StyleController = this.layoutControl1;
             this.txtGiaBan1.TabIndex = 76;
             // 
-            // textEdit1
+            // txtNhanVien
             // 
-            this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(895, 12);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(256, 22);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 75;
-            this.textEdit1.Tag = "";
+            this.txtNhanVien.EditValue = "";
+            this.txtNhanVien.Location = new System.Drawing.Point(912, 12);
+            this.txtNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.Size = new System.Drawing.Size(239, 22);
+            this.txtNhanVien.StyleController = this.layoutControl1;
+            this.txtNhanVien.TabIndex = 75;
+            this.txtNhanVien.Tag = "";
             // 
             // btnQuetMaTimHD
             // 
@@ -716,19 +716,19 @@ namespace GUI
             // btnDelete
             // 
             this.btnDelete.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
-            editorButtonImageOptions3.SvgImageSize = new System.Drawing.Size(14, 14);
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions1.SvgImageSize = new System.Drawing.Size(14, 14);
             this.btnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // btnXoa
             // 
             this.btnXoa.AutoHeight = false;
-            editorButtonImageOptions4.SvgImageSize = new System.Drawing.Size(14, 14);
+            editorButtonImageOptions2.SvgImageSize = new System.Drawing.Size(14, 14);
             this.btnXoa.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
@@ -758,39 +758,39 @@ namespace GUI
             // 
             // txtNgayBan1
             // 
-            this.txtNgayBan1.Location = new System.Drawing.Point(133, 38);
+            this.txtNgayBan1.Location = new System.Drawing.Point(150, 38);
             this.txtNgayBan1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNgayBan1.Name = "txtNgayBan1";
-            this.txtNgayBan1.Size = new System.Drawing.Size(592, 23);
+            this.txtNgayBan1.Size = new System.Drawing.Size(575, 23);
             this.txtNgayBan1.TabIndex = 60;
             // 
             // txtMaSP
             // 
             this.txtMaSP.EditValue = "";
-            this.txtMaSP.Location = new System.Drawing.Point(133, 67);
+            this.txtMaSP.Location = new System.Drawing.Point(150, 67);
             this.txtMaSP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaSP.Name = "txtMaSP";
-            this.txtMaSP.Size = new System.Drawing.Size(592, 22);
+            this.txtMaSP.Size = new System.Drawing.Size(575, 22);
             this.txtMaSP.StyleController = this.layoutControl1;
             this.txtMaSP.TabIndex = 13;
             // 
             // txtTenSanPham1
             // 
             this.txtTenSanPham1.EditValue = "";
-            this.txtTenSanPham1.Location = new System.Drawing.Point(133, 93);
+            this.txtTenSanPham1.Location = new System.Drawing.Point(150, 93);
             this.txtTenSanPham1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenSanPham1.Name = "txtTenSanPham1";
-            this.txtTenSanPham1.Size = new System.Drawing.Size(592, 22);
+            this.txtTenSanPham1.Size = new System.Drawing.Size(575, 22);
             this.txtTenSanPham1.StyleController = this.layoutControl1;
             this.txtTenSanPham1.TabIndex = 17;
             // 
             // txtSoLuongTon1
             // 
             this.txtSoLuongTon1.EditValue = "";
-            this.txtSoLuongTon1.Location = new System.Drawing.Point(133, 145);
+            this.txtSoLuongTon1.Location = new System.Drawing.Point(150, 145);
             this.txtSoLuongTon1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoLuongTon1.Name = "txtSoLuongTon1";
-            this.txtSoLuongTon1.Size = new System.Drawing.Size(268, 22);
+            this.txtSoLuongTon1.Size = new System.Drawing.Size(251, 22);
             this.txtSoLuongTon1.StyleController = this.layoutControl1;
             this.txtSoLuongTon1.TabIndex = 21;
             // 
@@ -801,11 +801,11 @@ namespace GUI
             0,
             0,
             0});
-            this.txtSoLuongMua1.Location = new System.Drawing.Point(526, 145);
+            this.txtSoLuongMua1.Location = new System.Drawing.Point(543, 145);
             this.txtSoLuongMua1.Name = "txtSoLuongMua1";
             this.txtSoLuongMua1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtSoLuongMua1.Size = new System.Drawing.Size(199, 24);
+            this.txtSoLuongMua1.Size = new System.Drawing.Size(182, 24);
             this.txtSoLuongMua1.StyleController = this.layoutControl1;
             this.txtSoLuongMua1.TabIndex = 34;
             // 
@@ -959,10 +959,10 @@ namespace GUI
             // txtMaHoaDon
             // 
             this.txtMaHoaDon.EditValue = "";
-            this.txtMaHoaDon.Location = new System.Drawing.Point(874, 105);
+            this.txtMaHoaDon.Location = new System.Drawing.Point(891, 105);
             this.txtMaHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaHoaDon.Name = "txtMaHoaDon";
-            this.txtMaHoaDon.Size = new System.Drawing.Size(261, 22);
+            this.txtMaHoaDon.Size = new System.Drawing.Size(244, 22);
             this.txtMaHoaDon.StyleController = this.layoutControl1;
             this.txtMaHoaDon.TabIndex = 69;
             this.txtMaHoaDon.Tag = "";
@@ -970,10 +970,10 @@ namespace GUI
             // txtMaKhachHang
             // 
             this.txtMaKhachHang.EditValue = "";
-            this.txtMaKhachHang.Location = new System.Drawing.Point(874, 145);
+            this.txtMaKhachHang.Location = new System.Drawing.Point(891, 145);
             this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
-            this.txtMaKhachHang.Size = new System.Drawing.Size(647, 22);
+            this.txtMaKhachHang.Size = new System.Drawing.Size(630, 22);
             this.txtMaKhachHang.StyleController = this.layoutControl1;
             this.txtMaKhachHang.TabIndex = 69;
             this.txtMaKhachHang.Tag = "";
@@ -981,10 +981,10 @@ namespace GUI
             // txtMaNV
             // 
             this.txtMaNV.EditValue = "";
-            this.txtMaNV.Location = new System.Drawing.Point(874, 171);
+            this.txtMaNV.Location = new System.Drawing.Point(891, 171);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(647, 22);
+            this.txtMaNV.Size = new System.Drawing.Size(630, 22);
             this.txtMaNV.StyleController = this.layoutControl1;
             this.txtMaNV.TabIndex = 69;
             this.txtMaNV.Tag = "";
@@ -992,10 +992,10 @@ namespace GUI
             // txtNgayLap
             // 
             this.txtNgayLap.EditValue = "";
-            this.txtNgayLap.Location = new System.Drawing.Point(874, 197);
+            this.txtNgayLap.Location = new System.Drawing.Point(891, 197);
             this.txtNgayLap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNgayLap.Name = "txtNgayLap";
-            this.txtNgayLap.Size = new System.Drawing.Size(647, 22);
+            this.txtNgayLap.Size = new System.Drawing.Size(630, 22);
             this.txtNgayLap.StyleController = this.layoutControl1;
             this.txtNgayLap.TabIndex = 69;
             this.txtNgayLap.Tag = "";
@@ -1041,7 +1041,7 @@ namespace GUI
             this.layoutControlItem34.Name = "layoutControlItem34";
             this.layoutControlItem34.Size = new System.Drawing.Size(717, 29);
             this.layoutControlItem34.Text = "Ngày bán hàng:";
-            this.layoutControlItem34.TextSize = new System.Drawing.Size(118, 16);
+            this.layoutControlItem34.TextSize = new System.Drawing.Size(135, 16);
             // 
             // txtSP1
             // 
@@ -1052,7 +1052,7 @@ namespace GUI
             this.txtSP1.Name = "txtSP1";
             this.txtSP1.Size = new System.Drawing.Size(717, 26);
             this.txtSP1.Text = "Mã sản phẩm:";
-            this.txtSP1.TextSize = new System.Drawing.Size(118, 17);
+            this.txtSP1.TextSize = new System.Drawing.Size(135, 17);
             // 
             // layoutControlItem3
             // 
@@ -1063,7 +1063,7 @@ namespace GUI
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(717, 26);
             this.layoutControlItem3.Text = "Tên sản phẩm:";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(118, 17);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(135, 17);
             // 
             // layoutControlItem8
             // 
@@ -1074,7 +1074,7 @@ namespace GUI
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(393, 28);
             this.layoutControlItem8.Text = "Số lượng tồn:";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(118, 17);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(135, 17);
             // 
             // layoutControlItem9
             // 
@@ -1085,7 +1085,7 @@ namespace GUI
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(324, 28);
             this.layoutControlItem9.Text = "Số lượng bán:";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(118, 17);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(135, 17);
             // 
             // layoutControlItem1
             // 
@@ -1171,12 +1171,12 @@ namespace GUI
             // 
             // txtMaNhanVienDoiTra
             // 
-            this.txtMaNhanVienDoiTra.Control = this.textEdit1;
+            this.txtMaNhanVienDoiTra.Control = this.txtNhanVien;
             this.txtMaNhanVienDoiTra.Location = new System.Drawing.Point(762, 0);
             this.txtMaNhanVienDoiTra.Name = "txtMaNhanVienDoiTra";
             this.txtMaNhanVienDoiTra.Size = new System.Drawing.Size(381, 26);
-            this.txtMaNhanVienDoiTra.Text = "Mã nhân viên";
-            this.txtMaNhanVienDoiTra.TextSize = new System.Drawing.Size(118, 16);
+            this.txtMaNhanVienDoiTra.Text = "Tên nhân viên đổi trả:";
+            this.txtMaNhanVienDoiTra.TextSize = new System.Drawing.Size(135, 17);
             // 
             // emptySpaceItem12
             // 
@@ -1201,7 +1201,7 @@ namespace GUI
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(393, 26);
             this.layoutControlItem2.Text = "Giá bán:";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(118, 16);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(135, 16);
             // 
             // u
             // 
@@ -1210,7 +1210,7 @@ namespace GUI
             this.u.Name = "u";
             this.u.Size = new System.Drawing.Size(324, 26);
             this.u.Text = "Phần trăm giảm giá";
-            this.u.TextSize = new System.Drawing.Size(118, 17);
+            this.u.TextSize = new System.Drawing.Size(135, 17);
             // 
             // layoutControlGroup1
             // 
@@ -1254,7 +1254,7 @@ namespace GUI
             this.layoutControlItem19.Name = "layoutControlItem19";
             this.layoutControlItem19.Size = new System.Drawing.Size(772, 26);
             this.layoutControlItem19.Text = "Mã khách hàng:";
-            this.layoutControlItem19.TextSize = new System.Drawing.Size(118, 16);
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(135, 16);
             // 
             // layoutControlItem20
             // 
@@ -1264,7 +1264,7 @@ namespace GUI
             this.layoutControlItem20.Name = "layoutControlItem20";
             this.layoutControlItem20.Size = new System.Drawing.Size(772, 26);
             this.layoutControlItem20.Text = "Mã nhân viên:";
-            this.layoutControlItem20.TextSize = new System.Drawing.Size(118, 16);
+            this.layoutControlItem20.TextSize = new System.Drawing.Size(135, 16);
             // 
             // layoutControlItem21
             // 
@@ -1275,7 +1275,7 @@ namespace GUI
             this.layoutControlItem21.Name = "layoutControlItem21";
             this.layoutControlItem21.Size = new System.Drawing.Size(772, 26);
             this.layoutControlItem21.Text = "Ngày lập:";
-            this.layoutControlItem21.TextSize = new System.Drawing.Size(118, 17);
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(135, 17);
             // 
             // layoutControlItem15
             // 
@@ -1286,7 +1286,7 @@ namespace GUI
             this.layoutControlItem15.Name = "layoutControlItem15";
             this.layoutControlItem15.Size = new System.Drawing.Size(386, 40);
             this.layoutControlItem15.Text = "Mã hóa đơn:";
-            this.layoutControlItem15.TextSize = new System.Drawing.Size(118, 16);
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(135, 16);
             // 
             // layoutControlItem16
             // 
@@ -1296,6 +1296,22 @@ namespace GUI
             this.layoutControlItem16.Size = new System.Drawing.Size(162, 40);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
+            // 
+            // emptySpaceItem9
+            // 
+            this.emptySpaceItem9.AllowHotTrack = false;
+            this.emptySpaceItem9.Location = new System.Drawing.Point(386, 0);
+            this.emptySpaceItem9.Name = "emptySpaceItem9";
+            this.emptySpaceItem9.Size = new System.Drawing.Size(62, 40);
+            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem16
+            // 
+            this.emptySpaceItem16.AllowHotTrack = false;
+            this.emptySpaceItem16.Location = new System.Drawing.Point(610, 0);
+            this.emptySpaceItem16.Name = "emptySpaceItem16";
+            this.emptySpaceItem16.Size = new System.Drawing.Size(162, 40);
+            this.emptySpaceItem16.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
@@ -1545,22 +1561,6 @@ namespace GUI
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(796, 60);
             // 
-            // emptySpaceItem9
-            // 
-            this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(386, 0);
-            this.emptySpaceItem9.Name = "emptySpaceItem9";
-            this.emptySpaceItem9.Size = new System.Drawing.Size(62, 40);
-            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem16
-            // 
-            this.emptySpaceItem16.AllowHotTrack = false;
-            this.emptySpaceItem16.Location = new System.Drawing.Point(610, 0);
-            this.emptySpaceItem16.Name = "emptySpaceItem16";
-            this.emptySpaceItem16.Size = new System.Drawing.Size(162, 40);
-            this.emptySpaceItem16.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // DoiTraHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -1569,11 +1569,12 @@ namespace GUI
             this.Controls.Add(this.layoutControl1);
             this.Name = "DoiTraHang";
             this.Text = "DoiTraHang";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaGiam1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).EndInit();
@@ -1644,6 +1645,8 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
@@ -1661,8 +1664,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1774,7 +1775,7 @@ namespace GUI
         private DevExpress.XtraEditors.TextEdit txtNgayLap;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtNhanVien;
         private DevExpress.XtraLayout.LayoutControlItem txtMaNhanVienDoiTra;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem12;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem21;

@@ -327,3 +327,37 @@ E:\Cac mon hoc\Github\backup16\cntt236-app-clothing-winform\ql_shop_fashion\DLL\
 E:\Cac mon hoc\Github\backup16\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.dll
 E:\Cac mon hoc\Github\backup16\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.pdb
 E:\Cac mon hoc\Github\backup16\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BLL.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BLL.pdb
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Memory.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Numerics.Vectors.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Buffers.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.pdb
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.dll.config
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.pdb
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.dll.config
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CopyComplete
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.dll
+D:\ĐÔ@@@\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.pdb
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BLL.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BLL.pdb
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Memory.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Buffers.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.pdb
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.dll.config
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.pdb
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.dll.config
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.dll
+C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.pdb

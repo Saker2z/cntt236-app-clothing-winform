@@ -24,6 +24,9 @@ namespace GUI
         NCC_NCCSP ncc_sp;
         UC_BaoCao_ThongKe bctk;
         frmNhapHang nhapHang;
+        BanHang banHang;
+        DoiTraHang doiTraHang;
+        UC_CaNhan canhan;
 
         public frmMain()
         {
@@ -40,7 +43,32 @@ namespace GUI
             ace_baocaothongke.Click += Ace_baocaothongke_Click;
             ace_quyen.Click += Ace_quyen_Click;
             ace_dangxuat.Click += Ace_dangxuat_Click;
+            ace_banhang.Click += Ace_banhang_Click;
+            ace_thongtincanhan.Click += Ace_thongtincanhan_Click1;
+         
 
+        }
+
+        private void Ace_thongtincanhan_Click1(object sender, EventArgs e)
+        {
+            canhan = new UC_CaNhan(Properties.Settings.Default.id_user_login);
+            panel_chinh.Controls.Clear();
+
+            // Tạo instance của UC_NhanVien và thêm vào pn_main
+
+            canhan.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+
+            panel_chinh.Controls.Add(canhan); // Thêm UC_NhanVien vào panel pn_main
+        }
+
+        private void Ace_banhang_Click(object sender, EventArgs e)
+        {
+            pn_main.Controls.Clear();
+
+            // Tạo instance của UC_NhanVien và thêm vào pn_main
+            banHang = new BanHang(Properties.Settings.Default.id_user_login);
+            //nhapHang.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+            banHang.Show();
         }
 
         private void Ace_quyen_Click(object sender, EventArgs e)

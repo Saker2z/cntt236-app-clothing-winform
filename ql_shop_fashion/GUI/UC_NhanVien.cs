@@ -21,7 +21,7 @@ namespace GUI
         string rolee;
         public UC_NhanVien(string role)
         {
-            InitializeComponent();           
+            InitializeComponent();
             rolee = role;
             this.Load += UC_NhanVien_Load;
             GridView gridView = gct_nv.MainView as GridView;
@@ -322,7 +322,7 @@ namespace GUI
             tai_khoan tkk = tk_bll.GetTaiKhoanByMaID(tk);
             txt_tk.Text = tkk.ten_dang_nhap;
             txt_mk.Text = tkk.mat_khau_hash;
-            
+
         }
 
 
@@ -334,20 +334,20 @@ namespace GUI
 
         private void Them_nv_NhanVienAdded(object sender, EventArgs e)
         {
-           
+
             LoadGridControl(rolee);
-           
+
         }
 
         void load_admin_qli(string role)
         {
             cbb_cv.DropDownStyle = ComboBoxStyle.DropDownList;
-          
+
 
 
             LoadGridControl(role);
-           
-            if(role.Equals("Admin"))
+
+            if (role.Equals("Admin"))
             {
                 cbb_cv.Items.Clear();
                 cbb_cv.Items.Add("Admin");
@@ -355,14 +355,14 @@ namespace GUI
                 cbb_cv.Items.Add("Nhân viên");
                 cbb_cv.Items.Add("Nhân viên kho");
                 cbb_cv.Items.Add("Nhân viên bán hàng");
-            }    
+            }
             else
             {
                 cbb_cv.Items.Clear();
                 cbb_cv.Items.Add("Nhân viên kho");
                 cbb_cv.Items.Add("Nhân viên");
                 cbb_cv.Items.Add("Nhân viên bán hàng");
-            }    
+            }
 
         }
         private void LoadGridControl(string role)
@@ -387,6 +387,7 @@ namespace GUI
                 gridView.Columns["updated_at"].Visible = false; // Ẩn cột ngày cập nhật
                 gridView.Columns["tai_khoan"].Visible = false; // Ẩn cột ngày cập nhật
                 gridView.Columns["chuc_vu"].Visible = false;
+                gridView.Columns["tai_khoan1"].Visible = false;
                 // Tùy chỉnh tiêu đề cột (nếu cần)
                 gridView.Columns["ma_nhan_vien"].Caption = "Mã Nhân Viên";
                 gridView.Columns["ten_nhan_vien"].Caption = "Tên Nhân Viên";

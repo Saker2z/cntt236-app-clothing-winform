@@ -27,10 +27,13 @@ namespace GUI
         chi_tiet_hoa_don_doi_tra_BLL cthddt_BLL = new chi_tiet_hoa_don_doi_tra_BLL();
         BLL.thuoc_tinh_sp_sql_BLL ttsp_bll = new BLL.thuoc_tinh_sp_sql_BLL();
         phuong_thuc_thanh_toan_BLL pttt = new phuong_thuc_thanh_toan_BLL();
-
-        public DoiTraHang()
+        nhan_vien_sql_BLL nv = new nhan_vien_sql_BLL();
+        int id_nv;
+        public DoiTraHang(int idnv)
         {
             InitializeComponent();
+            id_nv = idnv;
+            txtNhanVien.Text = nv.get_name_nv_by_id(id_nv);
             this.Load += DoiTraHang_Load;
             btnQuetMaTimHD.Click += BtnQuetMaTimHD_Click;
             btnThemSP.Click += BtnThemSP_Click;
@@ -42,7 +45,100 @@ namespace GUI
             btnThanhToan.Click += BtnThanhToan_Click1;
             txtTienSauKhiDoiTra.TextChanged += TxtTienSauKhiDoiTra_TextChanged;
             txtMaHoaDon.TextChanged += TxtMaHoaDon_TextChanged;
+            txtMaHoaDon.KeyDown += TxtMaHoaDon_KeyDown;
             
+        }
+
+        private void TxtMaHoaDon_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Thực hiện logic khi nhấn Enter
+                string maHD = txtMaHoaDon.Text;
+                int maNV = id_nv;
+                int maPT = 1;
+                if (!string.IsNullOrEmpty(maHD))
+                {
+                    try
+                    {
+                        int kqThemHDDoiTra;
+                        try
+                        {
+
+
+                            kqThemHDDoiTra = doitraBLL.ThemHoaDonDoiTra(maHD, maNV, maPT, DateTime.Now);
+                            if (kqThemHDDoiTra == -1)
+                            {
+
+                                loadForm();
+
+                                return;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            // Xử lý ngoại lệ và hiển thị thông báo lỗi
+                            //MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            if (ex.Message.Contains("The transaction ended in the trigger"))
+                            {
+                                // Tìm vị trí cắt
+                                int endIndex = ex.Message.IndexOf("!");
+
+                                // Trích xuất phần bỏ đi
+                                string errorMessage = ex.Message.Substring(0, endIndex).Trim();
+
+                                MessageBox.Show(errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không tìm thấy hóa đơn này!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }    
+
+                            //loadForm();
+                            
+                            return;
+                        }
+                        // Gọi phương thức trong BLL hoặc DAL để lấy thông tin hóa đơn
+                        object thongTinHoaDon = doitraBLL.LayThongTinHoaDon(maHD);
+
+                        if (thongTinHoaDon != null)
+                        {
+                            BindingList<ChiTietHoaDon> chiTietList = cthd_BLL.layChiTietHoaDonB(int.Parse(maHD));
+
+                            // Gán BindingList vào GridControl
+                            dgvChiTietHoaDon.DataSource = chiTietList;
+                            // Sử dụng Reflection để lấy thông tin từ object ẩn danh và hiển thị cho người dùng
+                            var maHoaDon = thongTinHoaDon.GetType().GetProperty("ma_hoa_don").GetValue(thongTinHoaDon, null);
+                            var maKhachHang = thongTinHoaDon.GetType().GetProperty("ma_khach_hang").GetValue(thongTinHoaDon, null);
+                            var ngayLap = thongTinHoaDon.GetType().GetProperty("ngay_lap").GetValue(thongTinHoaDon, null);
+                            var maNhanVien = thongTinHoaDon.GetType().GetProperty("ma_nhan_vien").GetValue(thongTinHoaDon, null);
+                            var tongGiaTri = thongTinHoaDon.GetType().GetProperty("tong_gia_tri").GetValue(thongTinHoaDon, null);
+                            var tienDoiDiem = thongTinHoaDon.GetType().GetProperty("tien_doi_diem").GetValue(thongTinHoaDon, null);
+                            txtMaHoaDon.Text = maHoaDon.ToString();
+                            txtMaKhachHang.Text = maKhachHang == null ? "" : maKhachHang.ToString();
+                            txtMaNV.Text = maNhanVien.ToString();
+                            txtNgayLap.Text = ngayLap.ToString();
+                            txtTongTien.Text = tongGiaTri.ToString();
+                            txtTienDoiDiem.Text = tienDoiDiem == null ? "" : tienDoiDiem.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("lỗi");
+
+                            return;
+                        }
+
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        IsProcessing = false;
+                        return;
+                    }
+                }
+
+            }
         }
 
         private bool IsProcessing = false; // Flag để kiểm tra trạng thái xử lý
@@ -64,90 +160,10 @@ namespace GUI
         }
         private void TxtMaHoaDon_TextChanged(object sender, EventArgs e)
         {
-            if (IsProcessing)
-            {
-                return; // Nếu đang xử lý thì bỏ qua
-            }
-            string maHD = txtMaHoaDon.Text;
-            int maNV = 1;
-            int maPT = 1;
-            if (!string.IsNullOrEmpty(maHD))
-            {
-                try
-                {
-                    int kqThemHDDoiTra;
-                    try
-                    {
 
-
-                        kqThemHDDoiTra = doitraBLL.ThemHoaDonDoiTra(maHD, maNV, maPT, DateTime.Now);
-                        if (kqThemHDDoiTra == -1)
-                        {
-
-                            loadForm();
-
-                            return;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        // Xử lý ngoại lệ và hiển thị thông báo lỗi
-                        //MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        if (ex.Message.Contains("The transaction ended in the trigger"))
-                        {
-                            // Tìm vị trí cắt
-                            int endIndex = ex.Message.IndexOf("!");
-
-                            // Trích xuất phần bỏ đi
-                            string errorMessage = ex.Message.Substring(0, endIndex).Trim();
-
-                            MessageBox.Show(errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-
-                        //loadForm();
-                        IsProcessing = false;
-                        return;
-                    }
-                    // Gọi phương thức trong BLL hoặc DAL để lấy thông tin hóa đơn
-                    object thongTinHoaDon = doitraBLL.LayThongTinHoaDon(maHD);
-
-                    if (thongTinHoaDon != null)
-                    {
-                        BindingList<ChiTietHoaDon> chiTietList = cthd_BLL.layChiTietHoaDonB(int.Parse(maHD));
-
-                        // Gán BindingList vào GridControl
-                        dgvChiTietHoaDon.DataSource = chiTietList;
-                        // Sử dụng Reflection để lấy thông tin từ object ẩn danh và hiển thị cho người dùng
-                        var maHoaDon = thongTinHoaDon.GetType().GetProperty("ma_hoa_don").GetValue(thongTinHoaDon, null);
-                        var maKhachHang = thongTinHoaDon.GetType().GetProperty("ma_khach_hang").GetValue(thongTinHoaDon, null);
-                        var ngayLap = thongTinHoaDon.GetType().GetProperty("ngay_lap").GetValue(thongTinHoaDon, null);
-                        var maNhanVien = thongTinHoaDon.GetType().GetProperty("ma_nhan_vien").GetValue(thongTinHoaDon, null);
-                        var tongGiaTri = thongTinHoaDon.GetType().GetProperty("tong_gia_tri").GetValue(thongTinHoaDon, null);
-                        var tienDoiDiem = thongTinHoaDon.GetType().GetProperty("tien_doi_diem").GetValue(thongTinHoaDon, null);
-                        txtMaHoaDon.Text = maHoaDon.ToString();
-                        txtMaKhachHang.Text = maKhachHang == null ? "" : maKhachHang.ToString();
-                        txtMaNV.Text = maNhanVien.ToString();
-                        txtNgayLap.Text = ngayLap.ToString();
-                        txtTongTien.Text = tongGiaTri.ToString();
-                        txtTienDoiDiem.Text = tienDoiDiem == null ? "" : tienDoiDiem.ToString();
-                    }
-                    else
-                    {
-                        MessageBox.Show("lỗi");
-                        IsProcessing = false;
-                        return;
-                    }
-
-
-                }
-                catch (Exception ex)
-                {
-                    
-                    IsProcessing = false;
-                    return;
-                }
-            }
+            
            
+            
 
 
 
@@ -249,12 +265,12 @@ namespace GUI
             // Hiển thị report
             ReportPrintTool printTool = new ReportPrintTool(report);
             // Chỉ hiển thị trang đầu tiên
-            report.CreateDocument();
+            //report.CreateDocument();
 
-            for (int i = report.Pages.Count - 1; i > 0; i--)
-            {
-                report.Pages.RemoveAt(i);
-            }
+            //for (int i = report.Pages.Count - 1; i > 0; i--)
+            //{
+            //    report.Pages.RemoveAt(i);
+            //}
 
             printTool.ShowPreview();
 
