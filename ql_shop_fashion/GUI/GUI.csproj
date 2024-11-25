@@ -183,6 +183,12 @@
     <Compile Include="frmThemSPVaoThongTin.Designer.cs">
       <DependentUpon>frmThemSPVaoThongTin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_QR_TT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QR_TT.Designer.cs">
+      <DependentUpon>frm_QR_TT.cs</DependentUpon>
+    </Compile>
     <Compile Include="HoaDon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -346,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemSPVaoThongTin.resx">
       <DependentUpon>frmThemSPVaoThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QR_TT.resx">
+      <DependentUpon>frm_QR_TT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>

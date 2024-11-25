@@ -234,12 +234,50 @@ namespace GUI
             }
         }
 
-        private void BtnThanhToan_Click(object sender, EventArgs e)
+        private async void BtnThanhToan_Click(object sender, EventArgs e)
         {
 
             GridView view = dgvChiTietHoaDon.MainView as GridView;
             if (view.RowCount > 0)
             {
+                if (cboPTTT.Text.Equals("Bank Transfer", StringComparison.OrdinalIgnoreCase))
+                {
+                    int maHoaDonMoi = themHoaDon();
+
+                    // Sử dụng TaskCompletionSource để chờ sự kiện
+                    var tcs = new TaskCompletionSource<bool>();
+
+                    frm_QR_TT qr = new frm_QR_TT("thanhtoanhd" + maHoaDonMoi.ToString(), double.Parse(txtTongTien.Text));
+                    qr.sukien_tt += () =>
+                    {
+                        // Khi sự kiện được kích hoạt, hoàn tất TaskCompletionSource
+                        tcs.SetResult(true);
+                    };
+
+                    // Hiển thị form QR
+                    qr.ShowDialog();
+
+                    // Chờ sự kiện được kích hoạt (bất đồng bộ)
+                    await tcs.Task;
+
+                    // Chỉ thực hiện các bước này khi sự kiện được kích hoạt
+                    themChiTietHoaDon(maHoaDonMoi);
+
+                    SplashScreenManager.ShowForm(this, typeof(WaitForm3), true, true, false);
+                    try
+                    {
+                        dgvSanPham.DataSource = ttsp_bll.get_all_tt_SanPham();
+                        loadGiaoDienTrong();
+                        ShowReport(maHoaDonMoi);
+                    }
+                    finally
+                    {
+                        SplashScreenManager.CloseForm();
+                       
+                    }
+                    return;
+                }
+
                 if (txtKhachThanhToan.Text.Trim().Length > 0)
                 {
                     if (XtraMessageBox.Show(this, "Xác nhận thanh toán?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -283,6 +321,15 @@ namespace GUI
             }
         }
 
+        private void Qr_sukien_tt1()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Qr_sukien_tt()
+        {
+            throw new NotImplementedException();
+        }
 
         private void CkbPhieuGG_CheckedChanged(object sender, EventArgs e)
         {
