@@ -50,8 +50,8 @@ namespace GUI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-UELF38N\\THANHTRUC;Initial Catalog=QL_SHOP_FASHION;User ID=sa;" +
-            "Password=123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DANHZU\\DANHZU;Initial Catalog=QL_SHOP_FASHION;Persist Security Info=T" +
+            "rue;User ID=sa;Password=123")]
         public string QL_SHOP_FASHIONConnectionString1 {
             get {
                 return ((string)(this["QL_SHOP_FASHIONConnectionString1"]));
