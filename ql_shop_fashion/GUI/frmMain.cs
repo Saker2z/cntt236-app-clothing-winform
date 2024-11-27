@@ -27,6 +27,7 @@ namespace GUI
         BanHang banHang;
         DoiTraHang doiTraHang;
         UC_CaNhan canhan;
+        UC_KhachHang khach_hang;
 
         public frmMain()
         {
@@ -45,8 +46,21 @@ namespace GUI
             ace_dangxuat.Click += Ace_dangxuat_Click;
             ace_banhang.Click += Ace_banhang_Click;
             ace_thongtincanhan.Click += Ace_thongtincanhan_Click1;
+            ace_khachhang.Click += Ace_khachhang_Click;
          
 
+        }
+
+        private void Ace_khachhang_Click(object sender, EventArgs e)
+        {
+            khach_hang = new UC_KhachHang();
+            panel_chinh.Controls.Clear();
+
+            // Tạo instance của UC_NhanVien và thêm vào pn_main
+
+            khach_hang.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+
+            panel_chinh.Controls.Add(khach_hang); // Thêm UC_NhanVien vào panel pn_main
         }
 
         private void Ace_thongtincanhan_Click1(object sender, EventArgs e)

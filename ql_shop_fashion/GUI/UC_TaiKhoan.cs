@@ -185,7 +185,7 @@ namespace GUI
 
                 // Lấy dữ liệu của dòng được chọn
                 txt_tk.Text = gridView.GetFocusedRowCellValue("ten_dang_nhap")?.ToString() ?? string.Empty;
-                txt_mk.Text = gridView.GetFocusedRowCellValue("mat_khau_hash")?.ToString() ?? string.Empty;
+                txt_mk.Text = "**********";
 
                 // Kiểm tra trạng thái hoạt động
                 var hoatDongValue = gridView.GetFocusedRowCellValue("hoat_dong");
@@ -259,7 +259,7 @@ namespace GUI
                     gridView.Columns["tai_khoan_id"].Caption = "ID";
                     gridView.Columns["ten_dang_nhap"].Caption = "Tên Đăng Nhập";
                     gridView.Columns["hoat_dong"].Caption = "Hoạt Động";
-
+                    gridView.Columns["mat_khau_hash"].Visible = false;
                     // Ẩn các cột không cần thiết
                     gridView.Columns["is_oauth"].Visible = false;
                     gridView.Columns["created_at"].Visible = false;

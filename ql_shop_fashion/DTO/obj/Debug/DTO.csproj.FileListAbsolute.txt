@@ -92,3 +92,9 @@ C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winfor
 C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.dll
 C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.pdb
 C:\Users\HP\Desktop\cntt236-app-clothing-winform (3)\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\DTO\bin\Debug\DTO.dll.config
+C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\DTO\bin\Debug\DTO.dll
+C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\DTO\bin\Debug\DTO.pdb
+C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.dll
+C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.pdb

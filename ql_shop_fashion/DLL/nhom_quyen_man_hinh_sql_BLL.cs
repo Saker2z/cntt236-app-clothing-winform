@@ -37,6 +37,18 @@ namespace BLL
                 throw new Exception($"Lỗi khi cập nhật danh sách quyền: {ex.Message}");
             }
         }
+        public int them_manHinh(man_hinh ma)
+        {
+            return quyen_dal.ThemManHinh(ma);
+        }
+        public bool sua_manhinh(int ma, string name)
+        {
+            return quyen_dal.SuaManHinh(ma, name);
+        }
+        public bool xoa_manHinh(int ma)
+        {
+            return quyen_dal.XoaManHinh(ma);
+        }
 
     }
 }

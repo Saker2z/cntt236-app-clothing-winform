@@ -12,6 +12,7 @@ namespace GUI
     {
         private nhom_quyen_man_hinh_sql_BLL quyen_bll;
         private nhom_quyen_sql_BLL nhom_quyen_bll;
+        private int selectedIdNhomQuyen;
 
         public UC_Quyen()
         {
@@ -30,6 +31,136 @@ namespace GUI
             bt_them.ItemClick += Bt_them_ItemClick;
             bt_update.ItemClick += Bt_update_ItemClick;
             bt_update.ItemClick += Bt_update_ItemClick1;
+            bt_them_man_hinh.ItemClick += Bt_them_man_hinh_ItemClick;
+            bt_sua_name_mh.ItemClick += Bt_sua_name_mh_ItemClick; 
+            bt_delete_mh.ItemClick += Bt_delete_mh_ItemClick;
+        }
+
+        private void Bt_delete_mh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var gridView = quyen.MainView as DevExpress.XtraGrid.Views.Grid.GridView; // gct_nhom_quyen là GridControl
+            if (gridView == null || gridView.DataRowCount == 0)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Không có dữ liệu để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra dòng được chọn
+            var rowHandle = gridView.FocusedRowHandle;
+            if (rowHandle < 0)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn một dòng để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Lấy ID màn hình từ dòng được chọn
+            int idManHinh = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, "MaManHinh"));
+
+            // Xác nhận trước khi xóa
+            DialogResult confirmResult = MessageBox.Show($"Bạn có chắc chắn muốn xóa màn hình có ID {idManHinh} không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmResult == DialogResult.No)
+                return;
+
+            // Gọi BLL để xóa
+            var quyenBll = new nhom_quyen_man_hinh_sql_BLL();
+            bool result = quyenBll.xoa_manHinh(idManHinh);
+
+            // Kiểm tra kết quả và hiển thị thông báo
+            if (result)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Xóa màn hình thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Làm mới dữ liệu trong GridControl
+                load_quyen(selectedIdNhomQuyen);
+            }
+            else
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lỗi khi xóa màn hình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void Bt_sua_name_mh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            // Kiểm tra GridControl và GridView
+            var gridView = quyen.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
+            if (gridView == null || gridView.DataRowCount == 0)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Không có dữ liệu trong bảng hoặc bảng không được hiển thị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra dòng được chọn
+            var rowHandle = gridView.FocusedRowHandle;
+            if (rowHandle < 0)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Vui lòng chọn một dòng để sửa tên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Lấy mã và tên màn hình từ dòng đang chọn
+            int maManHinh;
+            try
+            {
+                maManHinh = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, "MaManHinh"));
+            }
+            catch
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Không thể lấy Mã màn hình từ dòng được chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string tenManHinhCu = gridView.GetRowCellValue(rowHandle, "TenManHinh")?.ToString();
+            if (string.IsNullOrEmpty(tenManHinhCu))
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Không thể lấy Tên màn hình từ dòng được chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Hiển thị hộp thoại để nhập tên mới
+            string tenManHinhMoi = DevExpress.XtraEditors.XtraInputBox.Show(
+                $"Tên màn hình hiện tại: {tenManHinhCu}\nNhập tên màn hình mới:",
+                "Sửa Tên Màn Hình",
+                tenManHinhCu);
+
+            // Kiểm tra xem người dùng có nhập tên mới không
+            if (string.IsNullOrWhiteSpace(tenManHinhMoi))
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Tên mới không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Gọi BLL để cập nhật tên màn hình
+            var quyen_bll = new nhom_quyen_man_hinh_sql_BLL();
+            bool result = quyen_bll.sua_manhinh(maManHinh, tenManHinhMoi);
+
+            // Kiểm tra kết quả và hiển thị thông báo
+            if (result)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Đổi tên màn hình thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Tải lại danh sách quyền (GridControl)
+                load_quyen(selectedIdNhomQuyen);
+            }
+            else
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Lỗi khi đổi tên màn hình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void Bt_them_man_hinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_them_man_hinh them = new frm_them_man_hinh();
+            them.ThemThanhCong += Them_ThemThanhCong;
+            them.ShowDialog();
+           
+        }
+
+        private void Them_ThemThanhCong(object sender, EventArgs e)
+        {
+           
+            load_quyen(selectedIdNhomQuyen);
         }
 
         private void Bt_update_ItemClick1(object sender, ItemClickEventArgs e)
@@ -356,10 +487,11 @@ namespace GUI
             var gridView = sender as DevExpress.XtraGrid.Views.Grid.GridView;
             if (gridView != null)
             {
-                int idNhomQuyen = (int)gridView.GetFocusedRowCellValue("id_nhom_quyen");
-                load_quyen(idNhomQuyen);
+                selectedIdNhomQuyen = (int)gridView.GetFocusedRowCellValue("id_nhom_quyen");
+                load_quyen(selectedIdNhomQuyen);
             }
         }
+      
 
         // Load danh sách nhóm quyền
         private void load_ds_quyen()
@@ -389,6 +521,10 @@ namespace GUI
         // Load danh sách quyền theo nhóm quyền
         private void load_quyen(int idNhomQuyen)
         {
+            if (idNhomQuyen == 0)
+            {
+                return; // idNhomQuyen không hợp lệ
+            }
             quyen_bll = new nhom_quyen_man_hinh_sql_BLL();
             var danhSachQuyen = quyen_bll.GetDanhSachManHinhTheoNhomQuyen(idNhomQuyen);
 

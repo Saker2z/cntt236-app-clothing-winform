@@ -3368,7 +3368,6 @@ C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\b
 C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\bin\Debug\es\DevExpress.Diagram.v19.2.Core.resources.dll
 C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\bin\Debug\ja\DevExpress.Diagram.v19.2.Core.resources.dll
 C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\bin\Debug\ru\DevExpress.Diagram.v19.2.Core.resources.dll
-C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
 C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.exe.config
 C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.add_NV.resources
 C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.BanHang.resources
@@ -3410,3 +3409,4 @@ C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\b
 C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\bin\Debug\System.ValueTuple.dll
 C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.frm_QR_TT.resources
 C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\bin\Debug\BLL.dll.config
+C:\Users\HP\Desktop\CNPMNC\15\cntt236-app-clothing-winform\ql_shop_fashion\GUI\obj\Debug\GUI.frm_them_man_hinh.resources

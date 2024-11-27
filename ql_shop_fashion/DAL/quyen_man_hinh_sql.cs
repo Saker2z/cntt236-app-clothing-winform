@@ -89,6 +89,88 @@ namespace DAL
                 throw new Exception($"Lỗi khi cập nhật quyền: {ex.Message}");
             }
         }
+        // Thêm màn hình mới
+        public int ThemManHinh(man_hinh manHinhMoi)
+        {
+            try
+            {
+                // Kiểm tra xem màn hình có tồn tại hay không
+                var tonTai = data.man_hinhs.Any(mh => mh.ten_man_hinh == manHinhMoi.ten_man_hinh);
+                if (tonTai)
+                {
+                    return 0; // Đã tồn tại
+                }
+
+                // Thêm màn hình mới
+                data.man_hinhs.InsertOnSubmit(manHinhMoi);
+                data.SubmitChanges();
+                return 1; // Thành công
+            }
+            catch (Exception)
+            {
+                return -1; // Thất bại
+            }
+        }
+
+
+        // Sửa thông tin màn hình
+        public bool SuaManHinh(int idManHinh, string tenManHinhMoi)
+        {
+            try
+            {
+                // Tìm màn hình cần sửa
+                var manHinh = data.man_hinhs.FirstOrDefault(mh => mh.id_man_hinh == idManHinh);
+                if (manHinh != null)
+                {
+                    // Cập nhật thông tin màn hình
+                    manHinh.ten_man_hinh = tenManHinhMoi;
+                    data.SubmitChanges();
+                    return true; // Thành công
+                }
+                return false; // Không tìm thấy màn hình
+            }
+            catch (Exception)
+            {
+                return false; // Thất bại
+            }
+        }
+
+        // Xóa màn hình
+        public bool XoaManHinh(int idManHinh)
+        {
+            try
+            {
+                // Tìm màn hình cần xóa
+                var manHinh = data.man_hinhs.FirstOrDefault(mh => mh.id_man_hinh == idManHinh);
+                if (manHinh != null)
+                {
+                    // Xóa các bản ghi liên quan trong bảng khác
+                    var phanQuyens = data.phan_quyens.Where(pq => pq.id_man_hinh == idManHinh).ToList();
+                    if (phanQuyens.Count > 0)
+                    {
+                        data.phan_quyens.DeleteAllOnSubmit(phanQuyens);
+                    }
+
+                    // Xóa màn hình
+                    data.man_hinhs.DeleteOnSubmit(manHinh);
+
+                    // Lưu thay đổi
+                    data.SubmitChanges();
+                    return true; // Thành công
+                }
+
+                return false; // Không tìm thấy màn hình
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi xóa màn hình: {ex.Message}");
+                return false; // Thất bại
+            }
+        }
+
+
+
+
 
 
 

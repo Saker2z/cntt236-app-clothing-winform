@@ -262,7 +262,7 @@ namespace GUI
                 nhap.ma_nhan_vien = id; // Giả sử đây là mã nhân viên
                 nhap.ma_nha_cung_cap = mancc;
                 nhap.ngay_nhap = date_ngaynhap.Value;
-                nhap.trang_thai = "Chưa xử lí";
+                nhap.trang_thai = "Đang đợi giao hàng";
 
                 // Hiển thị hộp thoại InputBox để nhập ghi chú
                 string ghiChu = Microsoft.VisualBasic.Interaction.InputBox("Ghi chú đơn thứ " + count.ToString() + " của nhà cung cấp " + mancc.ToString() + " : ", "Nhập Ghi Chú", "Không có");
@@ -870,6 +870,9 @@ namespace GUI
             dgv_sp();
             capNhatTongTien();
             InitializeColumns(0);
+            dgv_sp_add.BorderStyle = BorderStyle.None;
+            dgv_gia.BorderStyle = BorderStyle.None;
+
         }
         void load_cbb_ncc(int id)
         {

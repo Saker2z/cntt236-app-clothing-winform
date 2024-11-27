@@ -610,21 +610,21 @@ namespace GUI
                     txt_soluongkichthuoc.Text = productDetails.so_luong_kich_thuoc.ToString();
                     txt_soluongmausac.Text = productDetails.so_luong_mau_sac.ToString();
                     txt_soluong.Text = productDetails.so_luong.ToString();
-                    txt_slug.Text = productDetails.slug;
+                    txt_slug.Text ="";
                     txt_mota.Text = productDetails.mo_ta;
                     txt_giabinhquan.Text = productDetails.gia_binh_quan.ToString();
                     cbb_hinhthucban.EditValue = productDetails.hinh_thuc_ban;
-                    txt_thumbnail_image.Text = productDetails.thumbnail_image;
+                    txt_thumbnail_image.Text = "";
 
                     // Hiển thị hình ảnh lên PictureBox
-                    if (!string.IsNullOrEmpty(productDetails.thumbnail_image) && File.Exists(productDetails.thumbnail_image))
-                    {
-                        pb_anhsp.Image = Image.FromFile(productDetails.thumbnail_image);
-                    }
-                    else
-                    {
-                        pb_anhsp.Image = null;
-                    }
+                    //if (!string.IsNullOrEmpty(productDetails.thumbnail_image) && File.Exists(productDetails.thumbnail_image))
+                    //{
+                    //    pb_anhsp.Image = Image.FromFile(productDetails.thumbnail_image);
+                    //}
+                    //else
+                    //{
+                    //    pb_anhsp.Image = null;
+                    //}
                 }
                 else
                 {
@@ -1118,10 +1118,10 @@ namespace GUI
                     so_luong_kich_thuoc = soLuongKichThuoc,
                     so_luong_mau_sac = soLuongMauSac,
                     so_luong = soLuong,
-                    slug = txt_slug.Text,
+                  //  slug = txt_slug.Text,
                     mo_ta = txt_mota.Text,
                     gia_binh_quan = giaBinhQuan,
-                    thumbnail_image = imagePath, // Save the image path
+                    //thumbnail_image = imagePath, // Save the image path
                     hinh_thuc_ban = cbb_hinhthucban.EditValue != null ? Convert.ToInt32(cbb_hinhthucban.EditValue) : 0
                 };
 

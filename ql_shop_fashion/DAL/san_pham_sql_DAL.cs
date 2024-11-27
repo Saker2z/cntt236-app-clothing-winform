@@ -86,7 +86,7 @@ namespace DAL
                          so_luong_kich_thuoc = i.so_luong_kich_thuoc ?? 0,
                          so_luong_mau_sac = i.so_luong_mau_sac ?? 0,
                          so_luong = i.so_luong ?? 0,
-                         slug = i.slug,
+                        
                          mo_ta = i.mo_ta,
                          gia_binh_quan = i.gia_binh_quan ?? 0.0m, // Sử dụng 0.0 làm giá trị mặc định nếu null
                          hinh_thuc_ban = i.hinh_thuc_ban
@@ -109,7 +109,7 @@ namespace DAL
                          so_luong_kich_thuoc = i.so_luong_kich_thuoc ?? 0,
                          so_luong_mau_sac = i.so_luong_mau_sac ?? 0,
                          so_luong = i.so_luong ?? 0,
-                         slug = i.slug,
+                        
                          mo_ta = i.mo_ta,
                          gia_binh_quan = i.gia_binh_quan ?? 0.0m, // Sử dụng 0.0 làm giá trị mặc định nếu null
                          hinh_thuc_ban = i.hinh_thuc_ban
@@ -131,7 +131,7 @@ namespace DAL
                 var sanPham = data.san_phams.FirstOrDefault(sp => sp.ma_san_pham == maSanPham);
                 if (sanPham != null)
                 {
-                    sanPham.thumbnail_image = thumbnailPath; // Cập nhật đường dẫn thumbnail
+                   
                     sanPham.updated_at = DateTime.Now; // Cập nhật thời gian
                     data.SubmitChanges(); // Lưu thay đổi
                     return true;
@@ -204,11 +204,11 @@ namespace DAL
                     existingProduct.so_luong_kich_thuoc = product.so_luong_kich_thuoc;
                     existingProduct.so_luong_mau_sac = product.so_luong_mau_sac;
                     existingProduct.so_luong = product.so_luong;
-                    existingProduct.slug = product.slug;
+                 
                     existingProduct.mo_ta = product.mo_ta;
                     existingProduct.gia_binh_quan = product.gia_binh_quan;
                     existingProduct.hinh_thuc_ban = product.hinh_thuc_ban;
-                    existingProduct.thumbnail_image = product.thumbnail_image; // Lưu thumbnail
+                   
                     existingProduct.updated_at = DateTime.Now;
 
                     data.SubmitChanges();
@@ -225,11 +225,11 @@ namespace DAL
                         so_luong_kich_thuoc = product.so_luong_kich_thuoc,
                         so_luong_mau_sac = product.so_luong_mau_sac,
                         so_luong = product.so_luong,
-                        slug = product.slug,
+                       
                         mo_ta = product.mo_ta,
                         gia_binh_quan = product.gia_binh_quan,
                         hinh_thuc_ban = product.hinh_thuc_ban,
-                        thumbnail_image = product.thumbnail_image, // Thêm thumbnail
+                     
                         created_at = DateTime.Now,
                         updated_at = DateTime.Now
                     };

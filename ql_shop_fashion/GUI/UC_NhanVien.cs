@@ -321,7 +321,7 @@ namespace GUI
             txt_mk.Enabled = false;
             tai_khoan tkk = tk_bll.GetTaiKhoanByMaID(tk);
             txt_tk.Text = tkk.ten_dang_nhap;
-            txt_mk.Text = tkk.mat_khau_hash;
+            txt_mk.Text = "*********";
 
         }
 

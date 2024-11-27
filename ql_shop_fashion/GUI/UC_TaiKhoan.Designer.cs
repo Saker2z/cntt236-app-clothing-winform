@@ -42,13 +42,13 @@ namespace GUI
             this.label6 = new System.Windows.Forms.Label();
             this.txt_tk = new System.Windows.Forms.TextBox();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.bt_save = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_rs_pass = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.bar1 = new DevExpress.XtraBars.Bar();
-            this.bt_save = new DevExpress.XtraBars.BarButtonItem();
-            this.bt_rs_pass = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gct_tk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -122,6 +122,7 @@ namespace GUI
             this.txt_mk.Name = "txt_mk";
             this.txt_mk.Size = new System.Drawing.Size(654, 21);
             this.txt_mk.TabIndex = 11;
+            this.txt_mk.Text = "**********";
             // 
             // label7
             // 
@@ -162,6 +163,33 @@ namespace GUI
             this.bt_rs_pass});
             this.barManager1.MaxItemId = 2;
             // 
+            // bar1
+            // 
+            this.bar1.BarName = "Tools";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bt_save, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bt_rs_pass, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar1.Text = "Tools";
+            // 
+            // bt_save
+            // 
+            this.bt_save.Caption = "Lưu thông tin";
+            this.bt_save.Id = 0;
+            this.bt_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_save.ImageOptions.Image")));
+            this.bt_save.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_save.ImageOptions.LargeImage")));
+            this.bt_save.Name = "bt_save";
+            // 
+            // bt_rs_pass
+            // 
+            this.bt_rs_pass.Caption = "Tạo mới mật khẩu";
+            this.bt_rs_pass.Id = 1;
+            this.bt_rs_pass.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_rs_pass.ImageOptions.Image")));
+            this.bt_rs_pass.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_rs_pass.ImageOptions.LargeImage")));
+            this.bt_rs_pass.Name = "bt_rs_pass";
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.Appearance.BackColor = System.Drawing.Color.White;
@@ -196,32 +224,6 @@ namespace GUI
             this.barDockControlRight.Location = new System.Drawing.Point(783, 24);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 583);
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bt_save, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bt_rs_pass, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
-            this.bar1.Text = "Tools";
-            // 
-            // bt_save
-            // 
-            this.bt_save.Caption = "Lưu thông tin";
-            this.bt_save.Id = 0;
-            this.bt_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_save.ImageOptions.Image")));
-            this.bt_save.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_save.ImageOptions.LargeImage")));
-            this.bt_save.Name = "bt_save";
-            // 
-            // bt_rs_pass
-            // 
-            this.bt_rs_pass.Caption = "Tạo mới mật khẩu";
-            this.bt_rs_pass.Id = 1;
-            this.bt_rs_pass.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_rs_pass.ImageOptions.Image")));
-            this.bt_rs_pass.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_rs_pass.ImageOptions.LargeImage")));
-            this.bt_rs_pass.Name = "bt_rs_pass";
             // 
             // UC_TaiKhoan
             // 
