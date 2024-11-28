@@ -240,7 +240,7 @@ namespace GUI
             GridView view = dgvChiTietHoaDon.MainView as GridView;
             if (view.RowCount > 0)
             {
-                if (cboPTTT.Text.Equals("Bank Transfer", StringComparison.OrdinalIgnoreCase))
+                if (cboPTTT.Text.Equals("Chuyển khoản", StringComparison.OrdinalIgnoreCase))
                 {
                     int maHoaDonMoi = themHoaDon();
 

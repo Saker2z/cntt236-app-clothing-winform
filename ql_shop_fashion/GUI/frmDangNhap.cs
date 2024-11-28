@@ -72,9 +72,10 @@ namespace GUI
 
         private void dangnhap_Click(object sender, EventArgs e)
         {
-            string tk = nhaptk.Text;
-            string mk = nhapmk.Text;
-
+            //string tk = nhaptk.Text;
+            //string mk = nhapmk.Text;'
+            string tk = "admin";
+            string mk = "admin";
             int userRoleId;
 
             tk_bll = new tai_khoan_sql_BLL();

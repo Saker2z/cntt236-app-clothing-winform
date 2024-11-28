@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DTO;
 using BLL;
 using DevExpress.XtraGrid.Views.Base;
+using System.Drawing;
 
 namespace GUI
 {
@@ -37,7 +38,7 @@ namespace GUI
             // Gắn sự kiện CellValueChanged cho gridView của gridControl1
             gridView1.CellValueChanged += GridView1_CellValueChanged;
             this.FormClosed += FrmDuyetSanPham_FormClosed;
-
+           
         }
 
         private void FrmDuyetSanPham_FormClosed(object sender, FormClosedEventArgs e)
@@ -281,6 +282,7 @@ namespace GUI
         {
             load_gdv_duyet_sp(0);
             load_dgv_sp(dgv_dsnhap, ctnhap_bll.get_ct_list_by_id(iddonduyet));
+       
         }
 
         void load_gdv_duyet_sp(int id)

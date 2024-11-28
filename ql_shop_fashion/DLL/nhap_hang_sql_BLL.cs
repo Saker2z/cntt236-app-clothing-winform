@@ -32,5 +32,13 @@ namespace BLL
         {
             return data.update_tt_ht(id);
         }
+        public IQueryable get_nhap_hang_by_trang_thai(string trangThai)
+        {
+            return data.get_nhap_hang_by_trang_thai(trangThai);
+        }
+        public bool cap_nhat_trang_thai(int maNhapHang, string trangThaiMoi)
+        {
+            return data.cap_nhat_trang_thai(maNhapHang, trangThaiMoi);
+        }    
     }
 }

@@ -39,6 +39,7 @@ namespace GUI
         public PhieuNhap(int idnv)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             id_nv = idnv;
             this.Load += PhieuNhap_Load;
@@ -870,9 +871,38 @@ namespace GUI
             dgv_sp();
             capNhatTongTien();
             InitializeColumns(0);
-            dgv_sp_add.BorderStyle = BorderStyle.None;
-            dgv_gia.BorderStyle = BorderStyle.None;
+          
+            CustomizeDataGridView(dgv_gia);
+            CustomizeDataGridView(dgv_sp_add);
 
+        }
+        private void CustomizeDataGridView(DataGridView a)
+        {
+            // Loại bỏ viền
+            a.BorderStyle = BorderStyle.None;
+
+            // Màu nền và lưới
+            a.BackgroundColor = Color.White; // Màu nền chính
+            a.DefaultCellStyle.BackColor = Color.White; // Màu nền cho các ô
+            a.AlternatingRowsDefaultCellStyle.BackColor = Color.White; // Màu nền cho dòng xen kẽ
+            a.GridColor = Color.LightGray; // Màu lưới
+
+            // Cấu hình tiêu đề cột
+            a.ColumnHeadersDefaultCellStyle.BackColor = Color.LightBlue; // Màu xanh nước biển nhạt
+            a.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black; // Màu chữ của tiêu đề
+            a.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Tiêu đề căn giữa
+
+            // Thiết lập tự căn chỉnh cột
+            a.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Tự căn chỉnh cột theo kích thước bảng
+            a.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None; // Không tự động thay đổi chiều cao dòng
+
+            // Căn chỉnh nội dung trong ô
+            a.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft; // Căn trái nội dung trong ô
+            a.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold); // Font chữ cho tiêu đề
+            a.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Regular); // Font chữ cho ô dữ liệu
+
+            // Loại bỏ đường viền của tiêu đề cột
+            a.EnableHeadersVisualStyles = false; // Cho phép tùy chỉnh tiêu đề
         }
         void load_cbb_ncc(int id)
         {

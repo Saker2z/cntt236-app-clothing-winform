@@ -66,7 +66,7 @@ namespace GUI
             this.pnl_chinh.Controls.Add(this.chart_bc_tk);
             this.pnl_chinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_chinh.Location = new System.Drawing.Point(0, 26);
-            this.pnl_chinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_chinh.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_chinh.Name = "pnl_chinh";
             this.pnl_chinh.Size = new System.Drawing.Size(1327, 736);
             this.pnl_chinh.TabIndex = 0;
@@ -74,10 +74,10 @@ namespace GUI
             // gct_hoadondoitra
             // 
             this.gct_hoadondoitra.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gct_hoadondoitra.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gct_hoadondoitra.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gct_hoadondoitra.Location = new System.Drawing.Point(652, 363);
             this.gct_hoadondoitra.MainView = this.gridView2;
-            this.gct_hoadondoitra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gct_hoadondoitra.Margin = new System.Windows.Forms.Padding(4);
             this.gct_hoadondoitra.MenuManager = this.barManager1;
             this.gct_hoadondoitra.Name = "gct_hoadondoitra";
             this.gct_hoadondoitra.Size = new System.Drawing.Size(675, 373);
@@ -150,7 +150,7 @@ namespace GUI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlTop.Size = new System.Drawing.Size(1327, 26);
             // 
             // barDockControlBottom
@@ -159,7 +159,7 @@ namespace GUI
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 762);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlBottom.Size = new System.Drawing.Size(1327, 0);
             // 
             // barDockControlLeft
@@ -168,7 +168,7 @@ namespace GUI
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 26);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 736);
             // 
             // barDockControlRight
@@ -177,16 +177,16 @@ namespace GUI
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1327, 26);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 736);
             // 
             // gct_hoadon
             // 
             this.gct_hoadon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gct_hoadon.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gct_hoadon.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gct_hoadon.Location = new System.Drawing.Point(0, 363);
             this.gct_hoadon.MainView = this.gridView1;
-            this.gct_hoadon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gct_hoadon.Margin = new System.Windows.Forms.Padding(4);
             this.gct_hoadon.MenuManager = this.barManager1;
             this.gct_hoadon.Name = "gct_hoadon";
             this.gct_hoadon.Size = new System.Drawing.Size(652, 373);
@@ -208,7 +208,7 @@ namespace GUI
             this.chart_bc_tk.Dock = System.Windows.Forms.DockStyle.Top;
             this.chart_bc_tk.Legend.Name = "Default Legend";
             this.chart_bc_tk.Location = new System.Drawing.Point(0, 0);
-            this.chart_bc_tk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chart_bc_tk.Margin = new System.Windows.Forms.Padding(4);
             this.chart_bc_tk.Name = "chart_bc_tk";
             series1.Name = "Series 1";
             this.chart_bc_tk.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
@@ -225,7 +225,7 @@ namespace GUI
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_BaoCao_ThongKe";
             this.Size = new System.Drawing.Size(1327, 762);
             this.pnl_chinh.ResumeLayout(false);

@@ -274,6 +274,78 @@ namespace DAL
                 return false;
             }
         }
+        public List<san_pham_cus> GetSanPhamTheoTieuChi(string tieuChi)
+        {
+            try
+            {
+                List<san_pham_cus> result = new List<san_pham_cus>();
+
+                switch (tieuChi)
+                {
+                    case "Tất cả sản phẩm":
+                        // Lấy tất cả sản phẩm
+                        result = data.san_phams.Select(sp => new san_pham_cus
+                        {
+                            ma_san_pham = sp.ma_san_pham,
+                            ten_san_pham = sp.ten_san_pham,
+                            so_luong = sp.so_luong ?? 0, // Giá trị mặc định nếu null
+                            gia_binh_quan = sp.gia_binh_quan ?? 0.0m // Giá trị mặc định nếu null
+                        }).ToList();
+                        break;
+
+                    case "Sản phẩm hết hàng":
+                        // Lấy sản phẩm hết hàng (số lượng = 0)
+                        result = data.san_phams
+                            .Where(sp => sp.so_luong == 0)
+                            .Select(sp => new san_pham_cus
+                            {
+                                ma_san_pham = sp.ma_san_pham,
+                                ten_san_pham = sp.ten_san_pham,
+                                so_luong = sp.so_luong ?? 0,
+                                gia_binh_quan = sp.gia_binh_quan ?? 0.0m
+                            }).ToList();
+                        break;
+
+                    case "Sản phẩm sắp hết hàng":
+                        // Lấy sản phẩm gần hết hàng (số lượng < 10)
+                        result = data.san_phams
+                            .Where(sp => sp.so_luong > 0 && sp.so_luong < 10)
+                            .Select(sp => new san_pham_cus
+                            {
+                                ma_san_pham = sp.ma_san_pham,
+                                ten_san_pham = sp.ten_san_pham,
+                                so_luong = sp.so_luong ?? 0,
+                                gia_binh_quan = sp.gia_binh_quan ?? 0.0m
+                            }).ToList();
+                        break;
+
+                    case "Sản phẩm còn hàng":
+                        // Lấy sản phẩm còn hàng (số lượng >= 10)
+                        result = data.san_phams
+                            .Where(sp => sp.so_luong >= 10)
+                            .Select(sp => new san_pham_cus
+                            {
+                                ma_san_pham = sp.ma_san_pham,
+                                ten_san_pham = sp.ten_san_pham,
+                                so_luong = sp.so_luong ?? 0,
+                                gia_binh_quan = sp.gia_binh_quan ?? 0.0m
+                            }).ToList();
+                        break;
+
+                    default:
+                        throw new ArgumentException("Tiêu chí không hợp lệ.");
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                // Ghi log lỗi và trả về danh sách rỗng
+                Debug.WriteLine("Lỗi khi lấy sản phẩm theo tiêu chí: " + ex.Message);
+                return new List<san_pham_cus>();
+            }
+        }
+
 
 
 

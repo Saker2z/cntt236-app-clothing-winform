@@ -42,15 +42,7 @@ namespace GUI
             this.lb_ngaynhap = new DevExpress.XtraEditors.LabelControl();
             this.lb_manhanvien = new DevExpress.XtraEditors.LabelControl();
             this.ngaynhap = new DevExpress.XtraEditors.DateEdit();
-            this.thoat = new System.Windows.Forms.ToolStripButton();
-            this.inphieu = new System.Windows.Forms.ToolStripButton();
-            this.duyet = new System.Windows.Forms.ToolStripButton();
             this.menuchucnang = new System.Windows.Forms.ToolStrip();
-            this.chon = new System.Windows.Forms.ToolStripDropDownButton();
-            this.them = new System.Windows.Forms.ToolStripMenuItem();
-            this.sua = new System.Windows.Forms.ToolStripMenuItem();
-            this.xoa = new System.Windows.Forms.ToolStripMenuItem();
-            this.load = new System.Windows.Forms.ToolStripMenuItem();
             this.lb_manhaphang = new DevExpress.XtraEditors.LabelControl();
             this.cbb_trangthai = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbb_manhacungcap = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -62,6 +54,14 @@ namespace GUI
             this.panel_chinh = new System.Windows.Forms.Panel();
             this.dgv_sanpham = new System.Windows.Forms.DataGridView();
             this.dgv_nh = new System.Windows.Forms.DataGridView();
+            this.chon = new System.Windows.Forms.ToolStripDropDownButton();
+            this.them = new System.Windows.Forms.ToolStripMenuItem();
+            this.sua = new System.Windows.Forms.ToolStripMenuItem();
+            this.xoa = new System.Windows.Forms.ToolStripMenuItem();
+            this.load = new System.Windows.Forms.ToolStripMenuItem();
+            this.duyet = new System.Windows.Forms.ToolStripButton();
+            this.inphieu = new System.Windows.Forms.ToolStripButton();
+            this.thoat = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.txt_sanpham.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tenncc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaynhap.Properties.CalendarTimeProperties)).BeginInit();
@@ -87,18 +87,20 @@ namespace GUI
             this.timkiemsanpham.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.timkiemsanpham.Cursor = System.Windows.Forms.Cursors.Hand;
             this.timkiemsanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("timkiemsanpham.ImageOptions.Image")));
-            this.timkiemsanpham.Location = new System.Drawing.Point(1054, 235);
+            this.timkiemsanpham.Location = new System.Drawing.Point(1230, 289);
+            this.timkiemsanpham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.timkiemsanpham.Name = "timkiemsanpham";
-            this.timkiemsanpham.Size = new System.Drawing.Size(23, 20);
+            this.timkiemsanpham.Size = new System.Drawing.Size(27, 25);
             this.timkiemsanpham.TabIndex = 21;
             // 
             // txt_sanpham
             // 
-            this.txt_sanpham.Location = new System.Drawing.Point(654, 234);
+            this.txt_sanpham.Location = new System.Drawing.Point(763, 288);
+            this.txt_sanpham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_sanpham.Name = "txt_sanpham";
             this.txt_sanpham.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_sanpham.Properties.Appearance.Options.UseFont = true;
-            this.txt_sanpham.Size = new System.Drawing.Size(423, 22);
+            this.txt_sanpham.Size = new System.Drawing.Size(963, 33);
             this.txt_sanpham.TabIndex = 20;
             // 
             // timkiemncc
@@ -109,111 +111,97 @@ namespace GUI
             this.timkiemncc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.timkiemncc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.timkiemncc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("timkiemncc.ImageOptions.Image")));
-            this.timkiemncc.Location = new System.Drawing.Point(606, 235);
+            this.timkiemncc.Location = new System.Drawing.Point(707, 289);
+            this.timkiemncc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.timkiemncc.Name = "timkiemncc";
-            this.timkiemncc.Size = new System.Drawing.Size(23, 20);
+            this.timkiemncc.Size = new System.Drawing.Size(27, 25);
             this.timkiemncc.TabIndex = 19;
             // 
             // txt_tenncc
             // 
-            this.txt_tenncc.Location = new System.Drawing.Point(21, 234);
+            this.txt_tenncc.Location = new System.Drawing.Point(24, 288);
+            this.txt_tenncc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_tenncc.Name = "txt_tenncc";
             this.txt_tenncc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tenncc.Properties.Appearance.Options.UseFont = true;
-            this.txt_tenncc.Size = new System.Drawing.Size(608, 22);
+            this.txt_tenncc.Size = new System.Drawing.Size(1385, 33);
             this.txt_tenncc.TabIndex = 18;
             // 
             // lb_trangthai
             // 
-            this.lb_trangthai.Location = new System.Drawing.Point(654, 187);
+            this.lb_trangthai.Location = new System.Drawing.Point(763, 230);
+            this.lb_trangthai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_trangthai.Name = "lb_trangthai";
-            this.lb_trangthai.Size = new System.Drawing.Size(49, 13);
+            this.lb_trangthai.Size = new System.Drawing.Size(62, 17);
             this.lb_trangthai.TabIndex = 16;
             this.lb_trangthai.Text = "Trạng thái";
             // 
             // lb_tongtien
             // 
-            this.lb_tongtien.Location = new System.Drawing.Point(654, 137);
+            this.lb_tongtien.Location = new System.Drawing.Point(763, 169);
+            this.lb_tongtien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_tongtien.Name = "lb_tongtien";
-            this.lb_tongtien.Size = new System.Drawing.Size(62, 13);
+            this.lb_tongtien.Size = new System.Drawing.Size(79, 17);
             this.lb_tongtien.TabIndex = 15;
             this.lb_tongtien.Text = "Tổng giá tiền";
             // 
             // lb_tongsoluong
             // 
-            this.lb_tongsoluong.Location = new System.Drawing.Point(654, 91);
+            this.lb_tongsoluong.Location = new System.Drawing.Point(763, 112);
+            this.lb_tongsoluong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_tongsoluong.Name = "lb_tongsoluong";
-            this.lb_tongsoluong.Size = new System.Drawing.Size(68, 13);
+            this.lb_tongsoluong.Size = new System.Drawing.Size(89, 17);
             this.lb_tongsoluong.TabIndex = 14;
             this.lb_tongsoluong.Text = "Tổng số lượng";
             // 
             // lb_ghichu
             // 
-            this.lb_ghichu.Location = new System.Drawing.Point(654, 44);
+            this.lb_ghichu.Location = new System.Drawing.Point(763, 54);
+            this.lb_ghichu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_ghichu.Name = "lb_ghichu";
-            this.lb_ghichu.Size = new System.Drawing.Size(35, 13);
+            this.lb_ghichu.Size = new System.Drawing.Size(42, 16);
             this.lb_ghichu.TabIndex = 13;
             this.lb_ghichu.Text = "Ghi chú";
             // 
             // lb_manhacungcap
             // 
-            this.lb_manhacungcap.Location = new System.Drawing.Point(21, 187);
+            this.lb_manhacungcap.Location = new System.Drawing.Point(24, 230);
+            this.lb_manhacungcap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_manhacungcap.Name = "lb_manhacungcap";
-            this.lb_manhacungcap.Size = new System.Drawing.Size(81, 13);
+            this.lb_manhacungcap.Size = new System.Drawing.Size(105, 17);
             this.lb_manhacungcap.TabIndex = 12;
             this.lb_manhacungcap.Text = "Mã nhà cung cấp";
             // 
             // lb_ngaynhap
             // 
-            this.lb_ngaynhap.Location = new System.Drawing.Point(21, 137);
+            this.lb_ngaynhap.Location = new System.Drawing.Point(24, 169);
+            this.lb_ngaynhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_ngaynhap.Name = "lb_ngaynhap";
-            this.lb_ngaynhap.Size = new System.Drawing.Size(52, 13);
+            this.lb_ngaynhap.Size = new System.Drawing.Size(67, 17);
             this.lb_ngaynhap.TabIndex = 11;
             this.lb_ngaynhap.Text = "Ngày nhập";
             // 
             // lb_manhanvien
             // 
-            this.lb_manhanvien.Location = new System.Drawing.Point(21, 91);
+            this.lb_manhanvien.Location = new System.Drawing.Point(24, 112);
+            this.lb_manhanvien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_manhanvien.Name = "lb_manhanvien";
-            this.lb_manhanvien.Size = new System.Drawing.Size(68, 13);
+            this.lb_manhanvien.Size = new System.Drawing.Size(81, 16);
             this.lb_manhanvien.TabIndex = 10;
             this.lb_manhanvien.Text = "Tên nhân viên";
             // 
             // ngaynhap
             // 
             this.ngaynhap.EditValue = null;
-            this.ngaynhap.Location = new System.Drawing.Point(147, 134);
+            this.ngaynhap.Location = new System.Drawing.Point(171, 165);
+            this.ngaynhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ngaynhap.Name = "ngaynhap";
             this.ngaynhap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ngaynhap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ngaynhap.Size = new System.Drawing.Size(482, 20);
+            this.ngaynhap.Size = new System.Drawing.Size(562, 22);
             this.ngaynhap.TabIndex = 8;
-            // 
-            // thoat
-            // 
-            this.thoat.Image = global::GUI.Properties.Resources.thoat;
-            this.thoat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.thoat.Name = "thoat";
-            this.thoat.Size = new System.Drawing.Size(65, 24);
-            this.thoat.Text = "Thoát";
-            // 
-            // inphieu
-            // 
-            this.inphieu.Image = global::GUI.Properties.Resources.inphieu;
-            this.inphieu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.inphieu.Name = "inphieu";
-            this.inphieu.Size = new System.Drawing.Size(77, 24);
-            this.inphieu.Text = "In Phiếu";
-            // 
-            // duyet
-            // 
-            this.duyet.Image = global::GUI.Properties.Resources.duyet;
-            this.duyet.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.duyet.Name = "duyet";
-            this.duyet.Size = new System.Drawing.Size(65, 24);
-            this.duyet.Text = "Duyệt";
             // 
             // menuchucnang
             // 
@@ -225,110 +213,77 @@ namespace GUI
             this.thoat});
             this.menuchucnang.Location = new System.Drawing.Point(0, 0);
             this.menuchucnang.Name = "menuchucnang";
-            this.menuchucnang.Size = new System.Drawing.Size(1098, 27);
+            this.menuchucnang.Size = new System.Drawing.Size(1414, 27);
             this.menuchucnang.TabIndex = 23;
             this.menuchucnang.Text = "MenuChucNang";
             // 
-            // chon
-            // 
-            this.chon.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.them,
-            this.sua,
-            this.xoa,
-            this.load});
-            this.chon.Image = global::GUI.Properties.Resources.chon;
-            this.chon.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.chon.Name = "chon";
-            this.chon.Size = new System.Drawing.Size(71, 24);
-            this.chon.Text = "Chọn";
-            // 
-            // them
-            // 
-            this.them.Image = global::GUI.Properties.Resources.themphieu;
-            this.them.Name = "them";
-            this.them.Size = new System.Drawing.Size(112, 26);
-            this.them.Text = "Thêm";
-            // 
-            // sua
-            // 
-            this.sua.Image = global::GUI.Properties.Resources.suaphieu;
-            this.sua.Name = "sua";
-            this.sua.Size = new System.Drawing.Size(112, 26);
-            this.sua.Text = "Sửa";
-            // 
-            // xoa
-            // 
-            this.xoa.Image = global::GUI.Properties.Resources.xoaphieu;
-            this.xoa.Name = "xoa";
-            this.xoa.Size = new System.Drawing.Size(112, 26);
-            this.xoa.Text = "Xóa";
-            // 
-            // load
-            // 
-            this.load.Image = global::GUI.Properties.Resources.loadphieu;
-            this.load.Name = "load";
-            this.load.Size = new System.Drawing.Size(112, 26);
-            this.load.Text = "Load";
-            // 
             // lb_manhaphang
             // 
-            this.lb_manhaphang.Location = new System.Drawing.Point(21, 44);
+            this.lb_manhaphang.Location = new System.Drawing.Point(24, 54);
+            this.lb_manhaphang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lb_manhaphang.Name = "lb_manhaphang";
-            this.lb_manhaphang.Size = new System.Drawing.Size(68, 13);
+            this.lb_manhaphang.Size = new System.Drawing.Size(87, 17);
             this.lb_manhaphang.TabIndex = 9;
             this.lb_manhaphang.Text = "Mã nhập hàng";
             // 
             // cbb_trangthai
             // 
-            this.cbb_trangthai.Location = new System.Drawing.Point(745, 184);
+            this.cbb_trangthai.Location = new System.Drawing.Point(869, 226);
+            this.cbb_trangthai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbb_trangthai.Name = "cbb_trangthai";
             this.cbb_trangthai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_trangthai.Size = new System.Drawing.Size(332, 20);
+            this.cbb_trangthai.Size = new System.Drawing.Size(387, 22);
             this.cbb_trangthai.TabIndex = 7;
             // 
             // cbb_manhacungcap
             // 
-            this.cbb_manhacungcap.Location = new System.Drawing.Point(147, 184);
+            this.cbb_manhacungcap.Location = new System.Drawing.Point(171, 226);
+            this.cbb_manhacungcap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbb_manhacungcap.Name = "cbb_manhacungcap";
             this.cbb_manhacungcap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_manhacungcap.Size = new System.Drawing.Size(482, 20);
+            this.cbb_manhacungcap.Size = new System.Drawing.Size(562, 22);
             this.cbb_manhacungcap.TabIndex = 6;
             // 
             // txt_tonggiatien
             // 
-            this.txt_tonggiatien.Location = new System.Drawing.Point(745, 134);
+            this.txt_tonggiatien.Location = new System.Drawing.Point(869, 165);
+            this.txt_tonggiatien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_tonggiatien.Name = "txt_tonggiatien";
-            this.txt_tonggiatien.Size = new System.Drawing.Size(332, 20);
+            this.txt_tonggiatien.Size = new System.Drawing.Size(387, 22);
             this.txt_tonggiatien.TabIndex = 5;
             // 
             // txt_tongsoluong
             // 
-            this.txt_tongsoluong.Location = new System.Drawing.Point(745, 88);
+            this.txt_tongsoluong.Location = new System.Drawing.Point(869, 108);
+            this.txt_tongsoluong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_tongsoluong.Name = "txt_tongsoluong";
-            this.txt_tongsoluong.Size = new System.Drawing.Size(332, 20);
+            this.txt_tongsoluong.Size = new System.Drawing.Size(387, 22);
             this.txt_tongsoluong.TabIndex = 4;
             // 
             // txt_ghichu
             // 
-            this.txt_ghichu.Location = new System.Drawing.Point(745, 41);
+            this.txt_ghichu.Location = new System.Drawing.Point(869, 50);
+            this.txt_ghichu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_ghichu.Name = "txt_ghichu";
-            this.txt_ghichu.Size = new System.Drawing.Size(332, 20);
+            this.txt_ghichu.Size = new System.Drawing.Size(387, 22);
             this.txt_ghichu.TabIndex = 3;
             // 
             // txt_manhanvien
             // 
-            this.txt_manhanvien.Location = new System.Drawing.Point(147, 88);
+            this.txt_manhanvien.Location = new System.Drawing.Point(171, 108);
+            this.txt_manhanvien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_manhanvien.Name = "txt_manhanvien";
-            this.txt_manhanvien.Size = new System.Drawing.Size(482, 20);
+            this.txt_manhanvien.Size = new System.Drawing.Size(562, 22);
             this.txt_manhanvien.TabIndex = 1;
             // 
             // txt_manhaphang
             // 
-            this.txt_manhaphang.Location = new System.Drawing.Point(147, 41);
+            this.txt_manhaphang.Location = new System.Drawing.Point(171, 50);
+            this.txt_manhaphang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_manhaphang.Name = "txt_manhaphang";
-            this.txt_manhaphang.Size = new System.Drawing.Size(482, 20);
+            this.txt_manhaphang.Size = new System.Drawing.Size(562, 22);
             this.txt_manhaphang.TabIndex = 0;
             // 
             // panel_chinh
@@ -358,38 +313,105 @@ namespace GUI
             this.panel_chinh.Controls.Add(this.txt_manhaphang);
             this.panel_chinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_chinh.Location = new System.Drawing.Point(0, 0);
+            this.panel_chinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_chinh.Name = "panel_chinh";
-            this.panel_chinh.Size = new System.Drawing.Size(1098, 642);
+            this.panel_chinh.Size = new System.Drawing.Size(1414, 790);
             this.panel_chinh.TabIndex = 1;
             // 
             // dgv_sanpham
             // 
             this.dgv_sanpham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_sanpham.Location = new System.Drawing.Point(654, 299);
+            this.dgv_sanpham.Location = new System.Drawing.Point(763, 368);
             this.dgv_sanpham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_sanpham.Name = "dgv_sanpham";
             this.dgv_sanpham.RowHeadersWidth = 51;
             this.dgv_sanpham.RowTemplate.Height = 24;
-            this.dgv_sanpham.Size = new System.Drawing.Size(423, 332);
+            this.dgv_sanpham.Size = new System.Drawing.Size(493, 409);
             this.dgv_sanpham.TabIndex = 27;
             // 
             // dgv_nh
             // 
             this.dgv_nh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_nh.Location = new System.Drawing.Point(21, 299);
+            this.dgv_nh.Location = new System.Drawing.Point(24, 368);
             this.dgv_nh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_nh.Name = "dgv_nh";
             this.dgv_nh.RowHeadersWidth = 51;
             this.dgv_nh.RowTemplate.Height = 24;
-            this.dgv_nh.Size = new System.Drawing.Size(608, 332);
+            this.dgv_nh.Size = new System.Drawing.Size(709, 409);
             this.dgv_nh.TabIndex = 26;
+            // 
+            // chon
+            // 
+            this.chon.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.them,
+            this.sua,
+            this.xoa,
+            this.load});
+            this.chon.Image = global::GUI.Properties.Resources.chon;
+            this.chon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.chon.Name = "chon";
+            this.chon.Size = new System.Drawing.Size(77, 24);
+            this.chon.Text = "Chọn";
+            // 
+            // them
+            // 
+            this.them.Image = global::GUI.Properties.Resources.themphieu;
+            this.them.Name = "them";
+            this.them.Size = new System.Drawing.Size(129, 26);
+            this.them.Text = "Thêm";
+            // 
+            // sua
+            // 
+            this.sua.Image = global::GUI.Properties.Resources.suaphieu;
+            this.sua.Name = "sua";
+            this.sua.Size = new System.Drawing.Size(129, 26);
+            this.sua.Text = "Sửa";
+            // 
+            // xoa
+            // 
+            this.xoa.Image = global::GUI.Properties.Resources.xoaphieu;
+            this.xoa.Name = "xoa";
+            this.xoa.Size = new System.Drawing.Size(129, 26);
+            this.xoa.Text = "Xóa";
+            // 
+            // load
+            // 
+            this.load.Image = global::GUI.Properties.Resources.loadphieu;
+            this.load.Name = "load";
+            this.load.Size = new System.Drawing.Size(129, 26);
+            this.load.Text = "Load";
+            // 
+            // duyet
+            // 
+            this.duyet.Image = global::GUI.Properties.Resources.duyet;
+            this.duyet.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.duyet.Name = "duyet";
+            this.duyet.Size = new System.Drawing.Size(72, 24);
+            this.duyet.Text = "Duyệt";
+            // 
+            // inphieu
+            // 
+            this.inphieu.Image = global::GUI.Properties.Resources.inphieu;
+            this.inphieu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.inphieu.Name = "inphieu";
+            this.inphieu.Size = new System.Drawing.Size(85, 24);
+            this.inphieu.Text = "In Phiếu";
+            // 
+            // thoat
+            // 
+            this.thoat.Image = global::GUI.Properties.Resources.thoat;
+            this.thoat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.thoat.Name = "thoat";
+            this.thoat.Size = new System.Drawing.Size(71, 24);
+            this.thoat.Text = "Thoát";
             // 
             // frmNhapHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1098, 642);
+            this.ClientSize = new System.Drawing.Size(1414, 790);
             this.Controls.Add(this.panel_chinh);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmNhapHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập Hàng";

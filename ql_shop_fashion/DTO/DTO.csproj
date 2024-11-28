@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_SHOP_DATA.dbml</DependentUpon>
     </Compile>
+    <Compile Include="san_pham_cus.cs" />
     <Compile Include="san_pham_custom.cs" />
     <Compile Include="san_pham_DTO.cs" />
     <Compile Include="tem_gia.cs" />

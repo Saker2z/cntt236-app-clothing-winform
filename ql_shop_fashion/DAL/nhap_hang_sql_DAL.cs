@@ -114,6 +114,42 @@ namespace DAL
             // Nếu không tìm thấy đối tượng với id tương ứng, trả về false
             return false;
         }
+        // Hàm lấy danh sách phiếu nhập hàng theo trạng thái
+        public IQueryable get_nhap_hang_by_trang_thai(string trangThai)
+        {
+            var ds = from i in data.nhap_hangs
+                     where i.trang_thai == trangThai // Lọc theo trạng thái
+                     select new
+                     {
+                         i.ma_nhap_hang,
+                         i.ngay_nhap,
+                         i.tong_gia_tien,
+                         i.ghi_chu,
+                         i.trang_thai,
+                         i.tong_so_luong,
+                     };
+            return ds;
+        }
+        public bool cap_nhat_trang_thai(int maNhapHang, string trangThaiMoi)
+        {
+            try
+            {
+                var nhapHang = data.nhap_hangs.FirstOrDefault(nh => nh.ma_nhap_hang == maNhapHang);
+                if (nhapHang != null)
+                {
+                    nhapHang.trang_thai = trangThaiMoi;
+                    data.SubmitChanges(); // Lưu thay đổi vào cơ sở dữ liệu
+                    return true;
+                }
+                return false; // Không tìm thấy đơn hàng
+            }
+            catch
+            {
+                return false; // Lỗi xảy ra
+            }
+        }
+
+
 
 
 

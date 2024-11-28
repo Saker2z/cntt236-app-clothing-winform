@@ -71,10 +71,11 @@ namespace GUI
             this.ace_manhinhchinh,
             this.ace_danhmuc,
             this.ace_hethongquanly});
-            this.ac_thongtin.Location = new System.Drawing.Point(0, 31);
+            this.ac_thongtin.Location = new System.Drawing.Point(0, 39);
+            this.ac_thongtin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ac_thongtin.Name = "ac_thongtin";
             this.ac_thongtin.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.ac_thongtin.Size = new System.Drawing.Size(299, 711);
+            this.ac_thongtin.Size = new System.Drawing.Size(349, 874);
             this.ac_thongtin.TabIndex = 1;
             this.ac_thongtin.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -162,7 +163,7 @@ namespace GUI
             this.ace_kiemduyetsanpham.Name = "ace_kiemduyetsanpham";
             this.ace_kiemduyetsanpham.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ace_kiemduyetsanpham.Tag = 7;
-            this.ace_kiemduyetsanpham.Text = "Kiểm Duyệt Sản Phẩm";
+            this.ace_kiemduyetsanpham.Text = "Kiểm tra sản phẩm";
             // 
             // ace_nhacungcap
             // 
@@ -275,8 +276,9 @@ namespace GUI
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluent_QuanLyForm;
+            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1628, 31);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1899, 39);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
@@ -291,9 +293,10 @@ namespace GUI
             this.panel_chinh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_chinh.Controls.Add(this.pn_main);
             this.panel_chinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_chinh.Location = new System.Drawing.Point(299, 31);
+            this.panel_chinh.Location = new System.Drawing.Point(349, 39);
+            this.panel_chinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_chinh.Name = "panel_chinh";
-            this.panel_chinh.Size = new System.Drawing.Size(1329, 711);
+            this.panel_chinh.Size = new System.Drawing.Size(1550, 874);
             this.panel_chinh.TabIndex = 3;
             // 
             // pn_main
@@ -301,8 +304,9 @@ namespace GUI
             this.pn_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pn_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_main.Location = new System.Drawing.Point(0, 0);
+            this.pn_main.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pn_main.Name = "pn_main";
-            this.pn_main.Size = new System.Drawing.Size(1329, 711);
+            this.pn_main.Size = new System.Drawing.Size(1550, 874);
             this.pn_main.TabIndex = 0;
             // 
             // accordionControlElement1
@@ -339,13 +343,14 @@ namespace GUI
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1628, 742);
+            this.ClientSize = new System.Drawing.Size(1899, 913);
             this.Controls.Add(this.panel_chinh);
             this.Controls.Add(this.ac_thongtin);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.NavigationControl = this.ac_thongtin;
             this.Text = "Main";

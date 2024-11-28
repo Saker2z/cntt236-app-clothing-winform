@@ -90,7 +90,10 @@ namespace BLL
         {
             return sp_.AddImageForProduct(maSanPham, imagePath);
         }
-
+        public List<san_pham_cus> GetSanPhamTheoTieuChi(string tieuChi)
+        {
+            return sp_.GetSanPhamTheoTieuChi(tieuChi);
+        }
 
     }
 }

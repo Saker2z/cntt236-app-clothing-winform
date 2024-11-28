@@ -101,7 +101,7 @@ namespace GUI
             this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1039, 158);
+            this.ribbonControl.Size = new System.Drawing.Size(1549, 158);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiPrintPreview
@@ -121,7 +121,9 @@ namespace GUI
             // 
             this.bt_them.Caption = "Thêm";
             this.bt_them.Id = 16;
+            this.bt_them.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_them.ImageOptions.Image")));
             this.bt_them.ImageOptions.ImageUri.Uri = "New";
+            this.bt_them.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_them.ImageOptions.LargeImage")));
             this.bt_them.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.bt_them.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_them.Name = "bt_them";
@@ -131,7 +133,9 @@ namespace GUI
             // 
             this.bt_sua.Caption = "Sửa";
             this.bt_sua.Id = 17;
+            this.bt_sua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_sua.ImageOptions.Image")));
             this.bt_sua.ImageOptions.ImageUri.Uri = "Edit";
+            this.bt_sua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_sua.ImageOptions.LargeImage")));
             this.bt_sua.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.bt_sua.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_sua.Name = "bt_sua";
@@ -205,14 +209,14 @@ namespace GUI
             // cbb_ncc
             // 
             this.cbb_ncc.EditValue = "";
-            this.cbb_ncc.Location = new System.Drawing.Point(387, 31);
+            this.cbb_ncc.Location = new System.Drawing.Point(449, 31);
             this.cbb_ncc.MenuManager = this.ribbonControl;
             this.cbb_ncc.Name = "cbb_ncc";
             this.cbb_ncc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_ncc.Properties.Appearance.Options.UseFont = true;
             this.cbb_ncc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_ncc.Size = new System.Drawing.Size(163, 22);
+            this.cbb_ncc.Size = new System.Drawing.Size(317, 22);
             this.cbb_ncc.TabIndex = 4;
             // 
             // txt_tennv
@@ -223,22 +227,22 @@ namespace GUI
             this.txt_tennv.Name = "txt_tennv";
             this.txt_tennv.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tennv.Properties.Appearance.Options.UseFont = true;
-            this.txt_tennv.Size = new System.Drawing.Size(153, 22);
+            this.txt_tennv.Size = new System.Drawing.Size(222, 22);
             this.txt_tennv.TabIndex = 5;
             // 
             // date_ngaynhap
             // 
             this.date_ngaynhap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_ngaynhap.Location = new System.Drawing.Point(108, 112);
+            this.date_ngaynhap.Location = new System.Drawing.Point(108, 122);
             this.date_ngaynhap.Name = "date_ngaynhap";
-            this.date_ngaynhap.Size = new System.Drawing.Size(153, 23);
+            this.date_ngaynhap.Size = new System.Drawing.Size(222, 23);
             this.date_ngaynhap.TabIndex = 6;
             // 
             // lb_thanhtien
             // 
             this.lb_thanhtien.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_thanhtien.Appearance.Options.UseFont = true;
-            this.lb_thanhtien.Location = new System.Drawing.Point(12, 667);
+            this.lb_thanhtien.Location = new System.Drawing.Point(7, 858);
             this.lb_thanhtien.Name = "lb_thanhtien";
             this.lb_thanhtien.Size = new System.Drawing.Size(96, 25);
             this.lb_thanhtien.TabIndex = 10;
@@ -253,27 +257,27 @@ namespace GUI
             this.cbb_tensp.Properties.Appearance.Options.UseFont = true;
             this.cbb_tensp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_tensp.Size = new System.Drawing.Size(153, 22);
+            this.cbb_tensp.Size = new System.Drawing.Size(222, 22);
             this.cbb_tensp.TabIndex = 11;
             // 
             // txt_gianhap
             // 
-            this.txt_gianhap.Location = new System.Drawing.Point(108, 160);
+            this.txt_gianhap.Location = new System.Drawing.Point(108, 182);
             this.txt_gianhap.MenuManager = this.ribbonControl;
             this.txt_gianhap.Name = "txt_gianhap";
             this.txt_gianhap.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_gianhap.Properties.Appearance.Options.UseFont = true;
-            this.txt_gianhap.Size = new System.Drawing.Size(442, 22);
+            this.txt_gianhap.Size = new System.Drawing.Size(658, 22);
             this.txt_gianhap.TabIndex = 13;
             // 
             // txt_dg
             // 
-            this.txt_dg.Location = new System.Drawing.Point(387, 72);
+            this.txt_dg.Location = new System.Drawing.Point(449, 72);
             this.txt_dg.MenuManager = this.ribbonControl;
             this.txt_dg.Name = "txt_dg";
             this.txt_dg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dg.Properties.Appearance.Options.UseFont = true;
-            this.txt_dg.Size = new System.Drawing.Size(163, 22);
+            this.txt_dg.Size = new System.Drawing.Size(317, 22);
             this.txt_dg.TabIndex = 24;
             // 
             // buttonEdit1
@@ -296,9 +300,9 @@ namespace GUI
             // dgv_gia
             // 
             this.dgv_gia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_gia.Location = new System.Drawing.Point(576, 164);
+            this.dgv_gia.Location = new System.Drawing.Point(802, 164);
             this.dgv_gia.Name = "dgv_gia";
-            this.dgv_gia.Size = new System.Drawing.Size(442, 190);
+            this.dgv_gia.Size = new System.Drawing.Size(735, 239);
             this.dgv_gia.TabIndex = 46;
             // 
             // ribbonPageGroup2
@@ -311,22 +315,22 @@ namespace GUI
             // 
             // cbb_sl
             // 
-            this.cbb_sl.Location = new System.Drawing.Point(387, 115);
+            this.cbb_sl.Location = new System.Drawing.Point(449, 125);
             this.cbb_sl.MenuManager = this.ribbonControl;
             this.cbb_sl.Name = "cbb_sl";
             this.cbb_sl.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_sl.Properties.Appearance.Options.UseFont = true;
             this.cbb_sl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_sl.Size = new System.Drawing.Size(163, 22);
+            this.cbb_sl.Size = new System.Drawing.Size(317, 22);
             this.cbb_sl.TabIndex = 49;
             // 
             // dgv_sp_add
             // 
             this.dgv_sp_add.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_sp_add.Location = new System.Drawing.Point(12, 361);
+            this.dgv_sp_add.Location = new System.Drawing.Point(12, 409);
             this.dgv_sp_add.Name = "dgv_sp_add";
-            this.dgv_sp_add.Size = new System.Drawing.Size(1006, 290);
+            this.dgv_sp_add.Size = new System.Drawing.Size(1525, 443);
             this.dgv_sp_add.TabIndex = 52;
             // 
             // gb_ttpn
@@ -349,7 +353,7 @@ namespace GUI
             this.gb_ttpn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_ttpn.Location = new System.Drawing.Point(12, 164);
             this.gb_ttpn.Name = "gb_ttpn";
-            this.gb_ttpn.Size = new System.Drawing.Size(558, 190);
+            this.gb_ttpn.Size = new System.Drawing.Size(784, 239);
             this.gb_ttpn.TabIndex = 56;
             this.gb_ttpn.TabStop = false;
             this.gb_ttpn.Text = "Thông tin phiếu nhập";
@@ -358,7 +362,7 @@ namespace GUI
             // 
             this.lb_tennhanvien.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_tennhanvien.Appearance.Options.UseFont = true;
-            this.lb_tennhanvien.Location = new System.Drawing.Point(17, 34);
+            this.lb_tennhanvien.Location = new System.Drawing.Point(28, 34);
             this.lb_tennhanvien.Name = "lb_tennhanvien";
             this.lb_tennhanvien.Size = new System.Drawing.Size(74, 15);
             this.lb_tennhanvien.TabIndex = 15;
@@ -368,7 +372,7 @@ namespace GUI
             // 
             this.lb_dongia.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_dongia.Appearance.Options.UseFont = true;
-            this.lb_dongia.Location = new System.Drawing.Point(278, 75);
+            this.lb_dongia.Location = new System.Drawing.Point(402, 75);
             this.lb_dongia.Name = "lb_dongia";
             this.lb_dongia.Size = new System.Drawing.Size(41, 15);
             this.lb_dongia.TabIndex = 25;
@@ -378,7 +382,7 @@ namespace GUI
             // 
             this.lb_gianhap.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_gianhap.Appearance.Options.UseFont = true;
-            this.lb_gianhap.Location = new System.Drawing.Point(17, 163);
+            this.lb_gianhap.Location = new System.Drawing.Point(55, 185);
             this.lb_gianhap.Name = "lb_gianhap";
             this.lb_gianhap.Size = new System.Drawing.Size(47, 15);
             this.lb_gianhap.TabIndex = 23;
@@ -388,7 +392,7 @@ namespace GUI
             // 
             this.lb_soluong.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_soluong.Appearance.Options.UseFont = true;
-            this.lb_soluong.Location = new System.Drawing.Point(278, 118);
+            this.lb_soluong.Location = new System.Drawing.Point(396, 128);
             this.lb_soluong.Name = "lb_soluong";
             this.lb_soluong.Size = new System.Drawing.Size(47, 15);
             this.lb_soluong.TabIndex = 22;
@@ -398,7 +402,7 @@ namespace GUI
             // 
             this.lb_ngaynhap.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ngaynhap.Appearance.Options.UseFont = true;
-            this.lb_ngaynhap.Location = new System.Drawing.Point(17, 118);
+            this.lb_ngaynhap.Location = new System.Drawing.Point(44, 122);
             this.lb_ngaynhap.Name = "lb_ngaynhap";
             this.lb_ngaynhap.Size = new System.Drawing.Size(58, 15);
             this.lb_ngaynhap.TabIndex = 17;
@@ -408,7 +412,7 @@ namespace GUI
             // 
             this.lb_tennhacungcap.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_tennhacungcap.Appearance.Options.UseFont = true;
-            this.lb_tennhacungcap.Location = new System.Drawing.Point(278, 34);
+            this.lb_tennhacungcap.Location = new System.Drawing.Point(350, 34);
             this.lb_tennhacungcap.Name = "lb_tennhacungcap";
             this.lb_tennhacungcap.Size = new System.Drawing.Size(93, 15);
             this.lb_tennhacungcap.TabIndex = 16;
@@ -418,7 +422,7 @@ namespace GUI
             // 
             this.lb_tensanpham.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_tensanpham.Appearance.Options.UseFont = true;
-            this.lb_tensanpham.Location = new System.Drawing.Point(18, 75);
+            this.lb_tensanpham.Location = new System.Drawing.Point(29, 75);
             this.lb_tensanpham.Name = "lb_tensanpham";
             this.lb_tensanpham.Size = new System.Drawing.Size(73, 15);
             this.lb_tensanpham.TabIndex = 21;
@@ -428,7 +432,7 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 699);
+            this.ClientSize = new System.Drawing.Size(1549, 911);
             this.Controls.Add(this.gb_ttpn);
             this.Controls.Add(this.dgv_sp_add);
             this.Controls.Add(this.dgv_gia);

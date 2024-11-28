@@ -26,7 +26,10 @@ namespace GUI
         frmNhapHang nhapHang;
         BanHang banHang;
         DoiTraHang doiTraHang;
+        UC_DuyetDonHang uc_duyet;
         UC_CaNhan canhan;
+        UC_ThemPhieuNhap uc_them;
+        UC_checkSP uc_kiemsp;
 
         public frmMain()
         {
@@ -36,7 +39,7 @@ namespace GUI
             ace_manhinhchinh.Click += Ace_manhinhchinh_Click;
             ace_nhanvien.Click += Ace_nhanvien_Click;
             ace_taikhoan.Click += Ace_taikhoan_Click;
-            ace_thongtincanhan.Click += Ace_thongtincanhan_Click;
+           
             ace_nhacungcap.Click += Ace_nhacungcap_Click;
             ace_hoadon.Click += Ace_hoadon_Click;
             ace_sanpham.Click += Ace_sanpham_Click;
@@ -45,8 +48,22 @@ namespace GUI
             ace_dangxuat.Click += Ace_dangxuat_Click;
             ace_banhang.Click += Ace_banhang_Click;
             ace_thongtincanhan.Click += Ace_thongtincanhan_Click1;
+            ace_kiemduyetsanpham.Click += Ace_kiemduyetsanpham_Click;
          
 
+        }
+
+        private void Ace_kiemduyetsanpham_Click(object sender, EventArgs e)
+        {
+            uc_kiemsp = new UC_checkSP();
+           
+            panel_chinh.Controls.Clear();
+
+            // Tạo instance của UC_NhanVien và thêm vào pn_main
+
+            uc_kiemsp.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+
+            panel_chinh.Controls.Add(uc_kiemsp); // Thêm UC_NhanVien vào panel pn_main
         }
 
         private void Ace_thongtincanhan_Click1(object sender, EventArgs e)
@@ -155,14 +172,18 @@ namespace GUI
 
         private void Ace_hoadon_Click(object sender, EventArgs e)
         {
-            pn_main.Controls.Clear();
+            panel_chinh.Controls.Clear();
 
             // Tạo instance của UC_NhanVien và thêm vào pn_main
-            nhapHang = new frmNhapHang(Properties.Settings.Default.id_user_login);
-            nhapHang.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
-            nhapHang.Show();
+            uc_duyet = new UC_DuyetDonHang(Properties.Settings.Default.id_user_login);
+            uc_duyet.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+
+            panel_chinh.Controls.Add(uc_duyet);
             // Thêm UC_NhanVien vào panel pn_main
+            
         }
+
+   
 
         private void Ace_nhacungcap_Click(object sender, EventArgs e)
         {
@@ -175,10 +196,7 @@ namespace GUI
             panel_chinh.Controls.Add(ncc_sp); // Thêm UC_NhanVien vào panel pn_main
         }
 
-        private void Ace_thongtincanhan_Click(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void Ace_taikhoan_Click(object sender, EventArgs e)
         {

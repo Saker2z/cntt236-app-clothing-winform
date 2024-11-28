@@ -13,6 +13,7 @@ namespace GUI
     public partial class frmNhapHang : DevExpress.XtraEditors.XtraForm
     {
         private nhap_hang_sql_BLL nhap_bll;
+        private EventHandler EventHandler;
         private nha_cung_cap_sql_BLL ncc_bll;
         private chi_tiet_nhap_sql_BLL ct_nhap_bll;
         int id_nv;
@@ -51,8 +52,9 @@ namespace GUI
 
         private void Them_Click(object sender, EventArgs e)
         {
-            PhieuNhap phieuNhap = new PhieuNhap(id_nv);
-            phieuNhap.Show();
+        
+
+
         }
 
         private void Duyet_Click(object sender, EventArgs e)
@@ -172,10 +174,7 @@ namespace GUI
             dgv_sanpham.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_sanpham.Columns["so_luong"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_sanpham.Columns["gia_nhap"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgv_sanpham.BackgroundColor = Color.White;
-            dgv_sanpham.DefaultCellStyle.BackColor = Color.White;
-            dgv_sanpham.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
-            dgv_sanpham.GridColor = Color.LightGray;
+          
         }
 
         private void FrmNhapHang_Load(object sender, EventArgs e)
@@ -183,7 +182,22 @@ namespace GUI
             loaddgv_nhap_hang();
             load_cbb_ncc();
             load_dgv_sp(0);
+           
+            CustomizeDataGridView(dgv_sanpham);
+            CustomizeDataGridView(dgv_nh);
         }
+        private void CustomizeDataGridView(DataGridView a)
+        {
+             a.BorderStyle = BorderStyle.None;
+            a.BackgroundColor = Color.White; // Màu nền chính
+            a.DefaultCellStyle.BackColor = Color.White; // Màu nền cho các ô
+            a.AlternatingRowsDefaultCellStyle.BackColor = Color.White; // Màu nền cho dòng xen kẽ
+            a.GridColor = Color.LightGray; // Màu lưới
+            a.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray; // Màu tiêu đề cột
+            a.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black; // Màu chữ của tiêu đề
+            a.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Tiêu đề căn giữa
+        }
+
 
         void loaddgv_nhap_hang()
         {

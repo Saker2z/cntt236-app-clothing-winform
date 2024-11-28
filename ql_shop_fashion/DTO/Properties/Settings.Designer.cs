@@ -37,8 +37,8 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-4GMS5N8;Initial Catalog=QL_SHOP_FASHION1;Integrated Security=" +
-            "True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DANHZU\\DANHZU;Initial Catalog=QL_SHOP_FASHION1;Integrated Security=Tr" +
+            "ue")]
         public string QL_SHOP_FASHION1ConnectionString {
             get {
                 return ((string)(this["QL_SHOP_FASHION1ConnectionString"]));
