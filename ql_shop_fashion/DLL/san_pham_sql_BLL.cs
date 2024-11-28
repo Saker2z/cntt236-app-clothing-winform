@@ -81,5 +81,16 @@ namespace BLL
             return sp_.DeleteSPById(masp);
         }
 
+        public List<string> GetAllImagesByProductId(int maSanPham)
+        {
+            return sp_.GetAllImagesByProductId(maSanPham);
+        }
+
+        public bool AddImageForProduct(int maSanPham, string imagePath)
+        {
+            return sp_.AddImageForProduct(maSanPham, imagePath);
+        }
+
+
     }
 }

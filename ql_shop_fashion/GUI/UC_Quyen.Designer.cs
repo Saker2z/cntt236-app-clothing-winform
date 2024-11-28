@@ -42,12 +42,12 @@ namespace GUI
             this.bt_xoa = new DevExpress.XtraBars.BarButtonItem();
             this.bt_save = new DevExpress.XtraBars.BarButtonItem();
             this.bt_them_man_hinh = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_sua_name_mh = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_delete_mh = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.bt_sua_name_mh = new DevExpress.XtraBars.BarButtonItem();
-            this.bt_delete_mh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gct_nhom_quyen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quyen)).BeginInit();
@@ -58,10 +58,10 @@ namespace GUI
             // gct_nhom_quyen
             // 
             this.gct_nhom_quyen.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gct_nhom_quyen.Location = new System.Drawing.Point(0, 24);
+            this.gct_nhom_quyen.Location = new System.Drawing.Point(0, 28);
             this.gct_nhom_quyen.MainView = this.gridView1;
             this.gct_nhom_quyen.Name = "gct_nhom_quyen";
-            this.gct_nhom_quyen.Size = new System.Drawing.Size(454, 687);
+            this.gct_nhom_quyen.Size = new System.Drawing.Size(454, 683);
             this.gct_nhom_quyen.TabIndex = 0;
             this.gct_nhom_quyen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -70,14 +70,15 @@ namespace GUI
             // 
             this.gridView1.GridControl = this.gct_nhom_quyen;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // quyen
             // 
             this.quyen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.quyen.Location = new System.Drawing.Point(454, 24);
+            this.quyen.Location = new System.Drawing.Point(454, 28);
             this.quyen.MainView = this.gridView3;
             this.quyen.Name = "quyen";
-            this.quyen.Size = new System.Drawing.Size(920, 687);
+            this.quyen.Size = new System.Drawing.Size(920, 683);
             this.quyen.TabIndex = 2;
             this.quyen.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -86,6 +87,7 @@ namespace GUI
             // 
             this.gridView3.GridControl = this.quyen;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
             // barManager1
             // 
@@ -118,9 +120,9 @@ namespace GUI
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bt_update, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bt_xoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bt_save, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bt_them_man_hinh),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bt_sua_name_mh),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bt_delete_mh)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bt_them_man_hinh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bt_sua_name_mh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bt_delete_mh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -131,6 +133,8 @@ namespace GUI
             this.bt_them.Id = 0;
             this.bt_them.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_them.ImageOptions.Image")));
             this.bt_them.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_them.ImageOptions.LargeImage")));
+            this.bt_them.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bt_them.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_them.Name = "bt_them";
             // 
             // bt_update
@@ -139,6 +143,8 @@ namespace GUI
             this.bt_update.Id = 1;
             this.bt_update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_update.ImageOptions.Image")));
             this.bt_update.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_update.ImageOptions.LargeImage")));
+            this.bt_update.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bt_update.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_update.Name = "bt_update";
             // 
             // bt_xoa
@@ -147,6 +153,8 @@ namespace GUI
             this.bt_xoa.Id = 2;
             this.bt_xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_xoa.ImageOptions.Image")));
             this.bt_xoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_xoa.ImageOptions.LargeImage")));
+            this.bt_xoa.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bt_xoa.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_xoa.Name = "bt_xoa";
             // 
             // bt_save
@@ -155,13 +163,42 @@ namespace GUI
             this.bt_save.Id = 3;
             this.bt_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_save.ImageOptions.Image")));
             this.bt_save.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_save.ImageOptions.LargeImage")));
+            this.bt_save.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bt_save.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_save.Name = "bt_save";
             // 
             // bt_them_man_hinh
             // 
+            this.bt_them_man_hinh.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.bt_them_man_hinh.Caption = "Thêm màn hình";
             this.bt_them_man_hinh.Id = 4;
+            this.bt_them_man_hinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_them_man_hinh.ImageOptions.Image")));
+            this.bt_them_man_hinh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_them_man_hinh.ImageOptions.LargeImage")));
+            this.bt_them_man_hinh.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bt_them_man_hinh.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_them_man_hinh.Name = "bt_them_man_hinh";
+            // 
+            // bt_sua_name_mh
+            // 
+            this.bt_sua_name_mh.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bt_sua_name_mh.Caption = "Sửa tên màn hình";
+            this.bt_sua_name_mh.Id = 5;
+            this.bt_sua_name_mh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_sua_name_mh.ImageOptions.Image")));
+            this.bt_sua_name_mh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_sua_name_mh.ImageOptions.LargeImage")));
+            this.bt_sua_name_mh.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_sua_name_mh.ItemAppearance.Normal.Options.UseFont = true;
+            this.bt_sua_name_mh.Name = "bt_sua_name_mh";
+            // 
+            // bt_delete_mh
+            // 
+            this.bt_delete_mh.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bt_delete_mh.Caption = "Xóa màn hình";
+            this.bt_delete_mh.Id = 6;
+            this.bt_delete_mh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_delete_mh.ImageOptions.Image")));
+            this.bt_delete_mh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_delete_mh.ImageOptions.LargeImage")));
+            this.bt_delete_mh.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bt_delete_mh.ItemAppearance.Normal.Options.UseFont = true;
+            this.bt_delete_mh.Name = "bt_delete_mh";
             // 
             // barDockControlTop
             // 
@@ -169,7 +206,7 @@ namespace GUI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1374, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1374, 28);
             // 
             // barDockControlBottom
             // 
@@ -183,29 +220,17 @@ namespace GUI
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 28);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 687);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 683);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1374, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1374, 28);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 687);
-            // 
-            // bt_sua_name_mh
-            // 
-            this.bt_sua_name_mh.Caption = "Sửa tên màn hình";
-            this.bt_sua_name_mh.Id = 5;
-            this.bt_sua_name_mh.Name = "bt_sua_name_mh";
-            // 
-            // bt_delete_mh
-            // 
-            this.bt_delete_mh.Caption = "Xóa màn hình";
-            this.bt_delete_mh.Id = 6;
-            this.bt_delete_mh.Name = "bt_delete_mh";
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 683);
             // 
             // UC_Quyen
             // 

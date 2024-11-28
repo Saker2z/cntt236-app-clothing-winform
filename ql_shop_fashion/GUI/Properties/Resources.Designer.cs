@@ -153,19 +153,9 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background_mhc {
+        internal static System.Drawing.Bitmap background_mhc2 {
             get {
-                object obj = ResourceManager.GetObject("background_mhc", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap background_mhc1 {
-            get {
-                object obj = ResourceManager.GetObject("background_mhc1", resourceCulture);
+                object obj = ResourceManager.GetObject("background_mhc2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

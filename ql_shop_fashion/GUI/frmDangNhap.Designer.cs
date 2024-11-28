@@ -119,7 +119,7 @@ namespace GUI
             this.dangnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dangnhap.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dangnhap.ForeColor = System.Drawing.Color.Black;
-            this.dangnhap.Location = new System.Drawing.Point(103, 238);
+            this.dangnhap.Location = new System.Drawing.Point(87, 237);
             this.dangnhap.Name = "dangnhap";
             this.dangnhap.Size = new System.Drawing.Size(163, 45);
             this.dangnhap.TabIndex = 9;
@@ -165,7 +165,7 @@ namespace GUI
             this.nhapmk.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nhapmk.Properties.Appearance.Options.UseFont = true;
             this.nhapmk.Properties.PasswordChar = '*';
-            this.nhapmk.Size = new System.Drawing.Size(274, 22);
+            this.nhapmk.Size = new System.Drawing.Size(284, 22);
             this.nhapmk.TabIndex = 5;
             // 
             // taikhoan
@@ -185,7 +185,7 @@ namespace GUI
             this.nhaptk.Name = "nhaptk";
             this.nhaptk.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nhaptk.Properties.Appearance.Options.UseFont = true;
-            this.nhaptk.Size = new System.Drawing.Size(274, 22);
+            this.nhaptk.Size = new System.Drawing.Size(284, 22);
             this.nhaptk.TabIndex = 3;
             // 
             // welcome
@@ -193,7 +193,7 @@ namespace GUI
             this.welcome.AutoSize = true;
             this.welcome.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcome.ForeColor = System.Drawing.Color.Black;
-            this.welcome.Location = new System.Drawing.Point(98, 9);
+            this.welcome.Location = new System.Drawing.Point(118, 10);
             this.welcome.Name = "welcome";
             this.welcome.Size = new System.Drawing.Size(103, 30);
             this.welcome.TabIndex = 0;

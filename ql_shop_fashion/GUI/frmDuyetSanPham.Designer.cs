@@ -68,10 +68,11 @@ namespace GUI
             // 
             // gdv_duyet_sp
             // 
-            this.gdv_duyet_sp.Location = new System.Drawing.Point(12, 28);
+            this.gdv_duyet_sp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gdv_duyet_sp.Location = new System.Drawing.Point(12, 32);
             this.gdv_duyet_sp.MainView = this.gridView1;
             this.gdv_duyet_sp.Name = "gdv_duyet_sp";
-            this.gdv_duyet_sp.Size = new System.Drawing.Size(459, 611);
+            this.gdv_duyet_sp.Size = new System.Drawing.Size(459, 607);
             this.gdv_duyet_sp.TabIndex = 4;
             this.gdv_duyet_sp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -94,13 +95,15 @@ namespace GUI
             // 
             // layoutControlItem1
             // 
+            this.layoutControlItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem1.Control = this.gdv_duyet_sp;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(463, 631);
             this.layoutControlItem1.Text = "Danh sách sản phẩm cần duyệt";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(150, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(192, 17);
             // 
             // layoutControl2
             // 
@@ -116,10 +119,11 @@ namespace GUI
             // 
             // dgv_dsnhap
             // 
-            this.dgv_dsnhap.Location = new System.Drawing.Point(12, 28);
+            this.dgv_dsnhap.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_dsnhap.Location = new System.Drawing.Point(12, 32);
             this.dgv_dsnhap.MainView = this.gridView2;
             this.dgv_dsnhap.Name = "dgv_dsnhap";
-            this.dgv_dsnhap.Size = new System.Drawing.Size(469, 640);
+            this.dgv_dsnhap.Size = new System.Drawing.Size(469, 636);
             this.dgv_dsnhap.TabIndex = 4;
             this.dgv_dsnhap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -142,18 +146,25 @@ namespace GUI
             // 
             // layoutControlItem2
             // 
+            this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem2.Control = this.dgv_dsnhap;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem1";
             this.layoutControlItem2.Size = new System.Drawing.Size(473, 660);
             this.layoutControlItem2.Text = "Danh sách đơn sản phẩm";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(120, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(156, 17);
             // 
             // bt_duyet
             // 
-            this.bt_duyet.Appearance.BackColor = System.Drawing.Color.White;
+            this.bt_duyet.Appearance.BackColor = System.Drawing.Color.Red;
+            this.bt_duyet.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_duyet.Appearance.ForeColor = System.Drawing.Color.Black;
             this.bt_duyet.Appearance.Options.UseBackColor = true;
+            this.bt_duyet.Appearance.Options.UseFont = true;
+            this.bt_duyet.Appearance.Options.UseForeColor = true;
+            this.bt_duyet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_duyet.Location = new System.Drawing.Point(736, 12);
             this.bt_duyet.Name = "bt_duyet";
             this.bt_duyet.Size = new System.Drawing.Size(219, 22);
@@ -162,8 +173,13 @@ namespace GUI
             // 
             // bt_ht
             // 
-            this.bt_ht.Appearance.BackColor = System.Drawing.Color.White;
+            this.bt_ht.Appearance.BackColor = System.Drawing.Color.Red;
+            this.bt_ht.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_ht.Appearance.ForeColor = System.Drawing.Color.Black;
             this.bt_ht.Appearance.Options.UseBackColor = true;
+            this.bt_ht.Appearance.Options.UseFont = true;
+            this.bt_ht.Appearance.Options.UseForeColor = true;
+            this.bt_ht.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_ht.Location = new System.Drawing.Point(496, 12);
             this.bt_ht.Name = "bt_ht";
             this.bt_ht.Size = new System.Drawing.Size(227, 22);

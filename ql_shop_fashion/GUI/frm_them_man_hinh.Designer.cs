@@ -30,11 +30,11 @@ namespace GUI
         private void InitializeComponent()
         {
             this.pnl_themncc = new System.Windows.Forms.Panel();
+            this.bt_them = new System.Windows.Forms.Button();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txt_ma_mh = new DevExpress.XtraEditors.TextEdit();
             this.txt_name_mh = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.bt_them = new System.Windows.Forms.Button();
             this.pnl_themncc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ma_mh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name_mh.Properties)).BeginInit();
@@ -51,8 +51,19 @@ namespace GUI
             this.pnl_themncc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_themncc.Location = new System.Drawing.Point(0, 0);
             this.pnl_themncc.Name = "pnl_themncc";
-            this.pnl_themncc.Size = new System.Drawing.Size(616, 450);
+            this.pnl_themncc.Size = new System.Drawing.Size(423, 216);
             this.pnl_themncc.TabIndex = 19;
+            // 
+            // bt_them
+            // 
+            this.bt_them.BackColor = System.Drawing.Color.Red;
+            this.bt_them.ForeColor = System.Drawing.Color.White;
+            this.bt_them.Location = new System.Drawing.Point(127, 122);
+            this.bt_them.Name = "bt_them";
+            this.bt_them.Size = new System.Drawing.Size(158, 41);
+            this.bt_them.TabIndex = 15;
+            this.bt_them.Text = "Thêm";
+            this.bt_them.UseVisualStyleBackColor = false;
             // 
             // labelControl2
             // 
@@ -88,23 +99,14 @@ namespace GUI
             this.labelControl3.TabIndex = 14;
             this.labelControl3.Text = "Tên màn hình";
             // 
-            // bt_them
-            // 
-            this.bt_them.Location = new System.Drawing.Point(148, 224);
-            this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(75, 23);
-            this.bt_them.TabIndex = 15;
-            this.bt_them.Text = "Thêm";
-            this.bt_them.UseVisualStyleBackColor = true;
-            // 
             // frm_them_man_hinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 450);
+            this.ClientSize = new System.Drawing.Size(423, 216);
             this.Controls.Add(this.pnl_themncc);
             this.Name = "frm_them_man_hinh";
-            this.Text = "frm_them_man_hinh";
+            this.Text = "Thêm Màn Hình";
             this.pnl_themncc.ResumeLayout(false);
             this.pnl_themncc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ma_mh.Properties)).EndInit();

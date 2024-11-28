@@ -41,14 +41,8 @@ namespace GUI
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.bt_add_all = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.cbb_ncc = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txt_tennv = new DevExpress.XtraEditors.TextEdit();
             this.date_ngaynhap = new System.Windows.Forms.DateTimePicker();
@@ -104,12 +98,10 @@ namespace GUI
             this.ribbonControl.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1,
-            this.ribbonPage3});
+            this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1096, 158);
-            this.ribbonControl.StatusBar = this.ribbonStatusBar;
+            this.ribbonControl.Size = new System.Drawing.Size(1039, 158);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiPrintPreview
@@ -130,6 +122,8 @@ namespace GUI
             this.bt_them.Caption = "Thêm";
             this.bt_them.Id = 16;
             this.bt_them.ImageOptions.ImageUri.Uri = "New";
+            this.bt_them.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.bt_them.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_them.Name = "bt_them";
             this.bt_them.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiNew_ItemClick);
             // 
@@ -138,6 +132,8 @@ namespace GUI
             this.bt_sua.Caption = "Sửa";
             this.bt_sua.Id = 17;
             this.bt_sua.ImageOptions.ImageUri.Uri = "Edit";
+            this.bt_sua.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.bt_sua.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_sua.Name = "bt_sua";
             // 
             // bt_xoa
@@ -145,6 +141,8 @@ namespace GUI
             this.bt_xoa.Caption = "Xóa";
             this.bt_xoa.Id = 18;
             this.bt_xoa.ImageOptions.ImageUri.Uri = "Delete";
+            this.bt_xoa.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.bt_xoa.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_xoa.Name = "bt_xoa";
             // 
             // bt_load
@@ -153,6 +151,8 @@ namespace GUI
             this.bt_load.Caption = "Load";
             this.bt_load.Id = 19;
             this.bt_load.ImageOptions.ImageUri.Uri = "Refresh";
+            this.bt_load.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.bt_load.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_load.Name = "bt_load";
             // 
             // barButtonItem2
@@ -173,32 +173,19 @@ namespace GUI
             this.bt_add_all.Id = 22;
             this.bt_add_all.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_add_all.ImageOptions.Image")));
             this.bt_add_all.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_add_all.ImageOptions.LargeImage")));
+            this.bt_add_all.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.bt_add_all.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_add_all.Name = "bt_add_all";
             // 
             // ribbonPageCategory1
             // 
             this.ribbonPageCategory1.Name = "ribbonPageCategory1";
-            this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage2});
             this.ribbonPageCategory1.Text = "ribbonPageCategory1";
-            // 
-            // ribbonPage2
-            // 
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
-            this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "ribbonPage2";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup1});
             this.ribbonPage1.MergeOrder = 0;
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Home";
@@ -215,84 +202,68 @@ namespace GUI
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Tasks";
             // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
-            // 
-            // ribbonPage3
-            // 
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4});
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "ribbonPage3";
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
-            // 
-            // ribbonStatusBar
-            // 
-            this.ribbonStatusBar.ItemLinks.Add(this.bsiRecordsCount);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 657);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbonControl;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1096, 24);
-            // 
             // cbb_ncc
             // 
             this.cbb_ncc.EditValue = "";
             this.cbb_ncc.Location = new System.Drawing.Point(387, 31);
             this.cbb_ncc.MenuManager = this.ribbonControl;
             this.cbb_ncc.Name = "cbb_ncc";
+            this.cbb_ncc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_ncc.Properties.Appearance.Options.UseFont = true;
             this.cbb_ncc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_ncc.Size = new System.Drawing.Size(163, 20);
+            this.cbb_ncc.Size = new System.Drawing.Size(163, 22);
             this.cbb_ncc.TabIndex = 4;
             // 
             // txt_tennv
             // 
             this.txt_tennv.EditValue = "";
-            this.txt_tennv.Location = new System.Drawing.Point(98, 31);
+            this.txt_tennv.Location = new System.Drawing.Point(108, 31);
             this.txt_tennv.MenuManager = this.ribbonControl;
             this.txt_tennv.Name = "txt_tennv";
-            this.txt_tennv.Size = new System.Drawing.Size(163, 20);
+            this.txt_tennv.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tennv.Properties.Appearance.Options.UseFont = true;
+            this.txt_tennv.Size = new System.Drawing.Size(153, 22);
             this.txt_tennv.TabIndex = 5;
             // 
             // date_ngaynhap
             // 
-            this.date_ngaynhap.Location = new System.Drawing.Point(98, 112);
+            this.date_ngaynhap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_ngaynhap.Location = new System.Drawing.Point(108, 112);
             this.date_ngaynhap.Name = "date_ngaynhap";
-            this.date_ngaynhap.Size = new System.Drawing.Size(163, 21);
+            this.date_ngaynhap.Size = new System.Drawing.Size(153, 23);
             this.date_ngaynhap.TabIndex = 6;
             // 
             // lb_thanhtien
             // 
-            this.lb_thanhtien.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_thanhtien.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_thanhtien.Appearance.Options.UseFont = true;
-            this.lb_thanhtien.Location = new System.Drawing.Point(913, 630);
+            this.lb_thanhtien.Location = new System.Drawing.Point(12, 667);
             this.lb_thanhtien.Name = "lb_thanhtien";
-            this.lb_thanhtien.Size = new System.Drawing.Size(80, 21);
+            this.lb_thanhtien.Size = new System.Drawing.Size(96, 25);
             this.lb_thanhtien.TabIndex = 10;
             this.lb_thanhtien.Text = "Tổng tiền: ";
             // 
             // cbb_tensp
             // 
-            this.cbb_tensp.Location = new System.Drawing.Point(98, 72);
+            this.cbb_tensp.Location = new System.Drawing.Point(108, 72);
             this.cbb_tensp.MenuManager = this.ribbonControl;
             this.cbb_tensp.Name = "cbb_tensp";
+            this.cbb_tensp.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_tensp.Properties.Appearance.Options.UseFont = true;
             this.cbb_tensp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_tensp.Size = new System.Drawing.Size(163, 20);
+            this.cbb_tensp.Size = new System.Drawing.Size(153, 22);
             this.cbb_tensp.TabIndex = 11;
             // 
             // txt_gianhap
             // 
-            this.txt_gianhap.Location = new System.Drawing.Point(98, 160);
+            this.txt_gianhap.Location = new System.Drawing.Point(108, 160);
             this.txt_gianhap.MenuManager = this.ribbonControl;
             this.txt_gianhap.Name = "txt_gianhap";
-            this.txt_gianhap.Size = new System.Drawing.Size(452, 20);
+            this.txt_gianhap.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_gianhap.Properties.Appearance.Options.UseFont = true;
+            this.txt_gianhap.Size = new System.Drawing.Size(442, 22);
             this.txt_gianhap.TabIndex = 13;
             // 
             // txt_dg
@@ -300,7 +271,9 @@ namespace GUI
             this.txt_dg.Location = new System.Drawing.Point(387, 72);
             this.txt_dg.MenuManager = this.ribbonControl;
             this.txt_dg.Name = "txt_dg";
-            this.txt_dg.Size = new System.Drawing.Size(163, 20);
+            this.txt_dg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dg.Properties.Appearance.Options.UseFont = true;
+            this.txt_dg.Size = new System.Drawing.Size(163, 22);
             this.txt_dg.TabIndex = 24;
             // 
             // buttonEdit1
@@ -325,7 +298,7 @@ namespace GUI
             this.dgv_gia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_gia.Location = new System.Drawing.Point(576, 164);
             this.dgv_gia.Name = "dgv_gia";
-            this.dgv_gia.Size = new System.Drawing.Size(496, 190);
+            this.dgv_gia.Size = new System.Drawing.Size(442, 190);
             this.dgv_gia.TabIndex = 46;
             // 
             // ribbonPageGroup2
@@ -341,9 +314,11 @@ namespace GUI
             this.cbb_sl.Location = new System.Drawing.Point(387, 115);
             this.cbb_sl.MenuManager = this.ribbonControl;
             this.cbb_sl.Name = "cbb_sl";
+            this.cbb_sl.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_sl.Properties.Appearance.Options.UseFont = true;
             this.cbb_sl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_sl.Size = new System.Drawing.Size(163, 20);
+            this.cbb_sl.Size = new System.Drawing.Size(163, 22);
             this.cbb_sl.TabIndex = 49;
             // 
             // dgv_sp_add
@@ -351,7 +326,7 @@ namespace GUI
             this.dgv_sp_add.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_sp_add.Location = new System.Drawing.Point(12, 361);
             this.dgv_sp_add.Name = "dgv_sp_add";
-            this.dgv_sp_add.Size = new System.Drawing.Size(895, 290);
+            this.dgv_sp_add.Size = new System.Drawing.Size(1006, 290);
             this.dgv_sp_add.TabIndex = 52;
             // 
             // gb_ttpn
@@ -371,6 +346,7 @@ namespace GUI
             this.gb_ttpn.Controls.Add(this.date_ngaynhap);
             this.gb_ttpn.Controls.Add(this.cbb_ncc);
             this.gb_ttpn.Controls.Add(this.txt_gianhap);
+            this.gb_ttpn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_ttpn.Location = new System.Drawing.Point(12, 164);
             this.gb_ttpn.Name = "gb_ttpn";
             this.gb_ttpn.Size = new System.Drawing.Size(558, 190);
@@ -380,57 +356,71 @@ namespace GUI
             // 
             // lb_tennhanvien
             // 
+            this.lb_tennhanvien.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_tennhanvien.Appearance.Options.UseFont = true;
             this.lb_tennhanvien.Location = new System.Drawing.Point(17, 34);
             this.lb_tennhanvien.Name = "lb_tennhanvien";
-            this.lb_tennhanvien.Size = new System.Drawing.Size(68, 13);
+            this.lb_tennhanvien.Size = new System.Drawing.Size(74, 15);
             this.lb_tennhanvien.TabIndex = 15;
             this.lb_tennhanvien.Text = "Tên nhân viên";
             // 
             // lb_dongia
             // 
+            this.lb_dongia.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_dongia.Appearance.Options.UseFont = true;
             this.lb_dongia.Location = new System.Drawing.Point(278, 75);
             this.lb_dongia.Name = "lb_dongia";
-            this.lb_dongia.Size = new System.Drawing.Size(37, 13);
+            this.lb_dongia.Size = new System.Drawing.Size(41, 15);
             this.lb_dongia.TabIndex = 25;
             this.lb_dongia.Text = "Đơn giá";
             // 
             // lb_gianhap
             // 
+            this.lb_gianhap.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_gianhap.Appearance.Options.UseFont = true;
             this.lb_gianhap.Location = new System.Drawing.Point(17, 163);
             this.lb_gianhap.Name = "lb_gianhap";
-            this.lb_gianhap.Size = new System.Drawing.Size(42, 13);
+            this.lb_gianhap.Size = new System.Drawing.Size(47, 15);
             this.lb_gianhap.TabIndex = 23;
             this.lb_gianhap.Text = "Giá nhập";
             // 
             // lb_soluong
             // 
+            this.lb_soluong.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_soluong.Appearance.Options.UseFont = true;
             this.lb_soluong.Location = new System.Drawing.Point(278, 118);
             this.lb_soluong.Name = "lb_soluong";
-            this.lb_soluong.Size = new System.Drawing.Size(42, 13);
+            this.lb_soluong.Size = new System.Drawing.Size(47, 15);
             this.lb_soluong.TabIndex = 22;
             this.lb_soluong.Text = "Số lượng";
             // 
             // lb_ngaynhap
             // 
+            this.lb_ngaynhap.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ngaynhap.Appearance.Options.UseFont = true;
             this.lb_ngaynhap.Location = new System.Drawing.Point(17, 118);
             this.lb_ngaynhap.Name = "lb_ngaynhap";
-            this.lb_ngaynhap.Size = new System.Drawing.Size(52, 13);
+            this.lb_ngaynhap.Size = new System.Drawing.Size(58, 15);
             this.lb_ngaynhap.TabIndex = 17;
             this.lb_ngaynhap.Text = "Ngày nhập";
             // 
             // lb_tennhacungcap
             // 
+            this.lb_tennhacungcap.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_tennhacungcap.Appearance.Options.UseFont = true;
             this.lb_tennhacungcap.Location = new System.Drawing.Point(278, 34);
             this.lb_tennhacungcap.Name = "lb_tennhacungcap";
-            this.lb_tennhacungcap.Size = new System.Drawing.Size(85, 13);
+            this.lb_tennhacungcap.Size = new System.Drawing.Size(93, 15);
             this.lb_tennhacungcap.TabIndex = 16;
             this.lb_tennhacungcap.Text = "Tên nhà cung cấp";
             // 
             // lb_tensanpham
             // 
+            this.lb_tensanpham.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_tensanpham.Appearance.Options.UseFont = true;
             this.lb_tensanpham.Location = new System.Drawing.Point(18, 75);
             this.lb_tensanpham.Name = "lb_tensanpham";
-            this.lb_tensanpham.Size = new System.Drawing.Size(67, 13);
+            this.lb_tensanpham.Size = new System.Drawing.Size(73, 15);
             this.lb_tensanpham.TabIndex = 21;
             this.lb_tensanpham.Text = "Tên sản phẩm";
             // 
@@ -438,17 +428,16 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 681);
+            this.ClientSize = new System.Drawing.Size(1039, 699);
             this.Controls.Add(this.gb_ttpn);
             this.Controls.Add(this.dgv_sp_add);
             this.Controls.Add(this.dgv_gia);
             this.Controls.Add(this.buttonEdit1);
             this.Controls.Add(this.lb_thanhtien);
-            this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbonControl);
             this.Name = "PhieuNhap";
             this.Ribbon = this.ribbonControl;
-            this.StatusBar = this.ribbonStatusBar;
+            this.Text = "Phiếu Nhập";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_ncc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tennv.Properties)).EndInit();
@@ -471,7 +460,6 @@ namespace GUI
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem bbiPrintPreview;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarStaticItem bsiRecordsCount;
         private DevExpress.XtraBars.BarButtonItem bt_them;
         private DevExpress.XtraBars.BarButtonItem bt_sua;
@@ -488,13 +476,8 @@ namespace GUI
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private System.Windows.Forms.DataGridView dgv_gia;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraEditors.ComboBoxEdit cbb_sl;
         private System.Windows.Forms.DataGridView dgv_sp_add;

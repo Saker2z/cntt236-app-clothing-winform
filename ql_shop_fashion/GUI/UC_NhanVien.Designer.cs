@@ -34,6 +34,12 @@ namespace GUI
             this.gct_nv = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.bt_rs_pass = new System.Windows.Forms.Button();
+            this.txt_mk = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_tk = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,21 +52,15 @@ namespace GUI
             this.txt_hoten = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.bt_rs_pass = new System.Windows.Forms.Button();
-            this.txt_mk = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_tk = new System.Windows.Forms.TextBox();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bt_them = new DevExpress.XtraBars.BarButtonItem();
             this.bt_xoa = new DevExpress.XtraBars.BarButtonItem();
             this.bt_save = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             ((System.ComponentModel.ISupportInitialize)(this.gct_nv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -72,7 +72,8 @@ namespace GUI
             // 
             this.gct_nv.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gct_nv.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.gct_nv.Location = new System.Drawing.Point(3, 267);
+            this.gct_nv.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gct_nv.Location = new System.Drawing.Point(3, 265);
             this.gct_nv.MainView = this.gridView1;
             this.gct_nv.Margin = new System.Windows.Forms.Padding(2);
             this.gct_nv.Name = "gct_nv";
@@ -102,93 +103,13 @@ namespace GUI
             this.groupBox1.Controls.Add(this.txt_dc);
             this.groupBox1.Controls.Add(this.txt_hoten);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 24);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(966, 669);
+            this.groupBox1.Size = new System.Drawing.Size(966, 667);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cá nhân";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 224);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Ngày Vào Làm";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Số Điện Thoại";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Địa Chỉ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Chức Vụ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Họ Và Tên ";
-            // 
-            // ngay_vl
-            // 
-            this.ngay_vl.Location = new System.Drawing.Point(120, 218);
-            this.ngay_vl.Name = "ngay_vl";
-            this.ngay_vl.Size = new System.Drawing.Size(442, 20);
-            this.ngay_vl.TabIndex = 0;
-            // 
-            // cbb_cv
-            // 
-            this.cbb_cv.FormattingEnabled = true;
-            this.cbb_cv.Location = new System.Drawing.Point(120, 71);
-            this.cbb_cv.Name = "cbb_cv";
-            this.cbb_cv.Size = new System.Drawing.Size(442, 21);
-            this.cbb_cv.TabIndex = 3;
-            // 
-            // txt_sdt
-            // 
-            this.txt_sdt.Location = new System.Drawing.Point(120, 169);
-            this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Size = new System.Drawing.Size(442, 20);
-            this.txt_sdt.TabIndex = 2;
-            // 
-            // txt_dc
-            // 
-            this.txt_dc.Location = new System.Drawing.Point(120, 121);
-            this.txt_dc.Name = "txt_dc";
-            this.txt_dc.Size = new System.Drawing.Size(442, 20);
-            this.txt_dc.TabIndex = 1;
-            // 
-            // txt_hoten
-            // 
-            this.txt_hoten.Location = new System.Drawing.Point(120, 25);
-            this.txt_hoten.Name = "txt_hoten";
-            this.txt_hoten.Size = new System.Drawing.Size(442, 20);
-            this.txt_hoten.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -206,44 +127,140 @@ namespace GUI
             // 
             // bt_rs_pass
             // 
+            this.bt_rs_pass.BackColor = System.Drawing.Color.Red;
             this.bt_rs_pass.Location = new System.Drawing.Point(61, 147);
             this.bt_rs_pass.Name = "bt_rs_pass";
             this.bt_rs_pass.Size = new System.Drawing.Size(187, 42);
             this.bt_rs_pass.TabIndex = 12;
             this.bt_rs_pass.Text = "Tạo mới mật khẩu";
-            this.bt_rs_pass.UseVisualStyleBackColor = true;
+            this.bt_rs_pass.UseVisualStyleBackColor = false;
             // 
             // txt_mk
             // 
-            this.txt_mk.Location = new System.Drawing.Point(93, 96);
+            this.txt_mk.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_mk.Location = new System.Drawing.Point(104, 96);
             this.txt_mk.Name = "txt_mk";
-            this.txt_mk.Size = new System.Drawing.Size(187, 20);
+            this.txt_mk.Size = new System.Drawing.Size(176, 25);
             this.txt_mk.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(20, 99);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.Size = new System.Drawing.Size(64, 17);
             this.label7.TabIndex = 10;
             this.label7.Text = "Mật Khẩu";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(20, 34);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.Size = new System.Drawing.Size(63, 17);
             this.label6.TabIndex = 9;
             this.label6.Text = "Tài khoản";
             // 
             // txt_tk
             // 
-            this.txt_tk.Location = new System.Drawing.Point(93, 31);
+            this.txt_tk.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tk.Location = new System.Drawing.Point(104, 31);
             this.txt_tk.Name = "txt_tk";
-            this.txt_tk.Size = new System.Drawing.Size(187, 20);
+            this.txt_tk.Size = new System.Drawing.Size(176, 25);
             this.txt_tk.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(24, 224);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(93, 17);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Ngày Vào Làm";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(24, 172);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Số Điện Thoại";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Địa Chỉ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Chức Vụ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Họ Và Tên ";
+            // 
+            // ngay_vl
+            // 
+            this.ngay_vl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ngay_vl.Location = new System.Drawing.Point(138, 218);
+            this.ngay_vl.Name = "ngay_vl";
+            this.ngay_vl.Size = new System.Drawing.Size(424, 25);
+            this.ngay_vl.TabIndex = 0;
+            // 
+            // cbb_cv
+            // 
+            this.cbb_cv.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_cv.FormattingEnabled = true;
+            this.cbb_cv.Location = new System.Drawing.Point(138, 71);
+            this.cbb_cv.Name = "cbb_cv";
+            this.cbb_cv.Size = new System.Drawing.Size(424, 25);
+            this.cbb_cv.TabIndex = 3;
+            // 
+            // txt_sdt
+            // 
+            this.txt_sdt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_sdt.Location = new System.Drawing.Point(138, 169);
+            this.txt_sdt.Name = "txt_sdt";
+            this.txt_sdt.Size = new System.Drawing.Size(424, 25);
+            this.txt_sdt.TabIndex = 2;
+            // 
+            // txt_dc
+            // 
+            this.txt_dc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dc.Location = new System.Drawing.Point(138, 121);
+            this.txt_dc.Name = "txt_dc";
+            this.txt_dc.Size = new System.Drawing.Size(424, 25);
+            this.txt_dc.TabIndex = 1;
+            // 
+            // txt_hoten
+            // 
+            this.txt_hoten.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_hoten.Location = new System.Drawing.Point(138, 25);
+            this.txt_hoten.Name = "txt_hoten";
+            this.txt_hoten.Size = new System.Drawing.Size(424, 25);
+            this.txt_hoten.TabIndex = 0;
             // 
             // barManager1
             // 
@@ -260,42 +277,11 @@ namespace GUI
             this.bt_save});
             this.barManager1.MaxItemId = 3;
             // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(966, 24);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 693);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(966, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 669);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(966, 24);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 669);
-            // 
             // bar1
             // 
             this.bar1.BarName = "Tools";
             this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bt_them, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -309,6 +295,8 @@ namespace GUI
             this.bt_them.Id = 0;
             this.bt_them.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_them.ImageOptions.Image")));
             this.bt_them.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_them.ImageOptions.LargeImage")));
+            this.bt_them.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.bt_them.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_them.Name = "bt_them";
             // 
             // bt_xoa
@@ -317,6 +305,8 @@ namespace GUI
             this.bt_xoa.Id = 1;
             this.bt_xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_xoa.ImageOptions.Image")));
             this.bt_xoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_xoa.ImageOptions.LargeImage")));
+            this.bt_xoa.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.bt_xoa.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_xoa.Name = "bt_xoa";
             // 
             // bt_save
@@ -325,7 +315,41 @@ namespace GUI
             this.bt_save.Id = 2;
             this.bt_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_save.ImageOptions.Image")));
             this.bt_save.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_save.ImageOptions.LargeImage")));
+            this.bt_save.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.bt_save.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_save.Name = "bt_save";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(966, 26);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 693);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(966, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 26);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 667);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(966, 26);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 667);
             // 
             // UC_NhanVien
             // 

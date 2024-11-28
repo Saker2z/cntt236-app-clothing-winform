@@ -56,6 +56,11 @@ namespace DAL
                     // Ném ngoại lệ với thông báo lỗi để truyền qua GUI
                     throw new Exception("Hóa đơn này đã được đổi trả, không thể thực hiện thêm lần nữa!!");
                 }
+                else if (sqlEx.Number == 211)
+                {
+                    // Ném ngoại lệ với thông báo lỗi để truyền qua GUI
+                    throw new Exception("Hóa đơn không được đổi trả vì không thanh toán bằng tiền mặt!");
+                }
                 else
                 {
                     // Ném lỗi khác

@@ -26,5 +26,21 @@ namespace BLL
         {
             return thongKeDAL.GetHoaDonDoiTra(fromDate, toDate);
         }
+
+        public List<thong_ke_theo_ngay_DTO> ThongKeTheoNgay(DateTime date)
+        {
+            return thongKeDAL.GetDailySales(date);
+        }
+
+
+        public List<thong_ke_theo_thang_DTO> ThongKeTheoThang(int month, int year)
+        {
+            return thongKeDAL.GetMonthlySales(month, year);
+        }
+
+        public List<thong_ke_theo_nam_DTO> ThongKeTheoNam(int year)
+        {
+            return thongKeDAL.GetYearlySales(year);
+        }
     }
 }

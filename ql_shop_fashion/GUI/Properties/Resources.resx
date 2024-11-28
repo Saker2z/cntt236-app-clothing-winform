@@ -127,53 +127,23 @@
   <data name="matkhau" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\matkhau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loadphieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loadphieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="themphieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\themphieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="thuong_hieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thuong_hieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ao" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background_mhc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background_mhc1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="quan_denim" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\quan_denim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background_mhc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background_mhc.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="quan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\quan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ao_khoac" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ao_khoac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background_dn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background_dn.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ao_phong" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ao_phong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ao_mang_to" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ao_mang_to.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ao_hoodie" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ao_hoodie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ao_so_mi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ao_so_mi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ao_suit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ao_suit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tre_em" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tre_em.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="duyet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\duyet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,19 +151,46 @@
   <data name="inphieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inphieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loadphieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loadphieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="suaphieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\suaphieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="themphieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\themphieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xoaphieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xoaphieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quan_denim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quan_denim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background_dn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background_dn.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ao_phong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ao_phong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ao_hoodie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ao_hoodie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ao_so_mi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ao_so_mi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thoat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thoat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="xoaphieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xoaphieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ao_suit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ao_suit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tre_em" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tre_em.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background_mhc2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background_mhc.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

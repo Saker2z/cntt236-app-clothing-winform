@@ -26,13 +26,33 @@ namespace GUI
             GridView gv_loaisp = gct_loaisp.MainView as GridView;
             gv_loaisp.Click += Gv_loaisp_Click;
             cbb_tennhomloai.EditValueChanged += Cbb_manhomloai_EditValueChanged;
-            btn_themloaisp.Click += Btn_themloaisp_Click;
-            btn_sualoaisp.Click += Btn_sualoaisp_Click;
-            btn_xoaloaisp.Click += Btn_xoaloaisp_Click;
-            btn_loadloaisp.Click += Btn_loadloaisp_Click;
+            btn_themloaisp.ItemClick += Btn_themloaisp_ItemClick;
+            btn_sualoaisp.ItemClick += Btn_sualoaisp_ItemClick;
+            btn_xoaloaisp.ItemClick += Btn_xoaloaisp_ItemClick;
+            btn_loadloaisp.ItemClick += Btn_loadloaisp_ItemClick;
 
             gct_loaisp.MouseMove += Gct_loaisp_MouseMove;
             gct_loaisp.MouseLeave += Gct_loaisp_MouseLeave;
+        }
+
+        private void Btn_loadloaisp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loadLoaiSP();
+        }
+
+        private void Btn_xoaloaisp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            xoaLoaiSP();
+        }
+
+        private void Btn_sualoaisp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            suaLoaiSP();
+        }
+
+        private void Btn_themloaisp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            themLoaiSP();
         }
 
         private void Gct_loaisp_MouseLeave(object sender, EventArgs e)
@@ -110,25 +130,6 @@ namespace GUI
             loadNhomLoaiLenComboBox();
         }
 
-        private void Btn_loadloaisp_Click(object sender, EventArgs e)
-        {
-            clearloaisp();
-        }
-
-        private void Btn_xoaloaisp_Click(object sender, EventArgs e)
-        {
-            xoaLoaiSP();
-        }
-
-        private void Btn_sualoaisp_Click(object sender, EventArgs e)
-        {
-            suaLoaiSP();
-        }
-
-        private void Btn_themloaisp_Click(object sender, EventArgs e)
-        {
-            themLoaiSP();
-        }
 
         private void Gv_loaisp_Click(object sender, EventArgs e)
         {
@@ -415,5 +416,7 @@ namespace GUI
                 gct_loaisp.RefreshDataSource();
             }
         }
+
+        
     }
 }

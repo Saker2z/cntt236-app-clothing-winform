@@ -19,18 +19,12 @@ namespace GUI
         public them_ncc()
         {
             InitializeComponent();
-            btthem.ItemClick += Btthem_ItemClick;
-            btthoat.ItemClick += Btthoat_ItemClick;
             this.FormClosed += Them_ncc_FormClosed;
+            btthem.Click += Btthem_Click;
             
         }
 
-        private void Btthoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Btthem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void Btthem_Click(object sender, EventArgs e)
         {
             // Kiểm tra dữ liệu đầu vào
             if (!ValidateInput())

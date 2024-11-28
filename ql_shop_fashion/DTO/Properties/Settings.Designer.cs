@@ -26,16 +26,6 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DANHZU\\DANHZU;Initial Catalog=QL_SHOP_02;Integrated Security=True")]
-        public string QL_SHOP_02ConnectionString {
-            get {
-                return ((string)(this["QL_SHOP_02ConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-4GMS5N8;Initial Catalog=QL_SHOP_FASHION;Integrated Security=T" +
             "rue")]
         public string QL_SHOP_FASHIONConnectionString {
@@ -47,52 +37,8 @@ namespace DTO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-4GMS5N8;Initial Catalog=QL_SHOP_FASHION;Integrated Security=T" +
-            "rue")]
-        public string QL_SHOP_FASHIONConnectionString1 {
-            get {
-                return ((string)(this["QL_SHOP_FASHIONConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DANHZU\\DANHZU;Initial Catalog=QL_SHOP_FASHION1;User ID=sa;Password=12" +
-            "3")]
-        public string QL_SHOP_FASHIONConnectionString2 {
-            get {
-                return ((string)(this["QL_SHOP_FASHIONConnectionString2"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-UELF38N\\THANHTRUC;Initial Catalog=QL_SHOP_FASHION;User ID=sa;" +
-            "Password=123")]
-        public string QL_SHOP_FASHIONConnectionString3 {
-            get {
-                return ((string)(this["QL_SHOP_FASHIONConnectionString3"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DANHZU\\DANHZU;Initial Catalog=QL_SHOP_FASHION;Persist Security Info=T" +
-            "rue;User ID=sa;Password=123")]
-        public string QL_SHOP_FASHIONConnectionString4 {
-            get {
-                return ((string)(this["QL_SHOP_FASHIONConnectionString4"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DANHZU\\DANHZU;Initial Catalog=QL_SHOP_FASHION1;Integrated Security=Tr" +
-            "ue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-4GMS5N8;Initial Catalog=QL_SHOP_FASHION1;Integrated Security=" +
+            "True")]
         public string QL_SHOP_FASHION1ConnectionString {
             get {
                 return ((string)(this["QL_SHOP_FASHION1ConnectionString"]));

@@ -21,42 +21,14 @@ namespace GUI
         public frmInGia()
         {
             InitializeComponent();
-            this.Load += FrmTesttt_Load;
-            btnIn.Click += BtnIn_Click;
-            btnThem.Click += BtnThem_Click;
+            this.Load += FrmTesttt_Load;          
             this.Load += FrmInGia_Load;
-            btnXoa.Click += BtnXoa_Click;
+            btnIn.ItemClick += BtnIn_ItemClick;
+            btnThem.ItemClick += BtnThem_ItemClick;
+            btnXoa.ItemClick += BtnXoa_ItemClick;
         }
 
-        private void BtnXoa_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra xem có dòng nào đang được chọn không
-            int focusedRowHandle = dgvDS2.FocusedRowHandle;
-
-            if (focusedRowHandle >= 0) // Nếu có dòng đang được chọn
-            {
-                // Xác nhận trước khi xóa
-                DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn xóa sản phẩm này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    // Xóa dòng đang được chọn
-                    dgvDS2.DeleteRow(focusedRowHandle);
-                }
-            }
-            else
-            {
-                // Nếu không có dòng nào được chọn
-                MessageBox.Show("Vui lòng chọn sản phẩm để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void FrmInGia_Load(object sender, EventArgs e)
-        {
-            dgvDS2.Columns["So_tem"].OptionsColumn.AllowEdit = true;
-        }
-
-        private void BtnThem_Click(object sender, EventArgs e)
+        private void BtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int focusedRowHandle = dgvDS.FocusedRowHandle;
             if (focusedRowHandle >= 0)
@@ -113,16 +85,16 @@ namespace GUI
             }
         }
 
-        private void BtnIn_Click(object sender, EventArgs e)
+        private void BtnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             List<tem_gia> lst = new List<tem_gia>();
-            tem_gia tem ;
+            tem_gia tem;
 
-            for(int i=0; i<dgvDS2.RowCount;i++)
+            for (int i = 0; i < dgvDS2.RowCount; i++)
             {
                 if (dgvDS2.GetRowCellValue(i, "So_tem") != null)
                 {
-                    for(int j=0; j<int.Parse(dgvDS2.GetRowCellValue(i, "So_tem").ToString());j++)
+                    for (int j = 0; j < int.Parse(dgvDS2.GetRowCellValue(i, "So_tem").ToString()); j++)
                     {
                         tem = new tem_gia();
                         tem.MaSP = int.Parse(dgvDS2.GetRowCellValue(i, "MaSP").ToString());
@@ -130,17 +102,47 @@ namespace GUI
                         tem.GiaBan = Math.Round(decimal.Parse(dgvDS2.GetRowCellValue(i, "GiaBan").ToString()), 2);
                         tem.GiaGiam = Math.Round(decimal.Parse(dgvDS2.GetRowCellValue(i, "GiaGiam").ToString()), 2);
                         lst.Add(tem);
-                    }    
-                   
+                    }
+
 
 
                 }
-            }    
+            }
             InBarcode rp = new InBarcode();
             rp.DataSource = lst;
             rp.ShowPreviewDialog();
             load();
         }
+
+        private void BtnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // Kiểm tra xem có dòng nào đang được chọn không
+            int focusedRowHandle = dgvDS2.FocusedRowHandle;
+
+            if (focusedRowHandle >= 0) // Nếu có dòng đang được chọn
+            {
+                // Xác nhận trước khi xóa
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn xóa sản phẩm này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // Xóa dòng đang được chọn
+                    dgvDS2.DeleteRow(focusedRowHandle);
+                }
+            }
+            else
+            {
+                // Nếu không có dòng nào được chọn
+                MessageBox.Show("Vui lòng chọn sản phẩm để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void FrmInGia_Load(object sender, EventArgs e)
+        {
+            dgvDS2.Columns["So_tem"].OptionsColumn.AllowEdit = true;
+        }
+
+
 
         private void FrmTesttt_Load(object sender, EventArgs e)
         {

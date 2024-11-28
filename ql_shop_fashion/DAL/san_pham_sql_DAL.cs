@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -85,8 +87,7 @@ namespace DAL
                          giam_gia = i.giam_gia ?? 0.0m, // Sử dụng 0.0 làm giá trị mặc định nếu null
                          so_luong_kich_thuoc = i.so_luong_kich_thuoc ?? 0,
                          so_luong_mau_sac = i.so_luong_mau_sac ?? 0,
-                         so_luong = i.so_luong ?? 0,
-                        
+                         so_luong = i.so_luong ?? 0,                       
                          mo_ta = i.mo_ta,
                          gia_binh_quan = i.gia_binh_quan ?? 0.0m, // Sử dụng 0.0 làm giá trị mặc định nếu null
                          hinh_thuc_ban = i.hinh_thuc_ban
@@ -108,8 +109,7 @@ namespace DAL
                          giam_gia = i.giam_gia ?? 0.0m, // Sử dụng 0.0 làm giá trị mặc định nếu null
                          so_luong_kich_thuoc = i.so_luong_kich_thuoc ?? 0,
                          so_luong_mau_sac = i.so_luong_mau_sac ?? 0,
-                         so_luong = i.so_luong ?? 0,
-                        
+                         so_luong = i.so_luong ?? 0,                      
                          mo_ta = i.mo_ta,
                          gia_binh_quan = i.gia_binh_quan ?? 0.0m, // Sử dụng 0.0 làm giá trị mặc định nếu null
                          hinh_thuc_ban = i.hinh_thuc_ban
@@ -203,13 +203,10 @@ namespace DAL
                     existingProduct.giam_gia = product.giam_gia;
                     existingProduct.so_luong_kich_thuoc = product.so_luong_kich_thuoc;
                     existingProduct.so_luong_mau_sac = product.so_luong_mau_sac;
-                    existingProduct.so_luong = product.so_luong;
-                 
+                    existingProduct.so_luong = product.so_luong;                
                     existingProduct.mo_ta = product.mo_ta;
                     existingProduct.gia_binh_quan = product.gia_binh_quan;
-                    existingProduct.hinh_thuc_ban = product.hinh_thuc_ban;
-                   
-                    existingProduct.updated_at = DateTime.Now;
+                    existingProduct.hinh_thuc_ban = product.hinh_thuc_ban;                 
 
                     data.SubmitChanges();
                 }
@@ -224,14 +221,10 @@ namespace DAL
                         giam_gia = product.giam_gia,
                         so_luong_kich_thuoc = product.so_luong_kich_thuoc,
                         so_luong_mau_sac = product.so_luong_mau_sac,
-                        so_luong = product.so_luong,
-                       
+                        so_luong = product.so_luong,                      
                         mo_ta = product.mo_ta,
                         gia_binh_quan = product.gia_binh_quan,
                         hinh_thuc_ban = product.hinh_thuc_ban,
-                     
-                        created_at = DateTime.Now,
-                        updated_at = DateTime.Now
                     };
 
                     data.san_phams.InsertOnSubmit(newProduct);
@@ -246,6 +239,44 @@ namespace DAL
                 return false;
             }
         }
+
+        public List<string> GetAllImagesByProductId(int maSanPham)
+        {
+            return data.hinh_anh_san_phams
+                .Where(ha => ha.ma_san_pham == maSanPham)
+                .Select(ha => ha.hinh_anh)
+                .ToList();
+        }
+
+        public bool AddImageForProduct(int maSanPham, string imagePath)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(imagePath) || !File.Exists(imagePath))
+                {
+                    throw new Exception("Đường dẫn hình ảnh không hợp lệ hoặc tệp ảnh không tồn tại.");
+                }
+
+                var newImage = new hinh_anh_san_pham
+                {
+                    ma_san_pham = maSanPham,
+                    hinh_anh = imagePath,
+                    created_at = DateTime.Now
+                };
+
+                data.hinh_anh_san_phams.InsertOnSubmit(newImage);
+                data.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Lỗi khi lưu hình ảnh: " + ex.Message);
+                return false;
+            }
+        }
+
+
+
 
 
 

@@ -29,6 +29,12 @@ namespace GUI
             gridView.FocusedRowChanged += GridView_FocusedRowChanged;
             bt_rs_pass.ItemClick += Bt_rs_pass_ItemClick;
             bt_save.ItemClick += Bt_save_ItemClick;
+            bt_load.ItemClick += Bt_load_ItemClick;
+        }
+
+        private void Bt_load_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ResetForm();
         }
 
         private void Bt_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

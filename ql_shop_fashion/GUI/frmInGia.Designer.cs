@@ -29,6 +29,8 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInGia));
             this.dgvSanPham = new DevExpress.XtraGrid.GridControl();
             this.dgvDS = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.TenSP = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -39,8 +41,6 @@ namespace GUI
             this.MaSP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.x = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnIn = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.dgvSanPhamThem = new DevExpress.XtraGrid.GridControl();
             this.dgvDS2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,7 +52,15 @@ namespace GUI
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnXoa = new System.Windows.Forms.Button();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.btnIn = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.x)).BeginInit();
@@ -61,18 +69,20 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgvDS2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSanPham
             // 
-            this.dgvSanPham.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5);
-            this.dgvSanPham.Location = new System.Drawing.Point(753, 94);
+            this.dgvSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSanPham.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dgvSanPham.Location = new System.Drawing.Point(0, 24);
             this.dgvSanPham.MainView = this.dgvDS;
-            this.dgvSanPham.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvSanPham.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.x});
-            this.dgvSanPham.Size = new System.Drawing.Size(720, 511);
+            this.dgvSanPham.Size = new System.Drawing.Size(1510, 659);
             this.dgvSanPham.TabIndex = 71;
             this.dgvSanPham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDS,
@@ -87,7 +97,8 @@ namespace GUI
             this.GiaBan,
             this.GiaGiam,
             this.MaSP});
-            this.dgvDS.DetailHeight = 546;
+            this.dgvDS.DetailHeight = 581;
+            this.dgvDS.FixedLineWidth = 3;
             this.dgvDS.GridControl = this.dgvSanPham;
             this.dgvDS.Name = "dgvDS";
             this.dgvDS.OptionsView.ColumnAutoWidth = false;
@@ -97,7 +108,7 @@ namespace GUI
             // 
             this.TenSP.Caption = "Tên sản phẩm";
             this.TenSP.FieldName = "TenSP";
-            this.TenSP.MinWidth = 25;
+            this.TenSP.MinWidth = 24;
             this.TenSP.Name = "TenSP";
             this.TenSP.Visible = true;
             this.TenSP.VisibleIndex = 1;
@@ -107,7 +118,7 @@ namespace GUI
             // 
             this.TenKT.Caption = "Kích thước";
             this.TenKT.FieldName = "TenKT";
-            this.TenKT.MinWidth = 25;
+            this.TenKT.MinWidth = 24;
             this.TenKT.Name = "TenKT";
             this.TenKT.Visible = true;
             this.TenKT.VisibleIndex = 2;
@@ -117,7 +128,7 @@ namespace GUI
             // 
             this.TenMau.Caption = "Màu sắc";
             this.TenMau.FieldName = "TenMau";
-            this.TenMau.MinWidth = 25;
+            this.TenMau.MinWidth = 24;
             this.TenMau.Name = "TenMau";
             this.TenMau.Visible = true;
             this.TenMau.VisibleIndex = 3;
@@ -127,7 +138,7 @@ namespace GUI
             // 
             this.GiaBan.Caption = "Giá bán";
             this.GiaBan.FieldName = "GiaBan";
-            this.GiaBan.MinWidth = 25;
+            this.GiaBan.MinWidth = 24;
             this.GiaBan.Name = "GiaBan";
             this.GiaBan.Visible = true;
             this.GiaBan.VisibleIndex = 4;
@@ -138,7 +149,7 @@ namespace GUI
             this.GiaGiam.Caption = "Giá giảm";
             this.GiaGiam.DisplayFormat.FormatString = "0,00";
             this.GiaGiam.FieldName = "GiaGiam";
-            this.GiaGiam.MinWidth = 25;
+            this.GiaGiam.MinWidth = 24;
             this.GiaGiam.Name = "GiaGiam";
             this.GiaGiam.Visible = true;
             this.GiaGiam.VisibleIndex = 5;
@@ -148,7 +159,7 @@ namespace GUI
             // 
             this.MaSP.Caption = "Mã sản phẩm";
             this.MaSP.FieldName = "MaSP";
-            this.MaSP.MinWidth = 25;
+            this.MaSP.MinWidth = 24;
             this.MaSP.Name = "MaSP";
             this.MaSP.Visible = true;
             this.MaSP.VisibleIndex = 0;
@@ -163,38 +174,22 @@ namespace GUI
             // 
             // gridView3
             // 
-            this.gridView3.DetailHeight = 546;
+            this.gridView3.DetailHeight = 581;
+            this.gridView3.FixedLineWidth = 3;
             this.gridView3.GridControl = this.dgvSanPham;
             this.gridView3.Name = "gridView3";
             // 
-            // btnIn
-            // 
-            this.btnIn.Location = new System.Drawing.Point(23, -1);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(125, 30);
-            this.btnIn.TabIndex = 72;
-            this.btnIn.Text = "In giá";
-            this.btnIn.UseVisualStyleBackColor = true;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(628, 50);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(115, 36);
-            this.btnThem.TabIndex = 74;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            // 
             // dgvSanPhamThem
             // 
-            this.dgvSanPhamThem.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5);
-            this.dgvSanPhamThem.Location = new System.Drawing.Point(23, 94);
+            this.dgvSanPhamThem.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvSanPhamThem.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dgvSanPhamThem.Location = new System.Drawing.Point(0, 24);
             this.dgvSanPhamThem.MainView = this.dgvDS2;
-            this.dgvSanPhamThem.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvSanPhamThem.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.dgvSanPhamThem.Name = "dgvSanPhamThem";
             this.dgvSanPhamThem.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.dgvSanPhamThem.Size = new System.Drawing.Size(720, 511);
+            this.dgvSanPhamThem.Size = new System.Drawing.Size(757, 659);
             this.dgvSanPhamThem.TabIndex = 75;
             this.dgvSanPhamThem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDS2,
@@ -210,7 +205,8 @@ namespace GUI
             this.gridColumn5,
             this.gridColumn7,
             this.gridColumn6});
-            this.dgvDS2.DetailHeight = 546;
+            this.dgvDS2.DetailHeight = 581;
+            this.dgvDS2.FixedLineWidth = 3;
             this.dgvDS2.GridControl = this.dgvSanPhamThem;
             this.dgvDS2.Name = "dgvDS2";
             this.dgvDS2.OptionsView.ColumnAutoWidth = false;
@@ -220,7 +216,7 @@ namespace GUI
             // 
             this.gridColumn1.Caption = "Tên sản phẩm";
             this.gridColumn1.FieldName = "TenSP";
-            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.MinWidth = 24;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
@@ -230,7 +226,7 @@ namespace GUI
             // 
             this.gridColumn2.Caption = "Kích thước";
             this.gridColumn2.FieldName = "TenKT";
-            this.gridColumn2.MinWidth = 25;
+            this.gridColumn2.MinWidth = 24;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
@@ -240,7 +236,7 @@ namespace GUI
             // 
             this.gridColumn3.Caption = "Màu sắc";
             this.gridColumn3.FieldName = "TenMau";
-            this.gridColumn3.MinWidth = 25;
+            this.gridColumn3.MinWidth = 24;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
@@ -250,7 +246,7 @@ namespace GUI
             // 
             this.gridColumn4.Caption = "Giá bán";
             this.gridColumn4.FieldName = "GiaBan";
-            this.gridColumn4.MinWidth = 25;
+            this.gridColumn4.MinWidth = 24;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
@@ -261,7 +257,7 @@ namespace GUI
             this.gridColumn5.Caption = "Giá giảm";
             this.gridColumn5.DisplayFormat.FormatString = "0,00";
             this.gridColumn5.FieldName = "GiaGiam";
-            this.gridColumn5.MinWidth = 25;
+            this.gridColumn5.MinWidth = 24;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 5;
@@ -271,7 +267,7 @@ namespace GUI
             // 
             this.gridColumn7.Caption = "Mã sản phẩm";
             this.gridColumn7.FieldName = "MaSP";
-            this.gridColumn7.MinWidth = 25;
+            this.gridColumn7.MinWidth = 24;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
@@ -281,7 +277,7 @@ namespace GUI
             // 
             this.gridColumn6.Caption = "Số tem";
             this.gridColumn6.FieldName = "So_tem";
-            this.gridColumn6.MinWidth = 25;
+            this.gridColumn6.MinWidth = 24;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 6;
@@ -296,29 +292,118 @@ namespace GUI
             // 
             // gridView2
             // 
-            this.gridView2.DetailHeight = 546;
+            this.gridView2.DetailHeight = 581;
+            this.gridView2.FixedLineWidth = 3;
             this.gridView2.GridControl = this.dgvSanPhamThem;
             this.gridView2.Name = "gridView2";
             // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar1});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.btnIn,
+            this.btnThem,
+            this.btnXoa});
+            this.barManager1.MaxItemId = 3;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barDockControlTop.Appearance.Options.UseFont = true;
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1510, 24);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 683);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1510, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 659);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1510, 24);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 659);
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Tools";
+            this.bar1.DockCol = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnIn, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar1.Text = "Tools";
+            // 
+            // btnIn
+            // 
+            this.btnIn.Caption = "In giá";
+            this.btnIn.Id = 0;
+            this.btnIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnIn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnIn.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnIn.Name = "btnIn";
+            // 
+            // btnThem
+            // 
+            this.btnThem.Caption = "Thêm";
+            this.btnThem.Id = 1;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnThem.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnThem.Name = "btnThem";
+            // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(450, 50);
+            this.btnXoa.Caption = "Xóa";
+            this.btnXoa.Id = 2;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btnXoa.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnXoa.ItemAppearance.Normal.Options.UseFont = true;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(115, 36);
-            this.btnXoa.TabIndex = 76;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // frmInGia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.Appearance.Options.UseFont = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1510, 643);
-            this.Controls.Add(this.btnXoa);
+            this.ClientSize = new System.Drawing.Size(1510, 683);
             this.Controls.Add(this.dgvSanPhamThem);
-            this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.btnIn);
             this.Controls.Add(this.dgvSanPham);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmInGia";
             this.Text = "In giá sản phẩm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
@@ -329,7 +414,9 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgvDS2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -345,8 +432,6 @@ namespace GUI
         private DevExpress.XtraGrid.Columns.GridColumn MaSP;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit x;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private System.Windows.Forms.Button btnIn;
-        private System.Windows.Forms.Button btnThem;
         private DevExpress.XtraGrid.GridControl dgvSanPhamThem;
         private DevExpress.XtraGrid.Views.Grid.GridView dgvDS2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -358,6 +443,14 @@ namespace GUI
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private System.Windows.Forms.Button btnXoa;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.BarButtonItem btnIn;
+        private DevExpress.XtraBars.BarButtonItem btnThem;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
     }
 }
