@@ -431,7 +431,7 @@ namespace GUI
             {
                 Name = "xoa",
                 HeaderText = "Xóa",
-                Image = Properties.Resources.xoaphieu, // Đường dẫn đến icon trong Resources
+                Image = Properties.Resources.thoat, // Đường dẫn đến icon trong Resources
                 Width = 50,
                 ImageLayout = DataGridViewImageCellLayout.Zoom // Tùy chỉnh hiển thị
             };

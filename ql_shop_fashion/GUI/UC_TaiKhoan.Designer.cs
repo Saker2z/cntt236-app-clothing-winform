@@ -59,10 +59,10 @@ namespace GUI
             // gct_tk
             // 
             this.gct_tk.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gct_tk.Location = new System.Drawing.Point(0, 244);
+            this.gct_tk.Location = new System.Drawing.Point(0, 274);
             this.gct_tk.MainView = this.gridView1;
             this.gct_tk.Name = "gct_tk";
-            this.gct_tk.Size = new System.Drawing.Size(1329, 467);
+            this.gct_tk.Size = new System.Drawing.Size(1571, 747);
             this.gct_tk.TabIndex = 9;
             this.gct_tk.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -84,9 +84,9 @@ namespace GUI
             this.gb_thongtintk.Controls.Add(this.txt_tk);
             this.gb_thongtintk.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gb_thongtintk.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_thongtintk.Location = new System.Drawing.Point(0, 24);
+            this.gb_thongtintk.Location = new System.Drawing.Point(0, 27);
             this.gb_thongtintk.Name = "gb_thongtintk";
-            this.gb_thongtintk.Size = new System.Drawing.Size(1329, 220);
+            this.gb_thongtintk.Size = new System.Drawing.Size(1571, 247);
             this.gb_thongtintk.TabIndex = 12;
             this.gb_thongtintk.TabStop = false;
             this.gb_thongtintk.Text = "Thông tin tài khoản";
@@ -95,7 +95,7 @@ namespace GUI
             // 
             this.check_hd.AutoSize = true;
             this.check_hd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_hd.Location = new System.Drawing.Point(1200, 176);
+            this.check_hd.Location = new System.Drawing.Point(1459, 192);
             this.check_hd.Name = "check_hd";
             this.check_hd.Size = new System.Drawing.Size(90, 21);
             this.check_hd.TabIndex = 16;
@@ -106,16 +106,16 @@ namespace GUI
             // 
             this.cbb_quyen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_quyen.FormattingEnabled = true;
-            this.cbb_quyen.Location = new System.Drawing.Point(95, 135);
+            this.cbb_quyen.Location = new System.Drawing.Point(96, 149);
             this.cbb_quyen.Name = "cbb_quyen";
-            this.cbb_quyen.Size = new System.Drawing.Size(1195, 25);
+            this.cbb_quyen.Size = new System.Drawing.Size(1453, 25);
             this.cbb_quyen.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 138);
+            this.label1.Location = new System.Drawing.Point(27, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 13;
@@ -124,9 +124,9 @@ namespace GUI
             // txt_mk
             // 
             this.txt_mk.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mk.Location = new System.Drawing.Point(95, 80);
+            this.txt_mk.Location = new System.Drawing.Point(96, 94);
             this.txt_mk.Name = "txt_mk";
-            this.txt_mk.Size = new System.Drawing.Size(1195, 25);
+            this.txt_mk.Size = new System.Drawing.Size(1453, 25);
             this.txt_mk.TabIndex = 11;
             this.txt_mk.Text = "**********";
             // 
@@ -134,7 +134,7 @@ namespace GUI
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(26, 83);
+            this.label7.Location = new System.Drawing.Point(27, 97);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 17);
             this.label7.TabIndex = 10;
@@ -144,7 +144,7 @@ namespace GUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(26, 30);
+            this.label6.Location = new System.Drawing.Point(27, 44);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 17);
             this.label6.TabIndex = 9;
@@ -153,9 +153,9 @@ namespace GUI
             // txt_tk
             // 
             this.txt_tk.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tk.Location = new System.Drawing.Point(95, 27);
+            this.txt_tk.Location = new System.Drawing.Point(96, 41);
             this.txt_tk.Name = "txt_tk";
-            this.txt_tk.Size = new System.Drawing.Size(1195, 25);
+            this.txt_tk.Size = new System.Drawing.Size(1453, 25);
             this.txt_tk.TabIndex = 9;
             // 
             // barManager1
@@ -191,6 +191,8 @@ namespace GUI
             this.bt_save.Id = 0;
             this.bt_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_save.ImageOptions.Image")));
             this.bt_save.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_save.ImageOptions.LargeImage")));
+            this.bt_save.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_save.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_save.Name = "bt_save";
             // 
             // bt_rs_pass
@@ -199,6 +201,8 @@ namespace GUI
             this.bt_rs_pass.Id = 1;
             this.bt_rs_pass.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_rs_pass.ImageOptions.Image")));
             this.bt_rs_pass.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_rs_pass.ImageOptions.LargeImage")));
+            this.bt_rs_pass.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.bt_rs_pass.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_rs_pass.Name = "bt_rs_pass";
             // 
             // bt_load
@@ -207,6 +211,8 @@ namespace GUI
             this.bt_load.Id = 2;
             this.bt_load.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bt_load.ImageOptions.Image")));
             this.bt_load.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bt_load.ImageOptions.LargeImage")));
+            this.bt_load.ItemAppearance.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.bt_load.ItemAppearance.Normal.Options.UseFont = true;
             this.bt_load.Name = "bt_load";
             // 
             // barDockControlTop
@@ -218,31 +224,31 @@ namespace GUI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1329, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1571, 27);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 711);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1021);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1329, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1571, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 687);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 994);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1329, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1571, 27);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 687);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 994);
             // 
             // UC_TaiKhoan
             // 
@@ -255,7 +261,7 @@ namespace GUI
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "UC_TaiKhoan";
-            this.Size = new System.Drawing.Size(1329, 711);
+            this.Size = new System.Drawing.Size(1571, 1021);
             ((System.ComponentModel.ISupportInitialize)(this.gct_tk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.gb_thongtintk.ResumeLayout(false);

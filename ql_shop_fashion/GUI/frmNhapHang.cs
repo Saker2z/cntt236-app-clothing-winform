@@ -239,5 +239,10 @@ namespace GUI
                 this.Close();
             }
         }
+
+        private void chon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

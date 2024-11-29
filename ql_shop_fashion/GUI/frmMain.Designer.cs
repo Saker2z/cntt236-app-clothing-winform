@@ -71,11 +71,10 @@ namespace GUI
             this.ace_manhinhchinh,
             this.ace_danhmuc,
             this.ace_hethongquanly});
-            this.ac_thongtin.Location = new System.Drawing.Point(0, 39);
-            this.ac_thongtin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ac_thongtin.Location = new System.Drawing.Point(0, 31);
             this.ac_thongtin.Name = "ac_thongtin";
             this.ac_thongtin.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.ac_thongtin.Size = new System.Drawing.Size(349, 874);
+            this.ac_thongtin.Size = new System.Drawing.Size(299, 711);
             this.ac_thongtin.TabIndex = 1;
             this.ac_thongtin.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -101,7 +100,7 @@ namespace GUI
             this.ace_nhacungcap,
             this.ace_baocaothongke});
             this.ace_danhmuc.Expanded = true;
-            this.ace_danhmuc.Height = 65;
+            this.ace_danhmuc.Height = 55;
             this.ace_danhmuc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_danhmuc.ImageOptions.Image")));
             this.ace_danhmuc.Name = "ace_danhmuc";
             this.ace_danhmuc.Tag = 2;
@@ -111,7 +110,7 @@ namespace GUI
             // 
             this.ace_sanpham.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ace_sanpham.Appearance.Normal.Options.UseFont = true;
-            this.ace_sanpham.Height = 50;
+            this.ace_sanpham.Height = 40;
             this.ace_sanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_sanpham.ImageOptions.Image")));
             this.ace_sanpham.Name = "ace_sanpham";
             this.ace_sanpham.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -122,7 +121,7 @@ namespace GUI
             // 
             this.ace_banhang.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ace_banhang.Appearance.Normal.Options.UseFont = true;
-            this.ace_banhang.Height = 50;
+            this.ace_banhang.Height = 40;
             this.ace_banhang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_banhang.ImageOptions.Image")));
             this.ace_banhang.Name = "ace_banhang";
             this.ace_banhang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -137,7 +136,7 @@ namespace GUI
             this.ace_hoadon,
             this.ace_kiemduyetsanpham});
             this.ace_quanlynhaphang.Expanded = true;
-            this.ace_quanlynhaphang.Height = 50;
+            this.ace_quanlynhaphang.Height = 40;
             this.ace_quanlynhaphang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_quanlynhaphang.ImageOptions.Image")));
             this.ace_quanlynhaphang.Name = "ace_quanlynhaphang";
             this.ace_quanlynhaphang.Tag = 5;
@@ -147,7 +146,7 @@ namespace GUI
             // 
             this.ace_hoadon.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ace_hoadon.Appearance.Normal.Options.UseFont = true;
-            this.ace_hoadon.Height = 50;
+            this.ace_hoadon.Height = 40;
             this.ace_hoadon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_hoadon.ImageOptions.Image")));
             this.ace_hoadon.Name = "ace_hoadon";
             this.ace_hoadon.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -158,7 +157,7 @@ namespace GUI
             // 
             this.ace_kiemduyetsanpham.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ace_kiemduyetsanpham.Appearance.Normal.Options.UseFont = true;
-            this.ace_kiemduyetsanpham.Height = 50;
+            this.ace_kiemduyetsanpham.Height = 40;
             this.ace_kiemduyetsanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_kiemduyetsanpham.ImageOptions.Image")));
             this.ace_kiemduyetsanpham.Name = "ace_kiemduyetsanpham";
             this.ace_kiemduyetsanpham.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -169,7 +168,7 @@ namespace GUI
             // 
             this.ace_nhacungcap.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ace_nhacungcap.Appearance.Normal.Options.UseFont = true;
-            this.ace_nhacungcap.Height = 50;
+            this.ace_nhacungcap.Height = 40;
             this.ace_nhacungcap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_nhacungcap.ImageOptions.Image")));
             this.ace_nhacungcap.Name = "ace_nhacungcap";
             this.ace_nhacungcap.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -180,7 +179,7 @@ namespace GUI
             // 
             this.ace_baocaothongke.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ace_baocaothongke.Appearance.Normal.Options.UseFont = true;
-            this.ace_baocaothongke.Height = 50;
+            this.ace_baocaothongke.Height = 40;
             this.ace_baocaothongke.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_baocaothongke.ImageOptions.Image")));
             this.ace_baocaothongke.Name = "ace_baocaothongke";
             this.ace_baocaothongke.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -199,7 +198,7 @@ namespace GUI
             this.ace_thongtincanhan,
             this.ace_dangxuat});
             this.ace_hethongquanly.Expanded = true;
-            this.ace_hethongquanly.Height = 65;
+            this.ace_hethongquanly.Height = 55;
             this.ace_hethongquanly.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_hethongquanly.ImageOptions.Image")));
             this.ace_hethongquanly.Name = "ace_hethongquanly";
             this.ace_hethongquanly.Tag = 10;
@@ -209,7 +208,7 @@ namespace GUI
             // 
             this.ace_nhanvien.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ace_nhanvien.Appearance.Normal.Options.UseFont = true;
-            this.ace_nhanvien.Height = 50;
+            this.ace_nhanvien.Height = 40;
             this.ace_nhanvien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_nhanvien.ImageOptions.Image")));
             this.ace_nhanvien.Name = "ace_nhanvien";
             this.ace_nhanvien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -220,7 +219,7 @@ namespace GUI
             // 
             this.ace_khachhang.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ace_khachhang.Appearance.Normal.Options.UseFont = true;
-            this.ace_khachhang.Height = 50;
+            this.ace_khachhang.Height = 40;
             this.ace_khachhang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_khachhang.ImageOptions.Image")));
             this.ace_khachhang.Name = "ace_khachhang";
             this.ace_khachhang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -231,7 +230,7 @@ namespace GUI
             // 
             this.ace_taikhoan.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ace_taikhoan.Appearance.Normal.Options.UseFont = true;
-            this.ace_taikhoan.Height = 50;
+            this.ace_taikhoan.Height = 40;
             this.ace_taikhoan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_taikhoan.ImageOptions.Image")));
             this.ace_taikhoan.Name = "ace_taikhoan";
             this.ace_taikhoan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -242,7 +241,7 @@ namespace GUI
             // 
             this.ace_quyen.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ace_quyen.Appearance.Normal.Options.UseFont = true;
-            this.ace_quyen.Height = 50;
+            this.ace_quyen.Height = 40;
             this.ace_quyen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_quyen.ImageOptions.Image")));
             this.ace_quyen.Name = "ace_quyen";
             this.ace_quyen.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -253,7 +252,7 @@ namespace GUI
             // 
             this.ace_thongtincanhan.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ace_thongtincanhan.Appearance.Normal.Options.UseFont = true;
-            this.ace_thongtincanhan.Height = 50;
+            this.ace_thongtincanhan.Height = 40;
             this.ace_thongtincanhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_thongtincanhan.ImageOptions.Image")));
             this.ace_thongtincanhan.Name = "ace_thongtincanhan";
             this.ace_thongtincanhan.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -264,7 +263,7 @@ namespace GUI
             // 
             this.ace_dangxuat.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ace_dangxuat.Appearance.Normal.Options.UseFont = true;
-            this.ace_dangxuat.Height = 50;
+            this.ace_dangxuat.Height = 40;
             this.ace_dangxuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_dangxuat.ImageOptions.Image")));
             this.ace_dangxuat.Name = "ace_dangxuat";
             this.ace_dangxuat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -276,9 +275,8 @@ namespace GUI
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluent_QuanLyForm;
-            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1899, 39);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1628, 31);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
@@ -293,10 +291,9 @@ namespace GUI
             this.panel_chinh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_chinh.Controls.Add(this.pn_main);
             this.panel_chinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_chinh.Location = new System.Drawing.Point(349, 39);
-            this.panel_chinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel_chinh.Location = new System.Drawing.Point(299, 31);
             this.panel_chinh.Name = "panel_chinh";
-            this.panel_chinh.Size = new System.Drawing.Size(1550, 874);
+            this.panel_chinh.Size = new System.Drawing.Size(1329, 711);
             this.panel_chinh.TabIndex = 3;
             // 
             // pn_main
@@ -304,9 +301,8 @@ namespace GUI
             this.pn_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pn_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_main.Location = new System.Drawing.Point(0, 0);
-            this.pn_main.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pn_main.Name = "pn_main";
-            this.pn_main.Size = new System.Drawing.Size(1550, 874);
+            this.pn_main.Size = new System.Drawing.Size(1329, 711);
             this.pn_main.TabIndex = 0;
             // 
             // accordionControlElement1
@@ -343,14 +339,13 @@ namespace GUI
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1899, 913);
+            this.ClientSize = new System.Drawing.Size(1628, 742);
             this.Controls.Add(this.panel_chinh);
             this.Controls.Add(this.ac_thongtin);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.NavigationControl = this.ac_thongtin;
             this.Text = "Main";

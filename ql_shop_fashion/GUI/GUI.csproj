@@ -571,9 +571,6 @@
     <None Include="Resources\suaphieu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\themphieu.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\thoat.png" />
   </ItemGroup>
   <ItemGroup>
@@ -581,6 +578,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background_mhc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\themphieu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\them.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\luu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

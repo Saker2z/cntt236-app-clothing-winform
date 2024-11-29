@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_SHOP_FASHION1" Class="QL_SHOP_DATADataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DANHZU\DANHZU;Initial Catalog=QL_SHOP_FASHION1;Integrated Security=True" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="QL_SHOP_FASHION1ConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_SHOP_FASHION" Class="QL_SHOP_DATADataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-4GMS5N8;Initial Catalog=QL_SHOP_FASHION;Integrated Security=True" SettingsObjectName="DTO.Properties.Settings" SettingsPropertyName="QL_SHOP_FASHIONConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.chi_tiet_hoa_don" Member="chi_tiet_hoa_dons">
     <Type Name="chi_tiet_hoa_don">
       <Column Name="ma_hoa_don" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ma_thuoc_tinh" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="so_luong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="gia" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
-      <Column Name="giagiam" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="thanh_tien" Type="System.Decimal" DbType="Decimal(21,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="gia" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="giagiam" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="thanh_tien" Type="System.Decimal" DbType="Decimal(29,0)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="trang_thai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -35,7 +35,7 @@
       <Column Name="ma_nhap_hang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ma_san_pham" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="so_luong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="gia_nhap" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="gia_nhap" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="nhap_hang_chi_tiet_nhap_hang" Member="nhap_hang" ThisKey="ma_nhap_hang" OtherKey="ma_nhap_hang" Type="nhap_hang" IsForeignKey="true" />
@@ -51,9 +51,6 @@
       <Column Name="hinh_anh" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="san_pham_hinh_anh_san_pham" Member="san_pham" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" />
-      <Association Name="san_pham_hinh_anh_san_pham1" Member="san_pham1" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" />
-      <Association Name="san_pham_hinh_anh_san_pham2" Member="san_pham2" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.hoa_don" Member="hoa_dons">
@@ -66,12 +63,12 @@
       <Column Name="trang_thai_giao_hang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ma_phuong_thuc" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tong_so_luong_mua" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="tien_giam" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="tong_tien" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="tien_doi_diem" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="tien_giam" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="tong_tien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="tien_doi_diem" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="doi_diem" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="tong_gia_tri" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="tong_don_hang" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="tong_gia_tri" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="tong_don_hang" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="hinh_thuc_ban" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="trang_thai_doi_tra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -95,12 +92,12 @@
       <Column Name="ma_phuong_thuc" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tong_so_luong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ngay_doi_tra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="tien_doi_diem" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="tien_hang_tra" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="tien_mua_them" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="tien_hoan" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="tien_khach_tra" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="tong_tien_sau_khi_doi" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="tien_doi_diem" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="tien_hang_tra" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="tien_mua_them" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="tien_hoan" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="tien_khach_tra" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="tong_tien_sau_khi_doi" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="hoa_don_doi_tra_chi_tiet_hoa_don_doi_tra" Member="chi_tiet_hoa_don_doi_tras" ThisKey="ma_hoa_don" OtherKey="ma_hoa_don" Type="chi_tiet_hoa_don_doi_tra" />
@@ -134,14 +131,14 @@
     <Type Name="khuyen_mai">
       <Column Name="ma_khuyen_mai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="code" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="gia_tri" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="gia_tri" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="thoi_gian_bat_dau" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="thoi_gian_ket_thuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="so_luong_toi_da" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="so_luong_da_dung" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tinh_trang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="gia_tri_hoa_don_toi_thieu" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="gia_tri_hoa_don_toi_thieu" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="ma_nhan_vien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -155,7 +152,7 @@
     <Type Name="kich_thuoc">
       <Column Name="ma_kich_thuoc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ten_kich_thuoc" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="phu_phi_size" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="phu_phi_size" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="kich_thuoc_thuoc_tinh_san_pham" Member="thuoc_tinh_san_phams" ThisKey="ma_kich_thuoc" OtherKey="ma_kich_thuoc" Type="thuoc_tinh_san_pham" />
@@ -190,7 +187,7 @@
     <Type Name="mau_sac">
       <Column Name="ma_mau_sac" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ten_mau_sac" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="phu_phi_mausac" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="phu_phi_mausac" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="mau_sac_thuoc_tinh_san_pham" Member="thuoc_tinh_san_phams" ThisKey="ma_mau_sac" OtherKey="ma_mau_sac" Type="thuoc_tinh_san_pham" />
@@ -215,13 +212,11 @@
     <Type Name="nha_cung_cap_san_pham">
       <Column Name="ma_nha_cung_cap" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ma_san_pham" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="gia_cung_cap" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="gia_cung_cap" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="nha_cung_cap_nha_cung_cap_san_pham" Member="nha_cung_cap" ThisKey="ma_nha_cung_cap" OtherKey="ma_nha_cung_cap" Type="nha_cung_cap" IsForeignKey="true" />
       <Association Name="nha_cung_cap_nha_cung_cap_san_pham1" Member="nha_cung_cap1" ThisKey="ma_nha_cung_cap" OtherKey="ma_nha_cung_cap" Type="nha_cung_cap" IsForeignKey="true" />
-      <Association Name="san_pham_nha_cung_cap_san_pham" Member="san_pham" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" />
-      <Association Name="san_pham_nha_cung_cap_san_pham1" Member="san_pham1" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.nhan_vien" Member="nhan_viens">
@@ -256,7 +251,7 @@
       <Column Name="trang_thai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ghi_chu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="tong_so_luong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="tong_gia_tien" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="tong_gia_tien" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="nhap_hang_chi_tiet_nhap_hang" Member="chi_tiet_nhap_hangs" ThisKey="ma_nhap_hang" OtherKey="ma_nhap_hang" Type="chi_tiet_nhap_hang" />
@@ -329,21 +324,12 @@
       <Column Name="so_luong_mau_sac" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="so_luong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="mo_ta" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="gia_binh_quan" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="gia_binh_quan" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="hinh_thuc_ban" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="san_pham_chi_tiet_nhap_hang" Member="chi_tiet_nhap_hangs" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="chi_tiet_nhap_hang" />
       <Association Name="san_pham_chi_tiet_nhap_hang1" Member="chi_tiet_nhap_hangs1" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="chi_tiet_nhap_hang" />
-      <Association Name="san_pham_hinh_anh_san_pham" Member="hinh_anh_san_phams" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="hinh_anh_san_pham" />
-      <Association Name="san_pham_hinh_anh_san_pham1" Member="hinh_anh_san_phams1" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="hinh_anh_san_pham" />
-      <Association Name="san_pham_hinh_anh_san_pham2" Member="hinh_anh_san_phams2" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="hinh_anh_san_pham" />
-      <Association Name="san_pham_nha_cung_cap_san_pham" Member="nha_cung_cap_san_phams" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="nha_cung_cap_san_pham" />
-      <Association Name="san_pham_nha_cung_cap_san_pham1" Member="nha_cung_cap_san_phams1" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="nha_cung_cap_san_pham" />
-      <Association Name="san_pham_thong_tin_san_pham" Member="thong_tin_san_phams" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="thong_tin_san_pham" />
-      <Association Name="san_pham_thong_tin_san_pham1" Member="thong_tin_san_phams1" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="thong_tin_san_pham" />
-      <Association Name="san_pham_thuoc_tinh_san_pham" Member="thuoc_tinh_san_phams" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="thuoc_tinh_san_pham" />
-      <Association Name="san_pham_thuoc_tinh_san_pham1" Member="thuoc_tinh_san_phams1" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="thuoc_tinh_san_pham" />
       <Association Name="loai_san_pham_san_pham" Member="loai_san_pham" ThisKey="ma_loai" OtherKey="ma_loai" Type="loai_san_pham" IsForeignKey="true" />
       <Association Name="loai_san_pham_san_pham1" Member="loai_san_pham1" ThisKey="ma_loai" OtherKey="ma_loai" Type="loai_san_pham" IsForeignKey="true" />
       <Association Name="thuong_hieu_san_pham" Member="thuong_hieu" ThisKey="ma_thuong_hieu" OtherKey="ma_thuong_hieu" Type="thuong_hieu" IsForeignKey="true" />
@@ -387,8 +373,6 @@
       <Column Name="value_attribute" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="san_pham_thong_tin_san_pham" Member="san_pham" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" />
-      <Association Name="san_pham_thong_tin_san_pham1" Member="san_pham1" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.thuoc_tinh_san_pham" Member="thuoc_tinh_san_phams">
@@ -398,7 +382,7 @@
       <Column Name="ma_kich_thuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ma_mau_sac" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="so_luong_ton" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="gia_ban" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="gia_ban" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="thuoc_tinh_san_pham_chi_tiet_hoa_don_doi_tra" Member="chi_tiet_hoa_don_doi_tras" ThisKey="ma_thuoc_tinh" OtherKey="ma_thuoc_tinh" Type="chi_tiet_hoa_don_doi_tra" />
@@ -407,8 +391,6 @@
       <Association Name="kich_thuoc_thuoc_tinh_san_pham1" Member="kich_thuoc1" ThisKey="ma_kich_thuoc" OtherKey="ma_kich_thuoc" Type="kich_thuoc" IsForeignKey="true" />
       <Association Name="mau_sac_thuoc_tinh_san_pham" Member="mau_sac" ThisKey="ma_mau_sac" OtherKey="ma_mau_sac" Type="mau_sac" IsForeignKey="true" />
       <Association Name="mau_sac_thuoc_tinh_san_pham1" Member="mau_sac1" ThisKey="ma_mau_sac" OtherKey="ma_mau_sac" Type="mau_sac" IsForeignKey="true" />
-      <Association Name="san_pham_thuoc_tinh_san_pham" Member="san_pham" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" />
-      <Association Name="san_pham_thuoc_tinh_san_pham1" Member="san_pham1" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.thuong_hieu" Member="thuong_hieus">

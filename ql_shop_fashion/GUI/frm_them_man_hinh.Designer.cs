@@ -56,9 +56,9 @@ namespace GUI
             // 
             // bt_them
             // 
-            this.bt_them.BackColor = System.Drawing.Color.Red;
-            this.bt_them.ForeColor = System.Drawing.Color.White;
-            this.bt_them.Location = new System.Drawing.Point(127, 122);
+            this.bt_them.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.bt_them.ForeColor = System.Drawing.Color.Black;
+            this.bt_them.Location = new System.Drawing.Point(127, 126);
             this.bt_them.Name = "bt_them";
             this.bt_them.Size = new System.Drawing.Size(158, 41);
             this.bt_them.TabIndex = 15;

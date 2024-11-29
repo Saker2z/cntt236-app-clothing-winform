@@ -22,7 +22,7 @@ namespace DTO
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QL_SHOP_FASHION1")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QL_SHOP_FASHION")]
 	public partial class QL_SHOP_DATADataContext : System.Data.Linq.DataContext
 	{
 		
@@ -111,7 +111,7 @@ namespace DTO
     #endregion
 		
 		public QL_SHOP_DATADataContext() : 
-				base(global::DTO.Properties.Settings.Default.QL_SHOP_FASHION1ConnectionString, mappingSource)
+				base(global::DTO.Properties.Settings.Default.QL_SHOP_FASHIONConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -462,7 +462,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia", DbType="Decimal(10,2) NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia", DbType="Decimal(18,0) NOT NULL")]
 		public decimal gia
 		{
 			get
@@ -482,7 +482,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giagiam", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giagiam", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> giagiam
 		{
 			get
@@ -502,7 +502,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thanh_tien", AutoSync=AutoSync.Always, DbType="Decimal(21,2)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thanh_tien", AutoSync=AutoSync.Always, DbType="Decimal(29,0)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Nullable<decimal> thanh_tien
 		{
 			get
@@ -1134,7 +1134,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_nhap", DbType="Decimal(10,2) NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_nhap", DbType="Decimal(18,0) NOT NULL")]
 		public decimal gia_nhap
 		{
 			get
@@ -1367,12 +1367,6 @@ namespace DTO
 		
 		private System.Nullable<System.DateTime> _updated_at;
 		
-		private EntityRef<san_pham> _san_pham;
-		
-		private EntityRef<san_pham> _san_pham1;
-		
-		private EntityRef<san_pham> _san_pham2;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1391,9 +1385,6 @@ namespace DTO
 		
 		public hinh_anh_san_pham()
 		{
-			this._san_pham = default(EntityRef<san_pham>);
-			this._san_pham1 = default(EntityRef<san_pham>);
-			this._san_pham2 = default(EntityRef<san_pham>);
 			OnCreated();
 		}
 		
@@ -1428,11 +1419,6 @@ namespace DTO
 			{
 				if ((this._ma_san_pham != value))
 				{
-					if (((this._san_pham.HasLoadedOrAssignedValue || this._san_pham1.HasLoadedOrAssignedValue) 
-								|| this._san_pham2.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Onma_san_phamChanging(value);
 					this.SendPropertyChanging();
 					this._ma_san_pham = value;
@@ -1498,108 +1484,6 @@ namespace DTO
 					this._updated_at = value;
 					this.SendPropertyChanged("updated_at");
 					this.Onupdated_atChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_hinh_anh_san_pham", Storage="_san_pham", ThisKey="ma_san_pham", OtherKey="ma_san_pham", IsForeignKey=true)]
-		public san_pham san_pham
-		{
-			get
-			{
-				return this._san_pham.Entity;
-			}
-			set
-			{
-				san_pham previousValue = this._san_pham.Entity;
-				if (((previousValue != value) 
-							|| (this._san_pham.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._san_pham.Entity = null;
-						previousValue.hinh_anh_san_phams.Remove(this);
-					}
-					this._san_pham.Entity = value;
-					if ((value != null))
-					{
-						value.hinh_anh_san_phams.Add(this);
-						this._ma_san_pham = value.ma_san_pham;
-					}
-					else
-					{
-						this._ma_san_pham = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("san_pham");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_hinh_anh_san_pham1", Storage="_san_pham1", ThisKey="ma_san_pham", OtherKey="ma_san_pham", IsForeignKey=true)]
-		public san_pham san_pham1
-		{
-			get
-			{
-				return this._san_pham1.Entity;
-			}
-			set
-			{
-				san_pham previousValue = this._san_pham1.Entity;
-				if (((previousValue != value) 
-							|| (this._san_pham1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._san_pham1.Entity = null;
-						previousValue.hinh_anh_san_phams1.Remove(this);
-					}
-					this._san_pham1.Entity = value;
-					if ((value != null))
-					{
-						value.hinh_anh_san_phams1.Add(this);
-						this._ma_san_pham = value.ma_san_pham;
-					}
-					else
-					{
-						this._ma_san_pham = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("san_pham1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_hinh_anh_san_pham2", Storage="_san_pham2", ThisKey="ma_san_pham", OtherKey="ma_san_pham", IsForeignKey=true, DeleteRule="CASCADE")]
-		public san_pham san_pham2
-		{
-			get
-			{
-				return this._san_pham2.Entity;
-			}
-			set
-			{
-				san_pham previousValue = this._san_pham2.Entity;
-				if (((previousValue != value) 
-							|| (this._san_pham2.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._san_pham2.Entity = null;
-						previousValue.hinh_anh_san_phams2.Remove(this);
-					}
-					this._san_pham2.Entity = value;
-					if ((value != null))
-					{
-						value.hinh_anh_san_phams2.Add(this);
-						this._ma_san_pham = value.ma_san_pham;
-					}
-					else
-					{
-						this._ma_san_pham = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("san_pham2");
 				}
 			}
 		}
@@ -1920,7 +1804,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_giam", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_giam", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> tien_giam
 		{
 			get
@@ -1940,7 +1824,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong_tien", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong_tien", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> tong_tien
 		{
 			get
@@ -1960,7 +1844,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_doi_diem", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_doi_diem", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> tien_doi_diem
 		{
 			get
@@ -2000,7 +1884,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong_gia_tri", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong_gia_tri", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> tong_gia_tri
 		{
 			get
@@ -2020,7 +1904,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong_don_hang", DbType="Decimal(10,2) NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong_don_hang", DbType="Decimal(18,0) NOT NULL")]
 		public decimal tong_don_hang
 		{
 			get
@@ -2676,7 +2560,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_doi_diem", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_doi_diem", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> tien_doi_diem
 		{
 			get
@@ -2696,7 +2580,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_hang_tra", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_hang_tra", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> tien_hang_tra
 		{
 			get
@@ -2716,7 +2600,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_mua_them", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_mua_them", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> tien_mua_them
 		{
 			get
@@ -2736,7 +2620,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_hoan", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_hoan", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> tien_hoan
 		{
 			get
@@ -2756,7 +2640,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_khach_tra", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tien_khach_tra", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> tien_khach_tra
 		{
 			get
@@ -2776,7 +2660,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong_tien_sau_khi_doi", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong_tien_sau_khi_doi", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> tong_tien_sau_khi_doi
 		{
 			get
@@ -3620,7 +3504,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_tri", DbType="Decimal(10,2) NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_tri", DbType="Decimal(18,0) NOT NULL")]
 		public decimal gia_tri
 		{
 			get
@@ -3760,7 +3644,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_tri_hoa_don_toi_thieu", DbType="Decimal(10,2) NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_tri_hoa_don_toi_thieu", DbType="Decimal(18,0) NOT NULL")]
 		public decimal gia_tri_hoa_don_toi_thieu
 		{
 			get
@@ -4066,7 +3950,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phu_phi_size", DbType="Decimal(10,2) NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phu_phi_size", DbType="Decimal(18,2) NOT NULL")]
 		public decimal phu_phi_size
 		{
 			get
@@ -4786,7 +4670,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phu_phi_mausac", DbType="Decimal(10,2) NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phu_phi_mausac", DbType="Decimal(18,2) NOT NULL")]
 		public decimal phu_phi_mausac
 		{
 			get
@@ -5231,10 +5115,6 @@ namespace DTO
 		
 		private EntityRef<nha_cung_cap> _nha_cung_cap1;
 		
-		private EntityRef<san_pham> _san_pham;
-		
-		private EntityRef<san_pham> _san_pham1;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -5255,8 +5135,6 @@ namespace DTO
 		{
 			this._nha_cung_cap = default(EntityRef<nha_cung_cap>);
 			this._nha_cung_cap1 = default(EntityRef<nha_cung_cap>);
-			this._san_pham = default(EntityRef<san_pham>);
-			this._san_pham1 = default(EntityRef<san_pham>);
 			OnCreated();
 		}
 		
@@ -5295,10 +5173,6 @@ namespace DTO
 			{
 				if ((this._ma_san_pham != value))
 				{
-					if ((this._san_pham.HasLoadedOrAssignedValue || this._san_pham1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Onma_san_phamChanging(value);
 					this.SendPropertyChanging();
 					this._ma_san_pham = value;
@@ -5308,7 +5182,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_cung_cap", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_cung_cap", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> gia_cung_cap
 		{
 			get
@@ -5432,74 +5306,6 @@ namespace DTO
 						this._ma_nha_cung_cap = default(int);
 					}
 					this.SendPropertyChanged("nha_cung_cap1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_nha_cung_cap_san_pham", Storage="_san_pham", ThisKey="ma_san_pham", OtherKey="ma_san_pham", IsForeignKey=true)]
-		public san_pham san_pham
-		{
-			get
-			{
-				return this._san_pham.Entity;
-			}
-			set
-			{
-				san_pham previousValue = this._san_pham.Entity;
-				if (((previousValue != value) 
-							|| (this._san_pham.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._san_pham.Entity = null;
-						previousValue.nha_cung_cap_san_phams.Remove(this);
-					}
-					this._san_pham.Entity = value;
-					if ((value != null))
-					{
-						value.nha_cung_cap_san_phams.Add(this);
-						this._ma_san_pham = value.ma_san_pham;
-					}
-					else
-					{
-						this._ma_san_pham = default(int);
-					}
-					this.SendPropertyChanged("san_pham");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_nha_cung_cap_san_pham1", Storage="_san_pham1", ThisKey="ma_san_pham", OtherKey="ma_san_pham", IsForeignKey=true)]
-		public san_pham san_pham1
-		{
-			get
-			{
-				return this._san_pham1.Entity;
-			}
-			set
-			{
-				san_pham previousValue = this._san_pham1.Entity;
-				if (((previousValue != value) 
-							|| (this._san_pham1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._san_pham1.Entity = null;
-						previousValue.nha_cung_cap_san_phams1.Remove(this);
-					}
-					this._san_pham1.Entity = value;
-					if ((value != null))
-					{
-						value.nha_cung_cap_san_phams1.Add(this);
-						this._ma_san_pham = value.ma_san_pham;
-					}
-					else
-					{
-						this._ma_san_pham = default(int);
-					}
-					this.SendPropertyChanged("san_pham1");
 				}
 			}
 		}
@@ -6304,7 +6110,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong_gia_tien", DbType="Decimal(10,2) NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tong_gia_tien", DbType="Decimal(18,0) NOT NULL")]
 		public decimal tong_gia_tien
 		{
 			get
@@ -7699,24 +7505,6 @@ namespace DTO
 		
 		private EntitySet<chi_tiet_nhap_hang> _chi_tiet_nhap_hangs1;
 		
-		private EntitySet<hinh_anh_san_pham> _hinh_anh_san_phams;
-		
-		private EntitySet<hinh_anh_san_pham> _hinh_anh_san_phams1;
-		
-		private EntitySet<hinh_anh_san_pham> _hinh_anh_san_phams2;
-		
-		private EntitySet<nha_cung_cap_san_pham> _nha_cung_cap_san_phams;
-		
-		private EntitySet<nha_cung_cap_san_pham> _nha_cung_cap_san_phams1;
-		
-		private EntitySet<thong_tin_san_pham> _thong_tin_san_phams;
-		
-		private EntitySet<thong_tin_san_pham> _thong_tin_san_phams1;
-		
-		private EntitySet<thuoc_tinh_san_pham> _thuoc_tinh_san_phams;
-		
-		private EntitySet<thuoc_tinh_san_pham> _thuoc_tinh_san_phams1;
-		
 		private EntityRef<loai_san_pham> _loai_san_pham;
 		
 		private EntityRef<loai_san_pham> _loai_san_pham1;
@@ -7761,15 +7549,6 @@ namespace DTO
 		{
 			this._chi_tiet_nhap_hangs = new EntitySet<chi_tiet_nhap_hang>(new Action<chi_tiet_nhap_hang>(this.attach_chi_tiet_nhap_hangs), new Action<chi_tiet_nhap_hang>(this.detach_chi_tiet_nhap_hangs));
 			this._chi_tiet_nhap_hangs1 = new EntitySet<chi_tiet_nhap_hang>(new Action<chi_tiet_nhap_hang>(this.attach_chi_tiet_nhap_hangs1), new Action<chi_tiet_nhap_hang>(this.detach_chi_tiet_nhap_hangs1));
-			this._hinh_anh_san_phams = new EntitySet<hinh_anh_san_pham>(new Action<hinh_anh_san_pham>(this.attach_hinh_anh_san_phams), new Action<hinh_anh_san_pham>(this.detach_hinh_anh_san_phams));
-			this._hinh_anh_san_phams1 = new EntitySet<hinh_anh_san_pham>(new Action<hinh_anh_san_pham>(this.attach_hinh_anh_san_phams1), new Action<hinh_anh_san_pham>(this.detach_hinh_anh_san_phams1));
-			this._hinh_anh_san_phams2 = new EntitySet<hinh_anh_san_pham>(new Action<hinh_anh_san_pham>(this.attach_hinh_anh_san_phams2), new Action<hinh_anh_san_pham>(this.detach_hinh_anh_san_phams2));
-			this._nha_cung_cap_san_phams = new EntitySet<nha_cung_cap_san_pham>(new Action<nha_cung_cap_san_pham>(this.attach_nha_cung_cap_san_phams), new Action<nha_cung_cap_san_pham>(this.detach_nha_cung_cap_san_phams));
-			this._nha_cung_cap_san_phams1 = new EntitySet<nha_cung_cap_san_pham>(new Action<nha_cung_cap_san_pham>(this.attach_nha_cung_cap_san_phams1), new Action<nha_cung_cap_san_pham>(this.detach_nha_cung_cap_san_phams1));
-			this._thong_tin_san_phams = new EntitySet<thong_tin_san_pham>(new Action<thong_tin_san_pham>(this.attach_thong_tin_san_phams), new Action<thong_tin_san_pham>(this.detach_thong_tin_san_phams));
-			this._thong_tin_san_phams1 = new EntitySet<thong_tin_san_pham>(new Action<thong_tin_san_pham>(this.attach_thong_tin_san_phams1), new Action<thong_tin_san_pham>(this.detach_thong_tin_san_phams1));
-			this._thuoc_tinh_san_phams = new EntitySet<thuoc_tinh_san_pham>(new Action<thuoc_tinh_san_pham>(this.attach_thuoc_tinh_san_phams), new Action<thuoc_tinh_san_pham>(this.detach_thuoc_tinh_san_phams));
-			this._thuoc_tinh_san_phams1 = new EntitySet<thuoc_tinh_san_pham>(new Action<thuoc_tinh_san_pham>(this.attach_thuoc_tinh_san_phams1), new Action<thuoc_tinh_san_pham>(this.detach_thuoc_tinh_san_phams1));
 			this._loai_san_pham = default(EntityRef<loai_san_pham>);
 			this._loai_san_pham1 = default(EntityRef<loai_san_pham>);
 			this._thuong_hieu = default(EntityRef<thuong_hieu>);
@@ -7965,7 +7744,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_binh_quan", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_binh_quan", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> gia_binh_quan
 		{
 			get
@@ -8068,123 +7847,6 @@ namespace DTO
 			set
 			{
 				this._chi_tiet_nhap_hangs1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_hinh_anh_san_pham", Storage="_hinh_anh_san_phams", ThisKey="ma_san_pham", OtherKey="ma_san_pham")]
-		public EntitySet<hinh_anh_san_pham> hinh_anh_san_phams
-		{
-			get
-			{
-				return this._hinh_anh_san_phams;
-			}
-			set
-			{
-				this._hinh_anh_san_phams.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_hinh_anh_san_pham1", Storage="_hinh_anh_san_phams1", ThisKey="ma_san_pham", OtherKey="ma_san_pham")]
-		public EntitySet<hinh_anh_san_pham> hinh_anh_san_phams1
-		{
-			get
-			{
-				return this._hinh_anh_san_phams1;
-			}
-			set
-			{
-				this._hinh_anh_san_phams1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_hinh_anh_san_pham2", Storage="_hinh_anh_san_phams2", ThisKey="ma_san_pham", OtherKey="ma_san_pham")]
-		public EntitySet<hinh_anh_san_pham> hinh_anh_san_phams2
-		{
-			get
-			{
-				return this._hinh_anh_san_phams2;
-			}
-			set
-			{
-				this._hinh_anh_san_phams2.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_nha_cung_cap_san_pham", Storage="_nha_cung_cap_san_phams", ThisKey="ma_san_pham", OtherKey="ma_san_pham")]
-		public EntitySet<nha_cung_cap_san_pham> nha_cung_cap_san_phams
-		{
-			get
-			{
-				return this._nha_cung_cap_san_phams;
-			}
-			set
-			{
-				this._nha_cung_cap_san_phams.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_nha_cung_cap_san_pham1", Storage="_nha_cung_cap_san_phams1", ThisKey="ma_san_pham", OtherKey="ma_san_pham")]
-		public EntitySet<nha_cung_cap_san_pham> nha_cung_cap_san_phams1
-		{
-			get
-			{
-				return this._nha_cung_cap_san_phams1;
-			}
-			set
-			{
-				this._nha_cung_cap_san_phams1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_thong_tin_san_pham", Storage="_thong_tin_san_phams", ThisKey="ma_san_pham", OtherKey="ma_san_pham")]
-		public EntitySet<thong_tin_san_pham> thong_tin_san_phams
-		{
-			get
-			{
-				return this._thong_tin_san_phams;
-			}
-			set
-			{
-				this._thong_tin_san_phams.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_thong_tin_san_pham1", Storage="_thong_tin_san_phams1", ThisKey="ma_san_pham", OtherKey="ma_san_pham")]
-		public EntitySet<thong_tin_san_pham> thong_tin_san_phams1
-		{
-			get
-			{
-				return this._thong_tin_san_phams1;
-			}
-			set
-			{
-				this._thong_tin_san_phams1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_thuoc_tinh_san_pham", Storage="_thuoc_tinh_san_phams", ThisKey="ma_san_pham", OtherKey="ma_san_pham")]
-		public EntitySet<thuoc_tinh_san_pham> thuoc_tinh_san_phams
-		{
-			get
-			{
-				return this._thuoc_tinh_san_phams;
-			}
-			set
-			{
-				this._thuoc_tinh_san_phams.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_thuoc_tinh_san_pham1", Storage="_thuoc_tinh_san_phams1", ThisKey="ma_san_pham", OtherKey="ma_san_pham")]
-		public EntitySet<thuoc_tinh_san_pham> thuoc_tinh_san_phams1
-		{
-			get
-			{
-				return this._thuoc_tinh_san_phams1;
-			}
-			set
-			{
-				this._thuoc_tinh_san_phams1.Assign(value);
 			}
 		}
 		
@@ -8363,114 +8025,6 @@ namespace DTO
 		}
 		
 		private void detach_chi_tiet_nhap_hangs1(chi_tiet_nhap_hang entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham1 = null;
-		}
-		
-		private void attach_hinh_anh_san_phams(hinh_anh_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham = this;
-		}
-		
-		private void detach_hinh_anh_san_phams(hinh_anh_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham = null;
-		}
-		
-		private void attach_hinh_anh_san_phams1(hinh_anh_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham1 = this;
-		}
-		
-		private void detach_hinh_anh_san_phams1(hinh_anh_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham1 = null;
-		}
-		
-		private void attach_hinh_anh_san_phams2(hinh_anh_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham2 = this;
-		}
-		
-		private void detach_hinh_anh_san_phams2(hinh_anh_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham2 = null;
-		}
-		
-		private void attach_nha_cung_cap_san_phams(nha_cung_cap_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham = this;
-		}
-		
-		private void detach_nha_cung_cap_san_phams(nha_cung_cap_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham = null;
-		}
-		
-		private void attach_nha_cung_cap_san_phams1(nha_cung_cap_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham1 = this;
-		}
-		
-		private void detach_nha_cung_cap_san_phams1(nha_cung_cap_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham1 = null;
-		}
-		
-		private void attach_thong_tin_san_phams(thong_tin_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham = this;
-		}
-		
-		private void detach_thong_tin_san_phams(thong_tin_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham = null;
-		}
-		
-		private void attach_thong_tin_san_phams1(thong_tin_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham1 = this;
-		}
-		
-		private void detach_thong_tin_san_phams1(thong_tin_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham1 = null;
-		}
-		
-		private void attach_thuoc_tinh_san_phams(thuoc_tinh_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham = this;
-		}
-		
-		private void detach_thuoc_tinh_san_phams(thuoc_tinh_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham = null;
-		}
-		
-		private void attach_thuoc_tinh_san_phams1(thuoc_tinh_san_pham entity)
-		{
-			this.SendPropertyChanging();
-			entity.san_pham1 = this;
-		}
-		
-		private void detach_thuoc_tinh_san_phams1(thuoc_tinh_san_pham entity)
 		{
 			this.SendPropertyChanging();
 			entity.san_pham1 = null;
@@ -9159,10 +8713,6 @@ namespace DTO
 		
 		private System.Nullable<System.DateTime> _updated_at;
 		
-		private EntityRef<san_pham> _san_pham;
-		
-		private EntityRef<san_pham> _san_pham1;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -9183,8 +8733,6 @@ namespace DTO
 		
 		public thong_tin_san_pham()
 		{
-			this._san_pham = default(EntityRef<san_pham>);
-			this._san_pham1 = default(EntityRef<san_pham>);
 			OnCreated();
 		}
 		
@@ -9219,10 +8767,6 @@ namespace DTO
 			{
 				if ((this._ma_san_pham != value))
 				{
-					if ((this._san_pham.HasLoadedOrAssignedValue || this._san_pham1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Onma_san_phamChanging(value);
 					this.SendPropertyChanging();
 					this._ma_san_pham = value;
@@ -9312,74 +8856,6 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_thong_tin_san_pham", Storage="_san_pham", ThisKey="ma_san_pham", OtherKey="ma_san_pham", IsForeignKey=true)]
-		public san_pham san_pham
-		{
-			get
-			{
-				return this._san_pham.Entity;
-			}
-			set
-			{
-				san_pham previousValue = this._san_pham.Entity;
-				if (((previousValue != value) 
-							|| (this._san_pham.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._san_pham.Entity = null;
-						previousValue.thong_tin_san_phams.Remove(this);
-					}
-					this._san_pham.Entity = value;
-					if ((value != null))
-					{
-						value.thong_tin_san_phams.Add(this);
-						this._ma_san_pham = value.ma_san_pham;
-					}
-					else
-					{
-						this._ma_san_pham = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("san_pham");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_thong_tin_san_pham1", Storage="_san_pham1", ThisKey="ma_san_pham", OtherKey="ma_san_pham", IsForeignKey=true)]
-		public san_pham san_pham1
-		{
-			get
-			{
-				return this._san_pham1.Entity;
-			}
-			set
-			{
-				san_pham previousValue = this._san_pham1.Entity;
-				if (((previousValue != value) 
-							|| (this._san_pham1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._san_pham1.Entity = null;
-						previousValue.thong_tin_san_phams1.Remove(this);
-					}
-					this._san_pham1.Entity = value;
-					if ((value != null))
-					{
-						value.thong_tin_san_phams1.Add(this);
-						this._ma_san_pham = value.ma_san_pham;
-					}
-					else
-					{
-						this._ma_san_pham = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("san_pham1");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -9435,10 +8911,6 @@ namespace DTO
 		
 		private EntityRef<mau_sac> _mau_sac1;
 		
-		private EntityRef<san_pham> _san_pham;
-		
-		private EntityRef<san_pham> _san_pham1;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -9469,8 +8941,6 @@ namespace DTO
 			this._kich_thuoc1 = default(EntityRef<kich_thuoc>);
 			this._mau_sac = default(EntityRef<mau_sac>);
 			this._mau_sac1 = default(EntityRef<mau_sac>);
-			this._san_pham = default(EntityRef<san_pham>);
-			this._san_pham1 = default(EntityRef<san_pham>);
 			OnCreated();
 		}
 		
@@ -9505,10 +8975,6 @@ namespace DTO
 			{
 				if ((this._ma_san_pham != value))
 				{
-					if ((this._san_pham.HasLoadedOrAssignedValue || this._san_pham1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Onma_san_phamChanging(value);
 					this.SendPropertyChanging();
 					this._ma_san_pham = value;
@@ -9586,7 +9052,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_ban", DbType="Decimal(10,2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_ban", DbType="Decimal(18,0)")]
 		public System.Nullable<decimal> gia_ban
 		{
 			get
@@ -9804,74 +9270,6 @@ namespace DTO
 						this._ma_mau_sac = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("mau_sac1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_thuoc_tinh_san_pham", Storage="_san_pham", ThisKey="ma_san_pham", OtherKey="ma_san_pham", IsForeignKey=true)]
-		public san_pham san_pham
-		{
-			get
-			{
-				return this._san_pham.Entity;
-			}
-			set
-			{
-				san_pham previousValue = this._san_pham.Entity;
-				if (((previousValue != value) 
-							|| (this._san_pham.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._san_pham.Entity = null;
-						previousValue.thuoc_tinh_san_phams.Remove(this);
-					}
-					this._san_pham.Entity = value;
-					if ((value != null))
-					{
-						value.thuoc_tinh_san_phams.Add(this);
-						this._ma_san_pham = value.ma_san_pham;
-					}
-					else
-					{
-						this._ma_san_pham = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("san_pham");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="san_pham_thuoc_tinh_san_pham1", Storage="_san_pham1", ThisKey="ma_san_pham", OtherKey="ma_san_pham", IsForeignKey=true)]
-		public san_pham san_pham1
-		{
-			get
-			{
-				return this._san_pham1.Entity;
-			}
-			set
-			{
-				san_pham previousValue = this._san_pham1.Entity;
-				if (((previousValue != value) 
-							|| (this._san_pham1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._san_pham1.Entity = null;
-						previousValue.thuoc_tinh_san_phams1.Remove(this);
-					}
-					this._san_pham1.Entity = value;
-					if ((value != null))
-					{
-						value.thuoc_tinh_san_phams1.Add(this);
-						this._ma_san_pham = value.ma_san_pham;
-					}
-					else
-					{
-						this._ma_san_pham = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("san_pham1");
 				}
 			}
 		}
