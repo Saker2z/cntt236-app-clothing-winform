@@ -132,5 +132,15 @@ namespace GUI
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nhapmk_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

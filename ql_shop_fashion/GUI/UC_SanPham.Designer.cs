@@ -202,16 +202,16 @@ namespace GUI
             this.layoutControl_sanpham_size_mausac_thuonghieu.Name = "layoutControl_sanpham_size_mausac_thuonghieu";
             this.layoutControl_sanpham_size_mausac_thuonghieu.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1145, 440, 650, 400);
             this.layoutControl_sanpham_size_mausac_thuonghieu.Root = this.Root;
-            this.layoutControl_sanpham_size_mausac_thuonghieu.Size = new System.Drawing.Size(1825, 1191);
+            this.layoutControl_sanpham_size_mausac_thuonghieu.Size = new System.Drawing.Size(1558, 1025);
             this.layoutControl_sanpham_size_mausac_thuonghieu.TabIndex = 1;
             // 
             // sanpham_size_mausac_thuonghieu
             // 
-            this.sanpham_size_mausac_thuonghieu.Location = new System.Drawing.Point(14, 14);
+            this.sanpham_size_mausac_thuonghieu.Location = new System.Drawing.Point(12, 12);
             this.sanpham_size_mausac_thuonghieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sanpham_size_mausac_thuonghieu.Name = "sanpham_size_mausac_thuonghieu";
             this.sanpham_size_mausac_thuonghieu.SelectedTabPage = this.PageSanPham;
-            this.sanpham_size_mausac_thuonghieu.Size = new System.Drawing.Size(1797, 1163);
+            this.sanpham_size_mausac_thuonghieu.Size = new System.Drawing.Size(1534, 1001);
             this.sanpham_size_mausac_thuonghieu.TabIndex = 4;
             this.sanpham_size_mausac_thuonghieu.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.PageSanPham,
@@ -225,7 +225,7 @@ namespace GUI
             this.PageSanPham.Controls.Add(this.thongtinsp);
             this.PageSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PageSanPham.Name = "PageSanPham";
-            this.PageSanPham.Size = new System.Drawing.Size(1795, 1132);
+            this.PageSanPham.Size = new System.Drawing.Size(1532, 970);
             this.PageSanPham.Text = "Sản Phẩm";
             // 
             // thongtinsp
@@ -235,7 +235,7 @@ namespace GUI
             this.thongtinsp.Location = new System.Drawing.Point(0, 0);
             this.thongtinsp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.thongtinsp.Name = "thongtinsp";
-            this.thongtinsp.Size = new System.Drawing.Size(2244, 1415);
+            this.thongtinsp.Size = new System.Drawing.Size(1532, 970);
             this.thongtinsp.TabIndex = 1;
             // 
             // pnl_chinh
@@ -246,7 +246,7 @@ namespace GUI
             this.pnl_chinh.Location = new System.Drawing.Point(0, 0);
             this.pnl_chinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_chinh.Name = "pnl_chinh";
-            this.pnl_chinh.Size = new System.Drawing.Size(2244, 1415);
+            this.pnl_chinh.Size = new System.Drawing.Size(1532, 970);
             this.pnl_chinh.TabIndex = 0;
             // 
             // gb_sp
@@ -258,7 +258,7 @@ namespace GUI
             this.gb_sp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gb_sp.Name = "gb_sp";
             this.gb_sp.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gb_sp.Size = new System.Drawing.Size(1118, 1415);
+            this.gb_sp.Size = new System.Drawing.Size(406, 970);
             this.gb_sp.TabIndex = 41;
             this.gb_sp.TabStop = false;
             this.gb_sp.Text = "Danh sách sản phẩm";
@@ -272,7 +272,7 @@ namespace GUI
             this.gct_sp.MainView = this.gridView2;
             this.gct_sp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gct_sp.Name = "gct_sp";
-            this.gct_sp.Size = new System.Drawing.Size(1112, 1380);
+            this.gct_sp.Size = new System.Drawing.Size(400, 935);
             this.gct_sp.TabIndex = 39;
             this.gct_sp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -319,11 +319,11 @@ namespace GUI
             this.gb_ctsp.Controls.Add(this.lb_masanpham);
             this.gb_ctsp.Dock = System.Windows.Forms.DockStyle.Right;
             this.gb_ctsp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_ctsp.Location = new System.Drawing.Point(1118, 0);
+            this.gb_ctsp.Location = new System.Drawing.Point(406, 0);
             this.gb_ctsp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gb_ctsp.Name = "gb_ctsp";
             this.gb_ctsp.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gb_ctsp.Size = new System.Drawing.Size(1126, 1415);
+            this.gb_ctsp.Size = new System.Drawing.Size(1126, 970);
             this.gb_ctsp.TabIndex = 40;
             this.gb_ctsp.TabStop = false;
             this.gb_ctsp.Text = "Thông tin chi tiết sản phẩm";
@@ -332,11 +332,11 @@ namespace GUI
             // 
             this.gb_dsthuoctinh.Controls.Add(this.gct_ttsp);
             this.gb_dsthuoctinh.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gb_dsthuoctinh.Location = new System.Drawing.Point(3, 738);
+            this.gb_dsthuoctinh.Location = new System.Drawing.Point(3, 452);
             this.gb_dsthuoctinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gb_dsthuoctinh.Name = "gb_dsthuoctinh";
             this.gb_dsthuoctinh.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gb_dsthuoctinh.Size = new System.Drawing.Size(1120, 673);
+            this.gb_dsthuoctinh.Size = new System.Drawing.Size(1120, 514);
             this.gb_dsthuoctinh.TabIndex = 49;
             this.gb_dsthuoctinh.TabStop = false;
             this.gb_dsthuoctinh.Text = "Danh sách thuộc tính";
@@ -350,7 +350,7 @@ namespace GUI
             this.gct_ttsp.MainView = this.gridView1;
             this.gct_ttsp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gct_ttsp.Name = "gct_ttsp";
-            this.gct_ttsp.Size = new System.Drawing.Size(1114, 638);
+            this.gct_ttsp.Size = new System.Drawing.Size(1114, 479);
             this.gct_ttsp.TabIndex = 37;
             this.gct_ttsp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -364,9 +364,9 @@ namespace GUI
             // 
             // btn_luusp
             // 
-            this.btn_luusp.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_luusp.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_luusp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_luusp.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_luusp.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_luusp.Appearance.Options.UseBackColor = true;
             this.btn_luusp.Appearance.Options.UseFont = true;
             this.btn_luusp.Appearance.Options.UseForeColor = true;
@@ -380,18 +380,18 @@ namespace GUI
             // 
             // pb_anhsp
             // 
-            this.pb_anhsp.Location = new System.Drawing.Point(20, 43);
+            this.pb_anhsp.Location = new System.Drawing.Point(20, 46);
             this.pb_anhsp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pb_anhsp.Name = "pb_anhsp";
-            this.pb_anhsp.Size = new System.Drawing.Size(216, 321);
+            this.pb_anhsp.Size = new System.Drawing.Size(216, 318);
             this.pb_anhsp.TabIndex = 44;
             this.pb_anhsp.TabStop = false;
             // 
             // btn_mochonanhsp
             // 
-            this.btn_mochonanhsp.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_mochonanhsp.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_mochonanhsp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_mochonanhsp.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_mochonanhsp.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_mochonanhsp.Appearance.Options.UseBackColor = true;
             this.btn_mochonanhsp.Appearance.Options.UseFont = true;
             this.btn_mochonanhsp.Appearance.Options.UseForeColor = true;
@@ -405,9 +405,9 @@ namespace GUI
             // 
             // btn_themspvaothuoctinh
             // 
-            this.btn_themspvaothuoctinh.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_themspvaothuoctinh.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_themspvaothuoctinh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_themspvaothuoctinh.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_themspvaothuoctinh.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_themspvaothuoctinh.Appearance.Options.UseBackColor = true;
             this.btn_themspvaothuoctinh.Appearance.Options.UseFont = true;
             this.btn_themspvaothuoctinh.Appearance.Options.UseForeColor = true;
@@ -445,9 +445,9 @@ namespace GUI
             // 
             // btn_loadsp
             // 
-            this.btn_loadsp.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_loadsp.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_loadsp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_loadsp.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_loadsp.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_loadsp.Appearance.Options.UseBackColor = true;
             this.btn_loadsp.Appearance.Options.UseFont = true;
             this.btn_loadsp.Appearance.Options.UseForeColor = true;
@@ -461,9 +461,9 @@ namespace GUI
             // 
             // btn_xoasp
             // 
-            this.btn_xoasp.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_xoasp.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_xoasp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_xoasp.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_xoasp.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_xoasp.Appearance.Options.UseBackColor = true;
             this.btn_xoasp.Appearance.Options.UseFont = true;
             this.btn_xoasp.Appearance.Options.UseForeColor = true;
@@ -477,9 +477,9 @@ namespace GUI
             // 
             // btn_themsp
             // 
-            this.btn_themsp.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_themsp.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_themsp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_themsp.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_themsp.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_themsp.Appearance.Options.UseBackColor = true;
             this.btn_themsp.Appearance.Options.UseFont = true;
             this.btn_themsp.Appearance.Options.UseForeColor = true;
@@ -710,17 +710,17 @@ namespace GUI
             this.PageSize.Controls.Add(this.thongtinsize);
             this.PageSize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PageSize.Name = "PageSize";
-            this.PageSize.Size = new System.Drawing.Size(1795, 1132);
+            this.PageSize.Size = new System.Drawing.Size(1532, 970);
             this.PageSize.Text = "Size";
             // 
             // datagridview_size
             // 
             this.datagridview_size.Controls.Add(this.gct_size);
             this.datagridview_size.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridview_size.Location = new System.Drawing.Point(0, 279);
+            this.datagridview_size.Location = new System.Drawing.Point(0, 223);
             this.datagridview_size.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.datagridview_size.Name = "datagridview_size";
-            this.datagridview_size.Size = new System.Drawing.Size(2244, 1136);
+            this.datagridview_size.Size = new System.Drawing.Size(1532, 747);
             this.datagridview_size.TabIndex = 3;
             // 
             // gct_size
@@ -732,7 +732,7 @@ namespace GUI
             this.gct_size.MainView = this.gridView3;
             this.gct_size.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gct_size.Name = "gct_size";
-            this.gct_size.Size = new System.Drawing.Size(2244, 1136);
+            this.gct_size.Size = new System.Drawing.Size(1532, 747);
             this.gct_size.TabIndex = 0;
             this.gct_size.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -762,19 +762,19 @@ namespace GUI
             this.thongtinsize.Location = new System.Drawing.Point(0, 0);
             this.thongtinsize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.thongtinsize.Name = "thongtinsize";
-            this.thongtinsize.Size = new System.Drawing.Size(2244, 223);
+            this.thongtinsize.Size = new System.Drawing.Size(1532, 223);
             this.thongtinsize.TabIndex = 2;
             // 
             // btn_loadkt
             // 
-            this.btn_loadkt.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_loadkt.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_loadkt.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_loadkt.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_loadkt.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_loadkt.Appearance.Options.UseBackColor = true;
             this.btn_loadkt.Appearance.Options.UseFont = true;
             this.btn_loadkt.Appearance.Options.UseForeColor = true;
             this.btn_loadkt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_loadkt.Location = new System.Drawing.Point(1648, 112);
+            this.btn_loadkt.Location = new System.Drawing.Point(1382, 112);
             this.btn_loadkt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_loadkt.Name = "btn_loadkt";
             this.btn_loadkt.Size = new System.Drawing.Size(134, 65);
@@ -783,14 +783,14 @@ namespace GUI
             // 
             // btn_xoakt
             // 
-            this.btn_xoakt.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_xoakt.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_xoakt.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_xoakt.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_xoakt.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_xoakt.Appearance.Options.UseBackColor = true;
             this.btn_xoakt.Appearance.Options.UseFont = true;
             this.btn_xoakt.Appearance.Options.UseForeColor = true;
             this.btn_xoakt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_xoakt.Location = new System.Drawing.Point(1492, 112);
+            this.btn_xoakt.Location = new System.Drawing.Point(1226, 112);
             this.btn_xoakt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_xoakt.Name = "btn_xoakt";
             this.btn_xoakt.Size = new System.Drawing.Size(134, 65);
@@ -799,14 +799,14 @@ namespace GUI
             // 
             // btn_suakt
             // 
-            this.btn_suakt.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_suakt.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_suakt.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_suakt.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_suakt.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_suakt.Appearance.Options.UseBackColor = true;
             this.btn_suakt.Appearance.Options.UseFont = true;
             this.btn_suakt.Appearance.Options.UseForeColor = true;
             this.btn_suakt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_suakt.Location = new System.Drawing.Point(1648, 21);
+            this.btn_suakt.Location = new System.Drawing.Point(1382, 21);
             this.btn_suakt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_suakt.Name = "btn_suakt";
             this.btn_suakt.Size = new System.Drawing.Size(134, 65);
@@ -815,14 +815,14 @@ namespace GUI
             // 
             // btn_themkt
             // 
-            this.btn_themkt.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_themkt.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_themkt.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_themkt.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_themkt.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_themkt.Appearance.Options.UseBackColor = true;
             this.btn_themkt.Appearance.Options.UseFont = true;
             this.btn_themkt.Appearance.Options.UseForeColor = true;
             this.btn_themkt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_themkt.Location = new System.Drawing.Point(1492, 21);
+            this.btn_themkt.Location = new System.Drawing.Point(1226, 21);
             this.btn_themkt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_themkt.Name = "btn_themkt";
             this.btn_themkt.Size = new System.Drawing.Size(134, 65);
@@ -836,7 +836,7 @@ namespace GUI
             this.txt_phuphisize.Name = "txt_phuphisize";
             this.txt_phuphisize.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_phuphisize.Properties.Appearance.Options.UseFont = true;
-            this.txt_phuphisize.Size = new System.Drawing.Size(1287, 26);
+            this.txt_phuphisize.Size = new System.Drawing.Size(1017, 26);
             this.txt_phuphisize.TabIndex = 7;
             // 
             // lb_phuphisize
@@ -857,7 +857,7 @@ namespace GUI
             this.txt_tenkichthuoc.Name = "txt_tenkichthuoc";
             this.txt_tenkichthuoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_tenkichthuoc.Properties.Appearance.Options.UseFont = true;
-            this.txt_tenkichthuoc.Size = new System.Drawing.Size(1287, 26);
+            this.txt_tenkichthuoc.Size = new System.Drawing.Size(1017, 26);
             this.txt_tenkichthuoc.TabIndex = 5;
             // 
             // txt_makichthuoc
@@ -867,7 +867,7 @@ namespace GUI
             this.txt_makichthuoc.Name = "txt_makichthuoc";
             this.txt_makichthuoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_makichthuoc.Properties.Appearance.Options.UseFont = true;
-            this.txt_makichthuoc.Size = new System.Drawing.Size(1287, 26);
+            this.txt_makichthuoc.Size = new System.Drawing.Size(1017, 26);
             this.txt_makichthuoc.TabIndex = 4;
             // 
             // lb_tenkichthuoc
@@ -898,17 +898,17 @@ namespace GUI
             this.PageMauSac.Controls.Add(this.thongtinmausac);
             this.PageMauSac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PageMauSac.Name = "PageMauSac";
-            this.PageMauSac.Size = new System.Drawing.Size(1795, 1132);
+            this.PageMauSac.Size = new System.Drawing.Size(1532, 970);
             this.PageMauSac.Text = "Màu Sắc";
             // 
             // datagridview_mausac
             // 
             this.datagridview_mausac.Controls.Add(this.gct_mausac);
             this.datagridview_mausac.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridview_mausac.Location = new System.Drawing.Point(0, 254);
+            this.datagridview_mausac.Location = new System.Drawing.Point(0, 203);
             this.datagridview_mausac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.datagridview_mausac.Name = "datagridview_mausac";
-            this.datagridview_mausac.Size = new System.Drawing.Size(2244, 1161);
+            this.datagridview_mausac.Size = new System.Drawing.Size(1532, 767);
             this.datagridview_mausac.TabIndex = 4;
             // 
             // gct_mausac
@@ -920,7 +920,7 @@ namespace GUI
             this.gct_mausac.MainView = this.gridView4;
             this.gct_mausac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gct_mausac.Name = "gct_mausac";
-            this.gct_mausac.Size = new System.Drawing.Size(2244, 1161);
+            this.gct_mausac.Size = new System.Drawing.Size(1532, 767);
             this.gct_mausac.TabIndex = 0;
             this.gct_mausac.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -949,19 +949,19 @@ namespace GUI
             this.thongtinmausac.Location = new System.Drawing.Point(0, 0);
             this.thongtinmausac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.thongtinmausac.Name = "thongtinmausac";
-            this.thongtinmausac.Size = new System.Drawing.Size(2244, 203);
+            this.thongtinmausac.Size = new System.Drawing.Size(1532, 203);
             this.thongtinmausac.TabIndex = 3;
             // 
             // btn_loadms
             // 
-            this.btn_loadms.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_loadms.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_loadms.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_loadms.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_loadms.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_loadms.Appearance.Options.UseBackColor = true;
             this.btn_loadms.Appearance.Options.UseFont = true;
             this.btn_loadms.Appearance.Options.UseForeColor = true;
             this.btn_loadms.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_loadms.Location = new System.Drawing.Point(1651, 111);
+            this.btn_loadms.Location = new System.Drawing.Point(1383, 109);
             this.btn_loadms.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_loadms.Name = "btn_loadms";
             this.btn_loadms.Size = new System.Drawing.Size(134, 65);
@@ -970,14 +970,14 @@ namespace GUI
             // 
             // btn_xoams
             // 
-            this.btn_xoams.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_xoams.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_xoams.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_xoams.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_xoams.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_xoams.Appearance.Options.UseBackColor = true;
             this.btn_xoams.Appearance.Options.UseFont = true;
             this.btn_xoams.Appearance.Options.UseForeColor = true;
             this.btn_xoams.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_xoams.Location = new System.Drawing.Point(1491, 111);
+            this.btn_xoams.Location = new System.Drawing.Point(1225, 112);
             this.btn_xoams.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_xoams.Name = "btn_xoams";
             this.btn_xoams.Size = new System.Drawing.Size(134, 65);
@@ -986,14 +986,14 @@ namespace GUI
             // 
             // btn_suams
             // 
-            this.btn_suams.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_suams.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_suams.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_suams.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_suams.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_suams.Appearance.Options.UseBackColor = true;
             this.btn_suams.Appearance.Options.UseFont = true;
             this.btn_suams.Appearance.Options.UseForeColor = true;
             this.btn_suams.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_suams.Location = new System.Drawing.Point(1651, 20);
+            this.btn_suams.Location = new System.Drawing.Point(1383, 18);
             this.btn_suams.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_suams.Name = "btn_suams";
             this.btn_suams.Size = new System.Drawing.Size(134, 65);
@@ -1002,14 +1002,14 @@ namespace GUI
             // 
             // btn_themms
             // 
-            this.btn_themms.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_themms.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_themms.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_themms.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_themms.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_themms.Appearance.Options.UseBackColor = true;
             this.btn_themms.Appearance.Options.UseFont = true;
             this.btn_themms.Appearance.Options.UseForeColor = true;
             this.btn_themms.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_themms.Location = new System.Drawing.Point(1491, 20);
+            this.btn_themms.Location = new System.Drawing.Point(1225, 18);
             this.btn_themms.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_themms.Name = "btn_themms";
             this.btn_themms.Size = new System.Drawing.Size(134, 65);
@@ -1023,7 +1023,7 @@ namespace GUI
             this.txt_phuphimausac.Name = "txt_phuphimausac";
             this.txt_phuphimausac.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_phuphimausac.Properties.Appearance.Options.UseFont = true;
-            this.txt_phuphimausac.Size = new System.Drawing.Size(1295, 26);
+            this.txt_phuphimausac.Size = new System.Drawing.Size(1017, 26);
             this.txt_phuphimausac.TabIndex = 9;
             // 
             // lb_phuphimausac
@@ -1044,7 +1044,7 @@ namespace GUI
             this.txt_tenmausac.Name = "txt_tenmausac";
             this.txt_tenmausac.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_tenmausac.Properties.Appearance.Options.UseFont = true;
-            this.txt_tenmausac.Size = new System.Drawing.Size(1295, 26);
+            this.txt_tenmausac.Size = new System.Drawing.Size(1017, 26);
             this.txt_tenmausac.TabIndex = 5;
             // 
             // txt_mamausac
@@ -1054,7 +1054,7 @@ namespace GUI
             this.txt_mamausac.Name = "txt_mamausac";
             this.txt_mamausac.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_mamausac.Properties.Appearance.Options.UseFont = true;
-            this.txt_mamausac.Size = new System.Drawing.Size(1295, 26);
+            this.txt_mamausac.Size = new System.Drawing.Size(1017, 26);
             this.txt_mamausac.TabIndex = 4;
             // 
             // lb_tenmausac
@@ -1085,17 +1085,17 @@ namespace GUI
             this.PageThuongHieu.Controls.Add(this.thongtinthuonghieu);
             this.PageThuongHieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PageThuongHieu.Name = "PageThuongHieu";
-            this.PageThuongHieu.Size = new System.Drawing.Size(1795, 1132);
+            this.PageThuongHieu.Size = new System.Drawing.Size(1532, 970);
             this.PageThuongHieu.Text = "Thương Hiệu";
             // 
             // datagridview_thuonghieu
             // 
             this.datagridview_thuonghieu.Controls.Add(this.gct_thuonghieu);
             this.datagridview_thuonghieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datagridview_thuonghieu.Location = new System.Drawing.Point(0, 266);
+            this.datagridview_thuonghieu.Location = new System.Drawing.Point(0, 213);
             this.datagridview_thuonghieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.datagridview_thuonghieu.Name = "datagridview_thuonghieu";
-            this.datagridview_thuonghieu.Size = new System.Drawing.Size(2244, 1149);
+            this.datagridview_thuonghieu.Size = new System.Drawing.Size(1532, 757);
             this.datagridview_thuonghieu.TabIndex = 5;
             // 
             // gct_thuonghieu
@@ -1107,7 +1107,7 @@ namespace GUI
             this.gct_thuonghieu.MainView = this.gridView5;
             this.gct_thuonghieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gct_thuonghieu.Name = "gct_thuonghieu";
-            this.gct_thuonghieu.Size = new System.Drawing.Size(2244, 1149);
+            this.gct_thuonghieu.Size = new System.Drawing.Size(1532, 757);
             this.gct_thuonghieu.TabIndex = 0;
             this.gct_thuonghieu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
@@ -1136,19 +1136,19 @@ namespace GUI
             this.thongtinthuonghieu.Location = new System.Drawing.Point(0, 0);
             this.thongtinthuonghieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.thongtinthuonghieu.Name = "thongtinthuonghieu";
-            this.thongtinthuonghieu.Size = new System.Drawing.Size(2244, 213);
+            this.thongtinthuonghieu.Size = new System.Drawing.Size(1532, 213);
             this.thongtinthuonghieu.TabIndex = 4;
             // 
             // btn_loadth
             // 
-            this.btn_loadth.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_loadth.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_loadth.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_loadth.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_loadth.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_loadth.Appearance.Options.UseBackColor = true;
             this.btn_loadth.Appearance.Options.UseFont = true;
             this.btn_loadth.Appearance.Options.UseForeColor = true;
             this.btn_loadth.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_loadth.Location = new System.Drawing.Point(1653, 111);
+            this.btn_loadth.Location = new System.Drawing.Point(1384, 110);
             this.btn_loadth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_loadth.Name = "btn_loadth";
             this.btn_loadth.Size = new System.Drawing.Size(134, 65);
@@ -1157,14 +1157,14 @@ namespace GUI
             // 
             // btn_xoath
             // 
-            this.btn_xoath.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_xoath.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_xoath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_xoath.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_xoath.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_xoath.Appearance.Options.UseBackColor = true;
             this.btn_xoath.Appearance.Options.UseFont = true;
             this.btn_xoath.Appearance.Options.UseForeColor = true;
             this.btn_xoath.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_xoath.Location = new System.Drawing.Point(1493, 111);
+            this.btn_xoath.Location = new System.Drawing.Point(1224, 110);
             this.btn_xoath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_xoath.Name = "btn_xoath";
             this.btn_xoath.Size = new System.Drawing.Size(134, 65);
@@ -1173,14 +1173,14 @@ namespace GUI
             // 
             // btn_suath
             // 
-            this.btn_suath.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_suath.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_suath.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_suath.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_suath.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_suath.Appearance.Options.UseBackColor = true;
             this.btn_suath.Appearance.Options.UseFont = true;
             this.btn_suath.Appearance.Options.UseForeColor = true;
             this.btn_suath.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_suath.Location = new System.Drawing.Point(1653, 20);
+            this.btn_suath.Location = new System.Drawing.Point(1384, 19);
             this.btn_suath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_suath.Name = "btn_suath";
             this.btn_suath.Size = new System.Drawing.Size(134, 65);
@@ -1189,14 +1189,14 @@ namespace GUI
             // 
             // btn_themth
             // 
-            this.btn_themth.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_themth.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_themth.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_themth.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_themth.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_themth.Appearance.Options.UseBackColor = true;
             this.btn_themth.Appearance.Options.UseFont = true;
             this.btn_themth.Appearance.Options.UseForeColor = true;
             this.btn_themth.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_themth.Location = new System.Drawing.Point(1493, 20);
+            this.btn_themth.Location = new System.Drawing.Point(1224, 19);
             this.btn_themth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_themth.Name = "btn_themth";
             this.btn_themth.Size = new System.Drawing.Size(134, 65);
@@ -1210,7 +1210,7 @@ namespace GUI
             this.txt_motath.Name = "txt_motath";
             this.txt_motath.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_motath.Properties.Appearance.Options.UseFont = true;
-            this.txt_motath.Size = new System.Drawing.Size(1290, 26);
+            this.txt_motath.Size = new System.Drawing.Size(1017, 26);
             this.txt_motath.TabIndex = 7;
             // 
             // lb_motath
@@ -1231,7 +1231,7 @@ namespace GUI
             this.txt_tenth.Name = "txt_tenth";
             this.txt_tenth.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_tenth.Properties.Appearance.Options.UseFont = true;
-            this.txt_tenth.Size = new System.Drawing.Size(1290, 26);
+            this.txt_tenth.Size = new System.Drawing.Size(1017, 26);
             this.txt_tenth.TabIndex = 5;
             // 
             // txt_math
@@ -1241,7 +1241,7 @@ namespace GUI
             this.txt_math.Name = "txt_math";
             this.txt_math.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_math.Properties.Appearance.Options.UseFont = true;
-            this.txt_math.Size = new System.Drawing.Size(1290, 26);
+            this.txt_math.Size = new System.Drawing.Size(1017, 26);
             this.txt_math.TabIndex = 4;
             // 
             // lb_tenth
@@ -1272,7 +1272,7 @@ namespace GUI
             this.PageNhomLoai.Controls.Add(this.thongtinnhomloai);
             this.PageNhomLoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PageNhomLoai.Name = "PageNhomLoai";
-            this.PageNhomLoai.Size = new System.Drawing.Size(1795, 1132);
+            this.PageNhomLoai.Size = new System.Drawing.Size(1532, 970);
             this.PageNhomLoai.Text = "Nhóm Loại";
             // 
             // gct_nhomloai
@@ -1280,11 +1280,11 @@ namespace GUI
             this.gct_nhomloai.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gct_nhomloai.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gct_nhomloai.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gct_nhomloai.Location = new System.Drawing.Point(0, 268);
+            this.gct_nhomloai.Location = new System.Drawing.Point(0, 214);
             this.gct_nhomloai.MainView = this.gridView6;
             this.gct_nhomloai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gct_nhomloai.Name = "gct_nhomloai";
-            this.gct_nhomloai.Size = new System.Drawing.Size(2244, 1148);
+            this.gct_nhomloai.Size = new System.Drawing.Size(1532, 756);
             this.gct_nhomloai.TabIndex = 3;
             this.gct_nhomloai.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -1314,19 +1314,19 @@ namespace GUI
             this.thongtinnhomloai.Location = new System.Drawing.Point(0, 0);
             this.thongtinnhomloai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.thongtinnhomloai.Name = "thongtinnhomloai";
-            this.thongtinnhomloai.Size = new System.Drawing.Size(2244, 214);
+            this.thongtinnhomloai.Size = new System.Drawing.Size(1532, 214);
             this.thongtinnhomloai.TabIndex = 4;
             // 
             // btn_thongtinloaisp
             // 
-            this.btn_thongtinloaisp.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_thongtinloaisp.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_thongtinloaisp.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_thongtinloaisp.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_thongtinloaisp.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_thongtinloaisp.Appearance.Options.UseBackColor = true;
             this.btn_thongtinloaisp.Appearance.Options.UseFont = true;
             this.btn_thongtinloaisp.Appearance.Options.UseForeColor = true;
             this.btn_thongtinloaisp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_thongtinloaisp.Location = new System.Drawing.Point(1496, 148);
+            this.btn_thongtinloaisp.Location = new System.Drawing.Point(1227, 148);
             this.btn_thongtinloaisp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_thongtinloaisp.Name = "btn_thongtinloaisp";
             this.btn_thongtinloaisp.Size = new System.Drawing.Size(290, 37);
@@ -1335,14 +1335,14 @@ namespace GUI
             // 
             // btn_loadnl
             // 
-            this.btn_loadnl.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_loadnl.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_loadnl.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_loadnl.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_loadnl.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_loadnl.Appearance.Options.UseBackColor = true;
             this.btn_loadnl.Appearance.Options.UseFont = true;
             this.btn_loadnl.Appearance.Options.UseForeColor = true;
             this.btn_loadnl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_loadnl.Location = new System.Drawing.Point(1652, 86);
+            this.btn_loadnl.Location = new System.Drawing.Point(1383, 86);
             this.btn_loadnl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_loadnl.Name = "btn_loadnl";
             this.btn_loadnl.Size = new System.Drawing.Size(134, 37);
@@ -1351,14 +1351,14 @@ namespace GUI
             // 
             // btn_xoanl
             // 
-            this.btn_xoanl.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_xoanl.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_xoanl.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_xoanl.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_xoanl.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_xoanl.Appearance.Options.UseBackColor = true;
             this.btn_xoanl.Appearance.Options.UseFont = true;
             this.btn_xoanl.Appearance.Options.UseForeColor = true;
             this.btn_xoanl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_xoanl.Location = new System.Drawing.Point(1496, 86);
+            this.btn_xoanl.Location = new System.Drawing.Point(1227, 86);
             this.btn_xoanl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_xoanl.Name = "btn_xoanl";
             this.btn_xoanl.Size = new System.Drawing.Size(134, 37);
@@ -1367,14 +1367,14 @@ namespace GUI
             // 
             // btn_suanl
             // 
-            this.btn_suanl.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_suanl.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_suanl.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_suanl.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_suanl.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_suanl.Appearance.Options.UseBackColor = true;
             this.btn_suanl.Appearance.Options.UseFont = true;
             this.btn_suanl.Appearance.Options.UseForeColor = true;
             this.btn_suanl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_suanl.Location = new System.Drawing.Point(1652, 25);
+            this.btn_suanl.Location = new System.Drawing.Point(1383, 25);
             this.btn_suanl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_suanl.Name = "btn_suanl";
             this.btn_suanl.Size = new System.Drawing.Size(134, 37);
@@ -1383,14 +1383,14 @@ namespace GUI
             // 
             // btn_themnl
             // 
-            this.btn_themnl.Appearance.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_themnl.Appearance.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_themnl.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_themnl.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_themnl.Appearance.ForeColor = System.Drawing.Color.Black;
             this.btn_themnl.Appearance.Options.UseBackColor = true;
             this.btn_themnl.Appearance.Options.UseFont = true;
             this.btn_themnl.Appearance.Options.UseForeColor = true;
             this.btn_themnl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_themnl.Location = new System.Drawing.Point(1496, 25);
+            this.btn_themnl.Location = new System.Drawing.Point(1227, 25);
             this.btn_themnl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_themnl.Name = "btn_themnl";
             this.btn_themnl.Size = new System.Drawing.Size(134, 37);
@@ -1404,7 +1404,7 @@ namespace GUI
             this.txt_chitiet.Name = "txt_chitiet";
             this.txt_chitiet.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_chitiet.Properties.Appearance.Options.UseFont = true;
-            this.txt_chitiet.Size = new System.Drawing.Size(1300, 26);
+            this.txt_chitiet.Size = new System.Drawing.Size(1017, 26);
             this.txt_chitiet.TabIndex = 7;
             // 
             // lb_chitiet
@@ -1425,7 +1425,7 @@ namespace GUI
             this.txt_tennhomloai.Name = "txt_tennhomloai";
             this.txt_tennhomloai.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_tennhomloai.Properties.Appearance.Options.UseFont = true;
-            this.txt_tennhomloai.Size = new System.Drawing.Size(1300, 26);
+            this.txt_tennhomloai.Size = new System.Drawing.Size(1017, 26);
             this.txt_tennhomloai.TabIndex = 5;
             // 
             // txt_manhomloai
@@ -1435,7 +1435,7 @@ namespace GUI
             this.txt_manhomloai.Name = "txt_manhomloai";
             this.txt_manhomloai.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_manhomloai.Properties.Appearance.Options.UseFont = true;
-            this.txt_manhomloai.Size = new System.Drawing.Size(1300, 26);
+            this.txt_manhomloai.Size = new System.Drawing.Size(1017, 26);
             this.txt_manhomloai.TabIndex = 4;
             // 
             // lb_tennhomloai
@@ -1467,7 +1467,7 @@ namespace GUI
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1825, 1191);
+            this.Root.Size = new System.Drawing.Size(1558, 1025);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -1475,7 +1475,7 @@ namespace GUI
             this.layoutControlItem1.Control = this.sanpham_size_mausac_thuonghieu;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1801, 1167);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1538, 1005);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -1486,7 +1486,7 @@ namespace GUI
             this.Controls.Add(this.layoutControl_sanpham_size_mausac_thuonghieu);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_SanPham";
-            this.Size = new System.Drawing.Size(1825, 1191);
+            this.Size = new System.Drawing.Size(1558, 1025);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl_sanpham_size_mausac_thuonghieu)).EndInit();
             this.layoutControl_sanpham_size_mausac_thuonghieu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sanpham_size_mausac_thuonghieu)).EndInit();

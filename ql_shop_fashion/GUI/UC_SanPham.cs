@@ -329,7 +329,7 @@ namespace GUI
                     popup = new Form
                     {
                         StartPosition = FormStartPosition.Manual,
-                        Size = new Size(300, 150),
+                        Size = new Size(450, 150),
                         FormBorderStyle = FormBorderStyle.None,
                         BackColor = Color.LightYellow,
                         Opacity = 0.9,

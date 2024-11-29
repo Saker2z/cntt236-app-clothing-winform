@@ -464,3 +464,26 @@ E:\Cac mon hoc\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\
 E:\Cac mon hoc\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CopyComplete
 E:\Cac mon hoc\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.dll
 E:\Cac mon hoc\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.pdb
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BLL.dll.config
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BLL.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BLL.pdb
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Drawing.Common.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Memory.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\VietQRHelper.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\QRCoder.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Numerics.Vectors.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Buffers.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.ValueTuple.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.pdb
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.dll.config
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.pdb
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.dll.config
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Drawing.Common.xml
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CopyComplete
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.pdb

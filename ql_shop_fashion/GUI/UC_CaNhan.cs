@@ -132,7 +132,7 @@ namespace GUI
             tk_bll = new tai_khoan_sql_BLL();
            tai_khoan tk =  tk_bll.GetTaiKhoanByMaID(a.tai_khoan_id.Value);
             txt_tk.Text = tk.ten_dang_nhap;
-            txt_mk.Text = tk.mat_khau_hash;
+            txt_mk.Text = "*******";
             ngay_vl.Enabled = false;
             txt_hoten.ReadOnly = true;
             txt_dc.ReadOnly = true;

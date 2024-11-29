@@ -395,6 +395,10 @@ namespace GUI
             }
         }
 
+        private void bt_duyet_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

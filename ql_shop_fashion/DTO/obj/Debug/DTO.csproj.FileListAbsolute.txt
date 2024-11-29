@@ -116,3 +116,10 @@ E:\Cac mon hoc\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DTO\
 E:\Cac mon hoc\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 E:\Cac mon hoc\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.dll
 E:\Cac mon hoc\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.pdb
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DTO\bin\Debug\DTO.dll.config
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DTO\bin\Debug\DTO.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DTO\bin\Debug\DTO.pdb
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.dll
+F:\Github\backup19\cntt236-app-clothing-winform\ql_shop_fashion\DTO\obj\Debug\DTO.pdb
