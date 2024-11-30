@@ -72,10 +72,10 @@ namespace GUI
 
         private void dangnhap_Click(object sender, EventArgs e)
         {
-            //string tk = nhaptk.Text;
-            //string mk = nhapmk.Text;'
-            string tk = "admin";
-            string mk = "admin";
+            string tk = nhaptk.Text;
+            string mk = nhapmk.Text; 
+
+
             int userRoleId;
 
             tk_bll = new tai_khoan_sql_BLL();
@@ -115,18 +115,32 @@ namespace GUI
             // Lưu lại thay đổi trong settings nếu cần
             Properties.Settings.Default.Save();
 
+            // Kiểm tra danh sách các màn hình
+            if (accessibleScreens == null || accessibleScreens.Count == 0)
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào bất kỳ màn hình nào.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                return;
+            }
 
-            // Xuất ra danh sách ID màn hình cho phép truy cập
-           
+            // Xuất ra danh sách ID màn hình cho phép truy cập (dành cho mục đích debug, nếu cần)
+            Console.WriteLine("Accessible Screens:");
+            foreach (var screen in accessibleScreens)
+            {
+                Console.WriteLine($"Screen ID: {screen}");
+            }
 
             // Tạo và hiển thị form chính với các màn hình được phép
             frmMain main = new frmMain();
+
+            // Truyền danh sách các màn hình được phép vào form chính
             main.ShowScreens(accessibleScreens);
 
             // Xử lý sự kiện đóng form chính để đóng toàn bộ ứng dụng
             main.FormClosed += (s, args) => this.Close();
             main.Show();
         }
+
 
         private void taikhoan_Click(object sender, EventArgs e)
         {
