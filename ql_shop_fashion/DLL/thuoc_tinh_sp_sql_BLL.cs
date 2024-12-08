@@ -76,7 +76,7 @@ namespace BLL
             return sp.GetAllProducts();
         }
 
-        public bool addThuocTinhSanPham(thuoc_tinh_DTO tt)
+        public bool addThuocTinhSanPham(thuoc_tinh_san_pham tt)
         {
             return sp.addThuocTinhSanPham(tt);
         }

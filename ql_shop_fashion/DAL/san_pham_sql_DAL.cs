@@ -257,14 +257,30 @@ namespace DAL
                     throw new Exception("Đường dẫn hình ảnh không hợp lệ hoặc tệp ảnh không tồn tại.");
                 }
 
-                var newImage = new hinh_anh_san_pham
-                {
-                    ma_san_pham = maSanPham,
-                    hinh_anh = imagePath,
-                    created_at = DateTime.Now
-                };
+                // Kiểm tra nếu đã có bản ghi nhưng cột hình ảnh là NULL
+                var existingImageRecord = data.hinh_anh_san_phams
+                    .FirstOrDefault(img => img.ma_san_pham == maSanPham && string.IsNullOrEmpty(img.hinh_anh));
 
-                data.hinh_anh_san_phams.InsertOnSubmit(newImage);
+                if (existingImageRecord != null)
+                {
+                    // Cập nhật hình ảnh cho bản ghi cũ
+                    existingImageRecord.hinh_anh = imagePath;
+                    existingImageRecord.updated_at = DateTime.Now;
+                }
+                else
+                {
+                    // Thêm mới bản ghi nếu chưa có
+                    var newImage = new hinh_anh_san_pham
+                    {
+                        ma_san_pham = maSanPham,
+                        hinh_anh = imagePath,
+                        created_at = DateTime.Now,
+                        updated_at = DateTime.Now
+                    };
+
+                    data.hinh_anh_san_phams.InsertOnSubmit(newImage);
+                }
+
                 data.SubmitChanges();
                 return true;
             }
@@ -274,6 +290,8 @@ namespace DAL
                 return false;
             }
         }
+
+
         public List<san_pham_cus> GetSanPhamTheoTieuChi(string tieuChi)
         {
             try

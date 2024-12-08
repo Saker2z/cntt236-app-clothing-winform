@@ -37,15 +37,18 @@ namespace DAL
         {
             try
             {
-                data.kich_thuocs.InsertOnSubmit(newSize);
-                data.SubmitChanges();
+                data.kich_thuocs.InsertOnSubmit(newSize); // Chỉ cần thêm tên và phụ phí
+                data.SubmitChanges(); // Cơ sở dữ liệu tự động tạo mã
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Lỗi khi thêm kích thước: " + ex.Message);
                 return false;
             }
         }
+
+
 
         public bool UpdateSize(kich_thuoc updatedSize)
         {
@@ -59,13 +62,16 @@ namespace DAL
                     data.SubmitChanges();
                     return true;
                 }
+                Console.WriteLine("Không tìm thấy kích thước với mã: " + updatedSize.ma_kich_thuoc);
                 return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Lỗi khi cập nhật kích thước: " + ex.Message);
                 return false;
             }
         }
+
 
 
         public bool DeleteSizeById(int makichthuoc)

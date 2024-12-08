@@ -37,7 +37,7 @@ namespace GUI
 
         private void Btn_loadloaisp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            loadLoaiSP();
+            clearloaisp();
         }
 
         private void Btn_xoaloaisp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -65,58 +65,7 @@ namespace GUI
 
         private void Gct_loaisp_MouseMove(object sender, MouseEventArgs e)
         {
-            GridView gridView = gct_loaisp.MainView as GridView;
-
-            // Lấy vị trí chuột trong GridView
-            var hitInfo = gridView.CalcHitInfo(e.Location);
-
-            if (hitInfo.InRow && hitInfo.RowHandle >= 0)
-            {
-                int maNhomLoai = (int)gridView.GetRowCellValue(hitInfo.RowHandle, "ma_nhom_loai");
-                int maLoai = (int)gridView.GetRowCellValue(hitInfo.RowHandle, "ma_loai");
-                var nhomLoai = nhom_loai_bll.getNhomLoaiById(maNhomLoai);
-                var Loaisp = loai_sp_bll.getLoaiSPById(maLoai);
-
-                string infoContent = $"Mã loại: {Loaisp.ma_loai}\n" +
-                                     $"Tên loại: {Loaisp.ten_loai}\n"+
-                                     $"Mã nhóm loại: {nhomLoai.ma_nhom_loai}\n" +
-                                     $"Tên nhóm loại: {nhomLoai.ten_nhom_loai}\n";
-
-                // Hiển thị Popup
-                if (popup == null || popup.IsDisposed)
-                {
-                    popup = new Form
-                    {
-                        StartPosition = FormStartPosition.CenterScreen,
-                        Size = new Size(250, 150),
-                        FormBorderStyle = FormBorderStyle.None,
-                        BackColor = Color.Orange,
-                        Opacity = 0.9,
-                        ShowInTaskbar = false,
-                        TopMost = true
-                    };
-
-                    Label lblInfo = new Label
-                    {
-                        Dock = DockStyle.Fill,
-                        TextAlign = ContentAlignment.MiddleCenter,
-                        ForeColor = Color.Black,
-                        Padding = new Padding(10)
-                    };
-                    popup.Controls.Add(lblInfo);
-                }
-
-                var lbl = popup.Controls[0] as Label;
-                lbl.Text = infoContent;
-
-                if (!popup.Visible)
-                    popup.Show();
-            }
-            else
-            {
-                if (popup != null && popup.Visible)
-                    popup.Hide();
-            }
+            
         }
 
         private void Cbb_manhomloai_EditValueChanged(object sender, EventArgs e)
@@ -234,19 +183,6 @@ namespace GUI
 
         private bool kiemTraLoaiSP()
         {
-            if (string.IsNullOrWhiteSpace(txt_maloai.Text))
-            {
-                XtraMessageBox.Show("Vui lòng nhập mã loại sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_maloai.Focus();
-                return false;
-            }
-
-            if (!int.TryParse(txt_maloai.Text, out int _))
-            {
-                XtraMessageBox.Show("Mã loại sản phẩm không hợp lệ. Vui lòng nhập số nguyên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_maloai.Focus();
-                return false;
-            }
 
             if (string.IsNullOrWhiteSpace(txt_tenloai.Text))
             {

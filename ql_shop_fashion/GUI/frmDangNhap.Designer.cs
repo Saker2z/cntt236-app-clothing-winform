@@ -107,9 +107,9 @@ namespace GUI
             this.panel2.Controls.Add(this.taikhoan);
             this.panel2.Controls.Add(this.nhaptk);
             this.panel2.Controls.Add(this.welcome);
-            this.panel2.Location = new System.Drawing.Point(498, 118);
+            this.panel2.Location = new System.Drawing.Point(498, 74);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(355, 347);
+            this.panel2.Size = new System.Drawing.Size(355, 389);
             this.panel2.TabIndex = 1;
             // 
             // dangnhap
@@ -120,7 +120,7 @@ namespace GUI
             this.dangnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dangnhap.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dangnhap.ForeColor = System.Drawing.Color.Black;
-            this.dangnhap.Location = new System.Drawing.Point(93, 261);
+            this.dangnhap.Location = new System.Drawing.Point(97, 299);
             this.dangnhap.Name = "dangnhap";
             this.dangnhap.Size = new System.Drawing.Size(163, 45);
             this.dangnhap.TabIndex = 9;
@@ -132,7 +132,7 @@ namespace GUI
             // 
             this.pictureBox2.BackgroundImage = global::GUI.Properties.Resources.matkhau;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(21, 211);
+            this.pictureBox2.Location = new System.Drawing.Point(25, 265);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(23, 24);
             this.pictureBox2.TabIndex = 8;
@@ -143,7 +143,7 @@ namespace GUI
             // 
             this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.tk;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 102);
+            this.pictureBox1.Location = new System.Drawing.Point(25, 141);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(23, 24);
             this.pictureBox1.TabIndex = 7;
@@ -154,7 +154,7 @@ namespace GUI
             this.matkhau.AutoSize = true;
             this.matkhau.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.matkhau.ForeColor = System.Drawing.Color.Black;
-            this.matkhau.Location = new System.Drawing.Point(46, 153);
+            this.matkhau.Location = new System.Drawing.Point(49, 185);
             this.matkhau.Name = "matkhau";
             this.matkhau.Size = new System.Drawing.Size(93, 25);
             this.matkhau.TabIndex = 6;
@@ -162,7 +162,7 @@ namespace GUI
             // 
             // nhapmk
             // 
-            this.nhapmk.Location = new System.Drawing.Point(50, 213);
+            this.nhapmk.Location = new System.Drawing.Point(54, 267);
             this.nhapmk.Name = "nhapmk";
             this.nhapmk.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nhapmk.Properties.Appearance.Options.UseFont = true;
@@ -176,7 +176,7 @@ namespace GUI
             this.taikhoan.AutoSize = true;
             this.taikhoan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taikhoan.ForeColor = System.Drawing.Color.Black;
-            this.taikhoan.Location = new System.Drawing.Point(46, 63);
+            this.taikhoan.Location = new System.Drawing.Point(49, 88);
             this.taikhoan.Name = "taikhoan";
             this.taikhoan.Size = new System.Drawing.Size(94, 25);
             this.taikhoan.TabIndex = 4;
@@ -184,7 +184,7 @@ namespace GUI
             // 
             // nhaptk
             // 
-            this.nhaptk.Location = new System.Drawing.Point(50, 106);
+            this.nhaptk.Location = new System.Drawing.Point(54, 145);
             this.nhaptk.Name = "nhaptk";
             this.nhaptk.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nhaptk.Properties.Appearance.Options.UseFont = true;

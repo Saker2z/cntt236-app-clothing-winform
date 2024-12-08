@@ -57,5 +57,16 @@ namespace GUI.Properties {
                 return ((string)(this["QL_SHOP_FASHIONConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-UH42H8A\\QUOCDUONG;Initial Catalog=QL_SHOP_FASHION;Integrated " +
+            "Security=True")]
+        public string QL_SHOP_FASHIONConnectionString {
+            get {
+                return ((string)(this["QL_SHOP_FASHIONConnectionString"]));
+            }
+        }
     }
 }

@@ -167,7 +167,7 @@ namespace GUI
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            LoadGifToPanel(@"..\..\Resources\background_mhc.jpg");
+            LoadGifToPanel(@"background_mhc.jpg");
         }
 
         private void Ace_hoadon_Click(object sender, EventArgs e)

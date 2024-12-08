@@ -103,8 +103,13 @@
     <Compile Include="san_pham_custom.cs" />
     <Compile Include="san_pham_DTO.cs" />
     <Compile Include="tem_gia.cs" />
+    <Compile Include="thong_ke_ban_hang_DTO.cs" />
+    <Compile Include="thong_ke_doi_tra_DTO.cs" />
+    <Compile Include="thong_ke_doi_tra_nam_DTO.cs" />
+    <Compile Include="thong_ke_doi_tra_thang_DTO.cs" />
+    <Compile Include="thong_ke_nhap_hang_theo_nam_DTO.cs" />
+    <Compile Include="thong_ke_nhap_hang_theo_thang_DTO.cs" />
     <Compile Include="thong_ke_theo_nam_DTO.cs" />
-    <Compile Include="thong_ke_theo_ngay_DTO.cs" />
     <Compile Include="thong_ke_theo_thang_DTO.cs" />
     <Compile Include="thong_tin_sanpham_DTO.cs" />
     <Compile Include="thuoc_tinh_DTO.cs" />

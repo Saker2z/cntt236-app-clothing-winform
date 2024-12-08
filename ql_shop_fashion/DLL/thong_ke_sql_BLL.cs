@@ -17,30 +17,49 @@ namespace BLL
             thongKeDAL = new thong_ke_sql_DAL();
         }
 
-        public List<hoa_don_DTO> ThongKeHoaDon(DateTime? fromDate, DateTime? toDate)
+
+
+        public List<thong_ke_ban_hang_DTO> ThongKeTheoNgay(DateTime ngay)
         {
-            return thongKeDAL.GetHoaDon(fromDate, toDate);
+            return thongKeDAL.GetBanHangTheoNgay(ngay);
         }
 
-        public List<hoa_don_doi_tra_DTO> ThongKeHoaDonDoiTra(DateTime? fromDate, DateTime? toDate)
+        public List<thong_ke_theo_thang_DTO> ThongKeTheoThang(int nam)
         {
-            return thongKeDAL.GetHoaDonDoiTra(fromDate, toDate);
-        }
-
-        public List<thong_ke_theo_ngay_DTO> ThongKeTheoNgay(DateTime date)
-        {
-            return thongKeDAL.GetDailySales(date);
+            return thongKeDAL.GetBanHangTheoThang(nam); // Gọi DAL để lấy dữ liệu theo tháng
         }
 
 
-        public List<thong_ke_theo_thang_DTO> ThongKeTheoThang(int month, int year)
+        public List<thong_ke_theo_nam_DTO> ThongKeTheoNam(int startYear, int endYear)
         {
-            return thongKeDAL.GetMonthlySales(month, year);
+            return thongKeDAL.GetBanHangTheoNam(startYear, endYear);
         }
 
-        public List<thong_ke_theo_nam_DTO> ThongKeTheoNam(int year)
+        public List<thong_ke_doi_tra_DTO> ThongKeDoiTraTheoNgay(DateTime ngay)
         {
-            return thongKeDAL.GetYearlySales(year);
+            return thongKeDAL.GetDoiTraTheoNgay(ngay);
         }
+
+        public List<thong_ke_doi_tra_thang_DTO> ThongKeDoiTraTheoThang(int nam, int thang)
+        {
+            return thongKeDAL.GetDoiTraTheoThang(nam, thang);
+        }
+
+
+        public List<thong_ke_doi_tra_nam_DTO> ThongKeDoiTraTheoNam(int startYear, int endYear)
+        {
+            return thongKeDAL.GetDoiTraTheoNam(startYear, endYear);
+        }
+
+        public List<thong_ke_nhap_hang_theo_thang_DTO> GetThongKeNhapHangTheoThang(int thang, int nam)
+        {
+            return thongKeDAL.GetThongKeNhapHangTheoThang(thang, nam);
+        }
+
+        public List<thong_ke_nhap_hang_theo_nam_DTO> GetThongKeNhapHangTheoNam(int startYear, int endYear)
+        {
+            return thongKeDAL.GetThongKeNhapHangTheoNam(startYear, endYear);
+        }
+
     }
 }

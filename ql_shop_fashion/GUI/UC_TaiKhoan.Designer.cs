@@ -60,11 +60,11 @@ namespace GUI
             // 
             this.gct_tk.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gct_tk.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gct_tk.Location = new System.Drawing.Point(0, 449);
+            this.gct_tk.Location = new System.Drawing.Point(0, 341);
             this.gct_tk.MainView = this.gridView1;
             this.gct_tk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gct_tk.Name = "gct_tk";
-            this.gct_tk.Size = new System.Drawing.Size(1833, 808);
+            this.gct_tk.Size = new System.Drawing.Size(1542, 684);
             this.gct_tk.TabIndex = 9;
             this.gct_tk.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -91,7 +91,7 @@ namespace GUI
             this.gb_thongtintk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gb_thongtintk.Name = "gb_thongtintk";
             this.gb_thongtintk.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gb_thongtintk.Size = new System.Drawing.Size(1833, 415);
+            this.gb_thongtintk.Size = new System.Drawing.Size(1542, 307);
             this.gb_thongtintk.TabIndex = 12;
             this.gb_thongtintk.TabStop = false;
             this.gb_thongtintk.Text = "Thông tin tài khoản";
@@ -100,7 +100,7 @@ namespace GUI
             // 
             this.check_hd.AutoSize = true;
             this.check_hd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_hd.Location = new System.Drawing.Point(1704, 290);
+            this.check_hd.Location = new System.Drawing.Point(1409, 233);
             this.check_hd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.check_hd.Name = "check_hd";
             this.check_hd.Size = new System.Drawing.Size(114, 27);
@@ -112,17 +112,17 @@ namespace GUI
             // 
             this.cbb_quyen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_quyen.FormattingEnabled = true;
-            this.cbb_quyen.Location = new System.Drawing.Point(114, 237);
+            this.cbb_quyen.Location = new System.Drawing.Point(119, 181);
             this.cbb_quyen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbb_quyen.Name = "cbb_quyen";
-            this.cbb_quyen.Size = new System.Drawing.Size(1694, 29);
+            this.cbb_quyen.Size = new System.Drawing.Size(1404, 29);
             this.cbb_quyen.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 241);
+            this.label1.Location = new System.Drawing.Point(41, 182);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 23);
             this.label1.TabIndex = 13;
@@ -131,10 +131,10 @@ namespace GUI
             // txt_mk
             // 
             this.txt_mk.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mk.Location = new System.Drawing.Point(114, 170);
+            this.txt_mk.Location = new System.Drawing.Point(119, 114);
             this.txt_mk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_mk.Name = "txt_mk";
-            this.txt_mk.Size = new System.Drawing.Size(1694, 29);
+            this.txt_mk.Size = new System.Drawing.Size(1404, 29);
             this.txt_mk.TabIndex = 11;
             this.txt_mk.Text = "**********";
             // 
@@ -142,7 +142,7 @@ namespace GUI
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(9, 176);
+            this.label7.Location = new System.Drawing.Point(17, 117);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 23);
             this.label7.TabIndex = 10;
@@ -152,7 +152,7 @@ namespace GUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 110);
+            this.label6.Location = new System.Drawing.Point(19, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 23);
             this.label6.TabIndex = 9;
@@ -161,10 +161,10 @@ namespace GUI
             // txt_tk
             // 
             this.txt_tk.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tk.Location = new System.Drawing.Point(114, 104);
+            this.txt_tk.Location = new System.Drawing.Point(119, 48);
             this.txt_tk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_tk.Name = "txt_tk";
-            this.txt_tk.Size = new System.Drawing.Size(1694, 29);
+            this.txt_tk.Size = new System.Drawing.Size(1404, 29);
             this.txt_tk.TabIndex = 9;
             // 
             // barManager1
@@ -234,16 +234,16 @@ namespace GUI
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1833, 34);
+            this.barDockControlTop.Size = new System.Drawing.Size(1542, 34);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1257);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1025);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1833, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1542, 0);
             // 
             // barDockControlLeft
             // 
@@ -252,16 +252,16 @@ namespace GUI
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 34);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1223);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 991);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1833, 34);
+            this.barDockControlRight.Location = new System.Drawing.Point(1542, 34);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 1223);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 991);
             // 
             // UC_TaiKhoan
             // 
@@ -275,7 +275,7 @@ namespace GUI
             this.Controls.Add(this.barDockControlTop);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_TaiKhoan";
-            this.Size = new System.Drawing.Size(1833, 1257);
+            this.Size = new System.Drawing.Size(1542, 1025);
             ((System.ComponentModel.ISupportInitialize)(this.gct_tk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.gb_thongtintk.ResumeLayout(false);

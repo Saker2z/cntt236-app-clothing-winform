@@ -33,6 +33,9 @@ namespace GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoaiSP));
             this.pnl_LoaiSP = new System.Windows.Forms.Panel();
             this.thongtinnhomloai = new System.Windows.Forms.Panel();
+            this.gb_loaisp = new System.Windows.Forms.GroupBox();
+            this.gct_loaisp = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cbb_tennhomloai = new DevExpress.XtraEditors.ComboBoxEdit();
             this.lb_tennhomloai = new DevExpress.XtraEditors.LabelControl();
             this.txt_chitiet = new DevExpress.XtraEditors.TextEdit();
@@ -51,19 +54,16 @@ namespace GUI
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gb_loaisp = new System.Windows.Forms.GroupBox();
-            this.gct_loaisp = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pnl_LoaiSP.SuspendLayout();
             this.thongtinnhomloai.SuspendLayout();
+            this.gb_loaisp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gct_loaisp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_tennhomloai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_chitiet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tenloai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_maloai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            this.gb_loaisp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gct_loaisp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_LoaiSP
@@ -94,6 +94,43 @@ namespace GUI
             this.thongtinnhomloai.Name = "thongtinnhomloai";
             this.thongtinnhomloai.Size = new System.Drawing.Size(1026, 861);
             this.thongtinnhomloai.TabIndex = 5;
+            // 
+            // gb_loaisp
+            // 
+            this.gb_loaisp.BackColor = System.Drawing.Color.White;
+            this.gb_loaisp.Controls.Add(this.gct_loaisp);
+            this.gb_loaisp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gb_loaisp.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_loaisp.Location = new System.Drawing.Point(0, 333);
+            this.gb_loaisp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gb_loaisp.Name = "gb_loaisp";
+            this.gb_loaisp.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gb_loaisp.Size = new System.Drawing.Size(1026, 528);
+            this.gb_loaisp.TabIndex = 48;
+            this.gb_loaisp.TabStop = false;
+            this.gb_loaisp.Text = "Danh sách loại sản phẩm";
+            // 
+            // gct_loaisp
+            // 
+            this.gct_loaisp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gct_loaisp.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gct_loaisp.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gct_loaisp.Location = new System.Drawing.Point(3, 28);
+            this.gct_loaisp.MainView = this.gridView2;
+            this.gct_loaisp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gct_loaisp.Name = "gct_loaisp";
+            this.gct_loaisp.Size = new System.Drawing.Size(1020, 496);
+            this.gct_loaisp.TabIndex = 39;
+            this.gct_loaisp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.DetailHeight = 458;
+            this.gridView2.FixedLineWidth = 3;
+            this.gridView2.GridControl = this.gct_loaisp;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // cbb_tennhomloai
             // 
@@ -151,6 +188,7 @@ namespace GUI
             // 
             // txt_maloai
             // 
+            this.txt_maloai.Enabled = false;
             this.txt_maloai.Location = new System.Drawing.Point(202, 19);
             this.txt_maloai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_maloai.Name = "txt_maloai";
@@ -280,43 +318,6 @@ namespace GUI
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 861);
             // 
-            // gb_loaisp
-            // 
-            this.gb_loaisp.BackColor = System.Drawing.Color.White;
-            this.gb_loaisp.Controls.Add(this.gct_loaisp);
-            this.gb_loaisp.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gb_loaisp.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_loaisp.Location = new System.Drawing.Point(0, 333);
-            this.gb_loaisp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gb_loaisp.Name = "gb_loaisp";
-            this.gb_loaisp.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gb_loaisp.Size = new System.Drawing.Size(1026, 528);
-            this.gb_loaisp.TabIndex = 48;
-            this.gb_loaisp.TabStop = false;
-            this.gb_loaisp.Text = "Danh sách loại sản phẩm";
-            // 
-            // gct_loaisp
-            // 
-            this.gct_loaisp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gct_loaisp.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gct_loaisp.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gct_loaisp.Location = new System.Drawing.Point(3, 28);
-            this.gct_loaisp.MainView = this.gridView2;
-            this.gct_loaisp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gct_loaisp.Name = "gct_loaisp";
-            this.gct_loaisp.Size = new System.Drawing.Size(1020, 496);
-            this.gct_loaisp.TabIndex = 39;
-            this.gct_loaisp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.DetailHeight = 458;
-            this.gridView2.FixedLineWidth = 3;
-            this.gridView2.GridControl = this.gct_loaisp;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
             // frmLoaiSP
             // 
             this.Appearance.Options.UseFont = true;
@@ -336,14 +337,14 @@ namespace GUI
             this.pnl_LoaiSP.ResumeLayout(false);
             this.thongtinnhomloai.ResumeLayout(false);
             this.thongtinnhomloai.PerformLayout();
+            this.gb_loaisp.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gct_loaisp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbb_tennhomloai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_chitiet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tenloai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_maloai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            this.gb_loaisp.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gct_loaisp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

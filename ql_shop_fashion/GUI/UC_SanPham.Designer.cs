@@ -132,6 +132,7 @@ namespace GUI
             this.lb_manhomloai = new DevExpress.XtraEditors.LabelControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lb_thongtinsp = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl_sanpham_size_mausac_thuonghieu)).BeginInit();
             this.layoutControl_sanpham_size_mausac_thuonghieu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sanpham_size_mausac_thuonghieu)).BeginInit();
@@ -287,6 +288,7 @@ namespace GUI
             // gb_ctsp
             // 
             this.gb_ctsp.BackColor = System.Drawing.Color.White;
+            this.gb_ctsp.Controls.Add(this.lb_thongtinsp);
             this.gb_ctsp.Controls.Add(this.gb_dsthuoctinh);
             this.gb_ctsp.Controls.Add(this.btn_luusp);
             this.gb_ctsp.Controls.Add(this.pb_anhsp);
@@ -652,6 +654,7 @@ namespace GUI
             // 
             // txt_masanpham
             // 
+            this.txt_masanpham.Enabled = false;
             this.txt_masanpham.Location = new System.Drawing.Point(380, 39);
             this.txt_masanpham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_masanpham.Name = "txt_masanpham";
@@ -862,6 +865,7 @@ namespace GUI
             // 
             // txt_makichthuoc
             // 
+            this.txt_makichthuoc.Enabled = false;
             this.txt_makichthuoc.Location = new System.Drawing.Point(166, 28);
             this.txt_makichthuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_makichthuoc.Name = "txt_makichthuoc";
@@ -1049,6 +1053,7 @@ namespace GUI
             // 
             // txt_mamausac
             // 
+            this.txt_mamausac.Enabled = false;
             this.txt_mamausac.Location = new System.Drawing.Point(169, 27);
             this.txt_mamausac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_mamausac.Name = "txt_mamausac";
@@ -1236,6 +1241,7 @@ namespace GUI
             // 
             // txt_math
             // 
+            this.txt_math.Enabled = false;
             this.txt_math.Location = new System.Drawing.Point(169, 27);
             this.txt_math.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_math.Name = "txt_math";
@@ -1430,6 +1436,7 @@ namespace GUI
             // 
             // txt_manhomloai
             // 
+            this.txt_manhomloai.Enabled = false;
             this.txt_manhomloai.Location = new System.Drawing.Point(169, 31);
             this.txt_manhomloai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_manhomloai.Name = "txt_manhomloai";
@@ -1478,6 +1485,16 @@ namespace GUI
             this.layoutControlItem1.Size = new System.Drawing.Size(1538, 1005);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
+            // 
+            // lb_thongtinsp
+            // 
+            this.lb_thongtinsp.AutoSize = true;
+            this.lb_thongtinsp.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_thongtinsp.Location = new System.Drawing.Point(277, 0);
+            this.lb_thongtinsp.Name = "lb_thongtinsp";
+            this.lb_thongtinsp.Size = new System.Drawing.Size(13, 19);
+            this.lb_thongtinsp.TabIndex = 50;
+            this.lb_thongtinsp.Text = "i";
             // 
             // UC_SanPham
             // 
@@ -1660,5 +1677,6 @@ namespace GUI
         private DevExpress.XtraEditors.SimpleButton btn_mochonanhsp;
         private DevExpress.XtraEditors.SimpleButton btn_luusp;
         private System.Windows.Forms.GroupBox gb_dsthuoctinh;
+        private System.Windows.Forms.Label lb_thongtinsp;
     }
 }

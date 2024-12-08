@@ -11,6 +11,10 @@
       <Column Name="trang_thai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="hoa_don_chi_tiet_hoa_don" Member="hoa_don" ThisKey="ma_hoa_don" OtherKey="ma_hoa_don" Type="hoa_don" IsForeignKey="true" />
+      <Association Name="hoa_don_chi_tiet_hoa_don1" Member="hoa_don1" ThisKey="ma_hoa_don" OtherKey="ma_hoa_don" Type="hoa_don" IsForeignKey="true" />
+      <Association Name="thuoc_tinh_san_pham_chi_tiet_hoa_don" Member="thuoc_tinh_san_pham" ThisKey="ma_thuoc_tinh" OtherKey="ma_thuoc_tinh" Type="thuoc_tinh_san_pham" IsForeignKey="true" />
+      <Association Name="thuoc_tinh_san_pham_chi_tiet_hoa_don1" Member="thuoc_tinh_san_pham1" ThisKey="ma_thuoc_tinh" OtherKey="ma_thuoc_tinh" Type="thuoc_tinh_san_pham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.chi_tiet_hoa_don_doi_tra" Member="chi_tiet_hoa_don_doi_tras">
@@ -48,7 +52,7 @@
     <Type Name="hinh_anh_san_pham">
       <Column Name="ma_hinh_anh" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ma_san_pham" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="hinh_anh" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="hinh_anh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="san_pham_hinh_anh_san_pham" Member="san_pham" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" />
@@ -76,6 +80,8 @@
       <Column Name="trang_thai_doi_tra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="hoa_don_chi_tiet_hoa_don" Member="chi_tiet_hoa_dons" ThisKey="ma_hoa_don" OtherKey="ma_hoa_don" Type="chi_tiet_hoa_don" />
+      <Association Name="hoa_don_chi_tiet_hoa_don1" Member="chi_tiet_hoa_dons1" ThisKey="ma_hoa_don" OtherKey="ma_hoa_don" Type="chi_tiet_hoa_don" />
       <Association Name="hoa_don_hoa_don_doi_tra" Member="hoa_don_doi_tra" ThisKey="ma_hoa_don" OtherKey="ma_hoa_don" Type="hoa_don_doi_tra" Cardinality="One" />
       <Association Name="hoa_don_hoa_don_doi_tra1" Member="hoa_don_doi_tra1" ThisKey="ma_hoa_don" OtherKey="ma_hoa_don" Type="hoa_don_doi_tra" Cardinality="One" />
       <Association Name="khach_hang_hoa_don" Member="khach_hang" ThisKey="ma_khach_hang" OtherKey="ma_khach_hang" Type="khach_hang" IsForeignKey="true" />
@@ -247,6 +253,17 @@
       <Association Name="tai_khoan_nhan_vien1" Member="tai_khoan1" ThisKey="tai_khoan_id" OtherKey="tai_khoan_id" Type="tai_khoan" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.nhom_loai" Member="nhom_loais">
+    <Type Name="nhom_loai">
+      <Column Name="ma_nhom_loai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ten_nhom_loai" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="chi_tiet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="nhom_loai_loai_san_pham" Member="loai_san_phams" ThisKey="ma_nhom_loai" OtherKey="ma_nhom_loai" Type="loai_san_pham" />
+      <Association Name="nhom_loai_loai_san_pham1" Member="loai_san_phams1" ThisKey="ma_nhom_loai" OtherKey="ma_nhom_loai" Type="loai_san_pham" />
+    </Type>
+  </Table>
   <Table Name="dbo.nhap_hang" Member="nhap_hangs">
     <Type Name="nhap_hang">
       <Column Name="ma_nhap_hang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -265,17 +282,6 @@
       <Association Name="nhan_vien_nhap_hang" Member="nhan_vien" ThisKey="ma_nhan_vien" OtherKey="ma_nhan_vien" Type="nhan_vien" IsForeignKey="true" />
       <Association Name="nha_cung_cap_nhap_hang1" Member="nha_cung_cap1" ThisKey="ma_nha_cung_cap" OtherKey="ma_nha_cung_cap" Type="nha_cung_cap" IsForeignKey="true" />
       <Association Name="nhan_vien_nhap_hang1" Member="nhan_vien1" ThisKey="ma_nhan_vien" OtherKey="ma_nhan_vien" Type="nhan_vien" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.nhom_loai" Member="nhom_loais">
-    <Type Name="nhom_loai">
-      <Column Name="ma_nhom_loai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ten_nhom_loai" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="chi_tiet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="nhom_loai_loai_san_pham" Member="loai_san_phams" ThisKey="ma_nhom_loai" OtherKey="ma_nhom_loai" Type="loai_san_pham" />
-      <Association Name="nhom_loai_loai_san_pham1" Member="loai_san_phams1" ThisKey="ma_nhom_loai" OtherKey="ma_nhom_loai" Type="loai_san_pham" />
     </Type>
   </Table>
   <Table Name="dbo.nhom_quyen" Member="nhom_quyens">
@@ -302,6 +308,20 @@
       <Association Name="man_hinh_phan_quyen1" Member="man_hinh1" ThisKey="id_man_hinh" OtherKey="id_man_hinh" Type="man_hinh" IsForeignKey="true" />
       <Association Name="nhom_quyen_phan_quyen" Member="nhom_quyen" ThisKey="id_nhom_quyen" OtherKey="id_nhom_quyen" Type="nhom_quyen" IsForeignKey="true" />
       <Association Name="nhom_quyen_phan_quyen1" Member="nhom_quyen1" ThisKey="id_nhom_quyen" OtherKey="id_nhom_quyen" Type="nhom_quyen" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.phuong_thuc_thanh_toan" Member="phuong_thuc_thanh_toans">
+    <Type Name="phuong_thuc_thanh_toan">
+      <Column Name="ma_phuong_thuc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ten_phuong_thuc" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="mo_ta" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="trang_thai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="phuong_thuc_thanh_toan_hoa_don" Member="hoa_dons" ThisKey="ma_phuong_thuc" OtherKey="ma_phuong_thuc" Type="hoa_don" />
+      <Association Name="phuong_thuc_thanh_toan_hoa_don1" Member="hoa_dons1" ThisKey="ma_phuong_thuc" OtherKey="ma_phuong_thuc" Type="hoa_don" />
+      <Association Name="phuong_thuc_thanh_toan_hoa_don_doi_tra" Member="hoa_don_doi_tras" ThisKey="ma_phuong_thuc" OtherKey="ma_phuong_thuc" Type="hoa_don_doi_tra" />
+      <Association Name="phuong_thuc_thanh_toan_hoa_don_doi_tra1" Member="hoa_don_doi_tras1" ThisKey="ma_phuong_thuc" OtherKey="ma_phuong_thuc" Type="hoa_don_doi_tra" />
     </Type>
   </Table>
   <Table Name="dbo.san_pham" Member="san_phams">
@@ -334,20 +354,6 @@
       <Association Name="loai_san_pham_san_pham1" Member="loai_san_pham1" ThisKey="ma_loai" OtherKey="ma_loai" Type="loai_san_pham" IsForeignKey="true" />
       <Association Name="thuong_hieu_san_pham" Member="thuong_hieu" ThisKey="ma_thuong_hieu" OtherKey="ma_thuong_hieu" Type="thuong_hieu" IsForeignKey="true" />
       <Association Name="thuong_hieu_san_pham1" Member="thuong_hieu1" ThisKey="ma_thuong_hieu" OtherKey="ma_thuong_hieu" Type="thuong_hieu" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.phuong_thuc_thanh_toan" Member="phuong_thuc_thanh_toans">
-    <Type Name="phuong_thuc_thanh_toan">
-      <Column Name="ma_phuong_thuc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ten_phuong_thuc" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="mo_ta" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="trang_thai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="phuong_thuc_thanh_toan_hoa_don" Member="hoa_dons" ThisKey="ma_phuong_thuc" OtherKey="ma_phuong_thuc" Type="hoa_don" />
-      <Association Name="phuong_thuc_thanh_toan_hoa_don1" Member="hoa_dons1" ThisKey="ma_phuong_thuc" OtherKey="ma_phuong_thuc" Type="hoa_don" />
-      <Association Name="phuong_thuc_thanh_toan_hoa_don_doi_tra" Member="hoa_don_doi_tras" ThisKey="ma_phuong_thuc" OtherKey="ma_phuong_thuc" Type="hoa_don_doi_tra" />
-      <Association Name="phuong_thuc_thanh_toan_hoa_don_doi_tra1" Member="hoa_don_doi_tras1" ThisKey="ma_phuong_thuc" OtherKey="ma_phuong_thuc" Type="hoa_don_doi_tra" />
     </Type>
   </Table>
   <Table Name="dbo.tai_khoan" Member="tai_khoans">
@@ -401,6 +407,8 @@
       <Column Name="gia_ban" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="thuoc_tinh_san_pham_chi_tiet_hoa_don" Member="chi_tiet_hoa_dons" ThisKey="ma_thuoc_tinh" OtherKey="ma_thuoc_tinh" Type="chi_tiet_hoa_don" />
+      <Association Name="thuoc_tinh_san_pham_chi_tiet_hoa_don1" Member="chi_tiet_hoa_dons1" ThisKey="ma_thuoc_tinh" OtherKey="ma_thuoc_tinh" Type="chi_tiet_hoa_don" />
       <Association Name="thuoc_tinh_san_pham_chi_tiet_hoa_don_doi_tra" Member="chi_tiet_hoa_don_doi_tras" ThisKey="ma_thuoc_tinh" OtherKey="ma_thuoc_tinh" Type="chi_tiet_hoa_don_doi_tra" />
       <Association Name="thuoc_tinh_san_pham_chi_tiet_hoa_don_doi_tra1" Member="chi_tiet_hoa_don_doi_tras1" ThisKey="ma_thuoc_tinh" OtherKey="ma_thuoc_tinh" Type="chi_tiet_hoa_don_doi_tra" />
       <Association Name="kich_thuoc_thuoc_tinh_san_pham" Member="kich_thuoc" ThisKey="ma_kich_thuoc" OtherKey="ma_kich_thuoc" Type="kich_thuoc" IsForeignKey="true" />

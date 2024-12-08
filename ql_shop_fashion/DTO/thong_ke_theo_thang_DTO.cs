@@ -8,9 +8,9 @@ namespace DTO
 {
     public class thong_ke_theo_thang_DTO
     {
-        public int ProductID { get; set; }
-        public int TotalQuantitySold { get; set; }
-        public decimal TotalRevenue { get; set; }
-        public int TotalStocked { get; set; }
+        public string Thang { get; set; }
+        public string Nam { get; set; }
+        public int TongSanPham { get; set; }
+        public decimal? TongTien { get; set; }
     }
 }

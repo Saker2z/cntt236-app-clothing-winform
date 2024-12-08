@@ -262,32 +262,21 @@ namespace DAL
             return products;
         }
 
-        public bool addThuocTinhSanPham(thuoc_tinh_DTO tt)
+        public bool addThuocTinhSanPham(thuoc_tinh_san_pham newThuocTinh)
         {
             try
             {
-                // Tạo đối tượng thực thể từ DTO
-                var newRecord = new thuoc_tinh_san_pham
-                {
-                    ma_san_pham = tt.ma_san_pham,
-                    ma_kich_thuoc = tt.ma_kich_thuoc,
-                    ma_mau_sac = tt.ma_mau_sac,
-                    so_luong_ton = tt.so_luong_ton,
-                    gia_ban = tt.gia_ban
-                };
-
-                // Thêm đối tượng vào cơ sở dữ liệu
-                qldata.thuoc_tinh_san_phams.InsertOnSubmit(newRecord);
-                qldata.SubmitChanges();
+                qldata.thuoc_tinh_san_phams.InsertOnSubmit(newThuocTinh); // Chỉ cần thêm đối tượng mới
+                qldata.SubmitChanges(); // Lưu thay đổi vào cơ sở dữ liệu
                 return true;
             }
             catch (Exception ex)
             {
-                // Log lỗi nếu cần
-                Console.WriteLine($"Lỗi: {ex.Message}");
+                Console.WriteLine("Lỗi khi thêm thuộc tính sản phẩm: " + ex.Message); // Log lỗi
                 return false;
             }
         }
+
 
 
 

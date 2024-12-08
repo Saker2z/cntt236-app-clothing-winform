@@ -26,9 +26,7 @@ namespace GUI
         private thuong_hieu_sql_BLL thuong_hieu_bll;
         private nhom_loai_sql_BLL nhom_loai_bll;
         private loai_sanpham_sql_BLL loai_sanpham_bll;
-        private hinh_anh_sp_sql_BLL hinh_anh_sp_bll;
-        private int idsp = 0;
-        private int checkpoin = 0;
+        private string selectedProductInfo;
         private Form popup;
 
         public UC_SanPham()
@@ -66,13 +64,15 @@ namespace GUI
             btn_luusp.Click += Btn_luusp_Click;
             btn_loadsp.Click += Btn_loadsp_Click;
 
-            gct_sp.MouseEnter += Gct_sp_MouseEnter;
-            gct_sp.MouseMove += Gct_sp_MouseMove;
-            gct_sp.MouseLeave += Gct_sp_MouseLeave;
-
             btn_themspvaothuoctinh.Click += Btn_themspvaothuoctinh_Click;
 
             btn_mochonanhsp.Click += Btn_mochonanhsp_Click;
+
+            var gridView = gct_sp.MainView as GridView;
+            gridView.FocusedRowChanged += GridView_FocusedRowChanged;
+
+            lb_thongtinsp.MouseHover += Lb_thongtinsp_MouseHover;
+            lb_thongtinsp.MouseLeave += Lb_thongtinsp_MouseLeave;
 
 
             // Gán sự kiện MouseEnter và MouseLeave cho nút
@@ -156,100 +156,8 @@ namespace GUI
         }
 
 
-        private void Btn_themspvaothuoctinh_Click(object sender, EventArgs e)
-        {
-            frmThemSPVaoThongTin sp = new frmThemSPVaoThongTin();
-            sp.ShowDialog();
-        }
 
-        private void Btn_luusp_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var product = new san_pham_DTO
-                {
-                    ma_san_pham = int.Parse(txt_masanpham.Text),
-                    ten_san_pham = txt_tensanpham.Text,
-                    ma_loai = int.Parse(cbb_maloai.EditValue.ToString()),
-                    ma_thuong_hieu = int.Parse(cbb_mathuonghieu.EditValue.ToString()),
-                    giam_gia = decimal.Parse(txt_giamgia.Text),
-                    so_luong_kich_thuoc = int.Parse(txt_soluongkichthuoc.Text),
-                    so_luong_mau_sac = int.Parse(txt_soluongmausac.Text),
-                    so_luong = int.Parse(txt_soluong.Text),
-                    mo_ta = txt_mota.Text,
-                    gia_binh_quan = decimal.Parse(txt_giabinhquan.Text),
-                    hinh_thuc_ban = int.Parse(cbb_hinhthucban.EditValue.ToString())
-                };
-
-                // Lưu sản phẩm
-                bool isSaved = sp_bll.SaveProducts(product);
-
-                if (isSaved)
-                {
-                    Debug.WriteLine($"Sản phẩm {product.ten_san_pham} được lưu thành công.");
-
-                    // Kiểm tra nếu có hình ảnh mới đã chọn
-                    if (!string.IsNullOrEmpty(selectedImagePath))
-                    {
-                        string savedImagePath = SaveImageToLocalFolder(selectedImagePath, product.ma_san_pham);
-
-                        if (!string.IsNullOrEmpty(savedImagePath))
-                        {
-                            bool isImageSaved = sp_bll.AddImageForProduct(product.ma_san_pham, savedImagePath);
-                            if (isImageSaved)
-                            {
-                                Debug.WriteLine($"Hình ảnh được lưu thành công: {savedImagePath}");
-                            }
-                            else
-                            {
-                                Debug.WriteLine("Không thể lưu hình ảnh vào cơ sở dữ liệu.");
-                            }
-                        }
-                    }
-
-                    // Thông báo thành công và tải lại danh sách sản phẩm
-                    XtraMessageBox.Show("Lưu sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadSP();
-                    clearsp();
-                }
-                else
-                {
-                    XtraMessageBox.Show("Lưu sản phẩm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Lỗi: {ex.Message}");
-                XtraMessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-        private void ConfigureGridViewSearch(GridView gridView, string findColumns, EventHandler clickEvent)
-        {
-            if (gridView == null) return;
-
-            // Gán sự kiện Click nếu có
-            if (clickEvent != null)
-            {
-                gridView.Click += clickEvent;
-            }
-
-            // Cấu hình thanh tìm kiếm
-            gridView.OptionsFind.AlwaysVisible = true; // Luôn hiển thị thanh tìm kiếm
-            gridView.OptionsFind.ShowClearButton = true; // Hiển thị nút xóa
-            gridView.OptionsFind.ShowFindButton = false; // Tìm ngay khi gõ (ẩn nút tìm kiếm)
-            gridView.OptionsFind.FindFilterColumns = findColumns; // Chỉ định các cột tìm kiếm
-        }
+        
 
 
         private string selectedImagePath; // Khai báo biến toàn cục để lưu đường dẫn file gốc
@@ -274,6 +182,105 @@ namespace GUI
 
 
 
+        private void Lb_thongtinsp_MouseLeave(object sender, EventArgs e)
+        {
+            HidePopup();
+        }
+
+        private void Lb_thongtinsp_MouseHover(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(selectedProductInfo))
+            {
+                ShowPopup();
+            }
+        }
+
+        private void GridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            var gridView = sender as GridView;
+
+            if (gridView != null)
+            {
+                // Lấy mã sản phẩm từ hàng được chọn
+                var maSP = (int)gridView.GetRowCellValue(e.FocusedRowHandle, "ma_san_pham");
+
+                // Gọi phương thức lấy thông tin chi tiết sản phẩm từ BLL
+                var thongTinSanPhamList = thong_tin_bll.get_all_ttsp()
+                    .Where(tt => tt.ma_san_pham == maSP)
+                    .ToList();
+
+                // Kiểm tra nếu không có thông tin chi tiết
+                if (!thongTinSanPhamList.Any())
+                {
+                    selectedProductInfo = "";
+                    HidePopup();
+                    return;
+                }
+
+                // Lưu thông tin chi tiết vào biến selectedProductInfo
+                StringBuilder infoContent = new StringBuilder();
+                infoContent.AppendLine($"Mã sản phẩm: {maSP}");
+                foreach (var item in thongTinSanPhamList)
+                {
+                    infoContent.AppendLine($"{item.key_attribute}: {item.value_attribute}");
+                }
+
+                // Cập nhật trực tiếp vào nội dung của popup nếu đã tồn tại
+                selectedProductInfo = infoContent.ToString();
+                if (popup != null && popup.Controls.Count > 0)
+                {
+                    var lblInfo = popup.Controls[0] as Label;
+                    if (lblInfo != null)
+                    {
+                        lblInfo.Text = selectedProductInfo;
+                        lblInfo.Refresh(); // Làm mới nội dung của Label
+                    }
+                }
+            }
+        }
+
+        
+
+        private void ShowPopup()
+        {
+            if (popup == null || popup.IsDisposed)
+            {
+                popup = new Form
+                {
+                    StartPosition = FormStartPosition.Manual,
+                    Size = new Size(450, 150),
+                    FormBorderStyle = FormBorderStyle.None,
+                    BackColor = Color.LightYellow,
+                    Opacity = 0.9,
+                    ShowInTaskbar = false,
+                    TopMost = true
+                };
+
+                // Tạo Label để hiển thị thông tin
+                popup.Controls.Clear();
+                Label lblInfo = new Label
+                {
+                    Dock = DockStyle.Fill,
+                    TextAlign = ContentAlignment.TopLeft,
+                    ForeColor = Color.Black,
+                    Padding = new Padding(10),
+                    AutoSize = true,
+                    Text = selectedProductInfo
+                };
+
+                popup.Controls.Add(lblInfo);
+            }
+
+            // Đặt vị trí hiển thị popup gần con trỏ chuột
+            var mousePosition = Control.MousePosition;
+            popup.Location = new Point(mousePosition.X + 10, mousePosition.Y + 10);
+
+            // Hiển thị form nếu chưa hiển thị
+            if (!popup.Visible)
+            {
+                popup.Show();
+            }
+        }
 
 
         private void HidePopup()
@@ -284,100 +291,23 @@ namespace GUI
             }
         }
 
-        private void Gct_sp_MouseLeave(object sender, EventArgs e)
+
+        
+        private void Btn_themspvaothuoctinh_Click(object sender, EventArgs e)
         {
-            HidePopup();
-        }
-   
-
-        private void Gct_sp_MouseMove(object sender, MouseEventArgs e)
-        {
-            var gridControl = sender as DevExpress.XtraGrid.GridControl;
-            var view = gridControl.MainView as GridView;
-
-            // Lấy vị trí con trỏ chuột
-            var hitInfo = view.CalcHitInfo(e.Location);
-
-            if (hitInfo.InRow && hitInfo.RowHandle >= 0)
-            {
-                // Lấy mã sản phẩm từ hàng được di chuột qua
-                var maSP = (int)view.GetRowCellValue(hitInfo.RowHandle, "ma_san_pham");
-
-                // Gọi phương thức lấy thông tin chi tiết sản phẩm từ BLL
-                var thongTinSanPhamList = thong_tin_bll.get_all_ttsp()
-                    .Where(tt => tt.ma_san_pham == maSP)
-                    .ToList();
-
-                // Kiểm tra nếu không có thông tin chi tiết
-                if (!thongTinSanPhamList.Any())
-                {
-                    HidePopup();
-                    return;
-                }
-
-                // Chuẩn bị nội dung để hiển thị
-                StringBuilder infoContent = new StringBuilder();
-                infoContent.AppendLine($"Mã sản phẩm: {maSP}");
-                foreach (var item in thongTinSanPhamList)
-                {
-                    infoContent.AppendLine($"{item.key_attribute}: {item.value_attribute}");
-                }
-
-                // Tạo và hiển thị form popup nếu chưa tồn tại
-                if (popup == null || popup.IsDisposed)
-                {
-                    popup = new Form
-                    {
-                        StartPosition = FormStartPosition.Manual,
-                        Size = new Size(450, 150),
-                        FormBorderStyle = FormBorderStyle.None,
-                        BackColor = Color.LightYellow,
-                        Opacity = 0.9,
-                        ShowInTaskbar = false,
-                        TopMost = true
-                    };
-
-                    // Tạo Label để hiển thị thông tin
-                    Label lblInfo = new Label
-                    {
-                        Dock = DockStyle.Fill,
-                        TextAlign = ContentAlignment.TopLeft,
-                        ForeColor = Color.Black,
-                        Padding = new Padding(10),
-                        AutoSize = true
-                    };
-                    popup.Controls.Add(lblInfo);
-                }
-
-                // Cập nhật nội dung chi tiết sản phẩm
-                var lbl = popup.Controls[0] as Label;
-                lbl.Text = infoContent.ToString();
-
-                // Đặt vị trí hiển thị popup gần con trỏ chuột
-                var mousePosition = Control.MousePosition;
-                popup.Location = new Point(mousePosition.X + 10, mousePosition.Y + 10);
-
-                // Hiển thị form nếu chưa hiển thị
-                if (!popup.Visible)
-                    popup.Show();
-            }
-            else
-            {
-                // Ẩn popup nếu không di chuột trên hàng
-                HidePopup();
-            }
+            frmThemSPVaoThuocTinh sp = new frmThemSPVaoThuocTinh();
+            sp.ShowDialog();
         }
 
-
-
-        private void Gct_sp_MouseEnter(object sender, EventArgs e)
-        {
-            
-        }
 
         private void Btn_xoasp_Click(object sender, EventArgs e)
         {
             xoaSP();
+        }
+
+        private void Btn_luusp_Click(object sender, EventArgs e)
+        {
+            luuSP();
         }
 
         private void Btn_themsp_Click(object sender, EventArgs e)
@@ -727,7 +657,7 @@ namespace GUI
                     else
                     {
                         pb_anhsp.Image = null; // Không có ảnh nào
-                        Debug.WriteLine("Không tìm thấy hình ảnh cho sản phẩm này.");
+                        XtraMessageBox.Show("Không tìm thấy hình ảnh cho sản phẩm này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
@@ -1059,20 +989,6 @@ namespace GUI
 
         private bool kiemTraSP()
         {
-            // Kiểm tra trường Mã Sản Phẩm
-            if (string.IsNullOrWhiteSpace(txt_masanpham.Text))
-            {
-                XtraMessageBox.Show("Vui lòng nhập mã sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_masanpham.Focus();
-                return false;
-            }
-
-            if (!int.TryParse(txt_masanpham.Text, out int maSP))
-            {
-                XtraMessageBox.Show("Mã sản phẩm không hợp lệ. Vui lòng nhập số nguyên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_masanpham.Focus();
-                return false;
-            }
 
             // Kiểm tra trường Tên Sản Phẩm
             if (string.IsNullOrWhiteSpace(txt_tensanpham.Text))
@@ -1159,33 +1075,27 @@ namespace GUI
         }
 
 
-        private string SaveImageToLocalFolder(string originalPath, int productId)
+        private string SaveImageToLocalFolder(string imagePath, int productId)
         {
             try
             {
-                // Thư mục lưu trữ hình ảnh
-                string folderPath = Path.Combine(Application.StartupPath, "Images");
-                if (!Directory.Exists(folderPath))
+                string directoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ProductImages");
+                if (!Directory.Exists(directoryPath))
                 {
-                    Directory.CreateDirectory(folderPath);
+                    Directory.CreateDirectory(directoryPath);
                 }
 
-                // Tạo tên file mới
-                string fileName = $"Product_{productId}_{DateTime.Now:yyyyMMddHHmmss}.jpg";
-                string newPath = Path.Combine(folderPath, fileName);
-
-                // Sao chép file vào thư mục
-                File.Copy(originalPath, newPath, true);
-                Debug.WriteLine($"Hình ảnh đã được lưu tại: {newPath}");
-
-                return newPath; // Trả về đường dẫn file mới
+                string newImagePath = Path.Combine(directoryPath, $"{productId}_{Path.GetFileName(imagePath)}");
+                File.Copy(imagePath, newImagePath, true); // Ghi đè nếu tệp đã tồn tại
+                return newImagePath;
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Lỗi khi lưu hình ảnh: " + ex.Message);
+                Debug.WriteLine("Lỗi khi sao chép hình ảnh: " + ex.Message);
                 return null;
             }
         }
+
 
 
 
@@ -1267,7 +1177,67 @@ namespace GUI
         }
 
 
+        public void luuSP()
+        {
+            try
+            {
+                var product = new san_pham_DTO
+                {
+                    ma_san_pham = int.Parse(txt_masanpham.Text),
+                    ten_san_pham = txt_tensanpham.Text,
+                    ma_loai = int.Parse(cbb_maloai.EditValue.ToString()),
+                    ma_thuong_hieu = int.Parse(cbb_mathuonghieu.EditValue.ToString()),
+                    giam_gia = decimal.Parse(txt_giamgia.Text),
+                    so_luong_kich_thuoc = int.Parse(txt_soluongkichthuoc.Text),
+                    so_luong_mau_sac = int.Parse(txt_soluongmausac.Text),
+                    so_luong = int.Parse(txt_soluong.Text),
+                    mo_ta = txt_mota.Text,
+                    gia_binh_quan = decimal.Parse(txt_giabinhquan.Text),
+                    hinh_thuc_ban = int.Parse(cbb_hinhthucban.EditValue.ToString())
+                };
 
+                // Lưu sản phẩm
+                bool isSaved = sp_bll.SaveProducts(product);
+
+                if (isSaved)
+                {
+                    Debug.WriteLine($"Sản phẩm {product.ten_san_pham} được lưu thành công.");
+
+                    // Kiểm tra nếu có hình ảnh mới đã chọn
+                    if (!string.IsNullOrEmpty(selectedImagePath))
+                    {
+                        string savedImagePath = SaveImageToLocalFolder(selectedImagePath, product.ma_san_pham);
+
+                        if (!string.IsNullOrEmpty(savedImagePath))
+                        {
+                            bool isImageSaved = sp_bll.AddImageForProduct(product.ma_san_pham, savedImagePath);
+                            if (isImageSaved)
+                            {
+                                Debug.WriteLine("Hình ảnh được lưu hoặc cập nhật thành công.");
+                            }
+                            else
+                            {
+                                Debug.WriteLine("Không thể lưu hoặc cập nhật hình ảnh vào cơ sở dữ liệu.");
+                            }
+                        }
+                    }
+
+                    // Thông báo thành công và tải lại danh sách sản phẩm
+                    XtraMessageBox.Show("Lưu sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadSP();
+                    clearsp();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Lưu sản phẩm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Lỗi: {ex.Message}");
+                XtraMessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
 
 
@@ -1316,20 +1286,6 @@ namespace GUI
 
         private bool kiemTraSize()
         {
-            // Kiểm tra trường Mã Sản Phẩm
-            if (string.IsNullOrWhiteSpace(txt_makichthuoc.Text))
-            {
-                XtraMessageBox.Show("Vui lòng nhập mã kích thước.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_makichthuoc.Focus();
-                return false;
-            }
-
-            if (!int.TryParse(txt_makichthuoc.Text, out int maKT))
-            {
-                XtraMessageBox.Show("Mã kích thước không hợp lệ. Vui lòng nhập số nguyên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_makichthuoc.Focus();
-                return false;
-            }
 
             // Kiểm tra trường Tên Sản Phẩm
             if (string.IsNullOrWhiteSpace(txt_tenkichthuoc.Text))
@@ -1347,44 +1303,62 @@ namespace GUI
                 return false;
             }
 
+            if (!decimal.TryParse(txt_phuphisize.Text, out decimal phuPhiSize))
+            {
+                XtraMessageBox.Show("Phụ phí size không hợp lệ. Vui lòng nhập số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_phuphisize.Focus();
+                return false;
+            }
+
+
             // Nếu tất cả các kiểm tra đều hợp lệ
             return true;
         }
+
+        private bool kiemTraTenKichThuoc(string tenKichThuoc)
+        {
+            // Danh sách các kích thước hợp lệ
+            var validSizes = new List<string> { "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL", "Freesize" };
+
+            if (!validSizes.Contains(tenKichThuoc))
+            {
+                XtraMessageBox.Show("Tên kích thước không hợp lệ. Vui lòng nhập đúng tên kích thước (S, M, L, XL,...).",
+                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
 
         public void themSize()
         {
             if (!kiemTraSize())
             {
-                return;
+                return; // Dừng nếu kiểm tra không hợp lệ
             }
-
-            // Danh sách các kích thước hợp lệ
-            var validSizes = new List<string> { "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL", "Freesize" };
 
             try
             {
                 // Kiểm tra tên kích thước
-                if (!validSizes.Contains(txt_tenkichthuoc.Text))
+                if (!kiemTraTenKichThuoc(txt_tenkichthuoc.Text))
                 {
-                    XtraMessageBox.Show("Tên kích thước không hợp lệ. Vui lòng nhập đúng tên kích thước (S, M, L, XL,...).",
-                                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    return; // Dừng nếu tên kích thước không hợp lệ
                 }
 
                 var newSize = new kich_thuoc
                 {
-                    ma_kich_thuoc = int.Parse(txt_makichthuoc.Text),
                     ten_kich_thuoc = txt_tenkichthuoc.Text,
                     phu_phi_size = decimal.Parse(txt_phuphisize.Text)
                 };
 
+                // Gọi BLL để thêm kích thước
                 bool isAdded = size_bll.AddSize(newSize);
 
                 if (isAdded)
                 {
-                    XtraMessageBox.Show("Thêm kích thước thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearsize();
-                    loadSize();
+                    XtraMessageBox.Show("Thêm kích thước thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clearsize(); // Xóa dữ liệu trên form
+                    loadSize(); // Tải lại danh sách kích thước
                 }
                 else
                 {
@@ -1393,13 +1367,21 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Lỗi không xác định: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
-        private void suaSize()
+
+
+
+        public void suaSize()
         {
+            if (!kiemTraSize())
+            {
+                return; // Dừng nếu kiểm tra không hợp lệ
+            }
+
             // Danh sách các kích thước hợp lệ
             var validSizes = new List<string> { "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL", "Freesize" };
 
@@ -1407,7 +1389,7 @@ namespace GUI
             {
                 if (int.TryParse(txt_makichthuoc.Text, out int maKichThuoc))
                 {
-                    // Kiểm tra tên kích thước
+                    // Kiểm tra tên kích thước hợp lệ
                     if (!validSizes.Contains(txt_tenkichthuoc.Text))
                     {
                         XtraMessageBox.Show("Tên kích thước không hợp lệ. Vui lòng nhập đúng tên kích thước (S, M, L, XL,...).",
@@ -1422,96 +1404,80 @@ namespace GUI
                         phu_phi_size = decimal.Parse(txt_phuphisize.Text)
                     };
 
+                    // Gọi BLL để sửa kích thước
                     bool isUpdated = size_bll.UpdateSize(updatedSize);
 
                     if (isUpdated)
                     {
-                        XtraMessageBox.Show("Sửa kích thước thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        loadSize();
-                        clearsize();
+                        XtraMessageBox.Show("Sửa kích thước thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadSize(); // Tải lại danh sách kích thước
+                        clearsize(); // Xóa dữ liệu trên form
                     }
                     else
                     {
-                        XtraMessageBox.Show("Sửa kích thước thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show("Sửa kích thước thất bại. Mã kích thước không tồn tại.",
+                                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    XtraMessageBox.Show("Mã kích thước không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("Mã kích thước không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Lỗi không xác định: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         public void xoaSize()
         {
             GridView gridView = gct_size.MainView as GridView;
-            if (gridView == null)
-                return;
-
-            // Kiểm tra xem có dòng nào được chọn không
-            int selectedRowHandle = gridView.FocusedRowHandle;
-            if (selectedRowHandle < 0)
+            if (gridView == null || gridView.FocusedRowHandle < 0)
             {
-                XtraMessageBox.Show("Vui lòng chọn dòng để xóa.");
+                XtraMessageBox.Show("Vui lòng chọn một kích thước để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Lấy giá trị của các cột "ma_kich_thuoc" từ dòng được chọn
-            int maSize = Convert.ToInt32(gridView.GetRowCellValue(selectedRowHandle, "ma_kich_thuoc"));
+            // Lấy mã kích thước từ dòng được chọn
+            int maKichThuoc = Convert.ToInt32(gridView.GetRowCellValue(gridView.FocusedRowHandle, "ma_kich_thuoc"));
 
             // Hiển thị xác nhận trước khi xóa
-            var confirmResult = XtraMessageBox.Show("Bạn có chắc chắn muốn xóa " + $"mã kích thước: {maSize}", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            var confirmResult = XtraMessageBox.Show($"Bạn có chắc chắn muốn xóa kích thước có mã {maKichThuoc}?",
+                                                     "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (confirmResult == DialogResult.Yes)
             {
-                // Gọi phương thức xóa từ lớp DAL
-                size_bll = new size_sql_BLL();
-                bool deleteSuccess = size_bll.DeleteSizeById(maSize);
-
-                if (deleteSuccess)
+                try
                 {
-                    XtraMessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Gọi BLL để xóa kích thước
+                    bool isDeleted = size_bll.DeleteSizeById(maKichThuoc);
 
-                    // Xóa dòng khỏi GridView và làm mới lại dữ liệu hiển thị
-                    gridView.DeleteRow(selectedRowHandle);
-                    clearsize();
-                    gct_size.RefreshDataSource();
+                    if (isDeleted)
+                    {
+                        XtraMessageBox.Show("Xóa kích thước thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clearsize();
+                        loadSize(); // Tải lại danh sách kích thước
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Xóa kích thước thất bại. Có thể kích thước đang được sử dụng ở bảng khác.",
+                                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    XtraMessageBox.Show("Có lỗi xảy ra khi xóa dữ liệu.", "Lỗi tồn tải ở bảng khác", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Lỗi khi xóa kích thước: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-
-            else
-            {
-                clearsize();
-                gct_size.RefreshDataSource();
             }
         }
 
 
+
         private bool kiemTraMS()
         {
-            // Kiểm tra trường Mã Màu Sắc
-            if (string.IsNullOrWhiteSpace(txt_mamausac.Text))
-            {
-                XtraMessageBox.Show("Vui lòng nhập mã màu sắc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_mamausac.Focus();
-                return false;
-            }
-
-            if (!int.TryParse(txt_mamausac.Text, out int maMS))
-            {
-                XtraMessageBox.Show("Mã màu sắc không hợp lệ. Vui lòng nhập số nguyên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_mamausac.Focus();
-                return false;
-            }
 
             // Kiểm tra trường Tên Màu Sắc
             if (string.IsNullOrWhiteSpace(txt_tenmausac.Text))
@@ -1528,6 +1494,13 @@ namespace GUI
                 txt_phuphimausac.Focus();
                 return false;
             }
+            if (!decimal.TryParse(txt_phuphimausac.Text, out decimal phuPhiMauSac))
+            {
+                XtraMessageBox.Show("Phụ phí màu sắc không hợp lệ. Vui lòng nhập số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_phuphimausac.Focus();
+                return false;
+            }
+
 
             // Nếu tất cả các kiểm tra đều hợp lệ
             return true;
@@ -1545,7 +1518,6 @@ namespace GUI
             {
                 var newMS = new mau_sac
                 {
-                    ma_mau_sac = int.Parse(txt_mamausac.Text),
                     ten_mau_sac = txt_tenmausac.Text,
                     phu_phi_mausac = decimal.Parse(txt_phuphimausac.Text)
                 };
@@ -1657,20 +1629,6 @@ namespace GUI
 
         private bool kiemTraTH()
         {
-            // Kiểm tra trường Mã Thương Hiệu
-            if (string.IsNullOrWhiteSpace(txt_math.Text))
-            {
-                XtraMessageBox.Show("Vui lòng nhập mã thương hiệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_math.Focus();
-                return false;
-            }
-
-            if (!int.TryParse(txt_math.Text, out int maTH))
-            {
-                XtraMessageBox.Show("Mã thương hiệu không hợp lệ. Vui lòng nhập số nguyên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_math.Focus();
-                return false;
-            }
 
             // Kiểm tra trường Tên Thương Hiệu
             if (string.IsNullOrWhiteSpace(txt_tenth.Text))
@@ -1704,7 +1662,6 @@ namespace GUI
             {
                 var newTH = new thuong_hieu
                 {
-                    ma_thuong_hieu = int.Parse(txt_math.Text),
                     ten_thuong_hieu = txt_tenth.Text,
                     mo_ta = txt_motath.Text
                 };
@@ -1816,20 +1773,6 @@ namespace GUI
 
         private bool kiemTraNL()
         {
-            // Kiểm tra trường Mã Nhóm Loại
-            if (string.IsNullOrWhiteSpace(txt_manhomloai.Text))
-            {
-                XtraMessageBox.Show("Vui lòng nhập mã nhóm loại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_manhomloai.Focus();
-                return false;
-            }
-
-            if (!int.TryParse(txt_manhomloai.Text, out int maTH))
-            {
-                XtraMessageBox.Show("Mã nhóm loại không hợp lệ. Vui lòng nhập số nguyên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_manhomloai.Focus();
-                return false;
-            }
 
             // Kiểm tra trường Tên Nhóm Loại
             if (string.IsNullOrWhiteSpace(txt_tennhomloai.Text))
@@ -1863,7 +1806,6 @@ namespace GUI
             {
                 var newNL = new nhom_loai
                 {
-                    ma_nhom_loai = int.Parse(txt_manhomloai.Text),
                     ten_nhom_loai = txt_tennhomloai.Text,
                     chi_tiet = txt_chitiet.Text
                 };
@@ -1905,8 +1847,8 @@ namespace GUI
                     if (isUpdated)
                     {
                         XtraMessageBox.Show("Sửa nhóm loại thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        clearthuonghieu();
-                        loadThuongHieu();
+                        clearnhomloai();
+                        loadNhomLoai();
                     }
                     else
                     {
@@ -1972,41 +1914,6 @@ namespace GUI
             }
         }
 
-
-        private void loadHinhAnh(int maSanPham)
-        {
-            try
-            {
-                var hinhAnhBLL = new hinh_anh_sp_sql_BLL();
-                var images = hinhAnhBLL.GetHinhAnhByMaSanPham(maSanPham);
-
-                if (images.Any())
-                {
-                    // Retrieve the first image for display
-                    string imagePath = images.First().hinh_anh;
-
-                    if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
-                    {
-                        pb_anhsp.Image = Image.FromFile(imagePath); // Load the image into the PictureBox
-                        pb_anhsp.Tag = imagePath; // Store the path for future use
-                    }
-                    else
-                    {
-                        pb_anhsp.Image = null; // Clear the PictureBox if the image file does not exist
-                        pb_anhsp.Tag = null;
-                    }
-                }
-                else
-                {
-                    pb_anhsp.Image = null; // Clear the PictureBox if no images exist
-                    pb_anhsp.Tag = null;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi tải hình ảnh: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
 
 

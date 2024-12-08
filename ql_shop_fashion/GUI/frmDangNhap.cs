@@ -26,7 +26,7 @@ namespace GUI
 
         private void LoadGifToPictureBox()
         {
-            string filePath = @"..\..\Resources\background_dn.gif";
+            string filePath = @"background_dn.gif";
             if (File.Exists(filePath)) // Kiểm tra xem file có tồn tại không
             {
                 background.Image = Image.FromFile(filePath);
