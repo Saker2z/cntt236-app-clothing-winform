@@ -11,17 +11,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using DevExpress.XtraSplashScreen;
 
 namespace GUI
 {
     public partial class frmDangNhap : DevExpress.XtraEditors.XtraForm
     {
-        QL_SHOP_DATADataContext dataContext;
+       
         private tai_khoan_sql_BLL tk_bll;
         public frmDangNhap()
         {
             InitializeComponent();
-            dataContext = new QL_SHOP_DATADataContext();
+           
         }
 
         private void LoadGifToPictureBox()
@@ -52,7 +53,7 @@ namespace GUI
 
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
-            LoadGifToPictureBox();
+           LoadGifToPictureBox();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,6 +85,7 @@ namespace GUI
             if (tk_bll.CheckLogin(tk, mk, out userRoleId))
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
                 int id_nv = tk_bll.get_id_nv_by_tk(tk);
                 // Hiển thị các màn hình mà người dùng có quyền truy cập
                 CheckAccessAndDisplayScreens(userRoleId);

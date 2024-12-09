@@ -94,14 +94,34 @@ namespace GUI
 
         public void ShowSupplierTotalsDialog(DataGridView dgv)
         {
+            // Kiểm tra nếu bảng không có dữ liệu
+            if (dgv == null || dgv.Rows.Count == 0)
+            {
+                ShowPopup("Không có dữ liệu!");
+                return;
+            }
+
             // Tính toán tổng giá nhập theo nhà cung cấp
             Dictionary<int, decimal> supplierTotals = CalculateSupplierTotals(dgv);
 
+            // Nếu không có dữ liệu hợp lệ để tính toán
+            if (supplierTotals.Count == 0)
+            {
+                ShowPopup("Không có dữ liệu hợp lệ để hiển thị!");
+                return;
+            }
+
             // Tạo danh sách string để hiển thị theo định dạng yêu cầu
             List<string> supplierTotalsText = supplierTotals
-                .Select(item => $"Tổng tiền của hóa đơn nhà cung cấp {item.Key}: {item.Value} VND")
+                .Select(item => $"Tổng tiền của hóa đơn nhà cung cấp mã {item.Key}: {item.Value} VND")
                 .ToList();
 
+            // Hiển thị popup với thông tin tổng tiền
+            ShowPopup(string.Join(Environment.NewLine, supplierTotalsText));
+        }
+
+        private void ShowPopup(string message)
+        {
             // Tạo form nhỏ để hiển thị thông tin
             popup = new Form
             {
@@ -114,10 +134,10 @@ namespace GUI
                 TopMost = true // Đảm bảo form ở trên cùng
             };
 
-            // Label để hiển thị thông tin tổng tiền nhà cung cấp
+            // Label để hiển thị thông tin
             Label lblInfo = new Label
             {
-                Text = string.Join(Environment.NewLine, supplierTotalsText),
+                Text = message,
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter,
                 ForeColor = Color.Black, // Màu chữ đen để dễ đọc trên nền cam
@@ -128,6 +148,7 @@ namespace GUI
             // Hiển thị form
             popup.Show();
         }
+
 
 
 

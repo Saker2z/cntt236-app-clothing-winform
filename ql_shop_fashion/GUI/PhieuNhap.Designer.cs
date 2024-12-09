@@ -93,7 +93,6 @@ namespace GUI
             this.barButtonItem3,
             this.bt_add_all});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl.MaxItemId = 23;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
@@ -102,7 +101,7 @@ namespace GUI
             this.ribbonPage1});
             this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl.Size = new System.Drawing.Size(1807, 193);
+            this.ribbonControl.Size = new System.Drawing.Size(1332, 158);
             this.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiPrintPreview
@@ -210,93 +209,85 @@ namespace GUI
             // cbb_ncc
             // 
             this.cbb_ncc.EditValue = "";
-            this.cbb_ncc.Location = new System.Drawing.Point(524, 38);
-            this.cbb_ncc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbb_ncc.Location = new System.Drawing.Point(449, 31);
             this.cbb_ncc.MenuManager = this.ribbonControl;
             this.cbb_ncc.Name = "cbb_ncc";
             this.cbb_ncc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_ncc.Properties.Appearance.Options.UseFont = true;
             this.cbb_ncc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_ncc.Size = new System.Drawing.Size(370, 26);
+            this.cbb_ncc.Size = new System.Drawing.Size(317, 22);
             this.cbb_ncc.TabIndex = 4;
             // 
             // txt_tennv
             // 
             this.txt_tennv.EditValue = "";
-            this.txt_tennv.Location = new System.Drawing.Point(126, 38);
-            this.txt_tennv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_tennv.Location = new System.Drawing.Point(108, 31);
             this.txt_tennv.MenuManager = this.ribbonControl;
             this.txt_tennv.Name = "txt_tennv";
             this.txt_tennv.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tennv.Properties.Appearance.Options.UseFont = true;
-            this.txt_tennv.Size = new System.Drawing.Size(259, 26);
+            this.txt_tennv.Size = new System.Drawing.Size(222, 22);
             this.txt_tennv.TabIndex = 5;
             // 
             // date_ngaynhap
             // 
             this.date_ngaynhap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_ngaynhap.Location = new System.Drawing.Point(126, 150);
-            this.date_ngaynhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.date_ngaynhap.Location = new System.Drawing.Point(108, 122);
             this.date_ngaynhap.Name = "date_ngaynhap";
-            this.date_ngaynhap.Size = new System.Drawing.Size(258, 27);
+            this.date_ngaynhap.Size = new System.Drawing.Size(222, 23);
             this.date_ngaynhap.TabIndex = 6;
             // 
             // lb_thanhtien
             // 
             this.lb_thanhtien.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_thanhtien.Appearance.Options.UseFont = true;
-            this.lb_thanhtien.Location = new System.Drawing.Point(13, 991);
-            this.lb_thanhtien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_thanhtien.Location = new System.Drawing.Point(11, 805);
             this.lb_thanhtien.Name = "lb_thanhtien";
-            this.lb_thanhtien.Size = new System.Drawing.Size(124, 32);
+            this.lb_thanhtien.Size = new System.Drawing.Size(96, 25);
             this.lb_thanhtien.TabIndex = 10;
             this.lb_thanhtien.Text = "Tổng tiền: ";
             // 
             // cbb_tensp
             // 
-            this.cbb_tensp.Location = new System.Drawing.Point(126, 89);
-            this.cbb_tensp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbb_tensp.Location = new System.Drawing.Point(108, 72);
             this.cbb_tensp.MenuManager = this.ribbonControl;
             this.cbb_tensp.Name = "cbb_tensp";
             this.cbb_tensp.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_tensp.Properties.Appearance.Options.UseFont = true;
             this.cbb_tensp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_tensp.Size = new System.Drawing.Size(259, 26);
+            this.cbb_tensp.Size = new System.Drawing.Size(222, 22);
             this.cbb_tensp.TabIndex = 11;
             // 
             // txt_gianhap
             // 
-            this.txt_gianhap.Location = new System.Drawing.Point(126, 224);
-            this.txt_gianhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_gianhap.Location = new System.Drawing.Point(108, 182);
             this.txt_gianhap.MenuManager = this.ribbonControl;
             this.txt_gianhap.Name = "txt_gianhap";
             this.txt_gianhap.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_gianhap.Properties.Appearance.Options.UseFont = true;
-            this.txt_gianhap.Size = new System.Drawing.Size(768, 26);
+            this.txt_gianhap.Size = new System.Drawing.Size(658, 22);
             this.txt_gianhap.TabIndex = 13;
             // 
             // txt_dg
             // 
-            this.txt_dg.Location = new System.Drawing.Point(524, 89);
-            this.txt_dg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_dg.Location = new System.Drawing.Point(449, 72);
             this.txt_dg.MenuManager = this.ribbonControl;
             this.txt_dg.Name = "txt_dg";
             this.txt_dg.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dg.Properties.Appearance.Options.UseFont = true;
-            this.txt_dg.Size = new System.Drawing.Size(370, 26);
+            this.txt_dg.Size = new System.Drawing.Size(317, 22);
             this.txt_dg.TabIndex = 24;
             // 
             // buttonEdit1
             // 
-            this.buttonEdit1.Location = new System.Drawing.Point(-19, -18);
-            this.buttonEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonEdit1.Location = new System.Drawing.Point(-16, -15);
             this.buttonEdit1.MenuManager = this.ribbonControl;
             this.buttonEdit1.Name = "buttonEdit1";
             this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit1.Size = new System.Drawing.Size(117, 22);
+            this.buttonEdit1.Size = new System.Drawing.Size(100, 20);
             this.buttonEdit1.TabIndex = 28;
             // 
             // barButtonItem1
@@ -309,11 +300,10 @@ namespace GUI
             // dgv_gia
             // 
             this.dgv_gia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_gia.Location = new System.Drawing.Point(936, 202);
-            this.dgv_gia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgv_gia.Location = new System.Drawing.Point(802, 164);
             this.dgv_gia.Name = "dgv_gia";
             this.dgv_gia.RowHeadersWidth = 51;
-            this.dgv_gia.Size = new System.Drawing.Size(857, 294);
+            this.dgv_gia.Size = new System.Drawing.Size(735, 239);
             this.dgv_gia.TabIndex = 46;
             // 
             // ribbonPageGroup2
@@ -326,25 +316,23 @@ namespace GUI
             // 
             // cbb_sl
             // 
-            this.cbb_sl.Location = new System.Drawing.Point(524, 154);
-            this.cbb_sl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbb_sl.Location = new System.Drawing.Point(449, 125);
             this.cbb_sl.MenuManager = this.ribbonControl;
             this.cbb_sl.Name = "cbb_sl";
             this.cbb_sl.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_sl.Properties.Appearance.Options.UseFont = true;
             this.cbb_sl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_sl.Size = new System.Drawing.Size(370, 26);
+            this.cbb_sl.Size = new System.Drawing.Size(317, 22);
             this.cbb_sl.TabIndex = 49;
             // 
             // dgv_sp_add
             // 
             this.dgv_sp_add.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_sp_add.Location = new System.Drawing.Point(14, 503);
-            this.dgv_sp_add.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgv_sp_add.Location = new System.Drawing.Point(12, 409);
             this.dgv_sp_add.Name = "dgv_sp_add";
             this.dgv_sp_add.RowHeadersWidth = 51;
-            this.dgv_sp_add.Size = new System.Drawing.Size(1779, 480);
+            this.dgv_sp_add.Size = new System.Drawing.Size(1525, 390);
             this.dgv_sp_add.TabIndex = 52;
             // 
             // gb_ttpn
@@ -365,11 +353,9 @@ namespace GUI
             this.gb_ttpn.Controls.Add(this.cbb_ncc);
             this.gb_ttpn.Controls.Add(this.txt_gianhap);
             this.gb_ttpn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_ttpn.Location = new System.Drawing.Point(14, 202);
-            this.gb_ttpn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gb_ttpn.Location = new System.Drawing.Point(12, 164);
             this.gb_ttpn.Name = "gb_ttpn";
-            this.gb_ttpn.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gb_ttpn.Size = new System.Drawing.Size(915, 294);
+            this.gb_ttpn.Size = new System.Drawing.Size(784, 239);
             this.gb_ttpn.TabIndex = 56;
             this.gb_ttpn.TabStop = false;
             this.gb_ttpn.Text = "Thông tin phiếu nhập";
@@ -378,10 +364,9 @@ namespace GUI
             // 
             this.lb_tennhanvien.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_tennhanvien.Appearance.Options.UseFont = true;
-            this.lb_tennhanvien.Location = new System.Drawing.Point(33, 42);
-            this.lb_tennhanvien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_tennhanvien.Location = new System.Drawing.Point(28, 34);
             this.lb_tennhanvien.Name = "lb_tennhanvien";
-            this.lb_tennhanvien.Size = new System.Drawing.Size(91, 20);
+            this.lb_tennhanvien.Size = new System.Drawing.Size(74, 15);
             this.lb_tennhanvien.TabIndex = 15;
             this.lb_tennhanvien.Text = "Tên nhân viên";
             // 
@@ -389,10 +374,9 @@ namespace GUI
             // 
             this.lb_dongia.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_dongia.Appearance.Options.UseFont = true;
-            this.lb_dongia.Location = new System.Drawing.Point(469, 92);
-            this.lb_dongia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_dongia.Location = new System.Drawing.Point(402, 75);
             this.lb_dongia.Name = "lb_dongia";
-            this.lb_dongia.Size = new System.Drawing.Size(53, 20);
+            this.lb_dongia.Size = new System.Drawing.Size(41, 15);
             this.lb_dongia.TabIndex = 25;
             this.lb_dongia.Text = "Đơn giá";
             // 
@@ -400,10 +384,9 @@ namespace GUI
             // 
             this.lb_gianhap.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_gianhap.Appearance.Options.UseFont = true;
-            this.lb_gianhap.Location = new System.Drawing.Point(64, 228);
-            this.lb_gianhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_gianhap.Location = new System.Drawing.Point(55, 185);
             this.lb_gianhap.Name = "lb_gianhap";
-            this.lb_gianhap.Size = new System.Drawing.Size(59, 20);
+            this.lb_gianhap.Size = new System.Drawing.Size(47, 15);
             this.lb_gianhap.TabIndex = 23;
             this.lb_gianhap.Text = "Giá nhập";
             // 
@@ -411,10 +394,9 @@ namespace GUI
             // 
             this.lb_soluong.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_soluong.Appearance.Options.UseFont = true;
-            this.lb_soluong.Location = new System.Drawing.Point(462, 158);
-            this.lb_soluong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_soluong.Location = new System.Drawing.Point(396, 128);
             this.lb_soluong.Name = "lb_soluong";
-            this.lb_soluong.Size = new System.Drawing.Size(60, 20);
+            this.lb_soluong.Size = new System.Drawing.Size(47, 15);
             this.lb_soluong.TabIndex = 22;
             this.lb_soluong.Text = "Số lượng";
             // 
@@ -422,10 +404,9 @@ namespace GUI
             // 
             this.lb_ngaynhap.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ngaynhap.Appearance.Options.UseFont = true;
-            this.lb_ngaynhap.Location = new System.Drawing.Point(51, 150);
-            this.lb_ngaynhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_ngaynhap.Location = new System.Drawing.Point(44, 122);
             this.lb_ngaynhap.Name = "lb_ngaynhap";
-            this.lb_ngaynhap.Size = new System.Drawing.Size(72, 20);
+            this.lb_ngaynhap.Size = new System.Drawing.Size(58, 15);
             this.lb_ngaynhap.TabIndex = 17;
             this.lb_ngaynhap.Text = "Ngày nhập";
             // 
@@ -433,10 +414,9 @@ namespace GUI
             // 
             this.lb_tennhacungcap.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_tennhacungcap.Appearance.Options.UseFont = true;
-            this.lb_tennhacungcap.Location = new System.Drawing.Point(408, 42);
-            this.lb_tennhacungcap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_tennhacungcap.Location = new System.Drawing.Point(350, 34);
             this.lb_tennhacungcap.Name = "lb_tennhacungcap";
-            this.lb_tennhacungcap.Size = new System.Drawing.Size(115, 20);
+            this.lb_tennhacungcap.Size = new System.Drawing.Size(93, 15);
             this.lb_tennhacungcap.TabIndex = 16;
             this.lb_tennhacungcap.Text = "Tên nhà cung cấp";
             // 
@@ -444,25 +424,23 @@ namespace GUI
             // 
             this.lb_tensanpham.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_tensanpham.Appearance.Options.UseFont = true;
-            this.lb_tensanpham.Location = new System.Drawing.Point(34, 92);
-            this.lb_tensanpham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_tensanpham.Location = new System.Drawing.Point(29, 75);
             this.lb_tensanpham.Name = "lb_tensanpham";
-            this.lb_tensanpham.Size = new System.Drawing.Size(91, 20);
+            this.lb_tensanpham.Size = new System.Drawing.Size(73, 15);
             this.lb_tensanpham.TabIndex = 21;
             this.lb_tensanpham.Text = "Tên sản phẩm";
             // 
             // PhieuNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1807, 1029);
+            this.ClientSize = new System.Drawing.Size(1332, 717);
             this.Controls.Add(this.gb_ttpn);
             this.Controls.Add(this.dgv_sp_add);
             this.Controls.Add(this.dgv_gia);
             this.Controls.Add(this.buttonEdit1);
             this.Controls.Add(this.lb_thanhtien);
             this.Controls.Add(this.ribbonControl);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PhieuNhap";
             this.Ribbon = this.ribbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -12,6 +12,7 @@ namespace GUI
             InitializeComponent();
             btnLuu.Click += BtnLuu_Click;
             btnThoat.Click += BtnThoat_Click;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void BtnThoat_Click(object sender, EventArgs e)

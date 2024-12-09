@@ -87,162 +87,146 @@ namespace GUI
             this.pnl_chinh.Controls.Add(this.lb_makichthuoc);
             this.pnl_chinh.Controls.Add(this.lb_masanpham);
             this.pnl_chinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_chinh.Location = new System.Drawing.Point(0, 32);
-            this.pnl_chinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnl_chinh.Location = new System.Drawing.Point(0, 24);
             this.pnl_chinh.Name = "pnl_chinh";
-            this.pnl_chinh.Size = new System.Drawing.Size(1095, 732);
+            this.pnl_chinh.Size = new System.Drawing.Size(939, 593);
             this.pnl_chinh.TabIndex = 0;
             // 
             // txt_giaban
             // 
             this.txt_giaban.Enabled = false;
-            this.txt_giaban.Location = new System.Drawing.Point(689, 182);
-            this.txt_giaban.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_giaban.Location = new System.Drawing.Point(591, 148);
             this.txt_giaban.Name = "txt_giaban";
             this.txt_giaban.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_giaban.Properties.Appearance.Options.UseFont = true;
-            this.txt_giaban.Size = new System.Drawing.Size(350, 26);
+            this.txt_giaban.Size = new System.Drawing.Size(300, 22);
             this.txt_giaban.TabIndex = 55;
             // 
             // lb_giaban
             // 
             this.lb_giaban.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_giaban.Appearance.Options.UseFont = true;
-            this.lb_giaban.Location = new System.Drawing.Point(575, 186);
-            this.lb_giaban.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_giaban.Location = new System.Drawing.Point(493, 151);
             this.lb_giaban.Name = "lb_giaban";
-            this.lb_giaban.Size = new System.Drawing.Size(51, 20);
+            this.lb_giaban.Size = new System.Drawing.Size(40, 15);
             this.lb_giaban.TabIndex = 54;
             this.lb_giaban.Text = "Giá Bán";
             // 
             // txt_mathuoctinh
             // 
             this.txt_mathuoctinh.Enabled = false;
-            this.txt_mathuoctinh.Location = new System.Drawing.Point(142, 27);
-            this.txt_mathuoctinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_mathuoctinh.Location = new System.Drawing.Point(122, 22);
             this.txt_mathuoctinh.Name = "txt_mathuoctinh";
             this.txt_mathuoctinh.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_mathuoctinh.Properties.Appearance.Options.UseFont = true;
-            this.txt_mathuoctinh.Size = new System.Drawing.Size(350, 26);
+            this.txt_mathuoctinh.Size = new System.Drawing.Size(300, 22);
             this.txt_mathuoctinh.TabIndex = 53;
             // 
             // lb_mathuoctinh
             // 
             this.lb_mathuoctinh.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_mathuoctinh.Appearance.Options.UseFont = true;
-            this.lb_mathuoctinh.Location = new System.Drawing.Point(28, 31);
-            this.lb_mathuoctinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_mathuoctinh.Location = new System.Drawing.Point(24, 25);
             this.lb_mathuoctinh.Name = "lb_mathuoctinh";
-            this.lb_mathuoctinh.Size = new System.Drawing.Size(97, 20);
+            this.lb_mathuoctinh.Size = new System.Drawing.Size(79, 15);
             this.lb_mathuoctinh.TabIndex = 52;
             this.lb_mathuoctinh.Text = "Mã Thuộc Tính";
             // 
             // txt_soluongton
             // 
-            this.txt_soluongton.Location = new System.Drawing.Point(142, 178);
-            this.txt_soluongton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_soluongton.Location = new System.Drawing.Point(122, 145);
             this.txt_soluongton.Name = "txt_soluongton";
             this.txt_soluongton.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_soluongton.Properties.Appearance.Options.UseFont = true;
-            this.txt_soluongton.Size = new System.Drawing.Size(350, 26);
+            this.txt_soluongton.Size = new System.Drawing.Size(300, 22);
             this.txt_soluongton.TabIndex = 51;
             // 
             // lb_soluongton
             // 
             this.lb_soluongton.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_soluongton.Appearance.Options.UseFont = true;
-            this.lb_soluongton.Location = new System.Drawing.Point(28, 182);
-            this.lb_soluongton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_soluongton.Location = new System.Drawing.Point(24, 148);
             this.lb_soluongton.Name = "lb_soluongton";
-            this.lb_soluongton.Size = new System.Drawing.Size(92, 20);
+            this.lb_soluongton.Size = new System.Drawing.Size(73, 15);
             this.lb_soluongton.TabIndex = 50;
             this.lb_soluongton.Text = "Số Lượng Tồn";
             // 
             // cbb_mamausac
             // 
-            this.cbb_mamausac.Location = new System.Drawing.Point(142, 98);
-            this.cbb_mamausac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbb_mamausac.Location = new System.Drawing.Point(122, 80);
             this.cbb_mamausac.Name = "cbb_mamausac";
             this.cbb_mamausac.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_mamausac.Properties.Appearance.Options.UseFont = true;
             this.cbb_mamausac.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_mamausac.Size = new System.Drawing.Size(350, 26);
+            this.cbb_mamausac.Size = new System.Drawing.Size(300, 22);
             this.cbb_mamausac.TabIndex = 49;
             // 
             // lb_mamausac
             // 
             this.lb_mamausac.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_mamausac.Appearance.Options.UseFont = true;
-            this.lb_mamausac.Location = new System.Drawing.Point(28, 105);
-            this.lb_mamausac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_mamausac.Location = new System.Drawing.Point(24, 85);
             this.lb_mamausac.Name = "lb_mamausac";
-            this.lb_mamausac.Size = new System.Drawing.Size(81, 20);
+            this.lb_mamausac.Size = new System.Drawing.Size(65, 15);
             this.lb_mamausac.TabIndex = 48;
             this.lb_mamausac.Text = "Mã Màu Sắc";
             // 
             // cbb_makichthuoc
             // 
-            this.cbb_makichthuoc.Location = new System.Drawing.Point(689, 97);
-            this.cbb_makichthuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbb_makichthuoc.Location = new System.Drawing.Point(591, 79);
             this.cbb_makichthuoc.Name = "cbb_makichthuoc";
             this.cbb_makichthuoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_makichthuoc.Properties.Appearance.Options.UseFont = true;
             this.cbb_makichthuoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_makichthuoc.Size = new System.Drawing.Size(350, 26);
+            this.cbb_makichthuoc.Size = new System.Drawing.Size(300, 22);
             this.cbb_makichthuoc.TabIndex = 46;
             // 
             // pnl_gct_ctsp
             // 
             this.pnl_gct_ctsp.Controls.Add(this.gct_ttsp);
             this.pnl_gct_ctsp.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_gct_ctsp.Location = new System.Drawing.Point(0, 266);
-            this.pnl_gct_ctsp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnl_gct_ctsp.Location = new System.Drawing.Point(0, 214);
             this.pnl_gct_ctsp.Name = "pnl_gct_ctsp";
-            this.pnl_gct_ctsp.Size = new System.Drawing.Size(1095, 466);
+            this.pnl_gct_ctsp.Size = new System.Drawing.Size(939, 379);
             this.pnl_gct_ctsp.TabIndex = 47;
             // 
             // gct_ttsp
             // 
             this.gct_ttsp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gct_ttsp.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gct_ttsp.Location = new System.Drawing.Point(0, 0);
             this.gct_ttsp.MainView = this.gridView1;
-            this.gct_ttsp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gct_ttsp.Name = "gct_ttsp";
-            this.gct_ttsp.Size = new System.Drawing.Size(1095, 466);
+            this.gct_ttsp.Size = new System.Drawing.Size(939, 379);
             this.gct_ttsp.TabIndex = 37;
             this.gct_ttsp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.DetailHeight = 431;
             this.gridView1.GridControl = this.gct_ttsp;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // cbb_masanpham
             // 
-            this.cbb_masanpham.Location = new System.Drawing.Point(689, 24);
-            this.cbb_masanpham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbb_masanpham.Location = new System.Drawing.Point(591, 20);
             this.cbb_masanpham.Name = "cbb_masanpham";
             this.cbb_masanpham.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_masanpham.Properties.Appearance.Options.UseFont = true;
             this.cbb_masanpham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbb_masanpham.Size = new System.Drawing.Size(350, 26);
+            this.cbb_masanpham.Size = new System.Drawing.Size(300, 22);
             this.cbb_masanpham.TabIndex = 45;
             // 
             // lb_makichthuoc
             // 
             this.lb_makichthuoc.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_makichthuoc.Appearance.Options.UseFont = true;
-            this.lb_makichthuoc.Location = new System.Drawing.Point(575, 104);
-            this.lb_makichthuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_makichthuoc.Location = new System.Drawing.Point(493, 84);
             this.lb_makichthuoc.Name = "lb_makichthuoc";
-            this.lb_makichthuoc.Size = new System.Drawing.Size(98, 20);
+            this.lb_makichthuoc.Size = new System.Drawing.Size(79, 15);
             this.lb_makichthuoc.TabIndex = 44;
             this.lb_makichthuoc.Text = "Mã Kích Thước";
             // 
@@ -250,10 +234,9 @@ namespace GUI
             // 
             this.lb_masanpham.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_masanpham.Appearance.Options.UseFont = true;
-            this.lb_masanpham.Location = new System.Drawing.Point(575, 30);
-            this.lb_masanpham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lb_masanpham.Location = new System.Drawing.Point(493, 24);
             this.lb_masanpham.Name = "lb_masanpham";
-            this.lb_masanpham.Size = new System.Drawing.Size(90, 20);
+            this.lb_masanpham.Size = new System.Drawing.Size(73, 15);
             this.lb_masanpham.TabIndex = 39;
             this.lb_masanpham.Text = "Mã Sản Phẩm";
             // 
@@ -342,48 +325,43 @@ namespace GUI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1095, 32);
+            this.barDockControlTop.Size = new System.Drawing.Size(939, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 764);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 617);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1095, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(939, 20);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 32);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 732);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 593);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1095, 32);
+            this.barDockControlRight.Location = new System.Drawing.Point(939, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 732);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 593);
             // 
-            // frmThemSPVaoThongTin
+            // frmThemSPVaoThuocTinh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 784);
+            this.ClientSize = new System.Drawing.Size(939, 637);
             this.Controls.Add(this.pnl_chinh);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmThemSPVaoThongTin";
+            this.Name = "frmThemSPVaoThuocTinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Sản Phẩm Vào Thuộc Tính Sản Phẩm";
             this.pnl_chinh.ResumeLayout(false);

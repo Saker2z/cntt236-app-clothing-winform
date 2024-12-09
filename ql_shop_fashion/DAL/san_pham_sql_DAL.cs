@@ -257,19 +257,19 @@ namespace DAL
                     throw new Exception("Đường dẫn hình ảnh không hợp lệ hoặc tệp ảnh không tồn tại.");
                 }
 
-                // Kiểm tra nếu đã có bản ghi nhưng cột hình ảnh là NULL
+                // Tìm bản ghi có mã sản phẩm
                 var existingImageRecord = data.hinh_anh_san_phams
-                    .FirstOrDefault(img => img.ma_san_pham == maSanPham && string.IsNullOrEmpty(img.hinh_anh));
+                    .FirstOrDefault(img => img.ma_san_pham == maSanPham);
 
                 if (existingImageRecord != null)
                 {
-                    // Cập nhật hình ảnh cho bản ghi cũ
+                    // Cập nhật hình ảnh mới cho bản ghi cũ
                     existingImageRecord.hinh_anh = imagePath;
                     existingImageRecord.updated_at = DateTime.Now;
                 }
                 else
                 {
-                    // Thêm mới bản ghi nếu chưa có
+                    // Thêm bản ghi mới nếu không tồn tại
                     var newImage = new hinh_anh_san_pham
                     {
                         ma_san_pham = maSanPham,

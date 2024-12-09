@@ -11,33 +11,44 @@ namespace GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            try
-            {
-                // Tải chuỗi kết nối từ JSON
-                DTO.DatabaseConfig.LoadConnectionString();
-            }
-            catch (Exception ex)
-            {
-                // Yêu cầu người dùng nhập thông tin kết nối nếu không có file JSON hoặc chuỗi không hợp lệ
-                MessageBox.Show(ex.Message, "Cấu hình kết nối", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            bool isConfigured = false;
 
-                using (frm_knoi frm = new frm_knoi())
+            while (!isConfigured)
+            {
+                try
                 {
-                    if (frm.ShowDialog() == DialogResult.OK)
+                    // Tải chuỗi kết nối từ JSON
+                    DTO.DatabaseConfig.LoadConnectionString();
+                    isConfigured = true; // Nếu thành công, đánh dấu đã cấu hình xong
+                }
+                catch (Exception ex)
+                {
+                    // Thông báo lỗi cấu hình
+                    MessageBox.Show(ex.Message, "Cấu hình kết nối", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    // Hiển thị form thiết lập kết nối
+                    using (frm_knoi frm = new frm_knoi())
                     {
-                        // Sau khi lưu, thử kết nối lại
-                        MessageBox.Show("Cấu hình thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ứng dụng cần cấu hình kết nối để chạy.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                            // Sau khi lưu, thử kết nối lại
+                            MessageBox.Show("Cấu hình thành công! Hệ thống sẽ thử kết nối lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ứng dụng cần cấu hình kết nối để chạy.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return; // Thoát ứng dụng nếu người dùng không muốn cấu hình
+                        }
                     }
                 }
+                
             }
 
-            // Chạy form chính
-            Application.Run(new frmDangNhap());
+          if(isConfigured)
+            {
+                Application.Run(new frmDangNhap());
+            }
+
         }
     }
 }

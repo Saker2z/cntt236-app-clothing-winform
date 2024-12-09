@@ -488,6 +488,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuetMa.resx">
+      <DependentUpon>QuetMa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="them_ncc.resx">
       <DependentUpon>them_ncc.cs</DependentUpon>
     </EmbeddedResource>
@@ -532,6 +535,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ThemPhieuNhap.resx">
       <DependentUpon>UC_ThemPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm3.resx">
+      <DependentUpon>WaitForm3.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="GUI_TemporaryKey.pfx" />

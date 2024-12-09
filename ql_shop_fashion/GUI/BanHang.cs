@@ -46,7 +46,8 @@ namespace GUI
 
             id_nv = idnv;
 
-            this.StartPosition = FormStartPosition.CenterScreen;
+            this.WindowState = FormWindowState.Maximized; // Đặt form chiếm toàn bộ màn hình
+           
 
             this.Load += BanHang_Load;
             txtNhanVien.Text= nv.get_name_nv_by_id(id_nv);

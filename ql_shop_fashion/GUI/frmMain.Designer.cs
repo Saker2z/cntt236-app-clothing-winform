@@ -74,7 +74,7 @@ namespace GUI
             this.ac_thongtin.Location = new System.Drawing.Point(0, 31);
             this.ac_thongtin.Name = "ac_thongtin";
             this.ac_thongtin.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.ac_thongtin.Size = new System.Drawing.Size(299, 711);
+            this.ac_thongtin.Size = new System.Drawing.Size(191, 711);
             this.ac_thongtin.TabIndex = 1;
             this.ac_thongtin.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -276,7 +276,7 @@ namespace GUI
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluent_QuanLyForm;
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1628, 31);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1554, 31);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
@@ -291,9 +291,9 @@ namespace GUI
             this.panel_chinh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_chinh.Controls.Add(this.pn_main);
             this.panel_chinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_chinh.Location = new System.Drawing.Point(299, 31);
+            this.panel_chinh.Location = new System.Drawing.Point(191, 31);
             this.panel_chinh.Name = "panel_chinh";
-            this.panel_chinh.Size = new System.Drawing.Size(1329, 711);
+            this.panel_chinh.Size = new System.Drawing.Size(1363, 711);
             this.panel_chinh.TabIndex = 3;
             // 
             // pn_main
@@ -302,7 +302,7 @@ namespace GUI
             this.pn_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_main.Location = new System.Drawing.Point(0, 0);
             this.pn_main.Name = "pn_main";
-            this.pn_main.Size = new System.Drawing.Size(1329, 711);
+            this.pn_main.Size = new System.Drawing.Size(1363, 711);
             this.pn_main.TabIndex = 0;
             // 
             // accordionControlElement1
@@ -341,7 +341,7 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1628, 742);
+            this.ClientSize = new System.Drawing.Size(1554, 742);
             this.Controls.Add(this.panel_chinh);
             this.Controls.Add(this.ac_thongtin);
             this.Controls.Add(this.fluentDesignFormControl1);

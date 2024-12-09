@@ -43,6 +43,14 @@ namespace GUI
             this.lb_manhanvien = new DevExpress.XtraEditors.LabelControl();
             this.ngaynhap = new DevExpress.XtraEditors.DateEdit();
             this.menuchucnang = new System.Windows.Forms.ToolStrip();
+            this.chon = new System.Windows.Forms.ToolStripDropDownButton();
+            this.them = new System.Windows.Forms.ToolStripMenuItem();
+            this.sua = new System.Windows.Forms.ToolStripMenuItem();
+            this.xoa = new System.Windows.Forms.ToolStripMenuItem();
+            this.load = new System.Windows.Forms.ToolStripMenuItem();
+            this.duyet = new System.Windows.Forms.ToolStripButton();
+            this.inphieu = new System.Windows.Forms.ToolStripButton();
+            this.thoat = new System.Windows.Forms.ToolStripButton();
             this.lb_manhaphang = new DevExpress.XtraEditors.LabelControl();
             this.cbb_trangthai = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbb_manhacungcap = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -54,14 +62,6 @@ namespace GUI
             this.panel_chinh = new System.Windows.Forms.Panel();
             this.dgv_sanpham = new System.Windows.Forms.DataGridView();
             this.dgv_nh = new System.Windows.Forms.DataGridView();
-            this.chon = new System.Windows.Forms.ToolStripDropDownButton();
-            this.them = new System.Windows.Forms.ToolStripMenuItem();
-            this.sua = new System.Windows.Forms.ToolStripMenuItem();
-            this.xoa = new System.Windows.Forms.ToolStripMenuItem();
-            this.load = new System.Windows.Forms.ToolStripMenuItem();
-            this.duyet = new System.Windows.Forms.ToolStripButton();
-            this.inphieu = new System.Windows.Forms.ToolStripButton();
-            this.thoat = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.txt_sanpham.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tenncc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaynhap.Properties.CalendarTimeProperties)).BeginInit();
@@ -205,6 +205,77 @@ namespace GUI
             this.menuchucnang.TabIndex = 23;
             this.menuchucnang.Text = "MenuChucNang";
             // 
+            // chon
+            // 
+            this.chon.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.them,
+            this.sua,
+            this.xoa,
+            this.load});
+            this.chon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chon.Image = global::GUI.Properties.Resources.chon;
+            this.chon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.chon.Name = "chon";
+            this.chon.Size = new System.Drawing.Size(76, 24);
+            this.chon.Text = "Chọn";
+            this.chon.Click += new System.EventHandler(this.chon_Click);
+            // 
+            // them
+            // 
+            this.them.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.them.Image = global::GUI.Properties.Resources.them;
+            this.them.Name = "them";
+            this.them.Size = new System.Drawing.Size(119, 26);
+            this.them.Text = "Thêm";
+            // 
+            // sua
+            // 
+            this.sua.Image = global::GUI.Properties.Resources.sua;
+            this.sua.Name = "sua";
+            this.sua.Size = new System.Drawing.Size(119, 26);
+            this.sua.Text = "Sửa";
+            // 
+            // xoa
+            // 
+            this.xoa.Image = global::GUI.Properties.Resources.xoa;
+            this.xoa.Name = "xoa";
+            this.xoa.Size = new System.Drawing.Size(119, 26);
+            this.xoa.Text = "Xóa";
+            // 
+            // load
+            // 
+            this.load.Image = global::GUI.Properties.Resources.load;
+            this.load.Name = "load";
+            this.load.Size = new System.Drawing.Size(119, 26);
+            this.load.Text = "Load";
+            // 
+            // duyet
+            // 
+            this.duyet.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.duyet.Image = global::GUI.Properties.Resources.duyet;
+            this.duyet.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.duyet.Name = "duyet";
+            this.duyet.Size = new System.Drawing.Size(72, 24);
+            this.duyet.Text = "Duyệt";
+            // 
+            // inphieu
+            // 
+            this.inphieu.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inphieu.Image = global::GUI.Properties.Resources.inphieu;
+            this.inphieu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.inphieu.Name = "inphieu";
+            this.inphieu.Size = new System.Drawing.Size(85, 24);
+            this.inphieu.Text = "In Phiếu";
+            // 
+            // thoat
+            // 
+            this.thoat.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thoat.Image = global::GUI.Properties.Resources.thoat;
+            this.thoat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.thoat.Name = "thoat";
+            this.thoat.Size = new System.Drawing.Size(71, 24);
+            this.thoat.Text = "Thoát";
+            // 
             // lb_manhaphang
             // 
             this.lb_manhaphang.Location = new System.Drawing.Point(21, 44);
@@ -318,77 +389,6 @@ namespace GUI
             this.dgv_nh.RowTemplate.Height = 24;
             this.dgv_nh.Size = new System.Drawing.Size(608, 332);
             this.dgv_nh.TabIndex = 26;
-            // 
-            // chon
-            // 
-            this.chon.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.them,
-            this.sua,
-            this.xoa,
-            this.load});
-            this.chon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chon.Image = global::GUI.Properties.Resources.chon;
-            this.chon.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.chon.Name = "chon";
-            this.chon.Size = new System.Drawing.Size(76, 24);
-            this.chon.Text = "Chọn";
-            this.chon.Click += new System.EventHandler(this.chon_Click);
-            // 
-            // them
-            // 
-            this.them.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.them.Image = global::GUI.Properties.Resources.them;
-            this.them.Name = "them";
-            this.them.Size = new System.Drawing.Size(184, 26);
-            this.them.Text = "Thêm";
-            // 
-            // sua
-            // 
-            this.sua.Image = global::GUI.Properties.Resources.sua;
-            this.sua.Name = "sua";
-            this.sua.Size = new System.Drawing.Size(184, 26);
-            this.sua.Text = "Sửa";
-            // 
-            // xoa
-            // 
-            this.xoa.Image = global::GUI.Properties.Resources.xoa;
-            this.xoa.Name = "xoa";
-            this.xoa.Size = new System.Drawing.Size(184, 26);
-            this.xoa.Text = "Xóa";
-            // 
-            // load
-            // 
-            this.load.Image = global::GUI.Properties.Resources.load;
-            this.load.Name = "load";
-            this.load.Size = new System.Drawing.Size(184, 26);
-            this.load.Text = "Load";
-            // 
-            // duyet
-            // 
-            this.duyet.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.duyet.Image = global::GUI.Properties.Resources.duyet;
-            this.duyet.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.duyet.Name = "duyet";
-            this.duyet.Size = new System.Drawing.Size(72, 24);
-            this.duyet.Text = "Duyệt";
-            // 
-            // inphieu
-            // 
-            this.inphieu.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inphieu.Image = global::GUI.Properties.Resources.inphieu;
-            this.inphieu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.inphieu.Name = "inphieu";
-            this.inphieu.Size = new System.Drawing.Size(85, 24);
-            this.inphieu.Text = "In Phiếu";
-            // 
-            // thoat
-            // 
-            this.thoat.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thoat.Image = global::GUI.Properties.Resources.thoat;
-            this.thoat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.thoat.Name = "thoat";
-            this.thoat.Size = new System.Drawing.Size(71, 24);
-            this.thoat.Text = "Thoát";
             // 
             // frmNhapHang
             // 

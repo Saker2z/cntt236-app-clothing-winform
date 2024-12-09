@@ -108,14 +108,15 @@ namespace DTO
     partial void Insertthuong_hieu(thuong_hieu instance);
     partial void Updatethuong_hieu(thuong_hieu instance);
     partial void Deletethuong_hieu(thuong_hieu instance);
-    #endregion
-		
-		public QL_SHOP_DATADataContext() : 
-				base(global::DTO.Properties.Settings.Default.QL_SHOP_FASHIONConnectionString1, mappingSource)
+		#endregion
+
+		public QL_SHOP_DATADataContext() :
+	base(DTO.DatabaseConfig.ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
-		
+
+
 		public QL_SHOP_DATADataContext(string connection) : 
 				base(connection, mappingSource)
 		{

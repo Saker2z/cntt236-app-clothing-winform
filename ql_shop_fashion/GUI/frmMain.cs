@@ -24,6 +24,7 @@ namespace GUI
         NCC_NCCSP ncc_sp;
         UC_BaoCao_ThongKe bctk;
         frmNhapHang nhapHang;
+        UC_KhachHang khachHang;
         BanHang banHang;
         DoiTraHang doiTraHang;
         UC_DuyetDonHang uc_duyet;
@@ -49,8 +50,21 @@ namespace GUI
             ace_banhang.Click += Ace_banhang_Click;
             ace_thongtincanhan.Click += Ace_thongtincanhan_Click1;
             ace_kiemduyetsanpham.Click += Ace_kiemduyetsanpham_Click;
+            ace_khachhang.Click += Ace_khachhang_Click;
          
 
+        }
+
+        private void Ace_khachhang_Click(object sender, EventArgs e)
+        {
+            khachHang = new UC_KhachHang();
+            panel_chinh.Controls.Clear();
+
+            // Tạo instance của UC_NhanVien và thêm vào pn_main
+
+            khachHang.Dock = DockStyle.Fill; // Đặt dock nếu muốn chiếm toàn bộ diện tích panel
+
+            panel_chinh.Controls.Add(khachHang); // Thêm UC_NhanVien vào panel pn_main
         }
 
         private void Ace_kiemduyetsanpham_Click(object sender, EventArgs e)

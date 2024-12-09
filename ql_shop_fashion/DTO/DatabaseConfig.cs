@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 namespace DTO
@@ -35,14 +36,51 @@ namespace DTO
                     throw new Exception("Chuỗi kết nối chưa được cấu hình trong file.");
                 }
 
+                // Kiểm tra định dạng chuỗi kết nối (cơ bản)
+               
+
                 // Gán chuỗi kết nối
                 ConnectionString = config.ConnectionString;
+               
+
+                // Thử kết nối đến cơ sở dữ liệu
+                TestDatabaseConnection(ConnectionString);
             }
             catch (Exception ex)
             {
+                // Xuất lỗi chi tiết
                 throw new Exception($"Lỗi khi tải chuỗi kết nối: {ex.Message}");
             }
         }
+        private static void TestDatabaseConnection(string connectionString)
+        {
+            try
+            {
+                using (var connection = new System.Data.SqlClient.SqlConnection(connectionString))
+                {
+                    connection.Open(); // Mở kết nối
+                    connection.Close(); // Đóng kết nối
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Không thể kết nối đến cơ sở dữ liệu: {ex.Message}");
+            }
+        }
+        private static bool IsValidConnectionString(string connectionString)
+        {
+            var requiredKeywords = new[] { "Server", "Database", "User Id", "Password" };
+            foreach (var keyword in requiredKeywords)
+            {
+                // Sử dụng IndexOf với StringComparison.OrdinalIgnoreCase
+                if (connectionString.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) < 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
 
         /// <summary>
         /// Lưu chuỗi kết nối vào file JSON
