@@ -175,9 +175,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="chi_tiet_don_web_DAL.cs" />
     <Compile Include="chi_tiet_hoa_don_DAL.cs" />
     <Compile Include="chi_tiet_hoa_don_doi_tra_DAL.cs" />
     <Compile Include="chi_tiet_nhap_sql_DAL.cs" />
+    <Compile Include="don_dat_hang_web_DAL.cs" />
     <Compile Include="hinh_anh_sp_sql_DAL.cs" />
     <Compile Include="hoa_don_DAL.cs" />
     <Compile Include="hoa_don_doi_tra_DAL.cs" />

@@ -73,12 +73,19 @@ namespace GUI
             txtKhachThanhToan.KeyPress += TxtKhachThanhToan_KeyPress;
             btnThemKH.Click += BtnThemKH_Click;
             btnInTemGia.Click += BtnInTemGia_Click;
+            btnDuyetDonOnline.Click += BtnDuyetDonOnline_Click;
+        }
+
+        private void BtnDuyetDonOnline_Click(object sender, EventArgs e)
+        {
+            frmDuyetDonOnline inGia = new frmDuyetDonOnline();
+            inGia.Show();
         }
 
         private void BtnInTemGia_Click(object sender, EventArgs e)
-        {
+        {           
+
             frmInGia inGia = new frmInGia();
-           
             inGia.Show();
         }
 

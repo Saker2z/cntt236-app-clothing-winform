@@ -1,0 +1,87 @@
+﻿@model IEnumerable<BanHangThoiTrangMVC.Controllers.ProductViewModel>
+
+@if (Model != null && Model.Any())
+{
+    foreach (var item in Model)
+    {
+        var strImg = item.Image ?? "/Content/assets/images/product_1.png"; // Ảnh mặc định
+        <div class="product-item category-@item.CategoryId">
+            <div class="product discount product_filter">
+                <div class="product_image">
+                    <img src="@strImg" alt="@item.Title">
+                </div>
+                <div class="favorite favorite_left"></div>
+                @if (item.IsSale == 1)
+                {
+                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                        <span>sale</span>
+                    </div>
+                }
+                <div class="product_info">
+                    <h6 class="product_name">
+                        <a href="/chi-tiet/@item.Alias-p@(item.Id)">@item.Title</a>
+                    </h6>
+                    @if (item.IsSale == 1)
+                    {
+                        <div class="product_price">
+                            @BanHangThoiTrangMVC.Common.Common.FormatNumber(item.PriceSale, 0)
+                            <span>@BanHangThoiTrangMVC.Common.Common.FormatNumber(item.Price, 0)</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="product_price">
+                            @BanHangThoiTrangMVC.Common.Common.FormatNumber(item.Price, 0)
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="red_button add_to_cart_button">
+                <a href="/chi-tiet/@item.Alias-p@(item.Id)">
+                   Add to cart
+                </a>
+            </div>
+
+        </div>
+    }
+}
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addToCartButtons = document.querySelectorAll(".btnAddToCart");
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const productId = this.getAttribute("data-id");
+                    const productName = this.getAttribute("data-name");
+                    const productImage = this.getAttribute("data-image");
+                    const productPrice = this.getAttribute("data-price");
+
+                    const product = {
+                        id: productId,
+                        name: productName,
+                        image: productImage,
+                        price: parseFloat(productPrice)
+                    };
+
+                    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+                    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+                    if (existingProductIndex !== -1) {
+                        cart[existingProductIndex].quantity += 1;
+                    } else {
+                        product.quantity = 1; 
+                        cart.push(product);
+                    }
+
+                    localStorage.setItem("cart", JSON.stringify(cart));
+
+                    alert(`${product.name} đã được thêm vào giỏ hàng!`);
+                });
+            });
+        });
+
+    </script>
+

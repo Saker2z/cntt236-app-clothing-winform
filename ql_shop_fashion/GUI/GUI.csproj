@@ -234,6 +234,12 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDuyetDonOnline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDuyetDonOnline.Designer.cs">
+      <DependentUpon>frmDuyetDonOnline.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDuyetSanPham.cs">
       <SubType>Form</SubType>
     </Compile>

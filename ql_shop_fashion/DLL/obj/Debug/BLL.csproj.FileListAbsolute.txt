@@ -598,3 +598,37 @@ C:\Users\HP\Desktop\CNPMNC\20\cntt236-app-clothing-winform\ql_shop_fashion\DLL\o
 C:\Users\HP\Desktop\CNPMNC\20\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\HP\Desktop\CNPMNC\20\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.dll
 C:\Users\HP\Desktop\CNPMNC\20\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.pdb
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BLL.dll.config
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BLL.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BLL.pdb
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Drawing.Common.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Memory.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\VietQRHelper.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\QRCoder.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Text.Json.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Numerics.Vectors.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Buffers.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.ValueTuple.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.IO.Pipelines.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Text.Encodings.Web.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\BCrypt.Net-Next.xml
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.pdb
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DAL.dll.config
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.pdb
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\DTO.dll.config
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Drawing.Common.xml
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Text.Json.xml
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.IO.Pipelines.xml
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\System.Text.Encodings.Web.xml
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.csproj.CopyComplete
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.dll
+E:\Cac mon hoc\Github\Do an\backup22\cntt236-app-clothing-winform\ql_shop_fashion\DLL\obj\Debug\BLL.pdb

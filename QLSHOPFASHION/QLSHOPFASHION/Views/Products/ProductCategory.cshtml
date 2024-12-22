@@ -1,0 +1,131 @@
+﻿@model IEnumerable<BanHangThoiTrangMVC.Controllers.ProductViewModel>
+@{
+    ViewBag.Title = "Danh Sách Sản Phẩm";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/categories_styles.css">
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/categories_responsive.css">
+
+<div class="container product_section_container">
+    <div class="row">
+        <div class="col product_section clearfix">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="/san-pham"><i class="fa fa-angle-right" aria-hidden="true"></i>Sản phẩm</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>@ViewBag.CateName</a></li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main_content">
+                <!-- Products -->
+                <div class="products_iso">
+                    <div class="row">
+                        <div class="col">
+                            <!-- Product Grid -->
+                            <div class="product-grid">
+                                @if (Model != null && Model.Any())
+                                {
+                                    foreach (var product in Model)
+                                    {
+                                        <div class="product-item">
+                                            <div class="product discount product_filter">
+                                                <div class="product_image">
+                                                    <img src="@product.Image" alt="@product.Title" />
+                                                </div>
+                                                @if (product.IsSale == 1)
+                                                {
+                                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                                                        <span>Sale</span>
+                                                    </div>
+                                                }
+                                                <div class="product_info">
+                                                    <h6 class="product_name">
+                                                        <a href="/chi-tiet/@product.Alias-p@(product.Id)">@product.Title</a>
+                                                    </h6>
+
+                                                    <div class="product_price">
+                                                        @if (product.IsSale == 1)
+                                                        {
+                                                            @BanHangThoiTrangMVC.Common.Common.FormatNumber(product.PriceSale, 0)
+                                                            <span>@BanHangThoiTrangMVC.Common.Common.FormatNumber(product.Price, 0)</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            @BanHangThoiTrangMVC.Common.Common.FormatNumber(product.Price, 0)
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="red_button add_to_cart_button">
+                                                <a class="btnAddToCart" data-id="@product.Id">Add to cart</a>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <p>No products found in this category.</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Content/assets/js/categories_custom.js"></script>
+
+
+    <script>
+
+        $(document).ready(function () {
+            // Thêm sản phẩm vào giỏ hàng
+            $(".btnAddToCart").click(function (e) {
+                e.preventDefault(); // Ngăn chặn hành động mặc định
+                var productId = $(this).data("id");
+                var quantity = 1;
+
+                console.log("ID của sản phẩm:", productId);
+
+                $.ajax({
+                    url: '/ShoppingCart/AddToCart',
+                    type: 'POST',
+                    data: { productId: productId, quantity: quantity },
+                    success: function (response) {
+                        alert("Thêm sản phẩm vào giỏ hàng thành công!");
+                        $("#cart-container").load("/ShoppingCart/Partial_Item_Cart");
+                    },
+                    error: function () {
+                        alert("Đã xảy ra lỗi khi thêm sản phẩm vào giỏ hàng!");
+                    }
+                });
+            });
+
+
+            // Xóa sản phẩm khỏi giỏ hàng
+            $("body").on("click", ".btn-remove", function (e) {
+                e.preventDefault();
+                var productId = $(this).data("id");
+
+                $.ajax({
+                    url: '/ShoppingCart/Remove',
+                    type: 'POST',
+                    data: { productId: productId },
+                    success: function (response) {
+                        // Reload giỏ hàng
+                        $("#cart-container").load("/ShoppingCart/Partial_Item_Cart");
+                    },
+                    error: function () {
+                        alert("Đã xảy ra lỗi khi xóa sản phẩm!");
+                    }
+                });
+            });
+        });
+
+    </script>
+}

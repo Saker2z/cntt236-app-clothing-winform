@@ -325,8 +325,6 @@ namespace GUI
             gridView.Columns["updated_at"].Visible = false;
             gridView.Columns["nhap_hang"].Visible = false;
             gridView.Columns["san_pham"].Visible = false;
-            gridView.Columns["san_pham1"].Visible = false;
-            gridView.Columns["nhap_hang1"].Visible = false;
             gridView.RefreshData();
         }
         private void SetupGridControl(GridControl gridControl, List<product> products)

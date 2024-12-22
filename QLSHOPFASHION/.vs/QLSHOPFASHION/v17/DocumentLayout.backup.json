@@ -1,0 +1,564 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|c:\\users\\hp\\desktop\\qlshopfashion\\qlshopfashion\\qlshopfashion\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\products\\partial_itemsbycateid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\products\\partial_itemsbycateid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\products\\productcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\products\\productcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\products\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\products\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\common\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\common\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\controllers\\qlshopfashioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\controllers\\qlshopfashioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\controllers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\controllers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\context\\dbmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\context\\dbmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\content\\assets\\images\\banner_1.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\content\\assets\\images\\banner_1.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\content\\ckeditor\\adapters\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\content\\ckeditor\\adapters\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\content\\assets\\images\\desc_2.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\content\\assets\\images\\desc_2.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\fonts\\glyphicons-halflings-regular.svg||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\fonts\\glyphicons-halflings-regular.svg||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\shoppingcart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\shoppingcart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\shoppingcart\\partial_item_cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\shoppingcart\\partial_item_cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\menu\\_menuarrivals.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\menu\\_menuarrivals.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\shoppingcart\\partial_checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\shoppingcart\\partial_checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\menu\\_menuproductcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\menu\\_menuproductcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\qlshopfashion\\views\\home\\refresh.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F18F55A-F921-4BA5-BC72-FE4CD2FA8A59}|QLSHOPFASHION\\QLSHOPFASHION.csproj|solutionrelative:qlshopfashion\\views\\home\\refresh.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\Products\\Index.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\Products\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T11:29:04.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Partial_ItemsByCateId.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Products\\Partial_ItemsByCateId.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\Products\\Partial_ItemsByCateId.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Products\\Partial_ItemsByCateId.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\Products\\Partial_ItemsByCateId.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAE4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T11:29:08.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:25:20.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAAAA8BAADbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:25:20.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShoppingCart.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Models\\ShoppingCart.cs",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Models\\ShoppingCart.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Models\\ShoppingCart.cs",
+              "RelativeToolTip": "QLSHOPFASHION\\Models\\ShoppingCart.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T09:25:20.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShoppingCartController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Controllers\\ShoppingCartController.cs",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Controllers\\ShoppingCartController.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Controllers\\ShoppingCartController.cs*",
+              "RelativeToolTip": "QLSHOPFASHION\\Controllers\\ShoppingCartController.cs*",
+              "ViewState": "AgIAABEAAAAAAAAAAAA8wC4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T09:25:20.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T11:31:04.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "favicon.ico - Icon [16x16, 32 bit, BMP]",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\favicon.ico",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\favicon.ico",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\favicon.ico - Icon [16x16, 32 bit, BMP]",
+              "RelativeToolTip": "QLSHOPFASHION\\favicon.ico - Icon [16x16, 32 bit, BMP]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001525|",
+              "WhenOpened": "2024-12-14T11:31:03.108Z",
+              "EditorCaption": " - Icon [16x16, 32 bit, BMP]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\App_Start\\RouteConfig.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "QLSHOPFASHION\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T09:48:01.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductCategory.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Products\\ProductCategory.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\Products\\ProductCategory.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Products\\ProductCategory.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\Products\\ProductCategory.cshtml",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAAE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:25:20.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FilterConfig.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\App_Start\\FilterConfig.cs",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\App_Start\\FilterConfig.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\App_Start\\FilterConfig.cs",
+              "RelativeToolTip": "QLSHOPFASHION\\App_Start\\FilterConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T09:48:00.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BundleConfig.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\App_Start\\BundleConfig.cs",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\App_Start\\BundleConfig.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\App_Start\\BundleConfig.cs",
+              "RelativeToolTip": "QLSHOPFASHION\\App_Start\\BundleConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T09:47:56.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "QLSHOPFASHION\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T09:39:27.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Common.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Common\\Common.cs",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Common\\Common.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Common\\Common.cs",
+              "RelativeToolTip": "QLSHOPFASHION\\Common\\Common.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwA8AAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T09:48:07.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Products\\Detail.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\Products\\Detail.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Products\\Detail.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\Products\\Detail.cshtml",
+              "ViewState": "AgIAAGMBAAAAAAAAAAAqwHwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:25:19.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "QLShopFashionController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Controllers\\QLShopFashionController.cs",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Controllers\\QLShopFashionController.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Controllers\\QLShopFashionController.cs",
+              "RelativeToolTip": "QLSHOPFASHION\\Controllers\\QLShopFashionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T09:39:02.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "QLSHOPFASHION\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFQAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T09:25:20.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "MenuController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Controllers\\MenuController.cs",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Controllers\\MenuController.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Controllers\\MenuController.cs",
+              "RelativeToolTip": "QLSHOPFASHION\\Controllers\\MenuController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T09:25:20.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "dbModel.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Context\\dbModel.edmx",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Context\\dbModel.edmx",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Context\\dbModel.edmx [Diagram1]",
+              "RelativeToolTip": "QLSHOPFASHION\\Context\\dbModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-12-14T11:24:05.635Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "banner_1.jpg",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Content\\assets\\images\\banner_1.jpg",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Content\\assets\\images\\banner_1.jpg",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Content\\assets\\images\\banner_1.jpg",
+              "RelativeToolTip": "QLSHOPFASHION\\Content\\assets\\images\\banner_1.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-12-14T09:54:23.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:52:46.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "desc_2.jpg",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Content\\assets\\images\\desc_2.jpg",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Content\\assets\\images\\desc_2.jpg",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Content\\assets\\images\\desc_2.jpg",
+              "RelativeToolTip": "QLSHOPFASHION\\Content\\assets\\images\\desc_2.jpg",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-12-14T09:52:56.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "jquery.js",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Content\\ckeditor\\adapters\\jquery.js",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Content\\ckeditor\\adapters\\jquery.js",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Content\\ckeditor\\adapters\\jquery.js",
+              "RelativeToolTip": "QLSHOPFASHION\\Content\\ckeditor\\adapters\\jquery.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-14T09:53:12.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "glyphicons-halflings-regular.svg",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\fonts\\glyphicons-halflings-regular.svg",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\fonts\\glyphicons-halflings-regular.svg",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\fonts\\glyphicons-halflings-regular.svg",
+              "RelativeToolTip": "QLSHOPFASHION\\fonts\\glyphicons-halflings-regular.svg",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKTSURBVDhPjVNLSFRRGP7unTsz9w75uOaMZlMNpo1aFFJRodRGN7UwatMiKgga3JgVRBSNSA8RooUFLRycCCpc9ITIFi0EW\u002BhCW/gONYUcxplsQL13nKv3dM6ZGV\u002BE9N37c\u002B455/\u002B\u002B/7s/5whYA7/fP5L63BSCIDxvbGxsAiEktZQEE6Brm6K1tXWS5TU0NNQyjsiZKQgCBgBChQ2Q\u002BfswpytgDLmg9zihD9XBNJfhcrlstPoeqlVPRS6uCBDy1broLnN29PkxPeaFFmpC79gOdEu9sB8KQRt\u002Bz/NUVbUGAoGpJIfc5j2gZIuv3fam/sCNGrdjGLGwE23hR\u002BiMeBCKAbXlOTgfr0VW9QfqD4iEZ5BIJNAWDI5yB75X0tXqwrc1JZk90MKVUEq/4UplFc4W5UKwiHjaO4tx90NWiYfT5cQuj4dRITLrZfn9104XtOD3\u002BE4z7/BrqIoKZ4YM37E8XNifA4vdiuCIApPzWY9Wmy9h6UfOpd13t89FstEceyF2PJlAfNHkm6y6xSbxcTASpyuMyFT4NoeI6PV6mzEvvIy0oO\u002BXPVGULaMs186jVLVil0zzF\u002BI4ki\u002BnqjP\u002BGgemrp0Z\u002BHn8T0d0nyrOTky\u002B8x0tNoxE0iZrcSqXz5lAcroCcXkeBcGpyzcnowRTDk9xoDuEmbkE5vRlfB6cRcWzIXibv\u002BNTf5ST0y7SEBa6MGIaOFje2VUnZSgPTFECMZM9YCeLde6cdwvuVLlXrVMFWXGAHqRRaUlDezyEic6tlbFBbW/oS8nHbf0RDZIooDDLipPeTJwozIJJH4EIoG/y1/6Fe/5bj6lFousa0WjoWjoWiLYhGNidWHcXDNhOsVGWFSg0ZCUdDigbIo11Zv73Oq8C\u002BAsr5V2IWWNA0gAAAABJRU5ErkJggg==",
+              "WhenOpened": "2024-12-14T09:52:37.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "_MenuArrivals.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Menu\\_MenuArrivals.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\Menu\\_MenuArrivals.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Menu\\_MenuArrivals.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\Menu\\_MenuArrivals.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:25:20.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Partial_Item_Cart.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\ShoppingCart\\Partial_Item_Cart.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\ShoppingCart\\Partial_Item_Cart.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\ShoppingCart\\Partial_Item_Cart.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\ShoppingCart\\Partial_Item_Cart.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAIUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:25:20.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CheckOut.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\ShoppingCart\\CheckOut.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\ShoppingCart\\CheckOut.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\ShoppingCart\\CheckOut.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\ShoppingCart\\CheckOut.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:25:20.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\ShoppingCart\\Index.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\ShoppingCart\\Index.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\ShoppingCart\\Index.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\ShoppingCart\\Index.cshtml",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAqwKIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:25:20.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Partial_CheckOut.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\ShoppingCart\\Partial_CheckOut.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\ShoppingCart\\Partial_CheckOut.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\ShoppingCart\\Partial_CheckOut.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\ShoppingCart\\Partial_CheckOut.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:25:20.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAWwBMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:25:20.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "_MenuProductCategory.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Menu\\_MenuProductCategory.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\Menu\\_MenuProductCategory.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Menu\\_MenuProductCategory.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\Menu\\_MenuProductCategory.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:25:20.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Refresh.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Home\\Refresh.cshtml",
+              "RelativeDocumentMoniker": "QLSHOPFASHION\\Views\\Home\\Refresh.cshtml",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\QLSHOPFASHION\\QLSHOPFASHION\\QLSHOPFASHION\\Views\\Home\\Refresh.cshtml",
+              "RelativeToolTip": "QLSHOPFASHION\\Views\\Home\\Refresh.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-14T09:25:20.646Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

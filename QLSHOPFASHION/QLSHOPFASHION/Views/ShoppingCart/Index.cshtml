@@ -1,0 +1,182 @@
+﻿
+@using BanHangThoiTrangMVC.Common
+@{
+    ViewBag.Title = "Giỏ hàng";
+
+}
+
+
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/categories_styles.css">
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/categories_responsive.css">
+<div class="container product_section_container">
+    <div class="row">
+        <div class="col product_section clearfix">
+
+            <!-- Breadcrumbs -->
+
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Giỏ hàng</a></li>
+                </ul>
+            </div>
+
+            <!-- Sidebar -->
+            <!-- Main Content -->
+
+            <div class="row">
+                <div class="col-md-12" id="load_data">
+                    @Html.Action("Partial_Item_Cart", "ShoppingCart")
+                </div>
+                  <div class="col-md-12">
+                    @if (ViewBag.CheckCart == null)
+                    {
+                        <div class="text-right">
+                            <a class="btn btn-danger btnDeleteAll "  style="margin-right: 50px;">Xóa hết</a>
+                         </div>
+                    }
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="customerName">Họ tên</label>
+                            <input type="text" id="customerName" class="form-control" placeholder="Nhập họ tên" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerAddress">Địa chỉ</label>
+                            <input type="text" id="customerAddress" class="form-control" placeholder="Nhập địa chỉ" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="customerPhone">Số điện thoại</label>
+                            <input type="text" id="customerPhone" class="form-control" placeholder="Nhập số điện thoại" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerNote">Ghi chú</label>
+                            <textarea id="customerNote" class="form-control" rows="3" placeholder="Nhập ghi chú (nếu có)"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    @if (ViewBag.CheckCart == null)
+                    {
+                        <div class="text-right">
+                            <a href="/thanh-toan" class="btn btn-success" style="margin-right: 20px;">Đặt hàng</a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Content/assets/js/categories_custom.js"></script>
+}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteAllButton = document.querySelector(".btnDeleteAll");
+
+        // Xử lý sự kiện click nút "Xóa"
+        deleteAllButton.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // Xác nhận trước khi xóa
+            const confirmDelete = confirm("Bạn có chắc chắn muốn xóa toàn bộ sản phẩm trong giỏ hàng không?");
+            if (confirmDelete) {
+                // Xóa giỏ hàng trong local storage
+                localStorage.removeItem("cart");
+
+                // Cập nhật lại giao diện
+                const cartTableBody = document.querySelector("table tbody");
+                if (cartTableBody) {
+                    cartTableBody.innerHTML = `
+                        <tr>
+                            <td colspan="6" class="text-center">Giỏ hàng trống!</td>
+                        </tr>
+                    `;
+                }
+
+                // Thông báo thành công
+                alert("Toàn bộ sản phẩm trong giỏ hàng đã được xóa!");
+            }
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const placeOrderButton = document.querySelector(".btn-success");
+
+        placeOrderButton.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // Lấy thông tin khách hàng từ các input
+            const hoTen = document.getElementById("customerName").value.trim();
+            const diaChi = document.getElementById("customerAddress").value.trim();
+            const soDienThoai = document.getElementById("customerPhone").value.trim();
+            const ghiChuChung = document.getElementById("customerNote").value.trim(); // Ghi chú từ input
+
+            // Kiểm tra thông tin đầu vào
+            if (!hoTen || !diaChi || !soDienThoai) {
+                alert("Vui lòng nhập đầy đủ thông tin khách hàng!");
+                return;
+            }
+
+            // Lấy dữ liệu giỏ hàng từ LocalStorage
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            if (cart.length === 0) {
+                alert("Giỏ hàng trống!");
+                return;
+            }
+
+            // Chuyển đổi dữ liệu giỏ hàng thành format phù hợp
+            const cartItems = cart.map(item => ({
+                TenSanPham: item.name,
+                SoLuong: item.quantity,
+                GiaTien: item.price,
+                GhiChu: [...item.notes, ghiChuChung] // Nối ghi chú từ input vào mảng `notes`
+            }));
+
+            console.log("Cart items before sending:", cartItems);
+
+
+            // Tạo object gửi lên server
+            const orderData = {
+                hoTen: hoTen,
+                diaChi: diaChi,
+                soDienThoai: soDienThoai,
+                cart: cartItems
+            };
+
+            // Gửi request đến server
+            fetch('/ShoppingCart/PlaceOrder', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(orderData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        // Xóa giỏ hàng sau khi đặt hàng thành công
+                        localStorage.removeItem("cart");
+                        // Reload lại trang để làm trống giỏ hàng
+                        location.reload();
+
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error("Lỗi khi gửi yêu cầu đặt hàng:", error);
+                    alert("Có lỗi xảy ra, vui lòng thử lại sau!");
+                });
+        });
+    });
+
+
+
+</script>

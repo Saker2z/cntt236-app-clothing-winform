@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QL_SHOP_FASHIONModelStoreContainer" CdmEntityContainer="QL_SHOP_FASHIONEntities">
+    <EntitySetMapping Name="chi_tiet_hoa_don">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.chi_tiet_hoa_don">
+        <MappingFragment StoreEntitySet="chi_tiet_hoa_don">
+          <ScalarProperty Name="ma_hoa_don" ColumnName="ma_hoa_don" />
+          <ScalarProperty Name="ma_thuoc_tinh" ColumnName="ma_thuoc_tinh" />
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="giagiam" ColumnName="giagiam" />
+          <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+          <ScalarProperty Name="trang_thai" ColumnName="trang_thai" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chi_tiet_hoa_don_doi_tra">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.chi_tiet_hoa_don_doi_tra">
+        <MappingFragment StoreEntitySet="chi_tiet_hoa_don_doi_tra">
+          <ScalarProperty Name="ma_hoa_don" ColumnName="ma_hoa_don" />
+          <ScalarProperty Name="ma_thuoc_tinh" ColumnName="ma_thuoc_tinh" />
+          <ScalarProperty Name="trang_thai" ColumnName="trang_thai" />
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="giagiam" ColumnName="giagiam" />
+          <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chi_tiet_nhap_hang">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.chi_tiet_nhap_hang">
+        <MappingFragment StoreEntitySet="chi_tiet_nhap_hang">
+          <ScalarProperty Name="ma_nhap_hang" ColumnName="ma_nhap_hang" />
+          <ScalarProperty Name="ma_san_pham" ColumnName="ma_san_pham" />
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="gia_nhap" ColumnName="gia_nhap" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="don_dat_hang_web">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.don_dat_hang_web">
+        <MappingFragment StoreEntitySet="don_dat_hang_web">
+          <ScalarProperty Name="id_don_hang" ColumnName="id_don_hang" />
+          <ScalarProperty Name="ho_ten" ColumnName="ho_ten" />
+          <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+          <ScalarProperty Name="thoi_gian_dat" ColumnName="thoi_gian_dat" />
+          <ScalarProperty Name="so_dien_thoai" ColumnName="so_dien_thoai" />
+          <ScalarProperty Name="ten_san_pham" ColumnName="ten_san_pham" />
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="gia_tien" ColumnName="gia_tien" />
+          <ScalarProperty Name="ghi_chu" ColumnName="ghi_chu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hinh_anh_san_pham">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.hinh_anh_san_pham">
+        <MappingFragment StoreEntitySet="hinh_anh_san_pham">
+          <ScalarProperty Name="ma_hinh_anh" ColumnName="ma_hinh_anh" />
+          <ScalarProperty Name="ma_san_pham" ColumnName="ma_san_pham" />
+          <ScalarProperty Name="hinh_anh" ColumnName="hinh_anh" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hoa_don">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.hoa_don">
+        <MappingFragment StoreEntitySet="hoa_don">
+          <ScalarProperty Name="ma_hoa_don" ColumnName="ma_hoa_don" />
+          <ScalarProperty Name="ma_khach_hang" ColumnName="ma_khach_hang" />
+          <ScalarProperty Name="ma_nhan_vien" ColumnName="ma_nhan_vien" />
+          <ScalarProperty Name="ngay_lap" ColumnName="ngay_lap" />
+          <ScalarProperty Name="ma_khuyen_mai" ColumnName="ma_khuyen_mai" />
+          <ScalarProperty Name="trang_thai_giao_hang" ColumnName="trang_thai_giao_hang" />
+          <ScalarProperty Name="ma_phuong_thuc" ColumnName="ma_phuong_thuc" />
+          <ScalarProperty Name="tong_so_luong_mua" ColumnName="tong_so_luong_mua" />
+          <ScalarProperty Name="tien_giam" ColumnName="tien_giam" />
+          <ScalarProperty Name="tong_tien" ColumnName="tong_tien" />
+          <ScalarProperty Name="tien_doi_diem" ColumnName="tien_doi_diem" />
+          <ScalarProperty Name="doi_diem" ColumnName="doi_diem" />
+          <ScalarProperty Name="tong_gia_tri" ColumnName="tong_gia_tri" />
+          <ScalarProperty Name="tong_don_hang" ColumnName="tong_don_hang" />
+          <ScalarProperty Name="hinh_thuc_ban" ColumnName="hinh_thuc_ban" />
+          <ScalarProperty Name="trang_thai_doi_tra" ColumnName="trang_thai_doi_tra" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hoa_don_doi_tra">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.hoa_don_doi_tra">
+        <MappingFragment StoreEntitySet="hoa_don_doi_tra">
+          <ScalarProperty Name="ma_hoa_don" ColumnName="ma_hoa_don" />
+          <ScalarProperty Name="ma_nhan_vien" ColumnName="ma_nhan_vien" />
+          <ScalarProperty Name="ma_phuong_thuc" ColumnName="ma_phuong_thuc" />
+          <ScalarProperty Name="tong_so_luong" ColumnName="tong_so_luong" />
+          <ScalarProperty Name="ngay_doi_tra" ColumnName="ngay_doi_tra" />
+          <ScalarProperty Name="tien_doi_diem" ColumnName="tien_doi_diem" />
+          <ScalarProperty Name="tien_hang_tra" ColumnName="tien_hang_tra" />
+          <ScalarProperty Name="tien_mua_them" ColumnName="tien_mua_them" />
+          <ScalarProperty Name="tien_hoan" ColumnName="tien_hoan" />
+          <ScalarProperty Name="tien_khach_tra" ColumnName="tien_khach_tra" />
+          <ScalarProperty Name="tong_tien_sau_khi_doi" ColumnName="tong_tien_sau_khi_doi" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="khach_hang">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.khach_hang">
+        <MappingFragment StoreEntitySet="khach_hang">
+          <ScalarProperty Name="ma_khach_hang" ColumnName="ma_khach_hang" />
+          <ScalarProperty Name="ten_khach_hang" ColumnName="ten_khach_hang" />
+          <ScalarProperty Name="dien_thoai" ColumnName="dien_thoai" />
+          <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+          <ScalarProperty Name="diem_thuong" ColumnName="diem_thuong" />
+          <ScalarProperty Name="diem_da_doi" ColumnName="diem_da_doi" />
+          <ScalarProperty Name="tai_khoan_id" ColumnName="tai_khoan_id" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="khuyen_mai">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.khuyen_mai">
+        <MappingFragment StoreEntitySet="khuyen_mai">
+          <ScalarProperty Name="ma_khuyen_mai" ColumnName="ma_khuyen_mai" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="gia_tri" ColumnName="gia_tri" />
+          <ScalarProperty Name="thoi_gian_bat_dau" ColumnName="thoi_gian_bat_dau" />
+          <ScalarProperty Name="thoi_gian_ket_thuc" ColumnName="thoi_gian_ket_thuc" />
+          <ScalarProperty Name="so_luong_toi_da" ColumnName="so_luong_toi_da" />
+          <ScalarProperty Name="so_luong_da_dung" ColumnName="so_luong_da_dung" />
+          <ScalarProperty Name="tinh_trang" ColumnName="tinh_trang" />
+          <ScalarProperty Name="ghi_chu" ColumnName="ghi_chu" />
+          <ScalarProperty Name="gia_tri_hoa_don_toi_thieu" ColumnName="gia_tri_hoa_don_toi_thieu" />
+          <ScalarProperty Name="ma_nhan_vien" ColumnName="ma_nhan_vien" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kich_thuoc">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.kich_thuoc">
+        <MappingFragment StoreEntitySet="kich_thuoc">
+          <ScalarProperty Name="ma_kich_thuoc" ColumnName="ma_kich_thuoc" />
+          <ScalarProperty Name="ten_kich_thuoc" ColumnName="ten_kich_thuoc" />
+          <ScalarProperty Name="phu_phi_size" ColumnName="phu_phi_size" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loai_san_pham">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.loai_san_pham">
+        <MappingFragment StoreEntitySet="loai_san_pham">
+          <ScalarProperty Name="ma_loai" ColumnName="ma_loai" />
+          <ScalarProperty Name="ten_loai" ColumnName="ten_loai" />
+          <ScalarProperty Name="ma_nhom_loai" ColumnName="ma_nhom_loai" />
+          <ScalarProperty Name="chi_tiet" ColumnName="chi_tiet" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="man_hinh">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.man_hinh">
+        <MappingFragment StoreEntitySet="man_hinh">
+          <ScalarProperty Name="id_man_hinh" ColumnName="id_man_hinh" />
+          <ScalarProperty Name="ten_man_hinh" ColumnName="ten_man_hinh" />
+          <ScalarProperty Name="create_at" ColumnName="create_at" />
+          <ScalarProperty Name="update_at" ColumnName="update_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mau_sac">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.mau_sac">
+        <MappingFragment StoreEntitySet="mau_sac">
+          <ScalarProperty Name="ma_mau_sac" ColumnName="ma_mau_sac" />
+          <ScalarProperty Name="ten_mau_sac" ColumnName="ten_mau_sac" />
+          <ScalarProperty Name="phu_phi_mausac" ColumnName="phu_phi_mausac" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nha_cung_cap">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.nha_cung_cap">
+        <MappingFragment StoreEntitySet="nha_cung_cap">
+          <ScalarProperty Name="ma_nha_cung_cap" ColumnName="ma_nha_cung_cap" />
+          <ScalarProperty Name="ten_nha_cung_cap" ColumnName="ten_nha_cung_cap" />
+          <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+          <ScalarProperty Name="dien_thoai" ColumnName="dien_thoai" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nha_cung_cap_san_pham">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.nha_cung_cap_san_pham">
+        <MappingFragment StoreEntitySet="nha_cung_cap_san_pham">
+          <ScalarProperty Name="ma_nha_cung_cap" ColumnName="ma_nha_cung_cap" />
+          <ScalarProperty Name="ma_san_pham" ColumnName="ma_san_pham" />
+          <ScalarProperty Name="gia_cung_cap" ColumnName="gia_cung_cap" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nhan_vien">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.nhan_vien">
+        <MappingFragment StoreEntitySet="nhan_vien">
+          <ScalarProperty Name="ma_nhan_vien" ColumnName="ma_nhan_vien" />
+          <ScalarProperty Name="ten_nhan_vien" ColumnName="ten_nhan_vien" />
+          <ScalarProperty Name="chuc_vu" ColumnName="chuc_vu" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+          <ScalarProperty Name="ngay_vao_lam" ColumnName="ngay_vao_lam" />
+          <ScalarProperty Name="tai_khoan_id" ColumnName="tai_khoan_id" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nhap_hang">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.nhap_hang">
+        <MappingFragment StoreEntitySet="nhap_hang">
+          <ScalarProperty Name="ma_nhap_hang" ColumnName="ma_nhap_hang" />
+          <ScalarProperty Name="ma_nhan_vien" ColumnName="ma_nhan_vien" />
+          <ScalarProperty Name="ma_nha_cung_cap" ColumnName="ma_nha_cung_cap" />
+          <ScalarProperty Name="ngay_nhap" ColumnName="ngay_nhap" />
+          <ScalarProperty Name="trang_thai" ColumnName="trang_thai" />
+          <ScalarProperty Name="ghi_chu" ColumnName="ghi_chu" />
+          <ScalarProperty Name="tong_so_luong" ColumnName="tong_so_luong" />
+          <ScalarProperty Name="tong_gia_tien" ColumnName="tong_gia_tien" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nhom_loai">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.nhom_loai">
+        <MappingFragment StoreEntitySet="nhom_loai">
+          <ScalarProperty Name="ma_nhom_loai" ColumnName="ma_nhom_loai" />
+          <ScalarProperty Name="ten_nhom_loai" ColumnName="ten_nhom_loai" />
+          <ScalarProperty Name="chi_tiet" ColumnName="chi_tiet" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nhom_quyen">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.nhom_quyen">
+        <MappingFragment StoreEntitySet="nhom_quyen">
+          <ScalarProperty Name="id_nhom_quyen" ColumnName="id_nhom_quyen" />
+          <ScalarProperty Name="ten_nhom" ColumnName="ten_nhom" />
+          <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+          <ScalarProperty Name="create_at" ColumnName="create_at" />
+          <ScalarProperty Name="update_at" ColumnName="update_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phan_quyen">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.phan_quyen">
+        <MappingFragment StoreEntitySet="phan_quyen">
+          <ScalarProperty Name="id_man_hinh" ColumnName="id_man_hinh" />
+          <ScalarProperty Name="id_nhom_quyen" ColumnName="id_nhom_quyen" />
+          <ScalarProperty Name="co_quyen" ColumnName="co_quyen" />
+          <ScalarProperty Name="create_at" ColumnName="create_at" />
+          <ScalarProperty Name="update_at" ColumnName="update_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phuong_thuc_thanh_toan">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.phuong_thuc_thanh_toan">
+        <MappingFragment StoreEntitySet="phuong_thuc_thanh_toan">
+          <ScalarProperty Name="ma_phuong_thuc" ColumnName="ma_phuong_thuc" />
+          <ScalarProperty Name="ten_phuong_thuc" ColumnName="ten_phuong_thuc" />
+          <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+          <ScalarProperty Name="trang_thai" ColumnName="trang_thai" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="san_pham">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.san_pham">
+        <MappingFragment StoreEntitySet="san_pham">
+          <ScalarProperty Name="ma_san_pham" ColumnName="ma_san_pham" />
+          <ScalarProperty Name="ten_san_pham" ColumnName="ten_san_pham" />
+          <ScalarProperty Name="ma_loai" ColumnName="ma_loai" />
+          <ScalarProperty Name="ma_thuong_hieu" ColumnName="ma_thuong_hieu" />
+          <ScalarProperty Name="giam_gia" ColumnName="giam_gia" />
+          <ScalarProperty Name="so_luong_kich_thuoc" ColumnName="so_luong_kich_thuoc" />
+          <ScalarProperty Name="so_luong_mau_sac" ColumnName="so_luong_mau_sac" />
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+          <ScalarProperty Name="gia_binh_quan" ColumnName="gia_binh_quan" />
+          <ScalarProperty Name="hinh_thuc_ban" ColumnName="hinh_thuc_ban" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tai_khoan">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.tai_khoan">
+        <MappingFragment StoreEntitySet="tai_khoan">
+          <ScalarProperty Name="tai_khoan_id" ColumnName="tai_khoan_id" />
+          <ScalarProperty Name="ten_dang_nhap" ColumnName="ten_dang_nhap" />
+          <ScalarProperty Name="mat_khau_hash" ColumnName="mat_khau_hash" />
+          <ScalarProperty Name="hoat_dong" ColumnName="hoat_dong" />
+          <ScalarProperty Name="is_oauth" ColumnName="is_oauth" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tai_khoan_nhom_quyen">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.tai_khoan_nhom_quyen">
+        <MappingFragment StoreEntitySet="tai_khoan_nhom_quyen">
+          <ScalarProperty Name="tai_khoan_id" ColumnName="tai_khoan_id" />
+          <ScalarProperty Name="id_nhom_quyen" ColumnName="id_nhom_quyen" />
+          <ScalarProperty Name="create_at" ColumnName="create_at" />
+          <ScalarProperty Name="update_at" ColumnName="update_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="thong_tin_san_pham">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.thong_tin_san_pham">
+        <MappingFragment StoreEntitySet="thong_tin_san_pham">
+          <ScalarProperty Name="ma_thong_tin_san_pham" ColumnName="ma_thong_tin_san_pham" />
+          <ScalarProperty Name="ma_san_pham" ColumnName="ma_san_pham" />
+          <ScalarProperty Name="key_attribute" ColumnName="key_attribute" />
+          <ScalarProperty Name="value_attribute" ColumnName="value_attribute" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="thuoc_tinh_san_pham">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.thuoc_tinh_san_pham">
+        <MappingFragment StoreEntitySet="thuoc_tinh_san_pham">
+          <ScalarProperty Name="ma_thuoc_tinh" ColumnName="ma_thuoc_tinh" />
+          <ScalarProperty Name="ma_san_pham" ColumnName="ma_san_pham" />
+          <ScalarProperty Name="ma_kich_thuoc" ColumnName="ma_kich_thuoc" />
+          <ScalarProperty Name="ma_mau_sac" ColumnName="ma_mau_sac" />
+          <ScalarProperty Name="so_luong_ton" ColumnName="so_luong_ton" />
+          <ScalarProperty Name="gia_ban" ColumnName="gia_ban" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="thuong_hieu">
+      <EntityTypeMapping TypeName="QL_SHOP_FASHIONModel.thuong_hieu">
+        <MappingFragment StoreEntitySet="thuong_hieu">
+          <ScalarProperty Name="ma_thuong_hieu" ColumnName="ma_thuong_hieu" />
+          <ScalarProperty Name="ten_thuong_hieu" ColumnName="ten_thuong_hieu" />
+          <ScalarProperty Name="mo_ta" ColumnName="mo_ta" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

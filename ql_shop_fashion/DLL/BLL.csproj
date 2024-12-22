@@ -64,9 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="chi_tiet_don_web_BLL.cs" />
     <Compile Include="chi_tiet_hoa_don_BLL.cs" />
     <Compile Include="chi_tiet_hoa_don_doi_tra_BLL.cs" />
     <Compile Include="chi_tiet_nhap_sql_BLL.cs" />
+    <Compile Include="don_dat_hang_web_BLL.cs" />
     <Compile Include="hinh_anh_sp_sql_BLL.cs" />
     <Compile Include="hoa_don_BLL.cs" />
     <Compile Include="hoa_don_doi_tra_BLL.cs" />
